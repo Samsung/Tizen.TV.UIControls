@@ -15,11 +15,12 @@
 
   <ItemGroup>
     <Folder Include="lib\" />
+    <Folder Include="res\" />
   </ItemGroup>
 
   
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms.Impl\Tizen.TV.UIControls.Forms.Impl.csproj" />
+    <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms.Renderer\Tizen.TV.UIControls.Forms.Renderer.csproj" />
     <ProjectReference Include="..\Sample\Sample.csproj" />
   </ItemGroup>
   

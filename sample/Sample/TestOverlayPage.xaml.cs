@@ -10,7 +10,7 @@ namespace Sample
     {
         public TestOverlayPage ()
         {
-            InitializeComponent ();
+            InitializeComponent();
         }
     }
 }

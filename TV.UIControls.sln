@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tizen.TV.UIControls.Forms", "src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj", "{D9FD721B-B73A-489A-BBBB-7297E4E16A9F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tizen.TV.UIControls.Forms.Impl", "src\Tizen.TV.UIControls.Forms.Impl\Tizen.TV.UIControls.Forms.Impl.csproj", "{B0C68ABA-36E7-4A91-850E-C2F1363B7D46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tizen.TV.UIControls.Forms.Renderer", "src\Tizen.TV.UIControls.Forms.Renderer\Tizen.TV.UIControls.Forms.Renderer.csproj", "{B0C68ABA-36E7-4A91-850E-C2F1363B7D46}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "sample\Sample\Sample.csproj", "{9DEC96CB-35D8-4BA8-BEAC-50F7FA27785C}"
 EndProject

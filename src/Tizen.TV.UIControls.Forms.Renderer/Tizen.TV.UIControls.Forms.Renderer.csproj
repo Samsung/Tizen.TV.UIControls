@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>tizen40</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyName>Tizen.TV.UIControls.Forms.Impl</AssemblyName>
+    <AssemblyName>Tizen.TV.UIControls.Forms.Renderer</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
   </PropertyGroup>
 

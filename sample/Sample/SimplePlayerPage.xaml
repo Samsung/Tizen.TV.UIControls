@@ -3,11 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
              xmlns:local="Sample.TestOverlayPage"
-             x:Class="Sample.TestOverlayPage">
+             x:Class="Sample.SimplePlayerPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:PositionToProgressConverter x:Key="positionToProgress"/>
-        </ResourceDictionary>           
+        </ResourceDictionary>
     </ContentPage.Resources>
     <tvcontrols:OverlayPage.Player>
         <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true"/>
@@ -15,5 +15,9 @@
     <StackLayout Padding="50" HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundColor="#20000000">
         <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=Duration, StringFormat='Duration {0}ms'}"/>
         <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=BufferingProgress, StringFormat='{}{0:Buffering 0%}'}"/>
+        <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=IsMuted, StringFormat='IsMuted {0}'}"/>
+        <Switch HorizontalOptions="Center" IsToggled="{Binding Source={x:Reference Player}, Path=IsMuted, Mode=TwoWay}"/>
+        <Slider HorizontalOptions="FillAndExpand" x:Name="Seekbar" ValueChanged="OnSeekChanged"/>
+        <ProgressBar HorizontalOptions="FillAndExpand" Progress="{Binding Source={x:Reference Player}, Path=Position, Converter={StaticResource positionToProgress}, ConverterParameter={x:Reference Player}}}"/>
     </StackLayout>
 </tvcontrols:OverlayPage>

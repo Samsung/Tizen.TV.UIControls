@@ -11,12 +11,18 @@ namespace Tizen.TV.UIControls.Forms
         OrignalSize
     }
 
+    public class BufferingProgressUpdatedEventArgs : EventArgs
+    {
+        public double Progress { get; set; }
+    }
+
     public interface IMediaPlayer
     {
         bool UsesEmbeddingControls { get; set; }
         bool AutoPlay { get; set; }
         bool AutoStop { get; set; }
         double Volume { get; set; }
+        bool IsMuted { get; set; }
         int Position { get; }
 
         int Duration { get; }
@@ -24,7 +30,9 @@ namespace Tizen.TV.UIControls.Forms
         DisplayAspectMode AspectMode { get; set; }
 
         event EventHandler PlaybackCompleted;
+        event EventHandler PlaybackStarted;
         event EventHandler UpdateStreamInfo;
+        event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
 
         void SetDisplay(IVideoOutput output);
 

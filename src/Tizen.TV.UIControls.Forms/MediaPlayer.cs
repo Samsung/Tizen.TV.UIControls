@@ -11,19 +11,29 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindableProperty VideoOutputProperty = BindableProperty.Create("VideoOutput", typeof(IVideoOutput), typeof(MediaPlayer), null, propertyChanging: null, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnVideoOutputChanged());
         public static readonly BindableProperty UsesEmbeddingControlsProperty = BindableProperty.Create("UsesEmbeddingControls", typeof(bool), typeof(MediaPlayer), true);
         public static readonly BindableProperty VolumeProperty = BindableProperty.Create("Volume", typeof(double), typeof(MediaPlayer), 1d, coerceValue: (bindable, value) => ((double)value).Clamp(0, 1), propertyChanged: (b, o, n)=> ((MediaPlayer)b).OnVolumeChanged());
+        public static readonly BindableProperty IsMutedProperty = BindableProperty.Create("IsMuted", typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateIsMuted());
         public static readonly BindableProperty AspectModeProperty = BindableProperty.Create(nameof(AspectMode), typeof(DisplayAspectMode), typeof(MediaPlayer), DisplayAspectMode.AspectFit, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnAspectModeChanged());
         public static readonly BindableProperty AutoPlayProperty = BindableProperty.Create("AutoPlay", typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateAutoPlay());
         public static readonly BindableProperty AutoStopProperty = BindableProperty.Create("AutoStop", typeof(bool), typeof(MediaPlayer), true, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateAutoStop());
-        internal static readonly BindablePropertyKey DurationPropertyKey = BindableProperty.CreateReadOnly("Duration", typeof(int), typeof(MediaPlayer), 0);
+        static readonly BindablePropertyKey DurationPropertyKey = BindableProperty.CreateReadOnly("Duration", typeof(int), typeof(MediaPlayer), 0);
         public static readonly BindableProperty DurationProperty = DurationPropertyKey.BindableProperty;
+        static readonly BindablePropertyKey BufferingProgressPropertyKey = BindableProperty.CreateReadOnly("BufferingProgress", typeof(double), typeof(MediaPlayer), 0d);
+        public static readonly BindableProperty BufferingProgressProperty = BufferingProgressPropertyKey.BindableProperty;
+        static readonly BindablePropertyKey PositionPropertyKey = BindableProperty.CreateReadOnly("Position", typeof(int), typeof(MediaPlayer), 0);
+        public static readonly BindableProperty PositionProperty = PositionPropertyKey.BindableProperty;
 
 
         IMediaPlayer _impl;
+        bool _isPlaying;
+
+
         public MediaPlayer()
         {
             _impl = DependencyService.Get<IMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
-            _impl.UpdateStreamInfo += OnUpdateStreamInfo; ;
-            _impl.PlaybackCompleted += SendPlayCompleted;
+            _impl.UpdateStreamInfo += OnUpdateStreamInfo;
+            _impl.PlaybackCompleted += SendPlaybackCompleted;
+            _impl.PlaybackStarted += SendPlaybackStarted;
+            _impl.BufferingProgressUpdated += OnUpdateBufferingProgress;
             _impl.UsesEmbeddingControls = true;
             _impl.Volume = 1d;
             _impl.AspectMode = DisplayAspectMode.AspectFit;
@@ -54,6 +64,12 @@ namespace Tizen.TV.UIControls.Forms
         {
             get { return (double)GetValue(VolumeProperty); }
             set { SetValue(VolumeProperty, value); }
+        }
+
+        public bool IsMuted
+        {
+            get { return (bool)GetValue(IsMutedProperty); }
+            set { SetValue(IsMutedProperty, value); }
         }
 
         public bool UsesEmbeddingControls
@@ -105,7 +121,32 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        public double BufferingProgress
+        {
+            get
+            {
+                return (double)GetValue(BufferingProgressProperty);
+            }
+            private set
+            {
+                SetValue(BufferingProgressPropertyKey, value);
+            }
+        }
+
+        public int Position
+        {
+            get
+            {
+                return Position = _impl.Position;
+            }
+            private set
+            {
+                SetValue(PositionPropertyKey, value);
+            }
+        }
+
         public event EventHandler PlaybackCompleted;
+        public event EventHandler PlaybackStarted;
 
         public void Pause()
         {
@@ -137,14 +178,37 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AutoStop = AutoStop;
         }
 
+        void UpdateIsMuted()
+        {
+            _impl.IsMuted = IsMuted;
+        }
+
         void OnUpdateStreamInfo(object sender, EventArgs e)
         {
             Duration = _impl.Duration;
         }
 
-        void SendPlayCompleted(object sender, EventArgs e)
+        void SendPlaybackCompleted(object sender, EventArgs e)
         {
+            _isPlaying = false;
             PlaybackCompleted?.Invoke(this, EventArgs.Empty);
+        }
+
+        void SendPlaybackStarted(object sender, EventArgs e)
+        {
+            _isPlaying = true;
+            StartPostionPollingTimer();
+            PlaybackStarted?.Invoke(this, EventArgs.Empty);
+        }
+
+        void StartPostionPollingTimer()
+        {
+            Device.StartTimer(TimeSpan.FromMilliseconds(1000), () =>
+            {
+                Position = _impl.Position;
+                Console.WriteLine("Position was updated!!! {0}", Position);
+                return _isPlaying;
+            });
         }
 
         void OnSourceChanged(object sender, EventArgs e)
@@ -176,6 +240,10 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AspectMode = AspectMode;
         }
 
+        void OnUpdateBufferingProgress(object sender, BufferingProgressUpdatedEventArgs e)
+        {
+            BufferingProgress = e.Progress;
+        }
 
 
         static void OnSourceChanging(BindableObject bindable, object oldValue, object newValue)

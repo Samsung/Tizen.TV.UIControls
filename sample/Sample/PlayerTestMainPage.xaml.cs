@@ -23,15 +23,8 @@ namespace Sample
             System.Console.WriteLine("ItemSelected!! ");
             TestModel model = (TestModel)args.SelectedItem;
             Page page = (Page)Activator.CreateInstance(model.Page);
-
-            System.Console.WriteLine("Page was created");
             page.BindingContext = model;
-
-            System.Console.WriteLine("Data was binding");
-
             await Navigation.PushAsync(page);
-
-            System.Console.WriteLine("Page was pushed");
         }
     }
 }

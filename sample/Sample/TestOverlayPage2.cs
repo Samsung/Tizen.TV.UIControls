@@ -28,7 +28,7 @@ namespace Sample
 
             var player = new MediaPlayer
             {
-                Source = "a.mp4",
+                Source = "c.mp4",
                 VideoOutput = this,
                 AutoPlay = true
             };

@@ -90,6 +90,12 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         public int Duration => _player.StreamInfo.GetDuration();
 
+        public bool IsMuted
+        {
+            get => _player.Muted;
+            set => _player.Muted = value;
+        }
+
         public int Position
         {
             get
@@ -124,6 +130,8 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         public event EventHandler UpdateStreamInfo;
         public event EventHandler PlaybackCompleted;
+        public event EventHandler PlaybackStarted;
+        public event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
 
         public void Pause()
         {
@@ -132,7 +140,14 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         public async Task<int> Seek(int ms)
         {
-            await _player.SetPlayPositionAsync(ms, false);
+            try
+            {
+                await _player.SetPlayPositionAsync(ms, false);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Fail to seek {e.Message}");
+            }
             return Position;
         }
 
@@ -155,6 +170,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
             }
             else
             {
+                Console.WriteLine("apply display with window");
                 Display display = new Display(UIControls.MainWindowProvider());
                 _player.Display = display;
                 OverlayOutput.AreaUpdated += OnOverlayAreaUpdated;
@@ -207,31 +223,33 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void OnOverlayAreaUpdated(object sender, EventArgs e)
         {
-            Console.WriteLine("UpdateOverlayArea 1");
+            Console.WriteLine("UpdateOverlayArea 1 state : {0}", _player.State);
             UpdateOverlayArea();
         }
 
-        void UpdateOverlayArea()
+        async void UpdateOverlayArea()
         {
-            if (OverlayOutput.OverlayArea.IsEmpty)
+            if (_player.State == PlayerState.Preparing)
             {
-                Console.WriteLine("Update overlay area with aspect mode : {0}", AspectMode.ToMultimeida());
-                try
+                await TaskPrepare;
+            }
+
+            try
+            {
+                if (OverlayOutput.OverlayArea.IsEmpty)
                 {
                     _player.DisplaySettings.Mode = AspectMode.ToMultimeida();
                 }
-                catch (Exception e)
+                else
                 {
-                    Console.WriteLine("Error on DisplaySettings.Mode {0}", e.Message);
+                    _player.DisplaySettings.Mode = PlayerDisplayMode.Roi;
+                    var bound = OverlayOutput.OverlayArea.ToPixel();
+                    _player.DisplaySettings.SetRoi(OverlayOutput.OverlayArea.ToPixel().ToMultimedia());
                 }
-                
-                Console.WriteLine("Update overlay area with aspect mode : {0} end", AspectMode.ToMultimeida());
             }
-            else
+            catch (Exception e)
             {
-                _player.DisplaySettings.Mode = PlayerDisplayMode.Roi;
-                var bound = OverlayOutput.OverlayArea.ToPixel();
-                _player.DisplaySettings.SetRoi(OverlayOutput.OverlayArea.ToPixel().ToMultimedia());
+                Console.WriteLine($"Error : {e.Message}");
             }
         }
 
@@ -242,7 +260,8 @@ namespace Tizen.TV.UIControls.Forms.Impl
             if (!HasSource)
                 return false;
 
-            
+            Console.WriteLine("Start1 State : {0}", _player.State);
+
             if (_player.State != PlayerState.Ready)
             {
                 await Prepare();
@@ -265,6 +284,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
             }
 
             UpdateStreamInfo?.Invoke(this, EventArgs.Empty);
+            PlaybackStarted?.Invoke(this, EventArgs.Empty);
 
             return true;
         }
@@ -305,6 +325,8 @@ namespace Tizen.TV.UIControls.Forms.Impl
         void OnBufferingProgressChanged(object sender, BufferingProgressChangedEventArgs e)
         {
             Console.WriteLine("Progress {0}%", e.Percent);
+            Console.WriteLine("Progress2 {0}%", e.Percent / 100.0);
+            BufferingProgressUpdated?.Invoke(this, new BufferingProgressUpdatedEventArgs { Progress = e.Percent / 100.0 });
         }
 
         async Task ChangeToIdleState()

@@ -28,7 +28,10 @@ namespace Tizen.TV.UIControls.Forms
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             base.OnPropertyChanged(propertyName);
-            AreaUpdated?.Invoke(this, EventArgs.Empty);
+            if (propertyName == nameof(OverlayArea))
+            {
+                AreaUpdated?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         protected override void OnBindingContextChanged()
