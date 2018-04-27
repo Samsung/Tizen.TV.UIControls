@@ -17,7 +17,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             if (source is UriMediaSource uriSource)
             {
-                Log.Info(UIControls.Tag, $"Set UriMediaSource {uriSource}");
+                Log.Info(UIControls.Tag, $"Set UriMediaSource");
                 var uri = uriSource.Uri;
                 player.SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
             }
@@ -31,7 +31,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             if (source is FileMediaSource fileSource)
             {
-                Log.Info(UIControls.Tag, $"Set FileMediaSource {fileSource}");
+                Log.Info(UIControls.Tag, $"Set FileMediaSource");
                 player.SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
             }
             return Task.FromResult<bool>(true);
