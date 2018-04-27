@@ -9,11 +9,6 @@ using MMView = Tizen.Multimedia.MediaView;
 
 namespace Tizen.TV.UIControls.Forms.Impl
 {
-
-    class MMPlayer : Player
-    {
-    }
-
     public class MediaPlayerImpl : IMediaPlayer
     {
         Player _player;
@@ -21,56 +16,15 @@ namespace Tizen.TV.UIControls.Forms.Impl
         bool _usesEmbeddingControls = true;
         bool _cancelToStart = false;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
-
         Task _taskPrepare = null;
-
         IVideoOutput _videoOutput;
-
         MediaSource _source;
 
         public MediaPlayerImpl()
         {
-            _player = new MMPlayer();
+            _player = new Player();
             _player.PlaybackCompleted += OnPlaybackCompleted;
             _player.BufferingProgressChanged += OnBufferingProgressChanged;
-
-        }
-
-        bool HasSource => _source != null;
-
-        IVideoOutput VideoOutput
-        {
-            get { return _videoOutput; }
-            set
-            {
-                if (TargetView != null)
-                    TargetView.PropertyChanged -= OnTargetViewPropertyChanged;
-                if (OverlayOutput != null)
-                    OverlayOutput.AreaUpdated -= OnOverlayAreaUpdated;
-
-                _videoOutput = value;
-
-                if (TargetView != null)
-                    TargetView.PropertyChanged += OnTargetViewPropertyChanged;
-                if (OverlayOutput != null)
-                    OverlayOutput.AreaUpdated += OnOverlayAreaUpdated;
-            }
-        }
-        VisualElement TargetView => VideoOutput?.MediaView;
-        IOverlayOutput OverlayOutput => TargetView as IOverlayOutput;
-
-        Task TaskPrepare
-        {
-            get => _taskPrepare ?? Task.CompletedTask;
-            set => _taskPrepare = value;
-        }
-
-        void OnPlaybackCompleted(object sender, EventArgs e)
-        {
-            Console.WriteLine("OnPlaybackCompleted state : {0}", _player.State);
-            PlaybackCompleted?.Invoke(this, EventArgs.Empty);
-            Pause();
-            var unused = Seek(0);
         }
 
         public bool UsesEmbeddingControls
@@ -83,6 +37,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
         }
 
         public bool AutoPlay { get; set; }
+
         public bool AutoStop { get; set; }
 
         public double Volume
@@ -114,19 +69,47 @@ namespace Tizen.TV.UIControls.Forms.Impl
             get { return _aspectMode; }
             set
             {
-                Console.WriteLine("Update Aspect mode to {0}", value);
                 _aspectMode = value;
-
                 if (IsOverlayMode)
                 {
-                    Console.WriteLine("UpdateOverlayArea 2");
-                    UpdateOverlayArea();
+                    ApplyOverlayArea();
                 }
                 else
                 {
-                    _player.DisplaySettings.Mode = value.ToMultimeida();
+                    ApplyAspectMode();
                 }
             }
+        }
+
+        bool HasSource => _source != null;
+
+        IVideoOutput VideoOutput
+        {
+            get { return _videoOutput; }
+            set
+            {
+                if (TargetView != null)
+                    TargetView.PropertyChanged -= OnTargetViewPropertyChanged;
+                if (OverlayOutput != null)
+                    OverlayOutput.AreaUpdated -= OnOverlayAreaUpdated;
+
+                _videoOutput = value;
+
+                if (TargetView != null)
+                    TargetView.PropertyChanged += OnTargetViewPropertyChanged;
+                if (OverlayOutput != null)
+                    OverlayOutput.AreaUpdated += OnOverlayAreaUpdated;
+            }
+        }
+
+        VisualElement TargetView => VideoOutput?.MediaView;
+
+        IOverlayOutput OverlayOutput => TargetView as IOverlayOutput;
+
+        Task TaskPrepare
+        {
+            get => _taskPrepare ?? Task.CompletedTask;
+            set => _taskPrepare = value;
         }
 
         bool IsOverlayMode => OverlayOutput != null;
@@ -138,8 +121,40 @@ namespace Tizen.TV.UIControls.Forms.Impl
         public event EventHandler PlaybackStopped;
         public event EventHandler PlaybackPaused;
 
+
+        public async Task<bool> Start()
+        {
+            Log.Debug(UIControls.Tag, "Start");
+
+            _cancelToStart = false;
+            if (!HasSource)
+                return false;
+
+            if (_player.State == PlayerState.Idle)
+            {
+                await Prepare();
+            }
+
+            if (_cancelToStart)
+                return false;
+
+            try
+            {
+                _player.Start();
+            }
+            catch (Exception e)
+            {
+                Log.Error(UIControls.Tag, $"Error On Start : {e.Message}");
+                return false;
+            }
+            PlaybackStarted?.Invoke(this, EventArgs.Empty);
+            return true;
+        }
+
         public void Pause()
         {
+            Log.Debug(UIControls.Tag, "Pause");
+
             try
             {
                 _player.Pause();
@@ -147,26 +162,41 @@ namespace Tizen.TV.UIControls.Forms.Impl
             }
             catch (Exception e)
             {
-                Console.WriteLine("Error on Pause {0}", e.Message);
+                Log.Error(UIControls.Tag, $"Error on Pause : {e.Message}");
             }
-            
+        }
+
+        public void Stop()
+        {
+            Log.Debug(UIControls.Tag, "Stop");
+
+            _cancelToStart = true;
+            var unusedTask = ChangeToIdleState();
+            PlaybackStopped.Invoke(this, EventArgs.Empty);
+        }
+
+        public void SetDisplay(IVideoOutput output)
+        {
+            VideoOutput = output;
         }
 
         public async Task<int> Seek(int ms)
         {
             try
             {
-                Console.WriteLine("before Seek state : {0}", _player.State);
                 await _player.SetPlayPositionAsync(ms, false);
-                Console.WriteLine("after Seek state : {0}", _player.State);
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Fail to seek {e.Message}");
+                Log.Error(UIControls.Tag, $"Fail to seek : {e.Message}");
             }
             return Position;
         }
 
+        public void SetSource(MediaSource source)
+        {
+            _source = source;
+        }
 
         void ApplyDisplay()
         {
@@ -186,64 +216,14 @@ namespace Tizen.TV.UIControls.Forms.Impl
             }
             else
             {
-                Console.WriteLine("apply display with window");
                 Display display = new Display(UIControls.MainWindowProvider());
                 _player.Display = display;
                 OverlayOutput.AreaUpdated += OnOverlayAreaUpdated;
-                Console.WriteLine("UpdateOverlayArea 3");
-                UpdateOverlayArea();
-            }
-
-        }
-        public void SetDisplay(IVideoOutput output)
-        {
-            VideoOutput = output;
-        }
-
-
-        async Task ApplySource()
-        {
-            Console.WriteLine("---- ApplySource - start");
-            if (_source == null)
-            {
-                return;
-            }
-            IMediaSourceHandler handler = Registrar.Registered.GetHandlerForObject<IMediaSourceHandler>(_source);
-            await handler.SetSource(_player, _source);
-            Console.WriteLine("---- ApplySource - End");
-        }
-
-
-        public void SetSource(MediaSource source)
-        {
-            _source = source;
-        }
-
-
-        async void OnTargetViewPropertyChanged(object sender, global::System.ComponentModel.PropertyChangedEventArgs e)
-        {
-            Console.WriteLine("Target View property changed {0}", e.PropertyName);
-            if (e.PropertyName == "Renderer")
-            {
-                Console.WriteLine("Render was added HasSource {0}", HasSource);
-                if (Platform.GetRenderer(sender as BindableObject) != null && HasSource && AutoPlay)
-                {
-                    await Start();
-                }
-                else if (Platform.GetRenderer(sender as BindableObject) == null && AutoStop)
-                {
-                    Stop();
-                }
+                ApplyOverlayArea();
             }
         }
 
-        void OnOverlayAreaUpdated(object sender, EventArgs e)
-        {
-            Console.WriteLine("UpdateOverlayArea 1 state : {0}", _player.State);
-            UpdateOverlayArea();
-        }
-
-        async void UpdateOverlayArea()
+        async void ApplyOverlayArea()
         {
             if (_player.State == PlayerState.Preparing)
             {
@@ -265,49 +245,38 @@ namespace Tizen.TV.UIControls.Forms.Impl
             }
             catch (Exception e)
             {
-                Console.WriteLine($"Error : {e.Message}");
+                Log.Error(UIControls.Tag, $"Error on Update Overlayarea : {e.Message}");
             }
         }
 
-
-        public async Task<bool> Start()
+        async Task ApplySource()
         {
-            _cancelToStart = false;
-            if (!HasSource)
-                return false;
-
-            Console.WriteLine("Start1 State : {0}", _player.State);
-
-            if (_player.State == PlayerState.Idle)
+            if (_source == null)
             {
-                await Prepare();
+                return;
             }
-
-            Console.WriteLine("Start3 State : {0}", _player.State);
-
-            if (_cancelToStart)
-                return false;
-
-            try
-            {
-                _player.Start();
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine("Error on start {0}", e.Message);
-                return false;
-
-            }
-            PlaybackStarted?.Invoke(this, EventArgs.Empty);
-            return true;
+            IMediaSourceHandler handler = Registrar.Registered.GetHandlerForObject<IMediaSourceHandler>(_source);
+            await handler.SetSource(_player, _source);
         }
 
-        public void Stop()
+        async void OnTargetViewPropertyChanged(object sender, global::System.ComponentModel.PropertyChangedEventArgs e)
         {
-            Console.WriteLine("Stop");
-            _cancelToStart = true;
-            PlaybackStopped.Invoke(this, EventArgs.Empty);
-            var unusedTask = ChangeToIdleState();
+            if (e.PropertyName == "Renderer")
+            {
+                if (Platform.GetRenderer(sender as BindableObject) != null && HasSource && AutoPlay)
+                {
+                    await Start();
+                }
+                else if (Platform.GetRenderer(sender as BindableObject) == null && AutoStop)
+                {
+                    Stop();
+                }
+            }
+        }
+
+        void OnOverlayAreaUpdated(object sender, EventArgs e)
+        {
+            ApplyOverlayArea();
         }
 
         async Task Prepare()
@@ -317,31 +286,42 @@ namespace Tizen.TV.UIControls.Forms.Impl
             TaskPrepare = tcs.Task;
             await prevTask;
 
-            Console.WriteLine("Prepare1 : state : {0}", _player.State);
-
             if (_player.State == PlayerState.Ready)
                 return;
 
             ApplyDisplay();
             await ApplySource();
 
-            Console.WriteLine("Prepare2 : state : {0}", _player.State);
             try {
                 await _player.PrepareAsync();
                 UpdateStreamInfo?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception e)
             {
-                Console.WriteLine("Exception on prepare : {0}", e.Message);
+                Log.Error(UIControls.Tag, $"Error on prepare : {e.Message}");
             }
             tcs.SetResult(true);
         }
 
+        async void ApplyAspectMode()
+        {
+            if (_player.State == PlayerState.Preparing)
+            {
+                await TaskPrepare;
+            }
+            _player.DisplaySettings.Mode = AspectMode.ToMultimeida();
+        }
+
         void OnBufferingProgressChanged(object sender, BufferingProgressChangedEventArgs e)
         {
-            Console.WriteLine("Progress {0}%", e.Percent);
-            Console.WriteLine("Progress2 {0}%", e.Percent / 100.0);
             BufferingProgressUpdated?.Invoke(this, new BufferingProgressUpdatedEventArgs { Progress = e.Percent / 100.0 });
+        }
+
+        void OnPlaybackCompleted(object sender, EventArgs e)
+        {
+            PlaybackCompleted?.Invoke(this, EventArgs.Empty);
+            Pause();
+            var unused = Seek(0);
         }
 
         async Task ChangeToIdleState()

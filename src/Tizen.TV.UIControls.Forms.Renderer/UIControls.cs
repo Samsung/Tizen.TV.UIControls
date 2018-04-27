@@ -1,11 +1,12 @@
-﻿using ElmSharp;
-using System;
+﻿using System;
+using ElmSharp;
 using Xamarin.Forms.Internals;
 
 namespace Tizen.TV.UIControls.Forms.Impl
 {
     public static class UIControls
     {
+        public static readonly string Tag = "TV.UIControls";
         public static Func<Window> MainWindowProvider { get; set; }
 
         public static void PreInit()

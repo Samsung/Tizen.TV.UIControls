@@ -22,15 +22,17 @@
                IsVisible="{Binding Source={x:Reference Player}, Path=IsBuffering}"/>
         <StackLayout Padding="50" HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundColor="#20000000" AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
             <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=Duration, StringFormat='Duration {0}ms'}"/>
-            <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=BufferingProgress, StringFormat='{}{0:Buffering 0%}'}"/>
             <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=IsMuted, StringFormat='IsMuted {0}'}"/>
             <Switch HorizontalOptions="Center" IsToggled="{Binding Source={x:Reference Player}, Path=IsMuted, Mode=TwoWay}"/>
+            <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="Center">
+                <Label Text="Volume"/>
+                <Slider Value="{Binding Source={x:Reference Player}, Path=Volume}"/>
+            </StackLayout>
             <Slider HorizontalOptions="FillAndExpand" x:Name="Seekbar" ValueChanged="OnSeekChanged"/>
             <ProgressBar HorizontalOptions="FillAndExpand" Progress="{Binding Source={x:Reference Player}, Path=Position, Converter={StaticResource positionToProgress}, ConverterParameter={x:Reference Player}}}"/>
             <StackLayout Orientation="Horizontal">
                 <Button Text="{Binding Source={x:Reference Player}, Path=State, Converter={StaticResource stateToLabel}}" Clicked="OnClickPlay"/>
-                <Button Text="□" Clicked="OnClickStop"/>
-                
+                <Button Text="□" Clicked="OnClickStop"/>                
             </StackLayout>
         </StackLayout>
     </AbsoluteLayout>

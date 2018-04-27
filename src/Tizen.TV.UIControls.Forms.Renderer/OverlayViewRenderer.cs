@@ -17,7 +17,6 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 Control.Color = EColor.FromRgba(0, 0, 0, 0);
                 Control.SetLayoutCallback(OnLayout);
                 MakeTransparent();
-
             }
             base.OnElementChanged(e);
         }
@@ -47,9 +46,14 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void MakeTransparent()
         {
-            evas_object_render_op_set(Control.RealHandle, 2);
-            //var propertyInfo = Control.GetType().GetProperty("RenderOperation");
-            //propertyInfo?.SetValue(Control, 2);
+            try
+            {
+                evas_object_render_op_set(Control.RealHandle, 2);
+            }
+            catch (Exception e)
+            {
+                Log.Error(UIControls.Tag, $"Error MakeTransparent : {e.Message}");
+            }
         }
         [DllImport("libevas.so.1")]
         internal static extern void evas_object_render_op_set(IntPtr obj, int op);

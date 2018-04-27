@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Tizen.Multimedia;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
@@ -16,9 +15,9 @@ namespace Tizen.TV.UIControls.Forms.Impl
     {
         public Task<bool> SetSource(Player player, MediaSource source)
         {
-            Console.WriteLine("Set source by UriSourceHandler");
             if (source is UriMediaSource uriSource)
             {
+                Log.Info(UIControls.Tag, $"Set UriMediaSource {uriSource}");
                 var uri = uriSource.Uri;
                 player.SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
             }
@@ -30,12 +29,10 @@ namespace Tizen.TV.UIControls.Forms.Impl
     {
         public Task<bool> SetSource(Player player, MediaSource source)
         {
-            Console.WriteLine("Set source by FileMediaSourceHandler");
             if (source is FileMediaSource fileSource)
             {
-                Console.WriteLine("Set source by FileMediaSourceHandler2 : " + ResourcePath.GetPath(fileSource.File));
+                Log.Info(UIControls.Tag, $"Set FileMediaSource {fileSource}");
                 player.SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
-                Console.WriteLine("Set source by FileMediaSourceHandler2 end : " + ResourcePath.GetPath(fileSource.File));
             }
             return Task.FromResult<bool>(true);
         }

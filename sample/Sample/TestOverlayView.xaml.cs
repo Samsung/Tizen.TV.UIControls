@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Sample
@@ -15,7 +14,6 @@ namespace Sample
 
         void OnPanUpdate(object sender, PanUpdatedEventArgs e)
         {
-            Console.WriteLine("Update Panupdate");
             if (e.TotalY != 0 && e.TotalY != 0)
             {
                 AbsoluteLayout.SetLayoutBounds(VideoView, new Rectangle(_x + e.TotalX, _y + e.TotalY, 500, 300));

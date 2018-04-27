@@ -1,10 +1,8 @@
-﻿using System;
+﻿using ElmSharp;
 using Xamarin.Forms;
-using ElmSharp;
 using Xamarin.Forms.Platform.Tizen;
 
 using NPage = Xamarin.Forms.Platform.Tizen.Native.Page;
-using System.Runtime.InteropServices;
 
 namespace Tizen.TV.UIControls.Forms.Impl
 {
@@ -25,7 +23,6 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 Control.LayoutUpdated += OnLayoutUpdated;
                 Control.Children.Add(_overlaySurface);
                 NativeView.Color = ElmSharp.Color.FromRgba(0, 0, 0, 0);
-                MakeTransparent();
             }
         }
 
@@ -69,16 +66,5 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 _overlaySurface.PackEnd(layout);
             }
         }
-
-
-        void MakeTransparent()
-        {
-            evas_object_render_op_set(Control.RealHandle, 2);
-            //var propertyInfo = Control.GetType().GetProperty("RenderOperation");
-            //propertyInfo?.SetValue(Control, 2);
-        }
-        [DllImport("libevas.so.1")]
-        internal static extern void evas_object_render_op_set(IntPtr obj, int op);
-
     }
 }

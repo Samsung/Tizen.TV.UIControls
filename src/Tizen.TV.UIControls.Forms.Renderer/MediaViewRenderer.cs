@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms.Platform.Tizen;
+﻿using Xamarin.Forms.Platform.Tizen;
 using MMView = Tizen.Multimedia.MediaView;
 namespace Tizen.TV.UIControls.Forms.Impl
 {

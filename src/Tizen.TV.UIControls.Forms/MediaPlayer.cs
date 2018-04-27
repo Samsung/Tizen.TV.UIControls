@@ -7,24 +7,24 @@ namespace Tizen.TV.UIControls.Forms
 {
     public class MediaPlayer : Element
     {
-        public static readonly BindableProperty SourceProperty = BindableProperty.Create("Source", typeof(MediaSource), typeof(MediaPlayer), default(MediaSource), propertyChanging: OnSourceChanging, propertyChanged: OnSourceChanged);
-        public static readonly BindableProperty VideoOutputProperty = BindableProperty.Create("VideoOutput", typeof(IVideoOutput), typeof(MediaPlayer), null, propertyChanging: null, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnVideoOutputChanged());
-        public static readonly BindableProperty UsesEmbeddingControlsProperty = BindableProperty.Create("UsesEmbeddingControls", typeof(bool), typeof(MediaPlayer), true);
-        public static readonly BindableProperty VolumeProperty = BindableProperty.Create("Volume", typeof(double), typeof(MediaPlayer), 1d, coerceValue: (bindable, value) => ((double)value).Clamp(0, 1), propertyChanged: (b, o, n)=> ((MediaPlayer)b).OnVolumeChanged());
-        public static readonly BindableProperty IsMutedProperty = BindableProperty.Create("IsMuted", typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateIsMuted());
+        public static readonly BindableProperty SourceProperty = BindableProperty.Create(nameof(Source), typeof(MediaSource), typeof(MediaPlayer), default(MediaSource), propertyChanging: OnSourceChanging, propertyChanged: OnSourceChanged);
+        public static readonly BindableProperty VideoOutputProperty = BindableProperty.Create(nameof(VideoOutput), typeof(IVideoOutput), typeof(MediaPlayer), null, propertyChanging: null, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnVideoOutputChanged());
+        public static readonly BindableProperty UsesEmbeddingControlsProperty = BindableProperty.Create(nameof(UsesEmbeddingControls), typeof(bool), typeof(MediaPlayer), true);
+        public static readonly BindableProperty VolumeProperty = BindableProperty.Create(nameof(Volume), typeof(double), typeof(MediaPlayer), 1d, coerceValue: (bindable, value) => ((double)value).Clamp(0, 1), propertyChanged: (b, o, n)=> ((MediaPlayer)b).OnVolumeChanged());
+        public static readonly BindableProperty IsMutedProperty = BindableProperty.Create(nameof(IsMuted), typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateIsMuted());
         public static readonly BindableProperty AspectModeProperty = BindableProperty.Create(nameof(AspectMode), typeof(DisplayAspectMode), typeof(MediaPlayer), DisplayAspectMode.AspectFit, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnAspectModeChanged());
-        public static readonly BindableProperty AutoPlayProperty = BindableProperty.Create("AutoPlay", typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateAutoPlay());
-        public static readonly BindableProperty AutoStopProperty = BindableProperty.Create("AutoStop", typeof(bool), typeof(MediaPlayer), true, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateAutoStop());
-        static readonly BindablePropertyKey DurationPropertyKey = BindableProperty.CreateReadOnly("Duration", typeof(int), typeof(MediaPlayer), 0);
+        public static readonly BindableProperty AutoPlayProperty = BindableProperty.Create(nameof(AutoPlay), typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateAutoPlay());
+        public static readonly BindableProperty AutoStopProperty = BindableProperty.Create(nameof(AutoStop), typeof(bool), typeof(MediaPlayer), true, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateAutoStop());
+        static readonly BindablePropertyKey DurationPropertyKey = BindableProperty.CreateReadOnly(nameof(Duration), typeof(int), typeof(MediaPlayer), 0);
         public static readonly BindableProperty DurationProperty = DurationPropertyKey.BindableProperty;
-        static readonly BindablePropertyKey BufferingProgressPropertyKey = BindableProperty.CreateReadOnly("BufferingProgress", typeof(double), typeof(MediaPlayer), 0d);
+        static readonly BindablePropertyKey BufferingProgressPropertyKey = BindableProperty.CreateReadOnly(nameof(BufferingProgress), typeof(double), typeof(MediaPlayer), 0d);
         public static readonly BindableProperty BufferingProgressProperty = BufferingProgressPropertyKey.BindableProperty;
-        static readonly BindablePropertyKey PositionPropertyKey = BindableProperty.CreateReadOnly("Position", typeof(int), typeof(MediaPlayer), 0);
+        static readonly BindablePropertyKey PositionPropertyKey = BindableProperty.CreateReadOnly(nameof(Position), typeof(int), typeof(MediaPlayer), 0);
         public static readonly BindableProperty PositionProperty = PositionPropertyKey.BindableProperty;
-        static readonly BindablePropertyKey StatePropertyKey = BindableProperty.CreateReadOnly("State", typeof(PlaybackState), typeof(MediaPlayer), PlaybackState.Stopped, propertyChanged: (b, o, n)=> { Console.WriteLine($"State :{n}"); });
+        static readonly BindablePropertyKey StatePropertyKey = BindableProperty.CreateReadOnly(nameof(State), typeof(PlaybackState), typeof(MediaPlayer), PlaybackState.Stopped);
         public static readonly BindableProperty StateProperty = StatePropertyKey.BindableProperty;
-        public static readonly BindableProperty PositionUpdateIntervalProperty = BindableProperty.Create("PositionUpdateInterval", typeof(int), typeof(MediaPlayer), 500);
-        static readonly BindablePropertyKey IsBufferingPropertyKey = BindableProperty.CreateReadOnly("IsBuffering", typeof(bool), typeof(MediaPlayer), false);
+        public static readonly BindableProperty PositionUpdateIntervalProperty = BindableProperty.Create(nameof(PositionUpdateInterval), typeof(int), typeof(MediaPlayer), 500);
+        static readonly BindablePropertyKey IsBufferingPropertyKey = BindableProperty.CreateReadOnly(nameof(IsBuffering), typeof(bool), typeof(MediaPlayer), false);
         public static readonly BindableProperty IsBufferingProperty = IsBufferingPropertyKey.BindableProperty;
 
 
@@ -182,7 +182,6 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-
         public event EventHandler PlaybackCompleted;
         public event EventHandler PlaybackStarted;
         public event EventHandler PlaybackPaused;
@@ -245,8 +244,8 @@ namespace Tizen.TV.UIControls.Forms
 
         void SendPlaybackPaused(object sender, EventArgs e)
         {
-            State = PlaybackState.Paused;
             _isPlaying = false;
+            State = PlaybackState.Paused;
             PlaybackPaused?.Invoke(this, EventArgs.Empty);
         }
 
@@ -311,7 +310,6 @@ namespace Tizen.TV.UIControls.Forms
             }
             BufferingProgress = e.Progress;
         }
-
 
         static void OnSourceChanging(BindableObject bindable, object oldValue, object newValue)
         {

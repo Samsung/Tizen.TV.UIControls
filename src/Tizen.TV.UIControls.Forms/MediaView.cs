@@ -1,9 +1,7 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
-
     [ContentProperty("Player")]
     public class MediaView : View, IVideoOutput
     {
