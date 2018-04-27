@@ -1,7 +1,7 @@
 # Tizen TV UIControls
-
 ## Quick start
-### Use in Xaml
+### MediaPlayer
+#### Use in Xaml
 ``` xaml 
 <tvcontrols:MediaView 
   xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms">
@@ -10,8 +10,7 @@
         AutoStart="true"/>
 </tvcontrols:MediaView>
 ```
-
-### Use by code
+#### Use by code
 ```C#
 var view = new MediaView();
 var player = new MediaPlayer();
