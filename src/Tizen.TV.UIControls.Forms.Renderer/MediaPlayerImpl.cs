@@ -65,9 +65,12 @@ namespace Tizen.TV.UIControls.Forms.Impl
             set => _taskPrepare = value;
         }
 
-        private void OnPlaybackCompleted(object sender, EventArgs e)
+        void OnPlaybackCompleted(object sender, EventArgs e)
         {
+            Console.WriteLine("OnPlaybackCompleted state : {0}", _player.State);
             PlaybackCompleted?.Invoke(this, EventArgs.Empty);
+            Pause();
+            var unused = Seek(0);
         }
 
         public bool UsesEmbeddingControls
@@ -132,17 +135,30 @@ namespace Tizen.TV.UIControls.Forms.Impl
         public event EventHandler PlaybackCompleted;
         public event EventHandler PlaybackStarted;
         public event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
+        public event EventHandler PlaybackStopped;
+        public event EventHandler PlaybackPaused;
 
         public void Pause()
         {
-            _player.Pause();
+            try
+            {
+                _player.Pause();
+                PlaybackPaused.Invoke(this, EventArgs.Empty);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error on Pause {0}", e.Message);
+            }
+            
         }
 
         public async Task<int> Seek(int ms)
         {
             try
             {
+                Console.WriteLine("before Seek state : {0}", _player.State);
                 await _player.SetPlayPositionAsync(ms, false);
+                Console.WriteLine("after Seek state : {0}", _player.State);
             }
             catch (Exception e)
             {
@@ -214,7 +230,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 {
                     await Start();
                 }
-                else if (Platform.GetRenderer(sender as BindableObject) == null && AutoStop && _player.State == PlayerState.Playing)
+                else if (Platform.GetRenderer(sender as BindableObject) == null && AutoStop)
                 {
                     Stop();
                 }
@@ -262,7 +278,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
             Console.WriteLine("Start1 State : {0}", _player.State);
 
-            if (_player.State != PlayerState.Ready)
+            if (_player.State == PlayerState.Idle)
             {
                 await Prepare();
             }
@@ -282,10 +298,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 return false;
 
             }
-
-            UpdateStreamInfo?.Invoke(this, EventArgs.Empty);
             PlaybackStarted?.Invoke(this, EventArgs.Empty);
-
             return true;
         }
 
@@ -293,6 +306,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             Console.WriteLine("Stop");
             _cancelToStart = true;
+            PlaybackStopped.Invoke(this, EventArgs.Empty);
             var unusedTask = ChangeToIdleState();
         }
 
@@ -314,6 +328,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
             Console.WriteLine("Prepare2 : state : {0}", _player.State);
             try {
                 await _player.PrepareAsync();
+                UpdateStreamInfo?.Invoke(this, EventArgs.Empty);
             }
             catch (Exception e)
             {

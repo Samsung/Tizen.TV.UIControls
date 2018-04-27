@@ -31,6 +31,8 @@ namespace Tizen.TV.UIControls.Forms
 
         event EventHandler PlaybackCompleted;
         event EventHandler PlaybackStarted;
+        event EventHandler PlaybackPaused;
+        event EventHandler PlaybackStopped;
         event EventHandler UpdateStreamInfo;
         event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
 

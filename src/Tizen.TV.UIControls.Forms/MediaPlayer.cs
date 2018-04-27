@@ -21,6 +21,11 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindableProperty BufferingProgressProperty = BufferingProgressPropertyKey.BindableProperty;
         static readonly BindablePropertyKey PositionPropertyKey = BindableProperty.CreateReadOnly("Position", typeof(int), typeof(MediaPlayer), 0);
         public static readonly BindableProperty PositionProperty = PositionPropertyKey.BindableProperty;
+        static readonly BindablePropertyKey StatePropertyKey = BindableProperty.CreateReadOnly("State", typeof(PlaybackState), typeof(MediaPlayer), PlaybackState.Stopped, propertyChanged: (b, o, n)=> { Console.WriteLine($"State :{n}"); });
+        public static readonly BindableProperty StateProperty = StatePropertyKey.BindableProperty;
+        public static readonly BindableProperty PositionUpdateIntervalProperty = BindableProperty.Create("PositionUpdateInterval", typeof(int), typeof(MediaPlayer), 500);
+        static readonly BindablePropertyKey IsBufferingPropertyKey = BindableProperty.CreateReadOnly("IsBuffering", typeof(bool), typeof(MediaPlayer), false);
+        public static readonly BindableProperty IsBufferingProperty = IsBufferingPropertyKey.BindableProperty;
 
 
         IMediaPlayer _impl;
@@ -33,6 +38,8 @@ namespace Tizen.TV.UIControls.Forms
             _impl.UpdateStreamInfo += OnUpdateStreamInfo;
             _impl.PlaybackCompleted += SendPlaybackCompleted;
             _impl.PlaybackStarted += SendPlaybackStarted;
+            _impl.PlaybackPaused += SendPlaybackPaused;
+            _impl.PlaybackStopped += SendPlaybackStopped;
             _impl.BufferingProgressUpdated += OnUpdateBufferingProgress;
             _impl.UsesEmbeddingControls = true;
             _impl.Volume = 1d;
@@ -41,48 +48,10 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AutoStop = true;
         }
 
-        [TypeConverter(typeof(ImageSourceConverter))]
-        public MediaSource Source
-        {
-            get { return (MediaSource)GetValue(SourceProperty); }
-            set { SetValue(SourceProperty, value); }
-        }
-
         public DisplayAspectMode AspectMode
         {
             get { return (DisplayAspectMode)GetValue(AspectModeProperty); }
             set { SetValue(AspectModeProperty, value); }
-        }
-
-        public IVideoOutput VideoOutput
-        {
-            get { return (IVideoOutput)GetValue(VideoOutputProperty); }
-            set { SetValue(VideoOutputProperty, value); }
-        }
-
-        public double Volume
-        {
-            get { return (double)GetValue(VolumeProperty); }
-            set { SetValue(VolumeProperty, value); }
-        }
-
-        public bool IsMuted
-        {
-            get { return (bool)GetValue(IsMutedProperty); }
-            set { SetValue(IsMutedProperty, value); }
-        }
-
-        public bool UsesEmbeddingControls
-        {
-            get
-            {
-                return (bool)GetValue(UsesEmbeddingControlsProperty);
-            }
-            set
-            {
-                SetValue(UsesEmbeddingControlsProperty, value);
-                _impl.UsesEmbeddingControls = value;
-            }
         }
 
         public bool AutoPlay
@@ -109,6 +78,18 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        public double BufferingProgress
+        {
+            get
+            {
+                return (double)GetValue(BufferingProgressProperty);
+            }
+            private set
+            {
+                SetValue(BufferingProgressPropertyKey, value);
+            }
+        }
+
         public int Duration
         {
             get
@@ -121,15 +102,47 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-        public double BufferingProgress
+        [TypeConverter(typeof(ImageSourceConverter))]
+        public MediaSource Source
+        {
+            get { return (MediaSource)GetValue(SourceProperty); }
+            set { SetValue(SourceProperty, value); }
+        }
+
+        public IVideoOutput VideoOutput
+        {
+            get { return (IVideoOutput)GetValue(VideoOutputProperty); }
+            set { SetValue(VideoOutputProperty, value); }
+        }
+
+        public double Volume
+        {
+            get { return (double)GetValue(VolumeProperty); }
+            set { SetValue(VolumeProperty, value); }
+        }
+
+        public bool IsMuted
+        {
+            get { return (bool)GetValue(IsMutedProperty); }
+            set { SetValue(IsMutedProperty, value); }
+        }
+
+        public int PositionUpdateInterval
+        {
+            get { return (int)GetValue(PositionUpdateIntervalProperty); }
+            set { SetValue(PositionUpdateIntervalProperty, value); }
+        }
+
+        public bool UsesEmbeddingControls
         {
             get
             {
-                return (double)GetValue(BufferingProgressProperty);
+                return (bool)GetValue(UsesEmbeddingControlsProperty);
             }
-            private set
+            set
             {
-                SetValue(BufferingProgressPropertyKey, value);
+                SetValue(UsesEmbeddingControlsProperty, value);
+                _impl.UsesEmbeddingControls = value;
             }
         }
 
@@ -145,8 +158,37 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        public PlaybackState State
+        {
+            get
+            {
+                return (PlaybackState)GetValue(StateProperty);
+            }
+            private set
+            {
+                SetValue(StatePropertyKey, value);
+            }
+        }
+
+        public bool IsBuffering
+        {
+            get
+            {
+                return (bool)GetValue(IsBufferingProperty);
+            }
+            private set
+            {
+                SetValue(IsBufferingPropertyKey, value);
+            }
+        }
+
+
         public event EventHandler PlaybackCompleted;
         public event EventHandler PlaybackStarted;
+        public event EventHandler PlaybackPaused;
+        public event EventHandler PlaybackStopped;
+        public event EventHandler BufferingStarted;
+        public event EventHandler BufferingCompleted;
 
         public void Pause()
         {
@@ -190,23 +232,38 @@ namespace Tizen.TV.UIControls.Forms
 
         void SendPlaybackCompleted(object sender, EventArgs e)
         {
-            _isPlaying = false;
             PlaybackCompleted?.Invoke(this, EventArgs.Empty);
         }
 
         void SendPlaybackStarted(object sender, EventArgs e)
         {
             _isPlaying = true;
+            State = PlaybackState.Playing;
             StartPostionPollingTimer();
             PlaybackStarted?.Invoke(this, EventArgs.Empty);
         }
 
+        void SendPlaybackPaused(object sender, EventArgs e)
+        {
+            State = PlaybackState.Paused;
+            _isPlaying = false;
+            PlaybackPaused?.Invoke(this, EventArgs.Empty);
+        }
+
+
+        void SendPlaybackStopped(object sender, EventArgs e)
+        {
+            _isPlaying = false;
+            State = PlaybackState.Stopped;
+            PlaybackStopped?.Invoke(this, EventArgs.Empty);
+        }
+
+
         void StartPostionPollingTimer()
         {
-            Device.StartTimer(TimeSpan.FromMilliseconds(1000), () =>
+            Device.StartTimer(TimeSpan.FromMilliseconds(PositionUpdateInterval), () =>
             {
                 Position = _impl.Position;
-                Console.WriteLine("Position was updated!!! {0}", Position);
                 return _isPlaying;
             });
         }
@@ -242,6 +299,16 @@ namespace Tizen.TV.UIControls.Forms
 
         void OnUpdateBufferingProgress(object sender, BufferingProgressUpdatedEventArgs e)
         {
+            if (!IsBuffering && e.Progress >= 0)
+            {
+                IsBuffering = true;
+                BufferingStarted?.Invoke(this, EventArgs.Empty);
+            }
+            else if (IsBuffering && e.Progress == 1.0)
+            {
+                IsBuffering = false;
+                BufferingCompleted?.Invoke(this, EventArgs.Empty);
+            }
             BufferingProgress = e.Progress;
         }
 

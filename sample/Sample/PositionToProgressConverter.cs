@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Text;
 
 using Xamarin.Forms;
+using Tizen.TV.UIControls.Forms;
 
 namespace Sample
 {
@@ -27,4 +28,30 @@ namespace Sample
             return duration;
         }
     }
+
+    public class StateToButtonTextConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            PlaybackState state = (PlaybackState)value;
+            if (state == PlaybackState.Playing)
+            {
+                return "||";
+            }
+            else
+            {
+                return "▷";
+            }
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            string strValue = (string)value;
+            if (strValue == "||")
+                return PlaybackState.Playing;
+            else
+                return PlaybackState.Stopped;
+        }
+    }
+
 }
