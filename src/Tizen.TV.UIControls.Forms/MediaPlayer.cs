@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -32,6 +33,7 @@ namespace Tizen.TV.UIControls.Forms
         bool _isPlaying;
         View _controls;
         bool _controlsAlwaysVisible;
+        CancellationTokenSource _hideTimerCTS = new CancellationTokenSource();
 
 
         public MediaPlayer()
@@ -404,11 +406,20 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (_controls != null)
             {
-                await Task.Delay(after);
-                if (!_controlsAlwaysVisible)
+                _hideTimerCTS?.Cancel();
+                _hideTimerCTS = new CancellationTokenSource();
+                try
                 {
-                    await _controls.FadeTo(0, 200);
-                    _controls.IsVisible = false;
+                    await Task.Delay(after, _hideTimerCTS.Token);
+
+                    if (!_controlsAlwaysVisible)
+                    {
+                        await _controls.FadeTo(0, 200);
+                        _controls.IsVisible = false;
+                    }
+                }
+                catch (Exception)
+                {
                 }
             }
         }

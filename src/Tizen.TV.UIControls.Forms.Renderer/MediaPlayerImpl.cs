@@ -200,7 +200,6 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void ApplyDisplay()
         {
-            Console.WriteLine("ApplyDisplay 1");
             if (VideoOutput == null)
             {
                 _player.Display = null;
