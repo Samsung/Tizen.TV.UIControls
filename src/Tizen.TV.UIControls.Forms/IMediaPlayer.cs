@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace Tizen.TV.UIControls.Forms
@@ -44,5 +45,6 @@ namespace Tizen.TV.UIControls.Forms
         void Stop();
         void Pause();
         Task<int> Seek(int ms);
+        Task<Stream> GetAlbumArts();
     }
 }

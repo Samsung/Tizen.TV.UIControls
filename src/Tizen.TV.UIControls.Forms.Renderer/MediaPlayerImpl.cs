@@ -6,6 +6,7 @@ using Xamarin.Forms.Platform.Tizen;
 using Tizen.Multimedia;
 using Xamarin.Forms.Internals;
 using MMView = Tizen.Multimedia.MediaView;
+using System.IO;
 
 namespace Tizen.TV.UIControls.Forms.Impl
 {
@@ -17,6 +18,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
         bool _cancelToStart = false;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare = null;
+        TaskCompletionSource<bool> _tcsForStreamInfo;
         IVideoOutput _videoOutput;
         MediaSource _source;
 
@@ -198,6 +200,24 @@ namespace Tizen.TV.UIControls.Forms.Impl
             _source = source;
         }
 
+        public async Task<Stream> GetAlbumArts()
+        {
+            if (_player.State == PlayerState.Idle)
+            {
+                if (_tcsForStreamInfo == null || _tcsForStreamInfo.Task.IsCompleted)
+                {
+                    _tcsForStreamInfo = new TaskCompletionSource<bool>();
+                }
+                await _tcsForStreamInfo.Task;
+            }
+            await TaskPrepare;
+
+            var imageData = _player.StreamInfo.GetAlbumArt();
+            if (imageData == null)
+                return null;
+            return new MemoryStream(imageData);
+        }
+
         void ApplyDisplay()
         {
             if (VideoOutput == null)
@@ -306,6 +326,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
             try {
                 await _player.PrepareAsync();
                 UpdateStreamInfo?.Invoke(this, EventArgs.Empty);
+                _tcsForStreamInfo?.TrySetResult(true);
             }
             catch (Exception e)
             {

@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using System.ComponentModel;
+using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -31,10 +32,9 @@ namespace Tizen.TV.UIControls.Forms
 
         IMediaPlayer _impl;
         bool _isPlaying;
-        View _controls;
         bool _controlsAlwaysVisible;
         CancellationTokenSource _hideTimerCTS = new CancellationTokenSource();
-
+        Lazy<View> _controls;
 
         public MediaPlayer()
         {
@@ -51,13 +51,14 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AutoPlay = false;
             _impl.AutoStop = true;
 
-            _controls = new EmbeddingControls
-            {
-                Opacity = 0d,
-                IsVisible = false
-            };
             _controlsAlwaysVisible = false;
-            _controls.BindingContext = this;
+            _controls = new Lazy<View>(() =>
+            {
+                return new EmbeddingControls()
+                {
+                    BindingContext = this
+                };
+            });
         }
 
         public DisplayAspectMode AspectMode
@@ -263,6 +264,11 @@ namespace Tizen.TV.UIControls.Forms
             _impl.Stop();
         }
 
+        public Task<Stream> GetAlbumArts()
+        {
+            return _impl.GetAlbumArts();
+        }
+
         void UpdateAutoPlay()
         {
             _impl.AutoPlay = AutoPlay;
@@ -345,24 +351,18 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (UsesEmbeddingControls)
             {
-                VideoOutput.Controller = _controls;
+                VideoOutput.Controller = _controls.Value;
             }
             _impl.SetDisplay(VideoOutput);
         }
 
         async void OnUsesEmbeddingControlsChanged()
         {
-            System.Console.WriteLine($"OnUsesEmbeddingControlsChanged : {UsesEmbeddingControls}");
             if (UsesEmbeddingControls)
             {
-                if (_controls == null)
-                {
-                    _controls = new EmbeddingControls();
-                    _controls.BindingContext = this;
-                }
                 if (VideoOutput != null)
                 {
-                    VideoOutput.Controller = _controls;
+                    VideoOutput.Controller = _controls.Value;
                     ShowController();
                 }
             }
@@ -404,32 +404,32 @@ namespace Tizen.TV.UIControls.Forms
 
         async void HideController(int after)
         {
-            if (_controls != null)
-            {
-                _hideTimerCTS?.Cancel();
-                _hideTimerCTS = new CancellationTokenSource();
-                try
-                {
-                    await Task.Delay(after, _hideTimerCTS.Token);
+            if (!_controls.IsValueCreated)
+                return;
 
-                    if (!_controlsAlwaysVisible)
-                    {
-                        await _controls.FadeTo(0, 200);
-                        _controls.IsVisible = false;
-                    }
-                }
-                catch (Exception)
+            _hideTimerCTS?.Cancel();
+            _hideTimerCTS = new CancellationTokenSource();
+            try
+            {
+                await Task.Delay(after, _hideTimerCTS.Token);
+
+                if (!_controlsAlwaysVisible)
                 {
+                    await _controls.Value.FadeTo(0, 200);
+                    _controls.Value.IsVisible = false;
                 }
+            }
+            catch (Exception)
+            {
             }
         }
         
         void ShowController()
         {
-            if (_controls != null)
+            if (_controls.IsValueCreated)
             {
-                _controls.IsVisible = true;
-                _controls.FadeTo(1.0, 200);
+                _controls.Value.IsVisible = true;
+                _controls.Value.FadeTo(1.0, 200);
                 HideController(5000);
             }
         }
