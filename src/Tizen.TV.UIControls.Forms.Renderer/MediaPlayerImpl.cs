@@ -200,6 +200,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void ApplyDisplay()
         {
+            Console.WriteLine("ApplyDisplay 1");
             if (VideoOutput == null)
             {
                 _player.Display = null;
@@ -207,9 +208,9 @@ namespace Tizen.TV.UIControls.Forms.Impl
             else if (!IsOverlayMode)
             {
                 var renderer = Platform.GetRenderer(TargetView);
-                if (renderer?.NativeView is MMView mediaView)
+                if (renderer is IMediaViewProvider provider)
                 {
-                    Display display = new Display(mediaView);
+                    Display display = new Display(provider.GetMediaView());
                     _player.Display = display;
                     _player.DisplaySettings.Mode = _aspectMode.ToMultimeida();
                 }
@@ -240,7 +241,18 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 {
                     _player.DisplaySettings.Mode = PlayerDisplayMode.Roi;
                     var bound = OverlayOutput.OverlayArea.ToPixel();
-                    _player.DisplaySettings.SetRoi(OverlayOutput.OverlayArea.ToPixel().ToMultimedia());
+                    var renderer = Platform.GetRenderer(TargetView);
+                    if (renderer is OverlayViewRenderer)
+                    {
+                        var parentArea = renderer.NativeView.Geometry;
+                        if (parentArea.Width == 0 || parentArea.Height == 0)
+                        {
+                            await Task.Delay(1);
+                            parentArea = renderer.NativeView.Geometry;
+                        }
+                        bound = parentArea;
+                    }
+                    _player.DisplaySettings.SetRoi(bound.ToMultimedia());
                 }
             }
             catch (Exception e)

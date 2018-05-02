@@ -12,6 +12,7 @@ namespace Tizen.TV.UIControls.Forms
     public interface IVideoOutput
     {
         VisualElement MediaView { get; }
+        View Controller { get; set; }
         VideoOuputType OuputType { get; }
     }
 

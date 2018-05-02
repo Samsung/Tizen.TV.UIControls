@@ -3,52 +3,39 @@ using Xamarin.Forms.Platform.Tizen;
 using ElmSharp;
 using EColor = ElmSharp.Color;
 using System.Runtime.InteropServices;
+using Xamarin.Forms.Platform.Tizen.Native;
 
 namespace Tizen.TV.UIControls.Forms.Impl
 {
-    class OverlayViewRenderer : ViewRenderer<OverlayMediaView, Box>
+    class OverlayViewRenderer : ViewRenderer<OverlayMediaView, Canvas>
     {
-        EvasObject _embeddingControls;
+        EvasObject _overlayHolder;
         protected override void OnElementChanged(ElementChangedEventArgs<OverlayMediaView> e)
         {
             if (Control == null)
             {
-                SetNativeControl(new Box(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
-                Control.Color = EColor.FromRgba(0, 0, 0, 0);
+                SetNativeControl(new Canvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
                 Control.SetLayoutCallback(OnLayout);
+                _overlayHolder = new Rectangle(Xamarin.Forms.Platform.Tizen.Forms.NativeParent)
+                {
+                    Color = EColor.Transparent
+                };
+                Control.PackEnd(_overlayHolder);
                 MakeTransparent();
             }
             base.OnElementChanged(e);
         }
 
-        public void SetEmbeddingControls(EvasObject layout)
-        {
-            if (_embeddingControls != null)
-            {
-                Control.UnPack(_embeddingControls);
-            }
-
-            _embeddingControls = layout;
-
-            if (layout != null)
-            {
-                Control.PackEnd(layout);
-            }
-        }
-
         void OnLayout()
         {
-            if (_embeddingControls != null)
-            {
-                _embeddingControls.Geometry = Control.Geometry;
-            }
+            _overlayHolder.Geometry = Control.Geometry;
         }
 
         void MakeTransparent()
         {
             try
             {
-                evas_object_render_op_set(Control.RealHandle, 2);
+                evas_object_render_op_set(_overlayHolder.RealHandle, 2);
             }
             catch (Exception e)
             {

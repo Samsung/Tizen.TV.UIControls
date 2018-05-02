@@ -9,6 +9,8 @@ namespace Sample
         {
             TestList = new List<TestModel>
             {
+                new TestModel("Embedding control test", typeof(TestEmbeddingControl), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/d.mp4"))),
+                new TestModel("Embedding control Page test", typeof(TestEmbeddingControl2), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/a.mp4"))),
                 new TestModel("Simple Player test", typeof(SimplePlayerPage), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/d.mp4"))),
                 new TestModel("Simple Player test2", typeof(SimplePlayerPage), MediaSource.FromUri(new System.Uri("http://www.html5videoplayer.net/videos/madagascar3.mp4"))),
                 new TestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("c.mp4")),

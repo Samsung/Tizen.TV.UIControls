@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -9,7 +10,7 @@ namespace Tizen.TV.UIControls.Forms
     {
         public static readonly BindableProperty SourceProperty = BindableProperty.Create(nameof(Source), typeof(MediaSource), typeof(MediaPlayer), default(MediaSource), propertyChanging: OnSourceChanging, propertyChanged: OnSourceChanged);
         public static readonly BindableProperty VideoOutputProperty = BindableProperty.Create(nameof(VideoOutput), typeof(IVideoOutput), typeof(MediaPlayer), null, propertyChanging: null, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnVideoOutputChanged());
-        public static readonly BindableProperty UsesEmbeddingControlsProperty = BindableProperty.Create(nameof(UsesEmbeddingControls), typeof(bool), typeof(MediaPlayer), true);
+        public static readonly BindableProperty UsesEmbeddingControlsProperty = BindableProperty.Create(nameof(UsesEmbeddingControls), typeof(bool), typeof(MediaPlayer), true, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnUsesEmbeddingControlsChanged());
         public static readonly BindableProperty VolumeProperty = BindableProperty.Create(nameof(Volume), typeof(double), typeof(MediaPlayer), 1d, coerceValue: (bindable, value) => ((double)value).Clamp(0, 1), propertyChanged: (b, o, n)=> ((MediaPlayer)b).OnVolumeChanged());
         public static readonly BindableProperty IsMutedProperty = BindableProperty.Create(nameof(IsMuted), typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateIsMuted());
         public static readonly BindableProperty AspectModeProperty = BindableProperty.Create(nameof(AspectMode), typeof(DisplayAspectMode), typeof(MediaPlayer), DisplayAspectMode.AspectFit, propertyChanged: (b, o, n) => ((MediaPlayer)b).OnAspectModeChanged());
@@ -27,9 +28,10 @@ namespace Tizen.TV.UIControls.Forms
         static readonly BindablePropertyKey IsBufferingPropertyKey = BindableProperty.CreateReadOnly(nameof(IsBuffering), typeof(bool), typeof(MediaPlayer), false);
         public static readonly BindableProperty IsBufferingProperty = IsBufferingPropertyKey.BindableProperty;
 
-
         IMediaPlayer _impl;
         bool _isPlaying;
+        View _controls;
+        bool _controlsAlwaysVisible;
 
 
         public MediaPlayer()
@@ -46,6 +48,11 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AspectMode = DisplayAspectMode.AspectFit;
             _impl.AutoPlay = false;
             _impl.AutoStop = true;
+
+            _controls = new EmbeddingControls();
+            _controls.Opacity = 0d;
+            _controlsAlwaysVisible = false;
+            _controls.BindingContext = this;
         }
 
         public DisplayAspectMode AspectMode
@@ -102,7 +109,7 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-        [TypeConverter(typeof(ImageSourceConverter))]
+        [Xamarin.Forms.TypeConverter(typeof(ImageSourceConverter))]
         public MediaSource Source
         {
             get { return (MediaSource)GetValue(SourceProperty); }
@@ -150,11 +157,12 @@ namespace Tizen.TV.UIControls.Forms
         {
             get
             {
-                return Position = _impl.Position;
+                return _impl.Position;
             }
             private set
             {
                 SetValue(PositionPropertyKey, value);
+                OnPropertyChanged(nameof(Progress));
             }
         }
 
@@ -182,6 +190,46 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public double Progress
+        {
+            get
+            {
+                return Position / (double)Math.Max(Position, Duration);
+            }
+        }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public Command StartCommand => new Command(() =>
+        {
+            if (State == PlaybackState.Playing)
+            {
+                Pause();
+            }
+            else
+            {
+                Start();
+            }
+        });
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public Command FastForwardCommand => new Command(() =>
+        {
+            if (State == PlaybackState.Playing)
+            {
+                Seek(Math.Min(Position + 10000, Duration));
+            }
+        });
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        public Command RewindCommand => new Command(() =>
+        {
+            if (State == PlaybackState.Playing)
+            {
+                Seek(Math.Max(Position - 10000, 0));
+            }
+        });
+
         public event EventHandler PlaybackCompleted;
         public event EventHandler PlaybackStarted;
         public event EventHandler PlaybackPaused;
@@ -196,6 +244,7 @@ namespace Tizen.TV.UIControls.Forms
 
         public Task<int> Seek(int ms)
         {
+            ShowController();
             return _impl.Seek(ms);
         }
 
@@ -240,6 +289,8 @@ namespace Tizen.TV.UIControls.Forms
             State = PlaybackState.Playing;
             StartPostionPollingTimer();
             PlaybackStarted?.Invoke(this, EventArgs.Empty);
+            _controlsAlwaysVisible = false;
+            ShowController();
         }
 
         void SendPlaybackPaused(object sender, EventArgs e)
@@ -247,6 +298,8 @@ namespace Tizen.TV.UIControls.Forms
             _isPlaying = false;
             State = PlaybackState.Paused;
             PlaybackPaused?.Invoke(this, EventArgs.Empty);
+            _controlsAlwaysVisible = true;
+            ShowController();
         }
 
 
@@ -255,6 +308,8 @@ namespace Tizen.TV.UIControls.Forms
             _isPlaying = false;
             State = PlaybackState.Stopped;
             PlaybackStopped?.Invoke(this, EventArgs.Empty);
+            _controlsAlwaysVisible = true;
+            ShowController();
         }
 
 
@@ -283,7 +338,38 @@ namespace Tizen.TV.UIControls.Forms
 
         void OnVideoOutputChanged()
         {
+            if (UsesEmbeddingControls)
+            {
+                VideoOutput.Controller = _controls;
+            }
             _impl.SetDisplay(VideoOutput);
+        }
+
+        async void OnUsesEmbeddingControlsChanged()
+        {
+            System.Console.WriteLine($"OnUsesEmbeddingControlsChanged : {UsesEmbeddingControls}");
+            if (UsesEmbeddingControls)
+            {
+                if (_controls == null)
+                {
+                    _controls = new EmbeddingControls();
+                    _controls.BindingContext = this;
+                }
+                if (VideoOutput != null)
+                {
+                    VideoOutput.Controller = _controls;
+                    ShowController();
+                }
+            }
+            else
+            {
+                if (VideoOutput != null)
+                {
+                    HideController(0);
+                    await Task.Delay(200);
+                    VideoOutput.Controller = null;
+                }
+            }
         }
 
         void OnVolumeChanged()
@@ -310,6 +396,28 @@ namespace Tizen.TV.UIControls.Forms
             }
             BufferingProgress = e.Progress;
         }
+
+        async void HideController(int after)
+        {
+            if (_controls != null)
+            {
+                await Task.Delay(after);
+                if (!_controlsAlwaysVisible)
+                {
+                    await _controls.FadeTo(0, 200);
+                }
+            }
+        }
+        
+        void ShowController()
+        {
+            if (_controls != null)
+            {
+                _controls.FadeTo(1.0, 200);
+                HideController(5000);
+            }
+        }
+
 
         static void OnSourceChanging(BindableObject bindable, object oldValue, object newValue)
         {
