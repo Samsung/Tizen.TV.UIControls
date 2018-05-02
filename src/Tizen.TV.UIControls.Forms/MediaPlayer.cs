@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Threading;
@@ -30,7 +31,7 @@ namespace Tizen.TV.UIControls.Forms
         static readonly BindablePropertyKey IsBufferingPropertyKey = BindableProperty.CreateReadOnly(nameof(IsBuffering), typeof(bool), typeof(MediaPlayer), false);
         public static readonly BindableProperty IsBufferingProperty = IsBufferingPropertyKey.BindableProperty;
 
-        IMediaPlayer _impl;
+        IPlatformMediaPlayer _impl;
         bool _isPlaying;
         bool _controlsAlwaysVisible;
         CancellationTokenSource _hideTimerCTS = new CancellationTokenSource();
@@ -38,7 +39,7 @@ namespace Tizen.TV.UIControls.Forms
 
         public MediaPlayer()
         {
-            _impl = DependencyService.Get<IMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
+            _impl = DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
             _impl.UpdateStreamInfo += OnUpdateStreamInfo;
             _impl.PlaybackCompleted += SendPlaybackCompleted;
             _impl.PlaybackStarted += SendPlaybackStarted;
@@ -267,6 +268,11 @@ namespace Tizen.TV.UIControls.Forms
         public Task<Stream> GetAlbumArts()
         {
             return _impl.GetAlbumArts();
+        }
+
+        public Task<IDictionary<string, string>> GetMetadata()
+        {
+            return _impl.GetMetadata();
         }
 
         void UpdateAutoPlay()

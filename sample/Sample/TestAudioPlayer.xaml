@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sample.TestAudioPlayer"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="AntiqueWhite">
+            <ListView ItemsSource="{Binding Items}" x:Name="listView" AbsoluteLayout.LayoutBounds="0,0,0.5,1" AbsoluteLayout.LayoutFlags="All" ItemSelected="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Text}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout x:Name="PlayerArea" Orientation="Vertical" AbsoluteLayout.LayoutBounds="1,0,0.5,1" AbsoluteLayout.LayoutFlags="All"
+                         BackgroundColor="#222222" Padding="20">
+                <ProgressBar Progress="{Binding Progress}"/>
+                <Label Text="{Binding State}"/>
+                <Image x:Name="albumArts"/>
+                <Label x:Name="metaDataLabels" HorizontalOptions="FillAndExpand"></Label>
+            </StackLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

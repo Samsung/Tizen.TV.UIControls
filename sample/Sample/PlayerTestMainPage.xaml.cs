@@ -23,7 +23,7 @@ namespace Sample
             System.Console.WriteLine("ItemSelected!! ");
             TestModel model = (TestModel)args.SelectedItem;
             Page page = (Page)Activator.CreateInstance(model.Page);
-            page.BindingContext = model;
+            page.BindingContext = model.SubModel ?? model;
             await Navigation.PushAsync(page);
         }
     }
