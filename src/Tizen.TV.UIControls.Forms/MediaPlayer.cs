@@ -49,8 +49,11 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AutoPlay = false;
             _impl.AutoStop = true;
 
-            _controls = new EmbeddingControls();
-            _controls.Opacity = 0d;
+            _controls = new EmbeddingControls
+            {
+                Opacity = 0d,
+                IsVisible = false
+            };
             _controlsAlwaysVisible = false;
             _controls.BindingContext = this;
         }
@@ -405,6 +408,7 @@ namespace Tizen.TV.UIControls.Forms
                 if (!_controlsAlwaysVisible)
                 {
                     await _controls.FadeTo(0, 200);
+                    _controls.IsVisible = false;
                 }
             }
         }
@@ -413,6 +417,7 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (_controls != null)
             {
+                _controls.IsVisible = true;
                 _controls.FadeTo(1.0, 200);
                 HideController(5000);
             }
