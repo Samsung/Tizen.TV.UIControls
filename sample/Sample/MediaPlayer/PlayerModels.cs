@@ -32,10 +32,9 @@ namespace Sample
         public AudioPlayerTestModel(string name, Type page) : base(name, page, null)
         {
             Items = new List<AudioItem>{
-                new AudioItem { Path = "a.mp3", Text = "Music1"},
-                new AudioItem { Path = "b.mp3", Text = "Music2"},
-                new AudioItem { Path = "a.mp3", Text = "Music3"},
-                new AudioItem { Path = "b.mp3", Text = "Music4"},
+                new AudioItem { Path = "Kalimba.mp3", Text = "Kalimba"},
+                new AudioItem { Path = "Maid with the Flaxen Hair.mp3", Text = "Maid with the Flaxen Hair"},
+                new AudioItem { Path = "Sleep Away.mp3", Text = "Sleep Away.mp3"},
             };
         }
     }
