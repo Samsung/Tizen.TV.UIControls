@@ -1,29 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Sample
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PlayerTestMainPage : ContentPage
+    public partial class PlayerMainPage : ContentPage
     {
-        public PlayerTestMainPage ()
+        public PlayerMainPage()
         {
             InitializeComponent();
-            BindingContext = new MainPageModel();
+            BindingContext = new PlayerMainPageModel();
         }
 
         async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            System.Console.WriteLine("ItemSelected!! ");
-            TestModel model = (TestModel)args.SelectedItem;
+            PlayerTestModel model = (PlayerTestModel)args.SelectedItem;
             Page page = (Page)Activator.CreateInstance(model.Page);
-            page.BindingContext = model.SubModel ?? model;
+            page.BindingContext = model;
             await Navigation.PushAsync(page);
         }
     }

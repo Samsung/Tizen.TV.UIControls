@@ -12,7 +12,7 @@ namespace Sample
         public App()
         {
             var navi = new NavigationPage();
-            navi.PushAsync(new PlayerTestMainPage());
+            navi.PushAsync(new MainPage());
             MainPage = navi;
         }
     }

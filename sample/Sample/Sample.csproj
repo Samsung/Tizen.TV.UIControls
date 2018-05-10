@@ -12,36 +12,39 @@
     <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="PlayerTestMainPage.xaml.cs">
-      <DependentUpon>PlayerTestMainPage.xaml</DependentUpon>
+    <Compile Update="MediaPlayer\PlayerMainPage.xaml.cs">
+      <DependentUpon>PlayerMainPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="PlayerTestMainPage.xaml">
+    <EmbeddedResource Update="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SimplePlayerPage.xaml">
+    <EmbeddedResource Update="MediaPlayer\PlayerMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestAspect.xaml">
+    <EmbeddedResource Update="MediaPlayer\SimplePlayerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestAudioPlayer.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestAspect.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestEmbeddingControl.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestAudioPlayer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestEmbeddingControl2.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestEmbeddingControl.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestMediaView.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestEmbeddingControl2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestOverlayPage.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestMediaView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TestOverlayView.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestOverlayPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="MediaPlayer\TestOverlayView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

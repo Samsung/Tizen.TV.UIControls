@@ -32,7 +32,7 @@
             <ProgressBar HorizontalOptions="FillAndExpand" Progress="{Binding Source={x:Reference Player}, Path=Position, Converter={StaticResource positionToProgress}, ConverterParameter={x:Reference Player}}}"/>
             <StackLayout Orientation="Horizontal">
                 <Button Text="{Binding Source={x:Reference Player}, Path=State, Converter={StaticResource stateToLabel}}" Clicked="OnClickPlay"/>
-                <Button Text="□" Clicked="OnClickStop"/>                
+                <Button Text="□" Clicked="OnClickStop"/>
             </StackLayout>
         </StackLayout>
     </AbsoluteLayout>
