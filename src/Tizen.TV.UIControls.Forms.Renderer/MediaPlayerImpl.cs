@@ -5,7 +5,6 @@ using Xamarin.Forms.Platform.Tizen;
 
 using Tizen.Multimedia;
 using Xamarin.Forms.Internals;
-using MMView = Tizen.Multimedia.MediaView;
 using System.IO;
 using System.Collections.Generic;
 
@@ -231,13 +230,15 @@ namespace Tizen.TV.UIControls.Forms.Impl
             }
             await TaskPrepare;
 
-            Dictionary<string, string> metadata= new Dictionary<string, string>();
-            metadata[nameof(StreamMetadataKey.Album)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Album);
-            metadata[nameof(StreamMetadataKey.Artist)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Artist);
-            metadata[nameof(StreamMetadataKey.Author)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Author);
-            metadata[nameof(StreamMetadataKey.Genre)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Genre);
-            metadata[nameof(StreamMetadataKey.Title)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Title);
-            metadata[nameof(StreamMetadataKey.Year)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Year);
+            Dictionary<string, string> metadata = new Dictionary<string, string>
+            {
+                [nameof(StreamMetadataKey.Album)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Album),
+                [nameof(StreamMetadataKey.Artist)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Artist),
+                [nameof(StreamMetadataKey.Author)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Author),
+                [nameof(StreamMetadataKey.Genre)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Genre),
+                [nameof(StreamMetadataKey.Title)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Title),
+                [nameof(StreamMetadataKey.Year)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Year)
+            };
             return metadata;
         }
 
