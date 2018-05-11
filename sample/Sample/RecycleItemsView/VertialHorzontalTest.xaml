@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Sample.RecycleItemsView.VertialHorzontalTest">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal">
+            <tvcontrols:RecycleItemsView VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" WidthRequest="250"
+                Orientation="Vertical" ItemWidth="200" ContentMargin="50" Spacing="50" ItemsSource="{Binding Items2}">
+                <tvcontrols:RecycleItemsView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Text}" Detail="{Binding DetailText}"/>
+                    </DataTemplate>
+                </tvcontrols:RecycleItemsView.ItemTemplate>
+            </tvcontrols:RecycleItemsView>
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand" HorizontalOptions="EndAndExpand">
+                <StackLayout>
+                    <tvcontrols:RecycleItemsView x:Name="RecycleView" BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                        ItemSelected="OnSelected"
+                        ScrollPolicy="Center"
+                        ContentMargin="100"
+                        ItemWidth="300"
+                        ItemHeight="200"
+                        Spacing="30"
+                        ItemsSource="{Binding Items}">
+                        <tvcontrols:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Button Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Button Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                    <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </tvcontrols:RecycleItemsView.ItemTemplate>
+                    </tvcontrols:RecycleItemsView>
+                    <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                        ScrollPolicy="Center"
+                        ContentMargin="100"
+                        ItemWidth="300"
+                        ItemHeight="200"
+                        Spacing="30"
+                        ItemsSource="{Binding Items}">
+                        <tvcontrols:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <Button Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </DataTemplate>
+                        </tvcontrols:RecycleItemsView.ItemTemplate>
+                    </tvcontrols:RecycleItemsView>
+                    <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                        ScrollPolicy="Center"
+                        ContentMargin="100"
+                        ItemWidth="300"
+                        ItemHeight="200"
+                        Spacing="30"
+                        ItemsSource="{Binding Items}">
+                        <tvcontrols:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </tvcontrols:RecycleItemsView.ItemTemplate>
+                    </tvcontrols:RecycleItemsView>
+                    <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                        ScrollPolicy="Center"
+                        ContentMargin="100"
+                        ItemWidth="300"
+                        ItemHeight="200"
+                        Spacing="30"
+                        ItemsSource="{Binding Items}">
+                        <tvcontrols:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                    <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </tvcontrols:RecycleItemsView.ItemTemplate>
+                    </tvcontrols:RecycleItemsView>
+
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>            
+    </ContentPage.Content>
+</ContentPage>
