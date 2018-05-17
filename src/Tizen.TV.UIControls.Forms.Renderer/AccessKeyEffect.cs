@@ -13,16 +13,19 @@ namespace Tizen.TV.UIControls.Forms
     class AccessKeyEffect : PlatformEffect
     {
         EcoreKeyEvents _ecoreKeyEvents = EcoreKeyEvents.Instance;
-        RemoteControlKeyNames _keyName;
+        RemoteControlKeyNames _targetKeyName;
 
         Page currentPage
         {
             get
             {
                 var page = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
-                while (page is NavigationPage)
+                if (!(Element is NavigationPage))
                 {
-                    page = (page as NavigationPage).CurrentPage;
+                    while (page is NavigationPage)
+                    {
+                        page = (page as NavigationPage).CurrentPage;
+                    }
                 }
                 return page;
             }
@@ -32,18 +35,18 @@ namespace Tizen.TV.UIControls.Forms
         {
             try
             {
-                _ecoreKeyEvents.KeyDown += Page_keyDown;
-                _keyName = InputEvents.GetAccessKey(Element);
+                _ecoreKeyEvents.KeyDown += OnkeyDown;
+                _targetKeyName = InputEvents.GetAccessKey(Element);
             }
             catch(Exception e)
             {
-                Console.WriteLine("Exception : " + e);
+                Console.WriteLine("Failed to attach the effect : " + e);
             }
         }
 
         protected override void OnDetached()
         {
-            _ecoreKeyEvents.KeyDown -= Page_keyDown;
+            _ecoreKeyEvents.KeyDown -= OnkeyDown;
         }
 
         Page GetParentPage()
@@ -66,9 +69,18 @@ namespace Tizen.TV.UIControls.Forms
             return null;
         }
 
-        void Page_keyDown(object sender, EcoreKeyEventArgs e)
+        void OnkeyDown(object sender, EcoreKeyEventArgs e)
         {
-            if (e.KeyName.Equals(_keyName.ToString()))
+            string _keyName = "";
+            if (int.TryParse(e.KeyName, out int result))
+            {
+                if (result >= 0 && result <= 9)
+                    _keyName = String.Concat("NUM", e.KeyName);
+            }
+            else
+                _keyName = e.KeyName;
+
+            if (_keyName.Equals(_targetKeyName.ToString()))
             {
                 var targetPage = GetParentPage();
                 if (currentPage == targetPage)

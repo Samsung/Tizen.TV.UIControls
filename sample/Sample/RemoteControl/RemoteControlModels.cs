@@ -25,8 +25,9 @@ namespace Sample
             TestList = new List<RemoteControlTestModel>()
             {
                 new RemoteControlTestModel("Remote Control test", typeof(TestRemoteControl)),
-                new RemoteControlTestModel("Multi Pages test", typeof(TestMultiPage)),
-                new RemoteControlTestModel("Remote Control test Xaml", typeof(TestRemoteControl_xaml)),
+                new RemoteControlTestModel("Remote Control Xaml test", typeof(TestRemoteControl_xaml)),
+                new RemoteControlTestModel("NavigationPage test", typeof(TestNavigationPage)),
+                new RemoteControlTestModel("TabbedPage test", typeof(TestTabbedPage)),
             };
         }
     }

@@ -21,6 +21,14 @@ namespace Sample
             }
         }
 
+        public Command<RemoteControlKeyEventArgs> pageHandler
+        {
+            get
+            {
+                return new Command<RemoteControlKeyEventArgs>((arg) => Console.WriteLine("Page => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName));
+            }
+        }
+
         public TestRemoteControl_xaml ()
 		{
 			InitializeComponent ();

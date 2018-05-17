@@ -17,4 +17,7 @@
             <Button Text="Button2" />
         </StackLayout>
     </ContentPage.Content>
+    <uicontrols:InputEvents.EventHandlers>
+        <uicontrols:RemoteKeyHandler Command="{Binding pageHandler, Source={x:Reference rootPage}}" />
+    </uicontrols:InputEvents.EventHandlers>
 </ContentPage>

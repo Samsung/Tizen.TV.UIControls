@@ -7,9 +7,9 @@ using Tizen.TV.UIControls.Forms;
 
 namespace Sample
 {
-    public class TestMultiPage : NavigationPage
+    public class TestNavigationPage : NavigationPage
     {
-        public TestMultiPage()
+        public TestNavigationPage()
         {
             Button button1 = new Button { Text = "Button1" };
             RemoteKeyHandler buttonHandler = new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((arg) =>
@@ -22,10 +22,12 @@ namespace Sample
             Button button2 = new Button { Text = "Button2" };
             button2.Clicked += (s, e) =>
             {
-                Console.WriteLine(" Button2 is Clicked !");
+                Console.WriteLine("Button2 is Clicked !");
             };
             InputEvents.SetAccessKey(button2, RemoteControlKeyNames.NUM1);
 
+            Entry entry = new Entry { Placeholder = "This is Entry" };
+            InputEvents.SetAccessKey(entry, RemoteControlKeyNames.NUM2);
 
             var page1 = new ContentPage
             {
@@ -35,7 +37,8 @@ namespace Sample
                     Children = {
                                 new Label { Text = "Welcome to Xamarin.Forms!" },
                                 button1,
-                                button2
+                                button2,
+                                entry
                             }
 
                 }
@@ -64,6 +67,8 @@ namespace Sample
                     }
                 }
             };
+            InputEvents.GetEventHandlers(page3).Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>(
+                (arg) => { Console.WriteLine(" page3 => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName); })));
 
             this.Title = "Navigation Page";
             this.PushAsync(page1);
@@ -72,9 +77,10 @@ namespace Sample
 
             RemoteKeyHandler PageHandler = new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((arg) =>
             {
-                Console.WriteLine("Page1 => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                Console.WriteLine("Navigation Page => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
             }));
             InputEvents.GetEventHandlers(this).Add(PageHandler);
+
         }
     }
 }

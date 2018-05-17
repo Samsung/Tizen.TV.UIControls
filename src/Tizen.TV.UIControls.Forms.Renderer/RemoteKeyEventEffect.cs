@@ -14,7 +14,6 @@ namespace Tizen.TV.UIControls.Forms
     class RemoteKeyEventEffect : PlatformEffect
     {
         EcoreKeyEvents _ecoreKeyEvents = EcoreKeyEvents.Instance;
-        static int _ecoreEventsCounter = 0;
 
         // TODO: Test Multipage
         Page currentPage
@@ -22,9 +21,19 @@ namespace Tizen.TV.UIControls.Forms
             get
             {
                 var page = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
-                while (page is NavigationPage)
+                if (!(Element is NavigationPage))
                 {
-                    page = (page as NavigationPage).CurrentPage;
+                    while (page is NavigationPage)
+                    {
+                        page = (page as NavigationPage).CurrentPage;
+                    }
+                }
+                if (!(Element is TabbedPage))
+                {
+                    while (page is TabbedPage)
+                    {
+                        page = (page as TabbedPage).CurrentPage;
+                    }
                 }
                 return page;
             }
@@ -36,12 +45,8 @@ namespace Tizen.TV.UIControls.Forms
             {
                 if (Element is Page)
                 {
-                    if (_ecoreEventsCounter == 0)
-                    {
-                        _ecoreKeyEvents.KeyDown += Page_keyDown;
-                        _ecoreKeyEvents.KeyUp += Page_keyUp;
-                    }
-                    _ecoreEventsCounter++;
+                    _ecoreKeyEvents.KeyDown += Page_keyDown;
+                    _ecoreKeyEvents.KeyUp += Page_keyUp;
                 }
                 else
                 {
@@ -49,9 +54,9 @@ namespace Tizen.TV.UIControls.Forms
                     Control.KeyUp += Control_KeyUp;
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                Console.WriteLine("Exception : " + e);
+                Console.WriteLine("Failed to attach the effect : " + e);
             }
         }
 
@@ -59,12 +64,8 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (Element is Page)
             {
-                _ecoreEventsCounter--;
-                if (_ecoreEventsCounter == 0)
-                {
-                    _ecoreKeyEvents.KeyDown -= Page_keyDown;
-                    _ecoreKeyEvents.KeyUp -= Page_keyUp;
-                }
+                _ecoreKeyEvents.KeyDown -= Page_keyDown;
+                _ecoreKeyEvents.KeyUp -= Page_keyUp;
             }
             else
             {
@@ -119,10 +120,12 @@ namespace Tizen.TV.UIControls.Forms
             RemoteControlKeyEventArgs args = CreateArgs(keyType, keyName);
             if (args == null)
                 return;
-            IList<RemoteKeyHandler> handlers;
+
+            IList<RemoteKeyHandler> handlers = new List<RemoteKeyHandler>();
             if (Element is Page)
             {
-                handlers = InputEvents.GetEventHandlers(currentPage);
+                if (Element == currentPage)
+                    handlers = InputEvents.GetEventHandlers(Element);
             }
             else
             {
