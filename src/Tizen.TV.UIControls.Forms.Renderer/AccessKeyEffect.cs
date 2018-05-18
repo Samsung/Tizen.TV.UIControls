@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ElmSharp;
-using Tizen.TV.UIControls.Forms;
+using Tizen.TV.UIControls.Forms.Impl;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
-namespace Tizen.TV.UIControls.Forms
+namespace Tizen.TV.UIControls.Forms.Impl
 {
     class AccessKeyEffect : PlatformEffect
     {
@@ -24,7 +24,7 @@ namespace Tizen.TV.UIControls.Forms
             }
             catch(Exception e)
             {
-                Console.WriteLine("Failed to attach the effect : " + e);
+                Log.Error(UIControls.Tag, $"Failed to attach the effect : {e.Message}");
             }
         }
 
@@ -36,19 +36,12 @@ namespace Tizen.TV.UIControls.Forms
         Page GetParentPage()
         {
             var _targetElement = Element;
-            if (_targetElement != null)
+
+            if (_targetElement is Page page) return page;
+            while (_targetElement != null && _targetElement.Parent != null)
             {
-                if (_targetElement is Page)
-                    return (_targetElement as Page);
-                var parent = _targetElement.Parent;
-                while (parent != null)
-                {
-                    if (parent is Page)
-                    {
-                        return (Page)parent;
-                    }
-                    parent = parent.Parent;
-                }
+                if (_targetElement.Parent is Page parentPage) return parentPage;
+                _targetElement = _targetElement.Parent;
             }
             return null;
         }
@@ -76,6 +69,7 @@ namespace Tizen.TV.UIControls.Forms
 
         bool IsOnCurrentPage(Page targetPage)
         {
+            //TODO: Don't use Navigation
             var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
             if (!(Element is IPageContainer<Page>))
             {

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ElmSharp;
-using Tizen.TV.UIControls.Forms;
+using Tizen.TV.UIControls.Forms.Impl;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
 [assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]
-namespace Tizen.TV.UIControls.Forms
+namespace Tizen.TV.UIControls.Forms.Impl
 {
     class RemoteKeyEventEffect : PlatformEffect
     {
@@ -32,7 +32,7 @@ namespace Tizen.TV.UIControls.Forms
             }
             catch (Exception e)
             {
-                Console.WriteLine("Failed to attach the effect : " + e);
+                Log.Error(UIControls.Tag, $"Failed to attach the effect : {e.Message}");
             }
         }
 
@@ -62,6 +62,7 @@ namespace Tizen.TV.UIControls.Forms
 
         void OnViewKeyDown(object sender, EvasKeyEventArgs e)
         {
+            //TODO: e.Flags = EvasEventFlag.OnHold; when Handled was true
             InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName);
         }
 
@@ -114,6 +115,7 @@ namespace Tizen.TV.UIControls.Forms
 
         bool IsOnCurrentPage(Page targetPage)
         {
+            //TODO: Don't use Navigation
             var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
             if (!(Element is IPageContainer<Page>))
             {
@@ -123,9 +125,6 @@ namespace Tizen.TV.UIControls.Forms
                 }
             }
             // TODO : Handle MasterDetailPage
-            //if (!(Element is MasterDetailPage))
-            //{
-            //}
             return currentPage == targetPage;
         }
     }

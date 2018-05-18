@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using ElmSharp;
 
-namespace Tizen.TV.UIControls.Forms
+namespace Tizen.TV.UIControls.Forms.Impl
 {
     public class EcoreKeyEvents
     {

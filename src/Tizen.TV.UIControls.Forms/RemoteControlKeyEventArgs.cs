@@ -16,6 +16,7 @@ namespace Tizen.TV.UIControls.Forms
 
         public RemoteControlKeyNames KeyName { get; private set; }
 
+        // TODO: Check if Handled
         public bool Handled { get; set; }
     }
 }
