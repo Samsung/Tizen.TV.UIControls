@@ -17,8 +17,8 @@ namespace Tizen.TV.UIControls.Forms
         {
             _ecoreKeyDown = new EcoreEvent<EcoreKeyEventArgs>(EcoreEventType.KeyDown, EcoreKeyEventArgs.Create);
             _ecoreKeyUp = new EcoreEvent<EcoreKeyEventArgs>(EcoreEventType.KeyUp, EcoreKeyEventArgs.Create);
-            _ecoreKeyDown.On += _ecoreKeyDown_On;
-            _ecoreKeyUp.On += _ecoreKeyUp_On;
+            _ecoreKeyDown.On += OnEcoreKeyDown;
+            _ecoreKeyUp.On += OnEcoreKeyUp;
         }
 
         public static EcoreKeyEvents Instance
@@ -37,12 +37,12 @@ namespace Tizen.TV.UIControls.Forms
 
         public EventHandler<EcoreKeyEventArgs> KeyUp;
 
-        void _ecoreKeyDown_On(object sender, EcoreKeyEventArgs e)
+        void OnEcoreKeyDown(object sender, EcoreKeyEventArgs e)
         {
             KeyDown?.Invoke(this, e);
         }
 
-        void _ecoreKeyUp_On(object sender, EcoreKeyEventArgs e)
+        void OnEcoreKeyUp(object sender, EcoreKeyEventArgs e)
         {
             KeyUp?.Invoke(this, e);
         }

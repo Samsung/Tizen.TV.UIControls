@@ -12,8 +12,10 @@ namespace Tizen.TV.UIControls.Forms
             KeyName = keyName;
         }
 
-        public RemoteControlKeyTypes KeyType;
+        public RemoteControlKeyTypes KeyType { get; private set; }
 
-        public RemoteControlKeyNames KeyName;
+        public RemoteControlKeyNames KeyName { get; private set; }
+
+        public bool Handled { get; set; }
     }
 }

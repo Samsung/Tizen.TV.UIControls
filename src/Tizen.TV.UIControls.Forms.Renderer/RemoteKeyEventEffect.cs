@@ -15,43 +15,19 @@ namespace Tizen.TV.UIControls.Forms
     {
         EcoreKeyEvents _ecoreKeyEvents = EcoreKeyEvents.Instance;
 
-        // TODO: Test Multipage
-        Page currentPage
-        {
-            get
-            {
-                var page = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
-                if (!(Element is NavigationPage))
-                {
-                    while (page is NavigationPage)
-                    {
-                        page = (page as NavigationPage).CurrentPage;
-                    }
-                }
-                if (!(Element is TabbedPage))
-                {
-                    while (page is TabbedPage)
-                    {
-                        page = (page as TabbedPage).CurrentPage;
-                    }
-                }
-                return page;
-            }
-        }
-
         protected override void OnAttached()
         {
             try
             {
                 if (Element is Page)
                 {
-                    _ecoreKeyEvents.KeyDown += Page_keyDown;
-                    _ecoreKeyEvents.KeyUp += Page_keyUp;
+                    _ecoreKeyEvents.KeyDown += OnPageKeyDown;
+                    _ecoreKeyEvents.KeyUp += OnPageKeyUp;
                 }
                 else
                 {
-                    Control.KeyDown += Control_KeyDown;
-                    Control.KeyUp += Control_KeyUp;
+                    Control.KeyDown += OnViewKeyDown;
+                    Control.KeyUp += OnViewKeyUp;
                 }
             }
             catch (Exception e)
@@ -64,32 +40,32 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (Element is Page)
             {
-                _ecoreKeyEvents.KeyDown -= Page_keyDown;
-                _ecoreKeyEvents.KeyUp -= Page_keyUp;
+                _ecoreKeyEvents.KeyDown -= OnPageKeyDown;
+                _ecoreKeyEvents.KeyUp -= OnPageKeyUp;
             }
             else
             {
-                Control.KeyDown -= Control_KeyDown;
-                Control.KeyUp -= Control_KeyUp;
+                Control.KeyDown -= OnViewKeyDown;
+                Control.KeyUp -= OnViewKeyUp;
             }
         }
 
-        void Page_keyDown(object sender, EcoreKeyEventArgs e)
+        void OnPageKeyDown(object sender, EcoreKeyEventArgs e)
         {
             InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName);
         }
 
-        void Page_keyUp(object sender, EcoreKeyEventArgs e)
+        void OnPageKeyUp(object sender, EcoreKeyEventArgs e)
         {
             InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName);
         }
 
-        void Control_KeyDown(object sender, EvasKeyEventArgs e)
+        void OnViewKeyDown(object sender, EvasKeyEventArgs e)
         {
             InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName);
         }
 
-        void Control_KeyUp(object sender, EvasKeyEventArgs e)
+        void OnViewKeyUp(object sender, EvasKeyEventArgs e)
         {
             InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName);
         }
@@ -104,8 +80,7 @@ namespace Tizen.TV.UIControls.Forms
             try
             {
                 RemoteControlKeyNames key = (RemoteControlKeyNames)Enum.Parse(typeof(RemoteControlKeyNames), keyName);
-                RemoteControlKeyEventArgs newArgs = new RemoteControlKeyEventArgs(keyType, key);
-                return newArgs;
+                return new RemoteControlKeyEventArgs(keyType, key);
             }
             catch
             {
@@ -124,7 +99,7 @@ namespace Tizen.TV.UIControls.Forms
             IList<RemoteKeyHandler> handlers = new List<RemoteKeyHandler>();
             if (Element is Page)
             {
-                if (Element == currentPage)
+                if (IsOnCurrentPage((Page)Element))
                     handlers = InputEvents.GetEventHandlers(Element);
             }
             else
@@ -135,6 +110,23 @@ namespace Tizen.TV.UIControls.Forms
             {
                 item.SendKeyEvent(args);
             }
+        }
+
+        bool IsOnCurrentPage(Page targetPage)
+        {
+            var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
+            if (!(Element is IPageContainer<Page>))
+            {
+                while (currentPage is IPageContainer<Page>)
+                {
+                    currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
+                }
+            }
+            // TODO : Handle MasterDetailPage
+            //if (!(Element is MasterDetailPage))
+            //{
+            //}
+            return currentPage == targetPage;
         }
     }
 }

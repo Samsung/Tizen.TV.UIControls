@@ -15,27 +15,11 @@ namespace Tizen.TV.UIControls.Forms
         EcoreKeyEvents _ecoreKeyEvents = EcoreKeyEvents.Instance;
         RemoteControlKeyNames _targetKeyName;
 
-        Page currentPage
-        {
-            get
-            {
-                var page = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
-                if (!(Element is NavigationPage))
-                {
-                    while (page is NavigationPage)
-                    {
-                        page = (page as NavigationPage).CurrentPage;
-                    }
-                }
-                return page;
-            }
-        }
-
         protected override void OnAttached()
         {
             try
             {
-                _ecoreKeyEvents.KeyDown += OnkeyDown;
+                _ecoreKeyEvents.KeyDown += OnKeyDown;
                 _targetKeyName = InputEvents.GetAccessKey(Element);
             }
             catch(Exception e)
@@ -46,7 +30,7 @@ namespace Tizen.TV.UIControls.Forms
 
         protected override void OnDetached()
         {
-            _ecoreKeyEvents.KeyDown -= OnkeyDown;
+            _ecoreKeyEvents.KeyDown -= OnKeyDown;
         }
 
         Page GetParentPage()
@@ -69,28 +53,41 @@ namespace Tizen.TV.UIControls.Forms
             return null;
         }
 
-        void OnkeyDown(object sender, EcoreKeyEventArgs e)
+        void OnKeyDown(object sender, EcoreKeyEventArgs e)
         {
-            string _keyName = "";
+            string keyName = "";
             if (int.TryParse(e.KeyName, out int result))
             {
                 if (result >= 0 && result <= 9)
-                    _keyName = String.Concat("NUM", e.KeyName);
+                    keyName = String.Concat("NUM", e.KeyName);
             }
             else
-                _keyName = e.KeyName;
+                keyName = e.KeyName;
 
-            if (_keyName.Equals(_targetKeyName.ToString()))
+            if (keyName.Equals(_targetKeyName.ToString()))
             {
                 var targetPage = GetParentPage();
-                if (currentPage == targetPage)
+                if(IsOnCurrentPage(targetPage))
                 {
-                    SetFocusToElement();
+                    ActiveOrFocusElement();
                 }
             }
         }
 
-        void SetFocusToElement()
+        bool IsOnCurrentPage(Page targetPage)
+        {
+            var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
+            if (!(Element is IPageContainer<Page>))
+            {
+                while (currentPage is IPageContainer<Page>)
+                {
+                    currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
+                }
+            }
+            return currentPage == targetPage;
+        }
+
+        void ActiveOrFocusElement()
         {
             if (Element is Xamarin.Forms.Button)
                 (Element as Xamarin.Forms.Button).SendClicked();
