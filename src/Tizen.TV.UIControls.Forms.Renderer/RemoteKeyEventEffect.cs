@@ -70,7 +70,7 @@ namespace Tizen.TV.UIControls.Forms
             InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName);
         }
 
-        RemoteControlKeyEventArgs CreateArgs(RemoteControlKeyTypes keyType, string keyName)
+        static RemoteControlKeyEventArgs CreateArgs(RemoteControlKeyTypes keyType, string keyName)
         {
             if (int.TryParse(keyName, out int result))
             {

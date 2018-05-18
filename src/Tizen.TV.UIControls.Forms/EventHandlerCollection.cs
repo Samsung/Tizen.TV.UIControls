@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
-    internal class EventHandlerCollection<RemoteKeyHandler> : ObservableCollection<RemoteKeyHandler>
+    internal class EventHandlerCollection : ObservableCollection<RemoteKeyHandler>
     {
         public BindableObject Bindable { get; set; }
     }

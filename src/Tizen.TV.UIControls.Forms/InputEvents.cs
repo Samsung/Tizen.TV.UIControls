@@ -13,7 +13,7 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindablePropertyKey EventHandlersPropertyKey = BindableProperty.CreateAttachedReadOnly("EventHandlers", typeof(IList<RemoteKeyHandler>), typeof(InputEvents), null,
             defaultValueCreator: bindable =>
             {
-                var collection = new EventHandlerCollection<RemoteKeyHandler>();
+                var collection = new EventHandlerCollection();
                 collection.Bindable = bindable;
                 collection.CollectionChanged += Collection_CollectionChanged;
                 return collection;
@@ -44,12 +44,12 @@ namespace Tizen.TV.UIControls.Forms
 
         static void Collection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            var bindable = (sender as EventHandlerCollection<RemoteKeyHandler>).Bindable;
+            var bindable = (sender as EventHandlerCollection).Bindable;
             var visualElement = bindable as VisualElement;
             if (visualElement == null)
                 return;
 
-            var collection = (EventHandlerCollection<RemoteKeyHandler>)sender;
+            var collection = (EventHandlerCollection)sender;
             if (collection?.Count == 0)
             {
                 var toRemove = visualElement.Effects.FirstOrDefault(t => t is RemoteKeyEventEffect);
