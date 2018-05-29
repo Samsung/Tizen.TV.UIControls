@@ -69,8 +69,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         bool IsOnCurrentPage(Page targetPage)
         {
-            //TODO: Don't use Navigation
-            var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
+            var currentPage = Application.Current.MainPage;
             if (!(Element is IPageContainer<Page>))
             {
                 while (currentPage is IPageContainer<Page>)

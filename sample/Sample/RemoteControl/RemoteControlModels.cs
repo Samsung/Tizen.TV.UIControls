@@ -28,6 +28,7 @@ namespace Sample
                 new RemoteControlTestModel("Remote Control Xaml test", typeof(TestRemoteControl_xaml)),
                 new RemoteControlTestModel("NavigationPage test", typeof(TestNavigationPage)),
                 new RemoteControlTestModel("TabbedPage test", typeof(TestTabbedPage)),
+                new RemoteControlTestModel("MasterDetailPage test", typeof(TestMasterDetailPage)),
             };
         }
     }

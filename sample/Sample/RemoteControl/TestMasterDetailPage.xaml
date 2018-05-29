@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:uicontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+                  x:Class="Sample.TestMasterDetailPage"
+                  x:Name="rootPage"
+                  Title="MasterDetailPage">
+    <uicontrols:InputEvents.EventHandlers>
+        <uicontrols:RemoteKeyHandler Command="{Binding masterDetailPageHandler, Source={x:Reference rootPage}}"/>
+    </uicontrols:InputEvents.EventHandlers>
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master Page">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Button Text="Button1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </ContentPage.Content>
+            <uicontrols:InputEvents.EventHandlers>
+                <uicontrols:RemoteKeyHandler Command="{Binding masterPageHandler, Source={x:Reference rootPage}}"/>
+            </uicontrols:InputEvents.EventHandlers>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage Title="Detail Page">
+            <ContentPage.Content>
+                <StackLayout>
+                    <Button Text="Button1"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand" />
+                </StackLayout>
+            </ContentPage.Content>
+            <uicontrols:InputEvents.EventHandlers>
+                <uicontrols:RemoteKeyHandler Command="{Binding detailPageHandler, Source={x:Reference rootPage}}"/>
+            </uicontrols:InputEvents.EventHandlers>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

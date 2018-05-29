@@ -62,13 +62,16 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void OnViewKeyDown(object sender, EvasKeyEventArgs e)
         {
-            //TODO: e.Flags = EvasEventFlag.OnHold; when Handled was true
-            InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName);
+            var handled = InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName);
+            if (handled)
+                e.Flags = EvasEventFlag.OnHold;
         }
 
         void OnViewKeyUp(object sender, EvasKeyEventArgs e)
         {
-            InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName);
+            var handled = InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName);
+            if (handled)
+                e.Flags = EvasEventFlag.OnHold;
         }
 
         static RemoteControlKeyEventArgs CreateArgs(RemoteControlKeyTypes keyType, string keyName)
@@ -91,17 +94,19 @@ namespace Tizen.TV.UIControls.Forms.Impl
             return null;
         }
 
-        void InvokeActionAndEvent(RemoteControlKeyTypes keyType, string keyName)
+        bool InvokeActionAndEvent(RemoteControlKeyTypes keyType, string keyName)
         {
             RemoteControlKeyEventArgs args = CreateArgs(keyType, keyName);
             if (args == null)
-                return;
+                return false;
 
             IList<RemoteKeyHandler> handlers = new List<RemoteKeyHandler>();
             if (Element is Page)
             {
-                if (IsOnCurrentPage((Page)Element))
+                if (IsOnCurrentPage(Application.Current.MainPage, (Page)Element))
+                {
                     handlers = InputEvents.GetEventHandlers(Element);
+                }
             }
             else
             {
@@ -111,21 +116,38 @@ namespace Tizen.TV.UIControls.Forms.Impl
             {
                 item.SendKeyEvent(args);
             }
+            if (args.Handled)
+                return true;
+            return false;
         }
 
-        bool IsOnCurrentPage(Page targetPage)
+        bool IsOnCurrentPage(Page currentPage, Page targetPage)
         {
-            //TODO: Don't use Navigation
-            var currentPage = Application.Current.MainPage.Navigation.NavigationStack.LastOrDefault();
-            if (!(Element is IPageContainer<Page>))
+            if (currentPage == targetPage)
+                return true;
+
+            while (currentPage is IPageContainer<Page>)
             {
-                while (currentPage is IPageContainer<Page>)
+                currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
+                if (currentPage == targetPage)
+                    return true;
+            }
+
+            if (currentPage is MasterDetailPage masterDetailPage)
+            {
+                if (masterDetailPage.IsPresented == true)
                 {
-                    currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
+                    if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
+                        return true;
+                }
+                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented == true))
+                {
+                    if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
+                        return true;
                 }
             }
-            // TODO : Handle MasterDetailPage
-            return currentPage == targetPage;
+
+            return false;
         }
     }
 }
