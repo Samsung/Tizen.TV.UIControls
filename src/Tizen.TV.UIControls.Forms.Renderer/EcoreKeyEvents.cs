@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using ElmSharp;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class EcoreKeyEvents
     {
-        static EcoreKeyEvents _instance;
+        static Lazy<EcoreKeyEvents> _instance = new Lazy<EcoreKeyEvents>(()=>new EcoreKeyEvents());
 
         EcoreEvent<EcoreKeyEventArgs> _ecoreKeyDown;
         EcoreEvent<EcoreKeyEventArgs> _ecoreKeyUp;
@@ -17,6 +15,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             _ecoreKeyDown = new EcoreEvent<EcoreKeyEventArgs>(EcoreEventType.KeyDown, EcoreKeyEventArgs.Create);
             _ecoreKeyUp = new EcoreEvent<EcoreKeyEventArgs>(EcoreEventType.KeyUp, EcoreKeyEventArgs.Create);
+            // Todo: Add event when KeyDown is added.
             _ecoreKeyDown.On += OnEcoreKeyDown;
             _ecoreKeyUp.On += OnEcoreKeyUp;
         }
@@ -25,17 +24,13 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             get
             {
-                if (_instance == null)
-                {
-                    _instance = new EcoreKeyEvents();
-                }
-                return _instance;
+                return _instance.Value;
             }
         }
 
-        public EventHandler<EcoreKeyEventArgs> KeyDown;
+        public event EventHandler<EcoreKeyEventArgs> KeyDown;
 
-        public EventHandler<EcoreKeyEventArgs> KeyUp;
+        public event EventHandler<EcoreKeyEventArgs> KeyUp;
 
         void OnEcoreKeyDown(object sender, EcoreKeyEventArgs e)
         {
@@ -46,6 +41,5 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             KeyUp?.Invoke(this, e);
         }
-
     }
 }

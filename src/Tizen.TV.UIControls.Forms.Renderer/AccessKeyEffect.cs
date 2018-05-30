@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ElmSharp;
-using Tizen.TV.UIControls.Forms.Impl;
+using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class AccessKeyEffect : PlatformEffect
     {
-        EcoreKeyEvents _ecoreKeyEvents = EcoreKeyEvents.Instance;
         RemoteControlKeyNames _targetKeyName;
 
         protected override void OnAttached()
         {
             try
             {
-                _ecoreKeyEvents.KeyDown += OnKeyDown;
+                EcoreKeyEvents.Instance.KeyDown += OnKeyDown;
                 _targetKeyName = InputEvents.GetAccessKey(Element);
             }
             catch(Exception e)
@@ -30,7 +29,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         protected override void OnDetached()
         {
-            _ecoreKeyEvents.KeyDown -= OnKeyDown;
+            EcoreKeyEvents.Instance.KeyDown -= OnKeyDown;
         }
 
         Page GetParentPage()
@@ -48,36 +47,44 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void OnKeyDown(object sender, EcoreKeyEventArgs e)
         {
-            string keyName = "";
-            if (int.TryParse(e.KeyName, out int result))
-            {
-                if (result >= 0 && result <= 9)
-                    keyName = String.Concat("NUM", e.KeyName);
-            }
-            else
-                keyName = e.KeyName;
-
-            if (keyName.Equals(_targetKeyName.ToString()))
+            var targetName = _targetKeyName.ToString();
+            if (targetName == e.KeyName || targetName == "NUM" + e.KeyName)
             {
                 var targetPage = GetParentPage();
-                if(IsOnCurrentPage(targetPage))
+                if(IsOnCurrentPage(Application.Current.MainPage, targetPage))
                 {
                     ActiveOrFocusElement();
                 }
             }
         }
 
-        bool IsOnCurrentPage(Page targetPage)
+        bool IsOnCurrentPage(Page currentPage, Page targetPage)
         {
-            var currentPage = Application.Current.MainPage;
-            if (!(Element is IPageContainer<Page>))
+            if (currentPage == targetPage)
+                return true;
+
+            while (currentPage is IPageContainer<Page>)
             {
-                while (currentPage is IPageContainer<Page>)
+                currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
+                if (currentPage == targetPage)
+                    return true;
+            }
+
+            if (currentPage is MasterDetailPage masterDetailPage)
+            {
+                if (masterDetailPage.IsPresented)
                 {
-                    currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
+                    if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
+                        return true;
+                }
+                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented))
+                {
+                    if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
+                        return true;
                 }
             }
-            return currentPage == targetPage;
+
+            return false;
         }
 
         void ActiveOrFocusElement()

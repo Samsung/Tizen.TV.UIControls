@@ -80,7 +80,6 @@ namespace Sample
                 Console.WriteLine("Navigation Page => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
             }));
             InputEvents.GetEventHandlers(this).Add(PageHandler);
-
         }
     }
 }

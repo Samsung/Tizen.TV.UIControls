@@ -3,26 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using ElmSharp;
-using Tizen.TV.UIControls.Forms.Impl;
+using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
 [assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class RemoteKeyEventEffect : PlatformEffect
     {
-        EcoreKeyEvents _ecoreKeyEvents = EcoreKeyEvents.Instance;
-
         protected override void OnAttached()
         {
             try
             {
                 if (Element is Page)
                 {
-                    _ecoreKeyEvents.KeyDown += OnPageKeyDown;
-                    _ecoreKeyEvents.KeyUp += OnPageKeyUp;
+                    EcoreKeyEvents.Instance.KeyDown += OnPageKeyDown;
+                    EcoreKeyEvents.Instance.KeyUp += OnPageKeyUp;
                 }
                 else
                 {
@@ -40,8 +38,8 @@ namespace Tizen.TV.UIControls.Forms.Impl
         {
             if (Element is Page)
             {
-                _ecoreKeyEvents.KeyDown -= OnPageKeyDown;
-                _ecoreKeyEvents.KeyUp -= OnPageKeyUp;
+                EcoreKeyEvents.Instance.KeyDown -= OnPageKeyDown;
+                EcoreKeyEvents.Instance.KeyUp -= OnPageKeyUp;
             }
             else
             {
@@ -62,36 +60,25 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
         void OnViewKeyDown(object sender, EvasKeyEventArgs e)
         {
-            var handled = InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName);
-            if (handled)
+            if (InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName))
                 e.Flags = EvasEventFlag.OnHold;
         }
 
         void OnViewKeyUp(object sender, EvasKeyEventArgs e)
         {
-            var handled = InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName);
-            if (handled)
+            if (InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName))
                 e.Flags = EvasEventFlag.OnHold;
         }
 
         static RemoteControlKeyEventArgs CreateArgs(RemoteControlKeyTypes keyType, string keyName)
         {
-            if (int.TryParse(keyName, out int result))
-            {
-                if (result >= 0 && result <= 9)
-                    keyName = keyName.Insert(0, "NUM");
-            }
-            try
-            {
-                RemoteControlKeyNames key = (RemoteControlKeyNames)Enum.Parse(typeof(RemoteControlKeyNames), keyName);
+            RemoteControlKeyNames key = RemoteControlKeyNames.Undefined;
+            if (Enum.TryParse(keyName, out key))
                 return new RemoteControlKeyEventArgs(keyType, key);
-            }
-            catch
-            {
-                Console.WriteLine("Unkown Key event to invoke KeyClicked is raised.");
-            }
+            if (Enum.TryParse("NUM" + keyName, out key))
+                return new RemoteControlKeyEventArgs(keyType, key);
 
-            return null;
+            return new RemoteControlKeyEventArgs(keyType, key);
         }
 
         bool InvokeActionAndEvent(RemoteControlKeyTypes keyType, string keyName)
@@ -101,11 +88,11 @@ namespace Tizen.TV.UIControls.Forms.Impl
                 return false;
 
             IList<RemoteKeyHandler> handlers = new List<RemoteKeyHandler>();
-            if (Element is Page)
+            if (Element is Page targetPage)
             {
-                if (IsOnCurrentPage(Application.Current.MainPage, (Page)Element))
+                if (IsOnCurrentPage(Application.Current.MainPage, (Page)targetPage))
                 {
-                    handlers = InputEvents.GetEventHandlers(Element);
+                    handlers = InputEvents.GetEventHandlers(targetPage);
                 }
             }
             else
@@ -116,9 +103,7 @@ namespace Tizen.TV.UIControls.Forms.Impl
             {
                 item.SendKeyEvent(args);
             }
-            if (args.Handled)
-                return true;
-            return false;
+            return args.Handled;
         }
 
         bool IsOnCurrentPage(Page currentPage, Page targetPage)
@@ -135,12 +120,12 @@ namespace Tizen.TV.UIControls.Forms.Impl
 
             if (currentPage is MasterDetailPage masterDetailPage)
             {
-                if (masterDetailPage.IsPresented == true)
+                if (masterDetailPage.IsPresented)
                 {
                     if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
                         return true;
                 }
-                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented == true))
+                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented))
                 {
                     if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
                         return true;

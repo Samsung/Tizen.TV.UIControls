@@ -8,6 +8,6 @@ namespace Tizen.TV.UIControls.Forms
 {
     internal class EventHandlerCollection : ObservableCollection<RemoteKeyHandler>
     {
-        public BindableObject Bindable { get; set; }
+        public VisualElement Target { get; set; }
     }
 }

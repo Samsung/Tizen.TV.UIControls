@@ -14,8 +14,8 @@ namespace Tizen.TV.UIControls.Forms
             defaultValueCreator: bindable =>
             {
                 var collection = new EventHandlerCollection();
-                collection.Bindable = bindable;
-                collection.CollectionChanged += Collection_CollectionChanged;
+                collection.Target = bindable as VisualElement;
+                collection.CollectionChanged += OnCollectionChanged;
                 return collection;
             });
 
@@ -42,28 +42,26 @@ namespace Tizen.TV.UIControls.Forms
             view.SetValue(AccessKeyProperty, value);
         }
 
-        static void Collection_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        static void OnCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
-            var bindable = (sender as EventHandlerCollection).Bindable;
-            var visualElement = bindable as VisualElement;
-            if (visualElement == null)
+            if ((sender as EventHandlerCollection).Target == null)
                 return;
 
             var collection = (EventHandlerCollection)sender;
             if (collection?.Count == 0)
             {
-                var toRemove = visualElement.Effects.FirstOrDefault(t => t is RemoteKeyEventEffect);
+                var toRemove = collection.Target.Effects.FirstOrDefault(t => t is RemoteKeyEventEffect);
                 if (toRemove != null)
                 {
-                    visualElement.Effects.Remove(toRemove);
+                    collection.Target.Effects.Remove(toRemove);
                 }
             }
             else
             {
-                var existingEffect = visualElement.Effects.FirstOrDefault(t => t is RemoteKeyEventEffect);
+                var existingEffect = collection.Target.Effects.FirstOrDefault(t => t is RemoteKeyEventEffect);
                 if (existingEffect == null)
                 {
-                    visualElement.Effects.Add(new RemoteKeyEventEffect());
+                    collection.Target.Effects.Add(new RemoteKeyEventEffect());
                 }
             }
         }

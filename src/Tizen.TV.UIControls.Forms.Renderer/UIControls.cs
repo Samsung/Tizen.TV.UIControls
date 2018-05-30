@@ -2,7 +2,7 @@
 using ElmSharp;
 using Xamarin.Forms.Internals;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public static class UIControls
     {

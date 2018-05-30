@@ -4,7 +4,7 @@ using Xamarin.Forms.Platform.Tizen;
 
 using NPage = Xamarin.Forms.Platform.Tizen.Native.Page;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class OverlayPageRenderer : PageRenderer
     {
