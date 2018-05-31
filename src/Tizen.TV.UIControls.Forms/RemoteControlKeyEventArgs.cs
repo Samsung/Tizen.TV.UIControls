@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Tizen.TV.UIControls.Forms
 {
-    public class RemoteControlKeyEventArgs
+    public class RemoteControlKeyEventArgs : EventArgs
     {
         public RemoteControlKeyEventArgs(RemoteControlKeyTypes keyType, RemoteControlKeyNames keyName)
         {
@@ -12,9 +12,9 @@ namespace Tizen.TV.UIControls.Forms
             KeyName = keyName;
         }
 
-        public RemoteControlKeyTypes KeyType { get; private set; }
+        public RemoteControlKeyTypes KeyType { get; }
 
-        public RemoteControlKeyNames KeyName { get; private set; }
+        public RemoteControlKeyNames KeyName { get; }
 
         public bool Handled { get; set; }
     }
