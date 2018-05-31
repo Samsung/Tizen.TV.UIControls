@@ -86,7 +86,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             if (args == null)
                 return false;
 
-            IList<RemoteKeyHandler> handlers = new List<RemoteKeyHandler>();
             if (Element is Page targetPage)
             {
                 if (!IsOnCurrentPage(Application.Current.MainPage, targetPage))
@@ -95,7 +94,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 }
             }
 
-            handlers = InputEvents.GetEventHandlers(Element);
+            var handlers = InputEvents.GetEventHandlers(Element);
             foreach (RemoteKeyHandler item in handlers)
             {
                 item.SendKeyEvent(args);
