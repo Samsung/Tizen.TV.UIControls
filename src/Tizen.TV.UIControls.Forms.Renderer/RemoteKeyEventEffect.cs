@@ -10,7 +10,7 @@ using Xamarin.Forms.Platform.Tizen;
 [assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    class RemoteKeyEventEffect : PlatformEffect
+    public class RemoteKeyEventEffect : PlatformEffect
     {
         protected override void OnAttached()
         {
@@ -89,15 +89,13 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             IList<RemoteKeyHandler> handlers = new List<RemoteKeyHandler>();
             if (Element is Page targetPage)
             {
-                if (IsOnCurrentPage(Application.Current.MainPage, (Page)targetPage))
+                if (!IsOnCurrentPage(Application.Current.MainPage, targetPage))
                 {
-                    handlers = InputEvents.GetEventHandlers(targetPage);
+                    return false;
                 }
             }
-            else
-            {
-                handlers = InputEvents.GetEventHandlers(Element);
-            }
+
+            handlers = InputEvents.GetEventHandlers(Element);
             foreach (RemoteKeyHandler item in handlers)
             {
                 item.SendKeyEvent(args);

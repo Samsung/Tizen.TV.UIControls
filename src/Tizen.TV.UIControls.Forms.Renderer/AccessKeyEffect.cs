@@ -10,7 +10,7 @@ using Xamarin.Forms.Platform.Tizen;
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    class AccessKeyEffect : PlatformEffect
+    public class AccessKeyEffect : PlatformEffect
     {
         RemoteControlKeyNames _targetKeyName;
 

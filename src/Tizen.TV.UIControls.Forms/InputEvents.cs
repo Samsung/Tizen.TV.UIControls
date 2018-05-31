@@ -48,7 +48,7 @@ namespace Tizen.TV.UIControls.Forms
                 return;
 
             var collection = (EventHandlerCollection)sender;
-            if (collection?.Count == 0)
+            if (collection.Count == 0)
             {
                 var toRemove = collection.Target.Effects.FirstOrDefault(t => t is RemoteKeyEventEffect);
                 if (toRemove != null)
