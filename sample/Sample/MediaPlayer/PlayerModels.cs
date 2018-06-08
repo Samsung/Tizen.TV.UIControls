@@ -32,9 +32,9 @@ namespace Sample
         public AudioPlayerTestModel(string name, Type page) : base(name, page, null)
         {
             Items = new List<AudioItem>{
-                new AudioItem { Path = "Kalimba.mp3", Text = "Kalimba"},
-                new AudioItem { Path = "Maid with the Flaxen Hair.mp3", Text = "Maid with the Flaxen Hair"},
-                new AudioItem { Path = "Sleep Away.mp3", Text = "Sleep Away.mp3"},
+                new AudioItem { Path = "https://developer.samsung.com/onlinedocs/tv/SmartView/sample/audio/Beverly_-_01_-_You_Said_It.mp3", Text = "You said it"},
+                new AudioItem { Path = "https://developer.samsung.com/onlinedocs/tv/SmartView/sample/audio/Every_Now_and_Every_Then_-_08_-_Bergwald_Bergwald.mp3", Text = "Bergwald Bergwald"},
+                new AudioItem { Path = "https://developer.samsung.com/onlinedocs/tv/SmartView/sample/audio/Ketsa_-_11_-_Retake.mp3", Text = "Retake"},
             };
         }
     }
@@ -44,18 +44,17 @@ namespace Sample
         {
             TestList = new List<PlayerTestModel>
             {
-                new PlayerTestModel("Embedding control test", typeof(TestEmbeddingControl), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/d.mp4"))),
-                new PlayerTestModel("Embedding control Page test", typeof(TestEmbeddingControl2), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/a.mp4"))),
+                new PlayerTestModel("Embedding control test", typeof(TestEmbeddingControl), MediaSource.FromFile("iu.mp4")),
+                new PlayerTestModel("Embedding control Page test", typeof(TestEmbeddingControl2), MediaSource.FromFile("tvcm.mp4")),
                 new AudioPlayerTestModel("Audio player test", typeof(TestAudioPlayer)),
-                new PlayerTestModel("Simple Player test", typeof(SimplePlayerPage), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/d.mp4"))),
-                new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage), MediaSource.FromUri(new System.Uri("http://www.html5videoplayer.net/videos/madagascar3.mp4"))),
-                new PlayerTestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("c.mp4")),
-                new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("c.mp4")),
-                new PlayerTestModel("Overlay view test", typeof(TestOverlayView), MediaSource.FromFile("c.mp4")),
-                new PlayerTestModel("Media view test", typeof(TestMediaView), MediaSource.FromFile("d.mp4")),
-                new PlayerTestModel("Aspect test", typeof(TestAspect), MediaSource.FromFile("d.mp4")),
-                new PlayerTestModel("Url test(slow)", typeof(TestOverlayPage), MediaSource.FromUri(new System.Uri("http://www.html5videoplayer.net/videos/toystory.mp4"))),
-                new PlayerTestModel("Url test(fast)", typeof(TestOverlayPage), MediaSource.FromUri(new System.Uri("http://10.113.111.170/~abyss/d.mp4")))
+                new PlayerTestModel("Simple Player test", typeof(SimplePlayerPage), MediaSource.FromFile("gear-sport.mp4")),
+                new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage), MediaSource.FromFile("tvcm.mp4")),
+                new PlayerTestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("tvcm.mp4")),
+                new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("tvcm.mp4")),
+                new PlayerTestModel("Overlay view test", typeof(TestOverlayView), MediaSource.FromFile("iu.mp4")),
+                new PlayerTestModel("Media view test", typeof(TestMediaView), MediaSource.FromFile("gear-sport.mp4")),
+                new PlayerTestModel("Aspect test", typeof(TestAspect), MediaSource.FromFile("pixel2-cf.mp4")),
+                new PlayerTestModel("Url test", typeof(TestOverlayPage), MediaSource.FromUri(new System.Uri("http://download.blender.org/demo/movies/caminandes_gran_dillama.mp4"))),
             };
         }
 

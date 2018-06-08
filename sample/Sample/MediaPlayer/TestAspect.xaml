@@ -4,7 +4,7 @@
              xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
              x:Class="Sample.TestAspect">
     <tvcontrols:OverlayPage.Player>
-        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true"/>
+        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="False"/>
     </tvcontrols:OverlayPage.Player>
     <StackLayout Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="Center">
         <Button Text="AspectFit" Clicked="OnAspectFit"></Button>

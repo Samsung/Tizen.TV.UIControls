@@ -8,13 +8,13 @@
         <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
             <Button Text="{Binding Source={x:Reference Player}, Path=UsesEmbeddingControls, StringFormat='UsesEmbeddingControls = {0}'}}" Clicked="OnToggled"/>
             <StackLayout HorizontalOptions="Center" Padding="30" BackgroundColor="#cccccc">
-                <tvcontrols:MediaView HeightRequest="720" WidthRequest="406">
+                <tvcontrols:MediaView HeightRequest="720" WidthRequest="1024">
                     <tvcontrols:MediaView.Player>
                         <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="true" />
                     </tvcontrols:MediaView.Player>
                 </tvcontrols:MediaView>
                 <BoxView Color="#cccccc"/>
-                <Label BackgroundColor="#cccccc" Text="IU" TextColor="#101010"/>
+                <Label BackgroundColor="#cccccc" Text="Control Test" TextColor="#101010"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

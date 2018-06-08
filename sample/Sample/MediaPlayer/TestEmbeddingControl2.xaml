@@ -7,7 +7,7 @@
     <tvcontrols:OverlayPage.Player>
         <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" UsesEmbeddingControls="true" AutoPlay="true" PositionUpdateInterval="100"></tvcontrols:MediaPlayer>
     </tvcontrols:OverlayPage.Player>
-    <StackLayout VerticalOptions="Center">
+    <StackLayout VerticalOptions="Start">
         <Button Text="{Binding Source={x:Reference Player}, Path=UsesEmbeddingControls, StringFormat='UsesEmbeddingControls = {0}'}}" x:Name="Btn"/>
     </StackLayout>
 </tvcontrols:OverlayPage>

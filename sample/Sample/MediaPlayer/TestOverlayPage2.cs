@@ -28,11 +28,11 @@ namespace Sample
 
             var player = new MediaPlayer
             {
-                Source = "c.mp4",
+                Source = "tvcm.mp4",
                 VideoOutput = this,
-                AutoPlay = true
+                AutoPlay = true,
+                UsesEmbeddingControls = false,
             };
-
             label.SetBinding(Label.TextProperty, new Binding("Duration", source: player, stringFormat:"{0} duration"));
         }
     }

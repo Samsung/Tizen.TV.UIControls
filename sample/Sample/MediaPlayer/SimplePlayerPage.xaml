@@ -11,7 +11,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <tvcontrols:OverlayPage.Player>
-        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true"/>
+        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="False"/>
     </tvcontrols:OverlayPage.Player>
     <AbsoluteLayout>
         <Label FontSize="Large"
