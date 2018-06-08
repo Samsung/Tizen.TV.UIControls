@@ -28,6 +28,11 @@ namespace Sample
                 {
                     Name = "RemoteCotrol Test",
                     PageType = typeof(RemoteControlMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "RecycleItemsView Test",
+                    PageType = typeof(RIVMainPage),
                 }
             };
         }

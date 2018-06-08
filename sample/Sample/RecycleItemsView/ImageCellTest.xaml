@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sample.RecycleItemsView.ImageCellTest"
+             xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:Sample.RecycleItemsView;assembly=Sample"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Label Text="Music" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
+            <tvcontrols:RecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Beige"
+                    ContentMargin="100"
+                    ItemWidth="400"
+                    ItemHeight="400"
+                    Spacing="30"
+                    ItemsSource="{Binding Items}"
+                    ItemSelected="OnSelected">
+                <tvcontrols:RecycleItemsView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Source}" Text="{Binding Text}" Detail="{Binding DetailText}"/>
+                    </DataTemplate>
+                </tvcontrols:RecycleItemsView.ItemTemplate>
+            </tvcontrols:RecycleItemsView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

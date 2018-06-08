@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sample.RecycleItemsView.CustomFocus"
+             xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:Sample.RecycleItemsView;assembly=Sample"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Label Text="Movies" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
+            <local:MyRecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Brown"
+                    ScrollBarVisibility="Never"
+                    ContentMargin="100"
+                    ItemWidth="480"
+                    ItemHeight="700"
+                    Spacing="50"
+                    ItemsSource="{Binding Items}"
+                    ItemSelected="OnSelected">
+                <tvcontrols:RecycleItemsView.ItemTemplate>
+                    <DataTemplate>
+                        <AbsoluteLayout BackgroundColor="CadetBlue">
+                            <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                            <StackLayout Padding="20" AbsoluteLayout.LayoutBounds="0, 1, 480, 100" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                <Label Text="{Binding DetailText}" FontSize="40"/>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </DataTemplate>
+                </tvcontrols:RecycleItemsView.ItemTemplate>
+            </local:MyRecycleItemsView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
