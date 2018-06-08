@@ -2,7 +2,7 @@
 using MMView = Tizen.Multimedia.MediaView;
 using Xamarin.Forms.Platform.Tizen.Native;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaViewRenderer : ViewRenderer<MediaView, Canvas>, IMediaViewProvider
     {

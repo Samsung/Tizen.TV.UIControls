@@ -5,7 +5,7 @@ using EColor = ElmSharp.Color;
 using System.Runtime.InteropServices;
 using Xamarin.Forms.Platform.Tizen.Native;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class OverlayViewRenderer : ViewRenderer<OverlayMediaView, Canvas>
     {

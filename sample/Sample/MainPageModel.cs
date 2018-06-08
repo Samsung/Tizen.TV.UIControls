@@ -23,6 +23,11 @@ namespace Sample
                 {
                     Name = "MediaPlayer Test",
                     PageType = typeof(PlayerMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "RemoteCotrol Test",
+                    PageType = typeof(RemoteControlMainPage),
                 }
             };
         }

@@ -1,5 +1,5 @@
 using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Impl;
+using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 

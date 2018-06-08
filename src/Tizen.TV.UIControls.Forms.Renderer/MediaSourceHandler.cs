@@ -3,7 +3,7 @@ using Tizen.Multimedia;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
 
     public interface IMediaSourceHandler : IRegisterable

@@ -8,7 +8,7 @@ using Xamarin.Forms.Internals;
 using System.IO;
 using System.Collections.Generic;
 
-namespace Tizen.TV.UIControls.Forms.Impl
+namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
     {
