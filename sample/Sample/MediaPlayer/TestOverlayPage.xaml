@@ -10,7 +10,7 @@
         </ResourceDictionary>           
     </ContentPage.Resources>
     <tvcontrols:OverlayPage.Player>
-        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true"/>
+        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="False"/>
     </tvcontrols:OverlayPage.Player>
     <StackLayout Padding="50" HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundColor="#20000000">
         <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=Duration, StringFormat='Duration {0}ms'}"/>
