@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using ElmSharp;
-using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
+using Tizen.TV.UIControls.Forms.Renderer;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer

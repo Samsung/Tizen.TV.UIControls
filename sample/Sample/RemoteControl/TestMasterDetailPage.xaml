@@ -4,35 +4,39 @@
                   xmlns:uicontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
                   x:Class="Sample.TestMasterDetailPage"
                   x:Name="rootPage"
-                  Title="MasterDetailPage">
+                  Title="MasterDetailPage"
+                  MasterBehavior="Popover"
+                  IsPresented="True">
     <uicontrols:InputEvents.EventHandlers>
-        <uicontrols:RemoteKeyHandler Command="{Binding masterDetailPageHandler, Source={x:Reference rootPage}}"/>
+        <uicontrols:RemoteKeyHandler Command="{Binding MasterDetailPageHandler, Source={x:Reference rootPage}}"/>
     </uicontrols:InputEvents.EventHandlers>
     <MasterDetailPage.Master>
-        <ContentPage Title="Master Page">
+        <ContentPage Title="Master Page" BackgroundColor="DarkOliveGreen">
             <ContentPage.Content>
                 <StackLayout>
-                    <Button Text="Button1"
+                    <Label x:Name="MasterLabel"/>
+                    <Button Text="Change behavior"
                     VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+                    HorizontalOptions="CenterAndExpand" Clicked="OnClicked" />
                 </StackLayout>
             </ContentPage.Content>
             <uicontrols:InputEvents.EventHandlers>
-                <uicontrols:RemoteKeyHandler Command="{Binding masterPageHandler, Source={x:Reference rootPage}}"/>
+                <uicontrols:RemoteKeyHandler Command="{Binding MasterPageHandler, Source={x:Reference rootPage}}"/>
             </uicontrols:InputEvents.EventHandlers>
         </ContentPage>
     </MasterDetailPage.Master>
     <MasterDetailPage.Detail>
-        <ContentPage Title="Detail Page">
+        <ContentPage Title="Detail Page" BackgroundColor="Cornsilk">
             <ContentPage.Content>
                 <StackLayout>
-                    <Button Text="Button1"
+                    <Label x:Name="DetailLabel" HorizontalOptions="End" TextColor="Black"/>
+                    <Button Text="ShowMaster"
                     VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" />
+                    HorizontalOptions="CenterAndExpand" Clicked="OnShowMaster"/>
                 </StackLayout>
             </ContentPage.Content>
             <uicontrols:InputEvents.EventHandlers>
-                <uicontrols:RemoteKeyHandler Command="{Binding detailPageHandler, Source={x:Reference rootPage}}"/>
+                <uicontrols:RemoteKeyHandler Command="{Binding DetailPageHandler, Source={x:Reference rootPage}}"/>
             </uicontrols:InputEvents.EventHandlers>
         </ContentPage>
     </MasterDetailPage.Detail>

@@ -6,18 +6,17 @@
              x:Name="rootPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
             <Button Text="Button1">
                 <uicontrols:InputEvents.EventHandlers>
-                    <uicontrols:RemoteKeyHandler Command="{Binding buttonHandler, Source={x:Reference rootPage}}"/>
+                    <uicontrols:RemoteKeyHandler Command="{Binding ButtonHandler, Source={x:Reference rootPage}}"/>
                 </uicontrols:InputEvents.EventHandlers>
             </Button>
-            <Button Text="Button2" />
+            <Button Text="Button2 (accesskey 1)" uicontrols:InputEvents.AccessKey="NUM1" Clicked="OnClicked" />
+            <Label x:Name="Label1"/>
+            <Label x:Name="Label2"/>
         </StackLayout>
     </ContentPage.Content>
     <uicontrols:InputEvents.EventHandlers>
-        <uicontrols:RemoteKeyHandler Command="{Binding pageHandler, Source={x:Reference rootPage}}" />
+        <uicontrols:RemoteKeyHandler Command="{Binding PageHandler, Source={x:Reference rootPage}}" />
     </uicontrols:InputEvents.EventHandlers>
 </ContentPage>

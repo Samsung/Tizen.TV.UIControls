@@ -1,15 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Sample
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class RemoteControlMainPage : ContentPage
 	{
 		public RemoteControlMainPage ()
@@ -18,9 +13,9 @@ namespace Sample
             BindingContext = new RemoteControlMainPageModel();
         }
 
-        async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void ItemSelected(object sender, ItemTappedEventArgs args)
         {
-            RemoteControlTestModel model = (RemoteControlTestModel)args.SelectedItem;
+            RemoteControlTestModel model = (RemoteControlTestModel)args.Item;
             Page page = (Page)Activator.CreateInstance(model.Page);
             page.BindingContext = model;
             await Navigation.PushAsync(page);

@@ -1,38 +1,83 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tizen.TV.UIControls.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Tizen.TV.UIControls.Forms;
 
 namespace Sample
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TestTabbedPage : TabbedPage
 	{
-        public Command tabbedPageHandler_Tabbed
+        public Command TabbedPageHandler_Tabbed
         {
             get
             {
-                return new Command((arg) => Console.WriteLine("TabbedPage => arg.KeyType : {0} , arg.KeyName : {1}", (arg as RemoteControlKeyEventArgs).KeyType, (arg as RemoteControlKeyEventArgs).KeyName));
+                return new Command<RemoteControlKeyEventArgs>((arg) =>
+                {
+                    Console.WriteLine("TabbedPage => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                    if (arg.KeyType == RemoteControlKeyTypes.KeyUp)
+                    {
+                        if (arg.KeyName == RemoteControlKeyNames.NUM1)
+                        {
+                            CurrentPage = Page1;
+                        }
+                        else if (arg.KeyName == RemoteControlKeyNames.NUM2)
+                        {
+                            CurrentPage = Page2;
+                        }
+                        else if (arg.KeyName == RemoteControlKeyNames.NUM3)
+                        {
+                            CurrentPage = Page3;
+                        }
+                    }
+                });
             }
         }
 
-        public Command pageHandler_Tabbed
+        public Command PageHandler1_Tabbed
         {
             get
             {
-                return new Command((arg) => Console.WriteLine("ContentPage => arg.KeyType : {0} , arg.KeyName : {1}", (arg as RemoteControlKeyEventArgs).KeyType, (arg as RemoteControlKeyEventArgs).KeyName));
+                return new Command<RemoteControlKeyEventArgs>((arg) =>
+                {
+                    Console.WriteLine("ContentPage => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                    Label1.Text = $"{arg.KeyName} was pressed";
+                });
             }
         }
 
-        public Command buttonHandler_Tabbed
+        public Command PageHandler2_Tabbed
         {
             get
             {
-                return new Command((arg) => Console.WriteLine("Control => arg.KeyType : {0} , arg.KeyName : {1}", (arg as RemoteControlKeyEventArgs).KeyType, (arg as RemoteControlKeyEventArgs).KeyName));
+                return new Command<RemoteControlKeyEventArgs>((arg) =>
+                {
+                    Console.WriteLine("ContentPage => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                    Label2.Text = $"{arg.KeyName} was pressed";
+                });
+            }
+        }
+
+        public Command PageHandler3_Tabbed
+        {
+            get
+            {
+                return new Command<RemoteControlKeyEventArgs>((arg) =>
+                {
+                    Console.WriteLine("ContentPage => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                    Label3.Text = $"{arg.KeyName} was pressed";
+                });
+            }
+        }
+
+        public Command ButtonHandler_Tabbed
+        {
+            get
+            {
+                return new Command<RemoteControlKeyEventArgs>((arg) =>
+                {
+                    Console.WriteLine("Control => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                });
             }
         }
 

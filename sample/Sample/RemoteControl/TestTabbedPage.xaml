@@ -3,46 +3,49 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:uicontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
             x:Class="Sample.TestTabbedPage"
-            x:Name="tabbedPage">
+            x:Name="tabbedPage"
+            Title="1, 2, 3 is changing tab">
     <uicontrols:InputEvents.EventHandlers>
-        <uicontrols:RemoteKeyHandler Command="{Binding tabbedPageHandler_Tabbed, Source={x:Reference tabbedPage}}" />
+        <uicontrols:RemoteKeyHandler Command="{Binding TabbedPageHandler_Tabbed, Source={x:Reference tabbedPage}}" />
     </uicontrols:InputEvents.EventHandlers>
-    <ContentPage Title="Page1">
+    <ContentPage Title="Page1" x:Name="Page1">
         <uicontrols:InputEvents.EventHandlers>
-            <uicontrols:RemoteKeyHandler Command="{Binding pageHandler_Tabbed, Source={x:Reference tabbedPage}}" />
+            <uicontrols:RemoteKeyHandler Command="{Binding PageHandler1_Tabbed, Source={x:Reference tabbedPage}}" />
         </uicontrols:InputEvents.EventHandlers>
         <ContentPage.Content>
             <StackLayout>
                 <Button Text="Button1">
                     <uicontrols:InputEvents.EventHandlers>
-                        <uicontrols:RemoteKeyHandler Command="{Binding buttonHandler_Tabbed, Source={x:Reference tabbedPage}}" />
+                        <uicontrols:RemoteKeyHandler Command="{Binding ButtonHandler_Tabbed, Source={x:Reference tabbedPage}}" />
                     </uicontrols:InputEvents.EventHandlers>
                 </Button>
-                <Button Text="Button2">
-                </Button>
+                <Label x:Name="Label1"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Page2">
+    <ContentPage Title="Page2" x:Name="Page2">
+        <uicontrols:InputEvents.EventHandlers>
+            <uicontrols:RemoteKeyHandler Command="{Binding PageHandler2_Tabbed, Source={x:Reference tabbedPage}}" />
+        </uicontrols:InputEvents.EventHandlers>
         <ContentPage.Content>
             <StackLayout>
                 <Button Text="Button1">
                     <uicontrols:InputEvents.EventHandlers>
-                        <uicontrols:RemoteKeyHandler Command="{Binding buttonHandler_Tabbed, Source={x:Reference tabbedPage}}" />
+                        <uicontrols:RemoteKeyHandler Command="{Binding ButtonHandler_Tabbed, Source={x:Reference tabbedPage}}" />
                     </uicontrols:InputEvents.EventHandlers>
                 </Button>
-                <Button Text="Button2">
-                </Button>
+                <Label x:Name="Label2"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
-    <ContentPage Title="Page3">
+    <ContentPage Title="Page3" x:Name="Page3">
         <uicontrols:InputEvents.EventHandlers>
-            <uicontrols:RemoteKeyHandler Command="{Binding pageHandler_Tabbed, Source={x:Reference tabbedPage}}" />
+            <uicontrols:RemoteKeyHandler Command="{Binding PageHandler3_Tabbed, Source={x:Reference tabbedPage}}" />
         </uicontrols:InputEvents.EventHandlers>
         <ContentPage.Content>
             <StackLayout>
                 <Button Text="Button1" />
+                <Label x:Name="Label3"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Tizen.TV.UIControls.Forms;
 
 namespace Sample
@@ -11,75 +7,55 @@ namespace Sample
     {
         public TestNavigationPage()
         {
-            Button button1 = new Button { Text = "Button1" };
-            RemoteKeyHandler buttonHandler = new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((arg) =>
+            SetHasNavigationBar(this, false);
+
+            InputEvents.GetEventHandlers(this).Add(new RemoteKeyHandler((args) =>
             {
-                Console.WriteLine("Control => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                if (args.KeyName == RemoteControlKeyNames.Up && args.KeyType == RemoteControlKeyTypes.KeyUp)
+                    DisplayAlert("KeyEvent", "Up Pressed on NavigationPage", "ok");
             }));
-            InputEvents.GetEventHandlers(button1).Add(buttonHandler);
-
-
-            Button button2 = new Button { Text = "Button2" };
-            button2.Clicked += (s, e) =>
-            {
-                Console.WriteLine("Button2 is Clicked !");
-            };
-            InputEvents.SetAccessKey(button2, RemoteControlKeyNames.NUM1);
-
-            Entry entry = new Entry { Placeholder = "This is Entry" };
-            InputEvents.SetAccessKey(entry, RemoteControlKeyNames.NUM2);
 
             var page1 = new ContentPage
             {
-                Title = "Page1",
-                Content = new StackLayout
-                {
-                    Children = {
-                                new Label { Text = "Welcome to Xamarin.Forms!" },
-                                button1,
-                                button2,
-                                entry
-                            }
-
-                }
-            };
-
-            var page2 = new ContentPage { Title = "nav.page2" };
-            InputEvents.GetEventHandlers(page2).Add(new RemoteKeyHandler(
-                new Action<RemoteControlKeyEventArgs>(
-                (arg) => { Console.WriteLine("page2 => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName); }
-                )));
-
-            var page3_btn1 = new Button
-            {
-                Text = "button1"
-
-            };
-            InputEvents.GetEventHandlers(page3_btn1).Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>(
-                (arg) => { Console.WriteLine("page3_btn1 => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName); })));
-            var page3 = new ContentPage {
-                Title = "nav.page3",
+                Title = "child page1",
                 Content = new StackLayout
                 {
                     Children =
                     {
-                        page3_btn1
+                        new Label { Text = "`Up` is triggering NavigationPage EventHandler" },
+                        new Label { Text = "`Down` is triggering child page1 EventHandler" },
                     }
+
                 }
             };
-            InputEvents.GetEventHandlers(page3).Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>(
-                (arg) => { Console.WriteLine("page3 => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName); })));
 
-            this.Title = "Navigation Page";
+            InputEvents.GetEventHandlers(page1).Add(new RemoteKeyHandler((args) =>
+            {
+                if (args.KeyName == RemoteControlKeyNames.Down && args.KeyType == RemoteControlKeyTypes.KeyUp)
+                    DisplayAlert("KeyEvent", "Down Pressed on child page1", "ok");
+            }));
+
+            var page2 = new ContentPage
+            {
+                Title = "child page2",
+                Content = new StackLayout
+                {
+                    Children =
+                    {
+                        new Label { Text = "`Up` is triggering NavigationPage EventHandler" },
+                        new Label { Text = "`Down` is triggering child page2 EventHandler" },
+                    }
+
+                }
+            };
+            InputEvents.GetEventHandlers(page2).Add(new RemoteKeyHandler((args) =>
+            {
+                if (args.KeyName == RemoteControlKeyNames.Down && args.KeyType == RemoteControlKeyTypes.KeyUp)
+                    DisplayAlert("KeyEvent", "Down Pressed on child page2", "ok");
+            }));
+
             this.PushAsync(page1);
             this.PushAsync(page2);
-            this.PushAsync(page3);
-
-            RemoteKeyHandler PageHandler = new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((arg) =>
-            {
-                Console.WriteLine("Navigation Page => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
-            }));
-            InputEvents.GetEventHandlers(this).Add(PageHandler);
         }
     }
 }
