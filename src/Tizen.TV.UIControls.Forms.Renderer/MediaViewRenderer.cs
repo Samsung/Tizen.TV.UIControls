@@ -4,7 +4,7 @@ using Xamarin.Forms.Platform.Tizen.Native;
 
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    public class MediaViewRenderer : ViewRenderer<MediaView, Canvas>, IMediaViewProvider
+    public class MediaViewRenderer : ViewRenderer<MediaView, LayoutCanvas>, IMediaViewProvider
     {
         MMView _mediaView;
         protected override void OnElementChanged(ElementChangedEventArgs<MediaView> e)
@@ -12,9 +12,10 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             if (Control == null)
             {
                 _mediaView = new MMView(Xamarin.Forms.Platform.Tizen.Forms.NativeParent);
-                SetNativeControl(new Canvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
-                Control.SetLayoutCallback(OnLayout);
-                Control.PackEnd(_mediaView);
+                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
+                Control.LayoutUpdated += (s, evt) => OnLayout();
+                Control.Children.Add(_mediaView);
+                Control.AllowFocus(true);
             }
             base.OnElementChanged(e);
         }

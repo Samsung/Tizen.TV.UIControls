@@ -48,7 +48,7 @@ namespace Sample
                 new PlayerTestModel("Embedding control Page test", typeof(TestEmbeddingControl2), MediaSource.FromFile("tvcm.mp4")),
                 new AudioPlayerTestModel("Audio player test", typeof(TestAudioPlayer)),
                 new PlayerTestModel("Simple Player test", typeof(SimplePlayerPage), MediaSource.FromFile("gear-sport.mp4")),
-                new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage), MediaSource.FromFile("tvcm.mp4")),
+                new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay view test", typeof(TestOverlayView), MediaSource.FromFile("iu.mp4")),

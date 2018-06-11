@@ -4,7 +4,7 @@
              x:Class="Sample.MainPage"
              Title="TV.UIControls">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding TestCategories}" ItemSelected="ItemSelected">
+        <ListView ItemsSource="{Binding TestCategories}" ItemTapped="ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" />

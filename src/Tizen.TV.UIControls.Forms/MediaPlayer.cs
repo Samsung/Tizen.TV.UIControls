@@ -222,20 +222,20 @@ namespace Tizen.TV.UIControls.Forms
         [EditorBrowsable(EditorBrowsableState.Never)]
         public Command FastForwardCommand => new Command(() =>
         {
-            if (State == PlaybackState.Playing)
+            if (State != PlaybackState.Stopped)
             {
-                Seek(Math.Min(Position + 10000, Duration));
+                Seek(Math.Min(Position + 5000, Duration));
             }
-        });
+        }, () => State != PlaybackState.Stopped);
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public Command RewindCommand => new Command(() =>
         {
-            if (State == PlaybackState.Playing)
+            if (State != PlaybackState.Stopped)
             {
-                Seek(Math.Max(Position - 10000, 0));
+                Seek(Math.Max(Position - 5000, 0));
             }
-        });
+        }, () => State != PlaybackState.Stopped);
 
         public event EventHandler PlaybackCompleted;
         public event EventHandler PlaybackStarted;
@@ -252,7 +252,7 @@ namespace Tizen.TV.UIControls.Forms
         public Task<int> Seek(int ms)
         {
             ShowController();
-            return _impl.Seek(ms);
+            return _impl.Seek(ms).ContinueWith((t) => Position = _impl.Position);
         }
 
         public Task<bool> Start()
@@ -355,11 +355,32 @@ namespace Tizen.TV.UIControls.Forms
 
         void OnVideoOutputChanged()
         {
-            if (UsesEmbeddingControls)
+            if (VideoOutput != null)
             {
-                VideoOutput.Controller = _controls.Value;
+                if (UsesEmbeddingControls)
+                {
+                    VideoOutput.Controller = _controls.Value;
+                }
+                VideoOutput.MediaView.Focused += OnVideoOutputFocused;
+                InputEvents.GetEventHandlers(VideoOutput.MediaView).Add(new RemoteKeyHandler(OnVideoOutputKeyEvent));
+                if (VideoOutput.MediaView is View outputView)
+                {
+                    TapGestureRecognizer tapGesture = new TapGestureRecognizer();
+                    tapGesture.Tapped += OnOutputTapped;
+                    outputView.GestureRecognizers.Add(tapGesture);
+                }
             }
             _impl.SetDisplay(VideoOutput);
+        }
+
+        void OnOutputTapped(object sender, EventArgs e)
+        {
+            if (!UsesEmbeddingControls)
+                return;
+            if (!_controls.Value.IsVisible)
+            {
+                ShowController();
+            }
         }
 
         async void OnUsesEmbeddingControlsChanged()
@@ -380,6 +401,53 @@ namespace Tizen.TV.UIControls.Forms
                     await Task.Delay(200);
                     VideoOutput.Controller = null;
                 }
+            }
+        }
+
+        void OnVideoOutputKeyEvent(RemoteControlKeyEventArgs args)
+        {
+            if (args.KeyType == RemoteControlKeyTypes.KeyDown)
+                return;
+            if (!UsesEmbeddingControls)
+                return;
+
+            if (!_controls.Value.IsVisible)
+            {
+                ShowController();
+                return;
+            }
+
+            if (args.KeyName == RemoteControlKeyNames.Left)
+            {
+                if (RewindCommand.CanExecute(null))
+                {
+                    args.Handled = true;
+                    RewindCommand.Execute(null);
+                }
+            }
+            else if (args.KeyName == RemoteControlKeyNames.Right)
+            {
+                if (FastForwardCommand.CanExecute(null))
+                {
+                    args.Handled = true;
+                    FastForwardCommand.Execute(null);
+                }
+            }
+            else if (args.KeyName == RemoteControlKeyNames.Return)
+            {
+                if (StartCommand.CanExecute(null))
+                {
+                    args.Handled = true;
+                    StartCommand.Execute(null);
+                }
+            }
+        }
+
+        void OnVideoOutputFocused(object sender, FocusEventArgs e)
+        {
+            if (UsesEmbeddingControls)
+            {
+                ShowController();
             }
         }
 

@@ -13,9 +13,9 @@ namespace Sample
             BindingContext = new PlayerMainPageModel();
         }
 
-        async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void ItemSelected(object sender, ItemTappedEventArgs args)
         {
-            PlayerTestModel model = (PlayerTestModel)args.SelectedItem;
+            PlayerTestModel model = (PlayerTestModel)args.Item;
             Page page = (Page)Activator.CreateInstance(model.Page);
             page.BindingContext = model;
             await Navigation.PushAsync(page);

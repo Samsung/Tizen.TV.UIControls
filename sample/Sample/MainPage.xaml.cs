@@ -18,9 +18,9 @@ namespace Sample
             BindingContext = new MainPageModel();
 		}
 
-        async void ItemSelected(object sender, SelectedItemChangedEventArgs args)
+        async void ItemSelected(object sender, ItemTappedEventArgs args)
         {
-            TestCategory model = (TestCategory)args.SelectedItem;
+            TestCategory model = (TestCategory)args.Item;
             Page page = (Page)Activator.CreateInstance(model.PageType);
             await Navigation.PushAsync(page);
         }
