@@ -14,7 +14,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
     {
         Player _player;
 
-        bool _usesEmbeddingControls = true;
         bool _cancelToStart = false;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare = null;
@@ -31,11 +30,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         public bool UsesEmbeddingControls
         {
-            get => _usesEmbeddingControls;
-            set
-            {
-                _usesEmbeddingControls = value;
-            }
+            get; set;
         }
 
         public bool AutoPlay { get; set; }

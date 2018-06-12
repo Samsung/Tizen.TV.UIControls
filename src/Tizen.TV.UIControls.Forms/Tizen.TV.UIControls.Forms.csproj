@@ -5,6 +5,14 @@
     <AssemblyName>Tizen.TV.UIControls.Forms</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\img_button_pause.png" />
+    <None Remove="Resources\img_button_play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\img_button_pause.png" />
+    <EmbeddedResource Include="Resources\img_button_play.png" />
+  </ItemGroup>
   
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.1.0.469394-pre1" />
