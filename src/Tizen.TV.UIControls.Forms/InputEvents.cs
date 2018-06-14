@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -13,6 +9,7 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindablePropertyKey EventHandlersPropertyKey = BindableProperty.CreateAttachedReadOnly("EventHandlers", typeof(IList<RemoteKeyHandler>), typeof(InputEvents), null,
             defaultValueCreator: bindable =>
             {
+                System.Console.WriteLine($"Create Default : object {bindable.GetType()}-{bindable.GetHashCode()}");
                 var collection = new EventHandlerCollection();
                 collection.Target = bindable as VisualElement;
                 collection.CollectionChanged += OnCollectionChanged;
@@ -29,6 +26,7 @@ namespace Tizen.TV.UIControls.Forms
 
         public static IList<RemoteKeyHandler> GetEventHandlers(BindableObject view)
         {
+            System.Console.WriteLine($"GetEventHandlers : object {view.GetType()}-{view.GetHashCode()}");
             return (IList<RemoteKeyHandler>)view.GetValue(EventHandlersProperty);
         }
 

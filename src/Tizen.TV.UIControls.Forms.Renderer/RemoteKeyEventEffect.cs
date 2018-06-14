@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using ElmSharp;
-using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
+using Tizen.TV.UIControls.Forms.Renderer;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
 [assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tizen.TV.UIControls.Forms
+﻿namespace Tizen.TV.UIControls.Forms
 {
     public enum RemoteControlKeyNames
     {

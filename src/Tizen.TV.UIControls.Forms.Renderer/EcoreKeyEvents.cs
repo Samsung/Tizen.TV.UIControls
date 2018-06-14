@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 using ElmSharp;
 
 namespace Tizen.TV.UIControls.Forms.Renderer
