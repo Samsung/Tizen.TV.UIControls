@@ -50,6 +50,7 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindableProperty ContentMarginProperty = BindableProperty.Create(nameof(ContentMargin), typeof(Thickness), typeof(RecycleItemsView), default(Thickness), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateContentMargin());
         public static readonly BindableProperty ScrollPolicyProperty = BindableProperty.Create(nameof(ScrollPolicy), typeof(ScrollToPosition), typeof(RecycleItemsView), ScrollToPosition.Center);
         public static readonly BindableProperty ScrollBarVisibilityProperty = BindableProperty.Create(nameof(ScrollBarVisibility), typeof(ScrollBarVisibility), typeof(RecycleItemsView), ScrollBarVisibility.Default, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateScrollBarVisibility());
+        public static readonly BindableProperty ColumnCountProperty = BindableProperty.Create(nameof(ColumnCount), typeof(int), typeof(RecycleItemsView), 1, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateColumnCount());
 
         static readonly BindablePropertyKey FocusedViewPropertyKey = BindableProperty.CreateReadOnly("FocusedView", typeof(View), typeof(RecycleItemsView), null);
         static readonly BindableProperty FocusedViewProperty = FocusedViewPropertyKey.BindableProperty;
@@ -123,14 +124,20 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(ContentMarginProperty, value); }
         }
 
+        public int ColumnCount
+        {
+            get { return (int)GetValue(ColumnCountProperty); }
+            set { SetValue(ColumnCountProperty, value); }
+        }
+
         Size ContentSize
         {
             get
             {
                 if (IsHorizontal)
-                    return new Size((ItemWidth + Spacing) * ItemsCount, ItemHeight);
+                    return new Size((ItemWidth + Spacing) * RowsCount - Spacing, (ItemHeight + Spacing) * ColumnCount - Spacing);
                 else
-                    return new Size(ItemWidth, (ItemHeight + Spacing) * ItemsCount);
+                    return new Size((ItemWidth + Spacing) * ColumnCount - Spacing, (ItemHeight + Spacing) * RowsCount - Spacing);
             }
         }
 
@@ -217,9 +224,12 @@ namespace Tizen.TV.UIControls.Forms
         }
 
         double ItemSize => IsHorizontal ? ItemWidth + Spacing : ItemHeight + Spacing;
+        double ColumnSize => IsHorizontal? ItemHeight + Spacing : ItemWidth + Spacing;
 
         int ItemsCount => _itemsContext.Count;
         bool IsHorizontal => Orientation == RecycleItemsViewOrientation.Horizontal;
+
+        int RowsCount => (int)Math.Ceiling(ItemsCount / (double)ColumnCount);
 
 
         public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
@@ -242,31 +252,55 @@ namespace Tizen.TV.UIControls.Forms
             if (ItemsCount == 0)
                 return false;
 
-            string toPrev = IsHorizontal ? "Left" : "Up";
-            string toNext = IsHorizontal ? "Right" : "Down";
+            string prevRows = IsHorizontal ? "Left" : "Up";
+            string nextRows = IsHorizontal ? "Right" : "Down";
+            string prevCols = IsHorizontal ? "Up" : "Left";
+            string nextCols = IsHorizontal ? "Down" : "Right";
 
-            if (keyname == toPrev)
+            Point rowcols = IndexToPosition(_focusedItemIndex);
+            int rows = (int)rowcols.X;
+            int cols = (int)rowcols.Y;
+
+            if (keyname == prevRows)
             {
-                if (_focusedItemIndex == 0)
+                if (rows == 0)
                 {
                     return false;
                 }
-                else
-                {
-                    _focusedItemIndex = Math.Max(0, _focusedItemIndex - 1);
-                }
+                _focusedItemIndex = Math.Max(0, PositionToIndex(rows - 1, cols));
                 FocusedItem = _itemsContext[_focusedItemIndex].Data;
                 return true;
             }
-            else if (keyname == toNext)
+            else if (keyname == nextRows)
             {
-                if (_focusedItemIndex == ItemsCount - 1)
+                if (rows == RowsCount - 1)
                 {
                     return false;
                 }
-                _focusedItemIndex = Math.Min(_focusedItemIndex + 1, ItemsCount - 1);
+                _focusedItemIndex = Math.Min(PositionToIndex(rows + 1, cols), ItemsCount - 1);
                 FocusedItem = _itemsContext[_focusedItemIndex].Data;
                 return true;
+            }
+            else if (keyname == nextCols)
+            {
+                if (cols == ColumnCount - 1)
+                {
+                    return false;
+                }
+                _focusedItemIndex = Math.Min(PositionToIndex(rows, cols + 1), ItemsCount - 1);
+                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+                return true;
+            }
+            else if (keyname == prevCols)
+            {
+                if (cols == 0)
+                {
+                    return false;
+                }
+                _focusedItemIndex = Math.Max(0, PositionToIndex(rows, cols - 1));
+                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+                return true;
+
             }
             else if (keyname == "Return")
             {
@@ -275,6 +309,8 @@ namespace Tizen.TV.UIControls.Forms
                     SelectedItem = FocusedItem;
                     return true;
                 }
+                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+                return true;
             }
             return false;
         }
@@ -361,7 +397,7 @@ namespace Tizen.TV.UIControls.Forms
                 view = CreateContent(item.Data);
 
                 view.Focused += OnViewFocused;
-                _contentLayout.Children.Add(view, bounds, IsHorizontal ? AbsoluteLayoutFlags.YProportional : AbsoluteLayoutFlags.XProportional);
+                _contentLayout.Children.Add(view, bounds);
             }
             _viewToItemTable[view] = item;
 
@@ -529,10 +565,13 @@ namespace Tizen.TV.UIControls.Forms
 
         Rectangle CalculateCellBounds(int index)
         {
+            int rowIndex = index / ColumnCount;
+            int colIndex = index % ColumnCount;
+
             if (IsHorizontal)
-                return new Rectangle(index * ItemSize, 0.5, ItemWidth, ItemHeight);
+                return new Rectangle(rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ItemHeight);
             else
-                return new Rectangle(0.5, index * ItemSize, ItemWidth, ItemHeight);
+                return new Rectangle(colIndex * ColumnSize, rowIndex * ItemSize, ItemWidth, ItemHeight);
         }
 
         void LayoutInvalidate()
@@ -565,8 +604,8 @@ namespace Tizen.TV.UIControls.Forms
 
             _lastViewPort = ViewPort;
 
-            int startIndex = (int)(ViewPortStartPoint / ItemSize);
-            int endIndex = startIndex + (int)Math.Ceiling(ViewPortSize / ItemSize);
+            int startIndex = (int)(ViewPortStartPoint / (ItemSize / ColumnCount) );
+            int endIndex = startIndex + (int)Math.Ceiling(ViewPortSize / (ItemSize / ColumnCount));
 
             startIndex = Math.Min(ItemsCount - 1, startIndex);
             endIndex = Math.Min(ItemsCount - 1, endIndex);
@@ -856,6 +895,21 @@ namespace Tizen.TV.UIControls.Forms
                 ScrollView.HorizontalScrollBarVisibility = ScrollBarVisibility.Never;
                 ScrollView.VerticalScrollBarVisibility = ScrollBarVisibility;
             }
+        }
+
+        void UpdateColumnCount()
+        {
+            LayoutInvalidate();
+        }
+
+        int PositionToIndex(int row, int cols)
+        {
+            return row * ColumnCount + cols;
+        }
+
+        Point IndexToPosition(int index)
+        {
+            return new Point(index / ColumnCount, index % ColumnCount);
         }
 
         internal class ContentLayout : AbsoluteLayout, IRecycleItemsViewController
