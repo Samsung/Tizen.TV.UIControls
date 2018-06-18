@@ -277,6 +277,7 @@ namespace Tizen.TV.UIControls.Forms
 
             ScrollView.Focused += OnScrollViewFocused;
             ScrollView.Unfocused += OnScrollViewFocused;
+            Focused += OnFocused;
 
             UpdateScrollBarVisibility();
 
@@ -669,6 +670,11 @@ namespace Tizen.TV.UIControls.Forms
             {
                 FocusedItem = _viewToItemTable[(View)sender].Data;
             }
+        }
+
+        void OnFocused(object sender, FocusEventArgs e)
+        {
+            ScrollView.Focus();
         }
 
         void OnScrollViewFocused(object sender, FocusEventArgs e)
