@@ -70,6 +70,12 @@ namespace Sample.RecycleItemsView
                     Name = "Vertical Test",
                     PageType = typeof(VerticalTest),
                     Items = ColorModel.MakeModel()
+                },
+                new ItemsModel
+                {
+                    Name = "Focus chain Test",
+                    PageType = typeof(FocusChainTest),
+                    Items = ColorModel.MakeModel(15)
                 }
             };
         }
@@ -90,11 +96,11 @@ namespace Sample.RecycleItemsView
         public Color Color { get; set; }
         public string Text { get; set; }
 
-        public static List<ColorModel> MakeModel()
+        public static List<ColorModel> MakeModel(int count = 3000)
         {
             List<ColorModel> list = new List<ColorModel>();
             Random rnd = new Random();
-            for (int i = 0; i < 3000; i++)
+            for (int i = 0; i < count; i++)
             {
                 Color color = Color.FromRgb(rnd.Next(255), rnd.Next(255), rnd.Next(255));
                 list.Add(new ColorModel
