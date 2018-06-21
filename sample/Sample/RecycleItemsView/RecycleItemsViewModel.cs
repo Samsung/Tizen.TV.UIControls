@@ -99,6 +99,12 @@ namespace Sample.RecycleItemsView
                     PageType = typeof(ColumnTest),
                     Items = ColorModel.MakeModel()
                 },
+                new ItemsModel
+                {
+                    Name = "Header Test",
+                    PageType = typeof(HeaderTest),
+                    Items = ColorModel.MakeModel()
+                },
             };
         }
     }

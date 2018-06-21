@@ -25,17 +25,66 @@ using Xamarin.Forms.Xaml;
 
 namespace Sample.RecycleItemsView
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+
+    public class MenuItemsView : Tizen.TV.UIControls.Forms.RecycleItemsView
+    {
+        protected override void OnItemFocused(object data, View targetView, bool isFocused)
+        {
+            StackLayout layout = (StackLayout)targetView;
+            Label label = (Label)layout.Children[0];
+
+            if (isFocused)
+            {
+                layout.BackgroundColor = Color.FromRgb(198, 201, 206);
+                label.TextColor = Color.FromRgb(5, 5, 5);
+            }
+            else
+            {
+                label.TextColor = Color.FromRgb(198, 201, 206);
+                layout.BackgroundColor = Color.FromRgb(5, 5, 5);
+            }
+        }
+    }
+
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class VertialHorzontalTest : ContentPage
 	{
-		public VertialHorzontalTest ()
-		{
-			InitializeComponent ();
-		}
-
-        private void OnSelected(object sender, SelectedItemChangedEventArgs e)
+        public VertialHorzontalTest ()
         {
-            DisplayAlert("Selected", (e.SelectedItem as ColorModel).Text, "OK");
+            InitializeComponent();
+            MenuList.Focused += OnMenuFocused;
+            MenuList.Unfocused += OnMenuFocused;
+
+        }
+
+        void OnMenuFocused(object sender, FocusEventArgs e)
+        {
+            if (e.IsFocused)
+            {
+                double start = (Sidebar.WidthRequest - 1) / 400.0;
+                var animation = new Animation((r) =>
+                {
+                    Sidebar.WidthRequest = 400 * r;
+                }, start, 1, Easing.SpringIn);
+                animation.Commit(Sidebar, "Focus", length: (uint)(250 * (1 - start)));
+            }
+            else
+            {
+                double start = (400 - Sidebar.WidthRequest) / 400.0;
+                var animation = new Animation((r) =>
+                {
+                    Sidebar.WidthRequest = 400 * (1 - r) + 1;
+                }, start, 1, Easing.SpringIn);
+                animation.Commit(Sidebar, "Focus", length: (uint)(250 * (1 - start)));
+            }
+        }
+
+        void OnSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem is ColorModel item)
+            {
+                DisplayAlert("Selected", item.Text, "OK");
+            }
         }
     }
 }
