@@ -84,7 +84,7 @@ namespace Tizen.TV.UIControls.Forms
             if (visualElement == null)
                 return;
 
-            if ((RemoteControlKeyNames)newValue == RemoteControlKeyNames.Undefined )
+            if ((RemoteControlKeyNames)newValue == RemoteControlKeyNames.Unknown )
             {
                 var toRemove = visualElement.Effects.FirstOrDefault(t => t is AccessKeyEffect);
                 if (toRemove != null)

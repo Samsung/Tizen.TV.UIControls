@@ -83,15 +83,15 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 e.Flags = EvasEventFlag.OnHold;
         }
 
-        static RemoteControlKeyEventArgs CreateArgs(RemoteControlKeyTypes keyType, string keyName)
+        RemoteControlKeyEventArgs CreateArgs(RemoteControlKeyTypes keyType, string keyName)
         {
-            RemoteControlKeyNames key = RemoteControlKeyNames.Undefined;
+            RemoteControlKeyNames key = RemoteControlKeyNames.Unknown;
             if (Enum.TryParse(keyName, out key))
-                return new RemoteControlKeyEventArgs(keyType, key);
+                return new RemoteControlKeyEventArgs((VisualElement)Element, keyType, key, keyName);
             if (Enum.TryParse("NUM" + keyName, out key))
-                return new RemoteControlKeyEventArgs(keyType, key);
+                return new RemoteControlKeyEventArgs((VisualElement)Element, keyType, key, keyName);
 
-            return new RemoteControlKeyEventArgs(keyType, key);
+            return new RemoteControlKeyEventArgs((VisualElement)Element, keyType, key, keyName);
         }
 
         bool InvokeActionAndEvent(RemoteControlKeyTypes keyType, string keyName)

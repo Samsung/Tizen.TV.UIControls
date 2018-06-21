@@ -17,20 +17,27 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
     public class RemoteControlKeyEventArgs : EventArgs
     {
-        public RemoteControlKeyEventArgs(RemoteControlKeyTypes keyType, RemoteControlKeyNames keyName)
+        public RemoteControlKeyEventArgs(VisualElement sender, RemoteControlKeyTypes keyType, RemoteControlKeyNames keyName, string platformKeyName)
         {
+            Sender = sender;
             KeyType = keyType;
             KeyName = keyName;
+            PlatformKeyName = platformKeyName;
         }
+
+        public VisualElement Sender { get; }
 
         public RemoteControlKeyTypes KeyType { get; }
 
         public RemoteControlKeyNames KeyName { get; }
+
+        public string PlatformKeyName { get; }
 
         public bool Handled { get; set; }
     }

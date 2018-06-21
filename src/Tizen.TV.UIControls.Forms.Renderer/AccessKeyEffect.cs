@@ -102,10 +102,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         void ActiveOrFocusElement()
         {
+            (Element as VisualElement).Focus();
             if (Element is Xamarin.Forms.Button)
                 (Element as Xamarin.Forms.Button).SendClicked();
-            else
-                (Element as VisualElement).Focus();
         }
     }
 }

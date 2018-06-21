@@ -29,7 +29,7 @@ namespace Sample
             {
                 if (args.KeyName == RemoteControlKeyNames.Up && args.KeyType == RemoteControlKeyTypes.KeyUp)
                     DisplayAlert("KeyEvent", "Up Pressed on NavigationPage", "ok");
-            }));
+            }, RemoteControlKeyTypes.KeyUp));
 
             var page1 = new ContentPage
             {
