@@ -30,8 +30,8 @@ namespace Sample
 
             RemoteKeyHandler buttonHandler = new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((arg) =>
             {
-                Console.WriteLine(" Control => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
-                button1.Text = $"Button1 : {arg.KeyType} {arg.KeyName}";
+                Console.WriteLine(" Control => arg.KeyType : {0} , arg.KeyName : {1}, arg.PlatformKeyName : {2}", arg.KeyType, arg.KeyName, arg.PlatformKeyName);
+                button1.Text = $"Button1 : {arg.KeyType} {arg.KeyName} {arg.PlatformKeyName}";
                 arg.Handled = toggle.IsToggled;
             }));
             InputEvents.GetEventHandlers(button1).Add(buttonHandler);
@@ -64,8 +64,8 @@ namespace Sample
 
             RemoteKeyHandler PageHandler = new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((arg) =>
             {
-                Console.WriteLine("Page1 => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
-                label.Text = $"Page Key event : KeyType {arg.KeyType}, KeyName {arg.KeyName}";
+                Console.WriteLine("Page1 => arg.KeyType : {0} , arg.KeyName : {1} , arg.PlatformKeyName : {2}", arg.KeyType, arg.KeyName, arg.PlatformKeyName);
+                label.Text = $"Page Key event : KeyType {arg.KeyType}, KeyName {arg.KeyName}, PlatformKeyName {arg.PlatformKeyName}";
             }));
             InputEvents.GetEventHandlers(this).Add(PageHandler);
         }

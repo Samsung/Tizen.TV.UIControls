@@ -16,7 +16,7 @@ namespace Sample
             try
             {
                 Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
-                global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
+                global::Xamarin.Forms.Platform.Tizen.Forms.Init(app, true);
                 Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
 
                 Tizen.TV.UIControls.Forms.Renderer.UIControls.MainWindowProvider = () => app.MainWindow;

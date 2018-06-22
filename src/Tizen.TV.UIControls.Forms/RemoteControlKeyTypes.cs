@@ -14,11 +14,14 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace Tizen.TV.UIControls.Forms
 {
+    [Flags]
     public enum RemoteControlKeyTypes
     {
-        KeyDown,
-        KeyUp
+        KeyDown = 1 << 0,
+        KeyUp = 1 << 1
     }
 }
