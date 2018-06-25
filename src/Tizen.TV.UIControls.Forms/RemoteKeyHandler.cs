@@ -55,19 +55,18 @@ namespace Tizen.TV.UIControls.Forms
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void SendKeyEvent(RemoteControlKeyEventArgs args)
         {
-            if ((_commandKeyType & args.KeyType) == args.KeyType)
+            if (_commandKeyType.HasFlag(args.KeyType))
             {
                 ICommand cmd = Command;
                 if (cmd != null && cmd.CanExecute(args))
                 {
                     cmd.Execute(args);
                 }
+                if (args.KeyType == RemoteControlKeyTypes.KeyDown)
+                    KeyDown?.Invoke(this, args);
+                else
+                    KeyUp?.Invoke(this, args);
             }
-
-            if (args.KeyType == RemoteControlKeyTypes.KeyDown)
-                KeyDown?.Invoke(this, args);
-            else
-                KeyUp?.Invoke(this, args);
         }
     }
 }
