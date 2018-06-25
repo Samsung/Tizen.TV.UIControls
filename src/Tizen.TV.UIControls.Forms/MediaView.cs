@@ -18,19 +18,31 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// The MediaView class is used to display the video output on the screen.
+    /// </summary>
     [ContentProperty("Player")]
     public class MediaView : Layout<View>, IVideoOutput
     {
+        /// <summary>
+        /// Identifies the Player bindable property.
+        /// </summary>
         public static readonly BindableProperty PlayerProperty = BindableProperty.Create("Player", typeof(MediaPlayer), typeof(MediaView), default(MediaPlayer), propertyChanged: (b, o, n) => ((MediaView)b).OnPlayerChanged());
         
         View _controller;
 
+        /// <summary>
+        /// Gets or sets the media player.
+        /// </summary>
         public MediaPlayer Player
         {
             get { return (MediaPlayer)GetValue(PlayerProperty); }
             set { SetValue(PlayerProperty, value); }
         }
 
+        /// <summary>
+        /// Gets the video output type.
+        /// </summary>
         public virtual VideoOuputType OuputType => VideoOuputType.Buffer;
 
         VisualElement IVideoOutput.MediaView => this;

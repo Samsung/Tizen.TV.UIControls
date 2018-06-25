@@ -16,9 +16,18 @@
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Enumeration that specifies the remote control key types.
+    /// </summary>
     public enum RemoteControlKeyTypes
     {
+        /// <summary>
+        /// The Key down event type.
+        /// </summary>
         KeyDown,
+        /// <summary>
+        /// The Key up event type.
+        /// </summary>
         KeyUp
     }
 }
