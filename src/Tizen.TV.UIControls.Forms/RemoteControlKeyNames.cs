@@ -24,7 +24,7 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// An undefined key name.
         /// </summary>
-        Undefined = 0,
+        Unknown = 0,
         /// <summary>
         /// 1
         /// </summary>
@@ -72,39 +72,39 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Previous channel.
         /// </summary>
-        XF86PreviousChannel,
+        PreviousChannel,
         /// <summary>
         /// Back.
         /// </summary>
-        XF86Back,
+        Back,
         /// <summary>
         /// Raise volume.
         /// </summary>
-        XF86AudioRaiseVolume,
+        RaiseVolume,
         /// <summary>
         /// Lower volume.
         /// </summary>
-        XF86AudioLowerVolume,
+        LowerVolume,
         /// <summary>
         /// Mute.
         /// </summary>
-        XF86AudioMute,
+        Mute,
         /// <summary>
         /// Raise channel.
         /// </summary>
-        XF86RaiseChannel,
+        RaiseChannel,
         /// <summary>
         /// Lower channel.
         /// </summary>
-        XF86LowerChannel,
+        LowerChannel,
         /// <summary>
         /// Simple menu.
         /// </summary>
-        XF86SimpleMenu,
+        SimpleMenu,
         /// <summary>
         /// Information.
         /// </summary>
-        XF86Info,
+        Info,
         /// <summary>
         /// Up.
         /// </summary>
@@ -128,63 +128,62 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Exit.
         /// </summary>
-        XF86Exit,
+        Exit,
         /// <summary>
         /// Red.
         /// </summary>
-        XF86Red,
+        Red,
         /// <summary>
         /// Green.
         /// </summary>
-        XF86Green,
+        Green,
         /// <summary>
         /// Yellow.
         /// </summary>
-        XF86Yellow,
+        Yellow,
         /// <summary>
         /// Blue.
         /// </summary>
-        XF86Blue,
+        Blue,
         /// <summary>
         /// Rewind.
         /// </summary>
-        XF86AudioRewind,
+        Rewind,
         /// <summary>
         /// Previous chapter.
         /// </summary>
-        XF86PreviousChapter,
+        PreviousChapter,
         /// <summary>
         /// Next.
         /// </summary>
-        XF86AudioNext,
+        Next,
         /// <summary>
         /// Next Chapter.
         /// </summary>
-        XF86NextChapter,
+        NextChapter,
         /// <summary>
         /// Pause.
         /// </summary>
-        XF86AudioPause,
+        Pause,
         /// <summary>
         /// Record.
         /// </summary>
-        XF86AudioRecord,
+        Record,
         /// <summary>
         /// Play.
         /// </summary>
-        XF86AudioPlay,
+        Play,
         /// <summary>
         /// Stop.
         /// </summary>
-        XF86AudioStop,
-
+        Stop,
         /// <summary>
         /// Playback.
         /// </summary>
-        XF86PlayBack,
+        PlayBack,
         /// <summary>
         /// Channel guide.
         /// </summary>
-        XF86ChannelGuide,
+        ChannelGuide,
     }
 }

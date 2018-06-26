@@ -28,6 +28,8 @@ namespace Tizen.TV.UIControls.Forms
     {
         public static readonly BindableProperty CommandProperty = BindableProperty.Create("Command", typeof(ICommand), typeof(RemoteKeyHandler), null);
 
+        RemoteControlKeyTypes _commandKeyType = RemoteControlKeyTypes.KeyDown | RemoteControlKeyTypes.KeyUp;
+
         /// <summary>
         /// Initializes a new instance of the RemoteKeyHandler class.
         /// </summary>
@@ -45,6 +47,17 @@ namespace Tizen.TV.UIControls.Forms
         }
 
         /// <summary>
+        /// Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command and key type.
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="keyType"></param>
+        public RemoteKeyHandler(Action<RemoteControlKeyEventArgs> action, RemoteControlKeyTypes keyType)
+        {
+            Command = new Command<RemoteControlKeyEventArgs>(action);
+            _commandKeyType = keyType;
+        }
+
+        /// <summary>
         /// Gets or sets a command that invokes when the remote control key event is emitted.
         /// </summary>
         public ICommand Command
@@ -53,16 +66,25 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(CommandProperty, value); }
         }
 
-        public event EventHandler<RemoteControlKeyEventArgs> KeyEvent;
+        public event EventHandler<RemoteControlKeyEventArgs> KeyDown;
+
+        public event EventHandler<RemoteControlKeyEventArgs> KeyUp;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void SendKeyEvent(RemoteControlKeyEventArgs args)
         {
-            ICommand cmd = Command;
-            if (cmd != null && cmd.CanExecute(args))
-                cmd.Execute(args);
-
-            KeyEvent?.Invoke(this, args);
+            if (_commandKeyType.HasFlag(args.KeyType))
+            {
+                ICommand cmd = Command;
+                if (cmd != null && cmd.CanExecute(args))
+                {
+                    cmd.Execute(args);
+                }
+                if (args.KeyType == RemoteControlKeyTypes.KeyDown)
+                    KeyDown?.Invoke(this, args);
+                else
+                    KeyUp?.Invoke(this, args);
+            }
         }
     }
 }

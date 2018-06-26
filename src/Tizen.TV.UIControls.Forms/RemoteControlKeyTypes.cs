@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
+using System;
+
 namespace Tizen.TV.UIControls.Forms
 {
     /// <summary>
     /// Enumeration that specifies the remote control key types.
     /// </summary>
+    [Flags]
     public enum RemoteControlKeyTypes
     {
         /// <summary>
         /// The Key down event type.
         /// </summary>
-        KeyDown,
+        KeyDown = 1 << 0,
         /// <summary>
         /// The Key up event type.
-        /// </summary>
-        KeyUp
+        /// </summary>        
+        KeyUp = 1 << 1
     }
 }

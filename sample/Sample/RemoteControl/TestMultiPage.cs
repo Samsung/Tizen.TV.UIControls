@@ -27,9 +27,9 @@ namespace Sample
 
             InputEvents.GetEventHandlers(this).Add(new RemoteKeyHandler((args) =>
             {
-                if (args.KeyName == RemoteControlKeyNames.Up && args.KeyType == RemoteControlKeyTypes.KeyUp)
+                if (args.KeyName == RemoteControlKeyNames.Up)
                     DisplayAlert("KeyEvent", "Up Pressed on NavigationPage", "ok");
-            }));
+            }, RemoteControlKeyTypes.KeyUp));
 
             var page1 = new ContentPage
             {
@@ -47,9 +47,9 @@ namespace Sample
 
             InputEvents.GetEventHandlers(page1).Add(new RemoteKeyHandler((args) =>
             {
-                if (args.KeyName == RemoteControlKeyNames.Down && args.KeyType == RemoteControlKeyTypes.KeyUp)
+                if (args.KeyName == RemoteControlKeyNames.Down)
                     DisplayAlert("KeyEvent", "Down Pressed on child page1", "ok");
-            }));
+            }, RemoteControlKeyTypes.KeyUp));
 
             var page2 = new ContentPage
             {
@@ -66,9 +66,9 @@ namespace Sample
             };
             InputEvents.GetEventHandlers(page2).Add(new RemoteKeyHandler((args) =>
             {
-                if (args.KeyName == RemoteControlKeyNames.Down && args.KeyType == RemoteControlKeyTypes.KeyUp)
+                if (args.KeyName == RemoteControlKeyNames.Down)
                     DisplayAlert("KeyEvent", "Down Pressed on child page2", "ok");
-            }));
+            }, RemoteControlKeyTypes.KeyUp));
 
             this.PushAsync(page1);
             this.PushAsync(page2);
