@@ -23,6 +23,9 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Abstract class whose implementors load media contents from files or the Web.
+    /// </summary>
     [TypeConverter(typeof(MediaSourceConverter))]
     public abstract class MediaSource : Element
     {
@@ -30,12 +33,21 @@ namespace Tizen.TV.UIControls.Forms
         {
         }
 
+        /// <summary>
+        /// Returns a new MediaSource that reads from file.
+        /// </summary>
+        /// <param name="file">The file path to use as a media source.</param>
+        /// <returns>Returns the MediaSource.</returns>
         public static MediaSource FromFile(string file)
         {
             return new FileMediaSource { File = file };
         }
 
-
+        /// <summary>
+        /// Returns a new MediaSource that reads from uri.
+        /// </summary>
+        /// <param name="uri">The uri path to use as a media source.</param>
+        /// <returns>Returns the MediaSource.</returns>
         public static MediaSource FromUri(Uri uri)
         {
             if (!uri.IsAbsoluteUri)

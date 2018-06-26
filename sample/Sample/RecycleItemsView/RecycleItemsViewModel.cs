@@ -92,7 +92,13 @@ namespace Sample.RecycleItemsView
                     Name = "Focus chain Test",
                     PageType = typeof(FocusChainTest),
                     Items = ColorModel.MakeModel(15)
-                }
+                },
+                new ItemsModel
+                {
+                    Name = "Column Test",
+                    PageType = typeof(ColumnTest),
+                    Items = ColorModel.MakeModel()
+                },
             };
         }
     }

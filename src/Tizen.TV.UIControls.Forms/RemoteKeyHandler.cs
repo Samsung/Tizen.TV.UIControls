@@ -21,27 +21,45 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// The RemoteKeyHandler contains a command and key events that react to remote controller events.
+    /// </summary>
     public class RemoteKeyHandler : BindableObject
     {
         public static readonly BindableProperty CommandProperty = BindableProperty.Create("Command", typeof(ICommand), typeof(RemoteKeyHandler), null);
 
         RemoteControlKeyTypes _commandKeyType = RemoteControlKeyTypes.KeyDown | RemoteControlKeyTypes.KeyUp;
 
+        /// <summary>
+        /// Initializes a new instance of the RemoteKeyHandler class.
+        /// </summary>
         public RemoteKeyHandler()
         {
         }
 
+        /// <summary>
+        /// Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command.
+        /// </summary>
+        /// <param name="action"></param>
         public RemoteKeyHandler(Action<RemoteControlKeyEventArgs> action)
         {
             Command = new Command<RemoteControlKeyEventArgs>(action);
         }
 
+        /// <summary>
+        /// Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command and key type.
+        /// </summary>
+        /// <param name="action"></param>
+        /// <param name="keyType"></param>
         public RemoteKeyHandler(Action<RemoteControlKeyEventArgs> action, RemoteControlKeyTypes keyType)
         {
             Command = new Command<RemoteControlKeyEventArgs>(action);
             _commandKeyType = keyType;
         }
 
+        /// <summary>
+        /// Gets or sets a command that invokes when the remote control key event is emitted.
+        /// </summary>
         public ICommand Command
         {
             get { return (ICommand)GetValue(CommandProperty); }

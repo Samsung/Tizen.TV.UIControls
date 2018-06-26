@@ -16,40 +16,174 @@
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Enumeration that specifies the remote control key names.
+    /// </summary>
     public enum RemoteControlKeyNames
     {
+        /// <summary>
+        /// An undefined key name.
+        /// </summary>
         Unknown = 0,
-        NUM1, NUM2, NUM3, NUM4, NUM5, NUM6, NUM7, NUM8, NUM9, NUM0,
+        /// <summary>
+        /// 1
+        /// </summary>
+        NUM1,
+        /// <summary>
+        /// 2
+        /// </summary>
+        NUM2,
+        /// <summary>
+        /// 3
+        /// </summary>
+        NUM3,
+        /// <summary>
+        /// 4
+        /// </summary>
+        NUM4,
+        /// <summary>
+        /// 5
+        /// </summary>
+        NUM5,
+        /// <summary>
+        /// 6
+        /// </summary>
+        NUM6,
+        /// <summary>
+        /// 7
+        /// </summary>
+        NUM7,
+        /// <summary>
+        /// 8
+        /// </summary>
+        NUM8,
+        /// <summary>
+        /// 9
+        /// </summary>
+        NUM9,
+        /// <summary>
+        /// 0
+        /// </summary>
+        NUM0,
+        /// <summary>
+        /// Minus.
+        /// </summary>
         Minus,
+        /// <summary>
+        /// Previous channel.
+        /// </summary>
         PreviousChannel,
+        /// <summary>
+        /// Back.
+        /// </summary>
         Back,
+        /// <summary>
+        /// Raise volume.
+        /// </summary>
         RaiseVolume,
+        /// <summary>
+        /// Lower volume.
+        /// </summary>
         LowerVolume,
+        /// <summary>
+        /// Mute.
+        /// </summary>
         Mute,
+        /// <summary>
+        /// Raise channel.
+        /// </summary>
         RaiseChannel,
+        /// <summary>
+        /// Lower channel.
+        /// </summary>
         LowerChannel,
+        /// <summary>
+        /// Simple menu.
+        /// </summary>
         SimpleMenu,
+        /// <summary>
+        /// Information.
+        /// </summary>
         Info,
+        /// <summary>
+        /// Up.
+        /// </summary>
         Up,
+        /// <summary>
+        /// Down.
+        /// </summary>
         Down,
+        /// <summary>
+        /// Left.
+        /// </summary>
         Left,
+        /// <summary>
+        /// Right.
+        /// </summary>
         Right,
+        /// <summary>
+        /// Return.
+        /// </summary>
         Return,
+        /// <summary>
+        /// Exit.
+        /// </summary>
         Exit,
+        /// <summary>
+        /// Red.
+        /// </summary>
         Red,
+        /// <summary>
+        /// Green.
+        /// </summary>
         Green,
+        /// <summary>
+        /// Yellow.
+        /// </summary>
         Yellow,
+        /// <summary>
+        /// Blue.
+        /// </summary>
         Blue,
+        /// <summary>
+        /// Rewind.
+        /// </summary>
         Rewind,
+        /// <summary>
+        /// Previous chapter.
+        /// </summary>
         PreviousChapter,
+        /// <summary>
+        /// Next.
+        /// </summary>
         Next,
+        /// <summary>
+        /// Next Chapter.
+        /// </summary>
         NextChapter,
+        /// <summary>
+        /// Pause.
+        /// </summary>
         Pause,
+        /// <summary>
+        /// Record.
+        /// </summary>
         Record,
+        /// <summary>
+        /// Play.
+        /// </summary>
         Play,
+        /// <summary>
+        /// Stop.
+        /// </summary>
         Stop,
-
+        /// <summary>
+        /// Playback.
+        /// </summary>
         PlayBack,
+        /// <summary>
+        /// Channel guide.
+        /// </summary>
         ChannelGuide,
     }
 }

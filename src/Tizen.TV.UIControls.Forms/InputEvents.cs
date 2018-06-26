@@ -20,6 +20,9 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// The InputEvents class helps developers to handle the remote control events that are emitted from TV devices.
+    /// </summary>
     public sealed class InputEvents
     {
         public static readonly BindablePropertyKey EventHandlersPropertyKey = BindableProperty.CreateAttachedReadOnly("EventHandlers", typeof(IList<RemoteKeyHandler>), typeof(InputEvents), null,
@@ -31,24 +34,47 @@ namespace Tizen.TV.UIControls.Forms
                 return collection;
             });
 
+        /// <summary>
+        /// Implements the attached property that is a collection of `RemoteKeyHandler`s.
+        /// </summary>
         public static readonly BindableProperty EventHandlersProperty = EventHandlersPropertyKey.BindableProperty;
 
+        /// <summary>
+        /// Identifies the access key that is set to the object at run time.
+        /// </summary>
         public static readonly BindableProperty AccessKeyProperty = BindableProperty.CreateAttached("AccessKey", typeof(RemoteControlKeyNames), typeof(InputEvents), default(RemoteControlKeyNames), propertyChanged: OnAccessKeyPropertyChanged);
 
         InputEvents()
         {
         }
 
+        /// <summary>
+        /// Returns a collection of the RemoteKeyHandler for the specified view .
+        /// Developers can add or remove RemoteKeyHandlers to this collection. 
+        /// </summary>
+        /// <param name="view">The view to get a collection of the `RemoteKeyHandler`s.</param>
+        /// <returns>Returns a collection of the `RemoteKeyHandler`s </returns>
         public static IList<RemoteKeyHandler> GetEventHandlers(BindableObject view)
         {
             return (IList<RemoteKeyHandler>)view.GetValue(EventHandlersProperty);
         }
 
+        /// <summary>
+        /// Returns the access key that is set to the view.
+        /// </summary>
+        /// <param name="view">The view to get the access key.</param>
+        /// <returns>Returns the remote contol key name.</returns>
         public static RemoteControlKeyNames GetAccessKey(BindableObject view)
         {
             return (RemoteControlKeyNames)view.GetValue(AccessKeyProperty);
         }
 
+        /// <summary>
+        /// Sets the access key to the specified view.
+        /// When the access key is pressed, the specified view will directly get the focus and also be clicked if it is the Button.
+        /// </summary>
+        /// <param name="view">The view to be set.</param>
+        /// <param name="value">The remote control key name to be set to the view.</param>
         public static void SetAccessKey(BindableObject view, RemoteControlKeyNames value)
         {
             view.SetValue(AccessKeyProperty, value);

@@ -21,11 +21,26 @@ using System.Threading.Tasks;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Enumerates values that define how a media content is displayed.
+    /// </summary>
     public enum DisplayAspectMode
     {
+        /// <summary>
+        /// Scale the media content to so it exactly fills the view.
+        /// </summary>
         Fill,
+        /// <summary>
+        /// Scale the media content to fit the view.
+        /// </summary>
         AspectFit,
+        /// <summary>
+        /// Scale the media content to fill the view.
+        /// </summary>
         AspectFill,
+        /// <summary>
+        /// The original size of the media content.
+        /// </summary>
         OrignalSize
     }
 

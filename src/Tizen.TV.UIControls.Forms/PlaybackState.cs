@@ -16,10 +16,22 @@
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Enumerates values that define the playback state of the media content.
+    /// </summary>
     public enum PlaybackState
     {
+        /// <summary>
+        /// Stopped.
+        /// </summary>
         Stopped,
+        /// <summary>
+        /// Playing.
+        /// </summary>
         Playing,
+        /// <summary>
+        /// Paused while playing media.
+        /// </summary>
         Paused
     }
 }
