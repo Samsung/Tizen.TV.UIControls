@@ -21,24 +21,42 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// An overlay MediaView.
+    /// </summary>
     public class OverlayMediaView : MediaView, IOverlayOutput
     {
         internal static readonly BindablePropertyKey OverlayAreaPropertyKey = BindableProperty.CreateReadOnly(nameof(OverlayArea), typeof(Rectangle), typeof(OverlayMediaView), default(Rectangle));
+        /// <summary>
+        /// Identifies the OverlayArea bindable property.
+        /// </summary>
         public static readonly BindableProperty OverlayAreaProperty = OverlayAreaPropertyKey.BindableProperty;
 
+        /// <summary>
+        /// Initializes a new instance of the OverlayMediaView class.
+        /// </summary>
         public OverlayMediaView()
         {
             BatchCommitted += OnBatchCommitted;
         }
-        
+
+        /// <summary>
+        /// Occurs when the overlay area is updated.
+        /// </summary>
         public event EventHandler AreaUpdated;
 
+        /// <summary>
+        /// Gets the overlay area.
+        /// </summary>
         public Rectangle OverlayArea
         {
             get { return (Rectangle)GetValue(OverlayAreaProperty); }
             private set { SetValue(OverlayAreaPropertyKey, value); }
         }
 
+        /// <summary>
+        /// Gets the video output type.
+        /// </summary>
         public override VideoOuputType OuputType => VideoOuputType.Overlay;
 
 

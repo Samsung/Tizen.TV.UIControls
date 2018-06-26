@@ -19,6 +19,9 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Enumeration that specifies the video ouput.
+    /// </summary>
     public enum VideoOuputType
     {
         Overlay,

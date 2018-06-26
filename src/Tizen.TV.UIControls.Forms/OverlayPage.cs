@@ -21,24 +21,41 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// The OverlayPage class is used to display the video output on a page.
+    /// </summary>
     public class OverlayPage : ContentPage, IOverlayOutput
     {
+        /// <summary>
+        /// Identifies the OverlayArea bindable property.
+        /// </summary>
         public static readonly BindableProperty OverlayAreaProperty = BindableProperty.Create("OverlayArea", typeof(Rectangle), typeof(OverlayPage), default(Rectangle));
+        /// <summary>
+        /// Identifies the Player bindable property.
+        /// </summary>
         public static readonly BindableProperty PlayerProperty = BindableProperty.Create("Player", typeof(MediaPlayer), typeof(OverlayPage), default(MediaPlayer), propertyChanged: (b, o, n) => ((OverlayPage)b).OnPlayerChanged());
 
         View _controller;
 
+        /// <summary>
+        /// Initializes a new instance of the OverlayPage class.
+        /// </summary>
         public OverlayPage()
         {
         }
 
-
+        /// <summary>
+        /// Gets or sets the overlay area.
+        /// </summary>
         public Rectangle OverlayArea
         {
             get { return (Rectangle)GetValue(OverlayAreaProperty); }
             set { SetValue(OverlayAreaProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the media player.
+        /// </summary>
         public MediaPlayer Player
         {
             get { return (MediaPlayer)GetValue(PlayerProperty); }
@@ -66,6 +83,9 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        /// <summary>
+        /// Occurs when the overlay area is updated.
+        /// </summary>
         public event EventHandler AreaUpdated;
 
         protected override void LayoutChildren(double x, double y, double width, double height)
@@ -113,6 +133,9 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        /// <summary>
+        /// Gets the video output type.
+        /// </summary>
         public VideoOuputType OuputType => VideoOuputType.Overlay;
     }
 }
