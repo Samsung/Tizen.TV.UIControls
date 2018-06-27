@@ -51,6 +51,14 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindableProperty ScrollPolicyProperty = BindableProperty.Create(nameof(ScrollPolicy), typeof(ScrollToPosition), typeof(RecycleItemsView), ScrollToPosition.Center);
         public static readonly BindableProperty ScrollBarVisibilityProperty = BindableProperty.Create(nameof(ScrollBarVisibility), typeof(ScrollBarVisibility), typeof(RecycleItemsView), ScrollBarVisibility.Default, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateScrollBarVisibility());
         public static readonly BindableProperty ColumnCountProperty = BindableProperty.Create(nameof(ColumnCount), typeof(int), typeof(RecycleItemsView), 1, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateColumnCount());
+        public static readonly BindableProperty HeaderProperty = BindableProperty.Create(nameof(Header), typeof(object), typeof(RecycleItemsView), null, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateHeaderElement());
+        public static readonly BindableProperty FooterProperty = BindableProperty.Create(nameof(Footer), typeof(object), typeof(RecycleItemsView), null, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateFooterElement());
+        public static readonly BindableProperty HeaderTemplateProperty = BindableProperty.Create(nameof(HeaderTemplate), typeof(DataTemplate), typeof(RecycleItemsView), null, validateValue: (b, v) => ((RecycleItemsView)b).ValidateItemTemplate((DataTemplate)v), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateHeaderElement());
+        public static readonly BindableProperty FooterTemplateProperty = BindableProperty.Create(nameof(FooterTemplate), typeof(DataTemplate), typeof(RecycleItemsView), null, validateValue: (b, v) => ((RecycleItemsView)b).ValidateItemTemplate((DataTemplate)v), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateFooterElement());
+
+        static readonly BindableProperty HeaderElementProperty = BindableProperty.Create(nameof(HeaderElement), typeof(View), typeof(RecycleItemsView), null, propertyChanging: (b, o, n) => ((RecycleItemsView)b).OnHeaderElementChanging(), propertyChanged: (b, o, n) => ((RecycleItemsView)b).OnHeaderElementChanged());
+        static readonly BindableProperty FooterElementProperty = BindableProperty.Create(nameof(FooterElement), typeof(View), typeof(RecycleItemsView), null, propertyChanging: (b, o, n) => ((RecycleItemsView)b).OnFooterElementChanging(), propertyChanged: (b, o, n) => ((RecycleItemsView)b).OnFooterElementChanged());
+
 
         static readonly BindablePropertyKey FocusedViewPropertyKey = BindableProperty.CreateReadOnly("FocusedView", typeof(View), typeof(RecycleItemsView), null);
         static readonly BindableProperty FocusedViewProperty = FocusedViewPropertyKey.BindableProperty;
@@ -130,15 +138,40 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(ColumnCountProperty, value); }
         }
 
-        Size ContentSize
+        public object Header
         {
-            get
-            {
-                if (IsHorizontal)
-                    return new Size((ItemWidth + Spacing) * RowsCount - Spacing, (ItemHeight + Spacing) * ColumnCount - Spacing);
-                else
-                    return new Size((ItemWidth + Spacing) * ColumnCount - Spacing, (ItemHeight + Spacing) * RowsCount - Spacing);
-            }
+            get { return GetValue(HeaderProperty); }
+            set { SetValue(HeaderProperty, value); }
+        }
+
+        public DataTemplate HeaderTemplate
+        {
+            get { return (DataTemplate)GetValue(HeaderTemplateProperty); }
+            set { SetValue(HeaderTemplateProperty, value); }
+        }
+
+        public View HeaderElement
+        {
+            get { return (View)GetValue(HeaderElementProperty); }
+            set { SetValue(HeaderElementProperty, value); }
+        }
+
+        public object Footer
+        {
+            get { return GetValue(FooterProperty); }
+            set { SetValue(FooterProperty, value); }
+        }
+
+        public DataTemplate FooterTemplate
+        {
+            get { return (DataTemplate)GetValue(FooterTemplateProperty); }
+            set { SetValue(FooterTemplateProperty, value); }
+        }
+
+        public View FooterElement
+        {
+            get { return (View)GetValue(FooterElementProperty); }
+            set { SetValue(FooterElementProperty, value); }
         }
 
         public ScrollToPosition ScrollPolicy
@@ -162,6 +195,29 @@ namespace Tizen.TV.UIControls.Forms
         {
             get;
             private set;
+        }
+
+        Size ContentSize
+        {
+            get
+            {
+                if (IsHorizontal)
+                {
+                    return new Size
+                    {
+                        Width = (ItemWidth + Spacing) * RowsCount - Spacing + HeaderSizeWithSpacing + FooterSizeWithSpacing,
+                        Height = (ItemHeight + Spacing) * ColumnCount - Spacing
+                    };
+                }
+                else
+                {
+                    return new Size
+                    {
+                        Width = (ItemWidth + Spacing) * ColumnCount - Spacing,
+                        Height = (ItemHeight + Spacing) * RowsCount - Spacing + HeaderSizeWithSpacing + FooterSizeWithSpacing
+                    };
+                }
+            }
         }
 
         View IRecycleItemsViewController.FocusedView => (View)GetValue(FocusedViewProperty);
@@ -223,14 +279,44 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        double HeaderSize { get; set; }
+        double HeaderSizeWithSpacing => HeaderSize == 0 ? 0 : HeaderSize + Spacing;
+        double FooterSize { get; set; }
+        double FooterSizeWithSpacing => FooterSize == 0 ? 0 : FooterSize + Spacing;
+
         double ItemSize => IsHorizontal ? ItemWidth + Spacing : ItemHeight + Spacing;
         double ColumnSize => IsHorizontal? ItemHeight + Spacing : ItemWidth + Spacing;
 
-        int ItemsCount => _itemsContext.Count;
+        int ItemsCount {
+            get
+            {
+                var count = _itemsContext.Count;
+                if (HasHeader)
+                    count -= 1;
+                if (HasFooter)
+                    count -= 1;
+                return count;
+            }
+        }
         bool IsHorizontal => Orientation == RecycleItemsViewOrientation.Horizontal;
 
         int RowsCount => (int)Math.Ceiling(ItemsCount / (double)ColumnCount);
 
+        bool HasFooter => FooterElement != null;
+        bool HasHeader => HeaderElement != null;
+
+        bool HasFocusOnHeader => HasHeader && FocusedItemIndex == 0;
+        bool HasFocusOnFooter => HasFooter && FocusedItemIndex == _itemsContext.Count - 1;
+
+        int FocusedItemIndex
+        {
+            get => _focusedItemIndex;
+            set
+            {
+                _focusedItemIndex = value;
+                UpdateFocus(_focusedItemIndex);
+            }
+        }
 
         public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
         public event EventHandler<ItemRealizedEventArgs> ItemRealized;
@@ -257,50 +343,52 @@ namespace Tizen.TV.UIControls.Forms
             string prevCols = IsHorizontal ? "Up" : "Left";
             string nextCols = IsHorizontal ? "Down" : "Right";
 
-            Point rowcols = IndexToPosition(_focusedItemIndex);
+            Point rowcols = IndexToPosition(FocusedItemIndex);
             int rows = (int)rowcols.X;
             int cols = (int)rowcols.Y;
 
             if (keyname == prevRows)
             {
-                if (rows == 0)
-                {
+                if (HasFocusOnHeader)
                     return false;
-                }
-                _focusedItemIndex = Math.Max(0, PositionToIndex(rows - 1, cols));
-                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+                if (rows == 0 && !HasHeader)
+                    return false;
+
+                FocusedItemIndex = Math.Max(0, PositionToIndex(rows - 1, cols));
                 return true;
             }
             else if (keyname == nextRows)
             {
-                if (rows == RowsCount - 1)
-                {
+                if (FocusedItemIndex == _itemsContext.Count - 1)
                     return false;
-                }
-                _focusedItemIndex = Math.Min(PositionToIndex(rows + 1, cols), ItemsCount - 1);
-                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+
+                if (rows == RowsCount - 1 && !HasFooter)
+                    return false;
+
+                FocusedItemIndex = Math.Min(PositionToIndex(rows + 1, cols), _itemsContext.Count - 1);
                 return true;
             }
             else if (keyname == nextCols)
             {
-                if (cols == ColumnCount - 1)
-                {
+                if (HasFocusOnHeader || HasFocusOnFooter)
                     return false;
-                }
-                _focusedItemIndex = Math.Min(PositionToIndex(rows, cols + 1), ItemsCount - 1);
-                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+
+                if (cols == ColumnCount - 1)
+                    return false;
+
+                FocusedItemIndex = Math.Min(PositionToIndex(rows, cols + 1), _itemsContext.Count - 1);
                 return true;
             }
             else if (keyname == prevCols)
             {
-                if (cols == 0)
-                {
+                if (HasFocusOnHeader || HasFocusOnFooter)
                     return false;
-                }
-                _focusedItemIndex = Math.Max(0, PositionToIndex(rows, cols - 1));
-                FocusedItem = _itemsContext[_focusedItemIndex].Data;
-                return true;
 
+                if (cols == 0)
+                    return false;
+
+                FocusedItemIndex = Math.Max(0, PositionToIndex(rows, cols - 1));
+                return true;
             }
             else if (keyname == "Return")
             {
@@ -309,7 +397,7 @@ namespace Tizen.TV.UIControls.Forms
                     SelectedItem = FocusedItem;
                     return true;
                 }
-                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+                FocusedItem = _itemsContext[FocusedItemIndex].Data;
                 return true;
             }
             return false;
@@ -346,6 +434,7 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (isFocused)
             {
+                SetValue(FocusedViewPropertyKey, targetView);
                 targetView.ScaleTo(1.2, 200);
             }
             else
@@ -384,8 +473,18 @@ namespace Tizen.TV.UIControls.Forms
             return false;
         }
 
+        void RealizeItem(int index)
+        {
+            var bounds = CalculateCellBounds(index);
+            if (HasHeader) index += 1;
+            RealizeItem(_itemsContext[index], bounds);
+        }
+
         void RealizeItem(ItemContext item, Rectangle bounds)
         {
+            if (item.IsRealized)
+                return;
+
             item.IsRealized = true;
             var view = GetFromRecycleViews();
             if (view != null)
@@ -411,8 +510,17 @@ namespace Tizen.TV.UIControls.Forms
             ItemRealized?.Invoke(this, new ItemRealizedEventArgs { Item = item.Data, RealizedView = view });
         }
 
+        void UnrealizeItem(int index)
+        {
+            if (HasHeader) index += 1;
+            UnrealizeItem(_itemsContext[index]);
+        }
+
         void UnrealizeItem(ItemContext item)
         {
+            if (!item.IsRealized || item.IsPersistent)
+                return;
+
             item.IsRealized = false;
             var view = item.RealizedView;
             item.RealizedView = null;
@@ -423,6 +531,7 @@ namespace Tizen.TV.UIControls.Forms
                     OnItemFocused(item.Data, view, false);
                 }
                 _recycleViews.AddLast(view);
+                _viewToItemTable.Remove(view);
             }
             ItemUnrealized?.Invoke(this, new ItemUnrealizedEventArgs { Item = item.Data, UnrealizedView = view });
         }
@@ -569,9 +678,9 @@ namespace Tizen.TV.UIControls.Forms
             int colIndex = index % ColumnCount;
 
             if (IsHorizontal)
-                return new Rectangle(rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ItemHeight);
+                return new Rectangle(HeaderSizeWithSpacing + rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ItemHeight);
             else
-                return new Rectangle(colIndex * ColumnSize, rowIndex * ItemSize, ItemWidth, ItemHeight);
+                return new Rectangle(colIndex * ColumnSize, HeaderSizeWithSpacing + rowIndex * ItemSize, ItemWidth, ItemHeight);
         }
 
         void LayoutInvalidate()
@@ -582,11 +691,8 @@ namespace Tizen.TV.UIControls.Forms
 
             for (int i = _lastStart; i <= _lastEnd; i++)
             {
-                _itemsContext[i].IsRealized = false;
-                _itemsContext[i].RealizedView = null;
+                UnrealizeItem(i);
             }
-            _contentLayout.Children.Clear();
-            _viewToItemTable.Clear();
             _lastEnd = -1;
             _lastStart = -1;
 
@@ -604,7 +710,7 @@ namespace Tizen.TV.UIControls.Forms
 
             _lastViewPort = ViewPort;
 
-            int startIndex = (int)(ViewPortStartPoint / (ItemSize / ColumnCount) );
+            int startIndex = (int)(Math.Max(ViewPortStartPoint - HeaderSize, 0) / (ItemSize / ColumnCount) );
             int endIndex = startIndex + (int)Math.Ceiling(ViewPortSize / (ItemSize / ColumnCount));
 
             startIndex = Math.Min(ItemsCount - 1, startIndex);
@@ -616,10 +722,7 @@ namespace Tizen.TV.UIControls.Forms
                 {
                     for (int i = _lastStart; i <= Math.Min(Math.Max(startIndex - 1, 0), _lastEnd); i++)
                     {
-                        if (_itemsContext[i].IsRealized)
-                        {
-                            UnrealizeItem(_itemsContext[i]);
-                        }
+                        UnrealizeItem(i);
                     }
                 }
 
@@ -627,20 +730,14 @@ namespace Tizen.TV.UIControls.Forms
                 {
                     for (int i = endIndex + 1; i <= _lastEnd; i++)
                     {
-                        if (_itemsContext[i].IsRealized)
-                        {
-                            UnrealizeItem(_itemsContext[i]);
-                        }
+                        UnrealizeItem(i);
                     }
                 }
             }
 
             for (int i = startIndex; i <= endIndex; i++)
             {
-                if (!_itemsContext[i].IsRealized)
-                {
-                    RealizeItem(_itemsContext[i], CalculateCellBounds(i));
-                }
+                RealizeItem(i);
             }
             _lastStart = startIndex;
             _lastEnd = endIndex;
@@ -736,13 +833,23 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (e.IsFocused && ItemsCount > 0)
             {
-                if (_focusedItemIndex == -1)
-                    _focusedItemIndex = 0;
-
-                if (_focusedItemIndex >= _itemsContext.Count)
-                    _focusedItemIndex = _itemsContext.Count - 1;
-
-                FocusedItem = _itemsContext[_focusedItemIndex].Data;
+                if (FocusedItemIndex == -1)
+                {
+                    FocusedItemIndex = 0;
+                }
+                else if (FocusedItemIndex >= _itemsContext.Count)
+                {
+                    FocusedItemIndex = _itemsContext.Count - 1;
+                }
+                else
+                {
+                    // To update scrolled area
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        // To trigger UpdateFocus
+                        FocusedItemIndex = _focusedItemIndex;
+                    });
+                }
             }
             else
             {
@@ -763,30 +870,33 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-        async void OnFocusedItemChanged()
+        async void UpdateFocus(int focusedIndex)
         {
-            // To update scroll area
-            await Task.Delay(1);
+            if (focusedIndex < 0 || focusedIndex >= _itemsContext.Count)
+                return;
 
+            var context = _itemsContext[focusedIndex];
+            FocusedItem = context.Data;
+
+            if (!context.IsRealized)
+            {
+                var point = GetScrollPositionForItem(focusedIndex, ScrollPolicy);
+                await ScrollView.ScrollToAsync(point.X, point.Y, true);
+            }
+            var view = context.RealizedView;
+            if (view != null)
+            {
+                view.Focus();
+                OnItemFocused(FocusedItem, view, true);
+                await ScrollView.ScrollToAsync(view, ScrollPolicy, true);
+            }
+        }
+
+        void OnFocusedItemChanged()
+        {
             if (FocusedItem != null)
             {
-                var context = GetItemContext(FocusedItem);
-                _focusedItemIndex = _itemsContext.IndexOf(context);
-
-                if (!context.IsRealized)
-                {
-                    var point = GetScrollPositionForItem(_focusedItemIndex, ScrollPolicy);
-                    await ScrollView.ScrollToAsync(point.X, point.Y, true);
-                }
-
-                var view = context.RealizedView;
-                if (view != null)
-                {
-                    view.Focus();
-                    OnItemFocused(FocusedItem, view, true);
-                    SetValue(FocusedViewPropertyKey, view);
-                    await ScrollView.ScrollToAsync(view, ScrollPolicy, true);
-                }
+                FocusedItemIndex = GetItemIndex(FocusedItem);
             }
         }
 
@@ -795,34 +905,47 @@ namespace Tizen.TV.UIControls.Forms
             if (e.Action == NotifyCollectionChangedAction.Add)
             {
                 int idx = e.NewStartingIndex;
+                int headerIndex = HasHeader ? 1 : 0;
                 foreach (var item in e.NewItems)
                 {
-                    _itemsContext.Insert(idx++, new ItemContext { Data = item });
+                    _itemsContext.Insert(headerIndex + idx++, new ItemContext { Data = item });
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Remove)
             {
                 int idx = e.OldStartingIndex;
+                int headerIndex = HasHeader ? 1 : 0;
                 foreach (var item in e.OldItems)
                 {
-                    _itemsContext.RemoveAt(idx--);
+                    _itemsContext.RemoveAt(headerIndex + idx--);
                 }
             }
             else if (e.Action == NotifyCollectionChangedAction.Move)
             {
-                var v = _itemsContext[e.OldStartingIndex];
-                _itemsContext.RemoveAt(e.OldStartingIndex);
-                _itemsContext.Insert(e.NewStartingIndex, v);
+                int headerIndex = HasHeader ? 1 : 0;
+                var v = _itemsContext[e.OldStartingIndex + headerIndex];
+                _itemsContext.RemoveAt(e.OldStartingIndex + headerIndex);
+                _itemsContext.Insert(e.NewStartingIndex + headerIndex, v);
             }
             else if (e.Action == NotifyCollectionChangedAction.Replace)
             {
-                _itemsContext[e.NewStartingIndex] = new ItemContext { Data = e.NewItems[0] };
+                int headerIndex = HasHeader ? 1 : 0;
+                _itemsContext[headerIndex + e.NewStartingIndex] = new ItemContext { Data = e.NewItems[0] };
             }
             else if (e.Action == NotifyCollectionChangedAction.Reset)
             {
+                ItemContext header = null;
+                ItemContext footer = null;
+                if (HasHeader)
+                    header = _itemsContext[0];
+                if (HasFooter)
+                    footer = _itemsContext[_itemsContext.Count - 1];
                 _itemsContext.Clear();
+                if (header != null)
+                    _itemsContext.Add(header);
+                if (footer != null)
+                    _itemsContext.Add(footer);
             }
-
             LayoutInvalidate();
         }
 
@@ -847,7 +970,15 @@ namespace Tizen.TV.UIControls.Forms
 
         void UpdateItemsSource()
         {
+            ItemContext header = null;
+            ItemContext footer = null;
+            if (HasHeader)
+                header = _itemsContext[0];
+            if (HasFooter)
+                footer = _itemsContext[_itemsContext.Count - 1];
             _itemsContext.Clear();
+            if (header != null)
+                _itemsContext.Add(header);
 
             if (ItemsSource != null)
             {
@@ -864,6 +995,8 @@ namespace Tizen.TV.UIControls.Forms
                     collection.CollectionChanged += OnCollectionChanged;
                 }
             }
+            if (footer != null)
+                _itemsContext.Add(footer);
             LayoutInvalidate();
         }
 
@@ -902,13 +1035,162 @@ namespace Tizen.TV.UIControls.Forms
             LayoutInvalidate();
         }
 
+        void UpdateHeaderElement()
+        {
+            if (Header != null && HeaderTemplate != null)
+            {
+                HeaderElement = (View)HeaderTemplate.CreateContent();
+                HeaderElement.BindingContext = Header;
+            }
+            else if (Header != null && Header is View view)
+            {
+                HeaderElement = view;
+            }
+            else
+            {
+                HeaderElement = null;
+            }
+        }
+
+        void UpdateFooterElement()
+        {
+            if (Footer != null && FooterTemplate != null)
+            {
+                FooterElement = (View)FooterTemplate.CreateContent();
+                FooterElement.BindingContext = Footer;
+            }
+            else if (Footer != null && Footer is View view)
+            {
+                FooterElement = view;
+            }
+            else
+            {
+                FooterElement = null;
+            }
+        }
+
+        void OnHeaderElementChanging()
+        {
+            if (HeaderElement != null)
+            {
+                _contentLayout.Children.Remove(HeaderElement);
+                _itemsContext.RemoveAt(0);
+            }
+        }
+
+        void OnHeaderElementChanged()
+        {
+            if (HeaderElement != null)
+            {
+                double widthConstraint = IsHorizontal ? double.PositiveInfinity : ItemWidth;
+                double heightConstraint = IsHorizontal ? ItemHeight : double.PositiveInfinity;
+                var size = HeaderElement.Measure(widthConstraint, heightConstraint);
+                HeaderSize = IsHorizontal ? size.Request.Width : size.Request.Height;
+
+                AbsoluteLayoutFlags layoutFlags = AbsoluteLayoutFlags.YProportional | AbsoluteLayoutFlags.XProportional;
+                Rectangle bounds = new Rectangle(0, 0, 0, 0);
+
+                if (IsHorizontal)
+                {
+                    bounds.Width = HeaderSize;
+                    bounds.Height = 1.0;
+                    bounds.Y = 0.5;
+                    layoutFlags |= AbsoluteLayoutFlags.HeightProportional;
+                }
+                else
+                {
+                    bounds.Height = HeaderSize;
+                    bounds.Width = 1.0;
+                    bounds.X = 0.5;
+                    layoutFlags |= AbsoluteLayoutFlags.WidthProportional;
+                }
+
+                _contentLayout.Children.Add(HeaderElement, bounds, layoutFlags);
+
+                var item = new ItemContext
+                {
+                    Data = Header,
+                    RealizedView = HeaderElement,
+                    IsRealized = true,
+                    IsPersistent = true,
+                };
+                _itemsContext.Insert(0, item);
+                _viewToItemTable[HeaderElement] = item;
+            }
+            else
+            {
+                HeaderSize = 0.0;
+            }
+            LayoutInvalidate();
+        }
+
+        void OnFooterElementChanging()
+        {
+            if (FooterElement != null)
+            {
+                _contentLayout.Children.Remove(FooterElement);
+                _itemsContext.RemoveAt(_itemsContext.Count - 1);
+            }
+        }
+
+        void OnFooterElementChanged()
+        {
+            if (FooterElement != null)
+            {
+                double widthConstraint = IsHorizontal ? double.PositiveInfinity : ItemWidth;
+                double heightConstraint = IsHorizontal ? ItemHeight : double.PositiveInfinity;
+                var size = FooterElement.Measure(widthConstraint, heightConstraint);
+                FooterSize = IsHorizontal ? size.Request.Width : size.Request.Height;
+
+                Rectangle bounds = new Rectangle(1, 1, ItemWidth, ItemHeight);
+                AbsoluteLayoutFlags layoutFlags = AbsoluteLayoutFlags.YProportional | AbsoluteLayoutFlags.XProportional;
+
+                if (IsHorizontal)
+                {
+                    bounds.Width = FooterSize;
+                    bounds.Height = 1.0;
+                    bounds.Y = 0.5;
+                    layoutFlags |= AbsoluteLayoutFlags.HeightProportional;
+                }
+                else
+                {
+                    bounds.Height = FooterSize;
+                    bounds.Width = 1.0;
+                    bounds.X = 0.5;
+                    layoutFlags |= AbsoluteLayoutFlags.WidthProportional;
+                }
+                _contentLayout.Children.Add(FooterElement, bounds, layoutFlags);
+                var item = new ItemContext
+                {
+                    Data = Footer,
+                    RealizedView = FooterElement,
+                    IsRealized = true,
+                    IsPersistent = true,
+                };
+                _itemsContext.Add(item);
+                _viewToItemTable[FooterElement] = item;
+            }
+            else
+            {
+                FooterSize = 0.0;
+            }
+        }
+
         int PositionToIndex(int row, int cols)
         {
-            return row * ColumnCount + cols;
+            if (row == -1)
+                return 0;
+            return row * ColumnCount + cols + (HasHeader ? 1 : 0);
         }
 
         Point IndexToPosition(int index)
         {
+            if (HasHeader)
+                index -= 1;
+            if (index == -1 && HasHeader)
+            {
+                return new Point(-1, 0);
+            }
             return new Point(index / ColumnCount, index % ColumnCount);
         }
 
@@ -951,6 +1233,7 @@ namespace Tizen.TV.UIControls.Forms
 
     class ItemContext
     {
+        public bool IsPersistent { get; set; }
         public object Data { get; set; }
         public bool IsRealized { get; set; }
         public View RealizedView { get; set; }

@@ -26,13 +26,21 @@ namespace Sample.RecycleItemsView
     {
         public ImageCellTest ()
         {
-            InitializeComponent ();
+            InitializeComponent();
         }
+
         void OnSelected(object sender, EventArgs args)
         {
-            var text = ((sender as Tizen.TV.UIControls.Forms.RecycleItemsView).SelectedItem as PosterModel).Text;
-            System.Console.WriteLine("{0} is selected", text);
-            this.DisplayAlert("Selected", text, "OK");
+            Tizen.TV.UIControls.Forms.RecycleItemsView recycleView = sender as Tizen.TV.UIControls.Forms.RecycleItemsView;
+
+            if (recycleView.SelectedItem is PosterModel poster)
+            {
+                DisplayAlert("Selected", poster.Text, "OK");
+            }
+            else if (recycleView.SelectedItem == recycleView.Footer)
+            {
+                DisplayAlert("Selected", "Footer was selected", "OK");
+            }
         }
     }
 }
