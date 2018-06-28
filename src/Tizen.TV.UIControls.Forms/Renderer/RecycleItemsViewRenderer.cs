@@ -15,8 +15,14 @@
  */
 
 using ElmSharp;
+using Xamarin.Forms;
+using Tizen.TV.UIControls.Forms;
 using Xamarin.Forms.Platform.Tizen;
+using XButton = Xamarin.Forms.Button;
 
+[assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]
+[assembly: ExportRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer))]
+[assembly: ExportRenderer(typeof(XButton), typeof(PropagatableButtonRenderer))]
 namespace Tizen.TV.UIControls.Forms
 {
     class RecycleItemsViewContentRenderer : ViewRenderer<RecycleItemsView.ContentLayout, LayoutCanvas>

@@ -14,13 +14,15 @@
  * limitations under the License.
  */
 
-using System;
-using Xamarin.Forms.Platform.Tizen;
 using ElmSharp;
-using EColor = ElmSharp.Color;
+using System;
 using System.Runtime.InteropServices;
-using Xamarin.Forms.Platform.Tizen.Native;
+using Tizen.TV.UIControls.Forms;
+using Tizen.TV.UIControls.Forms.Renderer;
+using Xamarin.Forms.Platform.Tizen;
+using EColor = ElmSharp.Color;
 
+[assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>
