@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
+using Tizen.TV.UIControls.Forms;
+using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms.Platform.Tizen;
 using MMView = Tizen.Multimedia.MediaView;
-using Xamarin.Forms.Platform.Tizen.Native;
 
+[assembly: ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaViewRenderer : ViewRenderer<MediaView, LayoutCanvas>, IMediaViewProvider

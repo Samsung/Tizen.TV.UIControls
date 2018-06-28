@@ -1,27 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <TargetFrameworks>netstandard2.0;tizen40</TargetFrameworks>
     <AssemblyName>Tizen.TV.UIControls.Forms</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
+    <PackageId>Tizen.TV.UIControls.Forms</PackageId>
+    <Description>Tizen.TV.UIControls is an Extension project of Xamarin.Forms to help developers to create Tizen TV applications easily and efficiently.</Description>
+    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Samsung/Tizen.TV.UIControls</PackageProjectUrl>
+    <Copyright>© Samsung Electronics Co., Ltd All Rights Reserved</Copyright>
   </PropertyGroup>
+
   <ItemGroup>
+    <Compile Remove="Renderer\**\*.cs" />
+    <None Include="Renderer\**\*.cs" />
     <None Remove="Resources\img_button_pause.png" />
     <None Remove="Resources\img_button_play.png" />
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resources\img_button_pause.png" />
     <EmbeddedResource Include="Resources\img_button_play.png" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
-  </ItemGroup>
-  
-  <ItemGroup>
     <EmbeddedResource Update="EmbeddingControls.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.583944" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
+    <Compile Include="Renderer\**\*.cs" />
+    <PackageReference Include="Tizen.NET" Version="4.0.0" />
   </ItemGroup>
 
 </Project>

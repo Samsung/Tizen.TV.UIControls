@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-using ElmSharp;
-using Xamarin.Forms;
+using Tizen.TV.UIControls.Forms;
+using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms.Platform.Tizen;
-
 using NPage = Xamarin.Forms.Platform.Tizen.Native.Page;
 
+[assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class OverlayPageRenderer : PageRenderer
