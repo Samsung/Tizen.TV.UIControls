@@ -20,27 +20,48 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// A MediaSource that loads a media from a URI
+    /// </summary>
     [TypeConverter(typeof(MediaSourceConverter))]
     public sealed class UriMediaSource : MediaSource
     {
+        /// <summary>
+        /// Identifies the File bindable property.
+        /// </summary>
         public static readonly BindableProperty UriProperty = BindableProperty.Create("Uri", typeof(Uri), typeof(UriImageSource), default(Uri), validateValue: (bindable, value) => value == null || ((Uri)value).IsAbsoluteUri);
 
+        /// <summary>
+        /// Gets or sets the URI for the media to get.
+        /// </summary>
         public Uri Uri
         {
             get { return (Uri)GetValue(UriProperty); }
             set { SetValue(UriProperty, value); }
         }
 
+        /// <summary>
+        /// Returns the path to the file for the media, prefixed with the string, "Uri: ".
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"Uri: {Uri}";
         }
 
+        /// <summary>
+        /// Allows implicit casting from a Uri.
+        /// </summary>
+        /// <param name="uri"></param>
         public static implicit operator UriMediaSource(Uri uri)
         {
             return (UriMediaSource)FromUri(uri);
         }
 
+        /// <summary>
+        /// Allows implicit casting to a string.
+        /// </summary>
+        /// <param name="uri"></param>
         public static implicit operator string(UriMediaSource uri)
         {
             return uri?.ToString();

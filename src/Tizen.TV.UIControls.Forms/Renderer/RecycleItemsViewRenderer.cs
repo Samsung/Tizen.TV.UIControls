@@ -86,6 +86,9 @@ namespace Tizen.TV.UIControls.Forms
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
         {
             base.OnElementChanged(e);
+            // It is temporary workaround code
+            // `PropagateEvents = true` is default value of EFL, but by mistake of Xamarin.Forms.Platform.Tizen implementation it was set to false
+            // It was fixed in latest version but not released so we fixed with workaround code
             Control.PropagateEvents = true;
         }
     }
