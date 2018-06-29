@@ -1,7 +1,7 @@
 # Tizen TV UIControls
 
 The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device.
-The binaries are available via NuGet (package name TVUIControls()) with the source available here.
+The binaries are available via NuGet (package name is Tizen.TV.UIControls.Forms) with the source available here.
 
 ## Controls
 

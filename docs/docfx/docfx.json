@@ -32,7 +32,7 @@
         "files": ["favicon.ico", "logo.png"]
       },
       {
-        "files": ["data/*"],
+        "files": ["resources/*"],
         "src":"../guides",
         "dest":"guides"
       }
