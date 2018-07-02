@@ -5,6 +5,6 @@ The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms fram
  [![Build Status](http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/badge/icon)](http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/)
 ## Getting Started
 ## Guides
- https://myroot.github.io/Tizen.TV.UIControls/guides/Overview.html
+ https://samsung.github.io/Tizen.TV.UIControls/guides/Overview.html
 ## API document
- https://myroot.github.io/Tizen.TV.UIControls/api/index.html
+ https://samsung.github.io/Tizen.TV.UIControls/api/index.html
