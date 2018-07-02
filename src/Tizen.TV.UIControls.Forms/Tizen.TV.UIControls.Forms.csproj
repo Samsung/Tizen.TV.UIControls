@@ -4,9 +4,13 @@
     <AssemblyName>Tizen.TV.UIControls.Forms</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
     <PackageId>Tizen.TV.UIControls.Forms</PackageId>
+    <authors>Samsung Electronics</authors>
+    <owners>Samsung Electronics</owners>
     <Description>Tizen.TV.UIControls is an Extension project of Xamarin.Forms to help developers to create Tizen TV applications easily and efficiently.</Description>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Samsung/Tizen.TV.UIControls</PackageProjectUrl>
+    <PackageIconUrl>http://xamarin.com/content/images/nuget/xamarin.png</PackageIconUrl>
+    <PackageTags>xamarin;forms;xamarinforms;xamarin.forms;tizen;tv;uicontrols;tizentv</PackageTags>
     <Copyright>© Samsung Electronics Co., Ltd All Rights Reserved</Copyright>
   </PropertyGroup>
 
