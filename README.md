@@ -1,20 +1,8 @@
 # Tizen TV UIControls
-## Quick start
-### MediaPlayer
-#### Use in Xaml
-``` xaml 
-<tvcontrols:MediaView 
-  xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms">
-    <tvcontrols:MediaPlayer
-        Source="{Binding Source}"
-        AutoStart="true"/>
-</tvcontrols:MediaView>
-```
-#### Use by code
-```C#
-var view = new MediaView();
-var player = new MediaPlayer();
-player.VideoOutput = view;
-player.Source = "a.mp4";
-player.Start();
-```
+The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device. The binaries are available via NuGet (package name is Tizen.TV.UIControls.Forms) with the source available here.
+
+## Build Status
+ [![Build Status](http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/badge/icon)](http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/)
+## Getting Started
+## Gudie
+## API document
