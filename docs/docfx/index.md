@@ -3,19 +3,14 @@
 The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device.
 The binaries are available via NuGet (package name is Tizen.TV.UIControls.Forms) with the source available here.
 
-## Controls
+## Major Classes
 
 | Name                                                                   | Description  |
 | -----------------------------------------------------------------------| -------------|
-| [](xref:Tizen.TV.UIControls.Forms.MediaPlayer)                         | MediaPlayer |
-| [](xref:Tizen.TV.UIControls.Forms.MediaView)        | MediaView |
-| [](xref:Tizen.TV.UIControls.Forms.OverlayMediaView)                | OverlayMediaView |
-| [](xref:Tizen.TV.UIControls.Forms.OverlayPage)  | OverlayPage |
-| [](xref:Tizen.TV.UIControls.Forms.FileMediaSource)       | FileMediaSource |
-| [](xref:Tizen.TV.UIControls.Forms.FileMediaSourceConverter)       | FileMediaSourceConverter |
-| [](xref:Tizen.TV.UIControls.Forms.ProgressToBoundTextConverter)              | ProgressToBoundTextConverter |
-| [](xref:Tizen.TV.UIControls.Forms.MillisecondToTextConverter)             | MillisecondToTextConverter |
-| [](xref:Tizen.TV.UIControls.Forms.RecycleItemsView)                 | RecycleItemsView |
-| [](xref:Tizen.TV.UIControls.Forms.InputEvents)    | InputEvents |
-| [](xref:Tizen.TV.UIControls.Forms.RemoteKeyHandler)         | RemoteKeyHandler |
+| [](xref:Tizen.TV.UIControls.Forms.MediaPlayer)       | Class that provieds the essential components to play the media contents. |
+| [](xref:Tizen.TV.UIControls.Forms.MediaView)         | Class that is used to display the video output on the screen. |
+| [](xref:Tizen.TV.UIControls.Forms.OverlayMediaView)  | An overlay MediaView. |
+| [](xref:Tizen.TV.UIControls.Forms.OverlayPage)       | Class that is used to display the video output on a page. |
+| [](xref:Tizen.TV.UIControls.Forms.RecycleItemsView)  | ScrollView that efficiently displays a collection of data using DataTemplate. |
+| [](xref:Tizen.TV.UIControls.Forms.InputEvents)       | Class that helps developers to handle the remote control events that are emitted from TV devices. |
 
