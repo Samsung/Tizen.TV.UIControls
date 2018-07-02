@@ -1,23 +1,23 @@
-RecycleItemsView is provide default focusing effect that is scaling to 1.2
-If want to change this behavior, you need to inherit RecycleItemsView and override `OnItemFocused` method
+`RecycleItemsView` provides a default focusing effect that is scaling to 1.2.
+If you want to change this behavior, you need to inherit `RecycleItemsView` and override `OnItemFocused` method.
 
 ``` C#
-   protected virtual void OnItemFocused(object data, View targetView, bool isFocused);
+protected virtual void OnItemFocused(object data, View targetView, bool isFocused);
 ```
- When need to apply focusing effect, We call this method with focused view
+ When you need to apply the focusing effect, we call this method with the focused view.
 
  * `data` is a FocusedItem in ItemsSource
- * `targetView` is a realized view that created by `ItemTemplate`
- * `isFocused` whether focus or not.
+ * `targetView` is a realized view that is created by `ItemTemplate`
+ * `isFocused` is about whether focus or not.
 
-You need to implement `Focused` and `Unfocused` cases
-If not, all views will be shown as focused
+You need to implement `Focused` and `Unfocused` cases.
+If not, all views will be shown as focused.
 
 ## Focus with header footer
-Header/Footer also can get a focus and triggered OnItemFocused when focused. So, if you want know that focused view is header or not, compare data parameter with Header property
+Header/Footer also can get a focus and triggered `OnItemFocused` when focused. Therefore, if you want to know if a focused view is the header or not, compare the data parameter with Header property.
 
 ## Custom Fouse Effect example
-``` xaml
+``` xml
 <local:MyRecycleItemsView ...>
   <tvcontrols:RecycleItemsView.ItemTemplate>
     <DataTemplate>
@@ -61,9 +61,9 @@ Header/Footer also can get a focus and triggered OnItemFocused when focused. So,
             }
         }
 ```
-When Item was focused, text area is grow up to 200px
+When the Item is focused, text area will grow up to 200px.
 
-We can know a View type because it was created by ItemTemplate
-So, we can get a `StackLayout` object and make larger
+We are able to know a type of View, because it was created by `ItemTemplate`.
+So, we can get a `StackLayout` object and make it larger.
 
 ![img](resources/RecycleItemsView_img.gif)

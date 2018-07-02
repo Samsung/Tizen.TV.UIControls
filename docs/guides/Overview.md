@@ -1,3 +1,3 @@
 # Developer Guides
 
-Welcome to the Tizen TV UI Controls guides.
+Welcome to the developer guides for Tizen TV UI Controls.

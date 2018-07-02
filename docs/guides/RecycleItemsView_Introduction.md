@@ -1,6 +1,6 @@
 # RecycleItemsView
 ## Introduction
- RecycleItemsView is a view that wish to take in a list of user objects and produce views for each of them to be displayed. Especially, it can be used when the data is displayed in the same view template. and it reuse the templated view when it out of sight
+ `RecycleItemsView` is a view that takes in a list of user objects and produces views for each of them to be displayed. Especially, it can be used when the data is displayed in the same view template. It reuses the templated view when it is out of sight.
 
 ## Concept
 ![concept](resources/RecycleItemsView_concept.png)
@@ -31,7 +31,7 @@ var recycleView = new RecycleItemsView()
 }),
 ```
 ### XAML
-``` xaml
+``` xml
 <tvcontrols:RecycleItemsView ContentMargin="60" ItemWidth="300" ItemHeight="350" Spacing="20" ItemsSource="{Binding Items}">
     <tvcontrols:RecycleItemsView.ItemTemplate>
         <DataTemplate>
@@ -46,21 +46,21 @@ var recycleView = new RecycleItemsView()
 ![layouting](resources/RecycleItemsView_layouting.png)
 
 ### Item width and height
-All items in RecycleItemsView have the same width and height because it should be reused.
+All items in `RecycleItemsView` have the same width and height, because it should be reused.
 
 ## Multiple columns
-You can display items on multiple lines. Use `ColumnCount` property to apply multiple columns
+You can display items on multiple lines. Use `ColumnCount` property to apply multiple columns.
 ![colums](resources/RecycleItemsView_colums.gif)
 
 ## Header and Footer
- RecycleItemsView display items with same `DataTemplate`. if you want to use a special looks for first or last, you can use Header, Footer property
+ `RecycleItemsView` displays items with a same `DataTemplate`. If you want to use special looks for first or last, you can use Header or Footer property.
 
 ![footer](resources/RecycleItemsView_footer.png)
 ![footer2](resources/RecycleItemsView_footer2.png)
 
- The Header and Footer can be a data object that contain view model or a view instance.
- If Header or Footer is a View, it directly used for displaying header/footer. 
- If not, HeaderTemplate/FooterTemplate is used to make a view that used for displaying header/footer
+ The Header and Footer can be data objects that contain a view model or a view instance.
+ If Header or Footer is a View, it is directly used for displaying header or footer.
+ If not, `HeaderTemplate` or `FooterTemplate` is used to make a view that is used for displaying header or footer.
 
 ## Related Links
  * [DataTemplate](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/data-templates)

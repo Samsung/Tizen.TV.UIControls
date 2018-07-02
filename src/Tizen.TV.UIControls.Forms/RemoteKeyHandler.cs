@@ -40,7 +40,7 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command.
         /// </summary>
-        /// <param name="action"></param>
+        /// <param name="action">An action to invoke when the remote control event is activated.</param>
         public RemoteKeyHandler(Action<RemoteControlKeyEventArgs> action)
         {
             Command = new Command<RemoteControlKeyEventArgs>(action);
@@ -49,8 +49,8 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command and key type.
         /// </summary>
-        /// <param name="action"></param>
-        /// <param name="keyType"></param>
+        /// <param name="action">An action to invoke when the remote control event with the specifiec key type is invoked.</param>
+        /// <param name="keyType">A key type to invoke the action.</param>
         public RemoteKeyHandler(Action<RemoteControlKeyEventArgs> action, RemoteControlKeyTypes keyType)
         {
             Command = new Command<RemoteControlKeyEventArgs>(action);

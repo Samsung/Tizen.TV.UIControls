@@ -8,7 +8,7 @@ The access key can be set to a specific view and the view gets a direct focus wh
 Get a collection of handlers using `GetEventHandlers(BindableObject view)`, and add `RemoteKeyHandler` to it.
 
 ### xaml
-``` xaml
+``` xml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:uicontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
@@ -55,7 +55,7 @@ public class TestRemoteControl : ContentPage
 ## How to set an access key
 
 ### xaml
-``` xaml
+``` xml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:uicontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"

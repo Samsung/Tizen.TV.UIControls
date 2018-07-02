@@ -21,9 +21,15 @@ using Xamarin.Forms.Xaml;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// A built-in media controls.
+    /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EmbeddingControls : ContentView
     {
+        /// <summary>
+        /// Internal use only, initializes a new instance of the EmbeddingControls.
+        /// </summary>
         public EmbeddingControls()
         {
             InitializeComponent();
