@@ -24,10 +24,20 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// The orientations the a RecycleItemsView can have.
+    /// </summary>
     public enum RecycleItemsViewOrientation
     {
-        Horizontal,
+        /// <summary>
+        /// should be vertically oriented.
+        /// </summary>
         Vertical,
+
+        /// <summary>
+        /// RecycleItemsView should be horizontally oriented.
+        /// </summary>
+        Horizontal,
     }
 
     public interface IRecycleItemsViewController
@@ -37,23 +47,74 @@ namespace Tizen.TV.UIControls.Forms
         Rectangle ScrollBounds { get; }
     }
 
+    /// <summary>
+    /// A ScrollView that efficiently displays a collections of data using DataTemplate
+    /// </summary>
     public class RecycleItemsView : ContentView, IRecycleItemsViewController
     {
+        /// <summary>
+        /// Backing store for the ItemWidth property.
+        /// </summary>
         public static readonly BindableProperty ItemWidthProperty = BindableProperty.Create(nameof(ItemWidth), typeof(double), typeof(RecycleItemsView), 100d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemSize());
+        /// <summary>
+        /// Backing store for the ItemHeight property.
+        /// </summary>
         public static readonly BindableProperty ItemHeightProperty = BindableProperty.Create(nameof(ItemHeight), typeof(double), typeof(RecycleItemsView), 100d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemSize());
+        /// <summary>
+        /// Backing store for the Orientation property.
+        /// </summary>
         public static readonly BindableProperty OrientationProperty = BindableProperty.Create(nameof(Orientation), typeof(RecycleItemsViewOrientation), typeof(RecycleItemsView), RecycleItemsViewOrientation.Horizontal, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateOrientation());
+        /// <summary>
+        /// Backing store for the Spacing property.
+        /// </summary>
         public static readonly BindableProperty SpacingProperty = BindableProperty.Create(nameof(Spacing), typeof(double), typeof(RecycleItemsView), 6d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateSpacing());
+        /// <summary>
+        /// Backing store for the ItemsSource property.
+        /// </summary>
         public static readonly BindableProperty ItemsSourceProperty = BindableProperty.Create(nameof(ItemsSource), typeof(IEnumerable), typeof(RecycleItemsView), null, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemsSource());
+        /// <summary>
+        /// Backing store for the ItemTemplate property.
+        /// </summary>
         public static readonly BindableProperty ItemTemplateProperty = BindableProperty.Create(nameof(ItemTemplate), typeof(DataTemplate), typeof(RecycleItemsView), null, validateValue: (b, v) => ((RecycleItemsView)b).ValidateItemTemplate((DataTemplate)v), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemTemplate());
+        /// <summary>
+        /// Backing store for the FocusedItem property.
+        /// </summary>
         public static readonly BindableProperty FocusedItemProperty = BindableProperty.Create(nameof(FocusedItem), typeof(object), typeof(RecycleItemsView), null, BindingMode.OneWayToSource, propertyChanging: (b, o, n) => ((RecycleItemsView)b).OnFocusedItemChanging(), propertyChanged: (b, o, n) => ((RecycleItemsView)b).OnFocusedItemChanged());
+        /// <summary>
+        /// Backing store for the SelectedItem property.
+        /// </summary>
         public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem), typeof(object), typeof(RecycleItemsView), null, BindingMode.OneWayToSource, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateSelectedItem());
+        /// <summary>
+        /// Backing store for the ContentMargin property.
+        /// </summary>
         public static readonly BindableProperty ContentMarginProperty = BindableProperty.Create(nameof(ContentMargin), typeof(Thickness), typeof(RecycleItemsView), default(Thickness), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateContentMargin());
+        /// <summary>
+        /// Backing store for the ScrollPolicy property.
+        /// </summary>
         public static readonly BindableProperty ScrollPolicyProperty = BindableProperty.Create(nameof(ScrollPolicy), typeof(ScrollToPosition), typeof(RecycleItemsView), ScrollToPosition.Center);
+        /// <summary>
+        /// Backing store for the ScrollBarVisibility property.
+        /// </summary>
         public static readonly BindableProperty ScrollBarVisibilityProperty = BindableProperty.Create(nameof(ScrollBarVisibility), typeof(ScrollBarVisibility), typeof(RecycleItemsView), ScrollBarVisibility.Default, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateScrollBarVisibility());
+        /// <summary>
+        /// Backing store for the ColumnCount property.
+        /// </summary>
         public static readonly BindableProperty ColumnCountProperty = BindableProperty.Create(nameof(ColumnCount), typeof(int), typeof(RecycleItemsView), 1, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateColumnCount());
+        /// <summary>
+        /// Backing store for the Header property.
+        /// </summary>
         public static readonly BindableProperty HeaderProperty = BindableProperty.Create(nameof(Header), typeof(object), typeof(RecycleItemsView), null, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateHeaderElement());
+        /// <summary>
+        /// Backing store for the Footer property.
+        /// </summary>
         public static readonly BindableProperty FooterProperty = BindableProperty.Create(nameof(Footer), typeof(object), typeof(RecycleItemsView), null, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateFooterElement());
+        /// <summary>
+        /// Backing store for the HeaderTemplate property.
+        /// </summary>
         public static readonly BindableProperty HeaderTemplateProperty = BindableProperty.Create(nameof(HeaderTemplate), typeof(DataTemplate), typeof(RecycleItemsView), null, validateValue: (b, v) => ((RecycleItemsView)b).ValidateItemTemplate((DataTemplate)v), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateHeaderElement());
+        /// <summary>
+        /// Backing store for the FooterTemplate property.
+        /// </summary>
         public static readonly BindableProperty FooterTemplateProperty = BindableProperty.Create(nameof(FooterTemplate), typeof(DataTemplate), typeof(RecycleItemsView), null, validateValue: (b, v) => ((RecycleItemsView)b).ValidateItemTemplate((DataTemplate)v), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateFooterElement());
 
         static readonly BindableProperty HeaderElementProperty = BindableProperty.Create(nameof(HeaderElement), typeof(View), typeof(RecycleItemsView), null, propertyChanging: (b, o, n) => ((RecycleItemsView)b).OnHeaderElementChanging(), propertyChanged: (b, o, n) => ((RecycleItemsView)b).OnHeaderElementChanged());
@@ -73,124 +134,187 @@ namespace Tizen.TV.UIControls.Forms
         int _lastEnd = -1;
         int _focusedItemIndex = -1;
 
+        /// <summary>
+        /// Creates and initializes a new instance of the RecycleItemsView class.
+        /// </summary>
         public RecycleItemsView()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Gets or sets a value that represents the width of an item.
+        /// </summary>
         public double ItemWidth
         {
             get { return (double)GetValue(ItemWidthProperty); }
             set { SetValue(ItemWidthProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets a value that represents the height of an item.
+        /// </summary>
         public double ItemHeight
         {
             get { return (double)GetValue(ItemHeightProperty); }
             set { SetValue(ItemHeightProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the value which indicates the direction which items are positioned.
+        /// </summary>
         public RecycleItemsViewOrientation Orientation
         {
             get { return (RecycleItemsViewOrientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets a value which indicates the amount of space between each item.
+        /// </summary>
         public double Spacing
         {
             get { return (double)GetValue(SpacingProperty); }
             set { SetValue(SpacingProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the source of items to template and display.
+        /// </summary>
         public IEnumerable ItemsSource
         {
             get { return (IEnumerable)GetValue(ItemsSourceProperty); }
             set { SetValue(ItemsSourceProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the DataTemplate to apply to the ItemsSource.
+        /// </summary>
         public DataTemplate ItemTemplate
         {
             get { return (DataTemplate)GetValue(ItemTemplateProperty); }
             set { SetValue(ItemTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the currently focused item from the ItemsSource.
+        /// </summary>
         public object FocusedItem
         {
             get { return GetValue(FocusedItemProperty); }
             set { SetValue(FocusedItemProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the currently selected item from the ItemsSource.
+        /// </summary>
         public object SelectedItem
         {
             get { return GetValue(SelectedItemProperty); }
             set { SetValue(SelectedItemProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the margin for the content.
+        /// </summary>
         public Thickness ContentMargin
         {
             get { return (Thickness)GetValue(ContentMarginProperty); }
             set { SetValue(ContentMarginProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the count of columns.
+        /// </summary>
         public int ColumnCount
         {
             get { return (int)GetValue(ColumnCountProperty); }
             set { SetValue(ColumnCountProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the binding, or view that will be displayed at the first of the items.
+        /// </summary>
         public object Header
         {
             get { return GetValue(HeaderProperty); }
             set { SetValue(HeaderProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets a data template to use to format a data object for display Header.
+        /// </summary>
         public DataTemplate HeaderTemplate
         {
             get { return (DataTemplate)GetValue(HeaderTemplateProperty); }
             set { SetValue(HeaderTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Gets instantiated Header view
+        /// </summary>
         public View HeaderElement
         {
             get { return (View)GetValue(HeaderElementProperty); }
-            set { SetValue(HeaderElementProperty, value); }
+            protected set { SetValue(HeaderElementProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the binding, or view that will be displayed at the last of the items.
+        /// </summary>
         public object Footer
         {
             get { return GetValue(FooterProperty); }
             set { SetValue(FooterProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets a data template to use to format a data object for display Footer.
+        /// </summary>
         public DataTemplate FooterTemplate
         {
             get { return (DataTemplate)GetValue(FooterTemplateProperty); }
             set { SetValue(FooterTemplateProperty, value); }
         }
 
+        /// <summary>
+        /// Gets instantiated Footer view
+        /// </summary>
         public View FooterElement
         {
             get { return (View)GetValue(FooterElementProperty); }
-            set { SetValue(FooterElementProperty, value); }
+            protected set { SetValue(FooterElementProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the scroll position policy.
+        /// </summary>
         public ScrollToPosition ScrollPolicy
         {
             get { return (ScrollToPosition)GetValue(ScrollPolicyProperty); }
             set { SetValue(ScrollPolicyProperty, value); }
         }
 
+        /// <summary>
+        /// Gets or sets the scroll bar visibility.
+        /// </summary>
         public ScrollBarVisibility ScrollBarVisibility
         {
             get { return (ScrollBarVisibility)GetValue(ScrollBarVisibilityProperty); }
             set { SetValue(ScrollBarVisibilityProperty, value); }
         }
 
+        /// <summary>
+        /// declare the number of items to make redundant.
+        /// </summary>
         protected virtual int RedundantItemCount
         {
             get { return 5; }
         }
 
+        /// <summary>
+        /// Gets the ScrollView internally created.
+        /// </summary>
         protected ScrollView ScrollView
         {
             get;
@@ -318,16 +442,41 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
+        /// <summary>
+        /// Event that is raised when a new item is selected.
+        /// </summary>
         public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
+
+        /// <summary>
+        /// Event that is raised when a item's view is attached the RecycleItemsView.
+        /// </summary>
         public event EventHandler<ItemRealizedEventArgs> ItemRealized;
+
+        /// <summary>
+        /// Event that is raised when a item's view is detached the RecycleItemsView.
+        /// </summary>
         public event EventHandler<ItemUnrealizedEventArgs> ItemUnrealized;
 
+        /// <summary>
+        /// Returns a task that scrolls the scroll view to an item asynchronously.
+        /// </summary>
+        /// <param name="item">The item to scroll.</param>
+        /// <param name="position">The scroll position.</param>
+        /// <param name="animation">Whether or not to animate the scroll.</param>
+        /// <returns>Task</returns>
         public Task ScrollToAsync(object item, ScrollToPosition position, bool animation)
         {
             var point = GetScrollPositionForItem(GetItemIndex(item), ScrollPolicy);
             return ScrollView.ScrollToAsync(point.X, point.Y, animation);
         }
 
+        /// <summary>
+        /// Returns a task that scrolls the scroll view to a position asynchronously.
+        /// </summary>
+        /// <param name="x">The X position of the finished scroll.</param>
+        /// <param name="y">The Y position of the finished scroll.</param>
+        /// <param name="animation">Whether or not to animate the scroll.</param>
+        /// <returns>Task</returns>
         public Task ScrollToAsync(double x, double y, bool animation)
         {
             return ScrollView.ScrollToAsync(x, y, animation);
@@ -425,11 +574,21 @@ namespace Tizen.TV.UIControls.Forms
             _itemsContext = new List<ItemContext>();
         }
 
+        /// <summary>
+        /// Create a ScrollView that used in RecycleItemsView.
+        /// </summary>
+        /// <returns>ScrollView</returns>
         protected virtual ScrollView CreateScrollView()
         {
             return new ScrollView();
         }
 
+        /// <summary>
+        /// Called when Item is focused
+        /// </summary>
+        /// <param name="data">The focused item from the ItemsSource.</param>
+        /// <param name="targetView">Instantiated View</param>
+        /// <param name="isFocused">Whether or not focused</param>
         protected virtual void OnItemFocused(object data, View targetView, bool isFocused)
         {
             if (isFocused)
@@ -1219,12 +1378,18 @@ namespace Tizen.TV.UIControls.Forms
         }
     }
 
+    /// <summary>
+    /// Event arguments for the ItemRealized event.
+    /// </summary>
     public class ItemRealizedEventArgs : EventArgs
     {
         public object Item { get; set; }
         public View RealizedView { get; set; }
     }
 
+    /// <summary>
+    /// Event arguments for the ItemUnrealized event.
+    /// </summary>
     public class ItemUnrealizedEventArgs : EventArgs
     {
         public object Item { get; set; }
