@@ -19,9 +19,17 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// A TypeConverter that converts to FileMediaSource.
+    /// </summary>
     [TypeConverter(typeof(FileMediaSource))]
     public sealed class FileMediaSourceConverter : TypeConverter
     {
+        /// <summary>
+        /// Creates a file media source given a path to a media.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns>FileMediaSource</returns>
         public override object ConvertFromInvariantString(string value)
         {
             if (value != null)

@@ -15,15 +15,17 @@
  */
 
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
+using Tizen.Multimedia;
+using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
 
-using Tizen.Multimedia;
-using Xamarin.Forms.Internals;
-using System.IO;
-using System.Collections.Generic;
-
+[assembly: Xamarin.Forms.Dependency(typeof(MediaPlayerImpl))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer

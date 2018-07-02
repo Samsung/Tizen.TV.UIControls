@@ -15,6 +15,7 @@
  */
 
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using Xamarin.Forms;
 
@@ -80,7 +81,7 @@ namespace Tizen.TV.UIControls.Forms
             view.SetValue(AccessKeyProperty, value);
         }
 
-        static void OnCollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        static void OnCollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
             if ((sender as EventHandlerCollection).Target == null)
                 return;

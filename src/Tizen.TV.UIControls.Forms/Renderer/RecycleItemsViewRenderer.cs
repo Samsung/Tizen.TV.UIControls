@@ -15,8 +15,14 @@
  */
 
 using ElmSharp;
+using Xamarin.Forms;
+using Tizen.TV.UIControls.Forms;
 using Xamarin.Forms.Platform.Tizen;
+using XButton = Xamarin.Forms.Button;
 
+[assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]
+[assembly: ExportRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer))]
+[assembly: ExportRenderer(typeof(XButton), typeof(PropagatableButtonRenderer))]
 namespace Tizen.TV.UIControls.Forms
 {
     class RecycleItemsViewContentRenderer : ViewRenderer<RecycleItemsView.ContentLayout, LayoutCanvas>
@@ -80,6 +86,9 @@ namespace Tizen.TV.UIControls.Forms
         protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
         {
             base.OnElementChanged(e);
+            // It is temporary workaround code
+            // `PropagateEvents = true` is default value of EFL, but by mistake of Xamarin.Forms.Platform.Tizen implementation it was set to false
+            // It was fixed in latest version but not released so we fixed with workaround code
             Control.PropagateEvents = true;
         }
     }

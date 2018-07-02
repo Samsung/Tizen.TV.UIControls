@@ -6,26 +6,15 @@
     <TargetFramework>tizen40</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>portable</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>None</DebugType>
-  </PropertyGroup>
   <ItemGroup>
     <None Remove="res\a.mp4" />
     <None Remove="res\b.mp4" />
     <None Remove="res\c.mp4" />
     <None Remove="res\d.mp4" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="lib\" />
-  </ItemGroup>
-
   
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms.Renderer\Tizen.TV.UIControls.Forms.Renderer.csproj" />
+    <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
     <ProjectReference Include="..\Sample\Sample.csproj" />
   </ItemGroup>
   
