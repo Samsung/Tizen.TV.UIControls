@@ -24,6 +24,12 @@ nuget.exe install Tizen.TV.UIControls -Version 1.0.0-beta -Source https://tizen.
 ``` xml
 <ContentPage ... xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms" ...>
 ```
+### Initialization on Platform code
+``` c#
+Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
+global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
+Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
+```
 
 ### Guides
  https://samsung.github.io/Tizen.TV.UIControls/guides/Overview.html
