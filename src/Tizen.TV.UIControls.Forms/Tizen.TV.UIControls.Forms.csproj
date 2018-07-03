@@ -3,7 +3,7 @@
     <TargetFrameworks>netstandard2.0;tizen40</TargetFrameworks>
     <AssemblyName>Tizen.TV.UIControls.Forms</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
-    <PackageId>Tizen.TV.UIControls.Forms</PackageId>
+    <PackageId>Tizen.TV.UIControls</PackageId>
     <authors>Samsung Electronics</authors>
     <owners>Samsung Electronics</owners>
     <Description>Tizen.TV.UIControls is an Extension project of Xamarin.Forms to help developers to create Tizen TV applications easily and efficiently.</Description>
