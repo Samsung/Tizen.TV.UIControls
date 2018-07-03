@@ -25,7 +25,7 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// Class that the XAML parser uses to convert Progress to Bound.
     /// </summary>
-    public class ProgressToBoundTextConverter : IValueConverter
+    internal class ProgressToBoundTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -47,7 +47,7 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// Class that the XAML parser uses to convert milliseconds to Text format.
     /// </summary>
-    public class MillisecondToTextConverter : IValueConverter
+    internal class MillisecondToTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

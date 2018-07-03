@@ -25,7 +25,7 @@ namespace Tizen.TV.UIControls.Forms
     /// A built-in media controls.
     /// </summary>
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class EmbeddingControls : ContentView
+    partial class EmbeddingControls : ContentView
     {
         /// <summary>
         /// Internal use only, initializes a new instance of the EmbeddingControls.

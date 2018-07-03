@@ -31,6 +31,7 @@ player.Start();
  * It displays video data on the overlay plane. It is more efficient and fast but has a limit shape. Usually it is used to display the video as fullscreen.
  * OverlayPage
  * OverlayMediaView
+
 #### Buffer
  * It displays video data on the graphics buffer using GL surface. It is free to change the shape, but if it does not support GL surface, you can't use it. It is usually used to attach a video on a part of the view.
  * MediaView
