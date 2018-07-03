@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>RecycleItemsView </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="RecycleItemsView ">
+    <meta name="generator" content="docfx 2.34.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="recycleitemsview">RecycleItemsView</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p> <code>RecycleItemsView</code> is a view that takes in a list of user objects and produces views for each of them to be displayed. Especially, it can be used when the data is displayed in the same view template. It reuses the templated view when it is out of sight.</p>
+<h2 id="concept">Concept</h2>
+<p><img src="resources/RecycleItemsView_concept.png" alt="concept"></p>
+<h2 id="how-to-use">How to use</h2>
+<h3 id="c">C#</h3>
+<pre><code class="lang-c#">var recycleView = new RecycleItemsView()
+{
+    ContentMargin = 60,
+    ItemHeight = 350,
+    ItemWidth = 300,
+    Spacing = 20,
+    ItemsSource = item,
+    ItemTemplate = new DataTemplate(() =&gt;
+    {
+        Label label;
+        var view = new StackLayout {
+            Children =
+            {
+                (label = new Label { })
+            }
+        };
+        view.SetBinding(StackLayout.BackgroundColorProperty, new Binding(&quot;Color&quot;));
+        label.SetBinding(Label.TextProperty, new Binding(&quot;Label&quot;));
+        return view;
+    })
+}),
+</code></pre><h3 id="xaml">XAML</h3>
+<pre><code class="lang-xml">&lt;tvcontrols:RecycleItemsView ContentMargin=&quot;60&quot; ItemWidth=&quot;300&quot; ItemHeight=&quot;350&quot; Spacing=&quot;20&quot; ItemsSource=&quot;{Binding Items}&quot;&gt;
+    &lt;tvcontrols:RecycleItemsView.ItemTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;StackLayout BackgroundColor=&quot;{Binding Color}&quot;&gt;
+                &lt;Label Text=&quot;{Binding Text}&quot;/&gt;
+            &lt;/StackLayout&gt;
+        &lt;/DataTemplate&gt;
+    &lt;/tvcontrols:RecycleItemsView.ItemTemplate&gt;
+&lt;/tvcontrols:RecycleItemsView&gt;
+</code></pre><h2 id="properties-related-layouting">Properties related layouting</h2>
+<p><img src="resources/RecycleItemsView_layouting.png" alt="layouting"></p>
+<h3 id="item-width-and-height">Item width and height</h3>
+<p>All items in <code>RecycleItemsView</code> have the same width and height, because it should be reused.</p>
+<h2 id="multiple-columns">Multiple columns</h2>
+<p>You can display items on multiple lines. Use <code>ColumnCount</code> property to apply multiple columns.
+<img src="resources/RecycleItemsView_colums.gif" alt="colums"></p>
+<h2 id="header-and-footer">Header and Footer</h2>
+<p> <code>RecycleItemsView</code> displays items with a same <code>DataTemplate</code>. If you want to use special looks for first or last, you can use Header or Footer property.</p>
+<p><img src="resources/RecycleItemsView_footer.png" alt="footer">
+<img src="resources/RecycleItemsView_footer2.png" alt="footer2"></p>
+<p> The Header and Footer can be data objects that contain a view model or a view instance.
+ If Header or Footer is a View, it is directly used for displaying header or footer.
+ If not, <code>HeaderTemplate</code> or <code>FooterTemplate</code> is used to make a view that is used for displaying header or footer.</p>
+<h2 id="related-links">Related Links</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/templates/data-templates">DataTemplate</a></li>
+<li><a href="https://github.com/Samsung/Tizen.TV.UIControls/tree/master/sample/Sample/RecycleItemsView">Sample</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

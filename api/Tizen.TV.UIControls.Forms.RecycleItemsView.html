@@ -1,0 +1,1428 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RecycleItemsView
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RecycleItemsView
+   ">
+    <meta name="generator" content="docfx 2.34.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView">
+  
+  
+  <h1 id="Tizen_TV_UIControls_Forms_RecycleItemsView" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView" class="text-break">Class RecycleItemsView
+  </h1>
+  <div class="markdown level0 summary"><p>A ScrollView that efficiently displays a collections of data using DataTemplate</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">ContentView</span></div>
+    <div class="level1"><span class="xref">RecycleItemsView</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Tizen.TV.UIControls.Forms.IRecycleItemsViewController.html">IRecycleItemsViewController</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.TV.UIControls.Forms.html">Tizen.TV.UIControls.Forms</a></h6>
+  <h6><strong>Assembly</strong>: Tizen.TV.UIControls.Forms.dll</h6>
+  <h5 id="Tizen_TV_UIControls_Forms_RecycleItemsView_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class RecycleItemsView : ContentView, IRecycleItemsViewController</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView__ctor_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.#ctor*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView__ctor" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.#ctor">RecycleItemsView()</h4>
+  <div class="markdown level1 summary"><p>Creates and initializes a new instance of the RecycleItemsView class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecycleItemsView()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ColumnCountProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ColumnCountProperty">ColumnCountProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ColumnCount property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ColumnCountProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ContentMarginProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ContentMarginProperty">ContentMarginProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ContentMargin property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ContentMarginProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_FocusedItemProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FocusedItemProperty">FocusedItemProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the FocusedItem property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty FocusedItemProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_FooterProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FooterProperty">FooterProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the Footer property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty FooterProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_FooterTemplateProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FooterTemplateProperty">FooterTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the FooterTemplate property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty FooterTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_HeaderProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.HeaderProperty">HeaderProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the Header property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty HeaderProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_HeaderTemplateProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.HeaderTemplateProperty">HeaderTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the HeaderTemplate property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty HeaderTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemHeightProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemHeightProperty">ItemHeightProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ItemHeight property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemHeightProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemsSourceProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemsSourceProperty">ItemsSourceProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ItemsSource property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemsSourceProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemTemplateProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemTemplateProperty">ItemTemplateProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ItemTemplate property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemTemplateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemWidthProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemWidthProperty">ItemWidthProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ItemWidth property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemWidthProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_OrientationProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.OrientationProperty">OrientationProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the Orientation property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty OrientationProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollBarVisibilityProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollBarVisibilityProperty">ScrollBarVisibilityProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ScrollBarVisibility property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ScrollBarVisibilityProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollPolicyProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollPolicyProperty">ScrollPolicyProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the ScrollPolicy property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ScrollPolicyProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_SelectedItemProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.SelectedItemProperty">SelectedItemProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the SelectedItem property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty SelectedItemProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_SpacingProperty" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.SpacingProperty">SpacingProperty</h4>
+  <div class="markdown level1 summary"><p>Backing store for the Spacing property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty SpacingProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ColumnCount_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ColumnCount*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ColumnCount" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ColumnCount">ColumnCount</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the count of columns.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ColumnCount { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ContentMargin_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ContentMargin*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ContentMargin" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ContentMargin">ContentMargin</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the margin for the content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Thickness ContentMargin { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Thickness</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_FocusedItem_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FocusedItem*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_FocusedItem" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FocusedItem">FocusedItem</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the currently focused item from the ItemsSource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object FocusedItem { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Footer_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Footer*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Footer" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Footer">Footer</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the binding, or view that will be displayed at the last of the items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Footer { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_FooterElement_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FooterElement*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_FooterElement" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FooterElement">FooterElement</h4>
+  <div class="markdown level1 summary"><p>Gets instantiated Footer view</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public View FooterElement { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">View</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_FooterTemplate_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FooterTemplate*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_FooterTemplate" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.FooterTemplate">FooterTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a data template to use to format a data object for display Footer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataTemplate FooterTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataTemplate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Header_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Header*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Header" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Header">Header</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the binding, or view that will be displayed at the first of the items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object Header { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_HeaderElement_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.HeaderElement*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_HeaderElement" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.HeaderElement">HeaderElement</h4>
+  <div class="markdown level1 summary"><p>Gets instantiated Header view</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public View HeaderElement { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">View</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_HeaderTemplate_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.HeaderTemplate*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_HeaderTemplate" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.HeaderTemplate">HeaderTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a data template to use to format a data object for display Header.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataTemplate HeaderTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataTemplate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemHeight_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemHeight*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemHeight" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemHeight">ItemHeight</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that represents the height of an item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ItemHeight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemsSource_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemsSource*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemsSource" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemsSource">ItemsSource</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the source of items to template and display.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable ItemsSource { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">IEnumerable</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemTemplate_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemTemplate*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemTemplate" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemTemplate">ItemTemplate</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the DataTemplate to apply to the ItemsSource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DataTemplate ItemTemplate { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DataTemplate</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemWidth_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemWidth*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemWidth" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemWidth">ItemWidth</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value that represents the width of an item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double ItemWidth { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Orientation_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Orientation*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Orientation" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Orientation">Orientation</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value which indicates the direction which items are positioned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public RecycleItemsViewOrientation Orientation { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.TV.UIControls.Forms.RecycleItemsViewOrientation.html">RecycleItemsViewOrientation</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_RedundantItemCount_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.RedundantItemCount*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_RedundantItemCount" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.RedundantItemCount">RedundantItemCount</h4>
+  <div class="markdown level1 summary"><p>declare the number of items to make redundant.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int RedundantItemCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollBarVisibility_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollBarVisibility*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollBarVisibility" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollBarVisibility">ScrollBarVisibility</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the scroll bar visibility.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScrollBarVisibility ScrollBarVisibility { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ScrollBarVisibility</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollPolicy_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollPolicy*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollPolicy" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollPolicy">ScrollPolicy</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the scroll position policy.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ScrollToPosition ScrollPolicy { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ScrollToPosition</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollView_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollView*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollView" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollView">ScrollView</h4>
+  <div class="markdown level1 summary"><p>Gets the ScrollView internally created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ScrollView ScrollView { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ScrollView</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_SelectedItem_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.SelectedItem*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_SelectedItem" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.SelectedItem">SelectedItem</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the currently selected item from the ItemsSource.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public object SelectedItem { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Spacing_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Spacing*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Spacing" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Spacing">Spacing</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value which indicates the amount of space between each item.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Spacing { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_CreateScrollView_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.CreateScrollView*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_CreateScrollView" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.CreateScrollView">CreateScrollView()</h4>
+  <div class="markdown level1 summary"><p>Create a ScrollView that used in RecycleItemsView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual ScrollView CreateScrollView()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ScrollView</span></td>
+        <td><p>ScrollView</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_InitializeComponent_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.InitializeComponent*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_InitializeComponent" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.InitializeComponent">InitializeComponent()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected void InitializeComponent()</code></pre>
+  </div>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_LayoutChildren_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.LayoutChildren*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_LayoutChildren_System_Double_System_Double_System_Double_System_Double_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.LayoutChildren(System.Double,System.Double,System.Double,System.Double)">LayoutChildren(Double, Double, Double, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LayoutChildren(double x, double y, double width, double height)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">x</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">y</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">width</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_OnItemFocused_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_OnItemFocused_System_Object_View_System_Boolean_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,View,System.Boolean)">OnItemFocused(Object, View, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Called when Item is focused</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnItemFocused(object data, View targetView, bool isFocused)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">data</span></td>
+        <td><p>The focused item from the ItemsSource.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">View</span></td>
+        <td><span class="parametername">targetView</span></td>
+        <td><p>Instantiated View</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">isFocused</span></td>
+        <td><p>Whether or not focused</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_OnMeasure_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.OnMeasure*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_OnMeasure_System_Double_System_Double_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.OnMeasure(System.Double,System.Double)">OnMeasure(Double, Double)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">widthConstraint</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">heightConstraint</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">SizeRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_System_Double_System_Double_System_Boolean_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Double,System.Double,System.Boolean)">ScrollToAsync(Double, Double, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Returns a task that scrolls the scroll view to a position asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ScrollToAsync(double x, double y, bool animation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The X position of the finished scroll.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The Y position of the finished scroll.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">animation</span></td>
+        <td><p>Whether or not to animate the scroll.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>Task</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_System_Object_ScrollToPosition_System_Boolean_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,ScrollToPosition,System.Boolean)">ScrollToAsync(Object, ScrollToPosition, Boolean)</h4>
+  <div class="markdown level1 summary"><p>Returns a task that scrolls the scroll view to an item asynchronously.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task ScrollToAsync(object item, ScrollToPosition position, bool animation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Object</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>The item to scroll.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">ScrollToPosition</span></td>
+        <td><span class="parametername">position</span></td>
+        <td><p>The scroll position.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">animation</span></td>
+        <td><p>Whether or not to animate the scroll.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Task</span></td>
+        <td><p>Task</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemRealized" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemRealized">ItemRealized</h4>
+  <div class="markdown level1 summary"><p>Event that is raised when a item&apos;s view is attached the RecycleItemsView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ItemRealizedEventArgs&gt; ItemRealized</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.ItemRealizedEventArgs.html">ItemRealizedEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemSelected" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemSelected">ItemSelected</h4>
+  <div class="markdown level1 summary"><p>Event that is raised when a new item is selected.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;SelectedItemChangedEventArgs&gt; ItemSelected</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EventHandler</span>&lt;<span class="xref">SelectedItemChangedEventArgs</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_ItemUnrealized" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.ItemUnrealized">ItemUnrealized</h4>
+  <div class="markdown level1 summary"><p>Event that is raised when a item&apos;s view is detached the RecycleItemsView.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;ItemUnrealizedEventArgs&gt; ItemUnrealized</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.ItemUnrealizedEventArgs.html">ItemUnrealizedEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Tizen_TV_UIControls_Forms_IRecycleItemsViewController_FocusedView_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Tizen#TV#UIControls#Forms#IRecycleItemsViewController#FocusedView*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Tizen_TV_UIControls_Forms_IRecycleItemsViewController_FocusedView" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Tizen#TV#UIControls#Forms#IRecycleItemsViewController#FocusedView">IRecycleItemsViewController.FocusedView</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">View IRecycleItemsViewController.FocusedView { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">View</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Tizen_TV_UIControls_Forms_IRecycleItemsViewController_ScrollBounds_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Tizen#TV#UIControls#Forms#IRecycleItemsViewController#ScrollBounds*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Tizen_TV_UIControls_Forms_IRecycleItemsViewController_ScrollBounds" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Tizen#TV#UIControls#Forms#IRecycleItemsViewController#ScrollBounds">IRecycleItemsViewController.ScrollBounds</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Rectangle IRecycleItemsViewController.ScrollBounds { get; }</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rectangle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_TV_UIControls_Forms_RecycleItemsView_Tizen_TV_UIControls_Forms_IRecycleItemsViewController_SendKeyDown_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Tizen#TV#UIControls#Forms#IRecycleItemsViewController#SendKeyDown*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_RecycleItemsView_Tizen_TV_UIControls_Forms_IRecycleItemsViewController_SendKeyDown_System_String_" data-uid="Tizen.TV.UIControls.Forms.RecycleItemsView.Tizen#TV#UIControls#Forms#IRecycleItemsViewController#SendKeyDown(System.String)">IRecycleItemsViewController.SendKeyDown(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IRecycleItemsViewController.SendKeyDown(string keyname)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">keyname</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Tizen.TV.UIControls.Forms.IRecycleItemsViewController.html">IRecycleItemsViewController</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

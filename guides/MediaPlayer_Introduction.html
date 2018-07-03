@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MediaPlayer </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="MediaPlayer ">
+    <meta name="generator" content="docfx 2.34.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="mediaplayer">MediaPlayer</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p>MediaPlayer provides functionality of playing multimedia. It also includes related view components that display video stream.</p>
+<h2 id="how-to-use">How to use</h2>
+<h4 id="c">C#</h4>
+<pre><code class="lang-c#">var view = new MediaView();
+var player = new MediaPlayer();
+player.VideoOutput = view;
+player.Source = &quot;a.mp4&quot;;
+player.Start();
+</code></pre><h4 id="xaml">XAML</h4>
+<pre><code class="lang-xml">&lt;tvcontrols:MediaView&gt;
+    &lt;tvcontrols:MediaPlayer
+        Source=&quot;{Binding Source}&quot;
+        AutoStart=&quot;true&quot;/&gt;
+&lt;/tvcontrols:MediaView&gt;
+</code></pre><h2 id="playbackstate">PlaybackState</h2>
+<p> MediaPlayer has a PlaybackState. Some APIs only work on the certain state and some APIs transit the state.</p>
+<h4 id="state-diagram-of-playbackstate">State diagram of PlaybackState</h4>
+<p><img src="resources/mediaplayer_state_diagram.png" alt="state diagram"></p>
+<h2 id="video-output-types">Video output types</h2>
+<h4 id="overlay">Overlay</h4>
+<ul>
+<li>It displays video data on the overlay plane. It is more efficient and fast but has a limit shape. Usually it is used to display the video as fullscreen.</li>
+<li>OverlayPage</li>
+<li>OverlayMediaView</li>
+</ul>
+<h4 id="buffer">Buffer</h4>
+<ul>
+<li>It displays video data on the graphics buffer using GL surface. It is free to change the shape, but if it does not support GL surface, you can&#39;t use it. It is usually used to attach a video on a part of the view.</li>
+<li>MediaView</li>
+</ul>
+<h2 id="associating-player-with-media-view">Associating Player with media view</h2>
+<p> MediaPlayer and MediaView are created independently. To display video data into MediaView, the developer needs to associate Player and MediaView.</p>
+<h4 id="use-videooutput-property-of-player">Use VideoOutput property of Player</h4>
+<pre><code class="lang-c#"> player.VideoOutput = new MediaView();
+</code></pre><h4 id="use-player-property-of-mediaview">Use Player property of MediaView</h4>
+<pre><code class="lang-xml">&lt;tvcontrols:MediaView&gt;
+    &lt;tvcontrols:MediaView.Player&gt;
+        &lt;tvcontrols:MediaPlayer Source=&quot;{Binding Source}&quot;/&gt;
+    &lt;/tvcontrols:MediaView.Player&gt;
+&lt;/tvcontrols:MediaView&gt;
+</code></pre><pre><code class="lang-c#"> mediaView.Player = new MediaPlayer();
+</code></pre><h2 id="embedding-controls">Embedding controls</h2>
+<p> By default, MediaPlayer provides an embedding control. If you don&#39;t want to use the default embedding controls, set <code>UsesEmbeddingControls</code> to false.</p>
+<pre><code class="lang-c#">public bool UsesEmbeddingControls
+</code></pre><p><img src="resources/mediaplayer_controls.png" alt="controls"></p>
+<h2 id="autoplayautostop">AutoPlay/AutoStop</h2>
+<p>Video can&#39;t play before media view is shown, so you need to know when the media views are available. If you use AutoPlay/AutoStop property, you don&#39;t need to care about the view state.</p>
+<h4 id="autoplay">AutoPlay</h4>
+<pre><code class="lang-c#">public bool AutoPlay
+</code></pre><p> Automatically starts a player when a View is shown (Rendered).</p>
+<h4 id="autostop">AutoStop</h4>
+<pre><code class="lang-c#">public bool AutoStop
+</code></pre><p>Automatically stops a player when a View is gone (Renderer was disposed).</p>
+<h2 id="related-links">Related Links</h2>
+<ul>
+<li><a href="https://github.com/Samsung/Tizen.TV.UIControls/tree/master/sample/Sample/MediaPlayer">Sample</a></li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
