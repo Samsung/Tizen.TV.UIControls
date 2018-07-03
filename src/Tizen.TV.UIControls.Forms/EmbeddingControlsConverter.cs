@@ -22,7 +22,10 @@ using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
-    public class ProgressToBoundTextConverter : IValueConverter
+    /// <summary>
+    /// Class that the XAML parser uses to convert Progress to Bound.
+    /// </summary>
+    internal class ProgressToBoundTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -40,7 +43,11 @@ namespace Tizen.TV.UIControls.Forms
             return rect.Width;
         }
     }
-    public class MillisecondToTextConverter : IValueConverter
+
+    /// <summary>
+    /// Class that the XAML parser uses to convert milliseconds to Text format.
+    /// </summary>
+    internal class MillisecondToTextConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

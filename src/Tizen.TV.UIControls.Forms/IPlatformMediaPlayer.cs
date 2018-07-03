@@ -44,11 +44,20 @@ namespace Tizen.TV.UIControls.Forms
         OrignalSize
     }
 
+    /// <summary>
+    /// Internal use only. Contains arguments for the event that is raised when the buffering progress is updated.
+    /// </summary>
     public class BufferingProgressUpdatedEventArgs : EventArgs
     {
+        /// <summary>
+        /// The value indicating the buffering status(0-1).
+        /// </summary>
         public double Progress { get; set; }
     }
 
+    /// <summary>
+    /// For internal use by platform renderers.
+    /// </summary>
     public interface IPlatformMediaPlayer
     {
         bool UsesEmbeddingControls { get; set; }

@@ -24,10 +24,19 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public enum VideoOuputType
     {
+        /// <summary>
+        /// An overlay type.
+        /// </summary>
         Overlay,
+        /// <summary>
+        /// A buffer type.
+        /// </summary>
         Buffer,
     }
 
+    /// <summary>
+    /// Interface indicating the ouput type of the media.
+    /// </summary>
     public interface IVideoOutput
     {
         VisualElement MediaView { get; }
@@ -35,6 +44,9 @@ namespace Tizen.TV.UIControls.Forms
         VideoOuputType OuputType { get; }
     }
 
+    /// <summary>
+    /// Interface for defining the overlay type of output.
+    /// </summary>
     public interface IOverlayOutput : IVideoOutput
     {
         Rectangle OverlayArea { get; }

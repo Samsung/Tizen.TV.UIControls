@@ -40,6 +40,9 @@ namespace Tizen.TV.UIControls.Forms
         Horizontal,
     }
 
+    /// <summary>
+    /// This interface is for internal use.
+    /// </summary>
     public interface IRecycleItemsViewController
     {
         bool SendKeyDown(string keyname);
@@ -1383,7 +1386,13 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public class ItemRealizedEventArgs : EventArgs
     {
+        /// <summary>
+        /// The attached item.
+        /// </summary>
         public object Item { get; set; }
+        /// <summary>
+        /// The attached view.
+        /// </summary>
         public View RealizedView { get; set; }
     }
 
@@ -1392,7 +1401,13 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public class ItemUnrealizedEventArgs : EventArgs
     {
+        /// <summary>
+        /// The detached item.
+        /// </summary>
         public object Item { get; set; }
+        /// <summary>
+        /// The detached view.
+        /// </summary>
         public View UnrealizedView { get; set; }
     }
 
