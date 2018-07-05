@@ -26,9 +26,12 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public class RemoteKeyHandler : BindableObject
     {
+        /// <summary>
+        /// Backing store for the Command bindable property.
+        /// </summary>
         public static readonly BindableProperty CommandProperty = BindableProperty.Create("Command", typeof(ICommand), typeof(RemoteKeyHandler), null);
 
-        RemoteControlKeyTypes _commandKeyType = RemoteControlKeyTypes.KeyDown | RemoteControlKeyTypes.KeyUp;
+        RemoteControlKeyTypes _acceptedKeyType = RemoteControlKeyTypes.KeyDown | RemoteControlKeyTypes.KeyUp;
 
         /// <summary>
         /// Initializes a new instance of the RemoteKeyHandler class.
@@ -54,7 +57,7 @@ namespace Tizen.TV.UIControls.Forms
         public RemoteKeyHandler(Action<RemoteControlKeyEventArgs> action, RemoteControlKeyTypes keyType)
         {
             Command = new Command<RemoteControlKeyEventArgs>(action);
-            _commandKeyType = keyType;
+            _acceptedKeyType = keyType;
         }
 
         /// <summary>
@@ -66,14 +69,20 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(CommandProperty, value); }
         }
 
+        /// <summary>
+        /// Occurs when the remote control key is pressed.
+        /// </summary>
         public event EventHandler<RemoteControlKeyEventArgs> KeyDown;
 
+        /// <summary>
+        /// Occurs when the remote control key is released.
+        /// </summary>
         public event EventHandler<RemoteControlKeyEventArgs> KeyUp;
 
         [EditorBrowsable(EditorBrowsableState.Never)]
         public void SendKeyEvent(RemoteControlKeyEventArgs args)
         {
-            if (_commandKeyType.HasFlag(args.KeyType))
+            if (_acceptedKeyType.HasFlag(args.KeyType))
             {
                 ICommand cmd = Command;
                 if (cmd != null && cmd.CanExecute(args))

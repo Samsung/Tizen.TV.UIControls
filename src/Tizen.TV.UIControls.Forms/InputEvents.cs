@@ -26,7 +26,7 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public sealed class InputEvents
     {
-        public static readonly BindablePropertyKey EventHandlersPropertyKey = BindableProperty.CreateAttachedReadOnly("EventHandlers", typeof(IList<RemoteKeyHandler>), typeof(InputEvents), null,
+        static readonly BindablePropertyKey EventHandlersPropertyKey = BindableProperty.CreateAttachedReadOnly("EventHandlers", typeof(IList<RemoteKeyHandler>), typeof(InputEvents), null,
             defaultValueCreator: bindable =>
             {
                 var collection = new EventHandlerCollection();
@@ -50,8 +50,8 @@ namespace Tizen.TV.UIControls.Forms
         }
 
         /// <summary>
-        /// Returns a collection of the RemoteKeyHandler for the specified view .
-        /// Developers can add or remove RemoteKeyHandlers to this collection. 
+        /// Returns a collection of the `RemoteKeyHandler` for the specified view.
+        /// Developers can add or remove `RemoteKeyHandler`s using this collection.
         /// </summary>
         /// <param name="view">The view to get a collection of the `RemoteKeyHandler`s.</param>
         /// <returns>Returns a collection of the `RemoteKeyHandler`s </returns>
