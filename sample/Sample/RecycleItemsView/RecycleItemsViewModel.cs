@@ -37,6 +37,12 @@ namespace Sample.RecycleItemsView
         {
             TestList = new List<TestModel>
             {
+                new ItemsModel
+                {
+                    Name = "Add remove test",
+                    PageType = typeof(AddRemoveTest),
+                    Items = ColorModel.MakeModel()
+                },
                 new DoubleItemsModel
                 {
                     Name = "Horizontal and vertial test",
