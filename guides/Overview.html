@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Developer Guides </title>
+    <title>Tizen TV UIControls </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Developer Guides ">
+    <meta name="title" content="Tizen TV UIControls ">
     <meta name="generator" content="docfx 2.34.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -75,10 +75,29 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="developer-guides">Developer Guides</h1>
+<h1 id="tizen-tv-uicontrols">Tizen TV UIControls</h1>
 
-<p>Welcome to the developer guides for Tizen TV UI Controls.</p>
-</article>
+<p>The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device. The binaries are available via NuGet (package name is Tizen.TV.UIControls) with the source available here.</p>
+<h2 id="screen-shot">Screen shot</h2>
+<p>&lt;img src=<a href="https://user-images.githubusercontent.com/1029155/42200625-34b8332a-7ecf-11e8-9494-5f97cf4c3e60.gif">https://user-images.githubusercontent.com/1029155/42200625-34b8332a-7ecf-11e8-9494-5f97cf4c3e60.gif</a> width=250&gt; &lt;img src=<a href="https://user-images.githubusercontent.com/1029155/42200629-3742fb16-7ecf-11e8-82ea-dc8dd5fd9619.gif">https://user-images.githubusercontent.com/1029155/42200629-3742fb16-7ecf-11e8-82ea-dc8dd5fd9619.gif</a> width=250&gt; &lt;img src=<a href="https://user-images.githubusercontent.com/1029155/42200631-3b63edcc-7ecf-11e8-8435-31e12c5ed79e.gif">https://user-images.githubusercontent.com/1029155/42200631-3b63edcc-7ecf-11e8-8435-31e12c5ed79e.gif</a> width=250&gt; &lt;img src=<a href="https://user-images.githubusercontent.com/1029155/42200633-3d5b9396-7ecf-11e8-91c2-72f3d1003360.gif">https://user-images.githubusercontent.com/1029155/42200633-3d5b9396-7ecf-11e8-91c2-72f3d1003360.gif</a> width=250&gt; &lt;img src=<a href="https://user-images.githubusercontent.com/1029155/42200637-4685077c-7ecf-11e8-9984-4c68048da265.gif">https://user-images.githubusercontent.com/1029155/42200637-4685077c-7ecf-11e8-9984-4c68048da265.gif</a> width=250&gt; &lt;img src=<a href="https://user-images.githubusercontent.com/1029155/42200638-489afd3c-7ecf-11e8-981d-8f27169ee8c0.gif">https://user-images.githubusercontent.com/1029155/42200638-489afd3c-7ecf-11e8-981d-8f27169ee8c0.gif</a> width=250&gt;</p>
+<h2 id="build-status">Build Status</h2>
+<p> <a href="http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/"><img src="http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/badge/icon" alt="Build Status"></a></p>
+<h2 id="packages">Packages</h2>
+<p><a href="https://tizen.myget.org/feed/dotnet/package/nuget/Tizen.TV.UIControls"><img src="https://img.shields.io/tizen.myget/dotnet/vpre/Tizen.TV.UIControls.svg" alt="myget"></a></p>
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="intasll-package">Intasll package</h3>
+<h4 id="nugetext">nuget.ext</h4>
+<pre><code>nuget.exe install Tizen.TV.UIControls -Version 1.0.0-beta -Source https://tizen.myget.org/F/dotnet/api/v3/index.json
+</code></pre><h4 id="csproj">.csproj</h4>
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;Tizen.TV.UIControls&quot; Version=&quot;1.0.0-beta&quot; /&gt;
+</code></pre><h3 id="use-in-xaml">Use in Xaml</h3>
+<h4 id="declaring-namespaces-for-tvuicontrols">Declaring Namespaces for TV.UIControls</h4>
+<pre><code class="lang-xml">&lt;ContentPage ... xmlns:tv=&quot;clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms&quot; ...&gt;
+</code></pre><h3 id="initialization-on-platform-code">Initialization on Platform code</h3>
+<pre><code class="lang-c#">Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
+global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
+Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
+</code></pre></article>
           </div>
           
           <div class="hidden-sm col-md-2" role="complementary">
