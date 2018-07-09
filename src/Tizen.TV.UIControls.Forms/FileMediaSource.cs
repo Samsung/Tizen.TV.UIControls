@@ -38,6 +38,10 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(FileProperty, value); }
         }
 
+        /// <summary>
+        /// Returns a string representation of `File`.
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             return $"File: {File}";
