@@ -25,7 +25,13 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public class RemoteControlKeyEventArgs : EventArgs
     {
-        // Constructs a new RemoteControlKeyEventArgs object for a key type and a key name.
+        /// <summary>
+        /// Constructs a new RemoteControlKeyEventArgs object for a key type, key name, and platform key name.
+        /// </summary>
+        /// <param name="sender">The VisualElement that sends the event.</param>
+        /// <param name="keyType">The type of a remote control key.</param>
+        /// <param name="keyName">The name of a remote control key.</param>
+        /// <param name="platformKeyName">The name of a platform key name.</param>
         public RemoteControlKeyEventArgs(VisualElement sender, RemoteControlKeyTypes keyType, RemoteControlKeyNames keyName, string platformKeyName)
         {
             Sender = sender;
