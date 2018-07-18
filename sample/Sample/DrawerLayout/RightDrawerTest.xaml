@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             Title="Drawer position"
+             x:Class="Sample.DrawerLayout.RightDrawerTest">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <tv:DrawerLayout x:Name="Drawer" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
+                             DrawerPosition="Right"
+                             DrawerClosedWidth="40"
+                             IsOpen="{Binding IsToggled, Source={x:Reference OpenSwitch}}">
+                <tv:DrawerLayout.Drawer>
+                    <BoxView Color="CornflowerBlue" WidthRequest="300"/>
+                </tv:DrawerLayout.Drawer>
+                <tv:DrawerLayout.Content>
+                    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Coral">
+                        <Label Text="Toggle drawer" HorizontalOptions="Center"/>
+                        <Switch x:Name="OpenSwitch" HorizontalOptions="Center"/>
+
+                        <Label Text="IsRight?" HorizontalOptions="Center"/>
+                        <Switch x:Name="RightSwitch" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </tv:DrawerLayout.Content>
+            </tv:DrawerLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

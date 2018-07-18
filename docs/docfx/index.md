@@ -14,4 +14,5 @@ The binaries are available via NuGet (package name is "Tizen.TV.UIControls") wit
 | [](xref:Tizen.TV.UIControls.Forms.RecycleItemsView)  | ScrollView that efficiently displays a collection of data using DataTemplate. |
 | [](xref:Tizen.TV.UIControls.Forms.InputEvents)       | Class that helps developers to handle the remote control events that are emitted from TV devices. |
 | [](xref:Tizen.TV.UIControls.Forms.RemoteKeyHandler)  | Class that contains a command and key events that react to remote controller events. |
+| [](xref:Tizen.TV.UIControls.Forms.DrawerLayout)  | A kind of `Layout` that acts like a `MasterDetailPage`. |
 
