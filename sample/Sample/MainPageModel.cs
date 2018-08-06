@@ -54,6 +54,11 @@ namespace Sample
                 {
                     Name = "DrawerLayout Test",
                     PageType = typeof(DrawerLayout.DrawerMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "Entry and Editor Test",
+                    PageType = typeof(EntryMainPage),
                 }
             };
         }
