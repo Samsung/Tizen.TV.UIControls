@@ -39,7 +39,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             {
                 InputEvents.GetEventHandlers(Element).Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((args) =>
                 {
-                    Console.WriteLine("@@@@ KEYNAME : " + args.PlatformKeyName);
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
                         Control.SetFocus(false);
