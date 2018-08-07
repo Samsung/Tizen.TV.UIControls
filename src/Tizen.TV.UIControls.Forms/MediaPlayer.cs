@@ -521,7 +521,7 @@ namespace Tizen.TV.UIControls.Forms
                     VideoOutput.Controller = _controls.Value;
                 }
                 VideoOutput.MediaView.Focused += OnVideoOutputFocused;
-                InputEvents.GetEventHandlers(VideoOutput.MediaView).Add(new RemoteKeyHandler(OnVideoOutputKeyEvent));
+                InputEvents.GetEventHandlers(VideoOutput.MediaView).Add(new RemoteKeyHandler(OnVideoOutputKeyEvent, RemoteControlKeyTypes.KeyDown));
                 if (VideoOutput.MediaView is View outputView)
                 {
                     TapGestureRecognizer tapGesture = new TapGestureRecognizer();
@@ -565,8 +565,6 @@ namespace Tizen.TV.UIControls.Forms
 
         void OnVideoOutputKeyEvent(RemoteControlKeyEventArgs args)
         {
-            if (args.KeyType == RemoteControlKeyTypes.KeyDown)
-                return;
             if (!UsesEmbeddingControls)
                 return;
 
