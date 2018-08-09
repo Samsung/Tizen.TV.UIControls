@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DrawerLayout </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="DrawerLayout ">
+    <meta name="generator" content="docfx 2.34.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="drawerlayout">DrawerLayout</h1>
+
+<h2 id="introduction">Introduction</h2>
+<p><code>DrawerLayout</code> is a kind of <code>Layout</code> that acts like a <code>MasterDetailPage</code>. it has a drawer part that interactively pull and push. Drawer part can control with <code>IsOpen</code> property. The open and close action are including animation.</p>
+<p><img src="resources/DrawerLayout_introduction.gif" alt="img"></p>
+<h3 id="drawer-and-content">Drawer and Content</h3>
+<p> <code>DrawerLayout</code> is consist of <code>Drawer</code> and <code>Content</code> view. <code>Drawer</code> is a moving part, <code>Content</code> is fixed part.
+ <code>Drawer</code> is like a <code>MasterPage</code> and <code>Content</code> is like a <code>DetailPage</code> in <code>MasterDetailPage</code>.</p>
+<h3 id="drawermode">DrawerMode</h3>
+<p>The developer can control the layout of the content when the drawer was opened by using <code>DrawerMode</code></p>
+<h4 id="drawermoderesize-default">DrawerMode.Resize (default)</h4>
+<p>It is default behavior, Content view is resized to open drawer view
+<img src="resources/DrawerLayout_resize.gif" alt="resize"></p>
+<h4 id="drawermodepanning">DrawerMode.Panning</h4>
+<p>Content view is moved to side
+<img src="resources/DrawerLayout_panning.gif" alt="panningmode"></p>
+<h4 id="drawermodeoverlap">DrawerMode.Overlap</h4>
+<p> Drawer view is overlapped above content view
+<img src="resources/DrawerLayout_overlap.gif" alt="overlap"></p>
+<h3 id="drawerposition">DrawerPosition</h3>
+<p>Developers can set position of the drawer. it default on the left side. but if RTL(Right to left) mode enabled, it default on the right side. 
+<img src="resources/DrawerLayout_position.gif" alt="drawerposition"></p>
+<h3 id="drawerclosedwidth">DrawerClosedWidth</h3>
+<p>Developers can set the width of the closed drawer.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

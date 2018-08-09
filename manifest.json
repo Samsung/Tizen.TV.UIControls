@@ -14,6 +14,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../guides/DrawerLayout.md",
+      "output": {
+        ".html": {
+          "relative_path": "guides/DrawerLayout.html",
+          "hash": "hINpTx8A3tP9kN6QQo2Vsw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../guides/InputEvents.md",
       "output": {
         ".html": {
@@ -79,6 +91,61 @@
         ".html": {
           "relative_path": "guides/RecycleItemsView_Introduction.html",
           "hash": "S0Ztpt6/ZI5Lr827wjLPww=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/DrawerLayout_introduction.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/DrawerLayout_introduction.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/DrawerLayout_overlap.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/DrawerLayout_overlap.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/DrawerLayout_panning.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/DrawerLayout_panning.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/DrawerLayout_position.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/DrawerLayout_position.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/DrawerLayout_resize.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/DrawerLayout_resize.gif"
         }
       },
       "is_incremental": false,
@@ -178,7 +245,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/toc.html",
-          "hash": "fpZGxgDF5L5YnkxQhlHIrQ=="
+          "hash": "GYAfSyw5vir223Lv8z6F1Q=="
         }
       },
       "is_incremental": false,
@@ -213,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "9gSqxlvH0ZyAWeNjHsZaaQ=="
+          "hash": "PcYxnuv9jjxFMSi20+1o3Q=="
         }
       },
       "is_incremental": false,
@@ -249,6 +316,42 @@
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html",
           "hash": "DU6IQByTSUVTEsTMacLhig=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.DrawerLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerLayout.html",
+          "hash": "CnQLNI/KOzJuwqQdYI/SGg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.DrawerMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerMode.html",
+          "hash": "ir8JY8g15TrFVAKZBcg0Tw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.DrawerPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerPosition.html",
+          "hash": "zBDU9MD9ICfpoUnVUDXLxQ=="
         }
       },
       "is_incremental": false,
@@ -548,7 +651,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.html",
-          "hash": "sA1GGaqlNkVK9P5D6rQsOQ=="
+          "hash": "CI9mSXNQ7vAnb6TbmUNKiw=="
         }
       },
       "is_incremental": false,
@@ -560,7 +663,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "LDWnxokuciPkWNkN17lqxg=="
+          "hash": "Q8Trbpl/8ZhoshYQs2tnmA=="
         }
       },
       "is_incremental": false,
@@ -592,17 +695,17 @@
           "details": "Processor ResourceDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "TocDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot suppport incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         }
       }
