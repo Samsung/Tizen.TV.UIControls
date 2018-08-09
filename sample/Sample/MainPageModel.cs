@@ -49,6 +49,11 @@ namespace Sample
                 {
                     Name = "RecycleItemsView Test",
                     PageType = typeof(RIVMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "DrawerLayout Test",
+                    PageType = typeof(DrawerLayout.DrawerMainPage),
                 }
             };
         }
