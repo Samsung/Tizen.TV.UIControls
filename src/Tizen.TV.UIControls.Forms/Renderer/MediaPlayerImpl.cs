@@ -264,11 +264,18 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             else if (!IsOverlayMode)
             {
                 var renderer = Platform.GetRenderer(TargetView);
-                if (renderer is IMediaViewProvider provider)
+                if (renderer is IMediaViewProvider provider && provider.GetMediaView() != null)
                 {
-                    Display display = new Display(provider.GetMediaView());
-                    _player.Display = display;
-                    _player.DisplaySettings.Mode = _aspectMode.ToMultimeida();
+                    try
+                    {
+                        Display display = new Display(provider.GetMediaView());
+                        _player.Display = display;
+                        _player.DisplaySettings.Mode = _aspectMode.ToMultimeida();
+                    }
+                    catch
+                    {
+                        Log.Error(UIControls.Tag, "Error on MediaView");
+                    }
                 }
             }
             else
