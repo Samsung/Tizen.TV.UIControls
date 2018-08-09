@@ -214,7 +214,11 @@ namespace Tizen.TV.UIControls.Forms
         public object SelectedItem
         {
             get { return GetValue(SelectedItemProperty); }
-            set { SetValue(SelectedItemProperty, value); }
+            set
+            {
+                SetValue(SelectedItemProperty, value);
+                ItemSelected?.Invoke(this, new SelectedItemChangedEventArgs(SelectedItem));
+            }
         }
 
         /// <summary>
@@ -1158,7 +1162,6 @@ namespace Tizen.TV.UIControls.Forms
             {
                 FocusedItem = SelectedItem;
             }
-            ItemSelected?.Invoke(this, new SelectedItemChangedEventArgs(SelectedItem));
         }
 
         void UpdateItemTemplate()
