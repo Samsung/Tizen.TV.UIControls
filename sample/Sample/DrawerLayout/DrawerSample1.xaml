@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:Sample.DrawerLayout;assembly=Sample"
+             Title="{Binding Name}"
+             x:Class="Sample.DrawerLayout.DrawerSample1">
+    <ContentPage.Content>
+        <tv:DrawerLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         IsOpen="{Binding IsFocused, Source={x:Reference MenuList}}"
+                         DrawerClosedWidth="30">
+            <tv:DrawerLayout.Drawer>
+                <local:MenuItemsView x:Name="MenuList"
+                                     ItemWidth="500"
+                                     ItemHeight="100" Orientation="Vertical" ItemsSource="{Binding Items}"
+                                     BackgroundColor="DarkSlateBlue"
+                                     ItemSelected="MenuItemsView_ItemSelected"/>
+            </tv:DrawerLayout.Drawer>
+            <tv:DrawerLayout.Content>
+                <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="CornflowerBlue">
+                    <Button Text="button"/>
+                    <Image x:Name="ImageHolder"/>
+                </StackLayout>
+            </tv:DrawerLayout.Content>
+        </tv:DrawerLayout>
+    </ContentPage.Content>
+</ContentPage>

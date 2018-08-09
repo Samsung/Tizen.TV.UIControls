@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:Sample.DrawerLayout;assembly=Sample"
+             Title="{Binding Name}"
+             x:Class="Sample.DrawerLayout.DrawerSample2">
+    <ContentPage.Content>
+        <tv:DrawerLayout x:Name="Drawer" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                         DrawerClosedWidth="0">
+            <tv:DrawerLayout.Drawer>
+                <local:MenuItemsView x:Name="MenuList"
+                                     ItemWidth="500"
+                                     ItemHeight="100" Orientation="Vertical" ItemsSource="{Binding Items}"
+                                     BackgroundColor="DarkSlateBlue"
+                                     ItemSelected="MenuList_ItemSelected"/>
+            </tv:DrawerLayout.Drawer>
+            <tv:DrawerLayout.Content>
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="Panning" x:Name="Panning" Clicked="Panning_Clicked"/>
+                        <Button Text="Resize" x:Name="Resize" Clicked="Resize_Clicked"/>
+                        <Button Text="Overlap" x:Name="Overlap" Clicked="Overlap_Clicked"/>
+                    </StackLayout>
+                    <ListView x:Name="ListView" ItemTapped="ListView_ItemTapped"></ListView>                    
+                </StackLayout>
+            </tv:DrawerLayout.Content>
+        </tv:DrawerLayout>
+    </ContentPage.Content>
+</ContentPage>
