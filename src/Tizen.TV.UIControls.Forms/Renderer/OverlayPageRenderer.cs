@@ -24,11 +24,5 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 {
     class OverlayPageRenderer : PageRenderer
     {
-        NPage Control => NativeView as NPage;
-        OverlayPage OverlayPage => Element as OverlayPage;
-
-        public OverlayPageRenderer()
-        {
-        }
     }
 }

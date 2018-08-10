@@ -38,7 +38,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         public static void PostInit()
         {
-            Registrar.RegisterAll(new Type[]
+            Registrar.RegisterAll(new []
             {
                 typeof(ExportMediaSourceHandlerAttribute),
             });
