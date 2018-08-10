@@ -22,14 +22,10 @@ using Xamarin.Forms.Platform.Tizen;
 [assembly: ExportRenderer(typeof(Editor), typeof(TVEditorRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    class TVEditorRenderer : EditorRenderer
+    public class TVEditorRenderer : EditorRenderer
     {
         const string _doneKeyName = "Select";
         const string _cancelKeyName = "Cancel";
-
-        public TVEditorRenderer() : base()
-        {
-        }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
         {
