@@ -12,6 +12,9 @@
     <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Entry\EntryMainPage.xaml.cs">
+      <DependentUpon>EntryMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MediaPlayer\PlayerMainPage.xaml.cs">
       <DependentUpon>PlayerMainPage.xaml</DependentUpon>
     </Compile>
