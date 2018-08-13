@@ -38,13 +38,6 @@ namespace Tizen.TV.UIControls.Forms
         View _controller;
 
         /// <summary>
-        /// Initializes a new instance of the OverlayPage class.
-        /// </summary>
-        public OverlayPage()
-        {
-        }
-
-        /// <summary>
         /// Gets or sets the overlay area.
         /// </summary>
         public Rectangle OverlayArea

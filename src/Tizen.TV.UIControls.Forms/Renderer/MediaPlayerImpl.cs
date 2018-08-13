@@ -32,9 +32,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
     {
         Player _player;
 
-        bool _cancelToStart = false;
+        bool _cancelToStart;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
-        Task _taskPrepare = null;
+        Task _taskPrepare;
         TaskCompletionSource<bool> _tcsForStreamInfo;
         IVideoOutput _videoOutput;
         MediaSource _source;

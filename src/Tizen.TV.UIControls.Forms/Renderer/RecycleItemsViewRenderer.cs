@@ -29,10 +29,6 @@ namespace Tizen.TV.UIControls.Forms
     {
         IRecycleItemsViewController ViewController => Element as IRecycleItemsViewController;
 
-        public RecycleItemsViewContentRenderer()
-        {
-        }
-
         protected override void OnElementChanged(ElementChangedEventArgs<RecycleItemsView.ContentLayout> e)
         {
             if (null == Control)

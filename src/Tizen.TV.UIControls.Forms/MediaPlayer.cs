@@ -119,7 +119,7 @@ namespace Tizen.TV.UIControls.Forms
             _controlsAlwaysVisible = false;
             _controls = new Lazy<View>(() =>
             {
-                return new EmbeddingControls()
+                return new EmbeddingControls
                 {
                     BindingContext = this
                 };
@@ -639,6 +639,7 @@ namespace Tizen.TV.UIControls.Forms
                 return;
 
             _hideTimerCTS?.Cancel();
+            _hideTimerCTS?.Dispose();
             _hideTimerCTS = new CancellationTokenSource();
             try
             {
@@ -652,6 +653,7 @@ namespace Tizen.TV.UIControls.Forms
             }
             catch (Exception)
             {
+                //Exception when canceled
             }
         }
         

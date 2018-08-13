@@ -927,11 +927,8 @@ namespace Tizen.TV.UIControls.Forms
             if (template is DataTemplateSelector)
                 return false;
 
-
             object content = template.CreateContent();
-            if (content is View)
-                return true;
-            else if (content is Cell)
+            if (content is View || content is Cell)
                 return true;
 
             return false;
@@ -991,16 +988,15 @@ namespace Tizen.TV.UIControls.Forms
                         break;
                 }
             }
-            switch (position)
+            else if (position == ScrollToPosition.Center)
             {
-                case ScrollToPosition.Center:
-                    y = y - Height / 2 + bound.Height / 2;
-                    x = x - Width / 2 + bound.Width / 2;
-                    break;
-                case ScrollToPosition.End:
-                    y = y - Height + bound.Height;
-                    x = x - Width + bound.Width;
-                    break;
+                y = y - Height / 2 + bound.Height / 2;
+                x = x - Width / 2 + bound.Width / 2;
+            }
+            else if (position == ScrollToPosition.End)
+            {
+                y = y - Height + bound.Height;
+                x = x - Width + bound.Width;
             }
             return new Point(x, y);
         }
@@ -1158,10 +1154,7 @@ namespace Tizen.TV.UIControls.Forms
 
         void UpdateSelectedItem()
         {
-            if (FocusedItem != SelectedItem)
-            {
-                FocusedItem = SelectedItem;
-            }
+            FocusedItem = SelectedItem;
         }
 
         void UpdateItemTemplate()
