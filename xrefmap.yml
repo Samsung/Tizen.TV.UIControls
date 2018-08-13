@@ -1640,19 +1640,6 @@ references:
   commentId: T:Tizen.TV.UIControls.Forms.OverlayPage
   fullName: Tizen.TV.UIControls.Forms.OverlayPage
   nameWithType: OverlayPage
-- uid: Tizen.TV.UIControls.Forms.OverlayPage.#ctor
-  name: OverlayPage()
-  href: api/Tizen.TV.UIControls.Forms.OverlayPage.html#Tizen_TV_UIControls_Forms_OverlayPage__ctor
-  commentId: M:Tizen.TV.UIControls.Forms.OverlayPage.#ctor
-  fullName: Tizen.TV.UIControls.Forms.OverlayPage.OverlayPage()
-  nameWithType: OverlayPage.OverlayPage()
-- uid: Tizen.TV.UIControls.Forms.OverlayPage.#ctor*
-  name: OverlayPage
-  href: api/Tizen.TV.UIControls.Forms.OverlayPage.html#Tizen_TV_UIControls_Forms_OverlayPage__ctor_
-  commentId: Overload:Tizen.TV.UIControls.Forms.OverlayPage.#ctor
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.OverlayPage.OverlayPage
-  nameWithType: OverlayPage.OverlayPage
 - uid: Tizen.TV.UIControls.Forms.OverlayPage.AreaUpdated
   name: AreaUpdated
   href: api/Tizen.TV.UIControls.Forms.OverlayPage.html#Tizen_TV_UIControls_Forms_OverlayPage_AreaUpdated
