@@ -22,30 +22,22 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Tizen.TV.UIControls.Forms;
 
 namespace Sample
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TestMediaView : ContentPage
-    {
-        double _x, _y;
-        public TestMediaView ()
-        {
-            InitializeComponent ();
-        }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class TestEmbeddingControlOnPage : OverlayPage
+	{
+		public TestEmbeddingControlOnPage ()
+		{
+			InitializeComponent ();
+            Btn.Clicked += OnClick;
+		}
 
-        void OnPanUpdate(object sender, PanUpdatedEventArgs e)
+        void OnClick(object sender, EventArgs e)
         {
-            if (e.TotalY != 0 && e.TotalY != 0)
-            {
-                AbsoluteLayout.SetLayoutBounds(VideoView, new Rectangle(_x + e.TotalX, _y + e.TotalY, 500, 300));
-            }
-            else
-            {
-                var bound = AbsoluteLayout.GetLayoutBounds(VideoView);
-                _x = bound.X;
-                _y = bound.Y;
-            }
+            Player.UsesEmbeddingControls = !Player.UsesEmbeddingControls;
         }
     }
 }

@@ -18,6 +18,9 @@
     <Compile Update="MediaPlayer\PlayerMainPage.xaml.cs">
       <DependentUpon>PlayerMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="MediaPlayer\TestEmbeddingControlOnPage.xaml.cs">
+      <DependentUpon>TestEmbeddingControlOnPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="DrawerLayout\DrawerMainPage.xaml">
@@ -53,13 +56,7 @@
     <EmbeddedResource Update="MediaPlayer\TestAudioPlayer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestEmbeddingControl.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestEmbeddingControl2.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestMediaView.xaml">
+    <EmbeddedResource Update="MediaPlayer\TestEmbeddingControlOnPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MediaPlayer\TestOverlayPage.xaml">

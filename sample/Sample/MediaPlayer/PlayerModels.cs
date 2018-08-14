@@ -60,15 +60,13 @@ namespace Sample
         {
             TestList = new List<PlayerTestModel>
             {
-                new PlayerTestModel("Embedding control test", typeof(TestEmbeddingControl), MediaSource.FromFile("iu.mp4")),
-                new PlayerTestModel("Embedding control Page test", typeof(TestEmbeddingControl2), MediaSource.FromFile("tvcm.mp4")),
+                new PlayerTestModel("Embedding control Page test", typeof(TestEmbeddingControlOnPage), MediaSource.FromFile("tvcm.mp4")),
                 new AudioPlayerTestModel("Audio player test", typeof(TestAudioPlayer)),
                 new PlayerTestModel("Simple Player test", typeof(SimplePlayerPage), MediaSource.FromFile("gear-sport.mp4")),
                 new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay view test", typeof(TestOverlayView), MediaSource.FromFile("iu.mp4")),
-                new PlayerTestModel("Media view test", typeof(TestMediaView), MediaSource.FromFile("gear-sport.mp4")),
                 new PlayerTestModel("Aspect test", typeof(TestAspect), MediaSource.FromFile("pixel2-cf.mp4")),
                 new PlayerTestModel("Url test", typeof(TestOverlayPage), MediaSource.FromUri(new System.Uri("http://download.blender.org/demo/movies/caminandes_gran_dillama.mp4"))),
             };

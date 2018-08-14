@@ -5,19 +5,23 @@ MediaPlayer provides functionality of playing multimedia. It also includes relat
 ## How to use
 #### C#
 ``` c#
-var view = new MediaView();
+var page = new OverlayPage();
 var player = new MediaPlayer();
-player.VideoOutput = view;
+player.VideoOutput = page;
 player.Source = "a.mp4";
 player.Start();
 ```
 #### XAML
 ``` xml
-<tvcontrols:MediaView>
-    <tvcontrols:MediaPlayer
-        Source="{Binding Source}"
-        AutoStart="true"/>
-</tvcontrols:MediaView>
+<tvcontrols:OverlayPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="Sample.TestOverlayPage"
+             x:Class="Sample.TestOverlayPage">
+    <tvcontrols:OverlayPage.Player>
+        <tvcontrols:MediaPlayer Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="False"/>
+    </tvcontrols:OverlayPage.Player>
+</tvcontrols:OverlayPage>
 ```
 
 ## PlaybackState
@@ -26,35 +30,38 @@ player.Start();
 ![state diagram](resources/mediaplayer_state_diagram.png)
 
 
-## Video output types
+## Video output type
 #### Overlay
  * It displays video data on the overlay plane. It is more efficient and fast but has a limit shape. Usually it is used to display the video as fullscreen.
  * OverlayPage
  * OverlayMediaView
 
-#### Buffer
- * It displays video data on the graphics buffer using GL surface. It is free to change the shape, but if it does not support GL surface, you can't use it. It is usually used to attach a video on a part of the view.
- * MediaView
+[comment]: <> (#### Buffer)
+[comment]: <> (* It displays video data on the graphics buffer using GL surface. It is free to change the shape, but if it does not support GL surface, you can't use it.)
+[comment]: <> ( It is usually used to attach a video on a part of the view.)
+[comment]: <> (* MediaView)
 
 
 ## Associating Player with media view
- MediaPlayer and MediaView are created independently. To display video data into MediaView, the developer needs to associate Player and MediaView.
+ MediaPlayer and video output are created independently. The developer needs to associate Player and the video output to display video data.
+
+#### Use Player property of OverlayMediaView
+``` xml
+ <tvcontrols:OverlayMediaView>
+     <tvcontrols:OverlayMediaView.Player>
+         <tvcontrols:MediaPlayer Source="{Binding Source}"/>
+     </tvcontrols:OverlayMediaView.Player>
+ </tvcontrols:OverlayMediaView>
+```
+``` c#
+ var overlayMediaView = new OverlayMediaView();
+ overlayMediaView.Player = new MediaPlayer();
+```
 
 #### Use VideoOutput property of Player
 ``` c#
- player.VideoOutput = new MediaView();
-```
-
-#### Use Player property of MediaView
-``` xml
-<tvcontrols:MediaView>
-    <tvcontrols:MediaView.Player>
-        <tvcontrols:MediaPlayer Source="{Binding Source}"/>
-    </tvcontrols:MediaView.Player>
-</tvcontrols:MediaView>
-```
-``` c#
- mediaView.Player = new MediaPlayer();
+ var player = new MediaPlayer();
+ player.VideoOutput = new OverlayPage();
 ```
 
 
