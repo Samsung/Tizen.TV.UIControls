@@ -19,10 +19,10 @@ using Xamarin.Forms;
 namespace Tizen.TV.UIControls.Forms
 {
     /// <summary>
-    /// The MediaView class is used to display the video output on the screen.
+    /// The MediaView class is an abstract class whose subclasses can be used to display the video output on the screen.
     /// </summary>
     [ContentProperty("Player")]
-    public class MediaView : Layout<View>, IVideoOutput
+    public abstract class MediaView : Layout<View>, IVideoOutput
     {
         /// <summary>
         /// Identifies the Player bindable property.
