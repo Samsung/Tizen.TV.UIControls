@@ -16,8 +16,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
 
 namespace Sample
 {
@@ -59,6 +57,11 @@ namespace Sample
                 {
                     Name = "Entry and Editor Test",
                     PageType = typeof(EntryMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "Custom Focus Test",
+                    PageType = typeof(Focus.FocusMainPage),
                 }
             };
         }

@@ -73,37 +73,19 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         void OnViewKeyDown(object sender, EvasKeyEventArgs e)
         {
-            if (InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName))
+            if (InvokeActionAndEvent(RemoteControlKeyTypes.KeyDown, e.KeyName, e.Flags.HasFlag(EvasEventFlag.OnHold)))
                 e.Flags = EvasEventFlag.OnHold;
         }
 
         void OnViewKeyUp(object sender, EvasKeyEventArgs e)
         {
-            if (InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName))
+            if (InvokeActionAndEvent(RemoteControlKeyTypes.KeyUp, e.KeyName, e.Flags.HasFlag(EvasEventFlag.OnHold)))
                 e.Flags = EvasEventFlag.OnHold;
         }
 
-        static RemoteControlKeyEventArgs CreateArgs(VisualElement visualElement, RemoteControlKeyTypes keyType, string keyName)
+        bool InvokeActionAndEvent(RemoteControlKeyTypes keyType, string keyName, bool isHandled = false)
         {
-            RemoteControlKeyNames key = RemoteControlKeyNames.Unknown;
-
-            if (Enum.TryParse(keyName, out key))
-                return new RemoteControlKeyEventArgs(visualElement, keyType, key, keyName);
-            if (Enum.TryParse("NUM" + keyName, out key))
-                return new RemoteControlKeyEventArgs(visualElement, keyType, key, keyName);
-            if (keyName.StartsWith("XF86"))
-            {
-                string simpleKeyName = keyName.Replace("XF86", "").Replace("Audio", "");
-                if (Enum.TryParse(simpleKeyName, out key))
-                    return new RemoteControlKeyEventArgs(visualElement, keyType, key, keyName);
-            }
-
-            return new RemoteControlKeyEventArgs(visualElement, keyType, key, keyName);
-        }
-
-        bool InvokeActionAndEvent(RemoteControlKeyTypes keyType, string keyName)
-        {
-            RemoteControlKeyEventArgs args = CreateArgs((VisualElement)Element, keyType, keyName);
+            RemoteControlKeyEventArgs args = RemoteControlKeyEventArgs.Create((VisualElement)Element, keyType, keyName, isHandled);
             if (args == null)
                 return false;
 

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             Title="Focus Scroll Test"
+             x:Class="Sample.Focus.FocusScrollTest">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Button Text="Top →" x:Name="Top" tv:Focus.Right="{x:Reference Bottom}"/>
+                <BoxView HeightRequest="900" HorizontalOptions="FillAndExpand" Color="Brown"/>
+                <Button Text="← Bottom" x:Name="Bottom" tv:Focus.Left="{x:Reference Top}"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

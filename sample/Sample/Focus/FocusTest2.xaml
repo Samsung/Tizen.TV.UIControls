@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             Title="Focus Test2"
+             x:Class="Sample.Focus.FocusTest2">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Button Text="Head→" x:Name="Head"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.25, 300, 100"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    tv:Focus.Right="{x:Reference Center}"/>
+            <tv:RecycleItemsView
+                x:Name="Center"
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 600, 200"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                tv:Focus.Left="{x:Reference Head}"
+                tv:Focus.Right="{x:Reference Tail}"
+                ItemHeight="200"
+                ItemWidth="100"
+                ContentMargin="20">
+                <tv:RecycleItemsView.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>1</x:String>
+                        <x:String>2</x:String>
+                        <x:String>3</x:String>
+                        <x:String>4</x:String>
+                        <x:String>5</x:String>
+                        <x:String>6</x:String>
+                        <x:String>7</x:String>
+                        <x:String>8</x:String>
+                        <x:String>9</x:String>
+                    </x:Array>
+                </tv:RecycleItemsView.ItemsSource>
+            </tv:RecycleItemsView>
+            <Button Text="←Tail" x:Name="Tail"
+                    AbsoluteLayout.LayoutBounds="0.5, 0.75, 300, 100"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    tv:Focus.Left="{x:Reference Center}"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
