@@ -58,11 +58,11 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Backing store for the ItemWidth property.
         /// </summary>
-        public static readonly BindableProperty ItemWidthProperty = BindableProperty.Create(nameof(ItemWidth), typeof(double), typeof(RecycleItemsView), 100d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemSize());
+        public static readonly BindableProperty ItemWidthProperty = BindableProperty.Create(nameof(ItemWidth), typeof(double), typeof(RecycleItemsView), 0d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemSize());
         /// <summary>
         /// Backing store for the ItemHeight property.
         /// </summary>
-        public static readonly BindableProperty ItemHeightProperty = BindableProperty.Create(nameof(ItemHeight), typeof(double), typeof(RecycleItemsView), 100d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemSize());
+        public static readonly BindableProperty ItemHeightProperty = BindableProperty.Create(nameof(ItemHeight), typeof(double), typeof(RecycleItemsView), 0d, propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateItemSize());
         /// <summary>
         /// Backing store for the Orientation property.
         /// </summary>
@@ -136,6 +136,7 @@ namespace Tizen.TV.UIControls.Forms
         int _lastStart = -1;
         int _lastEnd = -1;
         int _focusedItemIndex = -1;
+        bool _itemSizeIsDirty;
 
         /// <summary>
         /// Creates and initializes a new instance of the RecycleItemsView class.
@@ -416,7 +417,43 @@ namespace Tizen.TV.UIControls.Forms
         double FooterSizeWithSpacing => FooterSize == 0 ? 0 : FooterSize + Spacing;
 
         double ItemSize => IsHorizontal ? ItemWidth + Spacing : ItemHeight + Spacing;
-        double ColumnSize => IsHorizontal? ItemHeight + Spacing : ItemWidth + Spacing;
+
+        double ColumnSize
+        {
+            get
+            {
+                if (IsHorizontal)
+                {
+                    if (ItemHeight > 0)
+                    {
+                        return ItemHeight + Spacing;
+                    }
+                    else if (AllocatedHeight > 0)
+                    {
+                        return (AllocatedHeight - ContentMargin.VerticalThickness + Spacing) / ColumnCount;
+                    }
+                    else
+                    {
+                        return 100;
+                    }
+                }
+                else
+                {
+                    if (ItemWidth > 0)
+                    {
+                        return ItemWidth + Spacing;
+                    }
+                    else if (AllocatedWidth > 0)
+                    {
+                        return (AllocatedWidth - ContentMargin.HorizontalThickness + Spacing) / ColumnCount;
+                    }
+                    else
+                    {
+                        return 100;
+                    }
+                }
+            }
+        }
 
         int ItemsCount {
             get
@@ -448,6 +485,9 @@ namespace Tizen.TV.UIControls.Forms
                 UpdateFocus(_focusedItemIndex);
             }
         }
+
+        double AllocatedHeight { get; set; }
+        double AllocatedWidth { get; set; }
 
         /// <summary>
         /// Event that is raised when a new item is selected.
@@ -617,12 +657,22 @@ namespace Tizen.TV.UIControls.Forms
         protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
         {
             var request = base.OnMeasure(widthConstraint, heightConstraint);
+
             request.Minimum = new Size
             {
                 Width = Math.Max(ItemWidth + ContentMargin.HorizontalThickness, request.Minimum.Width),
                 Height = Math.Max(ItemHeight + ContentMargin.VerticalThickness, request.Minimum.Height)
             };
+
             return request;
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            _itemSizeIsDirty = true;
+            AllocatedWidth = width;
+            AllocatedHeight = height;
+            base.OnSizeAllocated(width, height);
         }
 
         void SendItemFocused(object data, View targetView, bool isFocused)
@@ -659,7 +709,11 @@ namespace Tizen.TV.UIControls.Forms
         void RealizeItem(ItemContext item, Rectangle bounds)
         {
             if (item.IsRealized)
+            {
+                if (_itemSizeIsDirty)
+                    AbsoluteLayout.SetLayoutBounds(item.RealizedView, bounds);
                 return;
+            }
 
             item.IsRealized = true;
             var view = GetFromRecycleViews();
@@ -854,9 +908,13 @@ namespace Tizen.TV.UIControls.Forms
             int colIndex = index % ColumnCount;
 
             if (IsHorizontal)
-                return new Rectangle(HeaderSizeWithSpacing + rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ItemHeight);
+            {
+                return new Rectangle(HeaderSizeWithSpacing + rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ColumnSize - Spacing);
+            }
             else
-                return new Rectangle(colIndex * ColumnSize, HeaderSizeWithSpacing + rowIndex * ItemSize, ItemWidth, ItemHeight);
+            {
+                return new Rectangle(colIndex * ColumnSize, HeaderSizeWithSpacing + rowIndex * ItemSize, ColumnSize - Spacing, ItemHeight);
+            }
         }
 
         void LayoutInvalidate()
@@ -918,6 +976,7 @@ namespace Tizen.TV.UIControls.Forms
             _lastStart = startIndex;
             _lastEnd = endIndex;
             ClearRecycleViews();
+            _itemSizeIsDirty = false;
         }
 
         bool ValidateItemTemplate(DataTemplate template)

@@ -33,8 +33,8 @@ namespace Sample
 
             var itemsview = new MyRecycleItemsView()
             {
+                VerticalOptions = LayoutOptions.FillAndExpand,
                 BackgroundColor = Color.AliceBlue,
-                ItemHeight = 200,
                 ItemWidth = 200,
             };
             var items = new ObservableCollection<MyData>();

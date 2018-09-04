@@ -8,11 +8,10 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Label Text="Movies" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
-            <local:MyRecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Brown"
+            <local:MyRecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Brown" HeightRequest="800"
                     ScrollBarVisibility="Never"
                     ContentMargin="100"
                     ItemWidth="480"
-                    ItemHeight="700"
                     Spacing="50"
                     ItemsSource="{Binding Items}"
                     ItemSelected="OnSelected">

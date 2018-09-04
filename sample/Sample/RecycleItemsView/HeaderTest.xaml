@@ -6,10 +6,9 @@
              NavigationPage.HasNavigationBar="False"
              x:Class="Sample.RecycleItemsView.HeaderTest">
     <ContentPage.Content>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout HorizontalOptions="FillAndExpand">
             <local:ColorListView Orientation="Vertical" ColumnCount="5"
                         ContentMargin="100"
-                        ItemWidth="300"
                         ItemHeight="200"
                         Spacing="30"
                         ItemsSource="{Binding Items}">
@@ -27,7 +26,6 @@
                 </tvcontrols:RecycleItemsView.ItemTemplate>
             </local:ColorListView>
             <!-- spacer -->
-            <BoxView/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
