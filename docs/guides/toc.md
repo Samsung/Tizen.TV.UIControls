@@ -8,3 +8,5 @@
 ## [Introduction](InputEvents.md)
 #DrawerLayout
 ## [Introduction](DrawerLayout.md)
+#Troubleshooter
+## [Solved Problem](Troubleshooter.md)
