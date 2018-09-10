@@ -97,6 +97,18 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "../guides/Troubleshooter.md",
+      "output": {
+        ".html": {
+          "relative_path": "guides/Troubleshooter.html",
+          "hash": "lgGfg0V1lUuSL9mq7nbe+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "type": "Resource",
       "source_relative_path": "../guides/resources/DrawerLayout_introduction.gif",
       "output": {
@@ -245,7 +257,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/toc.html",
-          "hash": "GYAfSyw5vir223Lv8z6F1Q=="
+          "hash": "YiB67XhMbd+4IPF2h63iMw=="
         }
       },
       "is_incremental": false,

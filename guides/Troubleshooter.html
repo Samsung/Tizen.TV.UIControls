@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Troubleshooter </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Troubleshooter ">
+    <meta name="generator" content="docfx 2.34.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items"></div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="troubleshooter">Troubleshooter</h1>
+
+<p>Install <code>Tizen.TV.UIControls</code> package to your TV application to resolve the following limitations. <br></p>
+<p>The <code>Tizen.TV.UIControls</code> package will replace the default renderers for <code>Xamarin.Forms.Entry</code> and <code>Xamarin.Forms.Editor</code>
+to resolve the issues described below. </p>
+<blockquote><p>The following limitations are reproduced on <a href="https://developer.samsung.com/tv/develop/specifications/tv-model-groups">2018 TV models</a> that use Tizen 4.0 platform.</p>
+</blockquote>
+<h2 id="limitations">Limitations</h2>
+<h3 id="entry">Entry</h3>
+<p>When <code>Xamarin.Forms.Entry</code> gets the focus, the Input Panel is showed automatically on the screen to allow a user to enter the text.
+However, the Input Panel: <br></p>
+<ul>
+<li>is not closed, when <code>Done</code> or <code>Cancel</code> key is pressed.</li>
+<li>is not closed, when <code>Back key</code> on the remote control is pressed.</li>
+<li>does not invoke the <code>Entry.Completed</code> event, when <code>Done</code> key is pressed.</li>
+</ul>
+<h3 id="editor">Editor</h3>
+<p>When <code>Xamarin.Forms.Editor</code> gets the focus, the Input Panel is showed automatically on the screen to allow a user to enter the text.
+However, the Input Panel: <br></p>
+<ul>
+<li>is not closed, when <code>Done</code> or <code>Cancel</code> key is pressed.</li>
+<li>is not closed, when <code>Back key</code> on the remote control is pressed.</li>
+<li>does not invoke the <code>Entry.Completed</code> event, when <code>Done</code> key is pressed.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
