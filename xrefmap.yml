@@ -411,6 +411,140 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString
   nameWithType: FileMediaSourceConverter.ConvertFromInvariantString
+- uid: Tizen.TV.UIControls.Forms.Focus
+  name: Focus
+  href: api/Tizen.TV.UIControls.Forms.Focus.html
+  commentId: T:Tizen.TV.UIControls.Forms.Focus
+  fullName: Tizen.TV.UIControls.Forms.Focus
+  nameWithType: Focus
+- uid: Tizen.TV.UIControls.Forms.Focus.DownProperty
+  name: DownProperty
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_DownProperty
+  commentId: F:Tizen.TV.UIControls.Forms.Focus.DownProperty
+  fullName: Tizen.TV.UIControls.Forms.Focus.DownProperty
+  nameWithType: Focus.DownProperty
+- uid: Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
+  name: GetDown(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetDown_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
+  nameWithType: Focus.GetDown(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetDown*
+  name: GetDown
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetDown_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.GetDown
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetDown
+  nameWithType: Focus.GetDown
+- uid: Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
+  name: GetLeft(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetLeft_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
+  nameWithType: Focus.GetLeft(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetLeft*
+  name: GetLeft
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetLeft_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.GetLeft
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft
+  nameWithType: Focus.GetLeft
+- uid: Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
+  name: GetRight(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetRight_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
+  nameWithType: Focus.GetRight(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetRight*
+  name: GetRight
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetRight_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.GetRight
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetRight
+  nameWithType: Focus.GetRight
+- uid: Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
+  name: GetUp(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetUp_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
+  nameWithType: Focus.GetUp(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetUp*
+  name: GetUp
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetUp_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.GetUp
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetUp
+  nameWithType: Focus.GetUp
+- uid: Tizen.TV.UIControls.Forms.Focus.LeftProperty
+  name: LeftProperty
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_LeftProperty
+  commentId: F:Tizen.TV.UIControls.Forms.Focus.LeftProperty
+  fullName: Tizen.TV.UIControls.Forms.Focus.LeftProperty
+  nameWithType: Focus.LeftProperty
+- uid: Tizen.TV.UIControls.Forms.Focus.RightProperty
+  name: RightProperty
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_RightProperty
+  commentId: F:Tizen.TV.UIControls.Forms.Focus.RightProperty
+  fullName: Tizen.TV.UIControls.Forms.Focus.RightProperty
+  nameWithType: Focus.RightProperty
+- uid: Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject,VisualElement)
+  name: SetDown(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetDown_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject, VisualElement)
+  nameWithType: Focus.SetDown(BindableObject, VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetDown*
+  name: SetDown
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetDown_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.SetDown
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetDown
+  nameWithType: Focus.SetDown
+- uid: Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject,VisualElement)
+  name: SetLeft(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetLeft_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject, VisualElement)
+  nameWithType: Focus.SetLeft(BindableObject, VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetLeft*
+  name: SetLeft
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetLeft_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.SetLeft
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft
+  nameWithType: Focus.SetLeft
+- uid: Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject,VisualElement)
+  name: SetRight(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetRight_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject, VisualElement)
+  nameWithType: Focus.SetRight(BindableObject, VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetRight*
+  name: SetRight
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetRight_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.SetRight
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetRight
+  nameWithType: Focus.SetRight
+- uid: Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject,VisualElement)
+  name: SetUp(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetUp_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject, VisualElement)
+  nameWithType: Focus.SetUp(BindableObject, VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetUp*
+  name: SetUp
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetUp_
+  commentId: Overload:Tizen.TV.UIControls.Forms.Focus.SetUp
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetUp
+  nameWithType: Focus.SetUp
+- uid: Tizen.TV.UIControls.Forms.Focus.UpProperty
+  name: UpProperty
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_UpProperty
+  commentId: F:Tizen.TV.UIControls.Forms.Focus.UpProperty
+  fullName: Tizen.TV.UIControls.Forms.Focus.UpProperty
+  nameWithType: Focus.UpProperty
 - uid: Tizen.TV.UIControls.Forms.InputEvents
   name: InputEvents
   href: api/Tizen.TV.UIControls.Forms.InputEvents.html
@@ -2131,6 +2265,19 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnMeasure
   nameWithType: RecycleItemsView.OnMeasure
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnSizeAllocated(System.Double,System.Double)
+  name: OnSizeAllocated(Double, Double)
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_OnSizeAllocated_System_Double_System_Double_
+  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.OnSizeAllocated(System.Double,System.Double)
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnSizeAllocated(System.Double, System.Double)
+  nameWithType: RecycleItemsView.OnSizeAllocated(Double, Double)
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnSizeAllocated*
+  name: OnSizeAllocated
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_OnSizeAllocated_
+  commentId: Overload:Tizen.TV.UIControls.Forms.RecycleItemsView.OnSizeAllocated
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnSizeAllocated
+  nameWithType: RecycleItemsView.OnSizeAllocated
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.Orientation
   name: Orientation
   href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_Orientation
