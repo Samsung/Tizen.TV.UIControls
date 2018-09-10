@@ -10,7 +10,7 @@
             <StackLayout x:Name="Sidebar" Orientation="Vertical" Spacing="20" WidthRequest="1">
                 <Label FontSize="Large" Text="Home"/>
                 <local:MenuItemsView x:Name="MenuList" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" WidthRequest="300"
-                    Orientation="Vertical" ItemWidth="300" ContentMargin="0" Spacing="0" ItemsSource="{Binding Items2}">
+                    Orientation="Vertical" ItemHeight="100" ItemWidth="300" ContentMargin="0" Spacing="0" ItemsSource="{Binding Items2}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
                             <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
