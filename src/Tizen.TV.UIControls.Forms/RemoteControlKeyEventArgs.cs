@@ -64,5 +64,27 @@ namespace Tizen.TV.UIControls.Forms
         /// Gets or sets a value that indicates whether the remote control key event has already been handled.
         /// </summary>
         public bool Handled { get; set; }
+
+        internal static RemoteControlKeyEventArgs Create(VisualElement visualElement, RemoteControlKeyTypes keyType, string keyName, bool isHandled = false)
+        {
+            RemoteControlKeyNames key = RemoteControlKeyNames.Unknown;
+
+            if (!Enum.TryParse(keyName, out key))
+            {
+                if (!Enum.TryParse("NUM" + keyName, out key))
+                {
+                    if (keyName.StartsWith("XF86"))
+                    {
+                        string simpleKeyName = keyName.Replace("XF86", "").Replace("Audio", "");
+                        Enum.TryParse(simpleKeyName, out key);
+                    }
+                }
+            }
+
+            return new RemoteControlKeyEventArgs(visualElement, keyType, key, keyName)
+            {
+                Handled = isHandled
+            };
+        }
     }
 }
