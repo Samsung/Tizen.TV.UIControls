@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:TMDb;assembly=TMDb"
+             x:Class="TMDb.DetailPage"
+             BackgroundColor="#0c0c0c"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:PosterUrlConverter x:Key="posterConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ff:CachedImage x:Name="BackdropImage"
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                   Opacity="0.5"
+                   Source="{Binding BackdropPath, Converter={StaticResource posterConverter}}"/>
+            <Button x:Name="TopFocusHolder" Opacity="0" HeightRequest="5" AbsoluteLayout.LayoutBounds="0.5, 0, 5, 5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <ScrollView x:Name="ScrollView" Orientation="Vertical" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+                <StackLayout Spacing="0">
+                    <StackLayout x:Name="DescriptionArea" Orientation="Horizontal" BackgroundColor="#2a303d" Opacity="0.9">
+                        <ff:CachedImage Margin="50" Source="{Binding PosterPath, Converter={StaticResource posterConverter}}"/>
+                        <StackLayout Margin="50" Spacing="10" WidthRequest="1000" HorizontalOptions="End" Opacity="1.0">
+                            <Label FontSize="Large" Text="{Binding Title}" FontAttributes="Bold"/>
+                            <Label FontSize="70" Text="Overview" FontAttributes="Bold"/>
+                            <Label FontSize="Medium" Text="{Binding Overview}"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout BackgroundColor="#18233a" HorizontalOptions="FillAndExpand">
+                        <StackLayout Spacing="20" Orientation="Horizontal" x:Name="ButtonArea" HeightRequest="120" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <local:CastListView x:Name="CastList"/>
+                    <local:PosterListView x:Name="SimilarList" ItemHeight="400" ItemWidth="300"/>
+                </StackLayout>
+            </ScrollView>
+            <local:WaitingView x:Name="WaitingView" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Opacity="0"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

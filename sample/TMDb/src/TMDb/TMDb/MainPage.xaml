@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TMDb.MainPage"
+             xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:TMDb;assembly=TMDb"
+             BackgroundColor="#0c0c0c"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ff:CachedImage x:Name="BackdropImage"
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"
+                   Opacity="0.5"/>
+            <tv:DrawerLayout 
+                    AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    IsOpen="{Binding IsFocused, Source={x:Reference MenuList}}" DrawerClosedWidth="50" x:Name="Drawer">
+                <tv:DrawerLayout.Drawer>
+                    <StackLayout x:Name="MenuPanel"
+                         WidthRequest="500"
+                         BackgroundColor="#123163"
+                         VerticalOptions="FillAndExpand"
+                         Opacity="0.9">
+                        <Image WidthRequest="250" VerticalOptions="CenterAndExpand" Source="PrimaryLogo_Green.png"/>
+                        <local:MenuItemsView x:Name="MenuList" ItemsSource="{Binding MenuItems}"
+                                         VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
+                                         Orientation="Vertical"
+                                         ItemHeight="150"
+                                         ItemWidth="500"
+                                         ItemSelected="MenuItemsView_ItemSelected">
+                            <local:MenuItemsView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout HorizontalOptions="FillAndExpand" Padding="100, 0, 100, 0">
+                                        <Label HorizontalOptions="FillAndExpand"
+                                           VerticalOptions="FillAndExpand"
+                                           VerticalTextAlignment="Center"
+                                           Text="{Binding Text}" TextColor="#e0e0e0"
+                                           FontSize="80" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </local:MenuItemsView.ItemTemplate>
+                        </local:MenuItemsView>
+                    </StackLayout>
+                </tv:DrawerLayout.Drawer>
+                <tv:DrawerLayout.Content>
+                    <ContentView x:Name="ContentHolder" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                        <local:PosterListView x:Name="PosterView" ItemHeight="600" ItemWidth="450"></local:PosterListView>
+                    </ContentView>
+                </tv:DrawerLayout.Content>
+            </tv:DrawerLayout>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
