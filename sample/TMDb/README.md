@@ -1,4 +1,6 @@
 # TMDb
-<img src="https://github.sec.samsung.net/pages/sngnlee/TMDb/TMDB1.gif">
-<img src="https://github.sec.samsung.net/pages/sngnlee/TMDb/TMDB2.gif">
-<img src="https://github.sec.samsung.net/pages/sngnlee/TMDb/TMDB3.gif">
+
+This app shows the list of most popular and highest voted movies as per the website - https://www.themoviedb.org (TMDB). The data is current as of present.
+
+If you have Samsung Smart TV 2018 series and are living in the U.S., you can download this app from the TV apps and enjoy it.
+
