@@ -22,7 +22,7 @@ namespace TMDb
 
             Task.Run(async () =>
             {
-                var client = new TMDbClient("870755bb1ee864493829202f5afa20bd");
+                var client = new TMDbClient(TMDbAPIKey.Key);
                 var taskMovie = client.GetMovieAsync(id);
                 var taskSimilar = client.GetMovieSimilarAsync(id);
                 var taskCredit = client.GetMovieCreditsAsync(id);

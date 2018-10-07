@@ -92,7 +92,7 @@ namespace TMDb
 
         async Task<MovieListModel> LoadMovieListAsync(string menu)
         {
-            var client = new TMDbLib.Client.TMDbClient("APIKEY");
+            var client = new TMDbLib.Client.TMDbClient(TMDbAPIKey.Key);
             IList<SearchMovie> items = null;
             if (menu == "Now playing")
             {
