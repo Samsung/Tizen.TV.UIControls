@@ -4,6 +4,8 @@ This app shows the list of most popular and highest voted movies as per the webs
 
 If you have Samsung Smart TV 2018 series and are living in the U.S., you can download this app from the TV apps and enjoy it.
 
+_NOTE : By default, this `TMDb` project doesn't have a TMDB API keys to access TMDB services. Thus, you will have to add this key to the `TMDbAPIKey.cs` finle under `src/TMDb/TMdb`. You can find out how to obtain a TMDb API key [here](https://developers.themoviedb.org/3/getting-started/authentication)._
+
 ## Screenshots
 
 ![0 store](https://user-images.githubusercontent.com/1029134/45856516-d5382680-bd8f-11e8-8555-bf459ade941a.png)
