@@ -4,6 +4,13 @@ namespace Sample
 {
     class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
     {
+        protected override void OnPreCreate()
+        {
+            MainWindow = new ElmSharp.Window("forms")
+            {
+                Alpha = true,
+            };
+        }
         protected override void OnCreate()
         {
             base.OnCreate();

@@ -34,10 +34,11 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             {
                 SetNativeControl(new LayoutCanvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
                 Control.LayoutUpdated += (s, evt) => OnLayout();
-                _overlayHolder = new LayoutCanvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent)
+                _overlayHolder = new Rectangle(Xamarin.Forms.Platform.Tizen.Forms.NativeParent)
                 {
                     Color = EColor.Transparent
                 };
+                _overlayHolder.Show();
                 Control.Children.Add(_overlayHolder);
                 Control.AllowFocus(true);
                 MakeTransparent();
