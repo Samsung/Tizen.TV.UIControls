@@ -89,13 +89,48 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">FileMediaSourceConverter</span></div>
+    <div class="level1"><span class="xref">Xamarin.Forms.TypeConverter</span></div>
+    <div class="level2"><span class="xref">FileMediaSourceConverter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Xamarin.Forms.TypeConverter.CanConvertFrom(System.Type)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.TypeConverter.ConvertFrom(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.TypeConverter.ConvertFrom(System.Globalization.CultureInfo, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.TV.UIControls.Forms.html">Tizen.TV.UIControls.Forms</a></h6>
   <h6><strong>Assembly</strong>: Tizen.TV.UIControls.Forms.dll</h6>
   <h5 id="Tizen_TV_UIControls_Forms_FileMediaSourceConverter_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public sealed class FileMediaSourceConverter : TypeConverter</code></pre>
+    <pre><code class="lang-csharp hljs">[TypeConverter(typeof(FileMediaSource))]
+public sealed class FileMediaSourceConverter : TypeConverter</code></pre>
   </div>
   <h3 id="methods">Methods
   </h3>
@@ -142,6 +177,8 @@
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Xamarin.Forms.TypeConverter.ConvertFromInvariantString(System.String)</span></div>
 </article>
           </div>
           

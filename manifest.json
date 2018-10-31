@@ -257,7 +257,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/toc.html",
-          "hash": "YiB67XhMbd+4IPF2h63iMw=="
+          "hash": "GFWGpR3SLAaR+jqzjiTUkg=="
         }
       },
       "is_incremental": false,
@@ -315,7 +315,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs.html",
-          "hash": "Cb4zpJixKXME/GaMRqDwbg=="
+          "hash": "MQvj4UH5aMQ9nBtu0z9j7w=="
         }
       },
       "is_incremental": false,
@@ -327,7 +327,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html",
-          "hash": "AJ2+/GIW9KCmw79WznbmzQ=="
+          "hash": "u2c+Jtvuz6+7yQu9/S7p9g=="
         }
       },
       "is_incremental": false,
@@ -339,7 +339,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerLayout.html",
-          "hash": "cNSgV9rEgtQPpcXUvPcJ0A=="
+          "hash": "YULWOfnx8tInMKPN+ijYaA=="
         }
       },
       "is_incremental": false,
@@ -351,7 +351,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerMode.html",
-          "hash": "cdyIrnoHRFb1RzAwuiGOpg=="
+          "hash": "AES+lkJa8z91dHZJnrIh1g=="
         }
       },
       "is_incremental": false,
@@ -363,7 +363,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerPosition.html",
-          "hash": "S5ESoHBLiuNub3JpKGdFWA=="
+          "hash": "yDLRBz0UduzIo/1cm7mUSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.EmbeddingControls.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.EmbeddingControls.html",
+          "hash": "TkgsEY3z2/my79O8F37XFA=="
         }
       },
       "is_incremental": false,
@@ -375,7 +387,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.FileMediaSource.html",
-          "hash": "Wml96OsLGRJvk6NFYZs3Bw=="
+          "hash": "pGHtjXcwe/NeRps3ipyNlw=="
         }
       },
       "is_incremental": false,
@@ -387,7 +399,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.FileMediaSourceConverter.html",
-          "hash": "7SQP0sF8YbFWRzJVFALyYw=="
+          "hash": "RUJh3124nB7iCUfUCpyTdg=="
         }
       },
       "is_incremental": false,
@@ -399,7 +411,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.Focus.html",
-          "hash": "Mvdn6mdtRBieQPukSq0xmw=="
+          "hash": "aBcZlwDCvcJrsJtmM2/zBw=="
         }
       },
       "is_incremental": false,
@@ -411,7 +423,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IOverlayOutput.html",
-          "hash": "5FB73A4hmHpPz9IDHwtzag=="
+          "hash": "N2BOUNihKvMhw+8rSdWrrg=="
         }
       },
       "is_incremental": false,
@@ -423,7 +435,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IPlatformMediaPlayer.html",
-          "hash": "XukIZ80xQQf92ujDcLzljg=="
+          "hash": "rHSf655+WmSBZUVH5BMeCQ=="
         }
       },
       "is_incremental": false,
@@ -435,7 +447,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IRecycleItemsViewController.html",
-          "hash": "3WUjYidSMIvHAKKoLwymjA=="
+          "hash": "erjwwcrjeaBQ0sRzRXYepg=="
         }
       },
       "is_incremental": false,
@@ -447,7 +459,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IVideoOutput.html",
-          "hash": "8bVZxy3B6hADbnUp7WYZMA=="
+          "hash": "+A4Q+9Two29MXjDAYNRZ7g=="
         }
       },
       "is_incremental": false,
@@ -459,7 +471,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.InputEvents.html",
-          "hash": "hqfjJf9xhVRAkwMzTGIE3A=="
+          "hash": "FGtRMXgweEpGrto3gPCa2g=="
         }
       },
       "is_incremental": false,
@@ -471,7 +483,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.ItemRealizedEventArgs.html",
-          "hash": "gYgSfvVT7i5zmFvkXQT8tA=="
+          "hash": "i+ipCFcZrHgJjA8W4eiDHA=="
         }
       },
       "is_incremental": false,
@@ -483,7 +495,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.ItemUnrealizedEventArgs.html",
-          "hash": "hsNOV42TLqsMZVQ3OGNjoA=="
+          "hash": "s6Ms/giNJtNe6Hsi0M3riw=="
         }
       },
       "is_incremental": false,
@@ -495,7 +507,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaPlayer.html",
-          "hash": "LW3up74QZEar0vR1Rb5SRg=="
+          "hash": "1+r0cnLiHXMaIeiNsIGIcA=="
         }
       },
       "is_incremental": false,
@@ -507,7 +519,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaSource.html",
-          "hash": "1xBwx9BI6RXykzMeDk56bg=="
+          "hash": "TOg/YQDuo2ZNSZ0k2NfYrA=="
         }
       },
       "is_incremental": false,
@@ -519,7 +531,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaSourceConverter.html",
-          "hash": "k/nAufrT0GpIHFU/ShokBQ=="
+          "hash": "Koz8MtiSjUGOrj8/rc09Ng=="
         }
       },
       "is_incremental": false,
@@ -531,7 +543,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaView.html",
-          "hash": "Raf5ukuW7Z1q0Z2GDfP9fA=="
+          "hash": "z9DtGCaZ5qCbKjOk87xc2g=="
         }
       },
       "is_incremental": false,
@@ -543,7 +555,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.OverlayMediaView.html",
-          "hash": "EqFv63lV0XDVVEIWOqc5Zw=="
+          "hash": "ayksRpkGX7JoUGZIBjFTfA=="
         }
       },
       "is_incremental": false,
@@ -555,7 +567,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.OverlayPage.html",
-          "hash": "kY2Syx9ME60Lj5llxtAcrg=="
+          "hash": "JwCRy0lt0B7qkvzFq/pong=="
         }
       },
       "is_incremental": false,
@@ -567,7 +579,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.PlaybackState.html",
-          "hash": "a8hdRSEfn8GeJQ2rgjZvxw=="
+          "hash": "INS4B2c7FHz71As8eS5MRw=="
         }
       },
       "is_incremental": false,
@@ -579,7 +591,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RecycleItemsView.html",
-          "hash": "hOabX7aC0KmHm6vRA1JTRA=="
+          "hash": "De1fPvnNk79ezs9YDSbYog=="
         }
       },
       "is_incremental": false,
@@ -591,7 +603,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RecycleItemsViewOrientation.html",
-          "hash": "h0/9iOu6bxVk1hU+xGtDIg=="
+          "hash": "XqY8JyxtwET1omA9EJ/wnA=="
         }
       },
       "is_incremental": false,
@@ -603,7 +615,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html",
-          "hash": "qbodDK/ibWS/wu5W/tRoZg=="
+          "hash": "Fy/0JFvxzlo3KDc35WquJw=="
         }
       },
       "is_incremental": false,
@@ -615,7 +627,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteControlKeyNames.html",
-          "hash": "KLkpcOfccEQibypbxZyPOA=="
+          "hash": "RfeNUsY+mm5xJXrlHhiOig=="
         }
       },
       "is_incremental": false,
@@ -627,7 +639,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteControlKeyTypes.html",
-          "hash": "oXjpkDuJoAJp1ERiYRJLWw=="
+          "hash": "7uaz5b56QaqGLpZdUP/45Q=="
         }
       },
       "is_incremental": false,
@@ -639,7 +651,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html",
-          "hash": "Mvwyyz6m9ccxQlpUefhffg=="
+          "hash": "Os1TFJnHQ4IbWMnvYUr9kA=="
         }
       },
       "is_incremental": false,
@@ -651,7 +663,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.UriMediaSource.html",
-          "hash": "39Bki94tdmw4McYKHfkxag=="
+          "hash": "jV70kehJwUOduBSMb8DTlw=="
         }
       },
       "is_incremental": false,
@@ -663,7 +675,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.VideoOuputType.html",
-          "hash": "6X/WyXI4S24BVbsRKs03iQ=="
+          "hash": "TbdANSF9BcC8RAW5v04fVQ=="
         }
       },
       "is_incremental": false,
@@ -675,7 +687,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.html",
-          "hash": "GorhQMxCfP8KWBbNyoMZVg=="
+          "hash": "We9InQZRzUj6m7oNx1oKFA=="
         }
       },
       "is_incremental": false,
@@ -687,7 +699,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jv94IEDNCjCw4CGJBzqw3A=="
+          "hash": "0DuMOwCN+eUUwIivIlaX3w=="
         }
       },
       "is_incremental": false,
@@ -699,7 +711,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "KdY//e2UWSH++GBmn36vXg=="
+          "hash": "ceVf8B+9su14o5fTp/91bw=="
         }
       },
       "is_incremental": false,
@@ -714,21 +726,21 @@
         "incrementalPhase": "build"
       },
       "processors": {
-        "ResourceDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
         "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build"
+        },
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         }

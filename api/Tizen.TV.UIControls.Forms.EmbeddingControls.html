@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class MediaView
+    <title>Class EmbeddingControls
    </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class MediaView
+    <meta name="title" content="Class EmbeddingControls
    ">
     <meta name="generator" content="docfx 1.0.0.0">
     
@@ -78,12 +78,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Tizen.TV.UIControls.Forms.MediaView">
+            <article class="content wrap" id="_content" data-uid="Tizen.TV.UIControls.Forms.EmbeddingControls">
   
   
-  <h1 id="Tizen_TV_UIControls_Forms_MediaView" data-uid="Tizen.TV.UIControls.Forms.MediaView" class="text-break">Class MediaView
+  <h1 id="Tizen_TV_UIControls_Forms_EmbeddingControls" data-uid="Tizen.TV.UIControls.Forms.EmbeddingControls" class="text-break">Class EmbeddingControls
   </h1>
-  <div class="markdown level0 summary"><p>The MediaView class is an abstract class whose subclasses can be used to display the video output on the screen.</p>
+  <div class="markdown level0 summary"><p>A built-in media controls.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -94,9 +94,9 @@
     <div class="level3"><span class="xref">Xamarin.Forms.VisualElement</span></div>
     <div class="level4"><span class="xref">Xamarin.Forms.View</span></div>
     <div class="level5"><span class="xref">Xamarin.Forms.Layout</span></div>
-    <div class="level6"><span class="xref">Xamarin.Forms.Layout</span>&lt;<span class="xref">Xamarin.Forms.View</span>&gt;</div>
-    <div class="level7"><span class="xref">MediaView</span></div>
-      <div class="level8"><a class="xref" href="Tizen.TV.UIControls.Forms.OverlayMediaView.html">OverlayMediaView</a></div>
+    <div class="level6"><span class="xref">Xamarin.Forms.TemplatedView</span></div>
+    <div class="level7"><span class="xref">Xamarin.Forms.ContentView</span></div>
+    <div class="level8"><span class="xref">EmbeddingControls</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
@@ -108,25 +108,26 @@
     <div><span class="xref">Xamarin.Forms.Internals.IGestureController</span></div>
     <div><span class="xref">Xamarin.Forms.ILayout</span></div>
     <div><span class="xref">Xamarin.Forms.ILayoutController</span></div>
-    <div><span class="xref">Xamarin.Forms.IViewContainer</span>&lt;<span class="xref">Xamarin.Forms.View</span>&gt;</div>
-    <div><a class="xref" href="Tizen.TV.UIControls.Forms.IVideoOutput.html">IVideoOutput</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">Xamarin.Forms.Layout&lt;Xamarin.Forms.View&gt;.OnAdded(Xamarin.Forms.View)</span>
+      <span class="xref">Xamarin.Forms.ContentView.ContentProperty</span>
     </div>
     <div>
-      <span class="xref">Xamarin.Forms.Layout&lt;Xamarin.Forms.View&gt;.OnChildAdded(Xamarin.Forms.Element)</span>
+      <span class="xref">Xamarin.Forms.ContentView.Content</span>
     </div>
     <div>
-      <span class="xref">Xamarin.Forms.Layout&lt;Xamarin.Forms.View&gt;.OnChildRemoved(Xamarin.Forms.Element)</span>
+      <span class="xref">Xamarin.Forms.TemplatedView.ControlTemplateProperty</span>
     </div>
     <div>
-      <span class="xref">Xamarin.Forms.Layout&lt;Xamarin.Forms.View&gt;.OnRemoved(Xamarin.Forms.View)</span>
+      <span class="xref">Xamarin.Forms.TemplatedView.LayoutChildren(System.Double, System.Double, System.Double, System.Double)</span>
     </div>
     <div>
-      <span class="xref">Xamarin.Forms.Layout&lt;Xamarin.Forms.View&gt;.Children</span>
+      <span class="xref">Xamarin.Forms.TemplatedView.OnSizeRequest(System.Double, System.Double)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.TemplatedView.ControlTemplate</span>
     </div>
     <div>
       <span class="xref">Xamarin.Forms.Layout.IsClippedToBoundsProperty</span>
@@ -324,13 +325,19 @@
       <span class="xref">Xamarin.Forms.VisualElement.InvalidateMeasure()</span>
     </div>
     <div>
+      <span class="xref">Xamarin.Forms.VisualElement.OnChildAdded(Xamarin.Forms.Element)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.VisualElement.OnChildRemoved(Xamarin.Forms.Element)</span>
+    </div>
+    <div>
       <span class="xref">Xamarin.Forms.VisualElement.OnChildrenReordered()</span>
     </div>
     <div>
-      <span class="xref">Xamarin.Forms.VisualElement.OnParentSet()</span>
+      <span class="xref">Xamarin.Forms.VisualElement.OnMeasure(System.Double, System.Double)</span>
     </div>
     <div>
-      <span class="xref">Xamarin.Forms.VisualElement.OnSizeRequest(System.Double, System.Double)</span>
+      <span class="xref">Xamarin.Forms.VisualElement.OnParentSet()</span>
     </div>
     <div>
       <span class="xref">Xamarin.Forms.VisualElement.SizeAllocated(System.Double, System.Double)</span>
@@ -590,132 +597,27 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.TV.UIControls.Forms.html">Tizen.TV.UIControls.Forms</a></h6>
   <h6><strong>Assembly</strong>: Tizen.TV.UIControls.Forms.dll</h6>
-  <h5 id="Tizen_TV_UIControls_Forms_MediaView_syntax">Syntax</h5>
+  <h5 id="Tizen_TV_UIControls_Forms_EmbeddingControls_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ContentProperty(&quot;Player&quot;)]
-public abstract class MediaView : Layout&lt;View&gt;, INotifyPropertyChanged, IDynamicResourceHandler, IElement, INameScope, IAnimatable, IResourcesProvider, IStyleElement, IFlowDirectionController, IStyleSelectable, IStylable, IViewController, IVisualElementController, IElementController, IGestureController, ILayout, ILayoutController, IPaddingElement, IViewContainer&lt;View&gt;, IVideoOutput</code></pre>
+    <pre><code class="lang-csharp hljs">[XamlCompilation(XamlCompilationOptions.Compile)]
+[XamlFilePath(&quot;EmbeddingControls.xaml&quot;)]
+public class EmbeddingControls : ContentView, INotifyPropertyChanged, IDynamicResourceHandler, IElement, INameScope, IAnimatable, IResourcesProvider, IStyleElement, IFlowDirectionController, IStyleSelectable, IStylable, IViewController, IVisualElementController, IElementController, IGestureController, ILayout, ILayoutController, IPaddingElement, IControlTemplated</code></pre>
   </div>
-  <h3 id="fields">Fields
+  <h3 id="constructors">Constructors
   </h3>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_PlayerProperty" data-uid="Tizen.TV.UIControls.Forms.MediaView.PlayerProperty">PlayerProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the Player bindable property.</p>
+  <a id="Tizen_TV_UIControls_Forms_EmbeddingControls__ctor_" data-uid="Tizen.TV.UIControls.Forms.EmbeddingControls.#ctor*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_EmbeddingControls__ctor" data-uid="Tizen.TV.UIControls.Forms.EmbeddingControls.#ctor">EmbeddingControls()</h4>
+  <div class="markdown level1 summary"><p>Internal use only, initializes a new instance of the EmbeddingControls.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PlayerProperty</code></pre>
+    <pre><code class="lang-csharp hljs">public EmbeddingControls()</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Xamarin.Forms.BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_OuputType_" data-uid="Tizen.TV.UIControls.Forms.MediaView.OuputType*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_OuputType" data-uid="Tizen.TV.UIControls.Forms.MediaView.OuputType">OuputType</h4>
-  <div class="markdown level1 summary"><p>Gets the video output type.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual VideoOuputType OuputType { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Tizen.TV.UIControls.Forms.VideoOuputType.html">VideoOuputType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_Player_" data-uid="Tizen.TV.UIControls.Forms.MediaView.Player*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_Player" data-uid="Tizen.TV.UIControls.Forms.MediaView.Player">Player</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the media player.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public MediaPlayer Player { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Tizen.TV.UIControls.Forms.MediaPlayer.html">MediaPlayer</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_LayoutChildren_" data-uid="Tizen.TV.UIControls.Forms.MediaView.LayoutChildren*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_LayoutChildren_System_Double_System_Double_System_Double_System_Double_" data-uid="Tizen.TV.UIControls.Forms.MediaView.LayoutChildren(System.Double,System.Double,System.Double,System.Double)">LayoutChildren(Double, Double, Double, Double)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void LayoutChildren(double x, double y, double width, double height)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">x</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">y</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">width</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">height</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Xamarin.Forms.Layout.LayoutChildren(System.Double, System.Double, System.Double, System.Double)</span></div>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_OnBindingContextChanged_" data-uid="Tizen.TV.UIControls.Forms.MediaView.OnBindingContextChanged*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_OnBindingContextChanged" data-uid="Tizen.TV.UIControls.Forms.MediaView.OnBindingContextChanged">OnBindingContextChanged()</h4>
+  <a id="Tizen_TV_UIControls_Forms_EmbeddingControls_OnBindingContextChanged_" data-uid="Tizen.TV.UIControls.Forms.EmbeddingControls.OnBindingContextChanged*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_EmbeddingControls_OnBindingContextChanged" data-uid="Tizen.TV.UIControls.Forms.EmbeddingControls.OnBindingContextChanged">OnBindingContextChanged()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -723,102 +625,7 @@ public abstract class MediaView : Layout&lt;View&gt;, INotifyPropertyChanged, ID
     <pre><code class="lang-csharp hljs">protected override void OnBindingContextChanged()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Xamarin.Forms.View.OnBindingContextChanged()</span></div>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_OnMeasure_" data-uid="Tizen.TV.UIControls.Forms.MediaView.OnMeasure*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_OnMeasure_System_Double_System_Double_" data-uid="Tizen.TV.UIControls.Forms.MediaView.OnMeasure(System.Double,System.Double)">OnMeasure(Double, Double)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">widthConstraint</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td><span class="parametername">heightConstraint</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Xamarin.Forms.SizeRequest</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Xamarin.Forms.VisualElement.OnMeasure(System.Double, System.Double)</span></div>
-  <h3 id="eii">Explicit Interface Implementations
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_Tizen_TV_UIControls_Forms_IVideoOutput_Controller_" data-uid="Tizen.TV.UIControls.Forms.MediaView.Tizen#TV#UIControls#Forms#IVideoOutput#Controller*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_Tizen_TV_UIControls_Forms_IVideoOutput_Controller" data-uid="Tizen.TV.UIControls.Forms.MediaView.Tizen#TV#UIControls#Forms#IVideoOutput#Controller">IVideoOutput.Controller</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">View IVideoOutput.Controller { get; set; }</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Xamarin.Forms.View</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_MediaView_Tizen_TV_UIControls_Forms_IVideoOutput_MediaView_" data-uid="Tizen.TV.UIControls.Forms.MediaView.Tizen#TV#UIControls#Forms#IVideoOutput#MediaView*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_MediaView_Tizen_TV_UIControls_Forms_IVideoOutput_MediaView" data-uid="Tizen.TV.UIControls.Forms.MediaView.Tizen#TV#UIControls#Forms#IVideoOutput#MediaView">IVideoOutput.MediaView</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">VisualElement IVideoOutput.MediaView { get; }</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Xamarin.Forms.VisualElement</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <div><span class="xref">Xamarin.Forms.ContentView.OnBindingContextChanged()</span></div>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
@@ -843,12 +650,6 @@ public abstract class MediaView : Layout&lt;View&gt;, INotifyPropertyChanged, ID
   </div>
   <div>
       <span class="xref">Xamarin.Forms.ILayoutController</span>
-  </div>
-  <div>
-      <span class="xref">Xamarin.Forms.IViewContainer&lt;T&gt;</span>
-  </div>
-  <div>
-      <a class="xref" href="Tizen.TV.UIControls.Forms.IVideoOutput.html">IVideoOutput</a>
   </div>
 </article>
           </div>
