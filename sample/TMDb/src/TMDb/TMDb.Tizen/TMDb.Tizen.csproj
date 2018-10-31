@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\github\Tizen.TV.UIControls\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
     <ProjectReference Include="..\TMDb\TMDb.csproj" />
   </ItemGroup>
   

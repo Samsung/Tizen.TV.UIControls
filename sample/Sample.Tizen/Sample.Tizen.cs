@@ -8,7 +8,7 @@ namespace Sample
         {
             MainWindow = new ElmSharp.Window("forms")
             {
-                Alpha = true,
+                Alpha = false,
             };
         }
         protected override void OnCreate()
@@ -22,11 +22,9 @@ namespace Sample
             var app = new Program();
             try
             {
-                Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
+                Tizen.TV.UIControls.Forms.UIControls.Init();
                 global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
-                Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
-
-                Tizen.TV.UIControls.Forms.Renderer.UIControls.MainWindowProvider = () => app.MainWindow;
+                Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => app.MainWindow;
                 app.Run(args);
             }
             catch (Exception e)

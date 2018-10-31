@@ -9,10 +9,10 @@
     <PackageReference Include="Tizen.NET" Version="4.0.0" />
     <PackageReference Include="TMDbLib" Version="1.2.0-alpha" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.3.840" />
-    <PackageReference Include="Xamarin.Forms" Version="3.1.0.637273" />
+    <PackageReference Include="Xamarin.Forms" Version="3.2.0.871581" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\github\Tizen.TV.UIControls\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
+    <ProjectReference Include="..\..\..\..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="PosterListView.xaml.cs">
