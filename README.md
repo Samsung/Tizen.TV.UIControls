@@ -22,9 +22,11 @@ nuget.exe install Tizen.TV.UIControls -Version 1.0.0-beta -Source https://tizen.
 ```
 ### Initialization on Platform code
 ``` c#
-Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
+Tizen.TV.UIControls.Forms.UIControls.Init();
 global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
-Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
+
+//set main window provider
+Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => app.MainWindow;
 ```
 
 ### Guides

@@ -7,7 +7,7 @@ namespace TMDb
         protected override void OnCreate()
         {
             base.OnCreate();
-            Tizen.TV.UIControls.Forms.Renderer.UIControls.MainWindowProvider = () => MainWindow;
+            Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => MainWindow;
             LoadApplication(new App());
         }
 
@@ -15,9 +15,8 @@ namespace TMDb
         {
             var app = new Program();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(app);
-            Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
+            Tizen.TV.UIControls.Forms.UIControls.Init();
             global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
-            Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
             app.Run(args);
         }
     }

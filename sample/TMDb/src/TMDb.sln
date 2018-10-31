@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMDb", "TMDb\TMDb\TMDb.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMDb.Tizen", "TMDb\TMDb.Tizen\TMDb.Tizen.csproj", "{CF1ACACA-2085-4B25-A97F-BE6F2E56D45D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tizen.TV.UIControls.Forms", "..\..\..\github\Tizen.TV.UIControls\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj", "{DDE81E4E-2941-4190-A777-D505A0D617DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tizen.TV.UIControls.Forms", "..\..\..\..\Tizen.TV.UIControls\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj", "{DDE81E4E-2941-4190-A777-D505A0D617DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
