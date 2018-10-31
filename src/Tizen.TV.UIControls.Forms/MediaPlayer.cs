@@ -198,7 +198,7 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Gets or sets the source of the media content.
         /// </summary>
-        [Xamarin.Forms.TypeConverter(typeof(ImageSourceConverter))]
+        [Xamarin.Forms.TypeConverter(typeof(MediaSourceConverter))]
         public MediaSource Source
         {
             get { return (MediaSource)GetValue(SourceProperty); }
