@@ -396,11 +396,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         void OnPlaybackCompleted(object sender, EventArgs e)
         {
             PlaybackCompleted?.Invoke(this, EventArgs.Empty);
-            // Workaround for TV
-            // On TV, At PlaybackComplated, Pause was not working. need to try start and pause again
-            _player.Pause();
-            _player.Start();
-            Pause();
         }
 
         async Task ChangeToIdleState()
