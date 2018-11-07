@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/RecycleItemsView_Introduction.html",
-          "hash": "U6s99MJBhBs8FHrvet3G9g=="
+          "hash": "WQ+tN38pYZMZi7aQycWVJA=="
         }
       },
       "is_incremental": false,
@@ -180,6 +180,17 @@
       "output": {
         "resource": {
           "relative_path": "guides/resources/RecycleItemsView_concept.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/RecycleItemsView_concept2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/RecycleItemsView_concept2.gif"
         }
       },
       "is_incremental": false,
