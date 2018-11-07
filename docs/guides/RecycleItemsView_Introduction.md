@@ -4,7 +4,7 @@
 
 ## Concept
 ![concept](resources/RecycleItemsView_concept.png)
-
+![concept2](resources/RecycleItemsView_concept2.gif)
 ## How to use
 ### C#
 ```c#
