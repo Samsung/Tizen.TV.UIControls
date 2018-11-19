@@ -210,13 +210,13 @@ namespace Sample
             {
                 IsToggled = true
             };
-            enablefocusHeader.Toggled += (s, e) => itemsview.FocusableOnHeader = e.Value;
+            enablefocusHeader.Toggled += (s, e) => itemsview.AllowFocusHeader = e.Value;
 
             var enablefocusFooter = new Switch()
             {
                 IsToggled = true
             };
-            enablefocusFooter.Toggled += (s, e) => itemsview.FocusableOnFooter = e.Value;
+            enablefocusFooter.Toggled += (s, e) => itemsview.AllowFocusFooter = e.Value;
 
 
             Content = new StackLayout {

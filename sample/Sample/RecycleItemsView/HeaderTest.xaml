@@ -11,7 +11,7 @@
                         ContentMargin="100"
                         ItemHeight="200"
                         Spacing="30"
-                        FocusableOnHeader="False"
+                        AllowFocusHeader="False"
                         ItemsSource="{Binding Items}">
                 <tvcontrols:RecycleItemsView.Header>
                     <StackLayout HeightRequest="200" Padding="20" BackgroundColor="Coral">

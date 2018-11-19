@@ -120,13 +120,13 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public static readonly BindableProperty FooterTemplateProperty = BindableProperty.Create(nameof(FooterTemplate), typeof(DataTemplate), typeof(RecycleItemsView), null, validateValue: (b, v) => ((RecycleItemsView)b).ValidateItemTemplate((DataTemplate)v), propertyChanged: (b, o, n) => ((RecycleItemsView)b).UpdateFooterElement());
         /// <summary>
-        /// Backing store for the EnableFocusOnHeader property.
+        /// Backing store for the AllowFocusHeader property.
         /// </summary>
-        public static readonly BindableProperty FocusableOnHeaderProperty = BindableProperty.Create(nameof(FocusableOnHeader), typeof(bool), typeof(RecycleItemsView), true);
+        public static readonly BindableProperty AllowFocusHeaderProperty = BindableProperty.Create(nameof(AllowFocusHeader), typeof(bool), typeof(RecycleItemsView), true);
         /// <summary>
-        /// Backing store for the EnableFocusOnFooter property.
+        /// Backing store for the AllowFocusFooter property.
         /// </summary>
-        public static readonly BindableProperty FocusableOnFooterProperty = BindableProperty.Create(nameof(FocusableOnFooter), typeof(bool), typeof(RecycleItemsView), true);
+        public static readonly BindableProperty AllowFocusFooterProperty = BindableProperty.Create(nameof(AllowFocusFooter), typeof(bool), typeof(RecycleItemsView), true);
 
         static readonly BindableProperty HeaderElementProperty = BindableProperty.Create(nameof(HeaderElement), typeof(View), typeof(RecycleItemsView), null, propertyChanging: (b, o, n) => ((RecycleItemsView)b).OnHeaderElementChanging(), propertyChanged: (b, o, n) => ((RecycleItemsView)b).OnHeaderElementChanged());
         static readonly BindableProperty FooterElementProperty = BindableProperty.Create(nameof(FooterElement), typeof(View), typeof(RecycleItemsView), null, propertyChanging: (b, o, n) => ((RecycleItemsView)b).OnFooterElementChanging(), propertyChanged: (b, o, n) => ((RecycleItemsView)b).OnFooterElementChanged());
@@ -329,19 +329,19 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Gets or sets the focusable on header
         /// </summary>
-        public bool FocusableOnHeader
+        public bool AllowFocusHeader
         {
-            get { return (bool)GetValue(FocusableOnHeaderProperty); }
-            set { SetValue(FocusableOnHeaderProperty, value); }
+            get { return (bool)GetValue(AllowFocusHeaderProperty); }
+            set { SetValue(AllowFocusHeaderProperty, value); }
         }
 
         /// <summary>
         /// Gets or sets the focusable on footer
         /// </summary>
-        public bool FocusableOnFooter
+        public bool AllowFocusFooter
         {
-            get { return (bool)GetValue(FocusableOnFooterProperty); }
-            set { SetValue(FocusableOnFooterProperty, value); }
+            get { return (bool)GetValue(AllowFocusFooterProperty); }
+            set { SetValue(AllowFocusFooterProperty, value); }
         }
 
         /// <summary>
@@ -571,7 +571,7 @@ namespace Tizen.TV.UIControls.Forms
                 // On top of rows
                 if (rows == 0)
                 {
-                    if (HasHeader && FocusableOnHeader)
+                    if (HasHeader && AllowFocusHeader)
                     {
                         FocusedItemIndex = HeaderIndex;
                         return true;
@@ -592,7 +592,7 @@ namespace Tizen.TV.UIControls.Forms
 
                 if (rows == RowsCount - 1)
                 {
-                    if (HasFooter && FocusableOnFooter)
+                    if (HasFooter && AllowFocusFooter)
                     {
                         FocusedItemIndex = FooterIndex;
                         return true;
@@ -1136,8 +1136,8 @@ namespace Tizen.TV.UIControls.Forms
             if (e.IsFocused && ItemsCount > 0)
             {
                 if (FocusedItemIndex == InvalidIndex ||
-                    (FocusedItemIndex == HeaderIndex && (!FocusableOnHeader || !HasHeader)) ||
-                    (FocusedItemIndex == FooterIndex && (!FocusableOnFooter || !HasFooter)))
+                    (FocusedItemIndex == HeaderIndex && (!AllowFocusHeader || !HasHeader)) ||
+                    (FocusedItemIndex == FooterIndex && (!AllowFocusFooter || !HasFooter)))
                 {
                     FocusedItemIndex = 0;
                 }
@@ -1178,11 +1178,11 @@ namespace Tizen.TV.UIControls.Forms
         async void UpdateFocus(int focusedIndex)
         {
             ItemContext context = null;
-            if (focusedIndex == HeaderIndex && HasHeader && FocusableOnHeader)
+            if (focusedIndex == HeaderIndex && HasHeader && AllowFocusHeader)
             {
                 context = HeaderContext;
             }
-            else if (focusedIndex == FooterIndex && HasFooter && FocusableOnFooter)
+            else if (focusedIndex == FooterIndex && HasFooter && AllowFocusFooter)
             {
                 context = FooterContext;
             }
