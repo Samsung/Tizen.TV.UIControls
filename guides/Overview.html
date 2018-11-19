@@ -88,17 +88,19 @@
 <p><a href="https://tizen.myget.org/feed/dotnet/package/nuget/Tizen.TV.UIControls"><img src="https://img.shields.io/tizen.myget/dotnet/vpre/Tizen.TV.UIControls.svg" alt="myget"></a></p>
 <h2 id="getting-started">Getting Started</h2>
 <h3 id="install-package">Install package</h3>
-<h4 id="nugetext">nuget.ext</h4>
-<pre><code>nuget.exe install Tizen.TV.UIControls -Version 1.0.0-beta -Source https://tizen.myget.org/F/dotnet/api/v3/index.json
+<h4 id="nugetexe">nuget.exe</h4>
+<pre><code>nuget.exe install Tizen.TV.UIControls -Version 1.0.0
 </code></pre><h4 id="csproj">.csproj</h4>
-<pre><code class="lang-xml">&lt;PackageReference Include=&quot;Tizen.TV.UIControls&quot; Version=&quot;1.0.0-beta&quot; /&gt;
+<pre><code class="lang-xml">&lt;PackageReference Include=&quot;Tizen.TV.UIControls&quot; Version=&quot;1.0.0&quot; /&gt;
 </code></pre><h3 id="use-in-xaml">Use in Xaml</h3>
 <h4 id="declaring-namespaces-for-tvuicontrols">Declaring Namespaces for TV.UIControls</h4>
 <pre><code class="lang-xml">&lt;ContentPage ... xmlns:tv=&quot;clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms&quot; ...&gt;
 </code></pre><h3 id="initialization-on-platform-code">Initialization on Platform code</h3>
-<pre><code class="lang-c#">Tizen.TV.UIControls.Forms.Renderer.UIControls.PreInit();
+<pre><code class="lang-c#">Tizen.TV.UIControls.Forms.UIControls.Init();
 global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
-Tizen.TV.UIControls.Forms.Renderer.UIControls.PostInit();
+
+//set main window provider
+Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () =&gt; app.MainWindow;
 </code></pre></article>
           </div>
           
