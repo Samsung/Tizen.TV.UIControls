@@ -7,7 +7,7 @@ The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms fram
 
 ## Getting Started
 ### Install package 
-#### nuget.ext
+#### nuget.exe
 ```
 nuget.exe install Tizen.TV.UIControls -Version 1.0.0
 ```
