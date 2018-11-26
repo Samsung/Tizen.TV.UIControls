@@ -74,20 +74,19 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         bool IsOnCurrentPage(Page currentPage, Page targetPage)
         {
-            if (currentPage.Navigation.ModalStack.Count > 0)
-                currentPage = currentPage.Navigation.ModalStack.LastOrDefault();
+            var pageToCompare = currentPage.Navigation.ModalStack.Count > 0 ? currentPage.Navigation.ModalStack.LastOrDefault() : currentPage;
 
-            if (currentPage == targetPage)
+            if (pageToCompare == targetPage)
                 return true;
 
-            while (currentPage is IPageContainer<Page>)
+            while (pageToCompare is IPageContainer<Page>)
             {
-                currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
-                if (currentPage == targetPage)
+                pageToCompare = (pageToCompare as IPageContainer<Page>).CurrentPage;
+                if (pageToCompare == targetPage)
                     return true;
             }
 
-            if (currentPage is MasterDetailPage masterDetailPage)
+            if (pageToCompare is MasterDetailPage masterDetailPage)
             {
                 if (masterDetailPage.IsPresented)
                 {
