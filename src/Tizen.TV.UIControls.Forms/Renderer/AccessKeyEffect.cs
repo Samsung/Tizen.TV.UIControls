@@ -19,6 +19,7 @@ using ElmSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using Tizen.TV.UIControls.Forms.Renderer;
+using System.Linq;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
@@ -73,6 +74,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         bool IsOnCurrentPage(Page currentPage, Page targetPage)
         {
+            if (currentPage.Navigation.ModalStack.Count > 0)
+                currentPage = currentPage.Navigation.ModalStack.LastOrDefault();
+
             if (currentPage == targetPage)
                 return true;
 
