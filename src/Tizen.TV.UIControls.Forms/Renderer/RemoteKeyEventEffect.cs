@@ -92,7 +92,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
             if (Element is Page targetPage)
             {
-                if (!IsOnCurrentPage(Application.Current.MainPage, targetPage))
+                if (!IsOnMainPage(targetPage))
                 {
                     return false;
                 }
@@ -106,13 +106,19 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             return args.Handled;
         }
 
+        bool IsOnMainPage(Page targetPage)
+        {
+            var mainPage = Application.Current.MainPage;
+            var currentPage = mainPage.Navigation.ModalStack.Count > 0 ? mainPage.Navigation.ModalStack.LastOrDefault() : mainPage;
+            return IsOnCurrentPage(currentPage, targetPage);
+        }
+
         bool IsOnCurrentPage(Page currentPage, Page targetPage)
         {
-            var pageToCompare = currentPage.Navigation.ModalStack.Count > 0 ? currentPage.Navigation.ModalStack.LastOrDefault() : currentPage;
-
-            if (pageToCompare == targetPage)
+            if (currentPage == targetPage)
                 return true;
 
+            var pageToCompare = currentPage;
             while (pageToCompare is IPageContainer<Page>)
             {
                 pageToCompare = (pageToCompare as IPageContainer<Page>).CurrentPage;
