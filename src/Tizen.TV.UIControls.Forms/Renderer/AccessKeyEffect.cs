@@ -19,6 +19,7 @@ using ElmSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using Tizen.TV.UIControls.Forms.Renderer;
+using System.Linq;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
@@ -64,11 +65,18 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             if (targetName == e.KeyName || targetName == "NUM" + e.KeyName)
             {
                 var targetPage = GetParentPage();
-                if(IsOnCurrentPage(Application.Current.MainPage, targetPage))
+                if(IsOnMainPage(targetPage))
                 {
                     ActiveOrFocusElement();
                 }
             }
+        }
+
+        bool IsOnMainPage(Page targetPage)
+        {
+            var mainPage = Application.Current.MainPage;
+            var currentPage = mainPage.Navigation.ModalStack.Count > 0 ? mainPage.Navigation.ModalStack.LastOrDefault() : mainPage;
+            return IsOnCurrentPage(currentPage, targetPage);
         }
 
         bool IsOnCurrentPage(Page currentPage, Page targetPage)
@@ -76,14 +84,15 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             if (currentPage == targetPage)
                 return true;
 
-            while (currentPage is IPageContainer<Page>)
+            var pageToCompare = currentPage;
+            while (pageToCompare is IPageContainer<Page>)
             {
-                currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
-                if (currentPage == targetPage)
+                pageToCompare = (pageToCompare as IPageContainer<Page>).CurrentPage;
+                if (pageToCompare == targetPage)
                     return true;
             }
 
-            if (currentPage is MasterDetailPage masterDetailPage)
+            if (pageToCompare is MasterDetailPage masterDetailPage)
             {
                 if (masterDetailPage.IsPresented)
                 {

@@ -19,6 +19,7 @@ using ElmSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using Tizen.TV.UIControls.Forms.Renderer;
+using System.Linq;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
 [assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]
@@ -91,7 +92,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
             if (Element is Page targetPage)
             {
-                if (!IsOnCurrentPage(Application.Current.MainPage, targetPage))
+                if (!IsOnMainPage(targetPage))
                 {
                     return false;
                 }
@@ -105,19 +106,27 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             return args.Handled;
         }
 
+        bool IsOnMainPage(Page targetPage)
+        {
+            var mainPage = Application.Current.MainPage;
+            var currentPage = mainPage.Navigation.ModalStack.Count > 0 ? mainPage.Navigation.ModalStack.LastOrDefault() : mainPage;
+            return IsOnCurrentPage(currentPage, targetPage);
+        }
+
         bool IsOnCurrentPage(Page currentPage, Page targetPage)
         {
             if (currentPage == targetPage)
                 return true;
 
-            while (currentPage is IPageContainer<Page>)
+            var pageToCompare = currentPage;
+            while (pageToCompare is IPageContainer<Page>)
             {
-                currentPage = (currentPage as IPageContainer<Page>).CurrentPage;
-                if (currentPage == targetPage)
+                pageToCompare = (pageToCompare as IPageContainer<Page>).CurrentPage;
+                if (pageToCompare == targetPage)
                     return true;
             }
 
-            if (currentPage is MasterDetailPage masterDetailPage)
+            if (pageToCompare is MasterDetailPage masterDetailPage)
             {
                 if (masterDetailPage.IsPresented)
                 {
