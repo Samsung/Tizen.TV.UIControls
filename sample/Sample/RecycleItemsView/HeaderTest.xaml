@@ -11,6 +11,7 @@
                         ContentMargin="100"
                         ItemHeight="200"
                         Spacing="30"
+                        AllowFocusHeader="False"
                         ItemsSource="{Binding Items}">
                 <tvcontrols:RecycleItemsView.Header>
                     <StackLayout HeightRequest="200" Padding="20" BackgroundColor="Coral">
@@ -25,7 +26,6 @@
                     </DataTemplate>
                 </tvcontrols:RecycleItemsView.ItemTemplate>
             </local:ColorListView>
-            <!-- spacer -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

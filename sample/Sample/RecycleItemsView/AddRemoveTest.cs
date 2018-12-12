@@ -1,6 +1,7 @@
 using TV = Tizen.TV.UIControls.Forms;
 using Xamarin.Forms;
 using System.Collections.ObjectModel;
+using System;
 
 namespace Sample
 {
@@ -9,7 +10,18 @@ namespace Sample
         protected override void OnItemFocused(object data, View targetView, bool isFocused)
         {
             if (data == Header || data == Footer)
+            {
+                if (isFocused)
+                {
+                    var old = (targetView as StackLayout).BackgroundColor;
+                    (targetView as StackLayout).BackgroundColor = Color.FromRgb(Math.Min(1.0, old.R + 0.2), Math.Min(1.0, old.G + 0.2), Math.Min(1.0, old.B + 0.2));
+                }
+                else
+                {
+                    (targetView as StackLayout).BackgroundColor = data == Header ? Color.Red : Color.Blue;
+                }
                 return;
+            }
             if (isFocused)
             {
                 (targetView as StackLayout).BackgroundColor = Color.CadetBlue;
@@ -194,6 +206,19 @@ namespace Sample
                     itemsview.Footer = null;
             };
 
+            var enablefocusHeader = new Switch()
+            {
+                IsToggled = true
+            };
+            enablefocusHeader.Toggled += (s, e) => itemsview.AllowFocusHeader = e.Value;
+
+            var enablefocusFooter = new Switch()
+            {
+                IsToggled = true
+            };
+            enablefocusFooter.Toggled += (s, e) => itemsview.AllowFocusFooter = e.Value;
+
+
             Content = new StackLayout {
                 Children = {
                     itemsview,
@@ -202,8 +227,10 @@ namespace Sample
                     move,
                     reset,
                     source,
-                    enableHeader,
-                    enableFooter
+                    new StackLayout { Orientation = StackOrientation.Horizontal, Children = {new Label { Text = "Header : "}, enableHeader }},
+                    new StackLayout { Orientation = StackOrientation.Horizontal, Children = {new Label { Text = "Footer : "}, enableFooter }},
+                    new StackLayout { Orientation = StackOrientation.Horizontal, Children = {new Label { Text = "FocusableOnHeader : "}, enablefocusHeader }},
+                    new StackLayout { Orientation = StackOrientation.Horizontal, Children = {new Label { Text = "FocusableOnFooter : " }, enablefocusFooter }},
                 }
             };
         }
