@@ -1927,6 +1927,44 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.RecycleItemsView
   nameWithType: RecycleItemsView.RecycleItemsView
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooter
+  name: AllowFocusFooter
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_AllowFocusFooter
+  commentId: P:Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooter
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooter
+  nameWithType: RecycleItemsView.AllowFocusFooter
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooter*
+  name: AllowFocusFooter
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_AllowFocusFooter_
+  commentId: Overload:Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooter
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooter
+  nameWithType: RecycleItemsView.AllowFocusFooter
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooterProperty
+  name: AllowFocusFooterProperty
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_AllowFocusFooterProperty
+  commentId: F:Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooterProperty
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusFooterProperty
+  nameWithType: RecycleItemsView.AllowFocusFooterProperty
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeader
+  name: AllowFocusHeader
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_AllowFocusHeader
+  commentId: P:Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeader
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeader
+  nameWithType: RecycleItemsView.AllowFocusHeader
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeader*
+  name: AllowFocusHeader
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_AllowFocusHeader_
+  commentId: Overload:Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeader
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeader
+  nameWithType: RecycleItemsView.AllowFocusHeader
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeaderProperty
+  name: AllowFocusHeaderProperty
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_AllowFocusHeaderProperty
+  commentId: F:Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeaderProperty
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.AllowFocusHeaderProperty
+  nameWithType: RecycleItemsView.AllowFocusHeaderProperty
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ColumnCount
   name: ColumnCount
   href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ColumnCount
