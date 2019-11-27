@@ -1,4 +1,5 @@
 using System;
+using Xamarin.Forms;
 
 namespace Sample
 {
@@ -23,8 +24,8 @@ namespace Sample
             try
             {
                 Tizen.TV.UIControls.Forms.UIControls.Init();
-                global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
                 Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => app.MainWindow;
+                Forms.Init(app);
                 app.Run(args);
             }
             catch (Exception e)

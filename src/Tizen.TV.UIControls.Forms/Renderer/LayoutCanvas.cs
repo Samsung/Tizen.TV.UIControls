@@ -23,7 +23,7 @@ using Xamarin.Forms.Platform.Tizen.Native;
 
 namespace Tizen.TV.UIControls.Forms
 {
-    public class LayoutCanvas : ElmSharp.Layout, IContainable<EvasObject>
+    public class LayoutCanvas : Layout, IContainable<EvasObject>
     {
         /// <summary>
         /// The list of Views.
