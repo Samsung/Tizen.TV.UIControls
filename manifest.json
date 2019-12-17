@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/DrawerLayout.html",
-          "hash": "dF6Cnwo0yEfD8CavdKthug=="
+          "hash": "sSm86o9Qa8Pfe6n9O60bpg=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/InputEvents.html",
-          "hash": "2dzRIq/kD2tQfa5KT6Fp5Q=="
+          "hash": "HtZVVz4zi8T9ksUFkl9DLg=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/MediaPlayer_Converter.html",
-          "hash": "Ffdj8OEr9VOn8xeKuavwZg=="
+          "hash": "7GSVoqdpu4oNJM2HKukivw=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/MediaPlayer_Introduction.html",
-          "hash": "LgZIwKvQ/L4aqn78kbTWnA=="
+          "hash": "iWzyrsIounGfI9il36Vq9w=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/Overview.html",
-          "hash": "px9aS+StSqaEQZTEhFGtXQ=="
+          "hash": "4r79eKx85hhx9gXShn/7iQ=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/RecycleItemsView_CustomEffect.html",
-          "hash": "f1nOsigqCgzpc98ecWXkZQ=="
+          "hash": "tSXDFskt3Iwe7Nn/QACKjA=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/RecycleItemsView_Introduction.html",
-          "hash": "WQ+tN38pYZMZi7aQycWVJA=="
+          "hash": "C4snp4e8Z/J5N+ZgR3Hvnw=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/Troubleshooter.html",
-          "hash": "kMRuw9ixNS2jZyQHEDbqMQ=="
+          "hash": "M2Ps58RQklovJYn/69coSg=="
         }
       },
       "is_incremental": false,
@@ -268,7 +268,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/toc.html",
-          "hash": "GFWGpR3SLAaR+jqzjiTUkg=="
+          "hash": "F/Sus31xAuE2DjHj2F4fbg=="
         }
       },
       "is_incremental": false,
@@ -280,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "PwcLOh4duYAyKnBmv8tFOg=="
+          "hash": "wgkyBL01nSdESsyeafj3cA=="
         }
       },
       "is_incremental": false,
@@ -303,7 +303,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "Hy3lEMKaCFimXa7PJiLNRA=="
+          "hash": "hwI0TdVgQM2fNlPgYR/C0A=="
         }
       },
       "is_incremental": false,
@@ -326,7 +326,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs.html",
-          "hash": "MQvj4UH5aMQ9nBtu0z9j7w=="
+          "hash": "GCat7Z3bosaPLJXEYmGjZA=="
         }
       },
       "is_incremental": false,
@@ -338,7 +338,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html",
-          "hash": "u2c+Jtvuz6+7yQu9/S7p9g=="
+          "hash": "8qqfimDOLWMeqc61MIUYXw=="
         }
       },
       "is_incremental": false,
@@ -350,7 +350,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerLayout.html",
-          "hash": "YULWOfnx8tInMKPN+ijYaA=="
+          "hash": "7eYvrWrfdLUuq+l721ZWdA=="
         }
       },
       "is_incremental": false,
@@ -362,7 +362,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerMode.html",
-          "hash": "AES+lkJa8z91dHZJnrIh1g=="
+          "hash": "kF0LB8Hu4bzT+ZN+IEHwFA=="
         }
       },
       "is_incremental": false,
@@ -374,7 +374,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.DrawerPosition.html",
-          "hash": "yDLRBz0UduzIo/1cm7mUSA=="
+          "hash": "laglcVyWbAgXxNgJTWPxUA=="
         }
       },
       "is_incremental": false,
@@ -386,7 +386,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.EmbeddingControls.html",
-          "hash": "TkgsEY3z2/my79O8F37XFA=="
+          "hash": "CIYXR2C+gwKWzA/iTj1EYg=="
         }
       },
       "is_incremental": false,
@@ -398,7 +398,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.FileMediaSource.html",
-          "hash": "pGHtjXcwe/NeRps3ipyNlw=="
+          "hash": "nNNfkHxjgYMGHRQS/WxFFw=="
         }
       },
       "is_incremental": false,
@@ -410,7 +410,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.FileMediaSourceConverter.html",
-          "hash": "RUJh3124nB7iCUfUCpyTdg=="
+          "hash": "2MpuzZW0ectQS9UF5+GmUA=="
         }
       },
       "is_incremental": false,
@@ -422,7 +422,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.Focus.html",
-          "hash": "aBcZlwDCvcJrsJtmM2/zBw=="
+          "hash": "mcu5DFpzt0LEygcrrpRKsg=="
         }
       },
       "is_incremental": false,
@@ -434,7 +434,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IOverlayOutput.html",
-          "hash": "N2BOUNihKvMhw+8rSdWrrg=="
+          "hash": "OXIL6s9ALm/Qh+pGNCNAAw=="
         }
       },
       "is_incremental": false,
@@ -446,7 +446,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IPlatformMediaPlayer.html",
-          "hash": "rHSf655+WmSBZUVH5BMeCQ=="
+          "hash": "zaMBdjktso5Wqjj7pV5dJw=="
         }
       },
       "is_incremental": false,
@@ -458,7 +458,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IRecycleItemsViewController.html",
-          "hash": "erjwwcrjeaBQ0sRzRXYepg=="
+          "hash": "ErQGjEhaBgVL/ImYU3dMXw=="
         }
       },
       "is_incremental": false,
@@ -470,7 +470,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IVideoOutput.html",
-          "hash": "+A4Q+9Two29MXjDAYNRZ7g=="
+          "hash": "eSke4932C8Logb6BVBdDDA=="
         }
       },
       "is_incremental": false,
@@ -482,7 +482,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.InputEvents.html",
-          "hash": "FGtRMXgweEpGrto3gPCa2g=="
+          "hash": "bb7gvXJBwXMfpTuk4EU/2w=="
         }
       },
       "is_incremental": false,
@@ -494,7 +494,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.ItemRealizedEventArgs.html",
-          "hash": "i+ipCFcZrHgJjA8W4eiDHA=="
+          "hash": "E4BVI8kKrIjBCqFJICkOog=="
         }
       },
       "is_incremental": false,
@@ -506,7 +506,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.ItemUnrealizedEventArgs.html",
-          "hash": "s6Ms/giNJtNe6Hsi0M3riw=="
+          "hash": "VM+ymrSHCmubwg6WVZcRtA=="
         }
       },
       "is_incremental": false,
@@ -518,7 +518,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaPlayer.html",
-          "hash": "gn9wPzS90Wu6MXcrIys0Wg=="
+          "hash": "X0j6p1+HO3B5AQ85mOs1Fw=="
         }
       },
       "is_incremental": false,
@@ -530,7 +530,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaSource.html",
-          "hash": "TOg/YQDuo2ZNSZ0k2NfYrA=="
+          "hash": "ILXdvnevo2Gy6RCnBgKJ8A=="
         }
       },
       "is_incremental": false,
@@ -542,7 +542,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaSourceConverter.html",
-          "hash": "Koz8MtiSjUGOrj8/rc09Ng=="
+          "hash": "IfSR/pqwDMCdNBUK2mXWEw=="
         }
       },
       "is_incremental": false,
@@ -554,7 +554,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaView.html",
-          "hash": "z9DtGCaZ5qCbKjOk87xc2g=="
+          "hash": "jXArOkU/dSDCXV0iI+JTJQ=="
         }
       },
       "is_incremental": false,
@@ -566,7 +566,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.OverlayMediaView.html",
-          "hash": "ayksRpkGX7JoUGZIBjFTfA=="
+          "hash": "9gxKfg+41iRRKtxsYSnkdA=="
         }
       },
       "is_incremental": false,
@@ -578,7 +578,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.OverlayPage.html",
-          "hash": "JwCRy0lt0B7qkvzFq/pong=="
+          "hash": "+tHXxVlNg4LvROgE8VfYNw=="
         }
       },
       "is_incremental": false,
@@ -590,7 +590,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.PlaybackState.html",
-          "hash": "INS4B2c7FHz71As8eS5MRw=="
+          "hash": "2TfRXlqK0hM5l8/+Pu5F2w=="
         }
       },
       "is_incremental": false,
@@ -602,7 +602,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RecycleItemsView.html",
-          "hash": "RJ62Y34CqlW0PxNycPUk4A=="
+          "hash": "SjWY5oW7yQQYsGVtOC3J8w=="
         }
       },
       "is_incremental": false,
@@ -614,7 +614,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RecycleItemsViewOrientation.html",
-          "hash": "XqY8JyxtwET1omA9EJ/wnA=="
+          "hash": "ss9bM5y4fKu53GHLAnIjFw=="
         }
       },
       "is_incremental": false,
@@ -626,7 +626,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html",
-          "hash": "Fy/0JFvxzlo3KDc35WquJw=="
+          "hash": "zagFJhUPz9HSaFbRkq40Cg=="
         }
       },
       "is_incremental": false,
@@ -638,7 +638,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteControlKeyNames.html",
-          "hash": "RfeNUsY+mm5xJXrlHhiOig=="
+          "hash": "exdq0pW7Vbql1PFyAEs3dw=="
         }
       },
       "is_incremental": false,
@@ -650,7 +650,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteControlKeyTypes.html",
-          "hash": "7uaz5b56QaqGLpZdUP/45Q=="
+          "hash": "2L0VK/dcgQyCJTrwmtd4Zw=="
         }
       },
       "is_incremental": false,
@@ -662,7 +662,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html",
-          "hash": "Os1TFJnHQ4IbWMnvYUr9kA=="
+          "hash": "JAzXu61Kr7Bi3tioRlr7Xw=="
         }
       },
       "is_incremental": false,
@@ -674,7 +674,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.UriMediaSource.html",
-          "hash": "jV70kehJwUOduBSMb8DTlw=="
+          "hash": "Mh0qbAylHgbc8xDkolh2Aw=="
         }
       },
       "is_incremental": false,
@@ -686,7 +686,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.VideoOuputType.html",
-          "hash": "TbdANSF9BcC8RAW5v04fVQ=="
+          "hash": "dLZioq9r+fOzm1Gf34HbZQ=="
         }
       },
       "is_incremental": false,
@@ -698,7 +698,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.html",
-          "hash": "We9InQZRzUj6m7oNx1oKFA=="
+          "hash": "yeNUS6suuF5JBOhiwFKyrQ=="
         }
       },
       "is_incremental": false,
@@ -710,7 +710,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "0DuMOwCN+eUUwIivIlaX3w=="
+          "hash": "5331wmfvUPBtFfK2Qse4mg=="
         }
       },
       "is_incremental": false,
@@ -722,7 +722,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "ceVf8B+9su14o5fTp/91bw=="
+          "hash": "Q6HiKlKn/jc5nan1utW4Hg=="
         }
       },
       "is_incremental": false,
@@ -734,26 +734,37 @@
       "status": {
         "can_incremental": false,
         "details": "Cannot build incrementally because last build info is missing.",
-        "incrementalPhase": "build"
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
       },
       "processors": {
         "TocDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
-        },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build"
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build"
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 10,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 32,
+          "skipped_file_count": 0
         }
       }
     },
@@ -761,7 +772,9 @@
       "status": {
         "can_incremental": false,
         "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
-        "incrementalPhase": "postProcessing"
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
       },
       "processors": {}
     }

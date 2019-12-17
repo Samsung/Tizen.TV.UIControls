@@ -455,11 +455,11 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.Focus.DownProperty
   fullName: Tizen.TV.UIControls.Forms.Focus.DownProperty
   nameWithType: Focus.DownProperty
-- uid: Tizen.TV.UIControls.Forms.Focus.GetDown(Xamarin.Forms.BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
   name: GetDown(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetDown_Xamarin_Forms_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetDown(Xamarin.Forms.BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetDown(Xamarin.Forms.BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetDown_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
   nameWithType: Focus.GetDown(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetDown*
   name: GetDown
@@ -468,11 +468,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.GetDown
   nameWithType: Focus.GetDown
-- uid: Tizen.TV.UIControls.Forms.Focus.GetLeft(Xamarin.Forms.BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
   name: GetLeft(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetLeft_Xamarin_Forms_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetLeft(Xamarin.Forms.BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft(Xamarin.Forms.BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetLeft_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
   nameWithType: Focus.GetLeft(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetLeft*
   name: GetLeft
@@ -481,11 +481,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft
   nameWithType: Focus.GetLeft
-- uid: Tizen.TV.UIControls.Forms.Focus.GetRight(Xamarin.Forms.BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
   name: GetRight(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetRight_Xamarin_Forms_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetRight(Xamarin.Forms.BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetRight(Xamarin.Forms.BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetRight_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
   nameWithType: Focus.GetRight(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetRight*
   name: GetRight
@@ -494,11 +494,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.GetRight
   nameWithType: Focus.GetRight
-- uid: Tizen.TV.UIControls.Forms.Focus.GetUp(Xamarin.Forms.BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
   name: GetUp(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetUp_Xamarin_Forms_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetUp(Xamarin.Forms.BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetUp(Xamarin.Forms.BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetUp_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
   nameWithType: Focus.GetUp(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetUp*
   name: GetUp
@@ -519,11 +519,11 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.Focus.RightProperty
   fullName: Tizen.TV.UIControls.Forms.Focus.RightProperty
   nameWithType: Focus.RightProperty
-- uid: Tizen.TV.UIControls.Forms.Focus.SetDown(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject,VisualElement)
   name: SetDown(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetDown_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetDown(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetDown(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetDown_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject, VisualElement)
   nameWithType: Focus.SetDown(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetDown*
   name: SetDown
@@ -532,11 +532,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.SetDown
   nameWithType: Focus.SetDown
-- uid: Tizen.TV.UIControls.Forms.Focus.SetLeft(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject,VisualElement)
   name: SetLeft(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetLeft_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetLeft(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetLeft_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject, VisualElement)
   nameWithType: Focus.SetLeft(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetLeft*
   name: SetLeft
@@ -545,11 +545,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft
   nameWithType: Focus.SetLeft
-- uid: Tizen.TV.UIControls.Forms.Focus.SetRight(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject,VisualElement)
   name: SetRight(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetRight_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetRight(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetRight(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetRight_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject, VisualElement)
   nameWithType: Focus.SetRight(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetRight*
   name: SetRight
@@ -558,11 +558,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.SetRight
   nameWithType: Focus.SetRight
-- uid: Tizen.TV.UIControls.Forms.Focus.SetUp(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject,VisualElement)
   name: SetUp(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetUp_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetUp(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetUp(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetUp_BindableObject_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject,VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject, VisualElement)
   nameWithType: Focus.SetUp(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetUp*
   name: SetUp
@@ -595,11 +595,11 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.InputEvents.EventHandlersProperty
   fullName: Tizen.TV.UIControls.Forms.InputEvents.EventHandlersProperty
   nameWithType: InputEvents.EventHandlersProperty
-- uid: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(Xamarin.Forms.BindableObject)
+- uid: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(BindableObject)
   name: GetAccessKey(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetAccessKey_Xamarin_Forms_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(Xamarin.Forms.BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(Xamarin.Forms.BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetAccessKey_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(BindableObject)
   nameWithType: InputEvents.GetAccessKey(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey*
   name: GetAccessKey
@@ -608,11 +608,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey
   nameWithType: InputEvents.GetAccessKey
-- uid: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(Xamarin.Forms.BindableObject)
+- uid: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(BindableObject)
   name: GetEventHandlers(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetEventHandlers_Xamarin_Forms_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(Xamarin.Forms.BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(Xamarin.Forms.BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetEventHandlers_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(BindableObject)
   nameWithType: InputEvents.GetEventHandlers(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers*
   name: GetEventHandlers
@@ -621,11 +621,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers
   nameWithType: InputEvents.GetEventHandlers
-- uid: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(Xamarin.Forms.BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
+- uid: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
   name: SetAccessKey(BindableObject, RemoteControlKeyNames)
-  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_SetAccessKey_Xamarin_Forms_BindableObject_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_
-  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(Xamarin.Forms.BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
-  fullName: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(Xamarin.Forms.BindableObject, Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
+  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_SetAccessKey_BindableObject_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_
+  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
+  fullName: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(BindableObject, Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
   nameWithType: InputEvents.SetAccessKey(BindableObject, RemoteControlKeyNames)
 - uid: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey*
   name: SetAccessKey
@@ -2257,11 +2257,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.LayoutChildren
   nameWithType: RecycleItemsView.LayoutChildren
-- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,Xamarin.Forms.View,System.Boolean)
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,View,System.Boolean)
   name: OnItemFocused(Object, View, Boolean)
-  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_OnItemFocused_System_Object_Xamarin_Forms_View_System_Boolean_
-  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,Xamarin.Forms.View,System.Boolean)
-  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object, Xamarin.Forms.View, System.Boolean)
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_OnItemFocused_System_Object_View_System_Boolean_
+  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,View,System.Boolean)
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object, View, System.Boolean)
   nameWithType: RecycleItemsView.OnItemFocused(Object, View, Boolean)
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused*
   name: OnItemFocused
@@ -2372,11 +2372,11 @@ references:
   commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Double,System.Double,System.Boolean)
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Double, System.Double, System.Boolean)
   nameWithType: RecycleItemsView.ScrollToAsync(Double, Double, Boolean)
-- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,Xamarin.Forms.ScrollToPosition,System.Boolean)
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,ScrollToPosition,System.Boolean)
   name: ScrollToAsync(Object, ScrollToPosition, Boolean)
-  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_System_Object_Xamarin_Forms_ScrollToPosition_System_Boolean_
-  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,Xamarin.Forms.ScrollToPosition,System.Boolean)
-  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object, Xamarin.Forms.ScrollToPosition, System.Boolean)
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_System_Object_ScrollToPosition_System_Boolean_
+  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,ScrollToPosition,System.Boolean)
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object, ScrollToPosition, System.Boolean)
   nameWithType: RecycleItemsView.ScrollToAsync(Object, ScrollToPosition, Boolean)
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync*
   name: ScrollToAsync
@@ -2511,11 +2511,11 @@ references:
   commentId: T:Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs
   fullName: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs
   nameWithType: RemoteControlKeyEventArgs
-- uid: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(Xamarin.Forms.VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
+- uid: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
   name: RemoteControlKeyEventArgs(VisualElement, RemoteControlKeyTypes, RemoteControlKeyNames, String)
-  href: api/Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html#Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__ctor_Xamarin_Forms_VisualElement_Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(Xamarin.Forms.VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
-  fullName: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.RemoteControlKeyEventArgs(Xamarin.Forms.VisualElement, Tizen.TV.UIControls.Forms.RemoteControlKeyTypes, Tizen.TV.UIControls.Forms.RemoteControlKeyNames, System.String)
+  href: api/Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html#Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__ctor_VisualElement_Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_System_String_
+  commentId: M:Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
+  fullName: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.RemoteControlKeyEventArgs(VisualElement, Tizen.TV.UIControls.Forms.RemoteControlKeyTypes, Tizen.TV.UIControls.Forms.RemoteControlKeyNames, System.String)
   nameWithType: RemoteControlKeyEventArgs.RemoteControlKeyEventArgs(VisualElement, RemoteControlKeyTypes, RemoteControlKeyNames, String)
 - uid: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor*
   name: RemoteControlKeyEventArgs
