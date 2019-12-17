@@ -33,7 +33,7 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (null == Control)
             {
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
+                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
                 Control.AllowFocus(true);
                 Control.KeyDown += OnKeyDown;
             }

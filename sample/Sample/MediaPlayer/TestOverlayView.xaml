@@ -5,11 +5,15 @@
              x:Class="Sample.TestOverlayView"
              NavigationPage.HasNavigationBar="false">
     <AbsoluteLayout>
+        <BoxView Color="Beige" AbsoluteLayout.LayoutBounds="0, 0, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Label Text="under video" AbsoluteLayout.LayoutBounds="0, 0, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <tvcontrols:OverlayMediaView x:Name="VideoView"  AbsoluteLayout.LayoutBounds="100, 100, 500, 300">
             <tvcontrols:MediaPlayer Source="{Binding Source}" AutoPlay="true" />
             <View.GestureRecognizers>
                 <PanGestureRecognizer  PanUpdated="OnPanUpdate" />
             </View.GestureRecognizers>
         </tvcontrols:OverlayMediaView>
+        <BoxView Color="Aqua" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Label Text="Over video" AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
     </AbsoluteLayout>
 </ContentPage>

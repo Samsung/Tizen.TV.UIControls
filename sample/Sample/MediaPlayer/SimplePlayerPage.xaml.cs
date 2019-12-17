@@ -49,5 +49,18 @@ namespace Sample
         {
             await Player.Seek((int)(Player.Duration * e.NewValue));
         }
+
+        void OnPlayClicked(object sender, EventArgs e)
+        {
+            if (Player.State != PlaybackState.Playing)
+                Player.Start();
+            else
+                Player.Pause();
+        }
+
+        void OnStopClicked(object sender, EventArgs e)
+        {
+            Player.Stop();
+        }
     }
 }

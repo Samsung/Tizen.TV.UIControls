@@ -16,6 +16,7 @@
 
 using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using MMView = Tizen.Multimedia.MediaView;
 
@@ -29,8 +30,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             if (Control == null)
             {
-                _mediaView = new MMView(Xamarin.Forms.Platform.Tizen.Forms.NativeParent);
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
+                _mediaView = new MMView(Xamarin.Forms.Forms.NativeParent);
+                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
                 Control.LayoutUpdated += (s, evt) => OnLayout();
                 Control.Children.Add(_mediaView);
                 Control.AllowFocus(true);

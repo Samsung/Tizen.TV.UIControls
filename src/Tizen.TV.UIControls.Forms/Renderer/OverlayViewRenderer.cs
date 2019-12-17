@@ -16,9 +16,10 @@
 
 using ElmSharp;
 using System;
-using System.Runtime.InteropServices;
+using System.Reflection;
 using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
+using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using EColor = ElmSharp.Color;
 
@@ -32,9 +33,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             if (Control == null)
             {
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Platform.Tizen.Forms.NativeParent));
+                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
                 Control.LayoutUpdated += (s, evt) => OnLayout();
-                _overlayHolder = new Rectangle(Xamarin.Forms.Platform.Tizen.Forms.NativeParent)
+                _overlayHolder = new ElmSharp.Rectangle(Xamarin.Forms.Forms.NativeParent)
                 {
                     Color = EColor.Transparent
                 };
@@ -55,14 +56,12 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             try
             {
-                evas_object_render_op_set(_overlayHolder.RealHandle, 2);
+                _overlayHolder.GetType()?.GetProperty("RenderOperation", BindingFlags.Public | BindingFlags.Instance)?.SetValue(_overlayHolder, 2);
             }
             catch (Exception e)
             {
                 Log.Error(UIControls.Tag, $"Error MakeTransparent : {e.Message}");
             }
         }
-        [DllImport("libevas.so.1")]
-        internal static extern void evas_object_render_op_set(IntPtr obj, int op);
     }
 }
