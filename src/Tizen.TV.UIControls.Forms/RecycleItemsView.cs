@@ -232,7 +232,7 @@ namespace Tizen.TV.UIControls.Forms
             set
             {
                 SetValue(SelectedItemProperty, value);
-                ItemSelected?.Invoke(this, new SelectedItemChangedEventArgs(SelectedItem));
+                ItemSelected?.Invoke(this, new SelectedItemChangedEventArgs(SelectedItem, GetItemIndex(SelectedItem)));
             }
         }
 
