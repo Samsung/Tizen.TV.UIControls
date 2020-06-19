@@ -53,6 +53,8 @@ namespace TMDb
                     PosterView.Focus();
                 }
             }, RemoteControlKeyTypes.KeyDown));
+
+            ArrowIcon.RotateTo(180);
         }
 
         protected override bool OnBackButtonPressed()
@@ -89,10 +91,9 @@ namespace TMDb
                 catch
                 {
                 }
-                
                 System.Console.WriteLine("Done");
             }
-            
+
             ContentHolder.Content = PosterView;
             PosterView.BindingContext = itemModel.Movies;
             BackdropImage.SetBinding(FFImageLoading.Forms.CachedImage.SourceProperty, new Binding("Backdrops", source: PosterView, converter: new PosterUrlConverter()));
@@ -137,6 +138,18 @@ namespace TMDb
             MenuItemModel itemModel = (sender as BindableObject).BindingContext as MenuItemModel;
 
             MenuList.SelectedItem = itemModel;
+        }
+
+        void OnMenuClicked(object sender, EventArgs e)
+        {
+            Drawer.IsOpen = !Drawer.IsOpen;
+            if (Drawer.IsOpen)
+            {
+                ArrowIcon.RotateTo(180);
+            } else
+            {
+                ArrowIcon.RotateTo(0);
+            }
         }
     }
 }

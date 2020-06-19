@@ -16,7 +16,7 @@
             <tv:DrawerLayout 
                     AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
                     AbsoluteLayout.LayoutFlags="All"
-                    IsOpen="{Binding IsFocused, Source={x:Reference MenuList}}" DrawerClosedWidth="50" x:Name="Drawer">
+                    IsOpen="{Binding IsFocused, Source={x:Reference MenuList}}" DrawerClosedWidth="0" x:Name="Drawer">
                 <tv:DrawerLayout.Drawer>
                     <StackLayout x:Name="MenuPanel"
                          WidthRequest="500"
@@ -51,10 +51,17 @@
                     </StackLayout>
                 </tv:DrawerLayout.Drawer>
                 <tv:DrawerLayout.Content>
-                    <ContentView x:Name="ContentHolder" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                        <local:PosterListView x:Name="PosterView" ItemHeight="600" ItemWidth="450">
-                        </local:PosterListView>
-                    </ContentView>
+                    <AbsoluteLayout>
+                        <ContentView x:Name="ContentHolder" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                            <local:PosterListView x:Name="PosterView" ItemHeight="600" ItemWidth="450">
+                            </local:PosterListView>
+                        </ContentView>
+                        <Image x:Name="ArrowIcon" Source="baseline_arrow_forward_ios_white_48dp.png" AbsoluteLayout.LayoutBounds="10, 20, 50, 50" AbsoluteLayout.LayoutFlags="None">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnMenuClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </AbsoluteLayout>
                 </tv:DrawerLayout.Content>
             </tv:DrawerLayout>
         </AbsoluteLayout>

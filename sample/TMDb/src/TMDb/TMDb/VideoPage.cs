@@ -24,7 +24,6 @@ namespace TMDb
             };
             layout.Children.Add(view, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
             Content = layout;
-
         }
     }
 }
