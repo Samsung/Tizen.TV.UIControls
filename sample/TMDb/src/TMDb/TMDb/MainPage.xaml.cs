@@ -33,9 +33,9 @@ namespace TMDb
     public partial class MainPage : ContentPage
     {
         MainPageModel _model;
-        public MainPage ()
+        public MainPage()
         {
-            InitializeComponent ();
+            InitializeComponent();
             _model = new MainPageModel();
             BindingContext = _model;
 
@@ -55,6 +55,16 @@ namespace TMDb
             }, RemoteControlKeyTypes.KeyDown));
 
             ArrowIcon.RotateTo(180);
+
+            Drawer.DrawerClosed += (s, e) =>
+            {
+                ArrowIcon.RotateTo(0);
+            };
+
+            Drawer.DrawerOpened += (s, e) =>
+            {
+                ArrowIcon.RotateTo(180);
+            };
         }
 
         protected override bool OnBackButtonPressed()
