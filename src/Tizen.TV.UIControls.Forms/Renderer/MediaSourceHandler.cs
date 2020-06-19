@@ -21,8 +21,8 @@ using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
-[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
-[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
+[assembly: ExportHandler(typeof(Tizen.TV.UIControls.Forms.UriMediaSource), typeof(UriMediaSourceHandler))]
+[assembly: ExportHandler(typeof(Tizen.TV.UIControls.Forms.FileMediaSource), typeof(FileMediaSourceHandler))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
 

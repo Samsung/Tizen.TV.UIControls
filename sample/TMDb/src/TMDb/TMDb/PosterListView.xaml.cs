@@ -73,5 +73,12 @@ namespace TMDb
                 Navigation.RemovePage(page);
             }
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            var movie = (sender as BindableObject).BindingContext as TMDbLib.Objects.Search.SearchMovie;
+            ItemsView.SelectedItem = movie;
+
+        }
     }
 }

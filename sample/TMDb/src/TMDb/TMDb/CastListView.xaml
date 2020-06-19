@@ -12,7 +12,7 @@
     </ContentView.Resources>
     <ContentView.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-            <Label Margin="30,0,0,0" FontSize="90" TextColor="#e0e0e0" Text="Cast" FontAttributes="Bold"/>
+            <Label Margin="30,0,0,0" FontSize="30" TextColor="#e0e0e0" Text="Cast" FontAttributes="Bold"/>
             <tv:RecycleItemsView ContentMargin="100, 50, 100, 50" Spacing="60" ItemHeight="300" ItemWidth="250"
                                  ItemsSource="{Binding Items}">
                 <tv:RecycleItemsView.ItemTemplate>
@@ -22,7 +22,7 @@
                             <StackLayout Padding="0" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Orientation="Vertical">
                                 <StackLayout VerticalOptions="FillAndExpand"/>
                                 <StackLayout Padding="20" HorizontalOptions="FillAndExpand" BackgroundColor="#aa000000">
-                                    <Label Text="{Binding Name}" TextColor="#e0e0e0" FontSize="50" FontAttributes="Bold" />
+                                    <Label Text="{Binding Name}" TextColor="#e0e0e0" FontSize="20" FontAttributes="Bold" />
                                 </StackLayout>
                             </StackLayout>
                         </AbsoluteLayout>

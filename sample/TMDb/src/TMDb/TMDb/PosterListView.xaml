@@ -12,19 +12,22 @@
   </ContentView.Resources>
   <ContentView.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-            <Label Margin="30,0,0,0" FontSize="90" TextColor="#e0e0e0" Text="{Binding Title}" FontAttributes="Bold"/>
+            <Label Margin="30,0,0,0" FontSize="30" TextColor="#e0e0e0" Text="{Binding Title}" FontAttributes="Bold"/>
             <tv:RecycleItemsView x:Name="ItemsView" ContentMargin="100, 50, 100, 50" Spacing="60"
                                  ItemsSource="{Binding Items}"
                                  ItemSelected="RecycleItemsView_ItemSelected">
                 <tv:RecycleItemsView.ItemTemplate>
                     <DataTemplate>
                         <AbsoluteLayout>
+                            <AbsoluteLayout.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                            </AbsoluteLayout.GestureRecognizers>
                             <ff:CachedImage LoadingPlaceholder="GitHub-Mark.png" Source="{Binding PosterPath, Converter={StaticResource posterConverter}}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
                             <StackLayout Padding="0" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Orientation="Vertical">
                                 <StackLayout VerticalOptions="FillAndExpand"/>
                                 <StackLayout Padding="30" HorizontalOptions="FillAndExpand" BackgroundColor="#aa000000">
-                                    <Label Text="{Binding Title}" TextColor="#e0e0e0" FontSize="70" FontAttributes="Bold" />
-                                    <Label Text="{Binding VoteAverage, StringFormat='Rating {0}'}" TextColor="#e0e0e0" FontSize="50" FontAttributes="Bold" />
+                                    <Label Text="{Binding Title}" TextColor="#e0e0e0" FontSize="20" FontAttributes="Bold" />
+                                    <Label Text="{Binding VoteAverage, StringFormat='Rating {0}'}" TextColor="#e0e0e0" FontSize="15" FontAttributes="Bold" />
                                 </StackLayout>
                             </StackLayout>
                         </AbsoluteLayout>

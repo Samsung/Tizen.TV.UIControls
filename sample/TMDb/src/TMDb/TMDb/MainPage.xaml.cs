@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 using TMDbLib.Objects.Search;
 using System.Collections.Generic;
 using Tizen.TV.UIControls.Forms;
+using Xamarin.Forms.Markup;
+using System;
 
 namespace TMDb
 {
@@ -80,7 +82,14 @@ namespace TMDb
                 {
                     Opacity = 0.8
                 };
-                itemModel.Movies = await LoadMovieListAsync(itemModel.Text);
+                try
+                {
+                    itemModel.Movies = await LoadMovieListAsync(itemModel.Text);
+                }
+                catch
+                {
+                }
+                
                 System.Console.WriteLine("Done");
             }
             
@@ -116,6 +125,18 @@ namespace TMDb
                 Title = menu,
                 Items = items
             };
+        }
+
+        void OnDrawerTapped(object sender, EventArgs e)
+        {
+            Drawer.IsOpen = !Drawer.IsOpen;
+        }
+
+        void TapGestureRecognizer_Tapped(object sender, System.EventArgs e)
+        {
+            MenuItemModel itemModel = (sender as BindableObject).BindingContext as MenuItemModel;
+
+            MenuList.SelectedItem = itemModel;
         }
     }
 }

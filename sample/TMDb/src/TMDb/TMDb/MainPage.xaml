@@ -23,6 +23,9 @@
                          BackgroundColor="#123163"
                          VerticalOptions="FillAndExpand"
                          Opacity="0.9">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnDrawerTapped"/>
+                        </StackLayout.GestureRecognizers>
                         <Image WidthRequest="250" VerticalOptions="CenterAndExpand" Source="PrimaryLogo_Green.png"/>
                         <local:MenuItemsView x:Name="MenuList" ItemsSource="{Binding MenuItems}"
                                          VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand"
@@ -33,11 +36,14 @@
                             <local:MenuItemsView.ItemTemplate>
                                 <DataTemplate>
                                     <StackLayout HorizontalOptions="FillAndExpand" Padding="100, 0, 100, 0">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
                                         <Label HorizontalOptions="FillAndExpand"
                                            VerticalOptions="FillAndExpand"
                                            VerticalTextAlignment="Center"
                                            Text="{Binding Text}" TextColor="#e0e0e0"
-                                           FontSize="80" FontAttributes="Bold"/>
+                                           FontSize="20" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </local:MenuItemsView.ItemTemplate>
@@ -46,7 +52,8 @@
                 </tv:DrawerLayout.Drawer>
                 <tv:DrawerLayout.Content>
                     <ContentView x:Name="ContentHolder" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
-                        <local:PosterListView x:Name="PosterView" ItemHeight="600" ItemWidth="450"></local:PosterListView>
+                        <local:PosterListView x:Name="PosterView" ItemHeight="600" ItemWidth="450">
+                        </local:PosterListView>
                     </ContentView>
                 </tv:DrawerLayout.Content>
             </tv:DrawerLayout>

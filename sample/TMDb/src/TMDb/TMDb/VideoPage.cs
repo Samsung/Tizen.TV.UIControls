@@ -1,22 +1,30 @@
-﻿using Tizen.TV.UIControls.Forms;
+﻿using System;
+using Tizen.TV.UIControls.Forms;
 using Xamarin.Forms;
 
 namespace TMDb
 {
-    public class VideoPage : OverlayPage
+    public class VideoPage : ContentPage
     {
         public VideoPage(string id)
         {
             NavigationPage.SetHasNavigationBar(this, false);
-            Player = new MediaPlayer()
+            var layout = new AbsoluteLayout
             {
-                AutoPlay = true,
-                Source = $"https://github.sec.samsung.net/pages/sngnlee/youtubedata/{id}.mp4"
+                BackgroundColor = Color.Black,
             };
-            Player.PlaybackCompleted += (s, e) =>
+            var view = new OverlayMediaView
             {
-                Navigation.PopAsync();
+                Player = new MediaPlayer()
+                {
+                    AspectMode = DisplayAspectMode.AspectFit,
+                    AutoPlay = true,
+                    Source = $"/opt/usr/home/owner/media/Downloads/{id}.mp4"
+                },
             };
+            layout.Children.Add(view, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
+            Content = layout;
+
         }
     }
 }
