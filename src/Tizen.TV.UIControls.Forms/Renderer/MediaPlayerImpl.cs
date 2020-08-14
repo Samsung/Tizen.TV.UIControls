@@ -307,13 +307,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     var renderer = Platform.GetRenderer(TargetView);
                     if (renderer is OverlayViewRenderer)
                     {
-                        var parentArea = renderer.NativeView.Geometry;
-                        if (parentArea.Width == 0 || parentArea.Height == 0)
-                        {
-                            await Task.Delay(1);
-                            parentArea = renderer.NativeView.Geometry;
-                        }
-                        bound = parentArea;
+                        // need to convert absolute coordinate from relative coordinate
+                        await Task.Delay(1);
+                        bound = renderer.NativeView.Geometry;
                     }
                     _player.DisplaySettings.SetRoi(bound.ToMultimedia());
                 }
