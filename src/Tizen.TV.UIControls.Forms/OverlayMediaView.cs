@@ -18,6 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
+using XVisualElement = Xamarin.Forms.VisualElement;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -73,7 +75,7 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-        void OnBatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<VisualElement> e)
+        void OnBatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<XVisualElement> e)
         {
             OverlayArea = Bounds;
         }

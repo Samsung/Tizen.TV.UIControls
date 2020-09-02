@@ -16,34 +16,10 @@
 
 using System;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
 
 namespace Tizen.TV.UIControls.Forms
 {
-    /// <summary>
-    /// Enumeration that specifies the video ouput.
-    /// </summary>
-    public enum VideoOuputType
-    {
-        /// <summary>
-        /// An overlay type.
-        /// </summary>
-        Overlay,
-        /// <summary>
-        /// A buffer type.
-        /// </summary>
-        Buffer,
-    }
-
-    /// <summary>
-    /// Interface indicating the ouput type of the media.
-    /// </summary>
-    public interface IVideoOutput
-    {
-        VisualElement MediaView { get; }
-        View Controller { get; set; }
-        VideoOuputType OuputType { get; }
-    }
-
     /// <summary>
     /// Interface for defining the overlay type of output.
     /// </summary>

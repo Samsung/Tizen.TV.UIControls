@@ -21,6 +21,7 @@ using System.Text;
 
 using Xamarin.Forms;
 using Tizen.TV.UIControls.Forms;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
 
 namespace Sample
 {

@@ -16,8 +16,9 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
+using XVisualElement = Xamarin.Forms.VisualElement;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -55,7 +56,7 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(PlayerProperty, value); }
         }
 
-        VisualElement IVideoOutput.MediaView => this;
+        XVisualElement IVideoOutput.MediaView => this;
 
         View IVideoOutput.Controller
         {

@@ -15,6 +15,8 @@
  */
 
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration.TizenSpecific;
+using XVisualElement = Xamarin.Forms.VisualElement;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -45,7 +47,8 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public virtual VideoOuputType OuputType => VideoOuputType.Buffer;
 
-        VisualElement IVideoOutput.MediaView => this;
+        XVisualElement IVideoOutput.MediaView => this;
+
         View IVideoOutput.Controller
         {
             get
