@@ -16,13 +16,14 @@
 
 using System.Threading.Tasks;
 using Tizen.Multimedia;
-using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
+using TUriMediaSource = Tizen.TV.UIControls.Forms.UriMediaSource;
+using TFileMediaSource = Tizen.TV.UIControls.Forms.FileMediaSource;
 
-[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
-[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
+[assembly: ExportHandler(typeof(TUriMediaSource), typeof(UriMediaSourceHandler))]
+[assembly: ExportHandler(typeof(TFileMediaSource), typeof(FileMediaSourceHandler))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
 
