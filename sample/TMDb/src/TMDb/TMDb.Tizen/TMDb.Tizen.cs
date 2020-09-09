@@ -1,8 +1,10 @@
-using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Tizen;
+using Tizen.TV.UIControls.Forms;
 
 namespace TMDb
 {
-    class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
+    class Program : FormsApplication
     {
         protected override void OnCreate()
         {
@@ -15,8 +17,8 @@ namespace TMDb
         {
             var app = new Program();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(app);
-            Tizen.TV.UIControls.Forms.UIControls.Init();
-            global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
+            UIControls.Init();
+            Forms.Init(app);
             app.Run(args);
         }
     }

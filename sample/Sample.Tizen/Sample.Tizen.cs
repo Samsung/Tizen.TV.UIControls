@@ -1,9 +1,11 @@
 using System;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Tizen;
+using Tizen.TV.UIControls.Forms;
 
 namespace Sample
 {
-    class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
+    class Program : FormsApplication
     {
         protected override void OnPreCreate()
         {
@@ -23,8 +25,8 @@ namespace Sample
             var app = new Program();
             try
             {
-                Tizen.TV.UIControls.Forms.UIControls.Init();
-                Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => app.MainWindow;
+                UIControls.Init();
+                UIControls.MainWindowProvider = () => app.MainWindow;
                 Forms.Init(app);
                 app.Run(args);
             }
