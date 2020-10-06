@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             Title="Focus navigation"
+             x:Class="Sample.Focus.FocusFrameTest">
+    <ContentPage.Content>
+        <Grid RowDefinitions="100, 100, 100, *"
+              ColumnDefinitions="*, *, *, *">
+            <tv:FocusFrame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Entry Placeholder="Entry1" />
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2">
+                <Entry Placeholder="Entry2" />
+            </tv:FocusFrame>
+
+            <tv:FocusFrame Grid.Row="1" Grid.Column="0">
+                <CheckBox/>
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="1" Grid.Column="1">
+                <CheckBox/>
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="1" Grid.Column="2">
+                <CheckBox/>
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="1" Grid.Column="3">
+                <CheckBox/>
+            </tv:FocusFrame>
+
+            <tv:FocusFrame Grid.Row="2" Grid.Column="0">
+                <Button Text="1"/>
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="2" Grid.Column="1">
+                <Button Text="2"/>
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="2" Grid.Column="2">
+                <Button Text="3"/>
+            </tv:FocusFrame>
+            <tv:FocusFrame Grid.Row="2" Grid.Column="3">
+                <Button Text="4"/>
+            </tv:FocusFrame>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

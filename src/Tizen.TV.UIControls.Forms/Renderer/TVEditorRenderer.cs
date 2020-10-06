@@ -49,6 +49,12 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                         Control.HideInputPanel();
                     }
                 }), RemoteControlKeyTypes.KeyDown));
+
+                if (Control is Xamarin.Forms.Platform.Tizen.Native.Entry nentry)
+                {
+                    nentry.EntryLayoutFocused += OnFocused;
+                    nentry.EntryLayoutUnfocused += OnUnfocused;
+                }
             }
         }
     }

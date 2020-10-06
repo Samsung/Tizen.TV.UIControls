@@ -52,6 +52,11 @@ namespace Sample.Focus
                     Name = "Focus Test3",
                     PageType = typeof(FocusTest3)
                 },
+                new TestModel
+                {
+                    Name = "Focus Frame",
+                    PageType = typeof(FocusFrameTest)
+                }
             };
         }
     }

@@ -15,6 +15,7 @@
  */
 
 using System;
+using Tizen.Network.Nfc;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
@@ -37,7 +38,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
-                        Control.SetFocus(false);
+                        Element.Unfocus();
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             Element.Text = Control.Text;
@@ -49,6 +50,12 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                         Control.HideInputPanel();
                     }
                 }), RemoteControlKeyTypes.KeyDown));
+
+                if (Control is Xamarin.Forms.Platform.Tizen.Native.Entry nentry)
+                {
+                    nentry.EntryLayoutFocused += OnFocused;
+                    nentry.EntryLayoutUnfocused += OnUnfocused;
+                }
             }
         }
     }
