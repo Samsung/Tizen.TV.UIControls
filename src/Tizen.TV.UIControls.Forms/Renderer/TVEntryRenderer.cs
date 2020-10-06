@@ -38,7 +38,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
-                        Element.Unfocus();
+                        FocusSearch(true)?.SetFocus(true);
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             Element.Text = Control.Text;
