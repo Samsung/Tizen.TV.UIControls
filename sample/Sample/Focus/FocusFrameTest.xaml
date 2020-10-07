@@ -17,7 +17,7 @@
             <tv:FocusFrame Grid.Row="1" Grid.Column="0">
                 <CheckBox/>
             </tv:FocusFrame>
-            <tv:FocusFrame Grid.Row="1" Grid.Column="1">
+            <tv:FocusFrame FocusedColor="Yellow" Grid.Row="1" Grid.Column="1">
                 <CheckBox/>
             </tv:FocusFrame>
             <tv:FocusFrame Grid.Row="1" Grid.Column="2">
@@ -30,7 +30,7 @@
             <tv:FocusFrame Grid.Row="2" Grid.Column="0">
                 <Button Text="1"/>
             </tv:FocusFrame>
-            <tv:FocusFrame Grid.Row="2" Grid.Column="1">
+            <tv:FocusFrame FocusedColor="Red" Grid.Row="2" Grid.Column="1">
                 <Button Text="2"/>
             </tv:FocusFrame>
             <tv:FocusFrame Grid.Row="2" Grid.Column="2">

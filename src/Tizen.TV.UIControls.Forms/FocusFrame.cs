@@ -5,11 +5,20 @@ namespace Tizen.TV.UIControls.Forms
 {
     public class FocusFrame : Frame
     {
+
+        public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Color.Orange);
+
         public FocusFrame()
         {
             Padding = 10;
             BorderColor = Color.Transparent;
             HasShadow = false;
+        }
+
+        public Color FocusedColor
+        {
+            get => (Color)GetValue(FocusedColorProperty);
+            set => SetValue(FocusedColorProperty, value);
         }
 
         protected override void OnPropertyChanging([CallerMemberName] string propertyName = null)
@@ -40,7 +49,7 @@ namespace Tizen.TV.UIControls.Forms
 
         protected virtual void OnContentFocused(bool isFocused)
         {
-            BackgroundColor = isFocused ? Color.Orange : Color.Transparent;
+            BackgroundColor = isFocused ? FocusedColor : Color.Transparent;
         }
 
         void OnContentFocused(object sender, FocusEventArgs e)
