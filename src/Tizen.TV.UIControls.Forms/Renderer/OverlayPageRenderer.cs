@@ -22,7 +22,7 @@ using Xamarin.Forms.Platform.Tizen;
 [assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    class OverlayPageRenderer : PageRenderer
+    public class OverlayPageRenderer : PageRenderer
     {
     }
 }

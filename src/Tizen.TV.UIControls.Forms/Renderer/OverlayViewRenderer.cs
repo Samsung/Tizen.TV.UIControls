@@ -26,7 +26,7 @@ using EColor = ElmSharp.Color;
 [assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>
+    public class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>
     {
         EvasObject _overlayHolder;
         protected override void OnElementChanged(ElementChangedEventArgs<OverlayMediaView> e)
