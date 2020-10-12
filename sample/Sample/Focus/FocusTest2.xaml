@@ -16,7 +16,6 @@
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 tv:Focus.Left="{x:Reference Head}"
                 tv:Focus.Right="{x:Reference Tail}"
-                ItemHeight="200"
                 ItemWidth="100"
                 ContentMargin="20">
                 <tv:RecycleItemsView.ItemsSource>
