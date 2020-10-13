@@ -15,7 +15,6 @@
  */
 
 using System;
-using Tizen.Network.Nfc;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;

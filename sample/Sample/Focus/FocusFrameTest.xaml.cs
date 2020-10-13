@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using Tizen.TV.UIControls.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +10,21 @@ namespace Sample.Focus
         public FocusFrameTest()
         {
             InitializeComponent();
+        }
+    }
+
+    public class MyFocusFrame : FocusFrame
+    {
+        protected override void OnContentFocused(bool isFocused)
+        {
+            if (isFocused)
+            {
+                Content.ScaleTo(1.5);
+            }
+            else
+            {
+                Content.ScaleTo(1);
+            }
         }
     }
 }
