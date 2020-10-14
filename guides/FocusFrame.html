@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FocusFrame </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="FocusFrame ">
+    <meta name="generator" content="docfx 1.0.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="focusframe">FocusFrame</h1>
+
+<p><code>FocusFrame</code> helps developers to decorate a focused view. it contain a view to represent and if it got a focus, backgroud color of <code>FocusFrame</code> is changed</p>
+<h2 id="how-to-use-it">How to use it</h2>
+<p> Set a <code>Content</code> property using a view that a target of focus, set <code>FocusedColor</code> to want. (default color is Orange)</p>
+<h3 id="xaml">xaml</h3>
+<pre><code class="lang-xml">&lt;ContentPage xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             xmlns:tv=&quot;clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms&quot;
+             x:Class=&quot;Sample.FocusFrameTest&quot;
+             x:Name=&quot;rootPage&quot;&gt;
+    &lt;ContentPage.Content&gt;
+        &lt;StackLayout&gt;
+            &lt;tv:FocusFrame FocusedColor=&quot;Blue&quot;&gt;
+                &lt;Button Text=&quot;Button1&quot;/&gt;
+            &lt;/tv:FocusFrame&gt;
+        &lt;/StackLayout&gt;
+    &lt;/ContentPage.Content&gt;
+&lt;/ContentPage&gt;
+</code></pre><h3 id="c">C#</h3>
+<pre><code class="lang-C#">public class FocusFrameTest : ContentPage
+{
+    public FocusFrameTest()
+    {
+        Button button1 = new Button { Text = &quot;Button1&quot; };
+        FocusFrame focusFrame = new FocusFrame
+        {
+            FocusedColor = Color.Blue,
+            Content = Button1
+        };
+
+        Content = new StackLayout
+        {
+            Children =
+            {
+                focusFrame,
+            }
+        };
+    }
+}
+</code></pre><h2 id="how-to-override-the-focus-effect">How to override the focus effect</h2>
+<p> Overriding <code>OnContentFocused</code> method and implements decorating code</p>
+<pre><code class="lang-C#">public class MyFocusFrame : FocusFrame
+{
+    protected override void OnContentFocused(bool isFocused)
+    {
+        if (isFocused)
+        {
+            Content.ScaleTo(1.5);
+        }
+        else
+        {
+            Content.ScaleTo(1);
+        }
+    }
+}
+</code></pre><pre><code class="lang-xml">&lt;ContentPage xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+             xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+             xmlns:tv=&quot;clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms&quot;
+             xmlns:local=&quot;clr-namespace:Sample.Focus&quot;
+             x:Class=&quot;Sample.FocusFrameTest&quot;&gt;
+    &lt;ContentPage.Content&gt;
+        &lt;StackLayout&gt;
+            &lt;local:MyFocusFrame&gt;
+                &lt;Button Text=&quot;Button1&quot;/&gt;
+            &lt;/tv:MyFocusFrame&gt;
+        &lt;/StackLayout&gt;
+    &lt;/ContentPage.Content&gt;
+&lt;/ContentPage&gt;
+</code></pre></article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

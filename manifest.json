@@ -26,6 +26,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../guides/FocusFrame.md",
+      "output": {
+        ".html": {
+          "relative_path": "guides/FocusFrame.html",
+          "hash": "0SEUAbzwtRm9W0RywgRJmQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../guides/InputEvents.md",
       "output": {
         ".html": {
@@ -268,7 +280,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/toc.html",
-          "hash": "F/Sus31xAuE2DjHj2F4fbg=="
+          "hash": "ftbXb3JaUvNgug9hcaWgcA=="
         }
       },
       "is_incremental": false,
@@ -423,6 +435,18 @@
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.Focus.html",
           "hash": "mcu5DFpzt0LEygcrrpRKsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.FocusFrame.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.FocusFrame.html",
+          "hash": "tPII4GA3RJ0KxtllUnroww=="
         }
       },
       "is_incremental": false,
@@ -698,7 +722,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.html",
-          "hash": "yeNUS6suuF5JBOhiwFKyrQ=="
+          "hash": "l9NDxrrwHdubu25TgI2JzQ=="
         }
       },
       "is_incremental": false,
@@ -710,7 +734,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "5331wmfvUPBtFfK2Qse4mg=="
+          "hash": "BmFijI3FZexV2OwVr6T8XQ=="
         }
       },
       "is_incremental": false,
@@ -757,13 +781,13 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 32,
+          "total_file_count": 33,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 10,
+          "total_file_count": 11,
           "skipped_file_count": 0
         }
       }
