@@ -37,7 +37,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
-                        Control.SetFocus(false);
+                        FocusSearch(true)?.SetFocus(true);
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             Element.Text = Control.Text;
@@ -49,6 +49,12 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                         Control.HideInputPanel();
                     }
                 }), RemoteControlKeyTypes.KeyDown));
+
+                if (Control is Xamarin.Forms.Platform.Tizen.Native.Entry nentry)
+                {
+                    nentry.EntryLayoutFocused += OnFocused;
+                    nentry.EntryLayoutUnfocused += OnUnfocused;
+                }
             }
         }
     }
