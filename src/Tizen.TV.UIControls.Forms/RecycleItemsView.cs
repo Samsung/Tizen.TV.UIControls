@@ -502,6 +502,11 @@ namespace Tizen.TV.UIControls.Forms
         public event EventHandler<SelectedItemChangedEventArgs> ItemSelected;
 
         /// <summary>
+        /// Event that is raised when a new item is focused.
+        /// </summary>
+        public event EventHandler<FocusedItemChangedEventArgs> ItemFocused;
+
+        /// <summary>
         /// Event that is raised when a item's view is attached the RecycleItemsView.
         /// </summary>
         public event EventHandler<ItemRealizedEventArgs> ItemRealized;
@@ -729,6 +734,7 @@ namespace Tizen.TV.UIControls.Forms
                     SetValue(FocusedViewPropertyKey, targetView);
             }
             OnItemFocused(data, targetView, isFocused);
+            ItemFocused?.Invoke(this, new FocusedItemChangedEventArgs(FocusedItem, GetItemIndex(FocusedItem)));
         }
 
         bool ShouldReArrange()
