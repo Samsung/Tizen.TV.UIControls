@@ -577,6 +577,51 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.Focus.UpProperty
   fullName: Tizen.TV.UIControls.Forms.Focus.UpProperty
   nameWithType: Focus.UpProperty
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs
+  name: FocusedItemChangedEventArgs
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html
+  commentId: T:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs
+  nameWithType: FocusedItemChangedEventArgs
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.#ctor(System.Object,System.Int32)
+  name: FocusedItemChangedEventArgs(Object, Int32)
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html#Tizen_TV_UIControls_Forms_FocusedItemChangedEventArgs__ctor_System_Object_System_Int32_
+  commentId: M:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.#ctor(System.Object,System.Int32)
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemChangedEventArgs(System.Object, System.Int32)
+  nameWithType: FocusedItemChangedEventArgs.FocusedItemChangedEventArgs(Object, Int32)
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.#ctor*
+  name: FocusedItemChangedEventArgs
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html#Tizen_TV_UIControls_Forms_FocusedItemChangedEventArgs__ctor_
+  commentId: Overload:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.#ctor
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemChangedEventArgs
+  nameWithType: FocusedItemChangedEventArgs.FocusedItemChangedEventArgs
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItem
+  name: FocusedItem
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html#Tizen_TV_UIControls_Forms_FocusedItemChangedEventArgs_FocusedItem
+  commentId: P:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItem
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItem
+  nameWithType: FocusedItemChangedEventArgs.FocusedItem
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItem*
+  name: FocusedItem
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html#Tizen_TV_UIControls_Forms_FocusedItemChangedEventArgs_FocusedItem_
+  commentId: Overload:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItem
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItem
+  nameWithType: FocusedItemChangedEventArgs.FocusedItem
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex
+  name: FocusedItemIndex
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html#Tizen_TV_UIControls_Forms_FocusedItemChangedEventArgs_FocusedItemIndex
+  commentId: P:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex
+  nameWithType: FocusedItemChangedEventArgs.FocusedItemIndex
+- uid: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex*
+  name: FocusedItemIndex
+  href: api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html#Tizen_TV_UIControls_Forms_FocusedItemChangedEventArgs_FocusedItemIndex_
+  commentId: Overload:Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex
+  nameWithType: FocusedItemChangedEventArgs.FocusedItemIndex
 - uid: Tizen.TV.UIControls.Forms.FocusFrame
   name: FocusFrame
   href: api/Tizen.TV.UIControls.Forms.FocusFrame.html
@@ -2227,6 +2272,12 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.InitializeComponent
   nameWithType: RecycleItemsView.InitializeComponent
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ItemFocused
+  name: ItemFocused
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ItemFocused
+  commentId: E:Tizen.TV.UIControls.Forms.RecycleItemsView.ItemFocused
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ItemFocused
+  nameWithType: RecycleItemsView.ItemFocused
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ItemHeight
   name: ItemHeight
   href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ItemHeight

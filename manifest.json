@@ -454,6 +454,18 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.html",
+          "hash": "IKJaSNEFTWt4liab3VB8JQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.IOverlayOutput.yml",
       "output": {
         ".html": {
@@ -626,7 +638,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.RecycleItemsView.html",
-          "hash": "SjWY5oW7yQQYsGVtOC3J8w=="
+          "hash": "iRvqsZY6zkd344sclWlpxw=="
         }
       },
       "is_incremental": false,
@@ -722,7 +734,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.html",
-          "hash": "l9NDxrrwHdubu25TgI2JzQ=="
+          "hash": "8bEs/8d8/Z7WWmSLSN/yNg=="
         }
       },
       "is_incremental": false,
@@ -734,7 +746,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "BmFijI3FZexV2OwVr6T8XQ=="
+          "hash": "Iyn1BzfASrVd0u8BdvVMIw=="
         }
       },
       "is_incremental": false,
@@ -778,16 +790,16 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 33,
-          "skipped_file_count": 0
-        },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 11,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 34,
           "skipped_file_count": 0
         }
       }
