@@ -111,6 +111,12 @@ namespace Sample.RecycleItemsView
                     PageType = typeof(HeaderTest),
                     Items = ColorModel.MakeModel()
                 },
+                new ItemsModel
+                {
+                    Name = "ItemFocused Event Test",
+                    PageType = typeof(ItemFocusedEventTest),
+                    Items = ColorModel.MakeModel()
+                },
             };
         }
     }

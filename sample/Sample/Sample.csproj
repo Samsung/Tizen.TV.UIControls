@@ -21,6 +21,9 @@
     <Compile Update="MediaPlayer\TestEmbeddingControlOnPage.xaml.cs">
       <DependentUpon>TestEmbeddingControlOnPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="RecycleItemsView\ItemFocusedEventTest.xaml.cs">
+      <DependentUpon>ItemFocusedEventTest.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="DrawerLayout\DrawerMainPage.xaml">
