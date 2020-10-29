@@ -25,9 +25,9 @@ namespace Sample
             var app = new Program();
             try
             {
-                UIControls.Init();
-                UIControls.MainWindowProvider = () => app.MainWindow;
                 Forms.Init(app);
+                // UIControls.Init() should be called after Forms.Init()
+                UIControls.Init(new InitOptions(app));
                 app.Run(args);
             }
             catch (Exception e)

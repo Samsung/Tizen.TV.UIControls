@@ -16,12 +16,52 @@
 
 using System;
 using ElmSharp;
+using Tizen.Applications;
+using Tizen.TV.UIControls.Forms.Renderer;
+using Xamarin.Forms.Platform.Tizen;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    /// <summary>
+    /// Initialization Option
+    /// </summary>
+    public class InitOptions
+    {
+        /// <summary>
+        /// Gets or sets the context for CoreApplication
+        /// </summary>
+        public CoreApplication Context { get; set; }
+
+        /// <summary>
+        /// Gets or sets the main window provider
+        /// </summary>
+        public Func<Window> MainWindowProvider { get; set; }
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <param name="application"></param>
+        public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
+
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="application"></param>
+        /// <param name="mainWindowProvider"></param>
+        public InitOptions(CoreApplication application, Func<Window> mainWindowProvider)
+        {
+            Context = application;
+            MainWindowProvider = mainWindowProvider;
+        }
+    }
+
     public static class UIControls
     {
         public static readonly string Tag = "TV.UIControls";
+
+        public static bool IsInitialized { get; private set; }
+
         public static Func<Window> MainWindowProvider { get; set; }
 
         /// <summary>
@@ -29,7 +69,24 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public static void Init()
         {
-            var temp = DateTime.Now;
+            if (IsInitialized) return;
+            IsInitialized = true;
+        }
+
+        /// <summary>
+        /// Init with options
+        /// </summary>
+        /// <param name="options"></param>
+        public static void Init(InitOptions options)
+        {
+            var resPath = options.Context?.DirectoryInfo?.Resource;
+            if (!string.IsNullOrEmpty(resPath))
+            {
+                ThemeLoader.Initialize(resPath);
+            }
+
+            MainWindowProvider = options.MainWindowProvider;
+            Init();
         }
     }
 }

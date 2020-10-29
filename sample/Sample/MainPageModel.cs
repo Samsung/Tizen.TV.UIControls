@@ -67,6 +67,11 @@ namespace Sample
                 {
                     Name = "ContentButton Test",
                     PageType = typeof(ContentButton.ContentButtonTest)
+                },
+                new TestCategory
+                {
+                    Name = "ContentPopup Test",
+                    PageType = typeof(ContentPopup.ContentPopupMainPage),
                 }
             };
         }

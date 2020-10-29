@@ -36,4 +36,14 @@
     <PackageReference Include="Tizen.NET" Version="4.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\*.targets" PackagePath="build\" />
+    <Content Include="..\..\theme\*.edj" PackagePath="content\theme\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="..\..\theme\tizen-tv-ui-controls-theme.edj" />
+    <Content Remove="..\..\Tizen.TV.UIControls.targets" />
+  </ItemGroup>
+
 </Project>

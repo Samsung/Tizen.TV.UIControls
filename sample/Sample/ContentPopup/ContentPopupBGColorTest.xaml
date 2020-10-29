@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Background Color Test"
+             x:Class="Sample.ContentPopup.ContentPopupBGColorTest">
+    <ContentPage.Content>
+        <StackLayout Padding="0,50,0,50">
+            <Label
+                    x:Name="label1"
+                    HorizontalOptions="CenterAndExpand"
+                    Text="ContentPopup test"
+                    VerticalOptions="Start" />
+            <Button
+                    AutomationId="dismisstest1"
+                    x:Name="button1"
+                    Clicked="OnContentPopupTest1Clicked"
+                    HeightRequest="200"
+                    HorizontalOptions="Center"
+                    Text="Show Popup"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="500" />
+            <Button
+                    AutomationId="dismisstest2"
+                    x:Name="button2"
+                    Clicked="OnContentPopupTest2Clicked"
+                    HeightRequest="100"
+                    HorizontalOptions="Center"
+                    Text="Show Popup (Full Screen)"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="500" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

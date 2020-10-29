@@ -12,5 +12,7 @@
 ## [Introduction](FocusFrame.md)
 #ContentButton
 ## [Introduction](ContentButton.md)
+#ContentPopup
+## [Introduction](ContentPopup.md)
 #Troubleshooter
 ## [Solved Problem](Troubleshooter.md)
