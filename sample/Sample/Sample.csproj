@@ -12,6 +12,15 @@
     <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="ContentPopup\ContentPopupBGColorTest.xaml.cs">
+      <DependentUpon>ContentPopupBGColorTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ContentPopup\ContentPopupBasicTest.xaml.cs">
+      <DependentUpon>ContentPopupBasicTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ContentPopup\ContentPopupMainPage.xaml.cs">
+      <DependentUpon>ContentPopupMainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Entry\EntryMainPage.xaml.cs">
       <DependentUpon>EntryMainPage.xaml</DependentUpon>
     </Compile>
