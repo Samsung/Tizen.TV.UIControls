@@ -10,5 +10,7 @@
 ## [Introduction](DrawerLayout.md)
 #FocusFrame
 ## [Introduction](FocusFrame.md)
+#ContentButton
+## [Introduction](ContentButton.md)
 #Troubleshooter
 ## [Solved Problem](Troubleshooter.md)

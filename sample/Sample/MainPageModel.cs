@@ -62,6 +62,11 @@ namespace Sample
                 {
                     Name = "Custom Focus Test",
                     PageType = typeof(Focus.FocusMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "ContentButton Test",
+                    PageType = typeof(ContentButton.ContentButtonTest)
                 }
             };
         }
