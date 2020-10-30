@@ -9,11 +9,11 @@ The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms fram
 ### Install package 
 #### nuget.exe
 ```
-nuget.exe install Tizen.TV.UIControls -Version 1.0.0
+nuget.exe install Tizen.TV.UIControls -Version 1.1.0
 ```
 #### .csproj
 ```xml
-<PackageReference Include="Tizen.TV.UIControls" Version="1.0.0" />
+<PackageReference Include="Tizen.TV.UIControls" Version="1.1.0" />
 ```
 ### Use in Xaml
 #### Declaring Namespaces for TV.UIControls
@@ -21,11 +21,20 @@ nuget.exe install Tizen.TV.UIControls -Version 1.0.0
 <ContentPage ... xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms" ...>
 ```
 ### Initialization on Platform code
+- New way (since 1.1.0-pre2)
 ``` c#
-Tizen.TV.UIControls.Forms.UIControls.Init();
-//set main window provider
-Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => app.MainWindow;
 Forms.Init(app);
+// UIControls.Init() should be called after Forms.Init() 
+// No MainWindowProvider required for MediaPlayer
+UIControls.Init(new InitOptions(app));
+```
+
+- Legacy (~ 1.0.0)
+``` c#
+Forms.Init(app);
+UIControls.Init();
+//set main window provider
+UIControls.MainWindowProvider = () => app.MainWindow;
 ```
 
 ### Guides
