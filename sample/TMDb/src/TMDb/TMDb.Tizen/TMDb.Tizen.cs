@@ -9,16 +9,20 @@ namespace TMDb
         protected override void OnCreate()
         {
             base.OnCreate();
-            Tizen.TV.UIControls.Forms.UIControls.MainWindowProvider = () => MainWindow;
             LoadApplication(new App());
         }
 
         static void Main(string[] args)
         {
             var app = new Program();
+            var option = new InitializationOptions(app)
+            {
+                DisplayResolutionUnit = DisplayResolutionUnit.Pixel()
+            };
+            Forms.Init(option);
+            // UIControls.Init() should be called after Forms.Init()
+            UIControls.Init(new InitOptions(app));
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(app);
-            UIControls.Init();
-            Forms.Init(app);
             app.Run(args);
         }
     }

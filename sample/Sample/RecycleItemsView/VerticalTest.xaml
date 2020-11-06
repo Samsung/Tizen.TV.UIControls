@@ -10,10 +10,10 @@
                 <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue"
                         Orientation="Vertical"
                         ScrollPolicy="Center"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -26,10 +26,10 @@
                 <tvcontrols:RecycleItemsView BackgroundColor="DeepPink"
                         Orientation="Vertical"
                         ScrollPolicy="MakeVisible"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -42,10 +42,10 @@
                 <tvcontrols:RecycleItemsView BackgroundColor="Coral"
                         Orientation="Vertical"
                         ScrollPolicy="Start"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -58,10 +58,10 @@
                 <tvcontrols:RecycleItemsView BackgroundColor="Moccasin"
                         Orientation="Vertical"
                         ScrollPolicy="End"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>

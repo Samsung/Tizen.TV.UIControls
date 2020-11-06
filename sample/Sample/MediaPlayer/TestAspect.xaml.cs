@@ -35,20 +35,20 @@ namespace Sample
 
         void OnAspectFill(object sender, EventArgs e)
         {
-            Player.AspectMode = DisplayAspectMode.AspectFill;
+            MediaPlayer.AspectMode = DisplayAspectMode.AspectFill;
         }
         void OnAspectFit(object sender, EventArgs e)
         {
-            Player.AspectMode = DisplayAspectMode.AspectFit;
+            MediaPlayer.AspectMode = DisplayAspectMode.AspectFit;
         }
         void OnOriginal(object sender, EventArgs e)
         {
-            Player.AspectMode = DisplayAspectMode.OrignalSize;
+            MediaPlayer.AspectMode = DisplayAspectMode.OrignalSize;
         }
 
         void OnFill(object sender, EventArgs e)
         {
-            Player.AspectMode = DisplayAspectMode.Fill;
+            MediaPlayer.AspectMode = DisplayAspectMode.Fill;
         }
     }
 }

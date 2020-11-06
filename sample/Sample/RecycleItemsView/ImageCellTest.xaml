@@ -8,10 +8,10 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Label Text="Music" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
             <tvcontrols:RecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Beige"
-                    ContentMargin="100"
-                    ItemWidth="400"
-                    ItemHeight="400"
-                    Spacing="30"
+                    ContentMargin="200"
+                    ItemWidth="800"
+                    ItemHeight="800"
+                    Spacing="60"
                     Footer="More"
                     ItemsSource="{Binding Items}"
                     ItemSelected="OnSelected">
@@ -22,8 +22,8 @@
                 </tvcontrols:RecycleItemsView.ItemTemplate>
                 <tvcontrols:RecycleItemsView.FooterTemplate>
                     <DataTemplate>
-                        <StackLayout WidthRequest="300" Padding="20" BackgroundColor="#5b6b72">
-                            <Image Source="img_profile_c.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="200"/>
+                        <StackLayout WidthRequest="600" Padding="40" BackgroundColor="#5b6b72">
+                            <Image Source="img_profile_c.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="400"/>
                             <Label Text="Music" TextColor="AntiqueWhite" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
                         </StackLayout>
                     </DataTemplate>

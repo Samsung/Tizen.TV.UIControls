@@ -26,7 +26,7 @@ namespace Sample.DrawerLayout
                 {
                     VerticalOptions = LayoutOptions.FillAndExpand,
                     HorizontalOptions = LayoutOptions.FillAndExpand,
-                    Padding = 20,
+                    Padding = 40,
                     Children =
                     {
                         label,

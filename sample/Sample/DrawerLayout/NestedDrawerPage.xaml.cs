@@ -4,19 +4,6 @@ using Xamarin.Forms.Xaml;
 
 namespace Sample.DrawerLayout
 {
-    public class FocusedMenuItemsView : MenuItemsView
-    {
-        public event EventHandler ItemFocused;
-        protected override void OnItemFocused(object data, View targetView, bool isFocused)
-        {
-            base.OnItemFocused(data, targetView, isFocused);
-            if (isFocused)
-            {
-                ItemFocused?.Invoke(this, EventArgs.Empty);
-            }
-        }
-    }
-
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NestedDrawerPage : ContentPage
     {

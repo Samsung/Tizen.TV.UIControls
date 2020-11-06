@@ -8,13 +8,13 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand">
             <local:ColorListView Orientation="Vertical" ColumnCount="5"
-                        ContentMargin="100"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemHeight="400"
+                        Spacing="60"
                         AllowFocusHeader="False"
                         ItemsSource="{Binding Items}">
                 <tvcontrols:RecycleItemsView.Header>
-                    <StackLayout HeightRequest="200" Padding="20" BackgroundColor="Coral">
+                    <StackLayout HeightRequest="400" Padding="40" BackgroundColor="Coral">
                         <Label VerticalOptions="CenterAndExpand" FontSize="Large" Text="Color List"/>
                     </StackLayout>
                 </tvcontrols:RecycleItemsView.Header>

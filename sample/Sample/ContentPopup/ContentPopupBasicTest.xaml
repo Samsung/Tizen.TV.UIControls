@@ -18,8 +18,7 @@
                     HeightRequest="100"
                     HorizontalOptions="Center"
                     Text="Show Popup"
-                    VerticalOptions="CenterAndExpand"
-                    WidthRequest="500" />
+                    VerticalOptions="CenterAndExpand"/>
             <Button
                     AutomationId="dismisstest2"
                     x:Name="button2"
@@ -27,8 +26,7 @@
                     HeightRequest="100"
                     HorizontalOptions="Center"
                     Text="Show Popup (Full Screen)"
-                    VerticalOptions="CenterAndExpand"
-                    WidthRequest="500" />
+                    VerticalOptions="CenterAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

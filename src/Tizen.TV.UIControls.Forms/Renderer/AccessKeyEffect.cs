@@ -92,7 +92,23 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     return true;
             }
 
+            if (pageToCompare is FlyoutPage flyoutPage)
+            {
+                if (flyoutPage.IsPresented)
+                {
+                    if (IsOnCurrentPage(flyoutPage.Flyout, targetPage))
+                        return true;
+                }
+                if (!(flyoutPage.FlyoutLayoutBehavior == FlyoutLayoutBehavior.Popover && flyoutPage.IsPresented))
+                {
+                    if (IsOnCurrentPage(flyoutPage.Detail, targetPage))
+                        return true;
+                }
+            }
+
+#pragma warning disable CS0618 // Type or member is obsolete
             if (pageToCompare is MasterDetailPage masterDetailPage)
+#pragma warning restore CS0618 // Type or member is obsolete
             {
                 if (masterDetailPage.IsPresented)
                 {

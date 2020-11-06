@@ -26,7 +26,7 @@
                         <ff:CachedImage Margin="50" Source="{Binding PosterPath, Converter={StaticResource posterConverter}}"/>
                         <StackLayout Margin="50" Spacing="10" WidthRequest="1000" HorizontalOptions="End" Opacity="1.0">
                             <Label FontSize="Large" Text="{Binding Title}" FontAttributes="Bold"/>
-                            <Label FontSize="70" Text="Overview" FontAttributes="Bold"/>
+                            <Label FontSize="35" Text="Overview" FontAttributes="Bold"/>
                             <Label FontSize="Medium" Text="{Binding Overview}"/>
                         </StackLayout>
                     </StackLayout>

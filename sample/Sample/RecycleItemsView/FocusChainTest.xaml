@@ -7,23 +7,23 @@
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="100" />
+                <RowDefinition Height="200" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="100" />
+                <RowDefinition Height="200" />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="200" />
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="200" />
             </Grid.ColumnDefinitions>
             <tvcontrols:RecycleItemsView Orientation="Horizontal" Grid.Column="1" Grid.Row="1" x:Name="ItemsView1"
                                          ItemsSource="{Binding Items}"
-                                         ItemHeight="150"
-                                         ContentMargin="10"
-                                         ItemWidth="100">
+                                         ItemHeight="300"
+                                         ContentMargin="20"
+                                         ItemWidth="200">
                 <tvcontrols:RecycleItemsView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -35,9 +35,9 @@
 
             <tvcontrols:RecycleItemsView Orientation="Horizontal" Grid.Column="1" Grid.Row="2" x:Name="ItemsView2"
                                          ItemsSource="{Binding Items}"
-                                         ItemHeight="150"
-                                         ContentMargin="10"
-                                         ItemWidth="100">
+                                         ItemHeight="300"
+                                         ContentMargin="20"
+                                         ItemWidth="200">
                 <tvcontrols:RecycleItemsView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -49,9 +49,9 @@
 
             <tvcontrols:RecycleItemsView Orientation="Horizontal" Grid.Column="1" Grid.Row="3" x:Name="ItemsView3"
                                          ItemsSource="{Binding Items}"
-                                         ItemHeight="150"
-                                         ContentMargin="10"
-                                         ItemWidth="100">
+                                         ItemHeight="300"
+                                         ContentMargin="20"
+                                         ItemWidth="200">
                 <tvcontrols:RecycleItemsView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
@@ -63,9 +63,9 @@
 
             <tvcontrols:RecycleItemsView Orientation="Horizontal" Grid.Column="1" Grid.Row="4" x:Name="ItemsView4"
                                          ItemsSource="{Binding Items}"
-                                         ItemHeight="150"
-                                         ContentMargin="10"
-                                         ItemWidth="100">
+                                         ItemHeight="300"
+                                         ContentMargin="20"
+                                         ItemWidth="200">
                 <tvcontrols:RecycleItemsView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">

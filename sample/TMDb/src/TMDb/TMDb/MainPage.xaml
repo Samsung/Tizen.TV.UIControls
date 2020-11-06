@@ -37,7 +37,7 @@
                                            VerticalOptions="FillAndExpand"
                                            VerticalTextAlignment="Center"
                                            Text="{Binding Text}" TextColor="#e0e0e0"
-                                           FontSize="80" FontAttributes="Bold"/>
+                                           FontSize="40" FontAttributes="Bold"/>
                                     </StackLayout>
                                 </DataTemplate>
                             </local:MenuItemsView.ItemTemplate>

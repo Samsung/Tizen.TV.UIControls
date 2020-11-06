@@ -7,13 +7,13 @@
              x:Class="Sample.RecycleItemsView.VertialHorzontalTest">
     <ContentPage.Content>
         <StackLayout Orientation="Horizontal" Spacing="0" Margin="0">
-            <StackLayout x:Name="Sidebar" Orientation="Vertical" Spacing="20" WidthRequest="1">
+            <StackLayout x:Name="Sidebar" Orientation="Vertical" Spacing="40" WidthRequest="1">
                 <Label FontSize="Large" Text="Home"/>
-                <local:MenuItemsView x:Name="MenuList" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" WidthRequest="300"
-                    Orientation="Vertical" ItemHeight="100" ItemWidth="300" ContentMargin="0" Spacing="0" ItemsSource="{Binding Items2}">
+                <local:MenuItemsView x:Name="MenuList" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" WidthRequest="600"
+                    Orientation="Vertical" ItemHeight="200" ItemWidth="600" ContentMargin="0" Spacing="0" ItemsSource="{Binding Items2}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="20">
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Padding="40">
                                 <Label Text="{Binding Text}" FontAttributes="Bold" VerticalOptions="FillAndExpand" VerticalTextAlignment="Center"/>
                             </StackLayout>
                         </DataTemplate>
@@ -25,10 +25,10 @@
                     <tvcontrols:RecycleItemsView x:Name="RecycleView" BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                         ItemSelected="OnSelected"
                         ScrollPolicy="Center"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                         <tvcontrols:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
@@ -42,10 +42,10 @@
                     </tvcontrols:RecycleItemsView>
                     <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                         ScrollPolicy="Center"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                         <tvcontrols:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
@@ -55,10 +55,10 @@
                     </tvcontrols:RecycleItemsView>
                     <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                         ScrollPolicy="Center"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                         <tvcontrols:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
@@ -70,10 +70,10 @@
                     </tvcontrols:RecycleItemsView>
                     <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                         ScrollPolicy="Center"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                         <tvcontrols:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
@@ -83,9 +83,8 @@
                             </DataTemplate>
                         </tvcontrols:RecycleItemsView.ItemTemplate>
                     </tvcontrols:RecycleItemsView>
-
                 </StackLayout>
             </ScrollView>
-        </StackLayout>            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

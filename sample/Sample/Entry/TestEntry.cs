@@ -16,13 +16,11 @@
 
 using System;
 using Xamarin.Forms;
-using Tizen.TV.UIControls.Forms;
 
 namespace Sample
 {
     public class TestEntry : ContentPage
     {
-        int _clickedTimes = 0;
         public TestEntry()
         {
             Label statusLabel = new Label();

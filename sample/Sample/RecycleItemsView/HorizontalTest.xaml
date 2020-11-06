@@ -10,10 +10,10 @@
                 <Label Text="ScrollPolicy=Center"/>
                 <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue"
                         ScrollPolicy="Center"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -26,10 +26,10 @@
                 <Label Text="ScrollPolicy=MakeVisible"/>
                 <tvcontrols:RecycleItemsView BackgroundColor="DeepPink"
                         ScrollPolicy="MakeVisible"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -42,10 +42,10 @@
                 <Label Text="ScrollPolicy=Start"/>
                 <tvcontrols:RecycleItemsView BackgroundColor="Coral"
                         ScrollPolicy="Start"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -58,10 +58,10 @@
                 <Label Text="ScrollPolicy=End"/>
                 <tvcontrols:RecycleItemsView BackgroundColor="Moccasin"
                         ScrollPolicy="End"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>

@@ -8,18 +8,18 @@
     <ContentPage.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Label Text="Movies" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
-            <local:MyRecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Brown" HeightRequest="800"
+            <local:MyRecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Brown" HeightRequest="1600"
                     ScrollBarVisibility="Never"
-                    ContentMargin="100"
-                    ItemWidth="480"
-                    Spacing="50"
+                    ContentMargin="200"
+                    ItemWidth="960"
+                    Spacing="100"
                     ItemsSource="{Binding Items}"
                     ItemSelected="OnSelected">
                 <tvcontrols:RecycleItemsView.ItemTemplate>
                     <DataTemplate>
                         <AbsoluteLayout BackgroundColor="CadetBlue">
                             <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
-                            <StackLayout Padding="20" AbsoluteLayout.LayoutBounds="0, 1, 480, 100" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                            <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
                                 <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
                                 <Label Text="{Binding DetailText}" FontSize="40"/>
                             </StackLayout>

@@ -8,10 +8,10 @@
         <ScrollView>
             <StackLayout>
                 <tvcontrols:RecycleItemsView BackgroundColor="AliceBlue" ColumnCount="3"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -22,10 +22,10 @@
                     </tvcontrols:RecycleItemsView.ItemTemplate>
                 </tvcontrols:RecycleItemsView>
                 <tvcontrols:RecycleItemsView BackgroundColor="DeepPink" ColumnCount="2"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>
@@ -36,10 +36,10 @@
                     </tvcontrols:RecycleItemsView.ItemTemplate>
                 </tvcontrols:RecycleItemsView>
                 <tvcontrols:RecycleItemsView BackgroundColor="Coral" ColumnCount="5"
-                        ContentMargin="100"
-                        ItemWidth="300"
-                        ItemHeight="200"
-                        Spacing="30"
+                        ContentMargin="200"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        Spacing="60"
                         ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
                         <DataTemplate>

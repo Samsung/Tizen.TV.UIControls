@@ -32,35 +32,35 @@ namespace Sample
 
         void OnClickPlay(object sender, ClickedEventArgs e)
         {
-            if (Player.State == PlaybackState.Playing)
-                Player.Pause();
+            if (MediaPlayer.State == PlaybackState.Playing)
+                MediaPlayer.Pause();
             else
             {
-                var unused = Player.Start();
+                var unused = MediaPlayer.Start();
             }
         }
 
         void OnClickStop(object sender, ClickedEventArgs e)
         {
-            Player.Stop();
+            MediaPlayer.Stop();
         }
 
         async void OnSeekChanged(object sender, ValueChangedEventArgs e)
         {
-            await Player.Seek((int)(Player.Duration * e.NewValue));
+            await MediaPlayer.Seek((int)(MediaPlayer.Duration * e.NewValue));
         }
 
         void OnPlayClicked(object sender, EventArgs e)
         {
-            if (Player.State != PlaybackState.Playing)
-                Player.Start();
+            if (MediaPlayer.State != PlaybackState.Playing)
+                MediaPlayer.Start();
             else
-                Player.Pause();
+                MediaPlayer.Pause();
         }
 
         void OnStopClicked(object sender, EventArgs e)
         {
-            Player.Stop();
+            MediaPlayer.Stop();
         }
     }
 }
