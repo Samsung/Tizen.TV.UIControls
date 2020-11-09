@@ -1142,13 +1142,25 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (e.IsFocused && ItemsCount > 0)
             {
-                if (FocusedItemIndex == InvalidIndex ||
-                    (FocusedItemIndex == HeaderIndex && (!AllowFocusHeader || !HasHeader)) ||
-                    (FocusedItemIndex == FooterIndex && (!AllowFocusFooter || !HasFooter)))
+                if (FocusedItemIndex == InvalidIndex)
+                {
+                    if (AllowFocusHeader && HasHeader)
+                        FocusedItemIndex = HeaderIndex;
+                    else
+                        FocusedItemIndex = 0;
+                }
+                else if (FocusedItemIndex >= ItemsCount)
+                {
+                    if (AllowFocusFooter && HasFooter)
+                        FocusedItemIndex = FooterIndex;
+                    else
+                        FocusedItemIndex = ItemsCount - 1;
+                }
+                else if (FocusedItemIndex == HeaderIndex && (!AllowFocusHeader || !HasHeader))
                 {
                     FocusedItemIndex = 0;
                 }
-                else if (FocusedItemIndex >= ItemsCount)
+                else if (FocusedItemIndex == FooterIndex && (!AllowFocusFooter || !HasFooter))
                 {
                     FocusedItemIndex = ItemsCount - 1;
                 }

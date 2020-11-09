@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Sample.RecycleItemsView.FocusOnHeaderTest">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+            <Label Text="Focus on header" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
+            <tv:RecycleItemsView x:Name="MovieList" HorizontalOptions="FillAndExpand" BackgroundColor="Brown" HeightRequest="1000"
+                    ScrollBarVisibility="Never"
+                    ContentMargin="200"
+                    ItemWidth="960"
+                    Spacing="100"
+                    ItemsSource="{Binding Items}">
+                <tv:RecycleItemsView.ItemTemplate>
+                    <DataTemplate>
+                        <AbsoluteLayout BackgroundColor="CadetBlue">
+                            <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                            <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                <Label Text="{Binding DetailText}" FontSize="40"/>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                    </DataTemplate>
+                </tv:RecycleItemsView.ItemTemplate>
+            </tv:RecycleItemsView>
+            <tv:RecycleItemsView x:Name="MusicList" HorizontalOptions="FillAndExpand" BackgroundColor="Beige"
+                    ContentMargin="200"
+                    ItemWidth="800"
+                    ItemHeight="800"
+                    Spacing="60"
+                    Header="Header"
+                    Footer="More"
+                    ItemsSource="{Binding Items2}">
+                <tv:RecycleItemsView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Source}" Text="{Binding Text}" Detail="{Binding DetailText}"/>
+                    </DataTemplate>
+                </tv:RecycleItemsView.ItemTemplate>
+                <tv:RecycleItemsView.HeaderTemplate>
+                    <DataTemplate>
+                        <StackLayout WidthRequest="600" Padding="40" BackgroundColor="#5b6b72">
+                            <Image Source="img_profile_c.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="400"/>
+                            <Label Text="Haeder" TextColor="AntiqueWhite" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </tv:RecycleItemsView.HeaderTemplate>
+                <tv:RecycleItemsView.FooterTemplate>
+                    <DataTemplate>
+                        <StackLayout WidthRequest="600" Padding="40" BackgroundColor="#5b6b72">
+                            <Image Source="img_profile_c.png" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="200" HeightRequest="400"/>
+                            <Label Text="Music" TextColor="AntiqueWhite" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </tv:RecycleItemsView.FooterTemplate>
+            </tv:RecycleItemsView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
