@@ -117,6 +117,13 @@ namespace Sample.RecycleItemsView
                     PageType = typeof(ItemFocusedEventTest),
                     Items = ColorModel.MakeModel()
                 },
+                new DoubleItemsModel
+                {
+                    Name = "FocusOnHeader",
+                    PageType = typeof(FocusOnHeaderTest),
+                    Items = PosterModel.MakeModel(),
+                    Items2 = PosterModel.MakeAlbumArtsModel(),
+                },
             };
         }
     }
