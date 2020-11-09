@@ -12,7 +12,7 @@
   </ContentView.Resources>
   <ContentView.Content>
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
-            <Label Margin="30,0,0,0" FontSize="90" TextColor="#e0e0e0" Text="{Binding Title}" FontAttributes="Bold"/>
+            <Label Margin="30,0,0,0" FontSize="45" TextColor="#e0e0e0" Text="{Binding Title}" FontAttributes="Bold"/>
             <tv:RecycleItemsView x:Name="ItemsView" ContentMargin="100, 50, 100, 50" Spacing="60"
                                  ItemsSource="{Binding Items}"
                                  ItemSelected="RecycleItemsView_ItemSelected">
@@ -23,8 +23,8 @@
                             <StackLayout Padding="0" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" Orientation="Vertical">
                                 <StackLayout VerticalOptions="FillAndExpand"/>
                                 <StackLayout Padding="30" HorizontalOptions="FillAndExpand" BackgroundColor="#aa000000">
-                                    <Label Text="{Binding Title}" TextColor="#e0e0e0" FontSize="70" FontAttributes="Bold" />
-                                    <Label Text="{Binding VoteAverage, StringFormat='Rating {0}'}" TextColor="#e0e0e0" FontSize="50" FontAttributes="Bold" />
+                                    <Label Text="{Binding Title}" TextColor="#e0e0e0" FontSize="35" FontAttributes="Bold" />
+                                    <Label Text="{Binding VoteAverage, StringFormat='Rating {0}'}" TextColor="#e0e0e0" FontSize="25" FontAttributes="Bold" />
                                 </StackLayout>
                             </StackLayout>
                         </AbsoluteLayout>

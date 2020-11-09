@@ -5,6 +5,6 @@
              x:Class="Sample.SimplePlayerPage2"
              NavigationPage.HasNavigationBar="False">
     <tvcontrols:OverlayPage.Player>
-        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="True"/>
+        <tvcontrols:MediaPlayer x:Name="MediaPlayer" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="True"/>
     </tvcontrols:OverlayPage.Player>
 </tvcontrols:OverlayPage>

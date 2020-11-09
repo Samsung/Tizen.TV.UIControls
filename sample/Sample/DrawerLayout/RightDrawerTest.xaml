@@ -8,10 +8,10 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <tv:DrawerLayout x:Name="Drawer" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"
                              DrawerPosition="Right"
-                             DrawerClosedWidth="40"
+                             DrawerClosedWidth="80"
                              IsOpen="{Binding IsToggled, Source={x:Reference OpenSwitch}}">
                 <tv:DrawerLayout.Drawer>
-                    <BoxView Color="CornflowerBlue" WidthRequest="300"/>
+                    <BoxView Color="CornflowerBlue" WidthRequest="600"/>
                 </tv:DrawerLayout.Drawer>
                 <tv:DrawerLayout.Content>
                     <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Coral">

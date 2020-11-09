@@ -730,6 +730,7 @@ namespace Tizen.TV.UIControls.Forms
             if (isFocused && data == FocusedItem)
             {
                 var item = GetItemContext(data);
+                if (item == null) return;
                 if (item.IsRealized && item.RealizedView == targetView)
                     SetValue(FocusedViewPropertyKey, targetView);
             }

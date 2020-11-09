@@ -10,10 +10,10 @@ namespace Sample.DrawerLayout
             Title = "Basic Test";
             Content = new Tizen.TV.UIControls.Forms.DrawerLayout()
             {
-                DrawerClosedWidth = 30,
+                DrawerClosedWidth = 60,
                 Drawer = new StackLayout
                 {
-                    WidthRequest = 500,
+                    WidthRequest = 1000,
                     BackgroundColor = Color.Coral,
                     Children =
                     {
@@ -28,7 +28,7 @@ namespace Sample.DrawerLayout
                 },
                 Content = new StackLayout
                 {
-                    WidthRequest = 900,
+                    WidthRequest = 1800,
                     BackgroundColor = Color.Brown,
                     Children =
                     {

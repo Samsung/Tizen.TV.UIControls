@@ -6,7 +6,7 @@
 
   <!-- Include Nuget Package for Xamarin building -->
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1364" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1558-pre3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
@@ -32,6 +32,9 @@
     </Compile>
     <Compile Update="RecycleItemsView\ItemFocusedEventTest.xaml.cs">
       <DependentUpon>ItemFocusedEventTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="RemoteControl\TestFlyoutPage.xaml.cs">
+      <DependentUpon>TestFlyoutPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -107,7 +110,7 @@
     <EmbeddedResource Update="RemoteControl\RemoteControlMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="RemoteControl\TestMasterDetailPage.xaml">
+    <EmbeddedResource Update="RemoteControl\TestFlyoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="RemoteControl\TestRemoteControl_xaml.xaml">

@@ -6,10 +6,10 @@
     <ContentPage.Content>
         <StackLayout>
             <tvcontrols:RecycleItemsView 
-                    ContentMargin="100"
-                    ItemWidth="300"
-                    ItemHeight="200"
-                    Spacing="30">
+                    ContentMargin="200"
+                    ItemWidth="600"
+                    ItemHeight="400"
+                    Spacing="60">
                 <tvcontrols:RecycleItemsView.ItemsSource>
                     <x:Array Type="{x:Type x:String}">
                         <x:String>Item1</x:String>

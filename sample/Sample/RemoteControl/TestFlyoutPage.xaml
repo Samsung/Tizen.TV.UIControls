@@ -1,44 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+<FlyoutPage xmlns="http://xamarin.com/schemas/2014/forms"
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:uicontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
-                  x:Class="Sample.TestMasterDetailPage"
+                  x:Class="Sample.TestFlyoutPage"
                   x:Name="rootPage"
-                  Title="MasterDetailPage"
-                  MasterBehavior="Popover"
+                  Title="FlyoutPage"
+                  FlyoutLayoutBehavior="Popover"
                   IsPresented="True">
     <uicontrols:InputEvents.EventHandlers>
-        <uicontrols:RemoteKeyHandler Command="{Binding MasterDetailPageHandler, Source={x:Reference rootPage}}"/>
+        <uicontrols:RemoteKeyHandler Command="{Binding FlyoutPageHandler, Source={x:Reference rootPage}}"/>
     </uicontrols:InputEvents.EventHandlers>
-    <MasterDetailPage.Master>
-        <ContentPage Title="Master Page" BackgroundColor="DarkOliveGreen">
+    <FlyoutPage.Flyout>
+        <ContentPage Title="Flyout Page" BackgroundColor="DarkOliveGreen">
             <ContentPage.Content>
                 <StackLayout>
-                    <Label x:Name="MasterLabel"/>
+                    <Label x:Name="FlyoutLabel"/>
                     <Button Text="Change behavior"
                     VerticalOptions="CenterAndExpand" 
                     HorizontalOptions="CenterAndExpand" Clicked="OnClicked" />
                 </StackLayout>
             </ContentPage.Content>
             <uicontrols:InputEvents.EventHandlers>
-                <uicontrols:RemoteKeyHandler Command="{Binding MasterPageHandler, Source={x:Reference rootPage}}"/>
+                <uicontrols:RemoteKeyHandler Command="{Binding FlyoutHandler, Source={x:Reference rootPage}}"/>
             </uicontrols:InputEvents.EventHandlers>
         </ContentPage>
-    </MasterDetailPage.Master>
-    <MasterDetailPage.Detail>
+    </FlyoutPage.Flyout>
+    <FlyoutPage.Detail>
         <ContentPage Title="Detail Page" BackgroundColor="Cornsilk">
             <ContentPage.Content>
                 <StackLayout>
                     <Label x:Name="DetailLabel" HorizontalOptions="End" TextColor="Black"/>
-                    <Button Text="ShowMaster"
+                    <Button Text="ShowFlyout"
                     VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand" Clicked="OnShowMaster"/>
+                    HorizontalOptions="CenterAndExpand" Clicked="OnShowFlyout"/>
                 </StackLayout>
             </ContentPage.Content>
             <uicontrols:InputEvents.EventHandlers>
                 <uicontrols:RemoteKeyHandler Command="{Binding DetailPageHandler, Source={x:Reference rootPage}}"/>
             </uicontrols:InputEvents.EventHandlers>
         </ContentPage>
-    </MasterDetailPage.Detail>
-    
-</MasterDetailPage>
+    </FlyoutPage.Detail>
+</FlyoutPage>

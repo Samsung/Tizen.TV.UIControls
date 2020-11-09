@@ -8,11 +8,11 @@
     <ContentPage.Content>
         <tv:DrawerLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
                          IsOpen="{Binding IsFocused, Source={x:Reference MenuList}}"
-                         DrawerClosedWidth="30">
+                         DrawerClosedWidth="60">
             <tv:DrawerLayout.Drawer>
                 <local:MenuItemsView x:Name="MenuList"
-                                     ItemWidth="500"
-                                     ItemHeight="100" Orientation="Vertical" ItemsSource="{Binding Items}"
+                                     ItemWidth="1000"
+                                     ItemHeight="200" Orientation="Vertical" ItemsSource="{Binding Items}"
                                      BackgroundColor="DarkSlateBlue"
                                      ItemSelected="MenuItemsView_ItemSelected"/>
             </tv:DrawerLayout.Drawer>

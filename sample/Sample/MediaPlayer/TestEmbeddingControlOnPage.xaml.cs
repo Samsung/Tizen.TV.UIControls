@@ -37,7 +37,7 @@ namespace Sample
 
         void OnClick(object sender, EventArgs e)
         {
-            Player.UsesEmbeddingControls = !Player.UsesEmbeddingControls;
+            MediaPlayer.UsesEmbeddingControls = !MediaPlayer.UsesEmbeddingControls;
         }
     }
 }

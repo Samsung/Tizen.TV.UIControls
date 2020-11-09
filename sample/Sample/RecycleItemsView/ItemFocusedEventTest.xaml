@@ -11,10 +11,10 @@
                 <tvcontrols:RecycleItemsView
                     x:Name="firstItems"
                     BackgroundColor="AliceBlue"
-                    ContentMargin="100"
-                    ItemWidth="300"
-                    ItemHeight="200"
-                    Spacing="30"
+                    ContentMargin="200"
+                    ItemWidth="600"
+                    ItemHeight="400"
+                    Spacing="60"
                     ItemsSource="{Binding Items}"
                     ItemFocused="OnFirstItemsItemFocused">
                     <tvcontrols:RecycleItemsView.ItemTemplate>
@@ -31,10 +31,10 @@
                 </StackLayout>
                 <tvcontrols:RecycleItemsView 
                     BackgroundColor="Coral"
-                    ContentMargin="100"
-                    ItemWidth="300"
-                    ItemHeight="200"
-                    Spacing="30"
+                    ContentMargin="200"
+                    ItemWidth="600"
+                    ItemHeight="400"
+                    Spacing="60"
                     ItemFocused="OnSecondItemsItemFocused"
                     ItemsSource="{Binding Items}">
                     <tvcontrols:RecycleItemsView.ItemTemplate>

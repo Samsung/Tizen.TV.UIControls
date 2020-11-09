@@ -2,7 +2,7 @@
 <tvcontrols:OverlayPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
-             xmlns:local="Sample.TestOverlayPage"
+             xmlns:local="clr-namespace:Sample"
              x:Class="Sample.TestOverlayPage">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -10,10 +10,10 @@
         </ResourceDictionary>           
     </ContentPage.Resources>
     <tvcontrols:OverlayPage.Player>
-        <tvcontrols:MediaPlayer x:Name="Player" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="False"/>
+        <tvcontrols:MediaPlayer x:Name="MediaPlayer" Source="{Binding Source}" AutoPlay="true" UsesEmbeddingControls="False"/>
     </tvcontrols:OverlayPage.Player>
     <StackLayout Padding="50" HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundColor="#20000000">
-        <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=Duration, StringFormat='Duration {0}ms'}"/>
-        <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference Player}, Path=BufferingProgress, StringFormat='{}{0:Buffering 0%}'}"/>
+        <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference MediaPlayer}, Path=Duration, StringFormat='Duration {0}ms'}"/>
+        <Label HorizontalOptions="Center" Text="{Binding Source={x:Reference MediaPlayer}, Path=BufferingProgress, StringFormat='{}{0:Buffering 0%}'}"/>
     </StackLayout>
 </tvcontrols:OverlayPage>

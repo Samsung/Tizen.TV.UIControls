@@ -8,12 +8,12 @@
     <ContentPage.Content>
         <tv:DrawerLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
             <tv:DrawerLayout.Drawer>
-                <local:FocusedMenuItemsView x:Name="MainMenuList" Orientation="Vertical" ItemsSource="{Binding Items}" ItemWidth="300" ItemHeight="100" BackgroundColor="DarkGreen" ItemFocused="MainMenuList_ItemFocused"/>
+                <local:MenuItemsView x:Name="MainMenuList" Orientation="Vertical" ItemsSource="{Binding Items}" ItemWidth="600" ItemHeight="200" BackgroundColor="DarkGreen" ItemFocused="MainMenuList_ItemFocused"/>
             </tv:DrawerLayout.Drawer>
             <tv:DrawerLayout.Content>
                 <tv:DrawerLayout x:Name="SubDrawer" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
                     <tv:DrawerLayout.Drawer>
-                        <local:FocusedMenuItemsView Orientation="Vertical" x:Name="SubMenuList" ItemWidth="200" ItemHeight="100" BackgroundColor="BlueViolet" ItemFocused="SubMenuList_ItemFocused"/>
+                        <local:MenuItemsView Orientation="Vertical" x:Name="SubMenuList" ItemWidth="400" ItemHeight="200" BackgroundColor="BlueViolet" ItemFocused="SubMenuList_ItemFocused"/>
                     </tv:DrawerLayout.Drawer>
                     <tv:DrawerLayout.Content>
                         <StackLayout BackgroundColor="White">

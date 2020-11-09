@@ -25,7 +25,13 @@ namespace Sample
             var app = new Program();
             try
             {
-                Forms.Init(app);
+                var option = new InitializationOptions(app)
+                {
+                    //Using DP without device scaling mode
+                    DisplayResolutionUnit = DisplayResolutionUnit.DP()
+                };
+                Forms.Init(option);
+
                 // UIControls.Init() should be called after Forms.Init()
                 UIControls.Init(new InitOptions(app));
                 app.Run(args);

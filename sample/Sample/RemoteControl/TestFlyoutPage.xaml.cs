@@ -22,27 +22,27 @@ using Tizen.TV.UIControls.Forms;
 namespace Sample
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class TestMasterDetailPage : MasterDetailPage
+	public partial class TestFlyoutPage : FlyoutPage
 	{
-        public Command<RemoteControlKeyEventArgs> MasterDetailPageHandler
+        public Command<RemoteControlKeyEventArgs> FlyoutPageHandler
         {
             get
             {
                 return new Command<RemoteControlKeyEventArgs>((arg) =>
                 {
-                    Console.WriteLine("MasterDetailPage => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                    Console.WriteLine("FlyoutPage => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
                     Title = $"{arg.KeyName} was pressed";
                 });
             }
         }
 
-        public Command<RemoteControlKeyEventArgs> MasterPageHandler
+        public Command<RemoteControlKeyEventArgs> FlyoutHandler
         {
             get
             {
                 return new Command<RemoteControlKeyEventArgs>((arg) => {
-                    Console.WriteLine("Master Page => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
-                    MasterLabel.Text = $"{arg.KeyName} was pressed";
+                    Console.WriteLine("Flyout => arg.KeyType : {0} , arg.KeyName : {1}", arg.KeyType, arg.KeyName);
+                    FlyoutLabel.Text = $"{arg.KeyName} was pressed";
                 });
             }
         }
@@ -59,20 +59,20 @@ namespace Sample
             }
         }
 
-        public TestMasterDetailPage ()
+        public TestFlyoutPage()
 		{
 			InitializeComponent ();
 		}
 
         void OnClicked(object sender, EventArgs e)
         {
-            if (MasterBehavior == MasterBehavior.Popover)
-                MasterBehavior = MasterBehavior.Split;
+            if (FlyoutLayoutBehavior == FlyoutLayoutBehavior.Popover)
+                FlyoutLayoutBehavior = FlyoutLayoutBehavior.Split;
             else
-                MasterBehavior = MasterBehavior.Popover;
+                FlyoutLayoutBehavior = FlyoutLayoutBehavior.Popover;
         }
 
-        void OnShowMaster(object sender, EventArgs e)
+        void OnShowFlyout(object sender, EventArgs e)
         {
             IsPresented = true;
         }

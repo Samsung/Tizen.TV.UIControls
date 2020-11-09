@@ -61,19 +61,19 @@ namespace Sample.RecycleItemsView
         {
             if (e.IsFocused)
             {
-                double start = (Sidebar.WidthRequest - 1) / 400.0;
+                double start = (Sidebar.WidthRequest - 1) / 800.0;
                 var animation = new Animation((r) =>
                 {
-                    Sidebar.WidthRequest = 400 * r;
+                    Sidebar.WidthRequest = 800 * r;
                 }, start, 1, Easing.SpringIn);
                 animation.Commit(Sidebar, "Focus", length: (uint)(250 * (1 - start)));
             }
             else
             {
-                double start = (400 - Sidebar.WidthRequest) / 400.0;
+                double start = (800 - Sidebar.WidthRequest) / 800.0;
                 var animation = new Animation((r) =>
                 {
-                    Sidebar.WidthRequest = 400 * (1 - r) + 1;
+                    Sidebar.WidthRequest = 800 * (1 - r) + 1;
                 }, start, 1, Easing.SpringIn);
                 animation.Commit(Sidebar, "Focus", length: (uint)(250 * (1 - start)));
             }

@@ -8,10 +8,10 @@
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
             <Label Text="Movie" FontAttributes="Bold" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
             <tvcontrols:RecycleItemsView HorizontalOptions="FillAndExpand" BackgroundColor="Beige"
-                    ContentMargin="100"
-                    ItemWidth="400"
-                    ItemHeight="400"
-                    Spacing="30"
+                    ContentMargin="200"
+                    ItemWidth="800"
+                    ItemHeight="800"
+                    Spacing="60"
                     ItemsSource="{Binding Items}">
                 <tvcontrols:RecycleItemsView.ItemTemplate>
                     <DataTemplate>

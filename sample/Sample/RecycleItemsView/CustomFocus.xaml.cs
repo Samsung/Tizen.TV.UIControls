@@ -32,7 +32,7 @@ namespace Sample.RecycleItemsView
                 targetView.ScaleTo(1.2);
                 var animation = new Animation((rate) =>
                 {
-                    AbsoluteLayout.SetLayoutBounds(textarea, new Rectangle(0, 1, 480, 100 + rate * 100));
+                    AbsoluteLayout.SetLayoutBounds(textarea, new Rectangle(0, 1, 960, 200 + rate * 200));
                 });
                 animation.Commit(this, $"Focused - {data.GetHashCode()}");
             }
@@ -41,7 +41,7 @@ namespace Sample.RecycleItemsView
                 targetView.ScaleTo(1.0);
                 var animation = new Animation((rate) =>
                 {
-                    AbsoluteLayout.SetLayoutBounds(textarea, new Rectangle(0, 1, 480, 200 - rate * 100));
+                    AbsoluteLayout.SetLayoutBounds(textarea, new Rectangle(0, 1, 960, 400 - rate * 200));
                 });
                 animation.Commit(this, $"Focused - {data.GetHashCode()}");
             }
