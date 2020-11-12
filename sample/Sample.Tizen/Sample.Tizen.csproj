@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>tizen40</TargetFramework>
+    <TargetFramework>tizen60</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,10 +17,5 @@
     <ProjectReference Include="..\Sample\Sample.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
-    <TizenTpkUserIncludeFiles Include="$(SolutionDir)theme\*.edj">
-      <TizenTpkSubDir>res</TizenTpkSubDir>
-    </TizenTpkUserIncludeFiles>
-  </ItemGroup>
 
 </Project>
