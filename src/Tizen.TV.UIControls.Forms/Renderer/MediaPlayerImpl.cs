@@ -20,18 +20,19 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Tizen.Multimedia;
+using Tizen.TV.Multimedia;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
-
+using TVM = Tizen.TV.Multimedia;
 [assembly: Xamarin.Forms.Dependency(typeof(MediaPlayerImpl))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
     {
-        Player _player;
-
+        TVM.Player _player; 
+        DRMManager _dRMManager = null;
         bool _cancelToStart;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare;
@@ -41,11 +42,25 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         public MediaPlayerImpl()
         {
-            _player = new Player();
+            _player = CreateMediaPlayer();
             _player.PlaybackCompleted += OnPlaybackCompleted;
             _player.BufferingProgressChanged += OnBufferingProgressChanged;
+            _player.ErrorOccurred += OnErrorOccurred;
         }
-
+        protected virtual TVM.Player CreateMediaPlayer()
+        {
+            return new TVM.Player();
+        }
+        public DRMManager GetDRMManager()
+        {
+            if (_dRMManager == null)
+                _dRMManager = DRMManager.CreateDRMManager(TVM.DRMType.Playready);
+            return _dRMManager;
+        }
+        public TVM.Player GetPlayer()
+        {
+            return _player;
+        }
         public bool UsesEmbeddingControls
         {
             get; set;
@@ -54,7 +69,11 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         public bool AutoPlay { get; set; }
 
         public bool AutoStop { get; set; }
-
+        public bool IsLooping
+        {
+            get => _player.IsLooping;
+            set => _player.IsLooping = (bool)value;
+        }
         public double Volume
         {
             get => _player.Volume;
@@ -135,12 +154,11 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         public event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
         public event EventHandler PlaybackStopped;
         public event EventHandler PlaybackPaused;
-
+        public event EventHandler ErrorOccurred;
 
         public async Task<bool> Start()
         {
-            Log.Debug(UIControls.Tag, "Start");
-
+           
             _cancelToStart = false;
             if (!HasSource)
                 return false;
@@ -159,8 +177,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Error On Start : {e.Message}");
-                return false;
+                 return false;
             }
             PlaybackStarted?.Invoke(this, EventArgs.Empty);
             return true;
@@ -188,6 +205,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             _cancelToStart = true;
             var unusedTask = ChangeToIdleState();
             PlaybackStopped.Invoke(this, EventArgs.Empty);
+            _dRMManager.Close();
         }
 
         public void SetDisplay(IVideoOutput output)
@@ -254,7 +272,10 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             };
             return metadata;
         }
-
+        void OnErrorOccurred(object sender, PlayerErrorOccurredEventArgs e)
+        {
+            ErrorOccurred?.Invoke(this, EventArgs.Empty);
+        }
         void ApplyDisplay()
         {
             if (VideoOutput == null)
@@ -307,9 +328,13 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     var renderer = Platform.GetRenderer(TargetView);
                     if (renderer is OverlayViewRenderer)
                     {
-                        // need to convert absolute coordinate from relative coordinate
-                        await Task.Delay(1);
-                        bound = renderer.NativeView.Geometry;
+                        var parentArea = renderer.NativeView.Geometry;
+                        if (parentArea.Width == 0 || parentArea.Height == 0)
+                        {
+                            await Task.Delay(1);
+                            parentArea = renderer.NativeView.Geometry;
+                        }
+                        bound = parentArea;
                     }
                     _player.DisplaySettings.SetRoi(bound.ToMultimedia());
                 }
@@ -327,7 +352,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 return;
             }
             IMediaSourceHandler handler = Registrar.Registered.GetHandlerForObject<IMediaSourceHandler>(_source);
-            await handler.SetSource(_player, _source);
+            await handler.SetSource(this, _source);
         }
 
         async void OnTargetViewPropertyChanged(object sender, global::System.ComponentModel.PropertyChangedEventArgs e)
@@ -416,9 +441,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public static class MultimediaConvertExtensions
     {
-        public static Multimedia.Rectangle ToMultimedia(this ElmSharp.Rect rect)
+        public static Tizen.Multimedia.Rectangle ToMultimedia(this ElmSharp.Rect rect)
         {
-            return new Multimedia.Rectangle(rect.X, rect.Y, rect.Width, rect.Height);
+            return new Tizen.Multimedia.Rectangle(rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         public static PlayerDisplayMode ToMultimeida(this DisplayAspectMode mode)

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;tizen40</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;tizen60</TargetFrameworks>
     <AssemblyName>Tizen.TV.UIControls.Forms</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
     <PackageId>Tizen.TV.UIControls</PackageId>
@@ -27,18 +27,18 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'tizen60' ">
     <TargetFrameworkIdentifier>Tizen</TargetFrameworkIdentifier>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
+  <ItemGroup Condition=" '$(TargetFramework)' == 'tizen60' ">
     <Compile Include="Renderer\**\*.cs" />
-    <PackageReference Include="Tizen.NET" Version="4.0.0" />
+    <PackageReference Include="Tizen.NET" Version="6.0.0.14995" />
+    <PackageReference Include="Tizen.NET.TV" Version="6.6.0.5599517" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="$(SolutionDir)*.targets" PackagePath="build\" />
     <Content Include="$(SolutionDir)theme\*.edj" PackagePath="content\theme\" />
   </ItemGroup>
-
 </Project>

@@ -51,7 +51,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         public void SetElement(ContentPopup element)
         {
             if (element.Parent == null)
-                element.Parent = Application.Current;
+                element.Parent = Xamarin.Forms.Application.Current;
             element.PropertyChanged += OnElementPropertyChanged;
             _element = element;
 

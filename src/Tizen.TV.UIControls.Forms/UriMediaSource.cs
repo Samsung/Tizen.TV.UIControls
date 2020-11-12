@@ -24,7 +24,7 @@ namespace Tizen.TV.UIControls.Forms
     /// A MediaSource that loads a media from a URI
     /// </summary>
     [TypeConverter(typeof(MediaSourceConverter))]
-    public sealed class UriMediaSource : MediaSource
+    public class UriMediaSource : MediaSource
     {
         /// <summary>
         /// Identifies the File bindable property.
@@ -36,10 +36,20 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public Uri Uri
         {
-            get { return (Uri)GetValue(UriProperty); }
-            set { SetValue(UriProperty, value); }
+            get 
+            { 
+                return (Uri)GetValue(UriProperty); 
+            }
+            set
+            { 
+                SetValue(UriProperty, value);
+
+            }
         }
 
+        public UriMediaSource()
+        {
+        }
         /// <summary>
         /// Returns the path to the file for the media, prefixed with the string, "Uri: ".
         /// </summary>
