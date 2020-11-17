@@ -6,7 +6,7 @@
              Title="Focus navigation"
              x:Class="Sample.Focus.FocusFrameTest">
     <ContentPage.Content>
-        <Grid RowDefinitions="100, 100, 100, *"
+        <Grid RowDefinitions="*, *, *, *"
               ColumnDefinitions="*, *, *, *">
             <tv:FocusFrame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <Entry Placeholder="Entry1" />
@@ -38,7 +38,13 @@
                 <Button Text="3"/>
             </local:MyFocusFrame>
             <tv:FocusFrame Grid.Row="2" Grid.Column="3">
-                <Button Text="4"/>
+                <ScrollView>
+                    <StackLayout x:Name="AddedContainer">
+                        <Label Text="Text1"/>
+                        <Button Text="Add" Clicked="OnAddedClicked"/>
+                        <Label Text="Text2"/>
+                    </StackLayout>
+                </ScrollView>
             </tv:FocusFrame>
         </Grid>
     </ContentPage.Content>

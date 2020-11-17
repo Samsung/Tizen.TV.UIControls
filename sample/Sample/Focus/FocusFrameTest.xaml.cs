@@ -11,6 +11,21 @@ namespace Sample.Focus
         {
             InitializeComponent();
         }
+
+        int id = 0;
+
+        void OnAddedClicked(object sender, System.EventArgs e)
+        {
+            var addedBtn = new Button
+            {
+                Text = $"Remove({id++})"
+            };
+            addedBtn.Clicked += (s, evt) =>
+            {
+                AddedContainer.Children.Remove(addedBtn);
+            };
+            AddedContainer.Children.Add(addedBtn);
+        }
     }
 
     public class MyFocusFrame : FocusFrame

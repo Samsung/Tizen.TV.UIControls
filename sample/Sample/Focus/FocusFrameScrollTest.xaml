@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:local="clr-namespace:Sample.Focus"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Sample.Focus.FocusFrameScrollTest">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Title1" FontSize="90"/>
+                <local:ScrollFocusFrame>
+                    <tv:RecycleItemsView HeightRequest="900" ItemsSource="{Binding Items}" ScrollPolicy="Center"
+                                         ItemWidth="900" ContentMargin="200" Spacing="200">
+                        <tv:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                        <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                        <Label Text="{Binding DetailText}" FontSize="40"/>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                            </DataTemplate>
+                        </tv:RecycleItemsView.ItemTemplate>
+                    </tv:RecycleItemsView>
+                </local:ScrollFocusFrame>
+                <Label Text="Title2" FontSize="90"/>
+                <local:ScrollFocusFrame>
+                    <tv:RecycleItemsView HeightRequest="900" ItemsSource="{Binding Items}" ScrollPolicy="Center"
+                                         ItemWidth="900" ContentMargin="200" Spacing="200">
+                        <tv:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                        <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                        <Label Text="{Binding DetailText}" FontSize="40"/>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                            </DataTemplate>
+                        </tv:RecycleItemsView.ItemTemplate>
+                    </tv:RecycleItemsView>
+                </local:ScrollFocusFrame>
+                <Label Text="Title3" FontSize="90"/>
+                <local:ScrollFocusFrame>
+                    <tv:RecycleItemsView HeightRequest="900" ItemsSource="{Binding Items}" ScrollPolicy="Center"
+                                         ItemWidth="900" ContentMargin="200" Spacing="200">
+                        <tv:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                        <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                        <Label Text="{Binding DetailText}" FontSize="40"/>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                            </DataTemplate>
+                        </tv:RecycleItemsView.ItemTemplate>
+                    </tv:RecycleItemsView>
+                </local:ScrollFocusFrame>
+                <Label Text="Title4" FontSize="90"/>
+                <local:ScrollFocusFrame>
+                    <tv:RecycleItemsView HeightRequest="900" ItemsSource="{Binding Items}" ScrollPolicy="Center"
+                                         ItemWidth="900" ContentMargin="200" Spacing="200">
+                        <tv:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                        <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                        <Label Text="{Binding DetailText}" FontSize="40"/>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                            </DataTemplate>
+                        </tv:RecycleItemsView.ItemTemplate>
+                    </tv:RecycleItemsView>
+                </local:ScrollFocusFrame>
+                <Label Text="Title5" FontSize="90"/>
+                <local:ScrollFocusFrame>
+                    <tv:RecycleItemsView HeightRequest="900" ItemsSource="{Binding Items}" ScrollPolicy="Center"
+                                         ItemWidth="900" ContentMargin="200" Spacing="200">
+                        <tv:RecycleItemsView.ItemTemplate>
+                            <DataTemplate>
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                        <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
+                                        <Label Text="{Binding DetailText}" FontSize="40"/>
+                                    </StackLayout>
+                                </AbsoluteLayout>
+                            </DataTemplate>
+                        </tv:RecycleItemsView.ItemTemplate>
+                    </tv:RecycleItemsView>
+                </local:ScrollFocusFrame>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

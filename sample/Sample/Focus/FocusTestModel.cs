@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Sample.Focus
@@ -23,6 +24,11 @@ namespace Sample.Focus
     {
         public string Name { get; set; }
         public Type PageType { get; set; }
+    }
+
+    class ItemsTestModel : TestModel
+    {
+        public IList Items { get; set; }
     }
 
     class FocusTestModel
@@ -56,6 +62,12 @@ namespace Sample.Focus
                 {
                     Name = "Focus Frame",
                     PageType = typeof(FocusFrameTest)
+                },
+                new ItemsTestModel
+                {
+                    Name = "Focus Frame Scroll test",
+                    PageType = typeof(FocusFrameScrollTest),
+                    Items = RecycleItemsView.PosterModel.MakeModel()
                 }
             };
         }

@@ -58,6 +58,17 @@ namespace Tizen.TV.UIControls.Forms
                 {
                     Content.Focused -= OnContentFocused;
                     Content.Unfocused -= OnContentFocused;
+                    Content.DescendantAdded -= OnDescendantAdded;
+                    Content.DescendantRemoved -= OnDescendantRemoved;
+
+                    foreach (var child in Content.Descendants())
+                    {
+                        if (child is VisualElement ve)
+                        {
+                            ve.Focused -= OnContentFocused;
+                            ve.Unfocused -= OnContentFocused;
+                        }
+                    }
                 }
             }
         }
@@ -71,6 +82,17 @@ namespace Tizen.TV.UIControls.Forms
                 {
                     Content.Focused += OnContentFocused;
                     Content.Unfocused += OnContentFocused;
+                    Content.DescendantAdded += OnDescendantAdded;
+                    Content.DescendantRemoved += OnDescendantRemoved;
+
+                    foreach (var child in Content.Descendants())
+                    {
+                        if (child is VisualElement ve)
+                        {
+                            ve.Focused += OnContentFocused;
+                            ve.Unfocused += OnContentFocused;
+                        }
+                    }
                 }
             }
         }
@@ -89,5 +111,24 @@ namespace Tizen.TV.UIControls.Forms
         {
             OnContentFocused(e.IsFocused);
         }
+
+        void OnDescendantAdded(object sender, ElementEventArgs e)
+        {
+            if (e.Element is VisualElement ve)
+            {
+                ve.Focused += OnContentFocused;
+                ve.Unfocused += OnContentFocused;
+            }
+        }
+
+        void OnDescendantRemoved(object sender, ElementEventArgs e)
+        {
+            if (e.Element is VisualElement ve)
+            {
+                ve.Focused -= OnContentFocused;
+                ve.Unfocused -= OnContentFocused;
+            }
+        }
+
     }
 }
