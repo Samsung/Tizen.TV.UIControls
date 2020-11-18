@@ -46,6 +46,16 @@
                     </StackLayout>
                 </ScrollView>
             </tv:FocusFrame>
+            <tv:FocusFrame x:Name="_focsusFrame1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ContentFocused="OnContentFocused">
+                <StackLayout>
+                    <Label x:Name="FocusedItemLabel" Text="Focused Item : "/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="btn" HorizontalOptions="FillAndExpand"/>
+                        <CheckBox HorizontalOptions="CenterAndExpand"/>
+                        <Entry HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </tv:FocusFrame>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

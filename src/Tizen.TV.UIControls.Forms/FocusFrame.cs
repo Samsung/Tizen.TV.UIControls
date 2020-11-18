@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
+using System;
 using System.Runtime.CompilerServices;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -29,6 +31,25 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Color.Orange);
 
+        /// <summary>
+        /// Identifies the ContentFocusedCommand bindable property
+        /// </summary>
+        public static readonly BindableProperty ContentFocusedCommandProperty = BindableProperty.Create(nameof(ContentFocusedCommand), typeof(ICommand), typeof(FocusFrame), null);
+
+        /// <summary>
+        /// Identifies the ContentFocusedCommandParameter bindable property
+        /// </summary>
+        public static readonly BindableProperty ContentFocusedCommandParameterProperty = BindableProperty.Create(nameof(ContentFocusedCommandParameter), typeof(object), typeof(FocusFrame), null);
+
+        /// <summary>
+        /// Identifies the ContentUnfocusedCommand bindable property
+        /// </summary>
+        public static readonly BindableProperty ContentUnfocusedCommandProperty = BindableProperty.Create(nameof(ContentUnfocusedCommand), typeof(ICommand), typeof(FocusFrame), null);
+
+        /// <summary>
+        /// Identifies the ContentUnfocusedCommandParameter bindable property
+        /// </summary>
+        public static readonly BindableProperty ContentUnfocusedCommandParameterProperty = BindableProperty.Create(nameof(ContentUnfocusedCommandParameter), typeof(object), typeof(FocusFrame), null);
 
         /// <summary>
         /// Creates and initializes a new instance of the FocusFrame class.
@@ -38,6 +59,53 @@ namespace Tizen.TV.UIControls.Forms
             Padding = 10;
             BorderColor = Color.Transparent;
             HasShadow = false;
+        }
+
+        /// <summary>
+        /// Raise when one of descendants view are focused
+        /// </summary>
+        public event EventHandler<FocusEventArgs> ContentFocused;
+
+        /// <summary>
+        /// Raise when one of descendants view are unfocused
+        /// </summary>
+        public event EventHandler<FocusEventArgs> ContentUnfocused;
+
+
+        /// <summary>
+        /// Gets or sets the command to invoke when the content is focused. This is a bindable property.
+        /// </summary>
+        public ICommand ContentFocusedCommand
+        {
+            get => (ICommand)GetValue(ContentFocusedCommandProperty);
+            set => SetValue(ContentFocusedCommandProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the parameter to pass to the ContentFocusedCommand property. This is a bindable property.
+        /// </summary>
+        public object ContentFocusedCommandParameter
+        {
+            get => GetValue(ContentFocusedCommandParameterProperty);
+            set => SetValue(ContentFocusedCommandParameterProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the command to invoke when the content is unfocused. This is a bindable property.
+        /// </summary>
+        public ICommand ContentUnfocusedCommand
+        {
+            get => (ICommand)GetValue(ContentUnfocusedCommandProperty);
+            set => SetValue(ContentUnfocusedCommandProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the parameter to pass to the ContentUnfocusedCommand property. This is a bindable property.
+        /// </summary>
+        public object ContentUnfocusedCommandParameter
+        {
+            get => GetValue(ContentUnfocusedCommandParameterProperty);
+            set => SetValue(ContentUnfocusedCommandParameterProperty, value);
         }
 
         /// <summary>
@@ -110,6 +178,16 @@ namespace Tizen.TV.UIControls.Forms
         void OnContentFocused(object sender, FocusEventArgs e)
         {
             OnContentFocused(e.IsFocused);
+            if (e.IsFocused)
+            {
+                ContentFocusedCommand?.Execute(ContentFocusedCommandParameter);
+                ContentFocused?.Invoke(this, e);
+            }
+            else
+            {
+                ContentUnfocusedCommand?.Execute(ContentUnfocusedCommandParameter);
+                ContentUnfocused?.Invoke(this, e);
+            }
         }
 
         void OnDescendantAdded(object sender, ElementEventArgs e)
