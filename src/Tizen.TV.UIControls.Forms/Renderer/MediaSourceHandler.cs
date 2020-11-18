@@ -43,7 +43,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             {
                 Log.Info(UIControls.Tag, $"Set UriMediaSource");
                 var uri = uriSource.Uri;
-                player.GetPlayer().SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
+                player.NativePlayer.SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
             }
             return Task.FromResult<bool>(true);
         }
@@ -56,7 +56,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             if (source is FileMediaSource fileSource)
             {
                 Log.Info(UIControls.Tag, $"Set FileMediaSource");
-                player.GetPlayer().SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
+                player.NativePlayer.SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
             }
             return Task.FromResult<bool>(true);
         }
@@ -67,21 +67,29 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             if (source is DRMMediaSource uriSource)
             {
-                var platformDrmMgr = player.GetDRMManager();
+                var platformDrmMgr = player.DRMManager;
+                if (player.IsDRMOpened == true)
+                {
+                    player.IsDRMOpened = false;
+                    platformDrmMgr.Close();
+                }
                 var appId = Tizen.Applications.Application.Current.ApplicationInfo.ApplicationId;
                 platformDrmMgr.Init(appId);
                 platformDrmMgr.AddProperty("LicenseServer", uriSource.LicenseUrl);
                 foreach (KeyValuePair<string, ExtradataValue> pair in uriSource.Extradata)
                 {
-                    var x = pair.Value;
                     platformDrmMgr.RemoveProperty(pair.Key);
-                    platformDrmMgr.AddProperty(pair.Key, pair.Value);
+                    platformDrmMgr.AddProperty(pair.Key, pair.Value.Value);
                 }
-                platformDrmMgr.Url = uriSource.Url;
+                platformDrmMgr.Url = uriSource.Uri.ToString();
+                if (player.IsDRMOpened == false)
+                {
+                    player.IsDRMOpened = true;
+                    platformDrmMgr.Open();
 
-                platformDrmMgr.Open();
-                player.GetPlayer().SetDrm(platformDrmMgr);
-                player.GetPlayer().SetSource(new MediaUriSource(uriSource.Url));
+                }
+                player.NativePlayer.SetDrm(platformDrmMgr);
+                player.NativePlayer.SetSource(new MediaUriSource(platformDrmMgr.Url));
             }
             return Task.FromResult<bool>(true);
         }

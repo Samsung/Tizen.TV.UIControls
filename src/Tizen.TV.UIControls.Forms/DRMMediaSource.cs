@@ -7,6 +7,7 @@ namespace Tizen.TV.UIControls.Forms
     public class ExtradataValue
     {
         Object _extradataValue;
+        public Object Value => _extradataValue;
         public ExtradataValue(int value)
         {
             _extradataValue = value;
@@ -36,20 +37,5 @@ namespace Tizen.TV.UIControls.Forms
     {
         public Dictionary<string, ExtradataValue> Extradata { get; } = new Dictionary<string, ExtradataValue>();
         public string LicenseUrl { get; set; }
-
-        public string Url { get; set; }
-
-        public void AddProperty(string propertyName, int propertyValue)
-        {
-            Extradata.Add(propertyName, propertyValue);
-        }
-        public void AddProperty(string propertyName, bool propertyValue)
-        {
-            Extradata.Add(propertyName, propertyValue);
-        }
-        public void AddProperty(string propertyName, string propertyValue)
-        {
-            Extradata.Add(propertyName, propertyValue);
-        }
     }
 }

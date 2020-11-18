@@ -42,10 +42,11 @@ namespace Sample
                 }
             };
 
+            var myUri = new Uri("http://profficialsite.origin.mediaservices.windows.net/c51358ea-9a5e-4322-8951-897d640fdfd7/tearsofsteel_4k.ism/manifest(format=mpd-time-csf)");
             var DRMSource = new DRMMediaSource
             {
-                Url = "http://profficialsite.origin.mediaservices.windows.net/c51358ea-9a5e-4322-8951-897d640fdfd7/tearsofsteel_4k.ism/manifest(format=mpd-time-csf)",
-                //LicenseUrl = "http://playready-testserver.azurewebsites.net/rightsmanager.asmx?PlayRight=1&UseSimpleNonPersistentLicense=1"
+                Uri = myUri,
+                LicenseUrl = "http://playready-testserver.azurewebsites.net/rightsmanager.asmx?PlayRight=1&UseSimpleNonPersistentLicense=1",
             };
 
             var player = new MediaPlayer

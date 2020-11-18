@@ -395,7 +395,9 @@ namespace Tizen.TV.UIControls.Forms
         /// Occurs when the buffering for the media content is completed.
         /// </summary>
         public event EventHandler BufferingCompleted;
-
+        /// <summary>
+        /// Triggers when an error occurs
+        /// </summary>
         public event EventHandler ErrorOccurred;
 
         /// <summary>

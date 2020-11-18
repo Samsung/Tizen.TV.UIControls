@@ -65,7 +65,7 @@ namespace Sample
                 new PlayerTestModel("Simple Player test", typeof(SimplePlayerPage), MediaSource.FromFile("gear-sport.mp4")),
                 new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("tvcm.mp4")),
-                 new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("tvcm.mp4")),
+                new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test with code(no DRM)", typeof(TestOverlayPage3), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test with code(DRM)", typeof(TestOverlayPage4), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay view test", typeof(TestOverlayView), MediaSource.FromFile("iu.mp4")),
