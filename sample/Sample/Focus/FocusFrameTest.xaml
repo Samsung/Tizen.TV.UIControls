@@ -15,7 +15,7 @@
                 <Entry Placeholder="Entry2" />
             </tv:FocusFrame>
 
-            <tv:FocusFrame Grid.Row="1" Grid.Column="0">
+            <tv:FocusFrame Grid.Row="1" Grid.Column="0" UnfocusedColor="Gray">
                 <CheckBox/>
             </tv:FocusFrame>
             <tv:FocusFrame FocusedColor="Yellow" Grid.Row="1" Grid.Column="1">

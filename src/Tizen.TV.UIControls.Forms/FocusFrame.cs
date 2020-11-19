@@ -29,12 +29,12 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Identifies the FocusedColor bindable property.
         /// </summary>
-        public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Color.Orange);
+        public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Color.Orange, propertyChanged: (b, o, n) => (b as FocusFrame).OnContentFocused());
 
         /// <summary>
         /// Identifies the UnfocusedColor bindable property.
         /// </summary>
-        public static readonly BindableProperty UnfocusedColorProperty = BindableProperty.Create(nameof(UnfocusedColor), typeof(Color), typeof(FocusFrame), Color.Transparent);
+        public static readonly BindableProperty UnfocusedColorProperty = BindableProperty.Create(nameof(UnfocusedColor), typeof(Color), typeof(FocusFrame), Color.Transparent, propertyChanged: (b, o, n) => (b as FocusFrame).OnContentFocused());
 
         /// <summary>
         /// Identifies the ContentFocusedCommand bindable property
@@ -55,6 +55,13 @@ namespace Tizen.TV.UIControls.Forms
         /// Identifies the ContentUnfocusedCommandParameter bindable property
         /// </summary>
         public static readonly BindableProperty ContentUnfocusedCommandParameterProperty = BindableProperty.Create(nameof(ContentUnfocusedCommandParameter), typeof(object), typeof(FocusFrame), null);
+
+        static readonly BindablePropertyKey IsContentFocusedPropertyKey = BindableProperty.CreateReadOnly(nameof(IsContentFocused), typeof(bool), typeof(FocusFrame), false, propertyChanged: (b, o, n) => (b as FocusFrame).UpdateIsContentFocused());
+
+        /// <summary>
+        /// Identifies the IsContentFocused bindable property.
+        /// </summary>
+        public static readonly BindableProperty IsContentFocusedProperty = IsContentFocusedPropertyKey.BindableProperty;
 
         /// <summary>
         /// Creates and initializes a new instance of the FocusFrame class.
@@ -131,6 +138,15 @@ namespace Tizen.TV.UIControls.Forms
             set => SetValue(UnfocusedColorProperty, value);
         }
 
+        /// <summary>
+        /// Gets a value indicating whether content is focused currently.
+        /// </summary>
+        public bool IsContentFocused
+        {
+            get => (bool)GetValue(IsContentFocusedProperty);
+            private set => SetValue(IsContentFocusedPropertyKey, value);
+        }
+
         protected override void OnPropertyChanging([CallerMemberName] string propertyName = null)
         {
             base.OnPropertyChanging(propertyName);
@@ -191,18 +207,31 @@ namespace Tizen.TV.UIControls.Forms
 
         void OnContentFocused(object sender, FocusEventArgs e)
         {
-            OnContentFocused(e.IsFocused);
+            IsContentFocused = e.IsFocused;
             if (e.IsFocused)
             {
-                ContentFocusedCommand?.Execute(ContentFocusedCommandParameter);
                 ContentFocused?.Invoke(this, e);
             }
             else
             {
-                ContentUnfocusedCommand?.Execute(ContentUnfocusedCommandParameter);
                 ContentUnfocused?.Invoke(this, e);
             }
         }
+
+        void OnContentFocused()
+        {
+            OnContentFocused(IsContentFocused);
+        }
+
+        void UpdateIsContentFocused()
+        {
+            OnContentFocused(IsContentFocused);
+            if (IsContentFocused)
+                ContentFocusedCommand?.Execute(ContentFocusedCommandParameter);
+            else
+                ContentUnfocusedCommand?.Execute(ContentUnfocusedCommandParameter);
+        }
+
 
         void OnDescendantAdded(object sender, ElementEventArgs e)
         {
