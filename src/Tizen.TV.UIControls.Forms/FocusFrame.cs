@@ -32,6 +32,11 @@ namespace Tizen.TV.UIControls.Forms
         public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Color.Orange);
 
         /// <summary>
+        /// Identifies the UnfocusedColor bindable property.
+        /// </summary>
+        public static readonly BindableProperty UnfocusedColorProperty = BindableProperty.Create(nameof(UnfocusedColor), typeof(Color), typeof(FocusFrame), Color.Transparent);
+
+        /// <summary>
         /// Identifies the ContentFocusedCommand bindable property
         /// </summary>
         public static readonly BindableProperty ContentFocusedCommandProperty = BindableProperty.Create(nameof(ContentFocusedCommand), typeof(ICommand), typeof(FocusFrame), null);
@@ -117,6 +122,15 @@ namespace Tizen.TV.UIControls.Forms
             set => SetValue(FocusedColorProperty, value);
         }
 
+        /// <summary>
+        /// Gets or sets a value that represents UnfocusedColor, it used for decorating unfocused state on content
+        /// </summary>
+        public Color UnfocusedColor
+        {
+            get => (Color)GetValue(UnfocusedColorProperty);
+            set => SetValue(UnfocusedColorProperty, value);
+        }
+
         protected override void OnPropertyChanging([CallerMemberName] string propertyName = null)
         {
             base.OnPropertyChanging(propertyName);
@@ -172,7 +186,7 @@ namespace Tizen.TV.UIControls.Forms
         /// <param name="isFocused">This parameter indicates whether the content is focused.</param>
         protected virtual void OnContentFocused(bool isFocused)
         {
-            BackgroundColor = isFocused ? FocusedColor : Color.Transparent;
+            BackgroundColor = isFocused ? FocusedColor : UnfocusedColor;
         }
 
         void OnContentFocused(object sender, FocusEventArgs e)
