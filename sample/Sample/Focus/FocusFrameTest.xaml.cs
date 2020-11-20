@@ -10,6 +10,30 @@ namespace Sample.Focus
         public FocusFrameTest()
         {
             InitializeComponent();
+            _focsusFrame1.ContentUnfocusedCommand = new Command(() =>
+            {
+                FocusedItemLabel.Text = $"Focused Item : ";
+            });
+        }
+
+        int id = 0;
+
+        void OnAddedClicked(object sender, System.EventArgs e)
+        {
+            var addedBtn = new Button
+            {
+                Text = $"Remove({id++})"
+            };
+            addedBtn.Clicked += (s, evt) =>
+            {
+                AddedContainer.Children.Remove(addedBtn);
+            };
+            AddedContainer.Children.Add(addedBtn);
+        }
+
+        void OnContentFocused(object sender, FocusEventArgs e)
+        {
+            FocusedItemLabel.Text = $"Focused Item : {e.VisualElement}";
         }
     }
 

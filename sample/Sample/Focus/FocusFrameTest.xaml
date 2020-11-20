@@ -6,7 +6,7 @@
              Title="Focus navigation"
              x:Class="Sample.Focus.FocusFrameTest">
     <ContentPage.Content>
-        <Grid RowDefinitions="100, 100, 100, *"
+        <Grid RowDefinitions="*, *, *, *"
               ColumnDefinitions="*, *, *, *">
             <tv:FocusFrame Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
                 <Entry Placeholder="Entry1" />
@@ -15,7 +15,7 @@
                 <Entry Placeholder="Entry2" />
             </tv:FocusFrame>
 
-            <tv:FocusFrame Grid.Row="1" Grid.Column="0">
+            <tv:FocusFrame Grid.Row="1" Grid.Column="0" UnfocusedColor="Gray">
                 <CheckBox/>
             </tv:FocusFrame>
             <tv:FocusFrame FocusedColor="Yellow" Grid.Row="1" Grid.Column="1">
@@ -38,7 +38,23 @@
                 <Button Text="3"/>
             </local:MyFocusFrame>
             <tv:FocusFrame Grid.Row="2" Grid.Column="3">
-                <Button Text="4"/>
+                <ScrollView>
+                    <StackLayout x:Name="AddedContainer">
+                        <Label Text="Text1"/>
+                        <Button Text="Add" Clicked="OnAddedClicked"/>
+                        <Label Text="Text2"/>
+                    </StackLayout>
+                </ScrollView>
+            </tv:FocusFrame>
+            <tv:FocusFrame x:Name="_focsusFrame1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" ContentFocused="OnContentFocused">
+                <StackLayout>
+                    <Label x:Name="FocusedItemLabel" Text="Focused Item : "/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button Text="btn" HorizontalOptions="FillAndExpand"/>
+                        <CheckBox HorizontalOptions="CenterAndExpand"/>
+                        <Entry HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
             </tv:FocusFrame>
         </Grid>
     </ContentPage.Content>
