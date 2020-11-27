@@ -77,7 +77,6 @@ namespace Tizen.TV.UIControls.Forms
         event EventHandler PlaybackStopped;
         event EventHandler UpdateStreamInfo;
         event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
-        event EventHandler ErrorOccurred;
      
         void SetDisplay(IVideoOutput output);
 

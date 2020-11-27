@@ -31,41 +31,43 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
     {
-        TVM.Player _player; 
-        DRMManager _dRMManager = null;
+        TVM.Player _player;
         bool _cancelToStart;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare;
         TaskCompletionSource<bool> _tcsForStreamInfo;
         IVideoOutput _videoOutput;
         MediaSource _source;
+        DRMManager _drmManager;
 
         public MediaPlayerImpl()
         {
             _player = CreateMediaPlayer();
             _player.PlaybackCompleted += OnPlaybackCompleted;
             _player.BufferingProgressChanged += OnBufferingProgressChanged;
-            _player.ErrorOccurred += OnErrorOccurred;
         }
+
         protected virtual TVM.Player CreateMediaPlayer()
         {
             return new TVM.Player();
         }
-        public DRMManager GetDRMManager()
+
+        public DRMManager DRMManager
         {
-            if (_dRMManager == null)
-                _dRMManager = DRMManager.CreateDRMManager(TVM.DRMType.Playready);
-            return _dRMManager;
-        }
-        public TVM.Player GetPlayer()
-        {
-            return _player;
-        }
-        public bool UsesEmbeddingControls
-        {
-            get; set;
+            get => _drmManager;
+            set
+            {
+                _drmManager = value;
+                if (value != null)
+                {
+                    _player.SetDrm(value);
+                }
+            }
         }
 
+        public TVM.Player NativePlayer => _player;
+        public bool UsesEmbeddingControls { get; set; }
+        public bool IsDRMOpened { get; set; }
         public bool AutoPlay { get; set; }
 
         public bool AutoStop { get; set; }
@@ -154,7 +156,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         public event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
         public event EventHandler PlaybackStopped;
         public event EventHandler PlaybackPaused;
-        public event EventHandler ErrorOccurred;
 
         public async Task<bool> Start()
         {
@@ -205,7 +206,12 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             _cancelToStart = true;
             var unusedTask = ChangeToIdleState();
             PlaybackStopped.Invoke(this, EventArgs.Empty);
-            _dRMManager.Close();
+            if (DRMManager != null)
+            {
+                DRMManager?.Close();
+                DRMManager?.Dispose();
+                DRMManager = null;
+            }
         }
 
         public void SetDisplay(IVideoOutput output)
@@ -271,10 +277,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 [nameof(StreamMetadataKey.Year)] = _player.StreamInfo.GetMetadata(StreamMetadataKey.Year)
             };
             return metadata;
-        }
-        void OnErrorOccurred(object sender, PlayerErrorOccurredEventArgs e)
-        {
-            ErrorOccurred?.Invoke(this, EventArgs.Empty);
         }
         void ApplyDisplay()
         {

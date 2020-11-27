@@ -98,7 +98,7 @@ namespace Tizen.TV.UIControls.Forms
 
 
 
-        protected IPlatformMediaPlayer _impl;       
+        IPlatformMediaPlayer _impl;
         bool _isPlaying;
         bool _controlsAlwaysVisible;
         CancellationTokenSource _hideTimerCTS = new CancellationTokenSource();
@@ -116,7 +116,6 @@ namespace Tizen.TV.UIControls.Forms
             _impl.PlaybackPaused += SendPlaybackPaused;
             _impl.PlaybackStopped += SendPlaybackStopped;
             _impl.BufferingProgressUpdated += OnUpdateBufferingProgress;
-            _impl.ErrorOccurred += SendErrorOccurred;
             _impl.UsesEmbeddingControls = true;
             _impl.Volume = 1d;
             _impl.AspectMode = DisplayAspectMode.AspectFit;
@@ -487,11 +486,6 @@ namespace Tizen.TV.UIControls.Forms
         void SendPlaybackCompleted(object sender, EventArgs e)
         {
             PlaybackCompleted?.Invoke(this, EventArgs.Empty);
-        }
-
-        void SendErrorOccurred(object sender, EventArgs e)
-        {
-            ErrorOccurred?.Invoke(this, EventArgs.Empty);
         }
 
         void SendPlaybackStarted(object sender, EventArgs e)

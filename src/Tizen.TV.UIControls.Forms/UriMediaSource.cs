@@ -40,9 +40,6 @@ namespace Tizen.TV.UIControls.Forms
             set { SetValue(UriProperty, value); }
         }
 
-        public UriMediaSource()
-        {
-        }
         /// <summary>
         /// Returns the path to the file for the media, prefixed with the string, "Uri: ".
         /// </summary>
