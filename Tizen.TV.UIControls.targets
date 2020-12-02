@@ -4,7 +4,7 @@
     <ThemeFileDirectory>$(MSBuildThisFileDirectory)..\content\theme\</ThemeFileDirectory>
   </PropertyGroup>
 
-  <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('tizen')) ">
     <TizenTpkUserIncludeFiles Include="$(ThemeFileDirectory)*.edj">
       <TizenTpkSubDir>res</TizenTpkSubDir>
     </TizenTpkUserIncludeFiles>
