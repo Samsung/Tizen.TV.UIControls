@@ -14,5 +14,7 @@
 ## [Introduction](ContentButton.md)
 #ContentPopup
 ## [Introduction](ContentPopup.md)
+#AnimatedNavigationPage
+## [Introduction](AnimatedNavigationPage.md)
 #Troubleshooter
 ## [Solved Problem](Troubleshooter.md)
