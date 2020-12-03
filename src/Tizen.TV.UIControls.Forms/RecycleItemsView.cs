@@ -157,7 +157,7 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public RecycleItemsView()
         {
-            InitializeComponent();
+            Initialize();
         }
 
         /// <summary>
@@ -649,7 +649,7 @@ namespace Tizen.TV.UIControls.Forms
             return false;
         }
 
-        protected void InitializeComponent()
+        protected void Initialize()
         {
             _contentLayout = new ContentLayout(this)
             {
