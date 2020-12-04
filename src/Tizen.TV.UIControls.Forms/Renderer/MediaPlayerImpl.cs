@@ -24,6 +24,8 @@ using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
+using ERect = ElmSharp.Rect;
+using MRectangle = Tizen.Multimedia.Rectangle;
 using MPlayer = Tizen.Multimedia.Player;
 using TVPlayer  = Tizen.TV.Multimedia.Player;
 
@@ -450,9 +452,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public static class MultimediaConvertExtensions
     {
-        public static Tizen.Multimedia.Rectangle ToMultimedia(this ElmSharp.Rect rect)
+        public static MRectangle ToMultimedia(this ERect rect)
         {
-            return new Tizen.Multimedia.Rectangle(rect.X, rect.Y, rect.Width, rect.Height);
+            return new MRectangle(rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         public static PlayerDisplayMode ToMultimeida(this DisplayAspectMode mode)
