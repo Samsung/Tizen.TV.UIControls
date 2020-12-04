@@ -21,6 +21,7 @@ using Xamarin.Forms.Platform.Tizen;
 using ElmSharp;
 using XForms = Xamarin.Forms.Forms;
 using XColor = Xamarin.Forms.Color;
+using XApplication = Xamarin.Forms.Application;
 using EColor = ElmSharp.Color;
 
 [assembly: Dependency(typeof(Tizen.TV.UIControls.Forms.Renderer.ContentPopupRenderer))]
@@ -51,7 +52,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         public void SetElement(ContentPopup element)
         {
             if (element.Parent == null)
-                element.Parent = Xamarin.Forms.Application.Current;
+                element.Parent = XApplication.Current;
             element.PropertyChanged += OnElementPropertyChanged;
             _element = element;
 
