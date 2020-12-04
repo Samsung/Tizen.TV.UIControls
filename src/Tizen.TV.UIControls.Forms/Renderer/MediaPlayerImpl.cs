@@ -17,7 +17,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Tizen.Multimedia;
 using Tizen.TV.Multimedia;
@@ -25,13 +24,15 @@ using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
-using TVM = Tizen.TV.Multimedia;
+using MPlayer = Tizen.Multimedia.Player;
+using TVPlayer  = Tizen.TV.Multimedia.Player;
+
 [assembly: Xamarin.Forms.Dependency(typeof(MediaPlayerImpl))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
     {
-        TVM.Player _player;
+        MPlayer _player;
         bool _cancelToStart;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare;
@@ -47,9 +48,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             _player.BufferingProgressChanged += OnBufferingProgressChanged;
         }
 
-        protected virtual TVM.Player CreateMediaPlayer()
+        protected virtual MPlayer CreateMediaPlayer()
         {
-            return new TVM.Player();
+            return new TVPlayer();
         }
 
         public DRMManager DRMManager
@@ -57,17 +58,23 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             get => _drmManager;
             set
             {
-                _drmManager = value;
-                if (value != null)
+                if (_player is TVPlayer tvPlayer)
                 {
-                    _player.SetDrm(value);
+                    _drmManager = value;
+                    if (value != null)
+                    {
+                        tvPlayer.SetDrm(value);
+                    }
+                }
+                else
+                {
+                    Log.Debug(UIControls.Tag, "DRMManager is avaialbe only on TVPlayer.");
                 }
             }
         }
 
-        public TVM.Player NativePlayer => _player;
+        public MPlayer NativePlayer => _player;
         public bool UsesEmbeddingControls { get; set; }
-        public bool IsDRMOpened { get; set; }
         public bool AutoPlay { get; set; }
 
         public bool AutoStop { get; set; }
@@ -208,8 +215,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             PlaybackStopped.Invoke(this, EventArgs.Empty);
             if (DRMManager != null)
             {
-                DRMManager?.Close();
-                DRMManager?.Dispose();
+                DRMManager.Close();
+                DRMManager.Dispose();
                 DRMManager = null;
             }
         }

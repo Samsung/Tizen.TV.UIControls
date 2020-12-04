@@ -65,8 +65,8 @@ namespace Tizen.TV.UIControls.Forms
         bool AutoStop { get; set; }
         double Volume { get; set; }
         bool IsMuted { get; set; }
-        int Position { get; }
         bool IsLooping { get; set; }
+        int Position { get; }
         int Duration { get; }
 
         DisplayAspectMode AspectMode { get; set; }
@@ -77,7 +77,7 @@ namespace Tizen.TV.UIControls.Forms
         event EventHandler PlaybackStopped;
         event EventHandler UpdateStreamInfo;
         event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
-     
+
         void SetDisplay(IVideoOutput output);
 
         void SetSource(MediaSource source);

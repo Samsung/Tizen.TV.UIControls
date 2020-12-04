@@ -15,19 +15,18 @@
  */
 
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using Tizen.Multimedia;
+using Tizen.TV.Multimedia;
+using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
-using DRMMediaSource = Tizen.TV.UIControls.Forms.DRMMediaSource;
-using TUriMediaSource = Tizen.TV.UIControls.Forms.UriMediaSource;
-using TFileMediaSource = Tizen.TV.UIControls.Forms.FileMediaSource;
-using System.Collections.Generic;
-using Tizen.TV.Multimedia;
+
 
 [assembly: ExportHandler(typeof(DRMMediaSource), typeof(DRMMediaSourceHandler))]
-[assembly: ExportHandler(typeof(TUriMediaSource), typeof(UriMediaSourceHandler))]
-[assembly: ExportHandler(typeof(TFileMediaSource), typeof(FileMediaSourceHandler))]
+[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
+[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
 
@@ -65,7 +64,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public sealed class DRMMediaSourceHandler : IMediaSourceHandler
     {
-        public Task<bool> SetSource(MediaPlayerImpl player, TV.UIControls.Forms.MediaSource source)
+        public Task<bool> SetSource(MediaPlayerImpl player, MediaSource source)
         {
             if (source is DRMMediaSource uriSource)
             {
@@ -78,7 +77,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 }
                 drmManager.RemoveProperty("LicenseServer");
                 drmManager.AddProperty("LicenseServer", uriSource.LicenseUrl);
-                drmManager.Url = uriSource.Uri.ToString();
+                drmManager.Url = uriSource.Uri.AbsoluteUri;
                 drmManager.Open();
                 player.DRMManager = drmManager;
                 player.NativePlayer.SetSource(new MediaUriSource(drmManager.Url));

@@ -96,8 +96,6 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public static readonly BindableProperty IsLoopingProperty = BindableProperty.Create(nameof(IsLooping), typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateIsLooping());
 
-
-
         IPlatformMediaPlayer _impl;
         bool _isPlaying;
         bool _controlsAlwaysVisible;
@@ -394,10 +392,6 @@ namespace Tizen.TV.UIControls.Forms
         /// Occurs when the buffering for the media content is completed.
         /// </summary>
         public event EventHandler BufferingCompleted;
-        /// <summary>
-        /// Triggers when an error occurs
-        /// </summary>
-        public event EventHandler ErrorOccurred;
 
         /// <summary>
         /// Pauses the player.
@@ -696,7 +690,6 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-
         static void OnSourceChanging(BindableObject bindable, object oldValue, object newValue)
         {
             (bindable as MediaPlayer)?.OnSourceChanging(oldValue as MediaSource, newValue as MediaSource);
@@ -706,5 +699,4 @@ namespace Tizen.TV.UIControls.Forms
             (bindable as MediaPlayer)?.OnSourceChanged(bindable, EventArgs.Empty);
         }
     }
-
 }

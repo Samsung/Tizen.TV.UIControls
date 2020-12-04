@@ -15,7 +15,6 @@
  */
 
 using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
