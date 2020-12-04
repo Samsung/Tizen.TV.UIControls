@@ -17,14 +17,11 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Tizen.Multimedia;
-using Tizen.TV.Multimedia;
 using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
-
-[assembly: ExportHandler(typeof(DRMMediaSource), typeof(DRMMediaSourceHandler))]
 [assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
 [assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
 namespace Tizen.TV.UIControls.Forms.Renderer
@@ -32,18 +29,18 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public interface IMediaSourceHandler : IRegisterable
     {
-        Task<bool> SetSource(MediaPlayerImpl player, MediaSource imageSource);
+        Task<bool> SetSource(Player player, MediaSource imageSource);
     }
 
     public sealed class UriMediaSourceHandler : IMediaSourceHandler
     {
-        public Task<bool> SetSource(MediaPlayerImpl player, MediaSource source)
+        public Task<bool> SetSource(Player player, MediaSource source)
         {
             if (source is UriMediaSource uriSource)
             {
                 Log.Info(UIControls.Tag, $"Set UriMediaSource");
                 var uri = uriSource.Uri;
-                player.NativePlayer.SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
+                player.SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
             }
             return Task.FromResult<bool>(true);
         }
@@ -51,38 +48,15 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public sealed class FileMediaSourceHandler : IMediaSourceHandler
     {
-        public Task<bool> SetSource(MediaPlayerImpl player, MediaSource source)
+        public Task<bool> SetSource(Player player, MediaSource source)
         {
             if (source is FileMediaSource fileSource)
             {
                 Log.Info(UIControls.Tag, $"Set FileMediaSource");
-                player.NativePlayer.SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
+                player.SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
             }
             return Task.FromResult<bool>(true);
         }
     }
 
-    public sealed class DRMMediaSourceHandler : IMediaSourceHandler
-    {
-        public Task<bool> SetSource(MediaPlayerImpl player, MediaSource source)
-        {
-            if (source is DRMMediaSource uriSource)
-            {
-                var drmManager = DRMManager.CreateDRMManager(DRMType.Playready);
-                var appId = Tizen.Applications.Application.Current.ApplicationInfo.ApplicationId;
-                drmManager.Init(appId);
-                foreach (KeyValuePair<string, DRMPropertyValue> pair in uriSource.ExtraData)
-                {
-                    drmManager.AddProperty(pair.Key, pair.Value.Value);
-                }
-                drmManager.RemoveProperty("LicenseServer");
-                drmManager.AddProperty("LicenseServer", uriSource.LicenseUrl);
-                drmManager.Url = uriSource.Uri.AbsoluteUri;
-                drmManager.Open();
-                player.DRMManager = drmManager;
-                player.NativePlayer.SetSource(new MediaUriSource(drmManager.Url));
-            }
-            return Task.FromResult<bool>(true);
-        }
-    }
 }

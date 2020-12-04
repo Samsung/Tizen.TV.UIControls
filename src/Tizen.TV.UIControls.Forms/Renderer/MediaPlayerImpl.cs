@@ -24,6 +24,8 @@ using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
+
+using TApplication = Tizen.Applications.Application;
 using ERect = ElmSharp.Rect;
 using MRectangle = Tizen.Multimedia.Rectangle;
 using MPlayer = Tizen.Multimedia.Player;
@@ -339,13 +341,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     var renderer = Platform.GetRenderer(TargetView);
                     if (renderer is OverlayViewRenderer)
                     {
-                        var parentArea = renderer.NativeView.Geometry;
-                        if (parentArea.Width == 0 || parentArea.Height == 0)
-                        {
-                            await Task.Delay(1);
-                            parentArea = renderer.NativeView.Geometry;
-                        }
-                        bound = parentArea;
+                        // need to convert absolute coordinate from relative coordinate
+                        await Task.Delay(1);
+                        bound = renderer.NativeView.Geometry;
                     }
                     _player.DisplaySettings.SetRoi(bound.ToMultimedia());
                 }
@@ -363,7 +361,21 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 return;
             }
             IMediaSourceHandler handler = Registrar.Registered.GetHandlerForObject<IMediaSourceHandler>(_source);
-            await handler.SetSource(this, _source);
+            if (_source is DRMMediaSource drmMediaSource)
+            {
+                var drmManager = DRMManager.CreateDRMManager(DRMType.Playready);
+                drmManager.Init(TApplication.Current.ApplicationInfo.ApplicationId);
+                foreach (KeyValuePair<string, DRMPropertyValue> pair in drmMediaSource.ExtraData)
+                {
+                    _drmManager.AddProperty(pair.Key, pair.Value.Value);
+                }
+                drmManager.RemoveProperty("LicenseServer");
+                drmManager.AddProperty("LicenseServer", drmMediaSource.LicenseUrl);
+                drmManager.Url = drmMediaSource.Uri.AbsoluteUri;
+                drmManager.Open();
+                DRMManager = drmManager;
+            }
+            await handler.SetSource(_player, _source);
         }
 
         async void OnTargetViewPropertyChanged(object sender, global::System.ComponentModel.PropertyChangedEventArgs e)
