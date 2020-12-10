@@ -55,7 +55,7 @@ namespace Sample
                 LicenseUrl = "http://playready-testserver.azurewebsites.net/rightsmanager.asmx?PlayRight=1&UseSimpleNonPersistentLicense=1",
             };
 
-            var player = new MediaPlayers
+            var player = new MediaPlayer
             {
                 Source = drmSource,
                 VideoOutput = this,
