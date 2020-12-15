@@ -27,6 +27,9 @@
     <Compile Update="Entry\EntryMainPage.xaml.cs">
       <DependentUpon>EntryMainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="GridView\DataTemplateTest2.xaml.cs">
+      <DependentUpon>DataTemplateTest2.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MediaPlayer\PlayerMainPage.xaml.cs">
       <DependentUpon>PlayerMainPage.xaml</DependentUpon>
     </Compile>
