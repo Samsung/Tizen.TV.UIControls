@@ -103,7 +103,7 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public MediaPlayer()
         {
-            _impl = DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
+            _impl = CreateMediaPlayerImpl();
             _impl.UpdateStreamInfo += OnUpdateStreamInfo;
             _impl.PlaybackCompleted += SendPlaybackCompleted;
             _impl.PlaybackStarted += SendPlaybackStarted;
@@ -432,6 +432,13 @@ namespace Tizen.TV.UIControls.Forms
         public Task<IDictionary<string, string>> GetMetadata()
         {
             return _impl.GetMetadata();
+        }
+
+        protected IPlatformMediaPlayer PlatformPlayer => _impl;
+
+        protected virtual IPlatformMediaPlayer CreateMediaPlayerImpl()
+        {
+            return DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
         }
 
         void UpdateAutoPlay()

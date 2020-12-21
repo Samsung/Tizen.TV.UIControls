@@ -416,9 +416,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public static class MultimediaConvertExtensions
     {
-        public static Multimedia.Rectangle ToMultimedia(this ElmSharp.Rect rect)
+        public static Tizen.Multimedia.Rectangle ToMultimedia(this ElmSharp.Rect rect)
         {
-            return new Multimedia.Rectangle(rect.X, rect.Y, rect.Width, rect.Height);
+            return new Tizen.Multimedia.Rectangle(rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         public static PlayerDisplayMode ToMultimeida(this DisplayAspectMode mode)

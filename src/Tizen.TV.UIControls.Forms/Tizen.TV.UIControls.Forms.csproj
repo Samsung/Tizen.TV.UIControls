@@ -33,7 +33,8 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
     <Compile Include="Renderer\**\*.cs" />
-    <PackageReference Include="Tizen.NET" Version="4.0.0" />
+    <PackageReference Include="Tizen.NET" Version="6.0.0.14995" />
+    <PackageReference Include="Tizen.NET.TV" Version="6.6.0.5599517" />
   </ItemGroup>
 
   <ItemGroup>
