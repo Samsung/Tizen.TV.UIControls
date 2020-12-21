@@ -123,9 +123,7 @@ namespace Tizen.TV.UIControls.Forms
         }
 
         /// <summary>
-        /// Gets or sets the item's alignment along X-axis within a GridView.
-        /// Accepted values range from 0.0 to 1.0 range.
-        /// If value is 0.0, its items of GridView placed exactly in the left along X-axis.
+        /// Gets or sets the item's layout alignment along the horizon.
         /// </summary>
         public LayoutAlignment ItemHorizontalAlignment
         {
@@ -134,9 +132,7 @@ namespace Tizen.TV.UIControls.Forms
         }
 
         /// <summary>
-        /// Gets or sets the item's alignment on Y-axis within a GridView.
-        /// Accepted values range from 0.0 to 1.0 range.
-        /// If value is 0.0, its items of GridView placed exactly in the left along Y-axis.
+        /// Gets or sets the item's layout alignment along the vertical.
         /// </summary>
         public LayoutAlignment ItemVerticalAlignment
         {

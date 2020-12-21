@@ -37,7 +37,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
     {
         Dictionary<object, GenGridItem> _gengridItemDic = new Dictionary<object, GenGridItem>();
         Dictionary<IntPtr, GenGridItem> _itemHandleDic = new Dictionary<IntPtr, GenGridItem>();
-        Dictionary<object, GengridItemContext> _itemViewDic = new Dictionary<object, GengridItemContext>();
         INotifyCollectionChanged _collectionChanged = null;
         GenItemClass _gridItemClass = new GenItemClass("full");
 
@@ -189,7 +188,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             Control.Clear();
             _gengridItemDic.Clear();
             _itemHandleDic.Clear();
-            _itemViewDic.Clear();
 
             if (_collectionChanged != null)
             {
@@ -224,14 +222,14 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         View CreateOrGetRealView(GengridItemContext context)
         {
-            if (_itemViewDic.ContainsKey(context.Data))
+            if (context.RealizedView != null)
             {
-                return _itemViewDic[context.Data].RealizedView;
+                return context.RealizedView;
             }
             var realView = CreateView(Element.ItemTemplate);
             realView.BindingContext = context.Data;
+            realView.Parent = Element;
             context.RealizedView = realView;
-            _itemViewDic.Add(context.Data, context);
             return realView;
         }
 
@@ -271,10 +269,10 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             switch (alignment)
             {
                 case LayoutAlignment.Start:
-                    alignValue = 0.1;
+                    alignValue = 0.0;
                     break;
                 case LayoutAlignment.End:
-                    alignValue = 0.9;
+                    alignValue = 1.0;
                     break;
             }
             return alignValue;

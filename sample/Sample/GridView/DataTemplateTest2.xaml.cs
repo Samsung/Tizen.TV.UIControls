@@ -24,7 +24,6 @@ namespace Sample.GridView
     public partial class DataTemplateTest2 : ContentPage
     {
         DataTemplate Old = null;
-        DataTemplate New = null;
         bool IsOld = true;
 
         public DataTemplateTest2()
