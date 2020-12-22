@@ -37,6 +37,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
     {
         Dictionary<object, GenGridItem> _gengridItemDic = new Dictionary<object, GenGridItem>();
         Dictionary<IntPtr, GenGridItem> _itemHandleDic = new Dictionary<IntPtr, GenGridItem>();
+        List<object> _itemList = new List<object>();
         INotifyCollectionChanged _collectionChanged = null;
         GenItemClass _gridItemClass = new GenItemClass("full");
 
@@ -45,7 +46,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             if (Control == null)
             {
                 SetNativeControl(new GenGrid(Xamarin.Forms.Forms.NativeParent));
-                Control.ItemSelected += OnItemSelected;
                 Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.IsHorizontal = Element.Orientation == GridViewOrientation.Horizontal ? true : false;
@@ -122,6 +122,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             GengridItemContext context = e.Item.Data as GengridItemContext;
             Element.SelectedItem = context.Data;
+            (Element as IGridViewController)?.SendItemSelected(new SelectedItemChangedEventArgs(context.Data, _itemList.IndexOf(context.Data)));
         }
 
         EvasObject GetGridViewContent(object data, string part)
@@ -188,6 +189,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             Control.Clear();
             _gengridItemDic.Clear();
             _itemHandleDic.Clear();
+            _itemList.Clear();
 
             if (_collectionChanged != null)
             {
@@ -211,6 +213,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 IntPtr handle = gridItem;
                 _itemHandleDic.Add(handle, gridItem);
                 _gengridItemDic.Add(item, gridItem);
+                _itemList.Add(item);
             }
 
             if (Element.ItemsSource is INotifyCollectionChanged collection)

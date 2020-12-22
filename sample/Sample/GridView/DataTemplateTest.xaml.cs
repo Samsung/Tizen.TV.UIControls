@@ -31,7 +31,7 @@ namespace Sample.GridView
             Tizen.TV.UIControls.Forms.GridView recycleView = sender as Tizen.TV.UIControls.Forms.GridView;
             if (recycleView.SelectedItem is PosterModel poster)
             {
-                myLabel.Text = poster.Text + " is selected";
+                myLabel.Text = e.SelectedItemIndex+ "th "+poster.Text + " is selected";
             }
         }
     }

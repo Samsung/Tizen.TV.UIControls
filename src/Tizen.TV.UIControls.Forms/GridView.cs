@@ -64,7 +64,7 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Identifies the SelectedItem bindable property.
         /// </summary>
-        public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem), typeof(object), typeof(GridView), null, propertyChanged: (b, o, n) => ((GridView)b).UpdateSelectedItems(), defaultBindingMode: BindingMode.TwoWay);
+        public static readonly BindableProperty SelectedItemProperty = BindableProperty.Create(nameof(SelectedItem), typeof(object), typeof(GridView), null);
 
         /// <summary>
         /// Identifies the ItemHorizontalAlignment bindable property.
@@ -194,6 +194,11 @@ namespace Tizen.TV.UIControls.Forms
             ItemFocused?.Invoke(this, args);
         }
 
+        public void SendItemSelected(SelectedItemChangedEventArgs args)
+        {
+            ItemSelected?.Invoke(this, args);
+        }
+
         protected bool ValidateItemTemplate(DataTemplate template)
         {
             if (template == null)
@@ -206,11 +211,6 @@ namespace Tizen.TV.UIControls.Forms
                 return true;
 
             return false;
-        }
-
-        void UpdateSelectedItems()
-        {
-            ItemSelected?.Invoke(this, new SelectedItemChangedEventArgs(SelectedItem, -1));
         }
     }
 
