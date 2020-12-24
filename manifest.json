@@ -14,6 +14,18 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "../guides/AnimatedNavigationPage.md",
+      "output": {
+        ".html": {
+          "relative_path": "guides/AnimatedNavigationPage.html",
+          "hash": "0l5rE/jlswvRp2/Ee9ih/A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "../guides/ContentButton.md",
       "output": {
         ".html": {
@@ -139,6 +151,72 @@
         ".html": {
           "relative_path": "guides/Troubleshooter.html",
           "hash": "M2Ps58RQklovJYn/69coSg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/AniNavPage_fade.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/AniNavPage_fade.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/AniNavPage_scale.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/AniNavPage_scale.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/AniNavPage_slide_from_bottom.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/AniNavPage_slide_from_bottom.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/AniNavPage_slide_from_left.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/AniNavPage_slide_from_left.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/AniNavPage_slide_from_right.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/AniNavPage_slide_from_right.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "../guides/resources/AniNavPage_slide_from_top.gif",
+      "output": {
+        "resource": {
+          "relative_path": "guides/resources/AniNavPage_slide_from_top.gif"
         }
       },
       "is_incremental": false,
@@ -304,7 +382,7 @@
       "output": {
         ".html": {
           "relative_path": "guides/toc.html",
-          "hash": "6ZOlW2uRqiVl2GgQpZt7aw=="
+          "hash": "G1KB0BZ7G1T+ef88x0j2tA=="
         }
       },
       "is_incremental": false,
@@ -358,6 +436,42 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.AnimatablePage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.AnimatablePage.html",
+          "hash": "To7rWb/cQaKQhl1lQs4qag=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.AnimatedContentPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.AnimatedContentPage.html",
+          "hash": "kHv7LqoyWwyaTpjeFwwZ1A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.AnimatedNavigationPage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.AnimatedNavigationPage.html",
+          "hash": "m8E3cTdBlRbJRYOFvbGTCw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs.yml",
       "output": {
         ".html": {
@@ -399,6 +513,30 @@
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.ContentPopupManager.html",
           "hash": "TLMJ7rW5GZpgNwbf0EJtyg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.DRMMediaSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.DRMMediaSource.html",
+          "hash": "JuHDFgOCEgn4OCebrlAhMQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.DRMPropertyValue.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.DRMPropertyValue.html",
+          "hash": "T70/9i3IZ3HacT4Jsqm4mQ=="
         }
       },
       "is_incremental": false,
@@ -506,7 +644,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.FocusFrame.html",
-          "hash": "tPII4GA3RJ0KxtllUnroww=="
+          "hash": "Lm6NuxmR7isQIWTv/ZtW8A=="
         }
       },
       "is_incremental": false,
@@ -554,7 +692,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.IPlatformMediaPlayer.html",
-          "hash": "zaMBdjktso5Wqjj7pV5dJw=="
+          "hash": "ygoujsyErmh2c/URItv8xg=="
         }
       },
       "is_incremental": false,
@@ -626,7 +764,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.MediaPlayer.html",
-          "hash": "X0j6p1+HO3B5AQ85mOs1Fw=="
+          "hash": "H90j+vmQd1QfIMf54cYCbg=="
         }
       },
       "is_incremental": false,
@@ -687,6 +825,18 @@
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.OverlayPage.html",
           "hash": "+tHXxVlNg4LvROgE8VfYNw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/Tizen.TV.UIControls.Forms.PageTransition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tizen.TV.UIControls.Forms.PageTransition.html",
+          "hash": "yl9xNaW0XhEoJWV4sktjqw=="
         }
       },
       "is_incremental": false,
@@ -782,7 +932,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.UriMediaSource.html",
-          "hash": "Mh0qbAylHgbc8xDkolh2Aw=="
+          "hash": "9wPeqmIa7GY0Qg7aoumCZg=="
         }
       },
       "is_incremental": false,
@@ -806,7 +956,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tizen.TV.UIControls.Forms.html",
-          "hash": "/pt/lfoq5pwpFUTb4HAqpg=="
+          "hash": "Zg1BqU3o0AdioLSau8zh7w=="
         }
       },
       "is_incremental": false,
@@ -818,7 +968,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "8xF/4H+1PUHYvs/S3mVFDw=="
+          "hash": "Y/Dh6t6kgATsi9L3Xl9Y6A=="
         }
       },
       "is_incremental": false,
@@ -858,13 +1008,13 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 38,
+          "total_file_count": 44,
           "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 13,
+          "total_file_count": 14,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

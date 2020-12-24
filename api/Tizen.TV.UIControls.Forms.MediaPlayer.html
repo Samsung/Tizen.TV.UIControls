@@ -248,6 +248,29 @@
       </tr>
     </tbody>
   </table>
+  <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_IsLoopingProperty" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.IsLoopingProperty">IsLoopingProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the IsLooping bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty IsLoopingProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_IsMutedProperty" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.IsMutedProperty">IsMutedProperty</h4>
   <div class="markdown level1 summary"><p>Identifies the IsMuted bindable property.</p>
 </div>
@@ -578,6 +601,30 @@
       </tr>
     </tbody>
   </table>
+  <a id="Tizen_TV_UIControls_Forms_MediaPlayer_IsLooping_" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.IsLooping*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_IsLooping" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.IsLooping">IsLooping</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value whether the volume is looping or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLooping { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Tizen_TV_UIControls_Forms_MediaPlayer_IsMuted_" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.IsMuted*"></a>
   <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_IsMuted" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.IsMuted">IsMuted</h4>
   <div class="markdown level1 summary"><p>Gets or sets the value whether the volume is muted.</p>
@@ -674,6 +721,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Tizen_TV_UIControls_Forms_MediaPlayer_Source_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The &quot;<a href="http://developer.samsung.com/privilege/drmplay&amp;quot">http://developer.samsung.com/privilege/drmplay&quot</a>; privilege is required in case of DRMMediaSource.</p>
+</div>
   <a id="Tizen_TV_UIControls_Forms_MediaPlayer_State_" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.State*"></a>
   <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_State" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.State">State</h4>
   <div class="markdown level1 summary"><p>Gets the current playback state.</p>
@@ -772,6 +822,29 @@
   </table>
   <h3 id="methods">Methods
   </h3>
+  <a id="Tizen_TV_UIControls_Forms_MediaPlayer_CreateMediaPlayerImpl_" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.CreateMediaPlayerImpl*"></a>
+  <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_CreateMediaPlayerImpl" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.CreateMediaPlayerImpl">CreateMediaPlayerImpl()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IPlatformMediaPlayer CreateMediaPlayerImpl()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.TV.UIControls.Forms.IPlatformMediaPlayer.html">IPlatformMediaPlayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <a id="Tizen_TV_UIControls_Forms_MediaPlayer_GetAlbumArts_" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.GetAlbumArts*"></a>
   <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_GetAlbumArts" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.GetAlbumArts">GetAlbumArts()</h4>
   <div class="markdown level1 summary"><p>Retrieves the album art of the stream, or null if there is no album art data.</p>
@@ -899,6 +972,9 @@
       </tr>
     </tbody>
   </table>
+  <h5 id="Tizen_TV_UIControls_Forms_MediaPlayer_Start_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The &quot;<a href="http://developer.samsung.com/privilege/drmplay&amp;quot">http://developer.samsung.com/privilege/drmplay&quot</a>; privilege is required if you want to start DRM-pretected content playback.</p>
+</div>
   <a id="Tizen_TV_UIControls_Forms_MediaPlayer_Stop_" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.Stop*"></a>
   <h4 id="Tizen_TV_UIControls_Forms_MediaPlayer_Stop" data-uid="Tizen.TV.UIControls.Forms.MediaPlayer.Stop">Stop()</h4>
   <div class="markdown level1 summary"><p>Stops playing the media content.</p>
