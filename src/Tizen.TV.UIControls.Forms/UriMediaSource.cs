@@ -15,7 +15,6 @@
  */
 
 using System;
-using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -24,7 +23,7 @@ namespace Tizen.TV.UIControls.Forms
     /// A MediaSource that loads a media from a URI
     /// </summary>
     [TypeConverter(typeof(MediaSourceConverter))]
-    public sealed class UriMediaSource : MediaSource
+    public class UriMediaSource : MediaSource
     {
         /// <summary>
         /// Identifies the File bindable property.

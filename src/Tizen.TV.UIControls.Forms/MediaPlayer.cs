@@ -45,7 +45,7 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Identifies the Volume bindable property.
         /// </summary>
-        public static readonly BindableProperty VolumeProperty = BindableProperty.Create(nameof(Volume), typeof(double), typeof(MediaPlayer), 1d, coerceValue: (bindable, value) => ((double)value).Clamp(0, 1), propertyChanged: (b, o, n)=> ((MediaPlayer)b).OnVolumeChanged());
+        public static readonly BindableProperty VolumeProperty = BindableProperty.Create(nameof(Volume), typeof(double), typeof(MediaPlayer), 1d, coerceValue: (bindable, value) => ((double)value).Clamp(0, 1), propertyChanged: (b, o, n) => ((MediaPlayer)b).OnVolumeChanged());
         /// <summary>
         /// Identifies the IsMuted bindable property.
         /// </summary>
@@ -91,6 +91,10 @@ namespace Tizen.TV.UIControls.Forms
         /// Identifies the IsBuffering bindable property.
         /// </summary>
         public static readonly BindableProperty IsBufferingProperty = IsBufferingPropertyKey.BindableProperty;
+        /// <summary>
+        /// Identifies the IsLooping bindable property.
+        /// </summary>
+        public static readonly BindableProperty IsLoopingProperty = BindableProperty.Create(nameof(IsLooping), typeof(bool), typeof(MediaPlayer), false, propertyChanged: (b, o, n) => ((MediaPlayer)b).UpdateIsLooping());
 
         IPlatformMediaPlayer _impl;
         bool _isPlaying;
@@ -103,7 +107,7 @@ namespace Tizen.TV.UIControls.Forms
         /// </summary>
         public MediaPlayer()
         {
-            _impl = DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
+            _impl = CreateMediaPlayerImpl();
             _impl.UpdateStreamInfo += OnUpdateStreamInfo;
             _impl.PlaybackCompleted += SendPlaybackCompleted;
             _impl.PlaybackStarted += SendPlaybackStarted;
@@ -115,7 +119,7 @@ namespace Tizen.TV.UIControls.Forms
             _impl.AspectMode = DisplayAspectMode.AspectFit;
             _impl.AutoPlay = false;
             _impl.AutoStop = true;
-
+            _impl.IsLooping = false;
             _controlsAlwaysVisible = false;
             _controls = new Lazy<View>(() =>
             {
@@ -198,6 +202,9 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Gets or sets the source of the media content.
         /// </summary>
+        /// <remarks>
+        /// The "http://developer.samsung.com/privilege/drmplay" privilege is required in case of DRMMediaSource.
+        /// </remarks>
         [Xamarin.Forms.TypeConverter(typeof(MediaSourceConverter))]
         public MediaSource Source
         {
@@ -230,6 +237,15 @@ namespace Tizen.TV.UIControls.Forms
         {
             get { return (bool)GetValue(IsMutedProperty); }
             set { SetValue(IsMutedProperty, value); }
+        }
+
+        /// <summary>
+        /// Gets or sets the value whether the volume is looping or not.
+        /// </summary>
+        public bool IsLooping
+        {
+            get { return (bool)GetValue(IsLoopingProperty); }
+            set { SetValue(IsLoopingProperty, value); }
         }
 
         /// <summary>
@@ -403,6 +419,9 @@ namespace Tizen.TV.UIControls.Forms
         /// Starts or resumes playback.
         /// </summary>
         /// <returns>Returns a Task that prepares the player and play the media content.</returns>
+        /// <remarks>
+        /// The "http://developer.samsung.com/privilege/drmplay" privilege is required if you want to start DRM-pretected content playback.
+        /// </remarks>
         public Task<bool> Start()
         {
             return _impl.Start();
@@ -434,6 +453,11 @@ namespace Tizen.TV.UIControls.Forms
             return _impl.GetMetadata();
         }
 
+        protected virtual IPlatformMediaPlayer CreateMediaPlayerImpl()
+        {
+            return DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
+        }
+
         void UpdateAutoPlay()
         {
             _impl.AutoPlay = AutoPlay;
@@ -447,6 +471,11 @@ namespace Tizen.TV.UIControls.Forms
         void UpdateIsMuted()
         {
             _impl.IsMuted = IsMuted;
+        }
+
+        void UpdateIsLooping()
+        {
+            _impl.IsLooping = IsLooping;
         }
 
         void OnUpdateStreamInfo(object sender, EventArgs e)
@@ -656,7 +685,7 @@ namespace Tizen.TV.UIControls.Forms
                 //Exception when canceled
             }
         }
-        
+
         void ShowController()
         {
             if (_controls.IsValueCreated)
@@ -666,7 +695,6 @@ namespace Tizen.TV.UIControls.Forms
                 HideController(5000);
             }
         }
-
 
         static void OnSourceChanging(BindableObject bindable, object oldValue, object newValue)
         {

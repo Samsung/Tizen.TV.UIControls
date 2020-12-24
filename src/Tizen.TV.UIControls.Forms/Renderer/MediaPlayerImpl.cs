@@ -17,44 +17,76 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Tizen.Multimedia;
+using Tizen.TV.Multimedia;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
+
+using TApplication = Tizen.Applications.Application;
+using ERect = ElmSharp.Rect;
+using MRectangle = Tizen.Multimedia.Rectangle;
+using MPlayer = Tizen.Multimedia.Player;
+using TVPlayer  = Tizen.TV.Multimedia.Player;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MediaPlayerImpl))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
     {
-        Player _player;
-
+        MPlayer _player;
         bool _cancelToStart;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare;
         TaskCompletionSource<bool> _tcsForStreamInfo;
         IVideoOutput _videoOutput;
         MediaSource _source;
+        DRMManager _drmManager;
 
         public MediaPlayerImpl()
         {
-            _player = new Player();
+            _player = CreateMediaPlayer();
             _player.PlaybackCompleted += OnPlaybackCompleted;
             _player.BufferingProgressChanged += OnBufferingProgressChanged;
         }
 
-        public bool UsesEmbeddingControls
+        protected virtual MPlayer CreateMediaPlayer()
         {
-            get; set;
+            return new TVPlayer();
         }
 
+        public DRMManager DRMManager
+        {
+            get => _drmManager;
+            set
+            {
+                if (_player is TVPlayer tvPlayer)
+                {
+                    _drmManager = value;
+                    if (value != null)
+                    {
+                        tvPlayer.SetDrm(value);
+                    }
+                }
+                else
+                {
+                    Log.Debug(UIControls.Tag, "DRMManager is avaialbe only on TVPlayer.");
+                }
+            }
+        }
+
+        public MPlayer NativePlayer => _player;
+        public bool UsesEmbeddingControls { get; set; }
         public bool AutoPlay { get; set; }
 
         public bool AutoStop { get; set; }
-
+        public bool IsLooping
+        {
+            get => _player.IsLooping;
+            set => _player.IsLooping = (bool)value;
+        }
         public double Volume
         {
             get => _player.Volume;
@@ -136,11 +168,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         public event EventHandler PlaybackStopped;
         public event EventHandler PlaybackPaused;
 
-
         public async Task<bool> Start()
         {
-            Log.Debug(UIControls.Tag, "Start");
-
+           
             _cancelToStart = false;
             if (!HasSource)
                 return false;
@@ -159,8 +189,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Error On Start : {e.Message}");
-                return false;
+                 return false;
             }
             PlaybackStarted?.Invoke(this, EventArgs.Empty);
             return true;
@@ -188,6 +217,12 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             _cancelToStart = true;
             var unusedTask = ChangeToIdleState();
             PlaybackStopped.Invoke(this, EventArgs.Empty);
+            if (DRMManager != null)
+            {
+                DRMManager.Close();
+                DRMManager.Dispose();
+                DRMManager = null;
+            }
         }
 
         public void SetDisplay(IVideoOutput output)
@@ -254,7 +289,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             };
             return metadata;
         }
-
         void ApplyDisplay()
         {
             if (VideoOutput == null)
@@ -327,6 +361,20 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 return;
             }
             IMediaSourceHandler handler = Registrar.Registered.GetHandlerForObject<IMediaSourceHandler>(_source);
+            if (_source is DRMMediaSource drmMediaSource)
+            {
+                var drmManager = DRMManager.CreateDRMManager(DRMType.Playready);
+                drmManager.Init(TApplication.Current.ApplicationInfo.ApplicationId);
+                foreach (KeyValuePair<string, DRMPropertyValue> pair in drmMediaSource.ExtraData)
+                {
+                    _drmManager.AddProperty(pair.Key, pair.Value.Value);
+                }
+                drmManager.RemoveProperty("LicenseServer");
+                drmManager.AddProperty("LicenseServer", drmMediaSource.LicenseUrl);
+                drmManager.Url = drmMediaSource.Uri.AbsoluteUri;
+                drmManager.Open();
+                DRMManager = drmManager;
+            }
             await handler.SetSource(_player, _source);
         }
 
@@ -416,9 +464,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
     public static class MultimediaConvertExtensions
     {
-        public static Multimedia.Rectangle ToMultimedia(this ElmSharp.Rect rect)
+        public static MRectangle ToMultimedia(this ERect rect)
         {
-            return new Multimedia.Rectangle(rect.X, rect.Y, rect.Width, rect.Height);
+            return new MRectangle(rect.X, rect.Y, rect.Width, rect.Height);
         }
 
         public static PlayerDisplayMode ToMultimeida(this DisplayAspectMode mode)
