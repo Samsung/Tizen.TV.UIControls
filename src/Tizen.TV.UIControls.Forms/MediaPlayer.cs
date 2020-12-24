@@ -202,6 +202,9 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Gets or sets the source of the media content.
         /// </summary>
+        /// <remarks>
+        /// The "http://developer.samsung.com/privilege/drmplay" privilege is required in case of DRMMediaSource.
+        /// </remarks>
         [Xamarin.Forms.TypeConverter(typeof(MediaSourceConverter))]
         public MediaSource Source
         {
@@ -416,6 +419,9 @@ namespace Tizen.TV.UIControls.Forms
         /// Starts or resumes playback.
         /// </summary>
         /// <returns>Returns a Task that prepares the player and play the media content.</returns>
+        /// <remarks>
+        /// The "http://developer.samsung.com/privilege/drmplay" privilege is required if you want to start DRM-pretected content playback.
+        /// </remarks>
         public Task<bool> Start()
         {
             return _impl.Start();
