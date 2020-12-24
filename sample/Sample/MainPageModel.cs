@@ -35,6 +35,11 @@ namespace Sample
             {
                 new TestCategory
                 {
+                    Name = "Page Transition Test",
+                    PageType = typeof(AnimatedNaviMainPage),
+                },
+                new TestCategory
+                {
                     Name = "MediaPlayer Test",
                     PageType = typeof(PlayerMainPage),
                 },
