@@ -1645,24 +1645,6 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item
   nameWithType: GridViewFocusedEventArgs.Item
-- uid: Tizen.TV.UIControls.Forms.GridViewOrientation
-  name: GridViewOrientation
-  href: api/Tizen.TV.UIControls.Forms.GridViewOrientation.html
-  commentId: T:Tizen.TV.UIControls.Forms.GridViewOrientation
-  fullName: Tizen.TV.UIControls.Forms.GridViewOrientation
-  nameWithType: GridViewOrientation
-- uid: Tizen.TV.UIControls.Forms.GridViewOrientation.Horizontal
-  name: Horizontal
-  href: api/Tizen.TV.UIControls.Forms.GridViewOrientation.html#Tizen_TV_UIControls_Forms_GridViewOrientation_Horizontal
-  commentId: F:Tizen.TV.UIControls.Forms.GridViewOrientation.Horizontal
-  fullName: Tizen.TV.UIControls.Forms.GridViewOrientation.Horizontal
-  nameWithType: GridViewOrientation.Horizontal
-- uid: Tizen.TV.UIControls.Forms.GridViewOrientation.Vertical
-  name: Vertical
-  href: api/Tizen.TV.UIControls.Forms.GridViewOrientation.html#Tizen_TV_UIControls_Forms_GridViewOrientation_Vertical
-  commentId: F:Tizen.TV.UIControls.Forms.GridViewOrientation.Vertical
-  fullName: Tizen.TV.UIControls.Forms.GridViewOrientation.Vertical
-  nameWithType: GridViewOrientation.Vertical
 - uid: Tizen.TV.UIControls.Forms.IContentPopupRenderer
   name: IContentPopupRenderer
   href: api/Tizen.TV.UIControls.Forms.IContentPopupRenderer.html
