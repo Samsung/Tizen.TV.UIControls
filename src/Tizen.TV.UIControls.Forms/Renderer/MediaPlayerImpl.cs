@@ -187,7 +187,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             {
                 _player.Start();
             }
-            catch (Exception e)
+            catch (Exception)
             {
                  return false;
             }
