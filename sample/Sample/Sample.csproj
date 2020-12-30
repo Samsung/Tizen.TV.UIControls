@@ -6,7 +6,7 @@
 
   <!-- Include Nuget Package for Xamarin building -->
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1558-pre3" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
