@@ -214,19 +214,4 @@ namespace Tizen.TV.UIControls.Forms
             return false;
         }
     }
-
-    /// <summary>
-    /// The orientations the a GridView can have.
-    /// </summary>
-    public enum GridViewOrientation
-    {
-        /// <summary>
-        /// Vertical
-        /// </summary>
-        Vertical,
-        /// <summary>
-        /// Horizontal
-        /// </summary>
-        Horizontal
-    }
 }
