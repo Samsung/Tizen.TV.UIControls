@@ -77,6 +77,11 @@ namespace Sample
                 {
                     Name = "ContentPopup Test",
                     PageType = typeof(ContentPopup.ContentPopupMainPage),
+                },
+                new TestCategory
+                {
+                    Name = "GridView Test",
+                    PageType = typeof(GridView.GridViewMainPage),
                 }
             };
         }

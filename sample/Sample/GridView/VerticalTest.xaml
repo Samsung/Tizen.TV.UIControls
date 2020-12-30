@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sample.GridView.VerticalTest"
+             xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal">
+                <tvcontrols:GridView BackgroundColor="AliceBlue"
+                        Orientation="Vertical"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        ItemsSource="{Binding Items}">
+                    <tvcontrols:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </tvcontrols:GridView.ItemTemplate>
+                </tvcontrols:GridView>
+                <tvcontrols:GridView BackgroundColor="DeepPink"
+                        Orientation="Vertical"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        ItemsSource="{Binding Items}">
+                    <tvcontrols:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </tvcontrols:GridView.ItemTemplate>
+                </tvcontrols:GridView>
+                <tvcontrols:GridView BackgroundColor="Coral"
+                        Orientation="Vertical"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        ItemsSource="{Binding Items}">
+                    <tvcontrols:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </tvcontrols:GridView.ItemTemplate>
+                </tvcontrols:GridView>
+                <tvcontrols:GridView BackgroundColor="Moccasin"
+                        Orientation="Vertical"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        ItemsSource="{Binding Items}">
+                    <tvcontrols:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </tvcontrols:GridView.ItemTemplate>
+                </tvcontrols:GridView>
+                <tvcontrols:GridView BackgroundColor="LightYellow"
+                        Orientation="Vertical"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        ItemsSource="{Binding Items}">
+                    <tvcontrols:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </tvcontrols:GridView.ItemTemplate>
+                </tvcontrols:GridView>
+                <tvcontrols:GridView BackgroundColor="BlueViolet"
+                        Orientation="Vertical"
+                        ItemWidth="600"
+                        ItemHeight="400"
+                        WidthRequest="800"
+                        HeightRequest="500"
+                        ItemsSource="{Binding Items}">
+                    <tvcontrols:GridView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="{Binding Color}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+                                <Label Text="{Binding Text}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </tvcontrols:GridView.ItemTemplate>
+                </tvcontrols:GridView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
