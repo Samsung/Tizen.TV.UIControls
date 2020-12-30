@@ -39,27 +39,27 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Identifies the ItemHeight bindable property.
         /// </summary>
-        public static readonly BindableProperty ItemHeightProperty = BindableProperty.Create("ItemHeight", typeof(double), typeof(GridView), 0.0);
+        public static readonly BindableProperty ItemHeightProperty = BindableProperty.Create(nameof(ItemHeight), typeof(double), typeof(GridView), 0.0);
 
         /// <summary>
         /// Identifies the ItemWidth bindable property.
         /// </summary>
-        public static readonly BindableProperty ItemWidthProperty = BindableProperty.Create("ItemWidth", typeof(double), typeof(GridView), 0.0);
+        public static readonly BindableProperty ItemWidthProperty = BindableProperty.Create(nameof(ItemWidth), typeof(double), typeof(GridView), 0.0);
 
         /// <summary>
         /// Identifies the Orientation bindable property.
         /// </summary>
-        public static readonly BindableProperty OrientationProperty = BindableProperty.Create("Orientation", typeof(GridViewOrientation), typeof(GridView), GridViewOrientation.Horizontal);
+        public static readonly BindableProperty OrientationProperty = BindableProperty.Create(nameof(Orientation), typeof(ItemsLayoutOrientation), typeof(GridView), ItemsLayoutOrientation.Horizontal);
 
         /// <summary>
         /// Identifies the HorizontalScrollBarVisible bindable property.
         /// </summary>
-        public static readonly BindableProperty HorizontalScrollBarVisibleProperty = BindableProperty.Create("HorizontalScrollBarVisible", typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
+        public static readonly BindableProperty HorizontalScrollBarVisibleProperty = BindableProperty.Create(nameof(HorizontalScrollBarVisible), typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
 
         /// <summary>
         /// Identifies the VerticalScrollBarVisible bindable property.
         /// </summary>
-        public static readonly BindableProperty VerticalScrollBarVisibleProperty = BindableProperty.Create("VerticalScrollBarVisible", typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
+        public static readonly BindableProperty VerticalScrollBarVisibleProperty = BindableProperty.Create(nameof(VerticalScrollBarVisible), typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
 
         /// <summary>
         /// Identifies the SelectedItem bindable property.
@@ -69,12 +69,12 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Identifies the ItemHorizontalAlignment bindable property.
         /// </summary>
-        public static readonly BindableProperty ItemHorizontalAlignmentProperty = BindableProperty.Create("ItemHorizontalAlignment", typeof(LayoutAlignment), typeof(GridView), LayoutAlignment.Center);
+        public static readonly BindableProperty ItemHorizontalAlignmentProperty = BindableProperty.Create(nameof(ItemHorizontalAlignment), typeof(LayoutAlignment), typeof(GridView), LayoutAlignment.Center);
 
         /// <summary>
         /// Identifies the ItemVerticalAlignment bindable property.
         /// </summary>
-        public static readonly BindableProperty ItemVerticalAlignmentProperty = BindableProperty.Create("ItemVerticalAlignment", typeof(LayoutAlignment), typeof(GridView), LayoutAlignment.Center);
+        public static readonly BindableProperty ItemVerticalAlignmentProperty = BindableProperty.Create(nameof(ItemVerticalAlignment), typeof(LayoutAlignment), typeof(GridView), LayoutAlignment.Center);
 
         /// <summary>
         /// ItemSelected is raised when one item of GridView is selected.
@@ -161,9 +161,9 @@ namespace Tizen.TV.UIControls.Forms
         /// <summary>
         /// Gets or sets the value which indicates the direction which items are positioned.
         /// </summary>
-        public GridViewOrientation Orientation
+        public ItemsLayoutOrientation Orientation
         {
-            get { return (GridViewOrientation)GetValue(OrientationProperty); }
+            get { return (ItemsLayoutOrientation)GetValue(OrientationProperty); }
             set { SetValue(OrientationProperty, value); }
         }
 
@@ -194,6 +194,7 @@ namespace Tizen.TV.UIControls.Forms
             ItemFocused?.Invoke(this, args);
         }
 
+        [EditorBrowsable(EditorBrowsableState.Never)]
         public void SendItemSelected(SelectedItemChangedEventArgs args)
         {
             ItemSelected?.Invoke(this, args);

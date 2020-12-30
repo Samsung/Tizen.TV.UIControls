@@ -48,7 +48,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 SetNativeControl(new GenGrid(Xamarin.Forms.Forms.NativeParent));
                 Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
-                Control.IsHorizontal = Element.Orientation == GridViewOrientation.Horizontal ? true : false;
+                Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
                 Control.ItemWidth = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemWidth);
                 Control.ItemHeight = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemHeight);
                 Control.ItemAlignmentX = Element.ItemHorizontalAlignment.LayoutAlignmentToDouble();
@@ -99,7 +99,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             else if (e.PropertyName == GridView.OrientationProperty.PropertyName)
             {
-                Control.IsHorizontal = Element.Orientation == GridViewOrientation.Horizontal ? true : false;
+                Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
             }
             else if (e.PropertyName == GridView.ItemsSourceProperty.PropertyName ||
                 e.PropertyName == GridView.ItemTemplateProperty.PropertyName)
@@ -281,7 +281,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             return alignValue;
         }
 
-        public static ElmSharp.ScrollBarVisiblePolicy ToScrollBarVisiblePolicy(this ScrollBarVisibility visibility)
+        public static ScrollBarVisiblePolicy ToScrollBarVisiblePolicy(this ScrollBarVisibility visibility)
         {
 
             ScrollBarVisiblePolicy policy = ScrollBarVisiblePolicy.Invisible;
