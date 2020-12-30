@@ -65,8 +65,8 @@ namespace Tizen.TV.UIControls.Forms
         bool AutoStop { get; set; }
         double Volume { get; set; }
         bool IsMuted { get; set; }
+        bool IsLooping { get; set; }
         int Position { get; }
-
         int Duration { get; }
 
         DisplayAspectMode AspectMode { get; set; }

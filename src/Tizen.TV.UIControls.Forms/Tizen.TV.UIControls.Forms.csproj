@@ -34,11 +34,11 @@
   <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
     <Compile Include="Renderer\**\*.cs" />
     <PackageReference Include="Tizen.NET" Version="4.0.0" />
+    <PackageReference Include="Tizen.NET.TV" Version="4.4.0.1341" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="$(SolutionDir)*.targets" PackagePath="build\" />
     <Content Include="$(SolutionDir)theme\*.edj" PackagePath="content\theme\" />
   </ItemGroup>
-
 </Project>

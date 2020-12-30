@@ -108,7 +108,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         bool IsOnMainPage(Page targetPage)
         {
-            var mainPage = Application.Current.MainPage;
+            var mainPage = Xamarin.Forms.Application.Current.MainPage;
             var currentPage = mainPage.Navigation.ModalStack.Count > 0 ? mainPage.Navigation.ModalStack.LastOrDefault() : mainPage;
             return IsOnCurrentPage(currentPage, targetPage);
         }
