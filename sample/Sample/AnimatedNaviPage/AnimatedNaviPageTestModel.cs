@@ -7,6 +7,7 @@ namespace Sample
     {
         public string Name { get; set; }
         public Type PageType { get; set; }
+        public bool IsPreviousVisible { get; set; }
     }
 
     class AnimatedNaviPageTestModel
@@ -19,12 +20,14 @@ namespace Sample
                 new TestModel
                 {
                     Name = "Basic Test",
-                    PageType = typeof(AnimatedNaviPageBasicTest)
+                    PageType = typeof(AnimatedNaviPageBasicTest),
+                    IsPreviousVisible = true
                 },
                 new TestModel
                 {
                     Name = "Page Trasintion Test",
-                    PageType = typeof(AnimatedContentPageTransitTest)
+                    PageType = typeof(AnimatedContentPageTransitTest),
+                    IsPreviousVisible = false
                 },
             };
         }

@@ -24,6 +24,20 @@ namespace Tizen.TV.UIControls.Forms
     public class AnimatedNavigationPage : NavigationPage
     {
         /// <summary>
+        /// Identifies the IsPreviousPageVisible bindable property.
+        /// </summary>
+        public static readonly BindableProperty IsPreviousPageVisibleProperty = BindableProperty.Create("IsPreviousPageVisible", typeof(bool), typeof(AnimatedNavigationPage), default(bool));
+
+        /// <summary>
+        /// Gets ans sets a value that determines whether previous page should be visible or not. This is a bindable property.
+        /// </summary>
+        public bool IsPreviousPageVisible
+        {
+            get { return (bool)GetValue(IsPreviousPageVisibleProperty); }
+            set { SetValue(IsPreviousPageVisibleProperty, value); }
+        }
+
+        /// <summary>
         /// Creates and initializes a new instance of the AnimatedNavigationPage class.
         /// </summary>
         public AnimatedNavigationPage() : base()

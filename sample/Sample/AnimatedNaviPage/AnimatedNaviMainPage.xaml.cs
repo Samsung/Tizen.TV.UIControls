@@ -21,7 +21,8 @@ namespace Sample
             page.BindingContext = model;
             AnimatedNavigationPage naviPage = new AnimatedNavigationPage(page)
             {
-                Title = "Page Transition Test"
+                Title = "Page Transition Test",
+                IsPreviousPageVisible = model.IsPreviousVisible
             };
             await Navigation.PushAsync(naviPage);
         }
