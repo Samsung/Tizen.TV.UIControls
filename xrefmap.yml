@@ -255,6 +255,25 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.AnimatedNavigationPage
   nameWithType: AnimatedNavigationPage.AnimatedNavigationPage
+- uid: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisible
+  name: IsPreviousPageVisible
+  href: api/Tizen.TV.UIControls.Forms.AnimatedNavigationPage.html#Tizen_TV_UIControls_Forms_AnimatedNavigationPage_IsPreviousPageVisible
+  commentId: P:Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisible
+  fullName: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisible
+  nameWithType: AnimatedNavigationPage.IsPreviousPageVisible
+- uid: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisible*
+  name: IsPreviousPageVisible
+  href: api/Tizen.TV.UIControls.Forms.AnimatedNavigationPage.html#Tizen_TV_UIControls_Forms_AnimatedNavigationPage_IsPreviousPageVisible_
+  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisible
+  isSpec: "True"
+  fullName: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisible
+  nameWithType: AnimatedNavigationPage.IsPreviousPageVisible
+- uid: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisibleProperty
+  name: IsPreviousPageVisibleProperty
+  href: api/Tizen.TV.UIControls.Forms.AnimatedNavigationPage.html#Tizen_TV_UIControls_Forms_AnimatedNavigationPage_IsPreviousPageVisibleProperty
+  commentId: F:Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisibleProperty
+  fullName: Tizen.TV.UIControls.Forms.AnimatedNavigationPage.IsPreviousPageVisibleProperty
+  nameWithType: AnimatedNavigationPage.IsPreviousPageVisibleProperty
 - uid: Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs
   name: BufferingProgressUpdatedEventArgs
   href: api/Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs.html
