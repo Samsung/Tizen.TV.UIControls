@@ -78,8 +78,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 navigation.RemovePageRequested += OnRemovePageRequested;
                 navigation.InsertPageBeforeRequested += OnInsertPageBeforeRequested;
                 _previousPage = e.NewElement.CurrentPage;
+                _navigationStack.IsPreviousViewVisible = Element.IsPreviousPageVisible;
             }
-
             base.OnElementChanged(e);
         }
 
@@ -106,6 +106,10 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     _previousPage = Element.CurrentPage;
                     (_previousPage as IPageController)?.SendAppearing();
                 });
+            }
+            else if (e.PropertyName == AnimatedNavigationPage.IsPreviousPageVisibleProperty.PropertyName)
+            {
+                _navigationStack.IsPreviousViewVisible = Element.IsPreviousPageVisible;
             }
         }
 

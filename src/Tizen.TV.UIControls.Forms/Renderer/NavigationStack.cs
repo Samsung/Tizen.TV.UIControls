@@ -25,6 +25,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
     {
         public IReadOnlyList<EvasObject> Stack => InternalStack;
 
+        public bool IsPreviousViewVisible { get; set; }
+
         List<EvasObject> InternalStack { get; set; }
 
         EvasObject CurrentView { get; set; }
@@ -119,7 +121,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             if (CurrentView != InternalStack.LastOrDefault())
             {
-                CurrentView?.Hide();
+                if (!IsPreviousViewVisible)
+                    CurrentView?.Hide();
                 CurrentView = InternalStack.LastOrDefault();
                 CurrentView?.Show();
                 (CurrentView as Widget)?.SetFocus(true);

@@ -13,7 +13,7 @@ namespace Sample
 
         public AnimatedNaviPageBasicTest(int depth)
         {
-            BackgroundColor = depth % 2 == 0 ? Color.LightGray : Color.White;
+            BackgroundColor = depth % 2 == 0 ? Color.Yellow : Color.Transparent;
 
             // Left-Right
             var pushAnim = new Animation {
@@ -138,13 +138,14 @@ namespace Sample
                 {
                     new Image
                     {
-                        HeightRequest = 1000,
-                        WidthRequest = 700,
+                        HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
+                        WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
                         Source = _depth % 2 == 0 ? "poster/01 Jaws.jpg" : "poster/02 Raiders of the Lost Ark.jpg"
                     },
                     new Label
                     {
                         Text = "Depth : " + _depth,
+                        TextColor = depth % 2 == 0 ? Color.Black : Device.Idiom == TargetIdiom.TV ? Color.White : Color.Black,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.FillAndExpand,
                     },
@@ -158,7 +159,7 @@ namespace Sample
                 }
             };
 
-            this.Content = layout;
+            this.Content = new ScrollView { Content = layout };
         }
     }
 }

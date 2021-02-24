@@ -103,7 +103,7 @@ namespace Sample
             {
                 var page = new AnimatedContentPage
                 {
-                    BackgroundColor = Color.LightGray,
+                    BackgroundColor = Color.Transparent,
                     PageTranistion = _pageTransition,
                     Content = new StackLayout
                     {
@@ -115,8 +115,8 @@ namespace Sample
                         {
                             new Image
                             {
-                                HeightRequest = 1000,
-                                WidthRequest = 700,
+                                HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
+                                WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
                                 Source = "poster/01 Jaws.jpg"
                             },
                         }
@@ -138,8 +138,8 @@ namespace Sample
                 {
                     new Image
                     {
-                        HeightRequest = 1000,
-                        WidthRequest = 700,
+                        HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
+                        WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
                         Source = "poster/02 Raiders of the Lost Ark.jpg"
                     },
                     new Label
@@ -200,7 +200,7 @@ namespace Sample
                 }
             };
 
-            this.Content = layout;
+            this.Content = new ScrollView { Content = layout };
         }
     }
 }
