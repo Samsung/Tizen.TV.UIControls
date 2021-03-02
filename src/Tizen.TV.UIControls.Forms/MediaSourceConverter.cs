@@ -15,6 +15,7 @@
  */
 
 using System;
+using CModel = System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -23,6 +24,8 @@ namespace Tizen.TV.UIControls.Forms
     /// Class that takes a string representation of a media file location and returns a MeidaSource from the specified resource.
     /// </summary>
     [TypeConverter(typeof(MediaSource))]
+    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use MediaSourceConverter from Tizen.Theme.Common instead.")]
     public sealed class MediaSourceConverter : TypeConverter
     {
         /// <summary>

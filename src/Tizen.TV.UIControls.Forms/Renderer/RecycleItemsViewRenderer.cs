@@ -18,6 +18,7 @@ using ElmSharp;
 using Xamarin.Forms;
 using Tizen.TV.UIControls.Forms;
 using Xamarin.Forms.Platform.Tizen;
+using Tizen.Theme.Common.Renderer;
 using XButton = Xamarin.Forms.Button;
 
 [assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]

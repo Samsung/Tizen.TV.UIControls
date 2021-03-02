@@ -15,10 +15,24 @@
  */
 
 using System;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Tizen;
 using ElmSharp;
 using Tizen.Applications;
+using Tizen.Theme.Common.Renderer;
+using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
-using Xamarin.Forms.Platform.Tizen;
+
+[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
+[assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
+[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
+[assembly: ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
+[assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
+[assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
+
+[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
+[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
+[assembly: Dependency(typeof(ContentPopupRenderer))]
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -82,7 +96,7 @@ namespace Tizen.TV.UIControls.Forms
             var resPath = options.Context?.DirectoryInfo?.Resource;
             if (!string.IsNullOrEmpty(resPath))
             {
-                ThemeLoader.Initialize(resPath);
+                TVThemeLoader.Initialize(resPath);
             }
 
             MainWindowProvider = options.MainWindowProvider;

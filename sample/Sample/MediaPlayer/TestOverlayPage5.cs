@@ -15,14 +15,11 @@
  */
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Xamarin.Forms;
 using Tizen.TV.UIControls.Forms;
-using Xamarin.Forms.Internals;
-using System.IO;
+using OverlayPage = Tizen.Theme.Common.OverlayPage;
+using MediaPlayer = Tizen.Theme.Common.MediaPlayer;
+using MediaSource = Tizen.Theme.Common.MediaSource;
 
 namespace Sample
 {

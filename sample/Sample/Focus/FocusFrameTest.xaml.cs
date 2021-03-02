@@ -1,6 +1,6 @@
-﻿using Tizen.TV.UIControls.Forms;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Tizen.Theme.Common;
 
 namespace Sample.Focus
 {

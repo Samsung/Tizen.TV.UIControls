@@ -51,7 +51,7 @@ namespace Sample
                 new TestCategory
                 {
                     Name = "RecycleItemsView Test",
-                    PageType = typeof(RIVMainPage),
+                    PageType = typeof(RecycleItemsView.RIVMainPage),
                 },
                 new TestCategory
                 {

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using CModel = System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -22,6 +24,8 @@ namespace Tizen.TV.UIControls.Forms
     /// A MediaSource that reads a media from a file.
     /// </summary>
     [TypeConverter(typeof(FileMediaSourceConverter))]
+    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use FileMediaSource from Tizen.Theme.Common instead.")]
     public sealed class FileMediaSource : MediaSource
     {
         /// <summary>

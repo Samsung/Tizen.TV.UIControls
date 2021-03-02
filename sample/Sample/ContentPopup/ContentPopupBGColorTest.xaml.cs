@@ -17,8 +17,8 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Tizen.TV.UIControls.Forms;
-using CPopup = Tizen.TV.UIControls.Forms.ContentPopup;
+using Tizen.Theme.Common;
+using CPopup = Tizen.Theme.Common.ContentPopup;
 
 namespace Sample.ContentPopup
 {

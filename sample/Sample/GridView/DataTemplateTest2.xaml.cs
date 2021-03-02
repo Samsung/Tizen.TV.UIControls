@@ -34,7 +34,7 @@ namespace Sample.GridView
 
         void GridView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            Tizen.TV.UIControls.Forms.GridView recycleView = sender as Tizen.TV.UIControls.Forms.GridView;
+            var recycleView = sender as Tizen.Theme.Common.GridView;
             if (recycleView.SelectedItem is PosterModel poster)
             {
                 myLabel.Text = poster.Text + " is selected";

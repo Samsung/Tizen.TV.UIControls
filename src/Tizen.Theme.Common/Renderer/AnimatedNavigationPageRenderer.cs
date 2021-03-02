@@ -17,15 +17,15 @@
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.Theme.Common;
+using Tizen.Theme.Common.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
 using XForms = Xamarin.Forms.Forms;
 
 [assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
     public class AnimatedNavigationPageRenderer : VisualElementRenderer<AnimatedNavigationPage>
     {

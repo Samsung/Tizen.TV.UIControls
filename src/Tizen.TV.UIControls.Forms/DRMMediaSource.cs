@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using CommonUriMediaSource = Tizen.Theme.Common.UriMediaSource;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -30,7 +30,7 @@ namespace Tizen.TV.UIControls.Forms
         }
     }
 
-    public class DRMMediaSource : UriMediaSource
+    public class DRMMediaSource : CommonUriMediaSource
     {
         public Dictionary<string, DRMPropertyValue> ExtraData { get; } = new Dictionary<string, DRMPropertyValue>();
         public string LicenseUrl { get; set; }

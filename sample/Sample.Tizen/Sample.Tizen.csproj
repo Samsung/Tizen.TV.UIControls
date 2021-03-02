@@ -21,6 +21,9 @@
     <TizenTpkUserIncludeFiles Include="$(SolutionDir)theme\*.edj">
       <TizenTpkSubDir>res</TizenTpkSubDir>
     </TizenTpkUserIncludeFiles>
+  <TizenTpkUserIncludeFiles Include="$(SolutionDir)src\Tizen.Theme.Common\*.edj">
+      <TizenTpkSubDir>res</TizenTpkSubDir>
+    </TizenTpkUserIncludeFiles>
   </ItemGroup>
 
 </Project>

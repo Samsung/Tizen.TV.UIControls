@@ -2,6 +2,8 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using Tizen.TV.UIControls.Forms;
+using Tizen.Theme.Common;
+using InitOptions = Tizen.TV.UIControls.Forms.InitOptions;
 
 namespace Sample
 {
@@ -34,11 +36,16 @@ namespace Sample
 
                 // UIControls.Init() should be called after Forms.Init()
                 UIControls.Init(new InitOptions(app));
+                CommonUI.Init(app);
+                if (Device.Idiom != TargetIdiom.TV)
+                {
+                    CommonUI.AddCommonThemeOverlay();
+                }
                 app.Run(args);
             }
             catch (Exception e)
             {
-                System.Console.WriteLine($"Exception : {e.Message}");
+                Console.WriteLine($"Exception : {e.Message}");
             }
         }
     }

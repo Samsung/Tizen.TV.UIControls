@@ -17,14 +17,14 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using Tizen.Multimedia;
-using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.Theme.Common;
+using Tizen.Theme.Common.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 
 [assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
 [assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
 
     public interface IMediaSourceHandler : IRegisterable
@@ -38,7 +38,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             if (source is UriMediaSource uriSource)
             {
-                Log.Info(UIControls.Tag, $"Set UriMediaSource");
+                Log.Info(CommonUI.Tag, $"Set UriMediaSource");
                 var uri = uriSource.Uri;
                 player.SetSource(new MediaUriSource(uri.IsFile ? uri.LocalPath : uri.AbsoluteUri));
             }
@@ -52,7 +52,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             if (source is FileMediaSource fileSource)
             {
-                Log.Info(UIControls.Tag, $"Set FileMediaSource");
+                Log.Info(CommonUI.Tag, $"Set FileMediaSource");
                 player.SetSource(new MediaUriSource(ResourcePath.GetPath(fileSource.File)));
             }
             return Task.FromResult<bool>(true);

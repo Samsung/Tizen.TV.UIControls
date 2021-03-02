@@ -17,10 +17,6 @@
   <ItemGroup>
     <Compile Remove="Renderer\**\*.cs" />
     <None Include="Renderer\**\*.cs" />
-    <None Remove="Resources\img_button_pause.png" />
-    <None Remove="Resources\img_button_play.png" />
-    <EmbeddedResource Include="Resources\img_button_pause.png" />
-    <EmbeddedResource Include="Resources\img_button_play.png" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
     <EmbeddedResource Update="EmbeddingControls.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -29,6 +25,11 @@
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
     <TargetFrameworkIdentifier>Tizen</TargetFrameworkIdentifier>
+    <NoWarn>CS0618</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <NoWarn>1701;1702;CS0618</NoWarn>
   </PropertyGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
@@ -40,5 +41,9 @@
   <ItemGroup>
     <Content Include="$(SolutionDir)*.targets" PackagePath="build\" />
     <Content Include="$(SolutionDir)theme\*.edj" PackagePath="content\theme\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tizen.Theme.Common\Tizen.Theme.Common.csproj" />
   </ItemGroup>
 </Project>

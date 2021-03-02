@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:tvcontrols="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:tvcontrols="clr-namespace:Tizen.Theme.Common;assembly=Tizen.Theme.Common"
              mc:Ignorable="d"
              x:Class="Sample.GridView.DataTemplateTest2"
              NavigationPage.HasNavigationBar="False">

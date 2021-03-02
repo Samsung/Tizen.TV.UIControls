@@ -17,14 +17,14 @@
 using ElmSharp;
 using System;
 using System.Reflection;
-using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.Theme.Common;
+using Tizen.Theme.Common.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
 using EColor = ElmSharp.Color;
 
 [assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
     public class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>
     {
@@ -60,7 +60,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Error MakeTransparent : {e.Message}");
+                Log.Error(CommonUI.Tag, $"Error MakeTransparent : {e.Message}");
             }
         }
     }

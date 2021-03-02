@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -24,6 +25,8 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// Enumerates values that define how a media content is displayed.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use DisplayAspectMode from Tizen.Theme.Common instead.")]
     public enum DisplayAspectMode
     {
         /// <summary>
@@ -47,47 +50,14 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// Internal use only. Contains arguments for the event that is raised when the buffering progress is updated.
     /// </summary>
-    public class BufferingProgressUpdatedEventArgs : EventArgs
-    {
-        /// <summary>
-        /// The value indicating the buffering status(0-1).
-        /// </summary>
-        public double Progress { get; set; }
-    }
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use BufferingProgressUpdatedEventArgs from Tizen.Theme.Common instead.")]
+    public class BufferingProgressUpdatedEventArgs : Theme.Common.BufferingProgressUpdatedEventArgs { }
 
     /// <summary>
     /// For internal use by platform renderers.
     /// </summary>
-    public interface IPlatformMediaPlayer
-    {
-        bool UsesEmbeddingControls { get; set; }
-        bool AutoPlay { get; set; }
-        bool AutoStop { get; set; }
-        double Volume { get; set; }
-        bool IsMuted { get; set; }
-        bool IsLooping { get; set; }
-        int Position { get; }
-        int Duration { get; }
-
-        DisplayAspectMode AspectMode { get; set; }
-
-        event EventHandler PlaybackCompleted;
-        event EventHandler PlaybackStarted;
-        event EventHandler PlaybackPaused;
-        event EventHandler PlaybackStopped;
-        event EventHandler UpdateStreamInfo;
-        event EventHandler<BufferingProgressUpdatedEventArgs> BufferingProgressUpdated;
-
-        void SetDisplay(IVideoOutput output);
-
-        void SetSource(MediaSource source);
-
-        Task<bool> Start();
-        void Stop();
-        void Pause();
-        Task<int> Seek(int ms);
-        Task<Stream> GetAlbumArts();
-
-        Task<IDictionary<string, string>> GetMetadata();
-    }
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use IPlatformMediaPlayer from Tizen.Theme.Common instead.")]
+    public interface IPlatformMediaPlayer : Theme.Common.IPlatformMediaPlayer { }
 }

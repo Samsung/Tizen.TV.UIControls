@@ -15,10 +15,7 @@
  */
 
 using System;
-using System.IO;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
+using CModel = System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -27,6 +24,8 @@ namespace Tizen.TV.UIControls.Forms
     /// Abstract class whose implementors load media contents from files or the Web.
     /// </summary>
     [TypeConverter(typeof(MediaSourceConverter))]
+    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use MediaSource from Tizen.Theme.Common instead.")]
     public abstract class MediaSource : Element
     {
         protected MediaSource()
@@ -66,6 +65,7 @@ namespace Tizen.TV.UIControls.Forms
                 throw new ArgumentException("uri is relative");
             return FromUri(uri);
         }
+
 
         protected void OnSourceChanged()
         {

@@ -16,7 +16,8 @@
 
 using System;
 using System.Collections.Generic;
-using Tizen.TV.UIControls.Forms;
+using Tizen.Theme.Common;
+using Xamarin.Forms;
 
 namespace Sample
 {
@@ -66,13 +67,17 @@ namespace Sample
                 new PlayerTestModel("Simple Player test2", typeof(SimplePlayerPage2), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test", typeof(TestOverlayPage), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay page test with code", typeof(TestOverlayPage2), MediaSource.FromFile("tvcm.mp4")),
-                new PlayerTestModel("Overlay page test with code(no DRM)", typeof(TestOverlayPage3), MediaSource.FromFile("tvcm.mp4")),
-                new PlayerTestModel("Overlay page test with code(DRM)", typeof(TestOverlayPage4), MediaSource.FromFile("tvcm.mp4")),
-                new PlayerTestModel("Overlay page test with code(no DRM after DRM)", typeof(TestOverlayPage5), MediaSource.FromFile("tvcm.mp4")),
                 new PlayerTestModel("Overlay view test", typeof(TestOverlayView), MediaSource.FromFile("iu.mp4")),
                 new PlayerTestModel("Aspect test", typeof(TestAspect), MediaSource.FromFile("pixel2-cf.mp4")),
                 new PlayerTestModel("Url test", typeof(TestOverlayPage), MediaSource.FromUri(new System.Uri("http://download.blender.org/demo/movies/caminandes_gran_dillama.mp4"))),
             };
+
+            if (Device.Idiom == TargetIdiom.TV)
+            {
+                TestList.Add(new PlayerTestModel("Overlay page test with code(no DRM)", typeof(TestOverlayPage3), MediaSource.FromFile("tvcm.mp4")));
+                TestList.Add(new PlayerTestModel("Overlay page test with code(DRM)", typeof(TestOverlayPage4), MediaSource.FromFile("tvcm.mp4")));
+                TestList.Add(new PlayerTestModel("Overlay page test with code(no DRM after DRM)", typeof(TestOverlayPage5), MediaSource.FromFile("tvcm.mp4")));
+            }
         }
 
         public List<PlayerTestModel> TestList { get; set; }

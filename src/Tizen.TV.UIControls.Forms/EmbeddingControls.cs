@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MMView = Tizen.Multimedia.MediaView;
+ using System;
+using System.ComponentModel;
 
 namespace Tizen.TV.UIControls.Forms
 {
-    public interface IMediaViewProvider
-    {
-        MMView GetMediaView();
-    }
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use EmbeddingControls from Tizen.Theme.Common instead.")]
+    public class EmbeddingControls : Theme.Common.EmbeddingControls { }
 }

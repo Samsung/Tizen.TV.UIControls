@@ -15,6 +15,7 @@
  */
 
 using System;
+using CModel = System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -23,6 +24,8 @@ namespace Tizen.TV.UIControls.Forms
     /// A TypeConverter that converts to FileMediaSource.
     /// </summary>
     [TypeConverter(typeof(FileMediaSource))]
+    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use FileMediaSourceConverter from Tizen.Theme.Common instead.")]
     public sealed class FileMediaSourceConverter : TypeConverter
     {
         /// <summary>

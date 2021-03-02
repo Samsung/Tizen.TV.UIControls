@@ -20,7 +20,7 @@ using System.Globalization;
 using System.Text;
 
 using Xamarin.Forms;
-using Tizen.TV.UIControls.Forms;
+using Tizen.Theme.Common;
 
 namespace Sample
 {
@@ -38,7 +38,7 @@ namespace Sample
         int GetParameter(object parameter)
         {
             
-            var duration = ((Tizen.TV.UIControls.Forms.MediaPlayer)parameter).Duration;
+            var duration = ((Tizen.Theme.Common.MediaPlayer)parameter).Duration;
             if (duration == 0)
                 duration = 1;
             return duration;

@@ -18,7 +18,7 @@ using System.IO;
 
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    internal static class ThemeLoader
+    internal static class TVThemeLoader
     {
         const string TVUIControlTheme = "tizen-tv-ui-controls-theme.edj";
 
