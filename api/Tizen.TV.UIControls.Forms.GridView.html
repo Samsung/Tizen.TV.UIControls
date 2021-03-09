@@ -89,607 +89,105 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">GridView</span></div>
+    <div class="level1"><span class="xref">Tizen.Theme.Common.GridView</span></div>
+    <div class="level2"><span class="xref">GridView</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
+    <div><span class="xref">Tizen.Theme.Common.IGridViewController</span></div>
     <div><span class="xref">IViewController</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemsSourceProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemTemplateProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemHeightProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemWidthProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.OrientationProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.HorizontalScrollBarVisibleProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.VerticalScrollBarVisibleProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.SelectedItemProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemHorizontalAlignmentProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemVerticalAlignmentProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemSelected</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemFocused</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemsSource</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemTemplate</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemHeight</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemWidth</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemHorizontalAlignment</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ItemVerticalAlignment</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.SelectedItem</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ThemeStyle</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.Orientation</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.HorizontalScrollBarVisible</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.VerticalScrollBarVisible</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.SendItemFocused(Tizen.Theme.Common.GridViewFocusedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.SendItemSelected(SelectedItemChangedEventArgs)</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.GridView.ValidateItemTemplate(DataTemplate)</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.TV.UIControls.Forms.html">Tizen.TV.UIControls.Forms</a></h6>
   <h6><strong>Assembly</strong>: Tizen.TV.UIControls.Forms.dll</h6>
   <h5 id="Tizen_TV_UIControls_Forms_GridView_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class GridView : View, IGridViewController, IViewController</code></pre>
+    <pre><code class="lang-csharp hljs">public class GridView : GridView, IGridViewController, IViewController</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_HorizontalScrollBarVisibleProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.HorizontalScrollBarVisibleProperty">HorizontalScrollBarVisibleProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the HorizontalScrollBarVisible bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty HorizontalScrollBarVisibleProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemHeightProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemHeightProperty">ItemHeightProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the ItemHeight bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemHeightProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemHorizontalAlignmentProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemHorizontalAlignmentProperty">ItemHorizontalAlignmentProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the ItemHorizontalAlignment bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemHorizontalAlignmentProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemsSourceProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemsSourceProperty">ItemsSourceProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the ItemsSource bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemsSourceProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemTemplateProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemTemplateProperty">ItemTemplateProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the ItemTemplate bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemTemplateProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemVerticalAlignmentProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemVerticalAlignmentProperty">ItemVerticalAlignmentProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the ItemVerticalAlignment bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemVerticalAlignmentProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemWidthProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemWidthProperty">ItemWidthProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the ItemWidth bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty ItemWidthProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_OrientationProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.OrientationProperty">OrientationProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the Orientation bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty OrientationProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_SelectedItemProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.SelectedItemProperty">SelectedItemProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the SelectedItem bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty SelectedItemProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_VerticalScrollBarVisibleProperty" data-uid="Tizen.TV.UIControls.Forms.GridView.VerticalScrollBarVisibleProperty">VerticalScrollBarVisibleProperty</h4>
-  <div class="markdown level1 summary"><p>Identifies the VerticalScrollBarVisible bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty VerticalScrollBarVisibleProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_GridView_HorizontalScrollBarVisible_" data-uid="Tizen.TV.UIControls.Forms.GridView.HorizontalScrollBarVisible*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_HorizontalScrollBarVisible" data-uid="Tizen.TV.UIControls.Forms.GridView.HorizontalScrollBarVisible">HorizontalScrollBarVisible</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the horizontal scroll bar visibility.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ScrollBarVisibility HorizontalScrollBarVisible { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ScrollBarVisibility</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ItemHeight_" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemHeight*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemHeight" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemHeight">ItemHeight</h4>
-  <div class="markdown level1 summary"><p>Gets or sets a value that represents the height of an item.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double ItemHeight { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ItemHorizontalAlignment_" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemHorizontalAlignment*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemHorizontalAlignment" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemHorizontalAlignment">ItemHorizontalAlignment</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the item&apos;s layout alignment along the horizon.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LayoutAlignment ItemHorizontalAlignment { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">LayoutAlignment</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ItemsSource_" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemsSource*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemsSource" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemsSource">ItemsSource</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the source of items to template and display.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public IEnumerable ItemsSource { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Collections.IEnumerable</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ItemTemplate_" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemTemplate*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemTemplate" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemTemplate">ItemTemplate</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the DataTemplate to apply to the ItemsSource.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public DataTemplate ItemTemplate { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DataTemplate</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ItemVerticalAlignment_" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemVerticalAlignment*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemVerticalAlignment" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemVerticalAlignment">ItemVerticalAlignment</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the item&apos;s layout alignment along the vertical.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public LayoutAlignment ItemVerticalAlignment { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">LayoutAlignment</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ItemWidth_" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemWidth*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemWidth" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemWidth">ItemWidth</h4>
-  <div class="markdown level1 summary"><p>Gets or sets a value that represents the width of an item.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public double ItemWidth { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Double</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_Orientation_" data-uid="Tizen.TV.UIControls.Forms.GridView.Orientation*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_Orientation" data-uid="Tizen.TV.UIControls.Forms.GridView.Orientation">Orientation</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the value which indicates the direction which items are positioned.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ItemsLayoutOrientation Orientation { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ItemsLayoutOrientation</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_SelectedItem_" data-uid="Tizen.TV.UIControls.Forms.GridView.SelectedItem*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_SelectedItem" data-uid="Tizen.TV.UIControls.Forms.GridView.SelectedItem">SelectedItem</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the currently selected item from the ItemsSource.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object SelectedItem { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ThemeStyle_" data-uid="Tizen.TV.UIControls.Forms.GridView.ThemeStyle*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ThemeStyle" data-uid="Tizen.TV.UIControls.Forms.GridView.ThemeStyle">ThemeStyle</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the style of GridView.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string ThemeStyle { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_GridView_VerticalScrollBarVisible_" data-uid="Tizen.TV.UIControls.Forms.GridView.VerticalScrollBarVisible*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_VerticalScrollBarVisible" data-uid="Tizen.TV.UIControls.Forms.GridView.VerticalScrollBarVisible">VerticalScrollBarVisible</h4>
-  <div class="markdown level1 summary"><p>Gets or sets the vertical scroll bar visibility.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ScrollBarVisibility VerticalScrollBarVisible { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">ScrollBarVisibility</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_GridView_ValidateItemTemplate_" data-uid="Tizen.TV.UIControls.Forms.GridView.ValidateItemTemplate*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ValidateItemTemplate_DataTemplate_" data-uid="Tizen.TV.UIControls.Forms.GridView.ValidateItemTemplate(DataTemplate)">ValidateItemTemplate(DataTemplate)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected bool ValidateItemTemplate(DataTemplate template)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">DataTemplate</span></td>
-        <td><span class="parametername">template</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="events">Events
-  </h3>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemFocused" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemFocused">ItemFocused</h4>
-  <div class="markdown level1 summary"><p>ItemFocused is raised when one item of GridView has received focus.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler&lt;GridViewFocusedEventArgs&gt; ItemFocused</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.html">GridViewFocusedEventArgs</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_GridView_ItemSelected" data-uid="Tizen.TV.UIControls.Forms.GridView.ItemSelected">ItemSelected</h4>
-  <div class="markdown level1 summary"><p>ItemSelected is raised when one item of GridView is selected.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler&lt;SelectedItemChangedEventArgs&gt; ItemSelected</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span>&lt;<span class="xref">SelectedItemChangedEventArgs</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Tizen.Theme.Common.IGridViewController</span>
+  </div>
   <div>
       <span class="xref">IViewController</span>
   </div>

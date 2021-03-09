@@ -89,197 +89,55 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">ContentButton</span></div>
+    <div class="level1"><span class="xref">Tizen.Theme.Common.ContentButton</span></div>
+    <div class="level2"><span class="xref">ContentButton</span></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><span class="xref">IButtonController</span></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.CommandProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.CommandParameterProperty</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.Command</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.CommandParameter</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.Clicked</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.Pressed</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.Released</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.SendClicked()</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.SendPressed()</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.SendReleased()</span>
+    </div>
+    <div>
+      <span class="xref">Tizen.Theme.Common.ContentButton.OnBindingContextChanged()</span>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.TV.UIControls.Forms.html">Tizen.TV.UIControls.Forms</a></h6>
   <h6><strong>Assembly</strong>: Tizen.TV.UIControls.Forms.dll</h6>
   <h5 id="Tizen_TV_UIControls_Forms_ContentButton_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ContentButton : ContentView, IButtonController</code></pre>
+    <pre><code class="lang-csharp hljs">public class ContentButton : ContentButton, IButtonController</code></pre>
   </div>
-  <h3 id="fields">Fields
-  </h3>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_CommandParameterProperty" data-uid="Tizen.TV.UIControls.Forms.ContentButton.CommandParameterProperty">CommandParameterProperty</h4>
-  <div class="markdown level1 summary"><p>BindableProperty. Identifies the CommandParameter bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty CommandParameterProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_CommandProperty" data-uid="Tizen.TV.UIControls.Forms.ContentButton.CommandProperty">CommandProperty</h4>
-  <div class="markdown level1 summary"><p>BindableProperty. Identifies the Command bindable property.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly BindableProperty CommandProperty</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">BindableProperty</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_ContentButton_Command_" data-uid="Tizen.TV.UIControls.Forms.ContentButton.Command*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_Command" data-uid="Tizen.TV.UIControls.Forms.ContentButton.Command">Command</h4>
-  <div class="markdown level1 summary"><p>Gets or sets command that is executed when the button is clicked.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ICommand Command { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Windows.Input.ICommand</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="Tizen_TV_UIControls_Forms_ContentButton_CommandParameter_" data-uid="Tizen.TV.UIControls.Forms.ContentButton.CommandParameter*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_CommandParameter" data-uid="Tizen.TV.UIControls.Forms.ContentButton.CommandParameter">CommandParameter</h4>
-  <div class="markdown level1 summary"><p>Gets or sets command paramter that is executed when the button is clicked.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public object CommandParameter { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Object</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_ContentButton_OnBindingContextChanged_" data-uid="Tizen.TV.UIControls.Forms.ContentButton.OnBindingContextChanged*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_OnBindingContextChanged" data-uid="Tizen.TV.UIControls.Forms.ContentButton.OnBindingContextChanged">OnBindingContextChanged()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnBindingContextChanged()</code></pre>
-  </div>
-  <h3 id="events">Events
-  </h3>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_Clicked" data-uid="Tizen.TV.UIControls.Forms.ContentButton.Clicked">Clicked</h4>
-  <div class="markdown level1 summary"><p>Occurs when the button is clicked.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Clicked</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_Pressed" data-uid="Tizen.TV.UIControls.Forms.ContentButton.Pressed">Pressed</h4>
-  <div class="markdown level1 summary"><p>Occurs when the button is pressed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Pressed</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h4 id="Tizen_TV_UIControls_Forms_ContentButton_Released" data-uid="Tizen.TV.UIControls.Forms.ContentButton.Released">Released</h4>
-  <div class="markdown level1 summary"><p>Occurs when the button is released.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public event EventHandler Released</code></pre>
-  </div>
-  <h5 class="eventType">Event Type</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.EventHandler</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <span class="xref">IButtonController</span>
