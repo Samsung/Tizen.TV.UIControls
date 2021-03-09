@@ -10,7 +10,7 @@
     <PackageVersion>0.0.1-preview</PackageVersion>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Samsung/Tizen.TV.UIControls</PackageProjectUrl>
-    <PackageIconUrl>https://developer.tizen.org/sites/default/files/images/tizen-pinwheel-on-light-rgb_64_64.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Samsung/Tizen.TV.UIControls/master/assets/common_ui_icon.png</PackageIconUrl>
     <PackageTags>xamarin;forms;xamarinforms;xamarin.forms;tizen;theme;common</PackageTags>
     <Copyright>© Samsung Electronics Co., Ltd All Rights Reserved</Copyright>
   </PropertyGroup>
