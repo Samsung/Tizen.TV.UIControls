@@ -7,7 +7,6 @@
     <authors>Samsung Electronics</authors>
     <owners>Samsung Electronics</owners>
     <Description>Tizen Common Theme</Description>
-    <PackageVersion>0.0.1-preview</PackageVersion>
     <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/Samsung/Tizen.TV.UIControls</PackageProjectUrl>
     <PackageIconUrl>https://raw.githubusercontent.com/Samsung/Tizen.TV.UIControls/master/assets/common_ui_icon.png</PackageIconUrl>
