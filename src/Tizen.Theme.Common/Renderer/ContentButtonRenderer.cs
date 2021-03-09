@@ -20,12 +20,12 @@ using Xamarin.Forms.Platform.Tizen;
 using XForms = Xamarin.Forms.Forms;
 using XFLayout = Xamarin.Forms.Layout;
 using EButton = ElmSharp.Button;
-using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.Theme.Common;
+using Tizen.Theme.Common.Renderer;
 
 [assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
 
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
     public class ContentButtonRenderer : LayoutRenderer
     {

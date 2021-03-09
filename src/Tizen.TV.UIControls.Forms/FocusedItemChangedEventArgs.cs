@@ -15,7 +15,6 @@
  */
 
 using System;
-using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {

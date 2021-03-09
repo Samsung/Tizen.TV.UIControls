@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 
 using Xamarin.Forms;
-using Tizen.TV.UIControls.Forms;
+using Tizen.Theme.Common;
 
 namespace Sample
 {

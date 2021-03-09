@@ -21,11 +21,11 @@ using System.ComponentModel;
 using ElmSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Tizen;
-using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.Theme.Common;
+using Tizen.Theme.Common.Renderer;
 
 [assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
     class GengridItemContext
     {

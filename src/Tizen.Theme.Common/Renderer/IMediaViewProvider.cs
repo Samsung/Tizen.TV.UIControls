@@ -14,15 +14,16 @@
  * limitations under the License.
  */
 
-using Tizen.TV.UIControls.Forms;
-using Tizen.TV.UIControls.Forms.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using MMView = Tizen.Multimedia.MediaView;
 
-[assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
-    public class OverlayPageRenderer : PageRenderer
+    public interface IMediaViewProvider
     {
+        MMView GetMediaView();
     }
 }

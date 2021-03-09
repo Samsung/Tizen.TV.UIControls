@@ -21,7 +21,7 @@ using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using Xamarin.Forms.Platform.Tizen.Native;
 
-namespace Tizen.TV.UIControls.Forms
+namespace Tizen.Theme.Common.Renderer
 {
     public class LayoutCanvas : Layout, IContainable<EvasObject>
     {

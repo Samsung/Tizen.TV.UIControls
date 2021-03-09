@@ -17,9 +17,8 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Sample.RecycleItemsView;
 
-namespace Sample
+namespace Sample.RecycleItemsView
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RIVMainPage : ContentPage

@@ -1,8 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.ComponentModel;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use ContentPopupManager from Tizen.Theme.Common instead.")]
     public static class ContentPopupManager
     {
         public static async Task ShowPopup(this INavigation navigation, ContentPopup popup)

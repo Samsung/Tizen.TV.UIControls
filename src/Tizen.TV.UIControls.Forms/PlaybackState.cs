@@ -14,11 +14,16 @@
  * limitations under the License.
  */
 
+using System;
+using System.ComponentModel;
+
 namespace Tizen.TV.UIControls.Forms
 {
     /// <summary>
     /// Enumerates values that define the playback state of the media content.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use PlaybackState from Tizen.Theme.Common instead.")]
     public enum PlaybackState
     {
         /// <summary>

@@ -1,10 +1,14 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
     /// <summary>
     /// Arguments for the event that is raised when one item of GridView has received focus. 
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use GridView from Tizen.Theme.Common instead.")]
     public class GridViewFocusedEventArgs : FocusEventArgs
     {
         /// <summary>

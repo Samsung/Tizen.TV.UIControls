@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Tizen.TV.UIControls.Forms
+namespace Tizen.Theme.Common
 {
     /// <summary>
     /// A built-in media controls.
@@ -33,8 +33,8 @@ namespace Tizen.TV.UIControls.Forms
         public EmbeddingControls()
         {
             InitializeComponent();
-            PlayImage.Source = ImageSource.FromResource("Tizen.TV.UIControls.Forms.Resources.img_button_play.png", GetType().Assembly);
-            PauseImage.Source = ImageSource.FromResource("Tizen.TV.UIControls.Forms.Resources.img_button_pause.png", GetType().Assembly);
+            PlayImage.Source = ImageSource.FromResource("Tizen.Theme.Common.Resources.img_button_play.png", GetType().Assembly);
+            PauseImage.Source = ImageSource.FromResource("Tizen.Theme.Common.Resources.img_button_pause.png", GetType().Assembly);
         }
 
         protected override void OnBindingContextChanged()

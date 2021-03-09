@@ -1,5 +1,5 @@
-﻿using Tizen.TV.UIControls.Forms;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
+using Tizen.Theme.Common;
 
 namespace Sample
 {

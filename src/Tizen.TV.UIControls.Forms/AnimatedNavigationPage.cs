@@ -14,44 +14,15 @@
  * limitations under the License.
  */
 
-using Xamarin.Forms;
+using System;
+using System.ComponentModel;
 
 namespace Tizen.TV.UIControls.Forms
 {
     /// <summary>
     /// A Page that manages the navigation with custom animation and user-experience of a stack of other pages.
     /// </summary>
-    public class AnimatedNavigationPage : NavigationPage
-    {
-        /// <summary>
-        /// Identifies the IsPreviousPageVisible bindable property.
-        /// </summary>
-        public static readonly BindableProperty IsPreviousPageVisibleProperty = BindableProperty.Create("IsPreviousPageVisible", typeof(bool), typeof(AnimatedNavigationPage), default(bool));
-
-        /// <summary>
-        /// Gets ans sets a value that determines whether previous page should be visible or not. This is a bindable property.
-        /// </summary>
-        public bool IsPreviousPageVisible
-        {
-            get { return (bool)GetValue(IsPreviousPageVisibleProperty); }
-            set { SetValue(IsPreviousPageVisibleProperty, value); }
-        }
-
-        /// <summary>
-        /// Creates and initializes a new instance of the AnimatedNavigationPage class.
-        /// </summary>
-        public AnimatedNavigationPage() : base()
-        {
-            SetHasNavigationBar(this, false);
-        }
-
-        /// <summary>
-        /// Creates and initializes a new instance of the AnimatedNavigationPage class.
-        /// </summary>
-        /// <param name="root">The root page</param>
-        public AnimatedNavigationPage(Page root) : base(root)
-        {
-            SetHasNavigationBar(this, false);
-        }
-    }
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use AnimatedNavigationPage from Tizen.Theme.Common instead.")]
+    public class AnimatedNavigationPage : Theme.Common.AnimatedNavigationPage {}
 }

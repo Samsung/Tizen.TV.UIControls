@@ -24,8 +24,8 @@ using XColor = Xamarin.Forms.Color;
 using XApplication = Xamarin.Forms.Application;
 using EColor = ElmSharp.Color;
 
-[assembly: Dependency(typeof(Tizen.TV.UIControls.Forms.Renderer.ContentPopupRenderer))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+[assembly: Dependency(typeof(Tizen.Theme.Common.Renderer.ContentPopupRenderer))]
+namespace Tizen.Theme.Common.Renderer
 {
     public class ContentPopupRenderer : IContentPopupRenderer
     {

@@ -15,6 +15,7 @@
  */
 
 using System;
+using CModel = System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -23,6 +24,8 @@ namespace Tizen.TV.UIControls.Forms
     /// A MediaSource that loads a media from a URI
     /// </summary>
     [TypeConverter(typeof(MediaSourceConverter))]
+    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use UriMediaSource from Tizen.Theme.Common instead.")]
     public class UriMediaSource : MediaSource
     {
         /// <summary>

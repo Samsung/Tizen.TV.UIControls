@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Tizen.TV.UIControls.Forms;
+using Tizen.Theme.Common;
 
 namespace Sample
 {

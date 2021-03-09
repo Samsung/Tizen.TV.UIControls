@@ -16,7 +16,7 @@
 
 using System;
 using System.Collections.Generic;
-using CPopup = Tizen.TV.UIControls.Forms.ContentPopup;
+using CPopup = Tizen.Theme.Common.ContentPopup;
 
 namespace Sample.ContentPopup
 {

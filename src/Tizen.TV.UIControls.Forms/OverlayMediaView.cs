@@ -16,6 +16,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
@@ -24,58 +25,7 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// An overlay MediaView.
     /// </summary>
-    public class OverlayMediaView : MediaView, IOverlayOutput
-    {
-        internal static readonly BindablePropertyKey OverlayAreaPropertyKey = BindableProperty.CreateReadOnly(nameof(OverlayArea), typeof(Rectangle), typeof(OverlayMediaView), default(Rectangle));
-        /// <summary>
-        /// Identifies the OverlayArea bindable property.
-        /// </summary>
-        public static readonly BindableProperty OverlayAreaProperty = OverlayAreaPropertyKey.BindableProperty;
-
-        /// <summary>
-        /// Initializes a new instance of the OverlayMediaView class.
-        /// </summary>
-        public OverlayMediaView()
-        {
-            BatchCommitted += OnBatchCommitted;
-        }
-
-        /// <summary>
-        /// Occurs when the overlay area is updated.
-        /// </summary>
-        public event EventHandler AreaUpdated;
-
-        /// <summary>
-        /// Gets the overlay area.
-        /// </summary>
-        public Rectangle OverlayArea
-        {
-            get { return (Rectangle)GetValue(OverlayAreaProperty); }
-            private set { SetValue(OverlayAreaPropertyKey, value); }
-        }
-
-        /// <summary>
-        /// Gets the video output type.
-        /// </summary>
-        public override VideoOuputType OuputType => VideoOuputType.Overlay;
-
-
-        protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            base.OnPropertyChanged(propertyName);
-            if (new List<string> { nameof(X), nameof(Y), nameof(Width), nameof(Height)}.Contains(propertyName) && !Batched)
-            {
-                OverlayArea = Bounds;
-            }
-            if (propertyName == nameof(OverlayArea))
-            {
-                AreaUpdated?.Invoke(this, EventArgs.Empty);
-            }
-        }
-
-        void OnBatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<VisualElement> e)
-        {
-            OverlayArea = Bounds;
-        }
-    }
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use OverlayMediaView from Tizen.Theme.Common instead.")]
+    public class OverlayMediaView : Theme.Common.OverlayMediaView {}
 }

@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;tizen40</TargetFrameworks>
+    <AssemblyName>Tizen.Theme.Common</AssemblyName>
+    <RootNamespace>Tizen.Theme.Common</RootNamespace>
+    <PackageId>Tizen.Theme.Common</PackageId>
+    <authors>Samsung Electronics</authors>
+    <owners>Samsung Electronics</owners>
+    <Description>Tizen Common Theme</Description>
+    <PackageVersion>0.0.1-preview</PackageVersion>
+    <PackageLicenseUrl>https://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Samsung/Tizen.TV.UIControls</PackageProjectUrl>
+    <PackageIconUrl>https://developer.tizen.org/sites/default/files/images/tizen-pinwheel-on-light-rgb_64_64.png</PackageIconUrl>
+    <PackageTags>xamarin;forms;xamarinforms;xamarin.forms;tizen;theme;common</PackageTags>
+    <Copyright>© Samsung Electronics Co., Ltd All Rights Reserved</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Renderer\**\*.cs" />
+    <None Include="Renderer\**\*.cs" />
+    <None Remove="Resources\img_button_pause.png" />
+    <None Remove="Resources\img_button_play.png" />
+    <EmbeddedResource Include="Resources\img_button_pause.png" />
+    <EmbeddedResource Include="Resources\img_button_play.png" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
+    <EmbeddedResource Update="EmbeddingControls.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
+    <TargetFrameworkIdentifier>Tizen</TargetFrameworkIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(TargetFramework)' == 'tizen40' ">
+    <Compile Include="Renderer\**\*.cs" />
+    <PackageReference Include="Tizen.NET" Version="4.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Tizen.Theme.Common.targets" PackagePath="build\" />
+    <Content Include="elm-sharp-theme-common.edj" PackagePath="content\theme\" />
+  </ItemGroup>
+</Project>

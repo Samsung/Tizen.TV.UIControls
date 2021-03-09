@@ -19,31 +19,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Tizen.Multimedia;
-using Tizen.TV.Multimedia;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.Theme.Common.Renderer;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Platform.Tizen;
 
-using TApplication = Tizen.Applications.Application;
 using ERect = ElmSharp.Rect;
 using MRectangle = Tizen.Multimedia.Rectangle;
 using MPlayer = Tizen.Multimedia.Player;
-using TVPlayer  = Tizen.TV.Multimedia.Player;
 
 [assembly: Xamarin.Forms.Dependency(typeof(MediaPlayerImpl))]
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.Theme.Common.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
     {
-        MPlayer _player;
+        protected MPlayer _player;
+        protected MediaSource _source;
         bool _cancelToStart;
         DisplayAspectMode _aspectMode = DisplayAspectMode.AspectFit;
         Task _taskPrepare;
         TaskCompletionSource<bool> _tcsForStreamInfo;
         IVideoOutput _videoOutput;
-        MediaSource _source;
-        DRMManager _drmManager;
 
         public MediaPlayerImpl()
         {
@@ -54,28 +50,9 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         protected virtual MPlayer CreateMediaPlayer()
         {
-            return new TVPlayer();
+            return new MPlayer();
         }
 
-        public DRMManager DRMManager
-        {
-            get => _drmManager;
-            set
-            {
-                if (_player is TVPlayer tvPlayer)
-                {
-                    _drmManager = value;
-                    if (value != null)
-                    {
-                        tvPlayer.SetDrm(value);
-                    }
-                }
-                else
-                {
-                    Log.Debug(UIControls.Tag, "DRMManager is avaialbe only on TVPlayer.");
-                }
-            }
-        }
 
         public MPlayer NativePlayer => _player;
         public bool UsesEmbeddingControls { get; set; }
@@ -197,7 +174,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         public void Pause()
         {
-            Log.Debug(UIControls.Tag, "Pause");
+            Log.Debug(CommonUI.Tag, "Pause");
 
             try
             {
@@ -206,23 +183,17 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Error on Pause : {e.Message}");
+                Log.Error(CommonUI.Tag, $"Error on Pause : {e.Message}");
             }
         }
 
-        public void Stop()
+        public virtual void Stop()
         {
-            Log.Debug(UIControls.Tag, "Stop");
+            Log.Debug(CommonUI.Tag, "Stop");
 
             _cancelToStart = true;
             var unusedTask = ChangeToIdleState();
             PlaybackStopped.Invoke(this, EventArgs.Empty);
-            if (DRMManager != null)
-            {
-                DRMManager.Close();
-                DRMManager.Dispose();
-                DRMManager = null;
-            }
         }
 
         public void SetDisplay(IVideoOutput output)
@@ -238,7 +209,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Fail to seek : {e.Message}");
+                Log.Error(CommonUI.Tag, $"Fail to seek : {e.Message}");
             }
             return Position;
         }
@@ -308,13 +279,13 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     }
                     catch
                     {
-                        Log.Error(UIControls.Tag, "Error on MediaView");
+                        Log.Error(CommonUI.Tag, "Error on MediaView");
                     }
                 }
             }
             else
             {
-                Display display = new Display(UIControls.MainWindowProvider());
+                Display display = new Display(CommonUI.MainWindowProvider());
                 _player.Display = display;
                 OverlayOutput.AreaUpdated += OnOverlayAreaUpdated;
                 ApplyOverlayArea();
@@ -350,31 +321,17 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Error on Update Overlayarea : {e.Message}");
+                Log.Error(CommonUI.Tag, $"Error on Update Overlayarea : {e.Message}");
             }
         }
 
-        async Task ApplySource()
+        protected virtual async Task ApplySource()
         {
             if (_source == null)
             {
                 return;
             }
             IMediaSourceHandler handler = Registrar.Registered.GetHandlerForObject<IMediaSourceHandler>(_source);
-            if (_source is DRMMediaSource drmMediaSource)
-            {
-                var drmManager = DRMManager.CreateDRMManager(DRMType.Playready);
-                drmManager.Init(TApplication.Current.ApplicationInfo.ApplicationId);
-                foreach (KeyValuePair<string, DRMPropertyValue> pair in drmMediaSource.ExtraData)
-                {
-                    _drmManager.AddProperty(pair.Key, pair.Value.Value);
-                }
-                drmManager.RemoveProperty("LicenseServer");
-                drmManager.AddProperty("LicenseServer", drmMediaSource.LicenseUrl);
-                drmManager.Url = drmMediaSource.Uri.AbsoluteUri;
-                drmManager.Open();
-                DRMManager = drmManager;
-            }
             await handler.SetSource(_player, _source);
         }
 
@@ -418,7 +375,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
             }
             catch (Exception e)
             {
-                Log.Error(UIControls.Tag, $"Error on prepare : {e.Message}");
+                Log.Error(CommonUI.Tag, $"Error on prepare : {e.Message}");
             }
             tcs.SetResult(true);
         }

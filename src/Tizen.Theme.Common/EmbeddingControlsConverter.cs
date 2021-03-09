@@ -20,7 +20,7 @@ using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
 
-namespace Tizen.TV.UIControls.Forms
+namespace Tizen.Theme.Common
 {
     /// <summary>
     /// Class that the XAML parser uses to convert Progress to Bound.

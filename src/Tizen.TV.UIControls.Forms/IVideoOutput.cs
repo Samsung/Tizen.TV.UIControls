@@ -15,6 +15,7 @@
  */
 
 using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -22,6 +23,8 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// Enumeration that specifies the video ouput.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use IPlatformMediaPlayer from Tizen.Theme.Common instead.")]
     public enum VideoOuputType
     {
         /// <summary>

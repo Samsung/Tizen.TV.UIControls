@@ -1,5 +1,5 @@
 ﻿using System;
-using Tizen.TV.UIControls.Forms;
+using Tizen.Theme.Common;
 using Xamarin.Forms;
 
 namespace Sample

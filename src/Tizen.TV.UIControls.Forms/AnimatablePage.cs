@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+using System;
+using System.ComponentModel;
 using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
@@ -21,6 +23,8 @@ namespace Tizen.TV.UIControls.Forms
     /// <summary>
     /// Manages animated page transitions on push and pop.
     /// </summary>
+    [EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete("This class is obsolete as of 1.1.0. Please use AnimatablePage from Tizen.Theme.Common instead.")]
     public static class AnimatablePage
     {
         /// <summary>
