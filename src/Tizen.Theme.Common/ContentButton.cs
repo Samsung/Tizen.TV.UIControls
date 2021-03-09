@@ -26,6 +26,8 @@ namespace Tizen.Theme.Common
     /// </summary>
     public class ContentButton : ContentView, IButtonController
     {
+        const string PressedVisualState = "Pressed";
+
         /// <summary>
         /// BindableProperty. Identifies the Command bindable property.
         /// </summary>
@@ -37,6 +39,18 @@ namespace Tizen.Theme.Common
         /// </summary>
         public static readonly BindableProperty CommandParameterProperty = BindableProperty.Create(nameof(CommandParameter), typeof(object), typeof(ContentButton), null, 
             propertyChanged: (bindable, oldvalue, newvalue) => CommandCanExcuteChanged(bindable, EventArgs.Empty));
+
+        internal static readonly BindablePropertyKey IsPressedPropertyKey = BindableProperty.CreateReadOnly(nameof(IsPressed), typeof(bool), typeof(Button), default(bool));
+
+        /// <summary>
+        /// BindableProperty. Identifies the IsPressed bindable property.
+        /// </summary>
+        public static readonly BindableProperty IsPressedProperty = IsPressedPropertyKey.BindableProperty;
+
+        /// <summary>
+        ///  Gets a value that indicates whether this element is pressed or not.
+        /// </summary>
+        public bool IsPressed => (bool)GetValue(IsPressedProperty);
 
         /// <summary>
         /// Gets or sets command that is executed when the button is clicked.
@@ -97,6 +111,8 @@ namespace Tizen.Theme.Common
         {
             if (IsEnabled)
             {
+                SetIsPressed(true);
+                ChangeVisualState();
                 Pressed?.Invoke(this, EventArgs.Empty);
             }
         }
@@ -109,9 +125,14 @@ namespace Tizen.Theme.Common
         {
             if (IsEnabled)
             {
+                SetIsPressed(false);
+                ChangeVisualState();
                 Released?.Invoke(this, EventArgs.Empty);
             }
         }
+
+        [EditorBrowsable(EditorBrowsableState.Never)]
+        void SetIsPressed(bool isPressed) => SetValue(IsPressedPropertyKey, isPressed);
 
         protected override void OnBindingContextChanged()
         {
@@ -170,6 +191,18 @@ namespace Tizen.Theme.Common
             if (button.Command != null)
             {
                 button.IsEnabledCore = button.Command.CanExecute(button.CommandParameter);
+            }
+        }
+
+        protected override void ChangeVisualState()
+        {
+            if (IsEnabled && IsPressed)
+            {
+                VisualStateManager.GoToState(this, PressedVisualState);
+            }
+            else
+            {
+                base.ChangeVisualState();
             }
         }
     }

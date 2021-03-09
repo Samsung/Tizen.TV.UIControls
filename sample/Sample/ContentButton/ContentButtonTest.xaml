@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:cui="clr-namespace:Tizen.Theme.Common;assembly=Tizen.Theme.Common"
              Title="ContentButton Test"
              x:Class="Sample.ContentButton.ContentButtonTest">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center">
-            <tv:ContentButton Clicked="ContentButton_Clicked">
+            <cui:ContentButton Clicked="ContentButton_Clicked">
                 <VisualStateManager.VisualStateGroups>
                     <VisualStateGroup x:Name="CommonStates">
                         <VisualState x:Name="Normal">
@@ -19,15 +19,20 @@
                                 <Setter Property="BackgroundColor" Value="Orange"/>
                             </VisualState.Setters>
                         </VisualState>
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="Red"/>
+                            </VisualState.Setters>
+                        </VisualState>
                     </VisualStateGroup>
                 </VisualStateManager.VisualStateGroups>
                 <Label FontSize="Header" x:Name="_label" Text="Text Button" />
-            </tv:ContentButton>
-            <tv:FocusFrame>
-                <tv:ContentButton Clicked="ContentButton_Clicked_1" HeightRequest="300" WidthRequest="300">
+            </cui:ContentButton>
+            <cui:FocusFrame>
+                <cui:ContentButton Clicked="ContentButton_Clicked_1" HeightRequest="300" WidthRequest="300">
                     <Image x:Name="_image" Source="albumarts/1984, Van Halen.jpg"/>
-                </tv:ContentButton>
-            </tv:FocusFrame>
+                </cui:ContentButton>
+            </cui:FocusFrame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
