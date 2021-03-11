@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cui="clr-namespace:Tizen.Theme.Common;assembly=Tizen.Theme.Common"
+             Title="ShadowFrame Test"
+             x:Class="Sample.ShadowFrame.ShadowFrameTest">
+    <StackLayout Spacing="40">
+        <cui:ShadowFrame x:Name="Frame1"
+                      WidthRequest="100"
+                      HeightRequest="100"
+                      BackgroundColor="White"
+                      BorderColor="#fcd071"
+                      BorderWidth="8"
+                      CornerRadius="20,20,20,20"
+                      ShadowOffsetX ="{Binding Value, Source={x:Reference offsetXSlider}}"
+                      ShadowOffsetY ="{Binding Value, Source={x:Reference offsetYSlider}}"
+                      ShadowBlurRadius="{Binding Value, Source={x:Reference blurSlider}}"
+                      ShadowOpacity ="{Binding Value, Source={x:Reference opacitySlider}}"
+                      HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="CornerRadius"  FontSize="Large" TextColor="Coral"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Top L: " TextColor ="Black"/>
+                    <Slider x:Name="tlSlider" Value="20" Minimum="0" Maximum="50" HorizontalOptions="FillAndExpand" ValueChanged="radius_ValueChanged"/>
+                    <Label Text="Top R: " TextColor ="Black" />
+                    <Slider x:Name="trSlider" Value="20" Minimum="0" Maximum="50" HorizontalOptions="FillAndExpand" ValueChanged="radius_ValueChanged"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Bot L: " TextColor ="Black"/>
+                    <Slider x:Name="blSlider" Value="20" Minimum="0" Maximum="50" HorizontalOptions="FillAndExpand" ValueChanged="radius_ValueChanged"/>
+                    <Label Text="Bot R: " TextColor ="Black"/>
+                    <Slider x:Name="brSlider" Value="20" Minimum="0" Maximum="50" HorizontalOptions="FillAndExpand" ValueChanged="radius_ValueChanged"/>
+                </StackLayout>
+
+                <Label Text="ShadowOffset" FontSize="Large" TextColor="Coral"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Off X: " TextColor ="Black"/>
+                    <Slider x:Name="offsetXSlider" Minimum="-50" Maximum="50" HorizontalOptions="FillAndExpand" ValueChanged="shadowOffset_ValueChanged"/>
+                    <Label Text="Off Y: " TextColor ="Black"/>
+                    <Slider x:Name="offsetYSlider" Minimum="-50" Maximum="50" HorizontalOptions="FillAndExpand" ValueChanged="shadowOffset_ValueChanged"/>
+                </StackLayout>
+
+                <Label Text="ShadowOpacity/BlurRadius"  FontSize="Large" TextColor="Coral"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Opacity" TextColor ="Black"/>
+                    <Slider x:Name="opacitySlider" Value=".24" HorizontalOptions="FillAndExpand" ValueChanged="blurOpacity_ValueChanged"/>
+                    <Label Text="Blur R " TextColor ="Black"/>
+                    <Slider x:Name="blurSlider" Minimum="0" Maximum="20" HorizontalOptions="FillAndExpand" ValueChanged="blurRadius_ValueChanged"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Toggle HasShadow: " TextColor ="Black"/>
+                    <Button x:Name="hasShadow" HeightRequest="20" Clicked="hasShadow_Clicked" Text="{Binding HasShadow, Source={x:Reference Frame1}}"/>
+                </StackLayout>
+
+                <Label Text="ShadowColor"  FontSize="Large" TextColor="Coral"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="R: " TextColor ="Red"/>
+                    <Slider x:Name="RedColorS" HorizontalOptions="FillAndExpand" ValueChanged="shadowColor_ValueChanged"/>
+                    <Label Text="G: " TextColor ="Green"/>
+                    <Slider x:Name="GreenColorS" HorizontalOptions="FillAndExpand" ValueChanged="shadowColor_ValueChanged"/>
+                    <Label Text="B: " TextColor ="Blue"/>
+                    <Slider x:Name="BlueColorS" HorizontalOptions="FillAndExpand" ValueChanged="shadowColor_ValueChanged"/>
+                </StackLayout>
+
+                <Label Text="BorderWidth/Color"  FontSize="Large" TextColor="Coral"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Width: " TextColor ="Black"/>
+                    <Slider x:Name="borderWidthSlider" Value="8" Minimum="0" Maximum="20"  HorizontalOptions="FillAndExpand" ValueChanged="borderWidth_ValueChanged"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="R: " TextColor ="Red"/>
+                    <Slider x:Name="RedColor" Value=".99" HorizontalOptions="FillAndExpand" ValueChanged="borderColor_ValueChanged"/>
+                    <Label Text="G: " TextColor ="Green"/>
+                    <Slider x:Name="GreenColor" Value=".82" HorizontalOptions="FillAndExpand" ValueChanged="borderColor_ValueChanged"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="B: " TextColor ="Blue"/>
+                    <Slider x:Name="BlueColor" Value=".44" HorizontalOptions="FillAndExpand" ValueChanged="borderColor_ValueChanged"/>
+                    <Label Text="A: " TextColor ="Black"/>
+                    <Slider x:Name="AlphaColor" Value="1" HorizontalOptions="FillAndExpand" ValueChanged="borderColor_ValueChanged"/>
+                </StackLayout>
+
+                <Label Text="BackgroundColor" FontSize="Large" TextColor="Coral"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="R: " TextColor ="Red"/>
+                    <Slider x:Name="RedColorBG" Value="1"  HorizontalOptions="FillAndExpand" ValueChanged="bgColor_ValueChanged"/>
+                    <Label Text="G: " TextColor ="Green"/>
+                    <Slider x:Name="GreenColorBG" Value="1" HorizontalOptions="FillAndExpand" ValueChanged="bgColor_ValueChanged"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="B: " TextColor ="Blue"/>
+                    <Slider x:Name="BlueColorBG" Value="1" HorizontalOptions="FillAndExpand" ValueChanged="bgColor_ValueChanged"/>
+                    <Label Text="A: " TextColor ="Black"/>
+                    <Slider x:Name="AlphaColorBG" Value="1"  HorizontalOptions="FillAndExpand" ValueChanged="bgColor_ValueChanged"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

@@ -6,7 +6,7 @@
 
   <!-- Include Nuget Package for Xamarin building -->
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.1829-pre6" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Tizen.Theme.Common\Tizen.Theme.Common.csproj" />
@@ -39,6 +39,9 @@
     </Compile>
     <Compile Update="RemoteControl\TestFlyoutPage.xaml.cs">
       <DependentUpon>TestFlyoutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ShadowFrame\ShadowFrameTest.xaml.cs">
+      <DependentUpon>ShadowFrameTest.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
