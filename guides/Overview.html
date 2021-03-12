@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Tizen TV UIControls </title>
+    <title>Tizen Theme Common </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Tizen TV UIControls ">
+    <meta name="title" content="Tizen Theme Common ">
     <meta name="generator" content="docfx 1.0.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
@@ -77,25 +77,41 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="tizen-tv-uicontrols">Tizen TV UIControls</h1>
+<h2 id="tizen-theme-common">Tizen Theme Common</h2>
 
+<h3 id="packages">Packages</h3>
+<p><a href="https://www.nuget.org/packages/Tizen.Theme.Common">Nuget</a></p>
+<h3 id="getting-started">Getting Started</h3>
+<h4 id="how-to-init">How to Init</h4>
+<p>It is same as initializing the Tizen.TV.UIControls.</p>
+<pre><code class="lang-cs">CommonUI.Init(app);
+
+// Or, you can use InitOptions as followings.
+// Make sure that Tizen.Theme.Common.InioOptions. (not Tizen.TV.UIControls.InitOptions)
+CommonUI.Init(new InitOptions(app));
+</code></pre><h4 id="load-the-common-theme">Load the common theme</h4>
+<p>If you want each control to be applied in the look &amp; feel defined in the common theme file, load it as below.</p>
+<pre><code class="lang-cs">CommonUI.AddCommonThemeOverlay();
+</code></pre><p>  <em>⚠️ To make it work properly, <code>CommonUI.AddCommonThemeOverlay()</code> should be called after other&#39;s Init including <code>Forms.Init()</code> and <code>UIControls.Init()</code>.</em></p>
+<p>  <em>⚠️ If you want the look and feel of the basic control to be defined according to the platform/product theme rather than the common theme, you can omit <code>CommonUI.AddCommonThemeOverlay()</code>.</em></p>
+<h2 id="tizen-tv-uicontrols">Tizen TV UIControls</h2>
 <p>The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device. The binaries are available via NuGet (package name is Tizen.TV.UIControls) with the source available here.</p>
-<h2 id="screen-shot">Screen shot</h2>
+<h3 id="screen-shot">Screen shot</h3>
 <p><img src="https://user-images.githubusercontent.com/1029155/42200625-34b8332a-7ecf-11e8-9494-5f97cf4c3e60.gif" width="250"> <img src="https://user-images.githubusercontent.com/1029155/42200629-3742fb16-7ecf-11e8-82ea-dc8dd5fd9619.gif" width="250"> <img src="https://user-images.githubusercontent.com/1029155/42200631-3b63edcc-7ecf-11e8-8435-31e12c5ed79e.gif" width="250"> <img src="https://user-images.githubusercontent.com/1029155/42200633-3d5b9396-7ecf-11e8-91c2-72f3d1003360.gif" width="250"> <img src="https://user-images.githubusercontent.com/1029155/42200637-4685077c-7ecf-11e8-9984-4c68048da265.gif" width="250"> <img src="https://user-images.githubusercontent.com/1029155/42200638-489afd3c-7ecf-11e8-981d-8f27169ee8c0.gif" width="250"></p>
-<h2 id="build-status">Build Status</h2>
+<h3 id="build-status">Build Status</h3>
 <p> <a href="http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/"><img src="http://13.124.0.26:8080/job/Tizen.TV.UIControls/job/Release/badge/icon" alt="Build Status"></a></p>
-<h2 id="packages">Packages</h2>
+<h3 id="packages-1">Packages</h3>
 <p><a href="https://tizen.myget.org/feed/dotnet/package/nuget/Tizen.TV.UIControls"><img src="https://img.shields.io/tizen.myget/dotnet/vpre/Tizen.TV.UIControls.svg" alt="myget"></a></p>
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="install-package">Install package</h3>
-<h4 id="nugetexe">nuget.exe</h4>
+<h3 id="getting-started-1">Getting Started</h3>
+<h4 id="install-package">Install package</h4>
+<h5 id="nugetexe">nuget.exe</h5>
 <pre><code>nuget.exe install Tizen.TV.UIControls -Version 1.0.0
-</code></pre><h4 id="csproj">.csproj</h4>
+</code></pre><h5 id="csproj">.csproj</h5>
 <pre><code class="lang-xml">&lt;PackageReference Include=&quot;Tizen.TV.UIControls&quot; Version=&quot;1.0.0&quot; /&gt;
-</code></pre><h3 id="use-in-xaml">Use in Xaml</h3>
-<h4 id="declaring-namespaces-for-tvuicontrols">Declaring Namespaces for TV.UIControls</h4>
+</code></pre><h4 id="use-in-xaml">Use in Xaml</h4>
+<h5 id="declaring-namespaces-for-tvuicontrols">Declaring Namespaces for TV.UIControls</h5>
 <pre><code class="lang-xml">&lt;ContentPage ... xmlns:tv=&quot;clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms&quot; ...&gt;
-</code></pre><h3 id="initialization-on-platform-code">Initialization on Platform code</h3>
+</code></pre><h4 id="initialization-on-platform-code">Initialization on Platform code</h4>
 <pre><code class="lang-c#">Tizen.TV.UIControls.Forms.UIControls.Init();
 global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
 

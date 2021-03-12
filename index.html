@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Tizen TV UIControls </title>
+    <title>Xamarin.Forms Extensions for Tizen </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Tizen TV UIControls ">
+    <meta name="title" content="Xamarin.Forms Extensions for Tizen ">
     <meta name="generator" content="docfx 1.0.0.0">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -70,11 +70,13 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="tizen-tv-uicontrols">Tizen TV UIControls</h1>
+<h1 id="xamarinforms-extensions-for-tizen">Xamarin.Forms Extensions for Tizen</h1>
 
-<p>The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device.
-The binaries are available via NuGet (package name is &quot;Tizen.TV.UIControls&quot;) with the source available here.</p>
-<h2 id="major-classes">Major Classes</h2>
+<h2 id="tizen-theme-common">Tizen Theme Common</h2>
+<p>The Tizen Theme Common is a set of helpful extensions to the Xamarin Forms framework for Tizen devices.
+It provides various UI controls that can be commonly used in all different Tizen profiles with rich and customizable functionalities.
+The Nuget package is available with the name of Tizen.Theme.Common.</p>
+<h3 id="major-classes">Major Classes</h3>
 <table>
 <thead>
 <tr>
@@ -84,21 +86,67 @@ The binaries are available via NuGet (package name is &quot;Tizen.TV.UIControls&
 </thead>
 <tbody>
 <tr>
-<td><a class="xref" href="api/Tizen.TV.UIControls.Forms.MediaPlayer.html">MediaPlayer</a></td>
-<td>Class that provieds the essential components to play the media contents.</td>
+<td><a class="xref" href="api/Tizen.Theme.Common.AnimatablePage.html">AnimatablePage</a></td>
+<td>Manages animated page transitions on push and pop.</td>
 </tr>
 <tr>
-<td><a class="xref" href="api/Tizen.TV.UIControls.Forms.MediaView.html">MediaView</a></td>
-<td>Class that is used to display the video output on the screen.</td>
+<td><a class="xref" href="api/Tizen.Theme.Common.AnimatedContentPage.html">AnimatedContentPage</a></td>
+<td>ContentPage that support animation when switching pages.</td>
 </tr>
 <tr>
-<td><a class="xref" href="api/Tizen.TV.UIControls.Forms.OverlayMediaView.html">OverlayMediaView</a></td>
-<td>An overlay MediaView.</td>
+<td><a class="xref" href="api/Tizen.Theme.Common.AnimatedNavigationPage.html">AnimatedNavigationPage</a></td>
+<td>Page that manages the navigation with custom animation and user-experience of a stack of other pages.</td>
 </tr>
 <tr>
-<td><a class="xref" href="api/Tizen.TV.UIControls.Forms.OverlayPage.html">OverlayPage</a></td>
+<td><a class="xref" href="api/Tizen.Theme.Common.ContentButton.html">ContentButton</a></td>
+<td>Button which allows you to customize the View to be displayed.</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.ContentPopup.html">ContentPopup</a></td>
+<td>Popup which allows you to customize the Layout to be displayed.</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.FocusFrame.html">FocusFrame</a></td>
+<td>It is a container to decorate focused state</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.GridView.html">GridView</a></td>
+<td>View to efficiently display a collections of data using DataTemplate</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.MediaPlayer.html">MediaPlayer</a></td>
+<td>MediaPlayer provieds the essential components to play the media contents.</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.MediaView.html">MediaView</a></td>
+<td>Abstract class whose subclasses can be used to display the video output on the screen.</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.OverlayMediaView.html">OverlayMediaView</a></td>
+<td>Overlay MediaView.</td>
+</tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.OverlayPage.html">OverlayPage</a></td>
 <td>Class that is used to display the video output on a page.</td>
 </tr>
+<tr>
+<td><a class="xref" href="api/Tizen.Theme.Common.ShadowFrame.html">ShadowFrame</a></td>
+<td>Extension class of Xamarin.Forms.Frame with more customizable features.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tizen-tv-uicontrols">Tizen TV UIControls</h2>
+<p>The Tizen TV UIControls is a set of helpful extensions to the Xamarin Forms framework for the Samsung TV device.
+The binaries are available via NuGet (package name is &quot;Tizen.TV.UIControls&quot;) with the source available here.</p>
+<h3 id="major-classes-1">Major Classes</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td><a class="xref" href="api/Tizen.TV.UIControls.Forms.RecycleItemsView.html">RecycleItemsView</a></td>
 <td>ScrollView that efficiently displays a collection of data using DataTemplate.</td>

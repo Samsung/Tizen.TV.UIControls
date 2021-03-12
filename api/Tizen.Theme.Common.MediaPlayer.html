@@ -1,0 +1,1159 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MediaPlayer
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MediaPlayer
+   ">
+    <meta name="generator" content="docfx 1.0.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.png" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+        
+        <div id="search-results">
+          <div class="search-list"></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Tizen.Theme.Common.MediaPlayer">
+  
+  
+  <h1 id="Tizen_Theme_Common_MediaPlayer" data-uid="Tizen.Theme.Common.MediaPlayer" class="text-break">Class MediaPlayer
+  </h1>
+  <div class="markdown level0 summary"><p>MediaPlayer provieds the essential components to play the media contents.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">MediaPlayer</span></div>
+      <div class="level2"><a class="xref" href="Tizen.TV.UIControls.Forms.MediaPlayer.html">MediaPlayer</a></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.Theme.Common.html">Tizen.Theme.Common</a></h6>
+  <h6><strong>Assembly</strong>: Tizen.Theme.Common.dll</h6>
+  <h5 id="Tizen_Theme_Common_MediaPlayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class MediaPlayer : Element</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <a id="Tizen_Theme_Common_MediaPlayer__ctor_" data-uid="Tizen.Theme.Common.MediaPlayer.#ctor*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer__ctor" data-uid="Tizen.Theme.Common.MediaPlayer.#ctor">MediaPlayer()</h4>
+  <div class="markdown level1 summary"><p>Initializes a new instance of the MediaPlayer class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MediaPlayer()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_AspectModeProperty" data-uid="Tizen.Theme.Common.MediaPlayer.AspectModeProperty">AspectModeProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the AspectMode bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty AspectModeProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_AutoPlayProperty" data-uid="Tizen.Theme.Common.MediaPlayer.AutoPlayProperty">AutoPlayProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the AutoPlay bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty AutoPlayProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_AutoStopProperty" data-uid="Tizen.Theme.Common.MediaPlayer.AutoStopProperty">AutoStopProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the AutoStop bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty AutoStopProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_BufferingProgressProperty" data-uid="Tizen.Theme.Common.MediaPlayer.BufferingProgressProperty">BufferingProgressProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the BufferingProgress bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty BufferingProgressProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_DurationProperty" data-uid="Tizen.Theme.Common.MediaPlayer.DurationProperty">DurationProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Duration bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty DurationProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_IsBufferingProperty" data-uid="Tizen.Theme.Common.MediaPlayer.IsBufferingProperty">IsBufferingProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the IsBuffering bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty IsBufferingProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_IsLoopingProperty" data-uid="Tizen.Theme.Common.MediaPlayer.IsLoopingProperty">IsLoopingProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the IsLooping bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty IsLoopingProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_IsMutedProperty" data-uid="Tizen.Theme.Common.MediaPlayer.IsMutedProperty">IsMutedProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the IsMuted bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty IsMutedProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PositionProperty" data-uid="Tizen.Theme.Common.MediaPlayer.PositionProperty">PositionProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Position bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PositionProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PositionUpdateIntervalProperty" data-uid="Tizen.Theme.Common.MediaPlayer.PositionUpdateIntervalProperty">PositionUpdateIntervalProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the PositionUpdateInterval bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty PositionUpdateIntervalProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_SourceProperty" data-uid="Tizen.Theme.Common.MediaPlayer.SourceProperty">SourceProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Source bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty SourceProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_StateProperty" data-uid="Tizen.Theme.Common.MediaPlayer.StateProperty">StateProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the State bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty StateProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_UsesEmbeddingControlsProperty" data-uid="Tizen.Theme.Common.MediaPlayer.UsesEmbeddingControlsProperty">UsesEmbeddingControlsProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the UsesEmbeddingControls bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty UsesEmbeddingControlsProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_VideoOutputProperty" data-uid="Tizen.Theme.Common.MediaPlayer.VideoOutputProperty">VideoOutputProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the VideoOutput bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty VideoOutputProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_VolumeProperty" data-uid="Tizen.Theme.Common.MediaPlayer.VolumeProperty">VolumeProperty</h4>
+  <div class="markdown level1 summary"><p>Identifies the Volume bindable property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly BindableProperty VolumeProperty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">BindableProperty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <a id="Tizen_Theme_Common_MediaPlayer_AspectMode_" data-uid="Tizen.Theme.Common.MediaPlayer.AspectMode*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_AspectMode" data-uid="Tizen.Theme.Common.MediaPlayer.AspectMode">AspectMode</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the scaling mode for the media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DisplayAspectMode AspectMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Theme.Common.DisplayAspectMode.html">DisplayAspectMode</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_AutoPlay_" data-uid="Tizen.Theme.Common.MediaPlayer.AutoPlay*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_AutoPlay" data-uid="Tizen.Theme.Common.MediaPlayer.AutoPlay">AutoPlay</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value whether the media content plays automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoPlay { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_AutoStop_" data-uid="Tizen.Theme.Common.MediaPlayer.AutoStop*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_AutoStop" data-uid="Tizen.Theme.Common.MediaPlayer.AutoStop">AutoStop</h4>
+  <div class="markdown level1 summary"><p>Gets or sets a value whether the media content stops automatically.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool AutoStop { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_BufferingProgress_" data-uid="Tizen.Theme.Common.MediaPlayer.BufferingProgress*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_BufferingProgress" data-uid="Tizen.Theme.Common.MediaPlayer.BufferingProgress">BufferingProgress</h4>
+  <div class="markdown level1 summary"><p>Gets the value indicating the buffering percentage.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double BufferingProgress { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_Duration_" data-uid="Tizen.Theme.Common.MediaPlayer.Duration*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Duration" data-uid="Tizen.Theme.Common.MediaPlayer.Duration">Duration</h4>
+  <div class="markdown level1 summary"><p>Gets the duration of a media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Duration { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_IsBuffering_" data-uid="Tizen.Theme.Common.MediaPlayer.IsBuffering*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_IsBuffering" data-uid="Tizen.Theme.Common.MediaPlayer.IsBuffering">IsBuffering</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating the buffering status. </p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsBuffering { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_IsLooping_" data-uid="Tizen.Theme.Common.MediaPlayer.IsLooping*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_IsLooping" data-uid="Tizen.Theme.Common.MediaPlayer.IsLooping">IsLooping</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value whether the volume is looping or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsLooping { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_IsMuted_" data-uid="Tizen.Theme.Common.MediaPlayer.IsMuted*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_IsMuted" data-uid="Tizen.Theme.Common.MediaPlayer.IsMuted">IsMuted</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the value whether the volume is muted.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsMuted { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_Position_" data-uid="Tizen.Theme.Common.MediaPlayer.Position*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Position" data-uid="Tizen.Theme.Common.MediaPlayer.Position">Position</h4>
+  <div class="markdown level1 summary"><p>Gets the value of the current position of the media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Position { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_PositionUpdateInterval_" data-uid="Tizen.Theme.Common.MediaPlayer.PositionUpdateInterval*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PositionUpdateInterval" data-uid="Tizen.Theme.Common.MediaPlayer.PositionUpdateInterval">PositionUpdateInterval</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the desired interval time for updating position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int PositionUpdateInterval { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_Source_" data-uid="Tizen.Theme.Common.MediaPlayer.Source*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Source" data-uid="Tizen.Theme.Common.MediaPlayer.Source">Source</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the source of the media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MediaSource Source { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Theme.Common.MediaSource.html">MediaSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Tizen_Theme_Common_MediaPlayer_Source_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The &quot;<a href="http://developer.samsung.com/privilege/drmplay&amp;quot">http://developer.samsung.com/privilege/drmplay&quot</a>; privilege is required in case of DRMMediaSource.</p>
+</div>
+  <a id="Tizen_Theme_Common_MediaPlayer_State_" data-uid="Tizen.Theme.Common.MediaPlayer.State*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_State" data-uid="Tizen.Theme.Common.MediaPlayer.State">State</h4>
+  <div class="markdown level1 summary"><p>Gets the current playback state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlaybackState State { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Theme.Common.PlaybackState.html">PlaybackState</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_UsesEmbeddingControls_" data-uid="Tizen.Theme.Common.MediaPlayer.UsesEmbeddingControls*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_UsesEmbeddingControls" data-uid="Tizen.Theme.Common.MediaPlayer.UsesEmbeddingControls">UsesEmbeddingControls</h4>
+  <div class="markdown level1 summary"><p>Gets or sets whether to use the embedding controls.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool UsesEmbeddingControls { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_VideoOutput_" data-uid="Tizen.Theme.Common.MediaPlayer.VideoOutput*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_VideoOutput" data-uid="Tizen.Theme.Common.MediaPlayer.VideoOutput">VideoOutput</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the video output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IVideoOutput VideoOutput { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Theme.Common.IVideoOutput.html">IVideoOutput</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_Volume_" data-uid="Tizen.Theme.Common.MediaPlayer.Volume*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Volume" data-uid="Tizen.Theme.Common.MediaPlayer.Volume">Volume</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the current volume of a media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public double Volume { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <a id="Tizen_Theme_Common_MediaPlayer_CreateMediaPlayerImpl_" data-uid="Tizen.Theme.Common.MediaPlayer.CreateMediaPlayerImpl*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_CreateMediaPlayerImpl" data-uid="Tizen.Theme.Common.MediaPlayer.CreateMediaPlayerImpl">CreateMediaPlayerImpl()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual IPlatformMediaPlayer CreateMediaPlayerImpl()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Tizen.Theme.Common.IPlatformMediaPlayer.html">IPlatformMediaPlayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_GetAlbumArts_" data-uid="Tizen.Theme.Common.MediaPlayer.GetAlbumArts*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_GetAlbumArts" data-uid="Tizen.Theme.Common.MediaPlayer.GetAlbumArts">GetAlbumArts()</h4>
+  <div class="markdown level1 summary"><p>Retrieves the album art of the stream, or null if there is no album art data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;Stream&gt; GetAlbumArts()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.IO.Stream</span>&gt;</td>
+        <td><p>Returns a Task that gets the album art of the stream</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_GetMetadata_" data-uid="Tizen.Theme.Common.MediaPlayer.GetMetadata*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_GetMetadata" data-uid="Tizen.Theme.Common.MediaPlayer.GetMetadata">GetMetadata()</h4>
+  <div class="markdown level1 summary"><p>Gets the metadata of the media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;IDictionary&lt;string, string&gt;&gt; GetMetadata()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Collections.Generic.IDictionary</span>&lt;<span class="xref">System.String</span>, <span class="xref">System.String</span>&gt;&gt;</td>
+        <td><p>Returns a Task that has the metadata of the media content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_Pause_" data-uid="Tizen.Theme.Common.MediaPlayer.Pause*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Pause" data-uid="Tizen.Theme.Common.MediaPlayer.Pause">Pause()</h4>
+  <div class="markdown level1 summary"><p>Pauses the player.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Pause()</code></pre>
+  </div>
+  <a id="Tizen_Theme_Common_MediaPlayer_Seek_" data-uid="Tizen.Theme.Common.MediaPlayer.Seek*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Seek_System_Int32_" data-uid="Tizen.Theme.Common.MediaPlayer.Seek(System.Int32)">Seek(Int32)</h4>
+  <div class="markdown level1 summary"><p>Attemps to seek the playback position.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;int&gt; Seek(int ms)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">ms</span></td>
+        <td><p>The milliseconds to seek</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>Returns a Task that seeks the play position.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <a id="Tizen_Theme_Common_MediaPlayer_Start_" data-uid="Tizen.Theme.Common.MediaPlayer.Start*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Start" data-uid="Tizen.Theme.Common.MediaPlayer.Start">Start()</h4>
+  <div class="markdown level1 summary"><p>Starts or resumes playback.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;bool&gt; Start()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Boolean</span>&gt;</td>
+        <td><p>Returns a Task that prepares the player and play the media content.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Tizen_Theme_Common_MediaPlayer_Start_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The &quot;<a href="http://developer.samsung.com/privilege/drmplay&amp;quot">http://developer.samsung.com/privilege/drmplay&quot</a>; privilege is required if you want to start DRM-pretected content playback.</p>
+</div>
+  <a id="Tizen_Theme_Common_MediaPlayer_Stop_" data-uid="Tizen.Theme.Common.MediaPlayer.Stop*"></a>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_Stop" data-uid="Tizen.Theme.Common.MediaPlayer.Stop">Stop()</h4>
+  <div class="markdown level1 summary"><p>Stops playing the media content.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Stop()</code></pre>
+  </div>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_BufferingCompleted" data-uid="Tizen.Theme.Common.MediaPlayer.BufferingCompleted">BufferingCompleted</h4>
+  <div class="markdown level1 summary"><p>Occurs when the buffering for the media content is completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler BufferingCompleted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_BufferingStarted" data-uid="Tizen.Theme.Common.MediaPlayer.BufferingStarted">BufferingStarted</h4>
+  <div class="markdown level1 summary"><p>Occurs when the buffering for the media content is started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler BufferingStarted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PlaybackCompleted" data-uid="Tizen.Theme.Common.MediaPlayer.PlaybackCompleted">PlaybackCompleted</h4>
+  <div class="markdown level1 summary"><p>Occurs when the playback is completed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PlaybackCompleted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PlaybackPaused" data-uid="Tizen.Theme.Common.MediaPlayer.PlaybackPaused">PlaybackPaused</h4>
+  <div class="markdown level1 summary"><p>Occurs when the playback is paused.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PlaybackPaused</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PlaybackStarted" data-uid="Tizen.Theme.Common.MediaPlayer.PlaybackStarted">PlaybackStarted</h4>
+  <div class="markdown level1 summary"><p>Occurs when the playback is started.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PlaybackStarted</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="Tizen_Theme_Common_MediaPlayer_PlaybackStopped" data-uid="Tizen.Theme.Common.MediaPlayer.PlaybackStopped">PlaybackStopped</h4>
+  <div class="markdown level1 summary"><p>Occurs when the playback is stopped.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler PlaybackStopped</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright &copy; 2018-2019 Samsung <br> Generated by <strong>DocFX</strong></span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
