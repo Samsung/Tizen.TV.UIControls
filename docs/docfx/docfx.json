@@ -5,7 +5,7 @@
         {
           "files": ["**/*.csproj"],
           "exclude": ["**/obj/**", "**/bin/**"],
-          "src": "../../src/Tizen.TV.UIControls.Forms"
+          "src": "../../src"
         }
       ],
       "dest": "obj/api",
