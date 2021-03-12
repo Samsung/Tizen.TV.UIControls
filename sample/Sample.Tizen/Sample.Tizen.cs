@@ -30,15 +30,19 @@ namespace Sample
                 var option = new InitializationOptions(app)
                 {
                     //Using DP without device scaling mode
-                    DisplayResolutionUnit = DisplayResolutionUnit.DP()
+                    DisplayResolutionUnit = DisplayResolutionUnit.DP(),
+                    UseSkiaSharp = true
                 };
                 Forms.Init(option);
-
-                // UIControls.Init() should be called after Forms.Init()
-                UIControls.Init(new InitOptions(app));
-                CommonUI.Init(app);
-                if (Device.Idiom != TargetIdiom.TV)
+                if (Device.Idiom == TargetIdiom.TV)
                 {
+                    // UIControls.Init() should be called after Forms.Init()
+                    UIControls.Init(new InitOptions(app));
+                    CommonUI.Init(app);
+                }
+                else
+                {
+                    CommonUI.Init(app);
                     CommonUI.AddCommonThemeOverlay();
                 }
                 app.Run(args);

@@ -35,6 +35,11 @@ namespace Sample
             {
                 new TestCategory
                 {
+                    Name = "Shadow Frame Test",
+                    PageType = typeof(ShadowFrame.ShadowFrameTest),
+                },
+                new TestCategory
+                {
                     Name = "Page Transition Test",
                     PageType = typeof(AnimatedNaviMainPage),
                 },
