@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class RemoteKeyHandler
    ">
-    <meta name="generator" content="docfx 1.0.0.0">
+    <meta name="generator" content="docfx 2.56.1.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -89,13 +89,105 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">RemoteKeyHandler</span></div>
+    <div class="level1"><span class="xref">Xamarin.Forms.BindableObject</span></div>
+    <div class="level2"><span class="xref">RemoteKeyHandler</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.ComponentModel.INotifyPropertyChanged</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.BindingContextProperty</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindableProperty)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.ClearValue(Xamarin.Forms.BindablePropertyKey)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.GetValue(Xamarin.Forms.BindableProperty)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.IsSet(Xamarin.Forms.BindableProperty)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.RemoveBinding(Xamarin.Forms.BindableProperty)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.SetBinding(Xamarin.Forms.BindableProperty, Xamarin.Forms.BindingBase)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.ApplyBindings()</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.OnBindingContextChanged()</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.OnPropertyChanged(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.OnPropertyChanging(System.String)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.UnapplyBindings()</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindableProperty, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.SetValue(Xamarin.Forms.BindablePropertyKey, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.CoerceValue(Xamarin.Forms.BindableProperty)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.CoerceValue(Xamarin.Forms.BindablePropertyKey)</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.Dispatcher</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.BindingContext</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.PropertyChanged</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.PropertyChanging</span>
+    </div>
+    <div>
+      <span class="xref">Xamarin.Forms.BindableObject.BindingContextChanged</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Tizen.TV.UIControls.Forms.html">Tizen.TV.UIControls.Forms</a></h6>
   <h6><strong>Assembly</strong>: Tizen.TV.UIControls.Forms.dll</h6>
   <h5 id="Tizen_TV_UIControls_Forms_RemoteKeyHandler_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class RemoteKeyHandler : BindableObject</code></pre>
+    <pre><code class="lang-csharp hljs">public class RemoteKeyHandler : BindableObject, INotifyPropertyChanged, IDynamicResourceHandler</code></pre>
   </div>
   <h3 id="constructors">Constructors
   </h3>
@@ -109,7 +201,7 @@
     <pre><code class="lang-csharp hljs">public RemoteKeyHandler()</code></pre>
   </div>
   <a id="Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs})">RemoteKeyHandler(Action&lt;RemoteControlKeyEventArgs&gt;)</h4>
+  <h4 id="Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_System_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(System.Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs})">RemoteKeyHandler(Action&lt;RemoteControlKeyEventArgs&gt;)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -128,7 +220,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>An action to invoke when the remote control event is activated.</p>
 </td>
@@ -136,7 +228,7 @@
     </tbody>
   </table>
   <a id="Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs},Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)">RemoteKeyHandler(Action&lt;RemoteControlKeyEventArgs&gt;, RemoteControlKeyTypes)</h4>
+  <h4 id="Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_System_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(System.Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs},Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)">RemoteKeyHandler(Action&lt;RemoteControlKeyEventArgs&gt;, RemoteControlKeyTypes)</h4>
   <div class="markdown level1 summary"><p>Initializes a new instance of the RemoteKeyHandler class with its action which is set to Command and key type.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -155,7 +247,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Action</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
+        <td><span class="xref">System.Action</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
         <td><span class="parametername">action</span></td>
         <td><p>An action to invoke when the remote control event with the specifiec key type is invoked.</p>
 </td>
@@ -188,7 +280,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">BindableProperty</span></td>
+        <td><span class="xref">Xamarin.Forms.BindableProperty</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -214,34 +306,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">ICommand</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-  </h3>
-  <a id="Tizen_TV_UIControls_Forms_RemoteKeyHandler_SendKeyEvent_" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent*"></a>
-  <h4 id="Tizen_TV_UIControls_Forms_RemoteKeyHandler_SendKeyEvent_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs_" data-uid="Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent(Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs)">SendKeyEvent(RemoteControlKeyEventArgs)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SendKeyEvent(RemoteControlKeyEventArgs args)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a></td>
-        <td><span class="parametername">args</span></td>
+        <td><span class="xref">System.Windows.Input.ICommand</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -266,7 +331,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -289,11 +354,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html">RemoteControlKeyEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.ComponentModel.INotifyPropertyChanged</span>
+  </div>
 </article>
           </div>
           

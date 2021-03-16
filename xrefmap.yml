@@ -13,11 +13,11 @@ references:
   commentId: T:Tizen.Theme.Common.AnimatablePage
   fullName: Tizen.Theme.Common.AnimatablePage
   nameWithType: AnimatablePage
-- uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimation(Page)
+- uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimation(Xamarin.Forms.Page)
   name: GetPopAnimation(Page)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPopAnimation_Page_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPopAnimation(Page)
-  fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimation(Page)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPopAnimation_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPopAnimation(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimation(Xamarin.Forms.Page)
   nameWithType: AnimatablePage.GetPopAnimation(Page)
 - uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimation*
   name: GetPopAnimation
@@ -26,11 +26,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimation
   nameWithType: AnimatablePage.GetPopAnimation
-- uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength(Page)
+- uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength(Xamarin.Forms.Page)
   name: GetPopAnimationLength(Page)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPopAnimationLength_Page_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength(Page)
-  fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength(Page)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPopAnimationLength_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength(Xamarin.Forms.Page)
   nameWithType: AnimatablePage.GetPopAnimationLength(Page)
 - uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength*
   name: GetPopAnimationLength
@@ -39,11 +39,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimationLength
   nameWithType: AnimatablePage.GetPopAnimationLength
-- uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate(Page)
+- uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate(Xamarin.Forms.Page)
   name: GetPopAnimationRate(Page)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPopAnimationRate_Page_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate(Page)
-  fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate(Page)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPopAnimationRate_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate(Xamarin.Forms.Page)
   nameWithType: AnimatablePage.GetPopAnimationRate(Page)
 - uid: Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate*
   name: GetPopAnimationRate
@@ -52,11 +52,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.GetPopAnimationRate
   nameWithType: AnimatablePage.GetPopAnimationRate
-- uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimation(Page)
+- uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimation(Xamarin.Forms.Page)
   name: GetPushAnimation(Page)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPushAnimation_Page_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPushAnimation(Page)
-  fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimation(Page)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPushAnimation_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPushAnimation(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimation(Xamarin.Forms.Page)
   nameWithType: AnimatablePage.GetPushAnimation(Page)
 - uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimation*
   name: GetPushAnimation
@@ -65,11 +65,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimation
   nameWithType: AnimatablePage.GetPushAnimation
-- uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength(Page)
+- uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength(Xamarin.Forms.Page)
   name: GetPushAnimationLength(Page)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPushAnimationLength_Page_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength(Page)
-  fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength(Page)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPushAnimationLength_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength(Xamarin.Forms.Page)
   nameWithType: AnimatablePage.GetPushAnimationLength(Page)
 - uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength*
   name: GetPushAnimationLength
@@ -78,11 +78,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimationLength
   nameWithType: AnimatablePage.GetPushAnimationLength
-- uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate(Page)
+- uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate(Xamarin.Forms.Page)
   name: GetPushAnimationRate(Page)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPushAnimationRate_Page_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate(Page)
-  fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate(Page)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_GetPushAnimationRate_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate(Xamarin.Forms.Page)
   nameWithType: AnimatablePage.GetPushAnimationRate(Page)
 - uid: Tizen.Theme.Common.AnimatablePage.GetPushAnimationRate*
   name: GetPushAnimationRate
@@ -127,11 +127,11 @@ references:
   commentId: F:Tizen.Theme.Common.AnimatablePage.PushAnimationRateProperty
   fullName: Tizen.Theme.Common.AnimatablePage.PushAnimationRateProperty
   nameWithType: AnimatablePage.PushAnimationRateProperty
-- uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimation(Page,Animation)
+- uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimation(Xamarin.Forms.Page,Xamarin.Forms.Animation)
   name: SetPopAnimation(Page, Animation)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPopAnimation_Page_Animation_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPopAnimation(Page,Animation)
-  fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimation(Page, Animation)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPopAnimation_Xamarin_Forms_Page_Xamarin_Forms_Animation_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPopAnimation(Xamarin.Forms.Page,Xamarin.Forms.Animation)
+  fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimation(Xamarin.Forms.Page, Xamarin.Forms.Animation)
   nameWithType: AnimatablePage.SetPopAnimation(Page, Animation)
 - uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimation*
   name: SetPopAnimation
@@ -140,11 +140,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimation
   nameWithType: AnimatablePage.SetPopAnimation
-- uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength(Page,System.UInt32)
+- uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength(Xamarin.Forms.Page,System.UInt32)
   name: SetPopAnimationLength(Page, UInt32)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPopAnimationLength_Page_System_UInt32_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength(Page,System.UInt32)
-  fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength(Page, System.UInt32)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPopAnimationLength_Xamarin_Forms_Page_System_UInt32_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength(Xamarin.Forms.Page,System.UInt32)
+  fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength(Xamarin.Forms.Page, System.UInt32)
   nameWithType: AnimatablePage.SetPopAnimationLength(Page, UInt32)
 - uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength*
   name: SetPopAnimationLength
@@ -153,11 +153,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimationLength
   nameWithType: AnimatablePage.SetPopAnimationLength
-- uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate(Page,System.UInt32)
+- uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate(Xamarin.Forms.Page,System.UInt32)
   name: SetPopAnimationRate(Page, UInt32)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPopAnimationRate_Page_System_UInt32_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate(Page,System.UInt32)
-  fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate(Page, System.UInt32)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPopAnimationRate_Xamarin_Forms_Page_System_UInt32_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate(Xamarin.Forms.Page,System.UInt32)
+  fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate(Xamarin.Forms.Page, System.UInt32)
   nameWithType: AnimatablePage.SetPopAnimationRate(Page, UInt32)
 - uid: Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate*
   name: SetPopAnimationRate
@@ -166,11 +166,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.SetPopAnimationRate
   nameWithType: AnimatablePage.SetPopAnimationRate
-- uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimation(Page,Animation)
+- uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimation(Xamarin.Forms.Page,Xamarin.Forms.Animation)
   name: SetPushAnimation(Page, Animation)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPushAnimation_Page_Animation_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPushAnimation(Page,Animation)
-  fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimation(Page, Animation)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPushAnimation_Xamarin_Forms_Page_Xamarin_Forms_Animation_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPushAnimation(Xamarin.Forms.Page,Xamarin.Forms.Animation)
+  fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimation(Xamarin.Forms.Page, Xamarin.Forms.Animation)
   nameWithType: AnimatablePage.SetPushAnimation(Page, Animation)
 - uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimation*
   name: SetPushAnimation
@@ -179,11 +179,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimation
   nameWithType: AnimatablePage.SetPushAnimation
-- uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength(Page,System.UInt32)
+- uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength(Xamarin.Forms.Page,System.UInt32)
   name: SetPushAnimationLength(Page, UInt32)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPushAnimationLength_Page_System_UInt32_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength(Page,System.UInt32)
-  fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength(Page, System.UInt32)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPushAnimationLength_Xamarin_Forms_Page_System_UInt32_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength(Xamarin.Forms.Page,System.UInt32)
+  fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength(Xamarin.Forms.Page, System.UInt32)
   nameWithType: AnimatablePage.SetPushAnimationLength(Page, UInt32)
 - uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength*
   name: SetPushAnimationLength
@@ -192,11 +192,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimationLength
   nameWithType: AnimatablePage.SetPushAnimationLength
-- uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate(Page,System.UInt32)
+- uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate(Xamarin.Forms.Page,System.UInt32)
   name: SetPushAnimationRate(Page, UInt32)
-  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPushAnimationRate_Page_System_UInt32_
-  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate(Page,System.UInt32)
-  fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate(Page, System.UInt32)
+  href: api/Tizen.Theme.Common.AnimatablePage.html#Tizen_Theme_Common_AnimatablePage_SetPushAnimationRate_Xamarin_Forms_Page_System_UInt32_
+  commentId: M:Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate(Xamarin.Forms.Page,System.UInt32)
+  fullName: Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate(Xamarin.Forms.Page, System.UInt32)
   nameWithType: AnimatablePage.SetPushAnimationRate(Page, UInt32)
 - uid: Tizen.Theme.Common.AnimatablePage.SetPushAnimationRate*
   name: SetPushAnimationRate
@@ -242,11 +242,11 @@ references:
   commentId: M:Tizen.Theme.Common.AnimatedNavigationPage.#ctor
   fullName: Tizen.Theme.Common.AnimatedNavigationPage.AnimatedNavigationPage()
   nameWithType: AnimatedNavigationPage.AnimatedNavigationPage()
-- uid: Tizen.Theme.Common.AnimatedNavigationPage.#ctor(Page)
+- uid: Tizen.Theme.Common.AnimatedNavigationPage.#ctor(Xamarin.Forms.Page)
   name: AnimatedNavigationPage(Page)
-  href: api/Tizen.Theme.Common.AnimatedNavigationPage.html#Tizen_Theme_Common_AnimatedNavigationPage__ctor_Page_
-  commentId: M:Tizen.Theme.Common.AnimatedNavigationPage.#ctor(Page)
-  fullName: Tizen.Theme.Common.AnimatedNavigationPage.AnimatedNavigationPage(Page)
+  href: api/Tizen.Theme.Common.AnimatedNavigationPage.html#Tizen_Theme_Common_AnimatedNavigationPage__ctor_Xamarin_Forms_Page_
+  commentId: M:Tizen.Theme.Common.AnimatedNavigationPage.#ctor(Xamarin.Forms.Page)
+  fullName: Tizen.Theme.Common.AnimatedNavigationPage.AnimatedNavigationPage(Xamarin.Forms.Page)
   nameWithType: AnimatedNavigationPage.AnimatedNavigationPage(Page)
 - uid: Tizen.Theme.Common.AnimatedNavigationPage.#ctor*
   name: AnimatedNavigationPage
@@ -514,18 +514,18 @@ references:
   commentId: T:Tizen.Theme.Common.ContentPopupManager
   fullName: Tizen.Theme.Common.ContentPopupManager
   nameWithType: ContentPopupManager
-- uid: Tizen.Theme.Common.ContentPopupManager.ShowPopup(INavigation,Tizen.Theme.Common.ContentPopup)
-  name: ShowPopup(INavigation, ContentPopup)
-  href: api/Tizen.Theme.Common.ContentPopupManager.html#Tizen_Theme_Common_ContentPopupManager_ShowPopup_INavigation_Tizen_Theme_Common_ContentPopup_
-  commentId: M:Tizen.Theme.Common.ContentPopupManager.ShowPopup(INavigation,Tizen.Theme.Common.ContentPopup)
-  fullName: Tizen.Theme.Common.ContentPopupManager.ShowPopup(INavigation, Tizen.Theme.Common.ContentPopup)
-  nameWithType: ContentPopupManager.ShowPopup(INavigation, ContentPopup)
 - uid: Tizen.Theme.Common.ContentPopupManager.ShowPopup(Tizen.Theme.Common.ContentPopup)
   name: ShowPopup(ContentPopup)
   href: api/Tizen.Theme.Common.ContentPopupManager.html#Tizen_Theme_Common_ContentPopupManager_ShowPopup_Tizen_Theme_Common_ContentPopup_
   commentId: M:Tizen.Theme.Common.ContentPopupManager.ShowPopup(Tizen.Theme.Common.ContentPopup)
   fullName: Tizen.Theme.Common.ContentPopupManager.ShowPopup(Tizen.Theme.Common.ContentPopup)
   nameWithType: ContentPopupManager.ShowPopup(ContentPopup)
+- uid: Tizen.Theme.Common.ContentPopupManager.ShowPopup(Xamarin.Forms.INavigation,Tizen.Theme.Common.ContentPopup)
+  name: ShowPopup(INavigation, ContentPopup)
+  href: api/Tizen.Theme.Common.ContentPopupManager.html#Tizen_Theme_Common_ContentPopupManager_ShowPopup_Xamarin_Forms_INavigation_Tizen_Theme_Common_ContentPopup_
+  commentId: M:Tizen.Theme.Common.ContentPopupManager.ShowPopup(Xamarin.Forms.INavigation,Tizen.Theme.Common.ContentPopup)
+  fullName: Tizen.Theme.Common.ContentPopupManager.ShowPopup(Xamarin.Forms.INavigation, Tizen.Theme.Common.ContentPopup)
+  nameWithType: ContentPopupManager.ShowPopup(INavigation, ContentPopup)
 - uid: Tizen.Theme.Common.ContentPopupManager.ShowPopup*
   name: ShowPopup
   href: api/Tizen.Theme.Common.ContentPopupManager.html#Tizen_Theme_Common_ContentPopupManager_ShowPopup_
@@ -1098,11 +1098,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.GridView.ThemeStyle
   nameWithType: GridView.ThemeStyle
-- uid: Tizen.Theme.Common.GridView.ValidateItemTemplate(DataTemplate)
+- uid: Tizen.Theme.Common.GridView.ValidateItemTemplate(Xamarin.Forms.DataTemplate)
   name: ValidateItemTemplate(DataTemplate)
-  href: api/Tizen.Theme.Common.GridView.html#Tizen_Theme_Common_GridView_ValidateItemTemplate_DataTemplate_
-  commentId: M:Tizen.Theme.Common.GridView.ValidateItemTemplate(DataTemplate)
-  fullName: Tizen.Theme.Common.GridView.ValidateItemTemplate(DataTemplate)
+  href: api/Tizen.Theme.Common.GridView.html#Tizen_Theme_Common_GridView_ValidateItemTemplate_Xamarin_Forms_DataTemplate_
+  commentId: M:Tizen.Theme.Common.GridView.ValidateItemTemplate(Xamarin.Forms.DataTemplate)
+  fullName: Tizen.Theme.Common.GridView.ValidateItemTemplate(Xamarin.Forms.DataTemplate)
   nameWithType: GridView.ValidateItemTemplate(DataTemplate)
 - uid: Tizen.Theme.Common.GridView.ValidateItemTemplate*
   name: ValidateItemTemplate
@@ -1136,11 +1136,11 @@ references:
   commentId: T:Tizen.Theme.Common.GridViewFocusedEventArgs
   fullName: Tizen.Theme.Common.GridViewFocusedEventArgs
   nameWithType: GridViewFocusedEventArgs
-- uid: Tizen.Theme.Common.GridViewFocusedEventArgs.#ctor(System.Object,View,System.Boolean)
+- uid: Tizen.Theme.Common.GridViewFocusedEventArgs.#ctor(System.Object,Xamarin.Forms.View,System.Boolean)
   name: GridViewFocusedEventArgs(Object, View, Boolean)
-  href: api/Tizen.Theme.Common.GridViewFocusedEventArgs.html#Tizen_Theme_Common_GridViewFocusedEventArgs__ctor_System_Object_View_System_Boolean_
-  commentId: M:Tizen.Theme.Common.GridViewFocusedEventArgs.#ctor(System.Object,View,System.Boolean)
-  fullName: Tizen.Theme.Common.GridViewFocusedEventArgs.GridViewFocusedEventArgs(System.Object, View, System.Boolean)
+  href: api/Tizen.Theme.Common.GridViewFocusedEventArgs.html#Tizen_Theme_Common_GridViewFocusedEventArgs__ctor_System_Object_Xamarin_Forms_View_System_Boolean_
+  commentId: M:Tizen.Theme.Common.GridViewFocusedEventArgs.#ctor(System.Object,Xamarin.Forms.View,System.Boolean)
+  fullName: Tizen.Theme.Common.GridViewFocusedEventArgs.GridViewFocusedEventArgs(System.Object, Xamarin.Forms.View, System.Boolean)
   nameWithType: GridViewFocusedEventArgs.GridViewFocusedEventArgs(Object, View, Boolean)
 - uid: Tizen.Theme.Common.GridViewFocusedEventArgs.#ctor*
   name: GridViewFocusedEventArgs
@@ -1213,11 +1213,11 @@ references:
   isSpec: "True"
   fullName: Tizen.Theme.Common.IGridViewController.SendItemFocused
   nameWithType: IGridViewController.SendItemFocused
-- uid: Tizen.Theme.Common.IGridViewController.SendItemSelected(SelectedItemChangedEventArgs)
+- uid: Tizen.Theme.Common.IGridViewController.SendItemSelected(Xamarin.Forms.SelectedItemChangedEventArgs)
   name: SendItemSelected(SelectedItemChangedEventArgs)
-  href: api/Tizen.Theme.Common.IGridViewController.html#Tizen_Theme_Common_IGridViewController_SendItemSelected_SelectedItemChangedEventArgs_
-  commentId: M:Tizen.Theme.Common.IGridViewController.SendItemSelected(SelectedItemChangedEventArgs)
-  fullName: Tizen.Theme.Common.IGridViewController.SendItemSelected(SelectedItemChangedEventArgs)
+  href: api/Tizen.Theme.Common.IGridViewController.html#Tizen_Theme_Common_IGridViewController_SendItemSelected_Xamarin_Forms_SelectedItemChangedEventArgs_
+  commentId: M:Tizen.Theme.Common.IGridViewController.SendItemSelected(Xamarin.Forms.SelectedItemChangedEventArgs)
+  fullName: Tizen.Theme.Common.IGridViewController.SendItemSelected(Xamarin.Forms.SelectedItemChangedEventArgs)
   nameWithType: IGridViewController.SendItemSelected(SelectedItemChangedEventArgs)
 - uid: Tizen.Theme.Common.IGridViewController.SendItemSelected*
   name: SendItemSelected
@@ -2726,289 +2726,6 @@ references:
   commentId: N:Tizen.TV.UIControls.Forms
   fullName: Tizen.TV.UIControls.Forms
   nameWithType: Tizen.TV.UIControls.Forms
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage
-  name: AnimatablePage
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html
-  commentId: T:Tizen.TV.UIControls.Forms.AnimatablePage
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage
-  nameWithType: AnimatablePage
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimation(Page)
-  name: GetPopAnimation(Page)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPopAnimation_Page_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimation(Page)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimation(Page)
-  nameWithType: AnimatablePage.GetPopAnimation(Page)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimation*
-  name: GetPopAnimation
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPopAnimation_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimation
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimation
-  nameWithType: AnimatablePage.GetPopAnimation
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationLength(Page)
-  name: GetPopAnimationLength(Page)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPopAnimationLength_Page_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationLength(Page)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationLength(Page)
-  nameWithType: AnimatablePage.GetPopAnimationLength(Page)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationLength*
-  name: GetPopAnimationLength
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPopAnimationLength_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationLength
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationLength
-  nameWithType: AnimatablePage.GetPopAnimationLength
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationRate(Page)
-  name: GetPopAnimationRate(Page)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPopAnimationRate_Page_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationRate(Page)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationRate(Page)
-  nameWithType: AnimatablePage.GetPopAnimationRate(Page)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationRate*
-  name: GetPopAnimationRate
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPopAnimationRate_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationRate
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPopAnimationRate
-  nameWithType: AnimatablePage.GetPopAnimationRate
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimation(Page)
-  name: GetPushAnimation(Page)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPushAnimation_Page_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimation(Page)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimation(Page)
-  nameWithType: AnimatablePage.GetPushAnimation(Page)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimation*
-  name: GetPushAnimation
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPushAnimation_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimation
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimation
-  nameWithType: AnimatablePage.GetPushAnimation
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationLength(Page)
-  name: GetPushAnimationLength(Page)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPushAnimationLength_Page_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationLength(Page)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationLength(Page)
-  nameWithType: AnimatablePage.GetPushAnimationLength(Page)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationLength*
-  name: GetPushAnimationLength
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPushAnimationLength_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationLength
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationLength
-  nameWithType: AnimatablePage.GetPushAnimationLength
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationRate(Page)
-  name: GetPushAnimationRate(Page)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPushAnimationRate_Page_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationRate(Page)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationRate(Page)
-  nameWithType: AnimatablePage.GetPushAnimationRate(Page)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationRate*
-  name: GetPushAnimationRate
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_GetPushAnimationRate_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationRate
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.GetPushAnimationRate
-  nameWithType: AnimatablePage.GetPushAnimationRate
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationLengthProperty
-  name: PopAnimationLengthProperty
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_PopAnimationLengthProperty
-  commentId: F:Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationLengthProperty
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationLengthProperty
-  nameWithType: AnimatablePage.PopAnimationLengthProperty
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationProperty
-  name: PopAnimationProperty
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_PopAnimationProperty
-  commentId: F:Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationProperty
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationProperty
-  nameWithType: AnimatablePage.PopAnimationProperty
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationRateProperty
-  name: PopAnimationRateProperty
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_PopAnimationRateProperty
-  commentId: F:Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationRateProperty
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.PopAnimationRateProperty
-  nameWithType: AnimatablePage.PopAnimationRateProperty
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationLengthProperty
-  name: PushAnimationLengthProperty
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_PushAnimationLengthProperty
-  commentId: F:Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationLengthProperty
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationLengthProperty
-  nameWithType: AnimatablePage.PushAnimationLengthProperty
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationProperty
-  name: PushAnimationProperty
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_PushAnimationProperty
-  commentId: F:Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationProperty
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationProperty
-  nameWithType: AnimatablePage.PushAnimationProperty
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationRateProperty
-  name: PushAnimationRateProperty
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_PushAnimationRateProperty
-  commentId: F:Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationRateProperty
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.PushAnimationRateProperty
-  nameWithType: AnimatablePage.PushAnimationRateProperty
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimation(Page,Animation)
-  name: SetPopAnimation(Page, Animation)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPopAnimation_Page_Animation_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimation(Page,Animation)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimation(Page, Animation)
-  nameWithType: AnimatablePage.SetPopAnimation(Page, Animation)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimation*
-  name: SetPopAnimation
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPopAnimation_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimation
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimation
-  nameWithType: AnimatablePage.SetPopAnimation
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationLength(Page,System.UInt32)
-  name: SetPopAnimationLength(Page, UInt32)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPopAnimationLength_Page_System_UInt32_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationLength(Page,System.UInt32)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationLength(Page, System.UInt32)
-  nameWithType: AnimatablePage.SetPopAnimationLength(Page, UInt32)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationLength*
-  name: SetPopAnimationLength
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPopAnimationLength_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationLength
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationLength
-  nameWithType: AnimatablePage.SetPopAnimationLength
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationRate(Page,System.UInt32)
-  name: SetPopAnimationRate(Page, UInt32)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPopAnimationRate_Page_System_UInt32_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationRate(Page,System.UInt32)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationRate(Page, System.UInt32)
-  nameWithType: AnimatablePage.SetPopAnimationRate(Page, UInt32)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationRate*
-  name: SetPopAnimationRate
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPopAnimationRate_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationRate
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPopAnimationRate
-  nameWithType: AnimatablePage.SetPopAnimationRate
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimation(Page,Animation)
-  name: SetPushAnimation(Page, Animation)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPushAnimation_Page_Animation_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimation(Page,Animation)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimation(Page, Animation)
-  nameWithType: AnimatablePage.SetPushAnimation(Page, Animation)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimation*
-  name: SetPushAnimation
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPushAnimation_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimation
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimation
-  nameWithType: AnimatablePage.SetPushAnimation
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationLength(Page,System.UInt32)
-  name: SetPushAnimationLength(Page, UInt32)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPushAnimationLength_Page_System_UInt32_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationLength(Page,System.UInt32)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationLength(Page, System.UInt32)
-  nameWithType: AnimatablePage.SetPushAnimationLength(Page, UInt32)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationLength*
-  name: SetPushAnimationLength
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPushAnimationLength_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationLength
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationLength
-  nameWithType: AnimatablePage.SetPushAnimationLength
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationRate(Page,System.UInt32)
-  name: SetPushAnimationRate(Page, UInt32)
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPushAnimationRate_Page_System_UInt32_
-  commentId: M:Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationRate(Page,System.UInt32)
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationRate(Page, System.UInt32)
-  nameWithType: AnimatablePage.SetPushAnimationRate(Page, UInt32)
-- uid: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationRate*
-  name: SetPushAnimationRate
-  href: api/Tizen.TV.UIControls.Forms.AnimatablePage.html#Tizen_TV_UIControls_Forms_AnimatablePage_SetPushAnimationRate_
-  commentId: Overload:Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationRate
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.AnimatablePage.SetPushAnimationRate
-  nameWithType: AnimatablePage.SetPushAnimationRate
-- uid: Tizen.TV.UIControls.Forms.AnimatedContentPage
-  name: AnimatedContentPage
-  href: api/Tizen.TV.UIControls.Forms.AnimatedContentPage.html
-  commentId: T:Tizen.TV.UIControls.Forms.AnimatedContentPage
-  fullName: Tizen.TV.UIControls.Forms.AnimatedContentPage
-  nameWithType: AnimatedContentPage
-- uid: Tizen.TV.UIControls.Forms.AnimatedNavigationPage
-  name: AnimatedNavigationPage
-  href: api/Tizen.TV.UIControls.Forms.AnimatedNavigationPage.html
-  commentId: T:Tizen.TV.UIControls.Forms.AnimatedNavigationPage
-  fullName: Tizen.TV.UIControls.Forms.AnimatedNavigationPage
-  nameWithType: AnimatedNavigationPage
-- uid: Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs
-  name: BufferingProgressUpdatedEventArgs
-  href: api/Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs.html
-  commentId: T:Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs
-  fullName: Tizen.TV.UIControls.Forms.BufferingProgressUpdatedEventArgs
-  nameWithType: BufferingProgressUpdatedEventArgs
-- uid: Tizen.TV.UIControls.Forms.ContentButton
-  name: ContentButton
-  href: api/Tizen.TV.UIControls.Forms.ContentButton.html
-  commentId: T:Tizen.TV.UIControls.Forms.ContentButton
-  fullName: Tizen.TV.UIControls.Forms.ContentButton
-  nameWithType: ContentButton
-- uid: Tizen.TV.UIControls.Forms.ContentPopup
-  name: ContentPopup
-  href: api/Tizen.TV.UIControls.Forms.ContentPopup.html
-  commentId: T:Tizen.TV.UIControls.Forms.ContentPopup
-  fullName: Tizen.TV.UIControls.Forms.ContentPopup
-  nameWithType: ContentPopup
-- uid: Tizen.TV.UIControls.Forms.ContentPopupManager
-  name: ContentPopupManager
-  href: api/Tizen.TV.UIControls.Forms.ContentPopupManager.html
-  commentId: T:Tizen.TV.UIControls.Forms.ContentPopupManager
-  fullName: Tizen.TV.UIControls.Forms.ContentPopupManager
-  nameWithType: ContentPopupManager
-- uid: Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup(INavigation,Tizen.TV.UIControls.Forms.ContentPopup)
-  name: ShowPopup(INavigation, ContentPopup)
-  href: api/Tizen.TV.UIControls.Forms.ContentPopupManager.html#Tizen_TV_UIControls_Forms_ContentPopupManager_ShowPopup_INavigation_Tizen_TV_UIControls_Forms_ContentPopup_
-  commentId: M:Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup(INavigation,Tizen.TV.UIControls.Forms.ContentPopup)
-  fullName: Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup(INavigation, Tizen.TV.UIControls.Forms.ContentPopup)
-  nameWithType: ContentPopupManager.ShowPopup(INavigation, ContentPopup)
-- uid: Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup(Tizen.TV.UIControls.Forms.ContentPopup)
-  name: ShowPopup(ContentPopup)
-  href: api/Tizen.TV.UIControls.Forms.ContentPopupManager.html#Tizen_TV_UIControls_Forms_ContentPopupManager_ShowPopup_Tizen_TV_UIControls_Forms_ContentPopup_
-  commentId: M:Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup(Tizen.TV.UIControls.Forms.ContentPopup)
-  fullName: Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup(Tizen.TV.UIControls.Forms.ContentPopup)
-  nameWithType: ContentPopupManager.ShowPopup(ContentPopup)
-- uid: Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup*
-  name: ShowPopup
-  href: api/Tizen.TV.UIControls.Forms.ContentPopupManager.html#Tizen_TV_UIControls_Forms_ContentPopupManager_ShowPopup_
-  commentId: Overload:Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.ContentPopupManager.ShowPopup
-  nameWithType: ContentPopupManager.ShowPopup
-- uid: Tizen.TV.UIControls.Forms.DisplayAspectMode
-  name: DisplayAspectMode
-  href: api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html
-  commentId: T:Tizen.TV.UIControls.Forms.DisplayAspectMode
-  fullName: Tizen.TV.UIControls.Forms.DisplayAspectMode
-  nameWithType: DisplayAspectMode
-- uid: Tizen.TV.UIControls.Forms.DisplayAspectMode.AspectFill
-  name: AspectFill
-  href: api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html#Tizen_TV_UIControls_Forms_DisplayAspectMode_AspectFill
-  commentId: F:Tizen.TV.UIControls.Forms.DisplayAspectMode.AspectFill
-  fullName: Tizen.TV.UIControls.Forms.DisplayAspectMode.AspectFill
-  nameWithType: DisplayAspectMode.AspectFill
-- uid: Tizen.TV.UIControls.Forms.DisplayAspectMode.AspectFit
-  name: AspectFit
-  href: api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html#Tizen_TV_UIControls_Forms_DisplayAspectMode_AspectFit
-  commentId: F:Tizen.TV.UIControls.Forms.DisplayAspectMode.AspectFit
-  fullName: Tizen.TV.UIControls.Forms.DisplayAspectMode.AspectFit
-  nameWithType: DisplayAspectMode.AspectFit
-- uid: Tizen.TV.UIControls.Forms.DisplayAspectMode.Fill
-  name: Fill
-  href: api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html#Tizen_TV_UIControls_Forms_DisplayAspectMode_Fill
-  commentId: F:Tizen.TV.UIControls.Forms.DisplayAspectMode.Fill
-  fullName: Tizen.TV.UIControls.Forms.DisplayAspectMode.Fill
-  nameWithType: DisplayAspectMode.Fill
-- uid: Tizen.TV.UIControls.Forms.DisplayAspectMode.OrignalSize
-  name: OrignalSize
-  href: api/Tizen.TV.UIControls.Forms.DisplayAspectMode.html#Tizen_TV_UIControls_Forms_DisplayAspectMode_OrignalSize
-  commentId: F:Tizen.TV.UIControls.Forms.DisplayAspectMode.OrignalSize
-  fullName: Tizen.TV.UIControls.Forms.DisplayAspectMode.OrignalSize
-  nameWithType: DisplayAspectMode.OrignalSize
 - uid: Tizen.TV.UIControls.Forms.DrawerLayout
   name: DrawerLayout
   href: api/Tizen.TV.UIControls.Forms.DrawerLayout.html
@@ -3364,110 +3081,6 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.DRMPropertyValue.Value
   nameWithType: DRMPropertyValue.Value
-- uid: Tizen.TV.UIControls.Forms.EmbeddingControls
-  name: EmbeddingControls
-  href: api/Tizen.TV.UIControls.Forms.EmbeddingControls.html
-  commentId: T:Tizen.TV.UIControls.Forms.EmbeddingControls
-  fullName: Tizen.TV.UIControls.Forms.EmbeddingControls
-  nameWithType: EmbeddingControls
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource
-  name: FileMediaSource
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html
-  commentId: T:Tizen.TV.UIControls.Forms.FileMediaSource
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource
-  nameWithType: FileMediaSource
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.File
-  name: File
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_File
-  commentId: P:Tizen.TV.UIControls.Forms.FileMediaSource.File
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.File
-  nameWithType: FileMediaSource.File
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.File*
-  name: File
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_File_
-  commentId: Overload:Tizen.TV.UIControls.Forms.FileMediaSource.File
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.File
-  nameWithType: FileMediaSource.File
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.FileProperty
-  name: FileProperty
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_FileProperty
-  commentId: F:Tizen.TV.UIControls.Forms.FileMediaSource.FileProperty
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.FileProperty
-  nameWithType: FileMediaSource.FileProperty
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.OnPropertyChanged(System.String)
-  name: OnPropertyChanged(String)
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_OnPropertyChanged_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.FileMediaSource.OnPropertyChanged(System.String)
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.OnPropertyChanged(System.String)
-  nameWithType: FileMediaSource.OnPropertyChanged(String)
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.OnPropertyChanged*
-  name: OnPropertyChanged
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_OnPropertyChanged_
-  commentId: Overload:Tizen.TV.UIControls.Forms.FileMediaSource.OnPropertyChanged
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.OnPropertyChanged
-  nameWithType: FileMediaSource.OnPropertyChanged
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.op_Implicit(System.String)~Tizen.TV.UIControls.Forms.FileMediaSource
-  name: Implicit(String to FileMediaSource)
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_op_Implicit_System_String__Tizen_TV_UIControls_Forms_FileMediaSource
-  commentId: M:Tizen.TV.UIControls.Forms.FileMediaSource.op_Implicit(System.String)~Tizen.TV.UIControls.Forms.FileMediaSource
-  name.vb: Widening(String to FileMediaSource)
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.Implicit(System.String to Tizen.TV.UIControls.Forms.FileMediaSource)
-  fullName.vb: Tizen.TV.UIControls.Forms.FileMediaSource.Widening(System.String to Tizen.TV.UIControls.Forms.FileMediaSource)
-  nameWithType: FileMediaSource.Implicit(String to FileMediaSource)
-  nameWithType.vb: FileMediaSource.Widening(String to FileMediaSource)
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.op_Implicit(Tizen.TV.UIControls.Forms.FileMediaSource)~System.String
-  name: Implicit(FileMediaSource to String)
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_op_Implicit_Tizen_TV_UIControls_Forms_FileMediaSource__System_String
-  commentId: M:Tizen.TV.UIControls.Forms.FileMediaSource.op_Implicit(Tizen.TV.UIControls.Forms.FileMediaSource)~System.String
-  name.vb: Widening(FileMediaSource to String)
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.Implicit(Tizen.TV.UIControls.Forms.FileMediaSource to System.String)
-  fullName.vb: Tizen.TV.UIControls.Forms.FileMediaSource.Widening(Tizen.TV.UIControls.Forms.FileMediaSource to System.String)
-  nameWithType: FileMediaSource.Implicit(FileMediaSource to String)
-  nameWithType.vb: FileMediaSource.Widening(FileMediaSource to String)
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.op_Implicit*
-  name: Implicit
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_op_Implicit_
-  commentId: Overload:Tizen.TV.UIControls.Forms.FileMediaSource.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.Implicit
-  fullName.vb: Tizen.TV.UIControls.Forms.FileMediaSource.Widening
-  nameWithType: FileMediaSource.Implicit
-  nameWithType.vb: FileMediaSource.Widening
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.ToString
-  name: ToString()
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_ToString
-  commentId: M:Tizen.TV.UIControls.Forms.FileMediaSource.ToString
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.ToString()
-  nameWithType: FileMediaSource.ToString()
-- uid: Tizen.TV.UIControls.Forms.FileMediaSource.ToString*
-  name: ToString
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSource.html#Tizen_TV_UIControls_Forms_FileMediaSource_ToString_
-  commentId: Overload:Tizen.TV.UIControls.Forms.FileMediaSource.ToString
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSource.ToString
-  nameWithType: FileMediaSource.ToString
-- uid: Tizen.TV.UIControls.Forms.FileMediaSourceConverter
-  name: FileMediaSourceConverter
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSourceConverter.html
-  commentId: T:Tizen.TV.UIControls.Forms.FileMediaSourceConverter
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSourceConverter
-  nameWithType: FileMediaSourceConverter
-- uid: Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString(System.String)
-  name: ConvertFromInvariantString(String)
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSourceConverter.html#Tizen_TV_UIControls_Forms_FileMediaSourceConverter_ConvertFromInvariantString_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString(System.String)
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString(System.String)
-  nameWithType: FileMediaSourceConverter.ConvertFromInvariantString(String)
-- uid: Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString*
-  name: ConvertFromInvariantString
-  href: api/Tizen.TV.UIControls.Forms.FileMediaSourceConverter.html#Tizen_TV_UIControls_Forms_FileMediaSourceConverter_ConvertFromInvariantString_
-  commentId: Overload:Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.FileMediaSourceConverter.ConvertFromInvariantString
-  nameWithType: FileMediaSourceConverter.ConvertFromInvariantString
 - uid: Tizen.TV.UIControls.Forms.Focus
   name: Focus
   href: api/Tizen.TV.UIControls.Forms.Focus.html
@@ -3480,11 +3093,11 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.Focus.DownProperty
   fullName: Tizen.TV.UIControls.Forms.Focus.DownProperty
   nameWithType: Focus.DownProperty
-- uid: Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetDown(Xamarin.Forms.BindableObject)
   name: GetDown(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetDown_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetDown(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetDown_Xamarin_Forms_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetDown(Xamarin.Forms.BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetDown(Xamarin.Forms.BindableObject)
   nameWithType: Focus.GetDown(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetDown*
   name: GetDown
@@ -3493,11 +3106,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.GetDown
   nameWithType: Focus.GetDown
-- uid: Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetLeft(Xamarin.Forms.BindableObject)
   name: GetLeft(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetLeft_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetLeft_Xamarin_Forms_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetLeft(Xamarin.Forms.BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft(Xamarin.Forms.BindableObject)
   nameWithType: Focus.GetLeft(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetLeft*
   name: GetLeft
@@ -3506,11 +3119,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.GetLeft
   nameWithType: Focus.GetLeft
-- uid: Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetRight(Xamarin.Forms.BindableObject)
   name: GetRight(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetRight_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetRight(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetRight_Xamarin_Forms_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetRight(Xamarin.Forms.BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetRight(Xamarin.Forms.BindableObject)
   nameWithType: Focus.GetRight(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetRight*
   name: GetRight
@@ -3519,11 +3132,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.GetRight
   nameWithType: Focus.GetRight
-- uid: Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.Focus.GetUp(Xamarin.Forms.BindableObject)
   name: GetUp(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetUp_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.Focus.GetUp(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_GetUp_Xamarin_Forms_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.GetUp(Xamarin.Forms.BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.Focus.GetUp(Xamarin.Forms.BindableObject)
   nameWithType: Focus.GetUp(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.Focus.GetUp*
   name: GetUp
@@ -3544,11 +3157,11 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.Focus.RightProperty
   fullName: Tizen.TV.UIControls.Forms.Focus.RightProperty
   nameWithType: Focus.RightProperty
-- uid: Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject,VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetDown(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
   name: SetDown(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetDown_BindableObject_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject,VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetDown(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetDown_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetDown(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetDown(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
   nameWithType: Focus.SetDown(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetDown*
   name: SetDown
@@ -3557,11 +3170,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.SetDown
   nameWithType: Focus.SetDown
-- uid: Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject,VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetLeft(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
   name: SetLeft(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetLeft_BindableObject_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject,VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetLeft_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetLeft(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
   nameWithType: Focus.SetLeft(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetLeft*
   name: SetLeft
@@ -3570,11 +3183,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.SetLeft
   nameWithType: Focus.SetLeft
-- uid: Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject,VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetRight(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
   name: SetRight(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetRight_BindableObject_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject,VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetRight(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetRight_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetRight(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetRight(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
   nameWithType: Focus.SetRight(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetRight*
   name: SetRight
@@ -3583,11 +3196,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.Focus.SetRight
   nameWithType: Focus.SetRight
-- uid: Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject,VisualElement)
+- uid: Tizen.TV.UIControls.Forms.Focus.SetUp(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
   name: SetUp(BindableObject, VisualElement)
-  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetUp_BindableObject_VisualElement_
-  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject,VisualElement)
-  fullName: Tizen.TV.UIControls.Forms.Focus.SetUp(BindableObject, VisualElement)
+  href: api/Tizen.TV.UIControls.Forms.Focus.html#Tizen_TV_UIControls_Forms_Focus_SetUp_Xamarin_Forms_BindableObject_Xamarin_Forms_VisualElement_
+  commentId: M:Tizen.TV.UIControls.Forms.Focus.SetUp(Xamarin.Forms.BindableObject,Xamarin.Forms.VisualElement)
+  fullName: Tizen.TV.UIControls.Forms.Focus.SetUp(Xamarin.Forms.BindableObject, Xamarin.Forms.VisualElement)
   nameWithType: Focus.SetUp(BindableObject, VisualElement)
 - uid: Tizen.TV.UIControls.Forms.Focus.SetUp*
   name: SetUp
@@ -3647,50 +3260,6 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.FocusedItemChangedEventArgs.FocusedItemIndex
   nameWithType: FocusedItemChangedEventArgs.FocusedItemIndex
-- uid: Tizen.TV.UIControls.Forms.FocusFrame
-  name: FocusFrame
-  href: api/Tizen.TV.UIControls.Forms.FocusFrame.html
-  commentId: T:Tizen.TV.UIControls.Forms.FocusFrame
-  fullName: Tizen.TV.UIControls.Forms.FocusFrame
-  nameWithType: FocusFrame
-- uid: Tizen.TV.UIControls.Forms.GridView
-  name: GridView
-  href: api/Tizen.TV.UIControls.Forms.GridView.html
-  commentId: T:Tizen.TV.UIControls.Forms.GridView
-  fullName: Tizen.TV.UIControls.Forms.GridView
-  nameWithType: GridView
-- uid: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs
-  name: GridViewFocusedEventArgs
-  href: api/Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.html
-  commentId: T:Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs
-  fullName: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs
-  nameWithType: GridViewFocusedEventArgs
-- uid: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.#ctor(System.Object,View,System.Boolean)
-  name: GridViewFocusedEventArgs(Object, View, Boolean)
-  href: api/Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.html#Tizen_TV_UIControls_Forms_GridViewFocusedEventArgs__ctor_System_Object_View_System_Boolean_
-  commentId: M:Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.#ctor(System.Object,View,System.Boolean)
-  fullName: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.GridViewFocusedEventArgs(System.Object, View, System.Boolean)
-  nameWithType: GridViewFocusedEventArgs.GridViewFocusedEventArgs(Object, View, Boolean)
-- uid: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.#ctor*
-  name: GridViewFocusedEventArgs
-  href: api/Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.html#Tizen_TV_UIControls_Forms_GridViewFocusedEventArgs__ctor_
-  commentId: Overload:Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.#ctor
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.GridViewFocusedEventArgs
-  nameWithType: GridViewFocusedEventArgs.GridViewFocusedEventArgs
-- uid: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item
-  name: Item
-  href: api/Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.html#Tizen_TV_UIControls_Forms_GridViewFocusedEventArgs_Item
-  commentId: P:Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item
-  fullName: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item
-  nameWithType: GridViewFocusedEventArgs.Item
-- uid: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item*
-  name: Item
-  href: api/Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.html#Tizen_TV_UIControls_Forms_GridViewFocusedEventArgs_Item_
-  commentId: Overload:Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.GridViewFocusedEventArgs.Item
-  nameWithType: GridViewFocusedEventArgs.Item
 - uid: Tizen.TV.UIControls.Forms.IContentPopupRenderer
   name: IContentPopupRenderer
   href: api/Tizen.TV.UIControls.Forms.IContentPopupRenderer.html
@@ -3715,11 +3284,11 @@ references:
   commentId: F:Tizen.TV.UIControls.Forms.InputEvents.EventHandlersProperty
   fullName: Tizen.TV.UIControls.Forms.InputEvents.EventHandlersProperty
   nameWithType: InputEvents.EventHandlersProperty
-- uid: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(Xamarin.Forms.BindableObject)
   name: GetAccessKey(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetAccessKey_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetAccessKey_Xamarin_Forms_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(Xamarin.Forms.BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey(Xamarin.Forms.BindableObject)
   nameWithType: InputEvents.GetAccessKey(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey*
   name: GetAccessKey
@@ -3728,11 +3297,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.InputEvents.GetAccessKey
   nameWithType: InputEvents.GetAccessKey
-- uid: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(BindableObject)
+- uid: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(Xamarin.Forms.BindableObject)
   name: GetEventHandlers(BindableObject)
-  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetEventHandlers_BindableObject_
-  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(BindableObject)
-  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(BindableObject)
+  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_GetEventHandlers_Xamarin_Forms_BindableObject_
+  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(Xamarin.Forms.BindableObject)
+  fullName: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers(Xamarin.Forms.BindableObject)
   nameWithType: InputEvents.GetEventHandlers(BindableObject)
 - uid: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers*
   name: GetEventHandlers
@@ -3741,11 +3310,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.InputEvents.GetEventHandlers
   nameWithType: InputEvents.GetEventHandlers
-- uid: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
+- uid: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(Xamarin.Forms.BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
   name: SetAccessKey(BindableObject, RemoteControlKeyNames)
-  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_SetAccessKey_BindableObject_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_
-  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
-  fullName: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(BindableObject, Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
+  href: api/Tizen.TV.UIControls.Forms.InputEvents.html#Tizen_TV_UIControls_Forms_InputEvents_SetAccessKey_Xamarin_Forms_BindableObject_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_
+  commentId: M:Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(Xamarin.Forms.BindableObject,Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
+  fullName: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey(Xamarin.Forms.BindableObject, Tizen.TV.UIControls.Forms.RemoteControlKeyNames)
   nameWithType: InputEvents.SetAccessKey(BindableObject, RemoteControlKeyNames)
 - uid: Tizen.TV.UIControls.Forms.InputEvents.SetAccessKey*
   name: SetAccessKey
@@ -3779,12 +3348,6 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.IOverlayOutput.OverlayArea
   nameWithType: IOverlayOutput.OverlayArea
-- uid: Tizen.TV.UIControls.Forms.IPlatformMediaPlayer
-  name: IPlatformMediaPlayer
-  href: api/Tizen.TV.UIControls.Forms.IPlatformMediaPlayer.html
-  commentId: T:Tizen.TV.UIControls.Forms.IPlatformMediaPlayer
-  fullName: Tizen.TV.UIControls.Forms.IPlatformMediaPlayer
-  nameWithType: IPlatformMediaPlayer
 - uid: Tizen.TV.UIControls.Forms.IRecycleItemsViewController
   name: IRecycleItemsViewController
   href: api/Tizen.TV.UIControls.Forms.IRecycleItemsViewController.html
@@ -3939,159 +3502,6 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.IVideoOutput.OuputType
   nameWithType: IVideoOutput.OuputType
-- uid: Tizen.TV.UIControls.Forms.MediaPlayer
-  name: MediaPlayer
-  href: api/Tizen.TV.UIControls.Forms.MediaPlayer.html
-  commentId: T:Tizen.TV.UIControls.Forms.MediaPlayer
-  fullName: Tizen.TV.UIControls.Forms.MediaPlayer
-  nameWithType: MediaPlayer
-- uid: Tizen.TV.UIControls.Forms.MediaSource
-  name: MediaSource
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html
-  commentId: T:Tizen.TV.UIControls.Forms.MediaSource
-  fullName: Tizen.TV.UIControls.Forms.MediaSource
-  nameWithType: MediaSource
-- uid: Tizen.TV.UIControls.Forms.MediaSource.#ctor
-  name: MediaSource()
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource__ctor
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSource.#ctor
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.MediaSource()
-  nameWithType: MediaSource.MediaSource()
-- uid: Tizen.TV.UIControls.Forms.MediaSource.#ctor*
-  name: MediaSource
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource__ctor_
-  commentId: Overload:Tizen.TV.UIControls.Forms.MediaSource.#ctor
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.MediaSource
-  nameWithType: MediaSource.MediaSource
-- uid: Tizen.TV.UIControls.Forms.MediaSource.FromFile(System.String)
-  name: FromFile(String)
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_FromFile_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSource.FromFile(System.String)
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.FromFile(System.String)
-  nameWithType: MediaSource.FromFile(String)
-- uid: Tizen.TV.UIControls.Forms.MediaSource.FromFile*
-  name: FromFile
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_FromFile_
-  commentId: Overload:Tizen.TV.UIControls.Forms.MediaSource.FromFile
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.FromFile
-  nameWithType: MediaSource.FromFile
-- uid: Tizen.TV.UIControls.Forms.MediaSource.FromUri(Uri)
-  name: FromUri(Uri)
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_FromUri_Uri_
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSource.FromUri(Uri)
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.FromUri(Uri)
-  nameWithType: MediaSource.FromUri(Uri)
-- uid: Tizen.TV.UIControls.Forms.MediaSource.FromUri*
-  name: FromUri
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_FromUri_
-  commentId: Overload:Tizen.TV.UIControls.Forms.MediaSource.FromUri
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.FromUri
-  nameWithType: MediaSource.FromUri
-- uid: Tizen.TV.UIControls.Forms.MediaSource.OnSourceChanged
-  name: OnSourceChanged()
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_OnSourceChanged
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSource.OnSourceChanged
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.OnSourceChanged()
-  nameWithType: MediaSource.OnSourceChanged()
-- uid: Tizen.TV.UIControls.Forms.MediaSource.OnSourceChanged*
-  name: OnSourceChanged
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_OnSourceChanged_
-  commentId: Overload:Tizen.TV.UIControls.Forms.MediaSource.OnSourceChanged
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.OnSourceChanged
-  nameWithType: MediaSource.OnSourceChanged
-- uid: Tizen.TV.UIControls.Forms.MediaSource.op_Implicit(System.String)~Tizen.TV.UIControls.Forms.MediaSource
-  name: Implicit(String to MediaSource)
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_op_Implicit_System_String__Tizen_TV_UIControls_Forms_MediaSource
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSource.op_Implicit(System.String)~Tizen.TV.UIControls.Forms.MediaSource
-  name.vb: Widening(String to MediaSource)
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.Implicit(System.String to Tizen.TV.UIControls.Forms.MediaSource)
-  fullName.vb: Tizen.TV.UIControls.Forms.MediaSource.Widening(System.String to Tizen.TV.UIControls.Forms.MediaSource)
-  nameWithType: MediaSource.Implicit(String to MediaSource)
-  nameWithType.vb: MediaSource.Widening(String to MediaSource)
-- uid: Tizen.TV.UIControls.Forms.MediaSource.op_Implicit(Uri)~Tizen.TV.UIControls.Forms.MediaSource
-  name: Implicit(Uri to MediaSource)
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_op_Implicit_Uri__Tizen_TV_UIControls_Forms_MediaSource
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSource.op_Implicit(Uri)~Tizen.TV.UIControls.Forms.MediaSource
-  name.vb: Widening(Uri to MediaSource)
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.Implicit(Uri to Tizen.TV.UIControls.Forms.MediaSource)
-  fullName.vb: Tizen.TV.UIControls.Forms.MediaSource.Widening(Uri to Tizen.TV.UIControls.Forms.MediaSource)
-  nameWithType: MediaSource.Implicit(Uri to MediaSource)
-  nameWithType.vb: MediaSource.Widening(Uri to MediaSource)
-- uid: Tizen.TV.UIControls.Forms.MediaSource.op_Implicit*
-  name: Implicit
-  href: api/Tizen.TV.UIControls.Forms.MediaSource.html#Tizen_TV_UIControls_Forms_MediaSource_op_Implicit_
-  commentId: Overload:Tizen.TV.UIControls.Forms.MediaSource.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: Tizen.TV.UIControls.Forms.MediaSource.Implicit
-  fullName.vb: Tizen.TV.UIControls.Forms.MediaSource.Widening
-  nameWithType: MediaSource.Implicit
-  nameWithType.vb: MediaSource.Widening
-- uid: Tizen.TV.UIControls.Forms.MediaSourceConverter
-  name: MediaSourceConverter
-  href: api/Tizen.TV.UIControls.Forms.MediaSourceConverter.html
-  commentId: T:Tizen.TV.UIControls.Forms.MediaSourceConverter
-  fullName: Tizen.TV.UIControls.Forms.MediaSourceConverter
-  nameWithType: MediaSourceConverter
-- uid: Tizen.TV.UIControls.Forms.MediaSourceConverter.ConvertFromInvariantString(System.String)
-  name: ConvertFromInvariantString(String)
-  href: api/Tizen.TV.UIControls.Forms.MediaSourceConverter.html#Tizen_TV_UIControls_Forms_MediaSourceConverter_ConvertFromInvariantString_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.MediaSourceConverter.ConvertFromInvariantString(System.String)
-  fullName: Tizen.TV.UIControls.Forms.MediaSourceConverter.ConvertFromInvariantString(System.String)
-  nameWithType: MediaSourceConverter.ConvertFromInvariantString(String)
-- uid: Tizen.TV.UIControls.Forms.MediaSourceConverter.ConvertFromInvariantString*
-  name: ConvertFromInvariantString
-  href: api/Tizen.TV.UIControls.Forms.MediaSourceConverter.html#Tizen_TV_UIControls_Forms_MediaSourceConverter_ConvertFromInvariantString_
-  commentId: Overload:Tizen.TV.UIControls.Forms.MediaSourceConverter.ConvertFromInvariantString
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.MediaSourceConverter.ConvertFromInvariantString
-  nameWithType: MediaSourceConverter.ConvertFromInvariantString
-- uid: Tizen.TV.UIControls.Forms.MediaView
-  name: MediaView
-  href: api/Tizen.TV.UIControls.Forms.MediaView.html
-  commentId: T:Tizen.TV.UIControls.Forms.MediaView
-  fullName: Tizen.TV.UIControls.Forms.MediaView
-  nameWithType: MediaView
-- uid: Tizen.TV.UIControls.Forms.OverlayMediaView
-  name: OverlayMediaView
-  href: api/Tizen.TV.UIControls.Forms.OverlayMediaView.html
-  commentId: T:Tizen.TV.UIControls.Forms.OverlayMediaView
-  fullName: Tizen.TV.UIControls.Forms.OverlayMediaView
-  nameWithType: OverlayMediaView
-- uid: Tizen.TV.UIControls.Forms.OverlayPage
-  name: OverlayPage
-  href: api/Tizen.TV.UIControls.Forms.OverlayPage.html
-  commentId: T:Tizen.TV.UIControls.Forms.OverlayPage
-  fullName: Tizen.TV.UIControls.Forms.OverlayPage
-  nameWithType: OverlayPage
-- uid: Tizen.TV.UIControls.Forms.PlaybackState
-  name: PlaybackState
-  href: api/Tizen.TV.UIControls.Forms.PlaybackState.html
-  commentId: T:Tizen.TV.UIControls.Forms.PlaybackState
-  fullName: Tizen.TV.UIControls.Forms.PlaybackState
-  nameWithType: PlaybackState
-- uid: Tizen.TV.UIControls.Forms.PlaybackState.Paused
-  name: Paused
-  href: api/Tizen.TV.UIControls.Forms.PlaybackState.html#Tizen_TV_UIControls_Forms_PlaybackState_Paused
-  commentId: F:Tizen.TV.UIControls.Forms.PlaybackState.Paused
-  fullName: Tizen.TV.UIControls.Forms.PlaybackState.Paused
-  nameWithType: PlaybackState.Paused
-- uid: Tizen.TV.UIControls.Forms.PlaybackState.Playing
-  name: Playing
-  href: api/Tizen.TV.UIControls.Forms.PlaybackState.html#Tizen_TV_UIControls_Forms_PlaybackState_Playing
-  commentId: F:Tizen.TV.UIControls.Forms.PlaybackState.Playing
-  fullName: Tizen.TV.UIControls.Forms.PlaybackState.Playing
-  nameWithType: PlaybackState.Playing
-- uid: Tizen.TV.UIControls.Forms.PlaybackState.Stopped
-  name: Stopped
-  href: api/Tizen.TV.UIControls.Forms.PlaybackState.html#Tizen_TV_UIControls_Forms_PlaybackState_Stopped
-  commentId: F:Tizen.TV.UIControls.Forms.PlaybackState.Stopped
-  fullName: Tizen.TV.UIControls.Forms.PlaybackState.Stopped
-  nameWithType: PlaybackState.Stopped
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView
   name: RecycleItemsView
   href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html
@@ -4447,11 +3857,11 @@ references:
   isSpec: "True"
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.LayoutChildren
   nameWithType: RecycleItemsView.LayoutChildren
-- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,View,System.Boolean)
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,Xamarin.Forms.View,System.Boolean)
   name: OnItemFocused(Object, View, Boolean)
-  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_OnItemFocused_System_Object_View_System_Boolean_
-  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,View,System.Boolean)
-  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object, View, System.Boolean)
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_OnItemFocused_System_Object_Xamarin_Forms_View_System_Boolean_
+  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object,Xamarin.Forms.View,System.Boolean)
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused(System.Object, Xamarin.Forms.View, System.Boolean)
   nameWithType: RecycleItemsView.OnItemFocused(Object, View, Boolean)
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.OnItemFocused*
   name: OnItemFocused
@@ -4562,11 +3972,11 @@ references:
   commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Double,System.Double,System.Boolean)
   fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Double, System.Double, System.Boolean)
   nameWithType: RecycleItemsView.ScrollToAsync(Double, Double, Boolean)
-- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,ScrollToPosition,System.Boolean)
+- uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,Xamarin.Forms.ScrollToPosition,System.Boolean)
   name: ScrollToAsync(Object, ScrollToPosition, Boolean)
-  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_System_Object_ScrollToPosition_System_Boolean_
-  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,ScrollToPosition,System.Boolean)
-  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object, ScrollToPosition, System.Boolean)
+  href: api/Tizen.TV.UIControls.Forms.RecycleItemsView.html#Tizen_TV_UIControls_Forms_RecycleItemsView_ScrollToAsync_System_Object_Xamarin_Forms_ScrollToPosition_System_Boolean_
+  commentId: M:Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object,Xamarin.Forms.ScrollToPosition,System.Boolean)
+  fullName: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync(System.Object, Xamarin.Forms.ScrollToPosition, System.Boolean)
   nameWithType: RecycleItemsView.ScrollToAsync(Object, ScrollToPosition, Boolean)
 - uid: Tizen.TV.UIControls.Forms.RecycleItemsView.ScrollToAsync*
   name: ScrollToAsync
@@ -4701,11 +4111,11 @@ references:
   commentId: T:Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs
   fullName: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs
   nameWithType: RemoteControlKeyEventArgs
-- uid: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
+- uid: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(Xamarin.Forms.VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
   name: RemoteControlKeyEventArgs(VisualElement, RemoteControlKeyTypes, RemoteControlKeyNames, String)
-  href: api/Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html#Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__ctor_VisualElement_Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
-  fullName: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.RemoteControlKeyEventArgs(VisualElement, Tizen.TV.UIControls.Forms.RemoteControlKeyTypes, Tizen.TV.UIControls.Forms.RemoteControlKeyNames, System.String)
+  href: api/Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.html#Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__ctor_Xamarin_Forms_VisualElement_Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_Tizen_TV_UIControls_Forms_RemoteControlKeyNames_System_String_
+  commentId: M:Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor(Xamarin.Forms.VisualElement,Tizen.TV.UIControls.Forms.RemoteControlKeyTypes,Tizen.TV.UIControls.Forms.RemoteControlKeyNames,System.String)
+  fullName: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.RemoteControlKeyEventArgs(Xamarin.Forms.VisualElement, Tizen.TV.UIControls.Forms.RemoteControlKeyTypes, Tizen.TV.UIControls.Forms.RemoteControlKeyNames, System.String)
   nameWithType: RemoteControlKeyEventArgs.RemoteControlKeyEventArgs(VisualElement, RemoteControlKeyTypes, RemoteControlKeyNames, String)
 - uid: Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs.#ctor*
   name: RemoteControlKeyEventArgs
@@ -5061,22 +4471,22 @@ references:
   commentId: M:Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor
   fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler()
   nameWithType: RemoteKeyHandler.RemoteKeyHandler()
-- uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs})
+- uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(System.Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs})
   name: RemoteKeyHandler(Action<RemoteControlKeyEventArgs>)
-  href: api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html#Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__
-  commentId: M:Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs})
+  href: api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html#Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_System_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__
+  commentId: M:Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(System.Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs})
   name.vb: RemoteKeyHandler(Action(Of RemoteControlKeyEventArgs))
-  fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(Action<Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs>)
-  fullName.vb: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(Action(Of Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs))
+  fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(System.Action<Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs>)
+  fullName.vb: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(System.Action(Of Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs))
   nameWithType: RemoteKeyHandler.RemoteKeyHandler(Action<RemoteControlKeyEventArgs>)
   nameWithType.vb: RemoteKeyHandler.RemoteKeyHandler(Action(Of RemoteControlKeyEventArgs))
-- uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs},Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
+- uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(System.Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs},Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
   name: RemoteKeyHandler(Action<RemoteControlKeyEventArgs>, RemoteControlKeyTypes)
-  href: api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html#Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_
-  commentId: M:Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs},Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
+  href: api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html#Tizen_TV_UIControls_Forms_RemoteKeyHandler__ctor_System_Action_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs__Tizen_TV_UIControls_Forms_RemoteControlKeyTypes_
+  commentId: M:Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor(System.Action{Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs},Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
   name.vb: RemoteKeyHandler(Action(Of RemoteControlKeyEventArgs), RemoteControlKeyTypes)
-  fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(Action<Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs>, Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
-  fullName.vb: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(Action(Of Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs), Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
+  fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(System.Action<Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs>, Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
+  fullName.vb: Tizen.TV.UIControls.Forms.RemoteKeyHandler.RemoteKeyHandler(System.Action(Of Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs), Tizen.TV.UIControls.Forms.RemoteControlKeyTypes)
   nameWithType: RemoteKeyHandler.RemoteKeyHandler(Action<RemoteControlKeyEventArgs>, RemoteControlKeyTypes)
   nameWithType.vb: RemoteKeyHandler.RemoteKeyHandler(Action(Of RemoteControlKeyEventArgs), RemoteControlKeyTypes)
 - uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.#ctor*
@@ -5117,113 +4527,3 @@ references:
   commentId: E:Tizen.TV.UIControls.Forms.RemoteKeyHandler.KeyUp
   fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.KeyUp
   nameWithType: RemoteKeyHandler.KeyUp
-- uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent(Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs)
-  name: SendKeyEvent(RemoteControlKeyEventArgs)
-  href: api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html#Tizen_TV_UIControls_Forms_RemoteKeyHandler_SendKeyEvent_Tizen_TV_UIControls_Forms_RemoteControlKeyEventArgs_
-  commentId: M:Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent(Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs)
-  fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent(Tizen.TV.UIControls.Forms.RemoteControlKeyEventArgs)
-  nameWithType: RemoteKeyHandler.SendKeyEvent(RemoteControlKeyEventArgs)
-- uid: Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent*
-  name: SendKeyEvent
-  href: api/Tizen.TV.UIControls.Forms.RemoteKeyHandler.html#Tizen_TV_UIControls_Forms_RemoteKeyHandler_SendKeyEvent_
-  commentId: Overload:Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.RemoteKeyHandler.SendKeyEvent
-  nameWithType: RemoteKeyHandler.SendKeyEvent
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource
-  name: UriMediaSource
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html
-  commentId: T:Tizen.TV.UIControls.Forms.UriMediaSource
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource
-  nameWithType: UriMediaSource
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.OnPropertyChanged(System.String)
-  name: OnPropertyChanged(String)
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_OnPropertyChanged_System_String_
-  commentId: M:Tizen.TV.UIControls.Forms.UriMediaSource.OnPropertyChanged(System.String)
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.OnPropertyChanged(System.String)
-  nameWithType: UriMediaSource.OnPropertyChanged(String)
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.OnPropertyChanged*
-  name: OnPropertyChanged
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_OnPropertyChanged_
-  commentId: Overload:Tizen.TV.UIControls.Forms.UriMediaSource.OnPropertyChanged
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.OnPropertyChanged
-  nameWithType: UriMediaSource.OnPropertyChanged
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.op_Implicit(Tizen.TV.UIControls.Forms.UriMediaSource)~System.String
-  name: Implicit(UriMediaSource to String)
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_op_Implicit_Tizen_TV_UIControls_Forms_UriMediaSource__System_String
-  commentId: M:Tizen.TV.UIControls.Forms.UriMediaSource.op_Implicit(Tizen.TV.UIControls.Forms.UriMediaSource)~System.String
-  name.vb: Widening(UriMediaSource to String)
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.Implicit(Tizen.TV.UIControls.Forms.UriMediaSource to System.String)
-  fullName.vb: Tizen.TV.UIControls.Forms.UriMediaSource.Widening(Tizen.TV.UIControls.Forms.UriMediaSource to System.String)
-  nameWithType: UriMediaSource.Implicit(UriMediaSource to String)
-  nameWithType.vb: UriMediaSource.Widening(UriMediaSource to String)
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.op_Implicit(Uri)~Tizen.TV.UIControls.Forms.UriMediaSource
-  name: Implicit(Uri to UriMediaSource)
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_op_Implicit_Uri__Tizen_TV_UIControls_Forms_UriMediaSource
-  commentId: M:Tizen.TV.UIControls.Forms.UriMediaSource.op_Implicit(Uri)~Tizen.TV.UIControls.Forms.UriMediaSource
-  name.vb: Widening(Uri to UriMediaSource)
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.Implicit(Uri to Tizen.TV.UIControls.Forms.UriMediaSource)
-  fullName.vb: Tizen.TV.UIControls.Forms.UriMediaSource.Widening(Uri to Tizen.TV.UIControls.Forms.UriMediaSource)
-  nameWithType: UriMediaSource.Implicit(Uri to UriMediaSource)
-  nameWithType.vb: UriMediaSource.Widening(Uri to UriMediaSource)
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.op_Implicit*
-  name: Implicit
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_op_Implicit_
-  commentId: Overload:Tizen.TV.UIControls.Forms.UriMediaSource.op_Implicit
-  isSpec: "True"
-  name.vb: Widening
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.Implicit
-  fullName.vb: Tizen.TV.UIControls.Forms.UriMediaSource.Widening
-  nameWithType: UriMediaSource.Implicit
-  nameWithType.vb: UriMediaSource.Widening
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.ToString
-  name: ToString()
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_ToString
-  commentId: M:Tizen.TV.UIControls.Forms.UriMediaSource.ToString
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.ToString()
-  nameWithType: UriMediaSource.ToString()
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.ToString*
-  name: ToString
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_ToString_
-  commentId: Overload:Tizen.TV.UIControls.Forms.UriMediaSource.ToString
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.ToString
-  nameWithType: UriMediaSource.ToString
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.Uri
-  name: Uri
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_Uri
-  commentId: P:Tizen.TV.UIControls.Forms.UriMediaSource.Uri
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.Uri
-  nameWithType: UriMediaSource.Uri
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.Uri*
-  name: Uri
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_Uri_
-  commentId: Overload:Tizen.TV.UIControls.Forms.UriMediaSource.Uri
-  isSpec: "True"
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.Uri
-  nameWithType: UriMediaSource.Uri
-- uid: Tizen.TV.UIControls.Forms.UriMediaSource.UriProperty
-  name: UriProperty
-  href: api/Tizen.TV.UIControls.Forms.UriMediaSource.html#Tizen_TV_UIControls_Forms_UriMediaSource_UriProperty
-  commentId: F:Tizen.TV.UIControls.Forms.UriMediaSource.UriProperty
-  fullName: Tizen.TV.UIControls.Forms.UriMediaSource.UriProperty
-  nameWithType: UriMediaSource.UriProperty
-- uid: Tizen.TV.UIControls.Forms.VideoOuputType
-  name: VideoOuputType
-  href: api/Tizen.TV.UIControls.Forms.VideoOuputType.html
-  commentId: T:Tizen.TV.UIControls.Forms.VideoOuputType
-  fullName: Tizen.TV.UIControls.Forms.VideoOuputType
-  nameWithType: VideoOuputType
-- uid: Tizen.TV.UIControls.Forms.VideoOuputType.Buffer
-  name: Buffer
-  href: api/Tizen.TV.UIControls.Forms.VideoOuputType.html#Tizen_TV_UIControls_Forms_VideoOuputType_Buffer
-  commentId: F:Tizen.TV.UIControls.Forms.VideoOuputType.Buffer
-  fullName: Tizen.TV.UIControls.Forms.VideoOuputType.Buffer
-  nameWithType: VideoOuputType.Buffer
-- uid: Tizen.TV.UIControls.Forms.VideoOuputType.Overlay
-  name: Overlay
-  href: api/Tizen.TV.UIControls.Forms.VideoOuputType.html#Tizen_TV_UIControls_Forms_VideoOuputType_Overlay
-  commentId: F:Tizen.TV.UIControls.Forms.VideoOuputType.Overlay
-  fullName: Tizen.TV.UIControls.Forms.VideoOuputType.Overlay
-  nameWithType: VideoOuputType.Overlay
