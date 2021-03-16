@@ -60,6 +60,16 @@ namespace Tizen.Theme.Common
         public static readonly BindableProperty ShadowBlurRadiusProperty = BindableProperty.Create(nameof(ShadowBlurRadius), typeof(double), typeof(ShadowFrame), 10d);
 
         /// <summary>
+        /// Identifies the AllowShadowClipping bindable property.
+        /// </summary>
+        public static readonly BindableProperty AllowShadowClippingProperty = BindableProperty.Create(nameof(AllowShadowClipping), typeof(bool), typeof(ShadowFrame), false);
+
+        /// <summary>
+        /// Identifies the ShadowClippingWidth bindable property.
+        /// </summary>
+        public static readonly BindableProperty ShadowClippingWidthProperty = BindableProperty.Create(nameof(ShadowClippingWidth), typeof(double), typeof(ShadowFrame), 6.0);
+
+        /// <summary>
         /// Gets or sets a value that represents CornerRadius.
         /// </summary>
         public new CornerRadius CornerRadius
@@ -120,6 +130,24 @@ namespace Tizen.Theme.Common
         {
             get => (double)GetValue(ShadowBlurRadiusProperty);
             set => SetValue(ShadowBlurRadiusProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether shadow clipping is allowed or not.
+        /// </summary>
+        public bool AllowShadowClipping
+        {
+            get => (bool)GetValue(AllowShadowClippingProperty);
+            set => SetValue(AllowShadowClippingProperty, value);
+        }
+
+        /// <summary>
+        /// Gets or sets a value that represents ShadowClippingWidth.
+        /// </summary>
+        public double ShadowClippingWidth
+        {
+            get => (double)GetValue(ShadowClippingWidthProperty);
+            set => SetValue(ShadowClippingWidthProperty, value);
         }
     }
 }

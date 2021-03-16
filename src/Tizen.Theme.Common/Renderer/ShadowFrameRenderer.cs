@@ -37,6 +37,8 @@ namespace Tizen.Theme.Common.Renderer
         SKCanvasView _shadowCanvasView;
         ShadowFrame ShadowElement => Element as ShadowFrame;
 
+        bool UseShadowClipping => ShadowElement.AllowShadowClipping;
+
         public ShadowFrameRenderer()
         {
             if (!Forms.UseSkiaSharp)
@@ -51,6 +53,8 @@ namespace Tizen.Theme.Common.Renderer
             RegisterPropertyHandler(ShadowFrame.ShadowOffsetXProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.ShadowOffsetYProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.ShadowOpacityProperty, UpdateCanvas);
+            RegisterPropertyHandler(ShadowFrame.AllowShadowClippingProperty, UpdateAllowShadowClipping);
+            RegisterPropertyHandler(ShadowFrame.ShadowClippingWidthProperty, UpdateCanvas);
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<Layout> e)
@@ -62,14 +66,10 @@ namespace Tizen.Theme.Common.Renderer
             _clipper.PaintSurface += OnCliperPaint;
             Control.Children.Add(_clipper);
             BackgroundCanvas?.StackAbove(_clipper);
-
-            _shadowCanvasView = new SKCanvasView(Forms.NativeParent);
-            _shadowCanvasView.Show();
-            _shadowCanvasView.PassEvents = true;
-            _shadowCanvasView.PaintSurface += OnShadowPaint;
-            Control.Children.Add(_shadowCanvasView);
-            _shadowCanvasView.Lower();
-            _shadowCanvasView.SetClip(null);
+            if (!UseShadowClipping)
+            {
+                CreateShadowCanvas();
+            }
         }
 
         protected override void UpdateBackgroundColor(bool initialize)
@@ -90,10 +90,13 @@ namespace Tizen.Theme.Common.Renderer
                 _clipper.Invalidate();
             }
 
-            if (_shadowCanvasView != null && ShadowElement.HasShadow)
+            if (!UseShadowClipping && ShadowElement.HasShadow)
             {
-                UpdateShadowGeometry();
-                _shadowCanvasView.Invalidate();
+                UpdateShadowCanvasGeometry();
+            }
+            else
+            {
+                _shadowCanvasView?.Invalidate();
             }
         }
 
@@ -110,8 +113,36 @@ namespace Tizen.Theme.Common.Renderer
                 IsAntialias = true,
             })
             {
-                using (var path = CreateRoundRectPath(bound.Width, bound.Height))
+                using (var path = GetRoundRectPath(false))
                 {
+                    // Draw shadow here only if you choose useShadowClip = true. (this means no use of shadow canvas)
+                    if (UseShadowClipping && ShadowElement.HasShadow)
+                    {
+                        using (var path2 = GetRoundRectPath(true))
+                        {
+                            paint.Style = SKPaintStyle.StrokeAndFill;
+                            var scaledOffsetX = Forms.ConvertToScaledPixel(ShadowElement.ShadowOffsetX);
+                            var scaledOffsetY = Forms.ConvertToScaledPixel(ShadowElement.ShadowOffsetY);
+                            var scaledBlurRadius = Forms.ConvertToScaledPixel(ShadowElement.ShadowBlurRadius);
+
+                            canvas.Save();
+                            canvas.ClipPath(path2, SKClipOperation.Difference, true);
+                            paint.ImageFilter = SKImageFilter.CreateDropShadowOnly(
+                                scaledOffsetX,
+                                scaledOffsetY,
+                                scaledBlurRadius,
+                                scaledBlurRadius,
+                                ShadowElement.ShadowColor.MultiplyAlpha(ShadowElement.ShadowOpacity).ToSK());
+                            canvas.DrawPath(path2, paint);
+                            canvas.Restore();
+
+                            canvas.Save();
+                            canvas.ClipPath(path2, SKClipOperation.Intersect, true);
+                            canvas.DrawPath(path2, paint);
+                            canvas.Restore();
+                        }
+                    }
+
                     // Draw background color
                     paint.ImageFilter = null;
                     paint.Style = SKPaintStyle.Fill;
@@ -126,11 +157,14 @@ namespace Tizen.Theme.Common.Renderer
                     }
 
                     // Draw border
-                    paint.IsAntialias = true;
-                    paint.Style = SKPaintStyle.Stroke;
-                    paint.StrokeWidth = Forms.ConvertToScaledPixel(ShadowElement.BorderWidth);
-                    paint.Color = borderColor;
-                    canvas.DrawPath(path, paint);
+                    if (ShadowElement.BorderWidth != 0)
+                    {
+                        paint.IsAntialias = true;
+                        paint.Style = SKPaintStyle.Stroke;
+                        paint.StrokeWidth = Forms.ConvertToScaledPixel(ShadowElement.BorderWidth);
+                        paint.Color = borderColor;
+                        canvas.DrawPath(path, paint);
+                    }
                 }
             }
         }
@@ -141,7 +175,7 @@ namespace Tizen.Theme.Common.Renderer
             var bound = e.Info.Rect;
             canvas.Clear();
 
-            // Draw shadow
+            // Draw shadow on shadow canvas
             if (ShadowElement.HasShadow)
             {
                 using (var paint = new SKPaint
@@ -150,7 +184,7 @@ namespace Tizen.Theme.Common.Renderer
                     Style = SKPaintStyle.StrokeAndFill
                 })
                 {
-                    using (var path = CreateShadowPath())
+                    using (var path = GetRoundRectPath(true))
                     {
                         var scaledOffsetX = Forms.ConvertToScaledPixel(ShadowElement.ShadowOffsetX);
                         var scaledOffsetY = Forms.ConvertToScaledPixel(ShadowElement.ShadowOffsetY);
@@ -193,7 +227,7 @@ namespace Tizen.Theme.Common.Renderer
                 Color = SKColors.White,
             })
             {
-                using (var path = CreateRoundRectPath(bound.Width, bound.Height))
+                using (var path = GetRoundRectPath(false))
                 {
                     canvas.DrawPath(path, paint);
                 }
@@ -205,9 +239,10 @@ namespace Tizen.Theme.Common.Renderer
         {
             BackgroundCanvas?.Invalidate();
             _clipper?.Invalidate();
-            if (ShadowElement.HasShadow)
+
+            if (!UseShadowClipping &&ShadowElement.HasShadow)
             {
-                UpdateShadowGeometry();
+                UpdateShadowCanvasGeometry();
             }
             else
             {
@@ -215,34 +250,45 @@ namespace Tizen.Theme.Common.Renderer
             }
         }
 
-        SKPath CreateRoundRectPath(float width, float height)
+        void UpdateAllowShadowClipping()
         {
-            var path = new SKPath();
-            var topLeft = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopLeft);
-            var topRight = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopRight);
-            var bottomLeft = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomLeft);
-            var bottomRight = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomRight);
-            var padding = Convert.ToSingle(ShadowElement.BorderWidth);
-            var diameter = padding * 2;
-            width = width > diameter ? width - diameter : 0;
-            height = height > diameter ? height - diameter : 0;
-            var startX = topLeft + padding;
-            var startY = padding;
-
-            path.MoveTo(startX, startY);
-            path.LineTo(width - topRight + padding, startY);
-            path.ArcTo(topRight, new SKPoint(width + padding, topRight + padding));
-            path.LineTo(width + padding, height - bottomRight + padding);
-            path.ArcTo(bottomRight, new SKPoint(width - bottomRight + padding, height + padding));
-            path.LineTo(bottomLeft + padding, height + padding);
-            path.ArcTo(bottomLeft, new SKPoint(padding, height - bottomLeft + padding));
-            path.LineTo(padding, topLeft + padding);
-            path.ArcTo(topLeft, new SKPoint(startX, startY));
-            path.Close();
-            return path;
+            if (!UseShadowClipping)
+            {
+                CreateShadowCanvas();
+            }
+            else
+            {
+                DeleteShadowCanvas();
+            }
+            UpdateCanvas();
         }
 
-        SKPath CreateShadowPath()
+        void CreateShadowCanvas()
+        {
+            if (_shadowCanvasView != null)
+                return;
+
+            _shadowCanvasView = new SKCanvasView(Forms.NativeParent);
+            _shadowCanvasView.Show();
+            _shadowCanvasView.PassEvents = true;
+            _shadowCanvasView.PaintSurface += OnShadowPaint;
+            Control.Children.Add(_shadowCanvasView);
+            _shadowCanvasView.Lower();
+            _shadowCanvasView.SetClip(null);
+        }
+
+        void DeleteShadowCanvas()
+        {
+            if (_shadowCanvasView == null)
+                return;
+            Control.Children.Remove(_shadowCanvasView);
+            _shadowCanvasView.Hide();
+            _shadowCanvasView.PaintSurface -= OnShadowPaint;
+            _shadowCanvasView.Unrealize();
+            _shadowCanvasView = null;
+        }
+
+        SKPath GetRoundRectPath(bool isShadow)
         {
             var geometry = NativeView.Geometry;
             if (ShadowElement.Content != null)
@@ -254,10 +300,16 @@ namespace Tizen.Theme.Common.Renderer
                 }
             }
 
+            var canvasViewGeometry = !UseShadowClipping && isShadow ? _shadowCanvasView.Geometry : BackgroundCanvas.Geometry;
             var path = new SKPath();
-            var left = geometry.Left - _shadowCanvasView.Geometry.Left;
-            var top = geometry.Top - _shadowCanvasView.Geometry.Top;
-            var rect = new SKRect(left, top, left + geometry.Width, top + geometry.Height);
+            var padding = Convert.ToSingle(ShadowElement.BorderWidth);
+            // Set margin for shadow in case of using shadow clip.
+            if (UseShadowClipping) padding += Forms.ConvertToScaledPixel(ShadowElement.ShadowClippingWidth);
+            var left = geometry.Left - canvasViewGeometry.Left + padding;
+            var top = geometry.Top - canvasViewGeometry.Top + padding;
+            var right = left + geometry.Width - (padding * 2);
+            var bottom = top + geometry.Height - (padding * 2);
+            var rect = new SKRect(left, top, right, bottom);
             var scaledTLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopLeft) * 2;
             var scaledTRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopRight) * 2;
             var scaledBLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomLeft) * 2;
@@ -274,9 +326,9 @@ namespace Tizen.Theme.Common.Renderer
             return path;
         }
 
-        void UpdateShadowGeometry()
+        void UpdateShadowCanvasGeometry()
         {
-            var geometry = NativeView.Geometry;
+            var geometry = Control.Geometry;
             if (ShadowElement.Content != null)
             {
                 var contentNativeView = Platform.GetOrCreateRenderer(ShadowElement.Content)?.NativeView;
@@ -317,11 +369,6 @@ namespace Tizen.Theme.Common.Renderer
 
     internal static class SkExtensions
     {
-        internal static SKPath ArcTo(this SKPath path, float radius, SKPoint finalPoint)
-        {
-            path.ArcTo(new SKPoint(radius, radius), 0, SKPathArcSize.Small, SKPathDirection.Clockwise, finalPoint);
-            return path;
-        }
         internal static SKColor ToSK(this Color color)
         {
             return new SKColor((byte)(color.R * 255), (byte)(color.G * 255), (byte)(color.B * 255), (byte)(color.A * 255));

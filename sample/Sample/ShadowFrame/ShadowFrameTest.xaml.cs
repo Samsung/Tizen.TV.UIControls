@@ -64,5 +64,10 @@ namespace Sample.ShadowFrame
         {
             Frame1.HasShadow = !Frame1.HasShadow;
         }
+
+        private void allowShadowClipping_Clicked(object sender, EventArgs e)
+        {
+            Frame1.AllowShadowClipping = !Frame1.AllowShadowClipping;
+        }
     }
 }
