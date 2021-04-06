@@ -52,6 +52,15 @@
                     <Label Text="Toggle HasShadow: " TextColor ="Black"/>
                     <Button x:Name="hasShadow" HeightRequest="20" Clicked="hasShadow_Clicked" Text="{Binding HasShadow, Source={x:Reference Frame1}}"/>
                 </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Toggle AllowShadowClipping: " TextColor ="Black"/>
+                    <Button x:Name="allowShadowClipping" HeightRequest="20" Clicked="allowShadowClipping_Clicked" Text="{Binding AllowShadowClipping, Source={x:Reference Frame1}}"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="ShadowClippingWidth: " TextColor ="Black"/>
+                    <Slider x:Name="shadowCllippingWidthSlider" Minimum="0" Maximum="20"  HorizontalOptions="FillAndExpand" Value="{Binding ShadowClippingWidth, Source={x:Reference Frame1}}"/>
+                    <!--ValueChanged="borderWidth_ValueChanged"/>-->
+                </StackLayout>
 
                 <Label Text="ShadowColor"  FontSize="Large" TextColor="Coral"/>
                 <StackLayout Orientation="Horizontal">
