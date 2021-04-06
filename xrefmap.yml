@@ -2490,6 +2490,25 @@ references:
   commentId: T:Tizen.Theme.Common.ShadowFrame
   fullName: Tizen.Theme.Common.ShadowFrame
   nameWithType: ShadowFrame
+- uid: Tizen.Theme.Common.ShadowFrame.AllowShadowClipping
+  name: AllowShadowClipping
+  href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_AllowShadowClipping
+  commentId: P:Tizen.Theme.Common.ShadowFrame.AllowShadowClipping
+  fullName: Tizen.Theme.Common.ShadowFrame.AllowShadowClipping
+  nameWithType: ShadowFrame.AllowShadowClipping
+- uid: Tizen.Theme.Common.ShadowFrame.AllowShadowClipping*
+  name: AllowShadowClipping
+  href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_AllowShadowClipping_
+  commentId: Overload:Tizen.Theme.Common.ShadowFrame.AllowShadowClipping
+  isSpec: "True"
+  fullName: Tizen.Theme.Common.ShadowFrame.AllowShadowClipping
+  nameWithType: ShadowFrame.AllowShadowClipping
+- uid: Tizen.Theme.Common.ShadowFrame.AllowShadowClippingProperty
+  name: AllowShadowClippingProperty
+  href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_AllowShadowClippingProperty
+  commentId: F:Tizen.Theme.Common.ShadowFrame.AllowShadowClippingProperty
+  fullName: Tizen.Theme.Common.ShadowFrame.AllowShadowClippingProperty
+  nameWithType: ShadowFrame.AllowShadowClippingProperty
 - uid: Tizen.Theme.Common.ShadowFrame.BorderWidth
   name: BorderWidth
   href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_BorderWidth
@@ -2547,6 +2566,25 @@ references:
   commentId: F:Tizen.Theme.Common.ShadowFrame.ShadowBlurRadiusProperty
   fullName: Tizen.Theme.Common.ShadowFrame.ShadowBlurRadiusProperty
   nameWithType: ShadowFrame.ShadowBlurRadiusProperty
+- uid: Tizen.Theme.Common.ShadowFrame.ShadowClippingWidth
+  name: ShadowClippingWidth
+  href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_ShadowClippingWidth
+  commentId: P:Tizen.Theme.Common.ShadowFrame.ShadowClippingWidth
+  fullName: Tizen.Theme.Common.ShadowFrame.ShadowClippingWidth
+  nameWithType: ShadowFrame.ShadowClippingWidth
+- uid: Tizen.Theme.Common.ShadowFrame.ShadowClippingWidth*
+  name: ShadowClippingWidth
+  href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_ShadowClippingWidth_
+  commentId: Overload:Tizen.Theme.Common.ShadowFrame.ShadowClippingWidth
+  isSpec: "True"
+  fullName: Tizen.Theme.Common.ShadowFrame.ShadowClippingWidth
+  nameWithType: ShadowFrame.ShadowClippingWidth
+- uid: Tizen.Theme.Common.ShadowFrame.ShadowClippingWidthProperty
+  name: ShadowClippingWidthProperty
+  href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_ShadowClippingWidthProperty
+  commentId: F:Tizen.Theme.Common.ShadowFrame.ShadowClippingWidthProperty
+  fullName: Tizen.Theme.Common.ShadowFrame.ShadowClippingWidthProperty
+  nameWithType: ShadowFrame.ShadowClippingWidthProperty
 - uid: Tizen.Theme.Common.ShadowFrame.ShadowColor
   name: ShadowColor
   href: api/Tizen.Theme.Common.ShadowFrame.html#Tizen_Theme_Common_ShadowFrame_ShadowColor
