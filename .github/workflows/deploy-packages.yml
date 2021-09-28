@@ -1,0 +1,41 @@
+name: Deploy Packages
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Package version'
+        required: true
+      deploy_to_nuget:
+        description: 'Deploy package to nuget.org'
+        required: true
+        default: false
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: Create the package
+        run: dotnet pack -c Release -o artifacts -p:Version=${{ github.event.inputs.version }} TV.UIControls.sln
+      
+      - name: Publish packages
+        env:
+          NUGET_SOURCE: https://tizen.myget.org/F/dotnet/api/v2/package
+          APIKEY: ${{ secrets.MYGET_APIKEY }}
+        run: |
+          dotnet nuget push artifacts/Tizen.TV.UIControls.*.nupkg -k $APIKEY -s $NUGET_SOURCE -t 3000
+          dotnet nuget push artifacts/Tizen.Theme.Common.*.nupkg -k $APIKEY -s $NUGET_SOURCE -t 3000
+
+      - name: Publish packages to nuget.org
+        if: github.event.inputs.deploy_to_nuget == 'true'
+        env:
+          NUGET_SOURCE: https://www.nuget.org/api/v2/package
+          APIKEY: ${{ secrets.NUGET_APIKEY }}
+        run: |
+          dotnet nuget push artifacts/Tizen.TV.UIControls.*.nupkg -k $APIKEY -s $NUGET_SOURCE -t 3000
+          dotnet nuget push artifacts/Tizen.Theme.Common.*.nupkg -k $APIKEY -s $NUGET_SOURCE -t 3000

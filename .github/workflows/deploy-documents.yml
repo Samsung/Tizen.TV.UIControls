@@ -1,0 +1,32 @@
+name: Deploy Documents
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: tizendotnet/tizenfx-build-worker:2.1
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Restore projects
+        run: dotnet restore TV.UIControls.sln
+
+      - name: Build documents
+        run: docfx docs/docfx/docfx.json
+
+      - name: Publish documents to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/docfx/.site/
+          publish_branch: gh-pages
+          user_name: "TizenAPI-Bot"
+          user_email: "tizenapi@samsung.com"
+          full_commit_message: "Update documents"
