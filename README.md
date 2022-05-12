@@ -33,12 +33,15 @@ nuget.exe install Tizen.TV.UIControls -Version 1.0.0-rc3
 The Tizen Theme Common is a set of helpful extensions to the .NET MAUI for Tizen devices. It provides various UI controls that can be commonly used in all different Tizen profiles with rich and customizable functionalities. The Nuget package is available with the name of Tizen.Theme.Common.Maui.
 
 ### Screenshots
-<img src=https://user-images.githubusercontent.com/14328614/111264257-8753bf00-866a-11eb-8c70-e4257f11811f.gif width=150> <img src=https://user-images.githubusercontent.com/14328614/111265008-cfbfac80-866b-11eb-92f3-c6123af54adb.gif width=250>
-<img src=https://user-images.githubusercontent.com/1029155/96542067-4e423900-12dc-11eb-8d0c-5d97c1b304e5.gif width=250> <img src=https://user-images.githubusercontent.com/14328614/111270455-398f8480-8673-11eb-9016-f35b24c0c328.gif width=250>
+<img src=https://user-images.githubusercontent.com/14328614/111265008-cfbfac80-866b-11eb-92f3-c6123af54adb.gif width=250> <img src=https://user-images.githubusercontent.com/1029155/96542067-4e423900-12dc-11eb-8d0c-5d97c1b304e5.gif width=250> <img src=https://user-images.githubusercontent.com/14328614/111270455-398f8480-8673-11eb-9016-f35b24c0c328.gif width=250>
 
 ### Getting Started
 #### Install package
+##### nuget.exe
+```
+nuget.exe install Tizen.Theme.Common.Maui -Version 1.0.0-rc3
+```
 ##### .csproj
 ```xml
-  <PackageReference Include="Tizen.Theme.Common.Maui" Version="1.0.0-rc3" />
+<PackageReference Include="Tizen.Theme.Common.Maui" Version="1.0.0-rc3" />
 ```
