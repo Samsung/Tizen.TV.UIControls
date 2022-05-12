@@ -6,6 +6,7 @@
 - [Controls](#controls)
 - [Prerequisite](#prerequisite)
 - [Getting Started](#getting-started)
+- [Samples](#samples)
 
 ## Introduction
 The Tizen TV UI Controls, aka "TV UI", is a set of helpful extensions of the .NET MAUI especially for Tizen TV.<br>
@@ -35,22 +36,27 @@ We provides useful UI controls that fit on a TV screen and interact with remote 
 ℹ️ _Tizen emulators and devices that support .NET6 have not yet been officially released, and we will announce a binary for testing soon._
 
 ## Getting Started
-#### Install package 
-##### nuget.exe
-```
-nuget.exe install Tizen.TV.UIControls -Version 1.0.0-rc3
-```
-##### .csproj
-```xml
-<PackageReference Include="Tizen.TV.UIControls" Version="1.0.0-rc3" />
-```
-#### Use in Xaml
-##### Declaring Namespaces for TV.UIControls
-``` xml
-<ContentPage ... xmlns:tv="clr-namespace:Tizen.TV.UIControls.Maui;assembly=Tizen.TV.UIControls.Maui" ...>
-```
+- [Quick Start](docs/index.md)
+- The [API Reference](https://samsung.github.io/Tizen.TV.UIControls/api/index.html) is available on the web to browse.
+- The [Developers Guide](https://samsung.github.io/Tizen.TV.UIControls/guides/Overview.html) is available on the web to browse.
 
-#### Developers Guides
- https://samsung.github.io/Tizen.TV.UIControls/guides/Overview.html
-#### API References
- https://samsung.github.io/Tizen.TV.UIControls/api/index.html
+## Samples
+<table>
+  <tr>
+    <th></th>
+    <th>Screenshot</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>TV UI Gallery</td>
+    <td><img src="https://user-images.githubusercontent.com/1029134/168060727-8316ed65-f7ff-4c15-ba70-79e0d9351d2b.png" alt="widgets"></td>
+    <td>This application was created to check the basic behavior of TV UI Controls. It contains all the controls of the TV UI API, and the functions of each control consist of one TC or several TCs depending on the characteristics of the control.<br>
+    <a href="https://github.com/Samsung/Tizen.TV.UIControls/tree/maui-migrate/sample/Sample">Source Code</a></td>
+  </tr>
+  <tr>
+    <td>TMDb</td>
+    <td><img src="https://user-images.githubusercontent.com/1029134/45856544-e5500600-bd8f-11e8-8579-ba4bb1db7a9a.png" alt="widgets"></td>
+    <td>This app shows the list of most popular and highest voted movies as per the [TMDb website](https://www.themoviedb.org). The data is current as of present. <br>
+    <a href="https://github.com/Samsung/Tizen.TV.UIControls/tree/maui-migrate/sample/TMDb">Source Code</a></td>
+  </tr>     
+</table>
