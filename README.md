@@ -1,5 +1,7 @@
 # Tizen TV UIControls 
 
+<img src="https://github.com/Samsung/Tizen.TV.UIControls/blob/d0ec169fb97a0ece318e4990c86a0c65bf15db5c/assets/tvuicontrols_rgb_64_64.png"/>
+
 - [Introduction](#introduction)
 - [Controls](#controls)
 - [Prerequisite](#prerequisite)
