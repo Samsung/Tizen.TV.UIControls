@@ -16,22 +16,26 @@
 
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+//using Xamarin.Forms.Platform.Tizen;
 using MMView = Tizen.Multimedia.MediaView;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Controls.Compatibility;
 
-[assembly: ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
+[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class MediaViewRenderer : ViewRenderer<MediaView, LayoutCanvas>, IMediaViewProvider
     {
         MMView _mediaView;
+
         protected override void OnElementChanged(ElementChangedEventArgs<MediaView> e)
         {
             if (Control == null)
             {
-                _mediaView = new MMView(Xamarin.Forms.Forms.NativeParent);
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
+                _mediaView = new MMView(Forms.NativeParent);
+                SetNativeControl(new LayoutCanvas(Forms.NativeParent));
                 Control.LayoutUpdated += (s, evt) => OnLayout();
                 Control.Children.Add(_mediaView);
                 Control.AllowFocus(true);

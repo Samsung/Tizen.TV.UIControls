@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -26,7 +27,7 @@ namespace Tizen.Theme.Common
         /// BindableProperty. Identifies the BackgroundColor bindable property.
         /// </summary>
         /// <since_tizen> 4 </since_tizen>
-        public static readonly BindableProperty BackgroundColorProperty = BindableProperty.Create(nameof(BackgroundColor), typeof(Color), typeof(ContentPopup), Color.Default);
+        public static readonly BindableProperty BackgroundColorProperty = BindableProperty.Create(nameof(BackgroundColor), typeof(Color), typeof(ContentPopup), null);
 
         /// <summary>
         /// Occurs when the popup is dismissed.

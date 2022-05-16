@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
 
 namespace Sample.DrawerLayout
 {
@@ -47,7 +48,7 @@ namespace Sample.DrawerLayout
             else
             {
                 label.TextColor = Color.FromRgb(198, 201, 206);
-                layout.BackgroundColor = Color.Transparent;
+                layout.BackgroundColor = Colors.Transparent;
             }
         }
     }

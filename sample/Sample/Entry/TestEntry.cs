@@ -15,7 +15,7 @@
  */
 
 using System;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Sample
 {

@@ -19,7 +19,9 @@ using ElmSharp;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using Xamarin.Forms.Platform.Tizen.Native;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native;
+using NBox = Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.Box;
+//using Xamarin.Forms.Platform.Tizen.Native;
 
 namespace Tizen.Theme.Common.Renderer
 {
@@ -29,7 +31,7 @@ namespace Tizen.Theme.Common.Renderer
         /// The list of Views.
         /// </summary>
         readonly ObservableCollection<EvasObject> _children = new ObservableCollection<EvasObject>();
-        Xamarin.Forms.Platform.Tizen.Native.Box _box;
+        NBox _box;
 
 
         /// <summary>
@@ -40,7 +42,7 @@ namespace Tizen.Theme.Common.Renderer
         public LayoutCanvas(EvasObject parent) : base(parent)
         {
             SetTheme("layout", "elm_widget", "default");
-            _box = new Xamarin.Forms.Platform.Tizen.Native.Box(parent);
+            _box = new NBox(parent);
             SetContent(_box);
 
             _children.CollectionChanged += (o, e) =>

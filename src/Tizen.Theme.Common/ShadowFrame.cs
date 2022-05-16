@@ -13,8 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using Tizen.UIExtensions.Common;
+//using Xamarin.Forms.Internals;
 
 namespace Tizen.Theme.Common
 {
@@ -46,7 +49,7 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Identifies the ShadowColor bindable property.
         /// </summary>
-        public static readonly BindableProperty ShadowColorProperty = BindableProperty.Create(nameof(ShadowColor), typeof(Color), typeof(ShadowFrame), Color.FromHex("#3E000000"));
+        public static readonly BindableProperty ShadowColorProperty = BindableProperty.Create(nameof(ShadowColor), typeof(Microsoft.Maui.Graphics.Color), typeof(ShadowFrame), Microsoft.Maui.Graphics.Color.FromArgb("#3E000000"));
 
         /// <summary>
         /// Identifies the ShadowOpacity bindable property.
@@ -108,9 +111,9 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Gets or sets a shadow color.
         /// </summary>
-        public Color ShadowColor
+        public Microsoft.Maui.Graphics.Color ShadowColor
         {
-            get => (Color)GetValue(ShadowColorProperty);
+            get => (Microsoft.Maui.Graphics.Color)GetValue(ShadowColorProperty);
             set => SetValue(ShadowColorProperty, value);
         }
 

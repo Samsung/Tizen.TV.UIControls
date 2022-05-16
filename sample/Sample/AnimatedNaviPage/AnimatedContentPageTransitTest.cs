@@ -1,5 +1,6 @@
-﻿using Xamarin.Forms;
+﻿using Microsoft.Maui.Controls;
 using Tizen.Theme.Common;
+using Microsoft.Maui.Graphics;
 
 namespace Sample
 {
@@ -12,7 +13,7 @@ namespace Sample
             var radio1 = new RadioButton
             {
                 Content = "SlideFromRight",
-                TextColor = Color.SkyBlue,
+                TextColor = Colors.SkyBlue,
                 GroupName = "Transit"
             };
             radio1.CheckedChanged += (s, e) =>
@@ -26,7 +27,7 @@ namespace Sample
             var radio2 = new RadioButton
             {
                 Content = "SlideFromLeft",
-                TextColor = Color.SkyBlue,
+                TextColor = Colors.SkyBlue,
                 GroupName = "Transit"
             };
             radio2.CheckedChanged += (s, e) =>
@@ -40,7 +41,7 @@ namespace Sample
             var radio3 = new RadioButton
             {
                 Content = "SlideFromBottom",
-                TextColor = Color.SkyBlue,
+                TextColor = Colors.SkyBlue,
                 GroupName = "Transit"
             };
             radio3.CheckedChanged += (s, e) =>
@@ -54,7 +55,7 @@ namespace Sample
             var radio4 = new RadioButton
             {
                 Content = "SlideFromTop",
-                TextColor = Color.SkyBlue,
+                TextColor = Colors.SkyBlue,
                 GroupName = "Transit"
             };
             radio4.CheckedChanged += (s, e) =>
@@ -68,7 +69,7 @@ namespace Sample
             var radio5 = new RadioButton
             {
                 Content = "Fade",
-                TextColor = Color.SkyBlue,
+                TextColor = Colors.SkyBlue,
                 GroupName = "Transit"
             };
             radio5.CheckedChanged += (s, e) =>
@@ -82,7 +83,7 @@ namespace Sample
             var radio6 = new RadioButton
             {
                 Content = "Scale",
-                TextColor = Color.SkyBlue,
+                TextColor = Colors.SkyBlue,
                 GroupName = "Transit"
             };
             radio6.CheckedChanged += (s, e) =>
@@ -103,7 +104,7 @@ namespace Sample
             {
                 var page = new AnimatedContentPage
                 {
-                    BackgroundColor = Color.Transparent,
+                    BackgroundColor = Colors.Transparent,
                     PageTranistion = _pageTransition,
                     Content = new StackLayout
                     {

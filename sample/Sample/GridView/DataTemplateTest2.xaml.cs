@@ -15,8 +15,9 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
 
 namespace Sample.GridView
 {
@@ -54,11 +55,11 @@ namespace Sample.GridView
                 {
                     return new StackLayout
                     {
-                        BackgroundColor = Color.LightBlue,
+                        BackgroundColor = Colors.LightBlue,
                         Children =
                         {
-                            new Label(){ Text = "Text 1", TextColor = Color.Purple },
-                            new Button(){ Text = "Button 1",TextColor = Color.Green, VerticalOptions = LayoutOptions.FillAndExpand }
+                            new Label(){ Text = "Text 1", TextColor = Colors.Purple },
+                            new Button(){ Text = "Button 1",TextColor = Colors.Green, VerticalOptions = LayoutOptions.FillAndExpand }
                         }
                     };
                 });

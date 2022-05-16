@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using System.ComponentModel;
 
 namespace Tizen.Theme.Common
 {

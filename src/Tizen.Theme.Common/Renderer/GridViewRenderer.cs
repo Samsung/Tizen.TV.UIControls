@@ -19,10 +19,17 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
 using ElmSharp;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+//using Xamarin.Forms.Platform.Tizen;
+
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
+
+//TODO gridview
 
 [assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
@@ -45,15 +52,15 @@ namespace Tizen.Theme.Common.Renderer
         {
             if (Control == null)
             {
-                SetNativeControl(new GenGrid(Xamarin.Forms.Forms.NativeParent));
-                Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
-                Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
+                SetNativeControl(new GenGrid(Forms.NativeParent));
+                //Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
+                //Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
-                Control.ItemWidth = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemWidth);
-                Control.ItemHeight = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemHeight);
+                Control.ItemWidth = Forms.ConvertToScaledPixel(Element.ItemWidth);
+                Control.ItemHeight = Forms.ConvertToScaledPixel(Element.ItemHeight);
                 Control.ItemAlignmentX = Element.ItemHorizontalAlignment.LayoutAlignmentToDouble();
                 Control.ItemAlignmentY = Element.ItemVerticalAlignment.LayoutAlignmentToDouble();
-                Control.Style = Element.ThemeStyle;
+                //Control.Style = Element.ThemeStyle;
                 Control.ItemSelected += OnItemSelected;
                 Control.ItemRealized += OnItemRealized;
 
@@ -75,11 +82,11 @@ namespace Tizen.Theme.Common.Renderer
         {
             if (e.PropertyName == GridView.ItemWidthProperty.PropertyName)
             {
-                Control.ItemWidth = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemWidth);
+                Control.ItemWidth = Forms.ConvertToScaledPixel(Element.ItemWidth);
             }
             else if (e.PropertyName == GridView.ItemHeightProperty.PropertyName)
             {
-                Control.ItemHeight = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemHeight);
+                Control.ItemHeight = Forms.ConvertToScaledPixel(Element.ItemHeight);
             }
             else if (e.PropertyName == GridView.ItemVerticalAlignmentProperty.PropertyName)
             {
@@ -89,14 +96,14 @@ namespace Tizen.Theme.Common.Renderer
             {
                 Control.ItemAlignmentY = Element.ItemHorizontalAlignment.LayoutAlignmentToDouble();
             }
-            else if (e.PropertyName == GridView.HorizontalScrollBarVisibleProperty.PropertyName)
-            {
-                Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
-            }
-            else if (e.PropertyName == GridView.VerticalScrollBarVisibleProperty.PropertyName)
-            {
-                Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
-            }
+            //else if (e.PropertyName == GridView.HorizontalScrollBarVisibleProperty.PropertyName)
+            //{
+            //    Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
+            //}
+            //else if (e.PropertyName == GridView.VerticalScrollBarVisibleProperty.PropertyName)
+            //{
+            //    Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
+            //}
             else if (e.PropertyName == GridView.OrientationProperty.PropertyName)
             {
                 Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
@@ -115,7 +122,7 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void UpdateThemeStyle()
         {
-            Control.Style = Element.ThemeStyle;
+            //Control.Style = Element.ThemeStyle;
         }
 
         void OnItemSelected(object sender, GenGridItemEventArgs e)

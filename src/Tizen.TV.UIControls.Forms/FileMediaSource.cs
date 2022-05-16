@@ -16,7 +16,8 @@
 
 using System;
 using CModel = System.ComponentModel;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using System.ComponentModel;
 
 namespace Tizen.TV.UIControls.Forms
 {

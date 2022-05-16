@@ -17,7 +17,8 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -29,12 +30,12 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Identifies the FocusedColor bindable property.
         /// </summary>
-        public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Color.Orange, propertyChanged: (b, o, n) => (b as FocusFrame).OnContentFocused());
+        public static readonly BindableProperty FocusedColorProperty = BindableProperty.Create(nameof(FocusedColor), typeof(Color), typeof(FocusFrame), Colors.Orange, propertyChanged: (b, o, n) => (b as FocusFrame).OnContentFocused());
 
         /// <summary>
         /// Identifies the UnfocusedColor bindable property.
         /// </summary>
-        public static readonly BindableProperty UnfocusedColorProperty = BindableProperty.Create(nameof(UnfocusedColor), typeof(Color), typeof(FocusFrame), Color.Transparent, propertyChanged: (b, o, n) => (b as FocusFrame).OnContentFocused());
+        public static readonly BindableProperty UnfocusedColorProperty = BindableProperty.Create(nameof(UnfocusedColor), typeof(Color), typeof(FocusFrame), Colors.Transparent, propertyChanged: (b, o, n) => (b as FocusFrame).OnContentFocused());
 
         /// <summary>
         /// Identifies the ContentFocusedCommand bindable property
@@ -69,7 +70,7 @@ namespace Tizen.Theme.Common
         public FocusFrame()
         {
             Padding = 10;
-            BorderColor = Color.Transparent;
+            BorderColor = Colors.Transparent;
             HasShadow = false;
         }
 
@@ -159,14 +160,15 @@ namespace Tizen.Theme.Common
                     Content.DescendantAdded -= OnDescendantAdded;
                     Content.DescendantRemoved -= OnDescendantRemoved;
 
-                    foreach (var child in Content.Descendants())
-                    {
-                        if (child is VisualElement ve)
-                        {
-                            ve.Focused -= OnContentFocused;
-                            ve.Unfocused -= OnContentFocused;
-                        }
-                    }
+                    // TODO: internal
+                    //foreach (var child in Content.Descendants())
+                    //{
+                    //    if (child is VisualElement ve)
+                    //    {
+                    //        ve.Focused -= OnContentFocused;
+                    //        ve.Unfocused -= OnContentFocused;
+                    //    }
+                    //}
                 }
             }
         }
@@ -183,14 +185,15 @@ namespace Tizen.Theme.Common
                     Content.DescendantAdded += OnDescendantAdded;
                     Content.DescendantRemoved += OnDescendantRemoved;
 
-                    foreach (var child in Content.Descendants())
-                    {
-                        if (child is VisualElement ve)
-                        {
-                            ve.Focused += OnContentFocused;
-                            ve.Unfocused += OnContentFocused;
-                        }
-                    }
+                    // TODO: internal
+                    //foreach (var child in Content.Descendants())
+                    //{
+                    //    if (child is VisualElement ve)
+                    //    {
+                    //        ve.Focused += OnContentFocused;
+                    //        ve.Unfocused += OnContentFocused;
+                    //    }
+                    //}
                 }
             }
         }

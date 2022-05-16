@@ -16,8 +16,11 @@
 
 using System;
 using ElmSharp;
+using Microsoft.Maui;
 using Tizen.Applications;
-using Xamarin.Forms.Platform.Tizen;
+//using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Platform;
+using System.Linq;
 
 namespace Tizen.Theme.Common
 {
@@ -36,21 +39,21 @@ namespace Tizen.Theme.Common
         /// </summary>
         public Func<Window> MainWindowProvider { get; set; }
 
-        /// <summary>
-        /// Default Constructor
-        /// </summary>
-        /// <param name="application"></param>
-        public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
+        ///// <summary>
+        ///// Default Constructor
+        ///// </summary>
+        ///// <param name="application"></param>
+        //public InitOptions() : this () { }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="application"></param>
         /// <param name="mainWindowProvider"></param>
-        public InitOptions(CoreApplication application, Func<Window> mainWindowProvider)
+        public InitOptions()
         {
-            Context = application;
-            MainWindowProvider = mainWindowProvider;
+            Context = MauiApplication.Current;
+            MainWindowProvider = () => { return ((IApplication)Microsoft.Maui.Controls.Application.Current)?.Windows.FirstOrDefault<IWindow>() as Window; };
         }
     }
 
@@ -76,9 +79,9 @@ namespace Tizen.Theme.Common
             }
 
             Context = context;
-            if (context is FormsApplication formsApplication)
+            if (context is MauiApplication mauiApplication)
             {
-                MainWindowProvider = () => formsApplication.MainWindow;
+                MainWindowProvider = () => { return ((IApplication)Microsoft.Maui.Controls.Application.Current)?.Windows.FirstOrDefault<IWindow>() as Window; };
             }
             IsInitialized = true;
         }

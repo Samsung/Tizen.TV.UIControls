@@ -19,23 +19,27 @@ using System;
 using System.Reflection;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+//using Xamarin.Forms.Platform.Tizen;
 using EColor = ElmSharp.Color;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Controls.Compatibility;
 
-[assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
+[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>
     {
         EvasObject _overlayHolder;
+
         protected override void OnElementChanged(ElementChangedEventArgs<OverlayMediaView> e)
         {
             if (Control == null)
             {
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
+                SetNativeControl(new LayoutCanvas(Forms.NativeParent));
                 Control.LayoutUpdated += (s, evt) => OnLayout();
-                _overlayHolder = new ElmSharp.Rectangle(Xamarin.Forms.Forms.NativeParent)
+                _overlayHolder = new ElmSharp.Rectangle(Forms.NativeParent)
                 {
                     Color = EColor.Transparent
                 };

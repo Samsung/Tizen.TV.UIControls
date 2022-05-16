@@ -15,23 +15,28 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+//using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui;
 using ElmSharp;
 using Tizen.Applications;
 using Tizen.Theme.Common.Renderer;
 using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
+using Window = ElmSharp.Window;
+using Microsoft.Maui.Controls.Compatibility;
+using System.Linq;
 
 [assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 [assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
-[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
+//[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
 [assembly: ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
 [assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 [assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 
-[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
-[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
+//TODO ExportHandler
+//[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
+//[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
 [assembly: Dependency(typeof(ContentPopupRenderer))]
 
 namespace Tizen.TV.UIControls.Forms
@@ -55,18 +60,24 @@ namespace Tizen.TV.UIControls.Forms
         /// Default Constructor
         /// </summary>
         /// <param name="application"></param>
-        public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
+        //public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
 
+
+        ///// <summary>
+        ///// Default Constructor
+        ///// </summary>
+        ///// <param name="application"></param>
+        //public InitOptions(MauiApplication application) : this(application, () => application.MainWindow) { }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="application"></param>
         /// <param name="mainWindowProvider"></param>
-        public InitOptions(CoreApplication application, Func<Window> mainWindowProvider)
+        public InitOptions()
         {
-            Context = application;
-            MainWindowProvider = mainWindowProvider;
+            Context = MauiApplication.Current;
+            MainWindowProvider = () => { return ((IApplication)Microsoft.Maui.Controls.Application.Current)?.Windows.FirstOrDefault<IWindow>() as Window; };
         }
     }
 

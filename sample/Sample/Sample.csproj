@@ -1,17 +1,63 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0-tizen</TargetFramework>
+	  <UseMaui>True</UseMaui>
+	  <SingleProject>true</SingleProject>
+	  <OutputType>Exe</OutputType>
   </PropertyGroup>
 
-  <!-- Include Nuget Package for Xamarin building -->
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <None Remove="Resources\appicon.svg" />
+    <None Remove="Resources\appiconfg.svg" />
+    <None Remove="Resources\Fonts\OpenSans-Regular.ttf" />
+    <None Remove="Resources\Fonts\OpenSans-Semibold.ttf" />
+    <None Remove="Resources\Images\dotnet_bot.svg" />
+    <None Remove="Resources\Raw\AboutAssets.txt" />
   </ItemGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-tizen'))">
+		<DefineConstants>$(DefineConstants);TIZEN</DefineConstants>
+	</PropertyGroup>
+
+	<ItemGroup>
+    <MauiAsset Include="Resources\Raw\AboutAssets.txt">
+      <LogicalName>%(RecursiveDir)%(Filename)%(Extension)</LogicalName>
+    </MauiAsset>
+  </ItemGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Tizen.Theme.Common\Tizen.Theme.Common.csproj" />
+    <MauiFont Include="Resources\Fonts\OpenSans-Regular.ttf" />
+    <MauiFont Include="Resources\Fonts\OpenSans-Semibold.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <!--TODO image-->
+	  <!--<MauiImage Include="Resources\Images\*" />-->
+	  <MauiImage Include="Resources\Images\poster2\*" />
+	  <MauiIcon Include="Resources\appicon.svg">
+		  <Color>#512BD4</Color>
+      <ForegroundFile>Resources\appiconfg.svg</ForegroundFile>
+    </MauiIcon>
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiImage Include="Resources\Images\dotnet_bot.svg">
+      <BaseSize>168,208</BaseSize>
+    </MauiImage>
+  </ItemGroup>
+
+  <ItemGroup>
+    <MauiSplashScreen Include="Resources\appiconfg.svg">
+      <Color>#512BD4</Color>
+      <BaseSize>128,128</BaseSize>
+    </MauiSplashScreen>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Tizen.TV.UIControls.Forms\Tizen.TV.UIControls.Forms.csproj" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Update="AnimatedNaviPage\AnimatedNaviMainPage.xaml.cs">
       <DependentUpon>AnimatedNaviMainPage.xaml</DependentUpon>
@@ -45,114 +91,120 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="ContentButton\ContentButtonTest.xaml">
+    <MauiXaml Update="ContentButton\ContentButtonTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="DrawerLayout\DrawerMainPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="DrawerLayout\DrawerMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="DrawerLayout\DrawerSample1.xaml">
+    </MauiXaml>
+    <MauiXaml Update="DrawerLayout\DrawerSample1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="DrawerLayout\DrawerSample2.xaml">
+    </MauiXaml>
+    <MauiXaml Update="DrawerLayout\DrawerSample2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="DrawerLayout\NestedDrawerPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="DrawerLayout\NestedDrawerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="DrawerLayout\RightDrawerTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="DrawerLayout\RightDrawerTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Focus\FocusBasicTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="Focus\FocusBasicTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Focus\FocusFrameScrollTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="Focus\FocusFrameScrollTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Focus\FocusMainPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="Focus\FocusMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Focus\FocusScrollTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="Focus\FocusScrollTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Focus\FocusTest2.xaml">
+    </MauiXaml>
+    <MauiXaml Update="Focus\FocusTest2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Focus\FocusTest3.xaml">
+    </MauiXaml>
+    <MauiXaml Update="Focus\FocusTest3.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MainPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\PlayerMainPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\PlayerMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\SimplePlayerPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\SimplePlayerPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\SimplePlayerPage2.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\SimplePlayerPage2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestAspect.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\TestAspect.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestAudioPlayer.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\TestAudioPlayer.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestEmbeddingControlOnPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\TestEmbeddingControlOnPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestOverlayPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\TestOverlayPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="MediaPlayer\TestOverlayView.xaml">
+    </MauiXaml>
+    <MauiXaml Update="MediaPlayer\TestOverlayView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\ColumnTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\ColumnTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\FocusChainTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\FocusChainTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\FocusOnHeaderTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\FocusOnHeaderTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\HeaderTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\HeaderTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RemoteControl\RemoteControlMainPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RemoteControl\RemoteControlMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RemoteControl\TestFlyoutPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RemoteControl\TestFlyoutPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RemoteControl\TestRemoteControl_xaml.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RemoteControl\TestRemoteControl_xaml.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RemoteControl\TestTabbedPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RemoteControl\TestTabbedPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\CustomFocus.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\CustomFocus.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\DefaultItemTemplateTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\DefaultItemTemplateTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\HorizontalTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\HorizontalTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\ImageCellTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\ImageCellTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\RIVMainPage.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\RIVMainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\TextCellTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\TextCellTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="RecycleItemsView\VerticalTest.xaml">
+    </MauiXaml>
+    <MauiXaml Update="RecycleItemsView\VerticalTest.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
+    </MauiXaml>
+    <MauiXaml Update="Resources\Colors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
+    <MauiXaml Update="Resources\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </MauiXaml>
   </ItemGroup>
 
 </Project>

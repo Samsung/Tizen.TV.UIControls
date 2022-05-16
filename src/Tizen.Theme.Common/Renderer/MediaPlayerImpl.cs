@@ -20,15 +20,17 @@ using System.IO;
 using System.Threading.Tasks;
 using Tizen.Multimedia;
 using Tizen.Theme.Common.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Internals;
+//using Xamarin.Forms.Platform.Tizen;
 
 using ERect = ElmSharp.Rect;
 using MRectangle = Tizen.Multimedia.Rectangle;
 using MPlayer = Tizen.Multimedia.Player;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Compatibility;
 
-[assembly: Xamarin.Forms.Dependency(typeof(MediaPlayerImpl))]
+[assembly: Dependency(typeof(MediaPlayerImpl))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer

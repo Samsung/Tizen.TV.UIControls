@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 using Tizen.Theme.Common;
 
 namespace Sample

@@ -14,10 +14,11 @@
  * limitations under the License.
  */
 
- using System;
+using System;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui;
 
 namespace Tizen.Theme.Common
 {

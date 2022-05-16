@@ -17,7 +17,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Sample.GridView
 {
@@ -88,7 +89,7 @@ namespace Sample.GridView
                 list.Add(new ColorModel
                 {
                     Color = color,
-                    Text = $"Color: {(int)(color.R*255)}, {(int)(color.G * 255)}, {(int)(color.B * 255)}"
+                    Text = $"Color: {(int)(color.Red*255)}, {(int)(color.Green * 255)}, {(int)(color.Blue * 255)}"
                 });
             }
             return list;

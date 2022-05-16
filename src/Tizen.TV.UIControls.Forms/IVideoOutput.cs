@@ -16,7 +16,8 @@
 
 using System;
 using System.ComponentModel;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -52,7 +53,7 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     public interface IOverlayOutput : IVideoOutput
     {
-        Rectangle OverlayArea { get; }
+        Rect OverlayArea { get; }
         event EventHandler AreaUpdated;
     }
 }

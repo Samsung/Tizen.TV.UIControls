@@ -19,12 +19,17 @@ using System.ComponentModel;
 using System.Threading.Tasks;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
-using Xamarin.Forms.Platform.Tizen;
-using XForms = Xamarin.Forms.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls.Internals;
+using Microsoft.Maui.Controls.Compatibility;
+//using Xamarin.Forms.Internals;
+//using Xamarin.Forms.Platform.Tizen;
+//using XForms = Xamarin.Forms.Forms;
 
-[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
+[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class AnimatedNavigationPageRenderer : VisualElementRenderer<AnimatedNavigationPage>
@@ -51,7 +56,7 @@ namespace Tizen.Theme.Common.Renderer
         {
             if (_navigationStack == null)
             {
-                _navigationStack = new NavigationStack(XForms.NativeParent);
+                _navigationStack = new NavigationStack(Forms.NativeParent);
                 _navigationStack.Show();
                 _navigationStack.SetAlignment(-1, -1);
                 _navigationStack.SetWeight(1, 1);

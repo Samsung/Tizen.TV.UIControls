@@ -15,8 +15,8 @@
  */
 
 using System;
-using CModel = System.ComponentModel;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using System.ComponentModel;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -24,16 +24,16 @@ namespace Tizen.TV.UIControls.Forms
     /// Class that takes a string representation of a media file location and returns a MeidaSource from the specified resource.
     /// </summary>
     [TypeConverter(typeof(MediaSource))]
-    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     [Obsolete("This class is obsolete as of 1.1.0. Please use MediaSourceConverter from Tizen.Theme.Common instead.")]
-    public sealed class MediaSourceConverter : TypeConverter
+    public sealed class MediaSourceConverter : TypeConverter, IExtendedTypeConverter
     {
         /// <summary>
         /// Returns a media source created from a URI that is contained in value.
         /// </summary>
         /// <param name="value">The value to convert.</param>
         /// <returns>MediaSource</returns>
-        public override object ConvertFromInvariantString(string value)
+        public object ConvertFromInvariantString(string value, IServiceProvider serviceProvider)
         {
             if (value != null)
             {

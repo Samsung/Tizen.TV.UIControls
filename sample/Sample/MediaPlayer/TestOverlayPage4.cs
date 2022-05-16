@@ -15,7 +15,7 @@
  */
 
 using System;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 using Tizen.TV.UIControls.Forms;
 using OverlayPage = Tizen.Theme.Common.OverlayPage;
 using MediaPlayer = Tizen.Theme.Common.MediaPlayer;

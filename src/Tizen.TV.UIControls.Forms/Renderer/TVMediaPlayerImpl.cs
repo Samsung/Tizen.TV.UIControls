@@ -18,14 +18,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Tizen.TV.Multimedia;
 using Tizen.TV.UIControls.Forms.Renderer;
-using Xamarin.Forms.Internals;
+using Microsoft.Maui.Controls.Internals;
 using Tizen.Theme.Common.Renderer;
 
 using TApplication = Tizen.Applications.Application;
 using MPlayer = Tizen.Multimedia.Player;
 using TVPlayer  = Tizen.TV.Multimedia.Player;
+using Microsoft.Maui.Controls;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TVMediaPlayerImpl))]
+[assembly: Dependency(typeof(TVMediaPlayerImpl))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class TVMediaPlayerImpl : MediaPlayerImpl

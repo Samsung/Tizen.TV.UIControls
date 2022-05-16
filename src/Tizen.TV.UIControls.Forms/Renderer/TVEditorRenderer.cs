@@ -16,8 +16,11 @@
 
 using System;
 using Tizen.TV.UIControls.Forms.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+//using Xamarin.Forms.Platform.Tizen;
 
 [assembly: ExportRenderer(typeof(Editor), typeof(TVEditorRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
@@ -37,7 +40,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
-                        FocusSearch(true)?.SetFocus(true);
+                        //TODO set focus
+                        //FocusSearch(true)?.SetFocus(true);
                         Device.BeginInvokeOnMainThread(() =>
                         {
                             Element.Text = Control.Text;
@@ -50,7 +54,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                     }
                 }), RemoteControlKeyTypes.KeyDown));
 
-                if (Control is Xamarin.Forms.Platform.Tizen.Native.Entry nentry)
+                if (Control is Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.Entry nentry)
                 {
                     nentry.EntryLayoutFocused += OnFocused;
                     nentry.EntryLayoutUnfocused += OnUnfocused;

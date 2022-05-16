@@ -17,10 +17,12 @@
 using System;
 using System.Linq;
 using ElmSharp;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Platform;
+//using Xamarin.Forms.Platform.Tizen;
 using Tizen.TV.UIControls.Forms.Renderer;
-using XApplication = Xamarin.Forms.Application;
+using Button = Microsoft.Maui.Controls.Button;
+using XApplication = Microsoft.Maui.Controls.Application;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
@@ -106,22 +108,22 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                         return true;
                 }
             }
-
-#pragma warning disable CS0618 // Type or member is obsolete
-            if (pageToCompare is MasterDetailPage masterDetailPage)
-#pragma warning restore CS0618 // Type or member is obsolete
-            {
-                if (masterDetailPage.IsPresented)
-                {
-                    if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
-                        return true;
-                }
-                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented))
-                {
-                    if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
-                        return true;
-                }
-            }
+            // TODO masterdetailpage
+//#pragma warning disable CS0618 // Type or member is obsolete
+//            if (pageToCompare is MasterDetailPage masterDetailPage)
+//#pragma warning restore CS0618 // Type or member is obsolete
+//            {
+//                if (masterDetailPage.IsPresented)
+//                {
+//                    if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
+//                        return true;
+//                }
+//                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented))
+//                {
+//                    if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
+//                        return true;
+//                }
+//            }
 
             return false;
         }
@@ -129,8 +131,8 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         void ActiveOrFocusElement()
         {
             (Element as VisualElement).Focus();
-            if (Element is Xamarin.Forms.Button)
-                (Element as Xamarin.Forms.Button).SendClicked();
+            if (Element is Button)
+                (Element as Button).SendClicked();
         }
     }
 }

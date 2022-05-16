@@ -1,5 +1,6 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Sample.DrawerLayout
 {
@@ -14,7 +15,7 @@ namespace Sample.DrawerLayout
                 Drawer = new StackLayout
                 {
                     WidthRequest = 1000,
-                    BackgroundColor = Color.Coral,
+                    BackgroundColor = Colors.Coral,
                     Children =
                     {
                         new Label
@@ -29,7 +30,7 @@ namespace Sample.DrawerLayout
                 Content = new StackLayout
                 {
                     WidthRequest = 1800,
-                    BackgroundColor = Color.Brown,
+                    BackgroundColor = Colors.Brown,
                     Children =
                     {
                         new Label() {

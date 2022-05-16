@@ -15,8 +15,9 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
 
 namespace Sample.RecycleItemsView
 {
@@ -26,13 +27,13 @@ namespace Sample.RecycleItemsView
         protected override void OnItemFocused(object data, View targetView, bool isFocused)
         {
             AbsoluteLayout layout = (AbsoluteLayout)targetView;
-            View textarea = layout.Children[1];
+            View textarea = (View)layout.Children[1];
             if (isFocused)
             {
                 targetView.ScaleTo(1.2);
                 var animation = new Animation((rate) =>
                 {
-                    AbsoluteLayout.SetLayoutBounds(textarea, new Rectangle(0, 1, 960, 200 + rate * 200));
+                    AbsoluteLayout.SetLayoutBounds(textarea, new Rect(0, 1, 960, 200 + rate * 200));
                 });
                 animation.Commit(this, $"Focused - {data.GetHashCode()}");
             }
@@ -41,7 +42,7 @@ namespace Sample.RecycleItemsView
                 targetView.ScaleTo(1.0);
                 var animation = new Animation((rate) =>
                 {
-                    AbsoluteLayout.SetLayoutBounds(textarea, new Rectangle(0, 1, 960, 400 - rate * 200));
+                    AbsoluteLayout.SetLayoutBounds(textarea, new Rect(0, 1, 960, 400 - rate * 200));
                 });
                 animation.Commit(this, $"Focused - {data.GetHashCode()}");
             }

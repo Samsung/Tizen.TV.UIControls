@@ -15,11 +15,16 @@
  */
 
 using ElmSharp;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 using Tizen.TV.UIControls.Forms;
-using Xamarin.Forms.Platform.Tizen;
+//using Xamarin.Forms.Platform.Tizen;
 using Tizen.Theme.Common.Renderer;
-using XButton = Xamarin.Forms.Button;
+using XButton = Microsoft.Maui.Controls.Button;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+using Tizen.Theme.Common;
+using XForms = Microsoft.Maui.Controls.Compatibility.Forms;
 
 [assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]
 [assembly: ExportRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer))]
@@ -34,7 +39,7 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (null == Control)
             {
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
+                SetNativeControl(new LayoutCanvas(XForms.NativeParent));
                 Control.AllowFocus(true);
                 Control.KeyDown += OnKeyDown;
             }
@@ -62,7 +67,7 @@ namespace Tizen.TV.UIControls.Forms
             RegisterPropertyHandler("FocusedView", UpdateFocusedView);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Layout> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Microsoft.Maui.Controls.Compatibility.Layout> e)
         {
             base.OnElementChanged(e);
             Control.AllowFocus(true);
@@ -80,7 +85,7 @@ namespace Tizen.TV.UIControls.Forms
 
     class PropagatableButtonRenderer : ButtonRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<XButton> e)
         {
             base.OnElementChanged(e);
             // It is temporary workaround code

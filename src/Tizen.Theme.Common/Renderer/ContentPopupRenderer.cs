@@ -16,13 +16,18 @@
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+//using Xamarin.Forms.Platform.Tizen;
 using ElmSharp;
-using XForms = Xamarin.Forms.Forms;
-using XColor = Xamarin.Forms.Color;
-using XApplication = Xamarin.Forms.Application;
+//using XForms = Xamarin.Forms.Forms;
+using XColor = Microsoft.Maui.Graphics.Colors;
+//using XApplication = Microsoft.Maui.Application;
 using EColor = ElmSharp.Color;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Compatibility;
+
+//TODO contentpopup
 
 [assembly: Dependency(typeof(Tizen.Theme.Common.Renderer.ContentPopupRenderer))]
 namespace Tizen.Theme.Common.Renderer
@@ -35,7 +40,7 @@ namespace Tizen.Theme.Common.Renderer
 
         public ContentPopupRenderer()
         {
-            _popup = new Popup(XForms.NativeParent)
+            _popup = new Popup(Forms.NativeParent)
             {
                 Style = "full",
                 Orientation = PopupOrientation.Center,
@@ -51,13 +56,15 @@ namespace Tizen.Theme.Common.Renderer
 
         public void SetElement(ContentPopup element)
         {
-            if (element.Parent == null)
-                element.Parent = XApplication.Current;
+            //TODO set parent
+            //if (element.Parent == null)
+            //    element.Parent = CommonUI.Context;
+
             element.PropertyChanged += OnElementPropertyChanged;
             _element = element;
 
             UpdateContent();
-            if (_element.BackgroundColor != XColor.Default)
+            if (_element.BackgroundColor != null)
             {
                 UpdateBackgroundColor();
             }
@@ -131,8 +138,10 @@ namespace Tizen.Theme.Common.Renderer
                 var renderer = Platform.GetOrCreateRenderer(_element.Content);
                 (renderer as LayoutRenderer)?.RegisterOnLayoutUpdated();
                 var native = renderer.NativeView;
-                native.MinimumHeight = XForms.NativeParent.Geometry.Height;
-                native.MinimumWidth = XForms.NativeParent.Geometry.Width;
+
+                //TODO NativeParent
+                //native.MinimumHeight = NativeParent.Geometry.Height;
+                //native.MinimumWidth = NativeParent.Geometry.Width;
                 _popup.SetContent(native, false);
             }
             else
@@ -150,7 +159,7 @@ namespace Tizen.Theme.Common.Renderer
         void UpdateBackgroundColor()
         {
             var backgroundColor = _element.BackgroundColor;
-            _popup.BackgroundColor = (backgroundColor == XColor.Default) ? EColor.Transparent : _element.BackgroundColor.ToNative();
+            _popup.BackgroundColor = (backgroundColor == null) ? EColor.Transparent : _element.BackgroundColor.ToNative();
         }
     }
 }

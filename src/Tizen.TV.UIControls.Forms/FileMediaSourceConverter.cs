@@ -15,8 +15,8 @@
  */
 
 using System;
-using CModel = System.ComponentModel;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using System.ComponentModel;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -24,16 +24,16 @@ namespace Tizen.TV.UIControls.Forms
     /// A TypeConverter that converts to FileMediaSource.
     /// </summary>
     [TypeConverter(typeof(FileMediaSource))]
-    [CModel.EditorBrowsable(CModel.EditorBrowsableState.Never)]
+    [EditorBrowsable(EditorBrowsableState.Never)]
     [Obsolete("This class is obsolete as of 1.1.0. Please use FileMediaSourceConverter from Tizen.Theme.Common instead.")]
-    public sealed class FileMediaSourceConverter : TypeConverter
+    public sealed class FileMediaSourceConverter : TypeConverter, IExtendedTypeConverter
     {
         /// <summary>
         /// Creates a file media source given a path to a media.
         /// </summary>
         /// <param name="value">The value to convert.</param>
         /// <returns>FileMediaSource</returns>
-        public override object ConvertFromInvariantString(string value)
+        public object ConvertFromInvariantString(string value, IServiceProvider serviceProvider)
         {
             if (value != null)
                 return (FileMediaSource)MediaSource.FromFile(value);

@@ -15,8 +15,10 @@
  */
 
 using ElmSharp;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+//using Xamarin.Forms.Platform.Tizen;
 using Tizen.TV.UIControls.Forms.Renderer;
 
 [assembly: ExportEffect(typeof(PlatformFocusUpEffect), "PlatformFocusUpEffect")]

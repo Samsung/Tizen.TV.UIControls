@@ -16,7 +16,7 @@
 
 using System;
 using System.ComponentModel;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.TV.UIControls.Forms
 {

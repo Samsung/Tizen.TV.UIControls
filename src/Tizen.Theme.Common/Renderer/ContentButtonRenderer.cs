@@ -15,13 +15,19 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
-using XForms = Xamarin.Forms.Forms;
-using XFLayout = Xamarin.Forms.Layout;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Platform;
+//using Xamarin.Forms.Platform.Tizen;
+//using XForms = Xamarin.Forms.Forms;
+//using XFLayout = Xamarin.Forms.Layout;
+
+using XFLayout = Microsoft.Maui.Controls.Layout;
 using EButton = ElmSharp.Button;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
 
 [assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
 
@@ -33,7 +39,7 @@ namespace Tizen.Theme.Common.Renderer
 
         ContentButton Button => Element as ContentButton;
 
-        protected override void OnElementChanged(ElementChangedEventArgs<XFLayout> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Microsoft.Maui.Controls.Compatibility.Layout> e)
         {
             base.OnElementChanged(e);
             Initialize();
@@ -43,7 +49,7 @@ namespace Tizen.Theme.Common.Renderer
         {
             if (_button == null)
             {
-                _button = new EButton(XForms.NativeParent);
+                _button = new EButton(Forms.NativeParent);
                 _button.SetTransparentStyle();
                 _button.Opacity = 0;
                 _button.Show();
