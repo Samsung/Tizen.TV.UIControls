@@ -2,8 +2,7 @@
   <PropertyGroup>
     <!--<TargetFrameworks>netstandard2.0;tizen40</TargetFrameworks>-->
 	<TargetFrameworks>net6.0-tizen</TargetFrameworks>
-	  <UseMaui>True</UseMaui>
-	  <SingleProject>true</SingleProject>
+	<UseMaui>true</UseMaui>
 	<AssemblyName>Tizen.TV.UIControls.Forms</AssemblyName>
     <RootNamespace>Tizen.TV.UIControls.Forms</RootNamespace>
     <PackageId>Tizen.TV.UIControls</PackageId>
@@ -49,6 +48,7 @@
   <ItemGroup>
     <!--<PackageReference Include="Tizen.NET" Version="9.0.0.16760" />-->
     <PackageReference Include="Tizen.NET.TV" Version="6.6.0.5599517" />
+    <PackageReference Include="Tizen.UIExtensions.ElmSharp" Version="0.8.1" />
   </ItemGroup>
 
   <ItemGroup>
