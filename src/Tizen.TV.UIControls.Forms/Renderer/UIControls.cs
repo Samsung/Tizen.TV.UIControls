@@ -77,7 +77,9 @@ namespace Tizen.TV.UIControls.Forms
         public InitOptions()
         {
             Context = MauiApplication.Current;
-            MainWindowProvider = () => { return ((IApplication)Microsoft.Maui.Controls.Application.Current)?.Windows.FirstOrDefault<IWindow>() as Window; };
+            MainWindowProvider = () => {
+                return (Context as MauiApplication).Application.Windows.FirstOrDefault<IWindow>().Handler.PlatformView as Window;
+            };
         }
     }
 

@@ -17,10 +17,9 @@
 using System;
 using ElmSharp;
 using Microsoft.Maui;
-using Tizen.Applications;
-//using Xamarin.Forms.Platform.Tizen;
-using Microsoft.Maui.Platform;
+using System;
 using System.Linq;
+using Tizen.Applications;
 
 namespace Tizen.Theme.Common
 {
@@ -53,7 +52,9 @@ namespace Tizen.Theme.Common
         public InitOptions()
         {
             Context = MauiApplication.Current;
-            MainWindowProvider = () => { return ((IApplication)Microsoft.Maui.Controls.Application.Current)?.Windows.FirstOrDefault<IWindow>() as Window; };
+            MainWindowProvider = () => {
+                return (Context as MauiApplication).Application.Windows.FirstOrDefault<IWindow>().Handler.PlatformView as Window;
+            };
         }
     }
 
@@ -81,7 +82,9 @@ namespace Tizen.Theme.Common
             Context = context;
             if (context is MauiApplication mauiApplication)
             {
-                MainWindowProvider = () => { return ((IApplication)Microsoft.Maui.Controls.Application.Current)?.Windows.FirstOrDefault<IWindow>() as Window; };
+                MainWindowProvider = () => {
+                    return (Context as MauiApplication).Application.Windows.FirstOrDefault<IWindow>().Handler.PlatformView as Window;
+                };
             }
             IsInitialized = true;
         }
