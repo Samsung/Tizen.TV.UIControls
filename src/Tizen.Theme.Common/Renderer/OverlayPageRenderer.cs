@@ -14,11 +14,9 @@
  * limitations under the License.
  */
 
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-//using Xamarin.Forms.Platform.Tizen;
 
 [assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 namespace Tizen.Theme.Common.Renderer

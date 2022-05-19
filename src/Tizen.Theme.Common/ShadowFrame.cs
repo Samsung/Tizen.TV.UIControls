@@ -17,7 +17,6 @@ using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
 using Tizen.UIExtensions.Common;
-//using Xamarin.Forms.Internals;
 
 namespace Tizen.Theme.Common
 {

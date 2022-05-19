@@ -1,7 +1,7 @@
-﻿using System;
+﻿using Microsoft.Maui.Controls;
+using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
 
 namespace Tizen.TV.UIControls.Forms
 {

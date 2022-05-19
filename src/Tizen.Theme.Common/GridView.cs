@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using System;
-using System.ComponentModel;
-using System.Collections;
 using Microsoft.Maui.Controls;
-//using Specific = Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement;
+using System;
+using System.Collections;
+using System.ComponentModel;
 
 namespace Tizen.Theme.Common
 {

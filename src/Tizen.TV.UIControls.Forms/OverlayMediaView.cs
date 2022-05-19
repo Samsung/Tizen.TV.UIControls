@@ -15,10 +15,7 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Microsoft.Maui.Controls;
 
 namespace Tizen.TV.UIControls.Forms
 {

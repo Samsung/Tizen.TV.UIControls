@@ -14,22 +14,18 @@
  * limitations under the License.
  */
 
-using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.ComponentModel;
 using ElmSharp;
 using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
-//using Xamarin.Forms.Platform.Tizen;
-
+using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-
-//TODO gridview
 
 [assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
 namespace Tizen.Theme.Common.Renderer

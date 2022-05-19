@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-using System;
-using Microsoft.Maui.Controls;
-//using Xamarin.Forms.Platform.Tizen;
 using Microsoft.Maui;
-using ElmSharp;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using System;
+using System.Linq;
 using Tizen.Applications;
 using Tizen.Theme.Common.Renderer;
 using Tizen.TV.UIControls.Forms;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Window = ElmSharp.Window;
-using Microsoft.Maui.Controls.Compatibility;
-using System.Linq;
 
 [assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 [assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
@@ -34,7 +32,6 @@ using System.Linq;
 [assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 [assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 
-//TODO ExportHandler
 //[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
 //[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
 [assembly: Dependency(typeof(ContentPopupRenderer))]

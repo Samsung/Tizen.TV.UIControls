@@ -14,9 +14,8 @@
  * limitations under the License.
  */
 
-using System;
-using System.Text;
 using Microsoft.Maui.Controls;
+using System;
 
 namespace Tizen.TV.UIControls.Forms
 {

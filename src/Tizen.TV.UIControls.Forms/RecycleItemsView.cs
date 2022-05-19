@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Layouts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-//using Microsoft.Maui.Controls.Shapes;
-using Microsoft.Maui.Graphics;
-using Microsoft.Maui.Layouts;
 
 namespace Tizen.TV.UIControls.Forms
 {

@@ -16,8 +16,6 @@
 
 using System;
 using System.ComponentModel;
-using System.Windows.Input;
-using Microsoft.Maui.Controls;
 
 namespace Tizen.TV.UIControls.Forms
 {

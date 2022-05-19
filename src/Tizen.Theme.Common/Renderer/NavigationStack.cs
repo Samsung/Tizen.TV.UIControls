@@ -15,9 +15,9 @@
  */
 
 using ElmSharp;
+using Microsoft.Maui.Controls;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Maui.Controls;
 
 namespace Tizen.Theme.Common.Renderer
 {

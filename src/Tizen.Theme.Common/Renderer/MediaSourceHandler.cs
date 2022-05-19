@@ -14,15 +14,12 @@
  * limitations under the License.
  */
 
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Tizen.Multimedia;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Microsoft.Maui.Controls;
-
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-//using Xamarin.Forms.Platform.Tizen;
 
 [assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
 [assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]

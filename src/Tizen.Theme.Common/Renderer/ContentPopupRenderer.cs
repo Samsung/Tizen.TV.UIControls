@@ -13,21 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+using ElmSharp;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using Microsoft.Maui.Controls;
-//using Xamarin.Forms.Platform.Tizen;
-using ElmSharp;
-//using XForms = Xamarin.Forms.Forms;
-using XColor = Microsoft.Maui.Graphics.Colors;
-//using XApplication = Microsoft.Maui.Application;
 using EColor = ElmSharp.Color;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Compatibility;
-
-//TODO contentpopup
 
 [assembly: Dependency(typeof(Tizen.Theme.Common.Renderer.ContentPopupRenderer))]
 namespace Tizen.Theme.Common.Renderer

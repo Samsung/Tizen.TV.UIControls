@@ -15,16 +15,14 @@
  */
 
 using ElmSharp;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
 using System;
 using System.Reflection;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Microsoft.Maui.Controls;
-//using Xamarin.Forms.Platform.Tizen;
 using EColor = ElmSharp.Color;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Platform;
-using Microsoft.Maui.Controls.Compatibility;
 
 [assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 namespace Tizen.Theme.Common.Renderer

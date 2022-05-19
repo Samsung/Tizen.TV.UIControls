@@ -14,26 +14,20 @@
  * limitations under the License.
  */
 
-using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen.SkiaSharp;
 using Microsoft.Maui.Controls.Platform;
 using Microsoft.Maui.Graphics;
-//using Xamarin.Forms.Platform.Tizen;
-//using Xamarin.Forms.Platform.Tizen.SkiaSharp;
 using SkiaSharp;
 using SkiaSharp.Views.Tizen;
+using System;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-
-// TODO shadow
-
 using NLayoutEventArgs = Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.LayoutEventArgs;
 
-[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer))]
-
+[assembly: ExportRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class ShadowFrameRenderer : LayoutRenderer

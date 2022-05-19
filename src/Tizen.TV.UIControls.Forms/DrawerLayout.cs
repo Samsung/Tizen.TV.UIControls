@@ -1,11 +1,9 @@
-﻿using System;
-using ElmSharp;
-using Microsoft.Maui;
+﻿using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.Graphics;
-using MSize = Microsoft.Maui.Graphics.Size;
+using System;
 using MRect = Microsoft.Maui.Graphics.Rect;
+using MSize = Microsoft.Maui.Graphics.Size;
 
 namespace Tizen.TV.UIControls.Forms
 {

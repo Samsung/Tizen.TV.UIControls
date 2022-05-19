@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-using System;
-using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
+using System;
+using System.Runtime.CompilerServices;
 
 namespace Tizen.Theme.Common
 {

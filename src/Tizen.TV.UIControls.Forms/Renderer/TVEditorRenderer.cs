@@ -14,13 +14,12 @@
  * limitations under the License.
  */
 
-using System;
-using Tizen.TV.UIControls.Forms.Renderer;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
-//using Xamarin.Forms.Platform.Tizen;
+using System;
+using Tizen.TV.UIControls.Forms.Renderer;
 
 [assembly: ExportRenderer(typeof(Editor), typeof(TVEditorRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer

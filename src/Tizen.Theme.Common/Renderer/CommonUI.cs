@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using ElmSharp;
 using Microsoft.Maui;
 using System;

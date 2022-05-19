@@ -14,20 +14,16 @@
  * limitations under the License.
  */
 
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Internals;
+using Microsoft.Maui.Controls.Platform;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Platform;
-using Microsoft.Maui;
-using Microsoft.Maui.Controls.Internals;
-using Microsoft.Maui.Controls.Compatibility;
-//using Xamarin.Forms.Internals;
-//using Xamarin.Forms.Platform.Tizen;
-//using XForms = Xamarin.Forms.Forms;
 
 [assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 namespace Tizen.Theme.Common.Renderer

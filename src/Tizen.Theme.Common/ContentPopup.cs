@@ -1,7 +1,7 @@
-﻿using System;
-using System.ComponentModel;
-using Microsoft.Maui.Controls;
+﻿using Microsoft.Maui.Controls;
 using Microsoft.Maui.Graphics;
+using System;
+using System.ComponentModel;
 
 namespace Tizen.Theme.Common
 {

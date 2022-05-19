@@ -14,17 +14,16 @@
  * limitations under the License.
  */
 
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Internals;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Tizen.Theme.Common.Renderer;
 using Tizen.TV.Multimedia;
 using Tizen.TV.UIControls.Forms.Renderer;
-using Microsoft.Maui.Controls.Internals;
-using Tizen.Theme.Common.Renderer;
-
-using TApplication = Tizen.Applications.Application;
 using MPlayer = Tizen.Multimedia.Player;
-using TVPlayer  = Tizen.TV.Multimedia.Player;
-using Microsoft.Maui.Controls;
+using TApplication = Tizen.Applications.Application;
+using TVPlayer = Tizen.TV.Multimedia.Player;
 
 [assembly: Dependency(typeof(TVMediaPlayerImpl))]
 namespace Tizen.TV.UIControls.Forms.Renderer

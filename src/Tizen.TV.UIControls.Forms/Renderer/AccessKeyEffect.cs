@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
-using System;
-using System.Linq;
 using ElmSharp;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Platform;
-//using Xamarin.Forms.Platform.Tizen;
+using System;
+using System.Linq;
 using Tizen.TV.UIControls.Forms.Renderer;
 using Button = Microsoft.Maui.Controls.Button;
-using XApplication = Microsoft.Maui.Controls.Application;
+using MApplication = Microsoft.Maui.Controls.Application;
 
 [assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
@@ -77,7 +76,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         bool IsOnMainPage(Page targetPage)
         {
-            var mainPage = XApplication.Current.MainPage;
+            var mainPage = MApplication.Current.MainPage;
             var currentPage = mainPage.Navigation.ModalStack.Count > 0 ? mainPage.Navigation.ModalStack.LastOrDefault() : mainPage;
             return IsOnCurrentPage(currentPage, targetPage);
         }

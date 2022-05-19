@@ -17,10 +17,10 @@
 using System;
 using ElmSharp;
 using Microsoft.Maui.Controls;
-//using Xamarin.Forms.Platform.Tizen;
-using Tizen.TV.UIControls.Forms.Renderer;
-using System.Linq;
 using Microsoft.Maui.Controls.Platform;
+using System;
+using System.Linq;
+using Tizen.TV.UIControls.Forms.Renderer;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
 [assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]

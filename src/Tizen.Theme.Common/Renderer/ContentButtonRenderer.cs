@@ -14,20 +14,13 @@
  * limitations under the License.
  */
 
-using System;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Platform;
-//using Xamarin.Forms.Platform.Tizen;
-//using XForms = Xamarin.Forms.Forms;
-//using XFLayout = Xamarin.Forms.Layout;
-
-using XFLayout = Microsoft.Maui.Controls.Layout;
-using EButton = ElmSharp.Button;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
+using System;
+using Tizen.Theme.Common;
+using Tizen.Theme.Common.Renderer;
+using EButton = ElmSharp.Button;
 
 [assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
 
