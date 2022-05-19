@@ -80,7 +80,7 @@ namespace Sample.ContentPopup
             grid.RowDefinitions.Add(new RowDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
-            //TODO : grid 
+
             grid.Children.Add(label);
             grid.Children.Add(dismiss);
 

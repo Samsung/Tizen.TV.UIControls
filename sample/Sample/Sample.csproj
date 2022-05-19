@@ -38,7 +38,6 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <!--TODO image-->
 	  <!--<MauiImage Include="Resources\Images\*" />-->
 	  <MauiImage Include="Resources\Images\poster2\*" />
 	  <MauiIcon Include="Resources\appicon.svg">

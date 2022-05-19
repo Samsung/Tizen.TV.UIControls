@@ -3,10 +3,6 @@ using Microsoft.Maui.LifecycleEvents;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
 
-//#if TIZEN
-//using InitOptions = Tizen.TV.UIControls.Forms.InitOptions;
-//#endif
-
 namespace Sample
 {
     public static class MauiProgram
@@ -24,7 +20,6 @@ namespace Sample
                 })
                 .ConfigureLifecycleEvents(life =>
                 {
-                    //TODO
                     DependencyService.Register<IPlatformMediaPlayer, MediaPlayerImpl>();
 
                 });

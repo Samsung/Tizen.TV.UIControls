@@ -28,7 +28,6 @@ namespace Sample.RecycleItemsView
 
         protected override void OnAppearing()
         {
-            // TODO : specific
             //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView1, ItemsView4);
             //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView2, ItemsView1);
             //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView3, ItemsView2);

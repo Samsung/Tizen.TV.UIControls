@@ -62,7 +62,6 @@ namespace Sample.ContentPopup
             };
             defaultButton.Clicked += (s, ee) =>
             {
-                //TODO defulat color = null
                 popup.BackgroundColor = null;
                 
             };
@@ -98,7 +97,6 @@ namespace Sample.ContentPopup
             grid.RowDefinitions.Add(new RowDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
 
-            //TODO : Grid Add
             grid.Children.Add(label);
             grid.Children.Add(defaultButton);
             grid.Children.Add(grayButton);
