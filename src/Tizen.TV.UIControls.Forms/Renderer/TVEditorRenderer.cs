@@ -39,7 +39,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
-                        //TODO set focus
                         //FocusSearch(true)?.SetFocus(true);
                         Device.BeginInvokeOnMainThread(() =>
                         {

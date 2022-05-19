@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-using System;
 using ElmSharp;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Platform;
@@ -141,7 +140,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 }
             }
 
-            //TODO masterdetailpage
 //#pragma warning disable CS0618 // Type or member is obsolete
 //            if (pageToCompare is MasterDetailPage masterDetailPage)
 //#pragma warning restore CS0618 // Type or member is obsolete

@@ -49,7 +49,6 @@ namespace Tizen.Theme.Common.Renderer
 
         public void SetElement(ContentPopup element)
         {
-            //TODO set parent
             //if (element.Parent == null)
             //    element.Parent = CommonUI.Context;
 
@@ -132,7 +131,6 @@ namespace Tizen.Theme.Common.Renderer
                 (renderer as LayoutRenderer)?.RegisterOnLayoutUpdated();
                 var native = renderer.NativeView;
 
-                //TODO NativeParent
                 //native.MinimumHeight = NativeParent.Geometry.Height;
                 //native.MinimumWidth = NativeParent.Geometry.Width;
                 _popup.SetContent(native, false);

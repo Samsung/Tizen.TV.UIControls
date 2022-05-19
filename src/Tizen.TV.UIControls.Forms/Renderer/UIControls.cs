@@ -59,13 +59,6 @@ namespace Tizen.TV.UIControls.Forms
         /// <param name="application"></param>
         //public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
 
-
-        ///// <summary>
-        ///// Default Constructor
-        ///// </summary>
-        ///// <param name="application"></param>
-        //public InitOptions(MauiApplication application) : this(application, () => application.MainWindow) { }
-
         /// <summary>
         /// Constructor
         /// </summary>

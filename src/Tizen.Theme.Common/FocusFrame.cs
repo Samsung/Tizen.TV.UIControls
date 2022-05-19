@@ -160,7 +160,6 @@ namespace Tizen.Theme.Common
                     Content.DescendantAdded -= OnDescendantAdded;
                     Content.DescendantRemoved -= OnDescendantRemoved;
 
-                    // TODO: internal
                     //foreach (var child in Content.Descendants())
                     //{
                     //    if (child is VisualElement ve)
@@ -185,7 +184,6 @@ namespace Tizen.Theme.Common
                     Content.DescendantAdded += OnDescendantAdded;
                     Content.DescendantRemoved += OnDescendantRemoved;
 
-                    // TODO: internal
                     //foreach (var child in Content.Descendants())
                     //{
                     //    if (child is VisualElement ve)

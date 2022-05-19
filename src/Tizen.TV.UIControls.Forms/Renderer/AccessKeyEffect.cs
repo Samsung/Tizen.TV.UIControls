@@ -107,7 +107,6 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                         return true;
                 }
             }
-            // TODO masterdetailpage
 //#pragma warning disable CS0618 // Type or member is obsolete
 //            if (pageToCompare is MasterDetailPage masterDetailPage)
 //#pragma warning restore CS0618 // Type or member is obsolete
