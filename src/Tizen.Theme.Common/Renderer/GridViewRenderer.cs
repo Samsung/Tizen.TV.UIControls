@@ -15,7 +15,7 @@
  */
 
 using ElmSharp;
-using Microsoft.Maui;
+//using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
@@ -26,8 +26,10 @@ using System.Collections.Specialized;
 using System.ComponentModel;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
+using Tizen.UIExtensions.Common;
+using EButton = ElmSharp.Button;
 
-[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
+//[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     class GengridItemContext
@@ -36,7 +38,12 @@ namespace Tizen.Theme.Common.Renderer
         public View RealizedView { get; set; }
     }
 
-    public class GridViewRenderer : ViewRenderer<GridView, GenGrid>
+    public class CustomButtonRenderer : Microsoft.Maui.Controls.Compatibility.Platform.Tizen.ButtonRenderer
+    {
+    }
+
+
+    public class GridViewRenderer2 : ViewRenderer<GridView, GenGrid>
     {
         Dictionary<object, GenGridItem> _gengridItemDic = new Dictionary<object, GenGridItem>();
         Dictionary<IntPtr, GenGridItem> _itemHandleDic = new Dictionary<IntPtr, GenGridItem>();
@@ -46,17 +53,19 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementChanged(ElementChangedEventArgs<GridView> e)
         {
+            Console.WriteLine($"############# [GridViewRenderer][OnElementChanged]");
+
             if (Control == null)
             {
                 SetNativeControl(new GenGrid(Forms.NativeParent));
-                //Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
-                //Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
+                Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
+                Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
                 Control.ItemWidth = Forms.ConvertToScaledPixel(Element.ItemWidth);
                 Control.ItemHeight = Forms.ConvertToScaledPixel(Element.ItemHeight);
                 Control.ItemAlignmentX = Element.ItemHorizontalAlignment.LayoutAlignmentToDouble();
                 Control.ItemAlignmentY = Element.ItemVerticalAlignment.LayoutAlignmentToDouble();
-                //Control.Style = Element.ThemeStyle;
+                Control.Style = Element.ThemeStyle;
                 Control.ItemSelected += OnItemSelected;
                 Control.ItemRealized += OnItemRealized;
 
@@ -92,14 +101,14 @@ namespace Tizen.Theme.Common.Renderer
             {
                 Control.ItemAlignmentY = Element.ItemHorizontalAlignment.LayoutAlignmentToDouble();
             }
-            //else if (e.PropertyName == GridView.HorizontalScrollBarVisibleProperty.PropertyName)
-            //{
-            //    Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
-            //}
-            //else if (e.PropertyName == GridView.VerticalScrollBarVisibleProperty.PropertyName)
-            //{
-            //    Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
-            //}
+            else if (e.PropertyName == GridView.HorizontalScrollBarVisibleProperty.PropertyName)
+            {
+                Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
+            }
+            else if (e.PropertyName == GridView.VerticalScrollBarVisibleProperty.PropertyName)
+            {
+                Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
+            }
             else if (e.PropertyName == GridView.OrientationProperty.PropertyName)
             {
                 Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
@@ -118,7 +127,7 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void UpdateThemeStyle()
         {
-            //Control.Style = Element.ThemeStyle;
+            Control.Style = Element.ThemeStyle;
         }
 
         void OnItemSelected(object sender, GenGridItemEventArgs e)
@@ -140,7 +149,7 @@ namespace Tizen.Theme.Common.Renderer
             if (part == "elm.swallow.icon")
             {
                 var renderer = Platform.GetOrCreateRenderer(context.RealizedView);
-                (renderer as LayoutRenderer)?.RegisterOnLayoutUpdated();
+                (renderer as ILayoutRenderer)?.RegisterOnLayoutUpdated();
                 return renderer.NativeView;
             }
             return null;

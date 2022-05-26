@@ -18,12 +18,6 @@ using ElmSharp;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
-using Tizen.TV.UIControls.Forms.Renderer;
-
-[assembly: ExportEffect(typeof(PlatformFocusUpEffect), "PlatformFocusUpEffect")]
-[assembly: ExportEffect(typeof(PlatformFocusDownEffect), "PlatformFocusDownEffect")]
-[assembly: ExportEffect(typeof(PlatformFocusLeftEffect), "PlatformFocusLeftEffect")]
-[assembly: ExportEffect(typeof(PlatformFocusRightEffect), "PlatformFocusRightEffect")]
 
 namespace Tizen.TV.UIControls.Forms.Renderer
 {

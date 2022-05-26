@@ -23,11 +23,8 @@ using Microsoft.Maui.Graphics;
 using SkiaSharp;
 using SkiaSharp.Views.Tizen;
 using System;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
 using NLayoutEventArgs = Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.LayoutEventArgs;
 
-[assembly: ExportRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class ShadowFrameRenderer : LayoutRenderer
@@ -47,7 +44,7 @@ namespace Tizen.Theme.Common.Renderer
 
             RegisterPropertyHandler(Frame.BorderColorProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.BorderWidthProperty, UpdateCanvas);
-            RegisterPropertyHandler(ShadowFrame.CornerRadiusProperty, UpdateCanvas);
+            RegisterPropertyHandler(ShadowFrame.CornerRadius2Property, UpdateCanvas);
             RegisterPropertyHandler(Frame.HasShadowProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.ShadowBlurRadiusProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.ShadowColorProperty, UpdateCanvas);
@@ -200,8 +197,7 @@ namespace Tizen.Theme.Common.Renderer
                             scaledOffsetY,
                             scaledBlurRadius,
                             scaledBlurRadius,
-                            SKColor.Empty);
-                            //ShadowElement.ShadowColor.MultiplyAlpha(ShadowElement.ShadowOpacity).ToSK());
+                            ShadowElement.ShadowColor.MultiplyAlpha((float)ShadowElement.ShadowOpacity).ToSK());
                         canvas.DrawPath(path, paint);
                         canvas.Restore();
 
@@ -314,10 +310,10 @@ namespace Tizen.Theme.Common.Renderer
             var right = left + geometry.Width - (padding * 2);
             var bottom = top + geometry.Height - (padding * 2);
             var rect = new SKRect(left, top, right, bottom);
-            var scaledTLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopLeft) * 2;
-            var scaledTRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopRight) * 2;
-            var scaledBLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomLeft) * 2;
-            var scaledBRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomRight) * 2;
+            var scaledTLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.TopLeft) * 2;
+            var scaledTRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.TopRight) * 2;
+            var scaledBLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.BottomLeft) * 2;
+            var scaledBRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.BottomRight) * 2;
             var topLeft = new SKRect(rect.Left, rect.Top, rect.Left + scaledTLRadius, rect.Top + scaledTLRadius);
             var topRight = new SKRect(rect.Right - scaledTRRadius, rect.Top, rect.Right, rect.Top + scaledTRRadius);
             var bottomLeft = new SKRect(rect.Left, rect.Bottom - scaledBLRadius, rect.Left + scaledBLRadius, rect.Bottom);

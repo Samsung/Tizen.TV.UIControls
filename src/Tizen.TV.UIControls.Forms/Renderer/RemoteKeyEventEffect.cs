@@ -22,10 +22,9 @@ using System.Linq;
 using Tizen.TV.UIControls.Forms.Renderer;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
-[assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    public class RemoteKeyEventEffect : PlatformEffect
+    public class PlatformRemoteKeyEventEffect : PlatformEffect
     {
         protected override void OnAttached()
         {

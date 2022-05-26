@@ -28,7 +28,7 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Identifies the CornerRadius bindable property.
         /// </summary>
-        public static new readonly BindableProperty CornerRadiusProperty = BindableProperty.Create(nameof(CornerRadius), typeof(CornerRadius), typeof(ShadowFrame), default(CornerRadius));
+        public static readonly BindableProperty CornerRadius2Property = BindableProperty.Create(nameof(CornerRadius2), typeof(CornerRadius), typeof(ShadowFrame), default(CornerRadius));
 
         /// <summary>
         /// Identifies the BorderWidth bindable property.
@@ -74,10 +74,10 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Gets or sets a value that represents CornerRadius.
         /// </summary>
-        public new CornerRadius CornerRadius
+        public CornerRadius CornerRadius2
         {
-            get => (CornerRadius)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
+            get => (CornerRadius)GetValue(CornerRadius2Property);
+            set => SetValue(CornerRadius2Property, value);
         }
 
         /// <summary>

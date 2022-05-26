@@ -129,14 +129,14 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-        class RemoteKeyEventEffect : RoutingEffect
+        public class RemoteKeyEventEffect : RoutingEffect
         {
             public RemoteKeyEventEffect() : base("TizenTVUIControl.RemoteKeyEventEffect")
             {
             }
         }
 
-        class AccessKeyEffect : RoutingEffect
+        public class AccessKeyEffect : RoutingEffect
         {
             public AccessKeyEffect() : base("TizenTVUIControl.AccessKeyEffect")
             {

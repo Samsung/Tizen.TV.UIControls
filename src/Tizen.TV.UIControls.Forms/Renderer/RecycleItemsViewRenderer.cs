@@ -23,9 +23,9 @@ using Tizen.TV.UIControls.Forms;
 using MButton = Microsoft.Maui.Controls.Button;
 using MForms = Microsoft.Maui.Controls.Compatibility.Forms;
 
-[assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]
-[assembly: ExportRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer))]
-[assembly: ExportRenderer(typeof(MButton), typeof(PropagatableButtonRenderer))]
+//[assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]
+//[assembly: ExportRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer))]
+//[assembly: ExportRenderer(typeof(MButton), typeof(PropagatableButtonRenderer))]
 namespace Tizen.TV.UIControls.Forms
 {
     class RecycleItemsViewContentRenderer : ViewRenderer<RecycleItemsView.ContentLayout, LayoutCanvas>

@@ -24,6 +24,8 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
+using AbsoluteLayout = Microsoft.Maui.Controls.Compatibility.AbsoluteLayout;
+using StackLayout = Microsoft.Maui.Controls.Compatibility.StackLayout;
 
 namespace Tizen.TV.UIControls.Forms
 {

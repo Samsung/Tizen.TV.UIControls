@@ -86,12 +86,12 @@ namespace Tizen.TV.UIControls.Forms
 
             if (bindable is VisualElement ve)
             {
-                var effect = ve.Effects.FirstOrDefault(t => t is PlatformFocusUpEffect);
+                var effect = ve.Effects.FirstOrDefault(t => t is FocusUpEffect);
                 if (effect != null)
                 {
                     ve.Effects.Remove(effect);
                 }
-                ve.Effects.Add(new PlatformFocusUpEffect());
+                ve.Effects.Add(new FocusUpEffect());
             }
         }
 
@@ -104,12 +104,12 @@ namespace Tizen.TV.UIControls.Forms
 
             if (bindable is VisualElement ve)
             {
-                var effect = ve.Effects.FirstOrDefault(t => t is PlatformFocusDownEffect);
+                var effect = ve.Effects.FirstOrDefault(t => t is FocusDownEffect);
                 if (effect != null)
                 {
                     ve.Effects.Remove(effect);
                 }
-                ve.Effects.Add(new PlatformFocusDownEffect());
+                ve.Effects.Add(new FocusDownEffect());
             }
         }
         static void OnLeftPropertyChanged(BindableObject bindable, object oldValue, object newValue)
@@ -121,12 +121,12 @@ namespace Tizen.TV.UIControls.Forms
 
             if (bindable is VisualElement ve)
             {
-                var effect = ve.Effects.FirstOrDefault(t => t is PlatformFocusLeftEffect);
+                var effect = ve.Effects.FirstOrDefault(t => t is FocusLeftEffect);
                 if (effect != null)
                 {
                     ve.Effects.Remove(effect);
                 }
-                ve.Effects.Add(new PlatformFocusLeftEffect());
+                ve.Effects.Add(new FocusLeftEffect());
             }
         }
         static void OnRightPropertyChanged(BindableObject bindable, object oldValue, object newValue)
@@ -138,12 +138,12 @@ namespace Tizen.TV.UIControls.Forms
 
             if (bindable is VisualElement ve)
             {
-                var effect = ve.Effects.FirstOrDefault(t => t is PlatformFocusRightEffect);
+                var effect = ve.Effects.FirstOrDefault(t => t is FocusRightEffect);
                 if (effect != null)
                 {
                     ve.Effects.Remove(effect);
                 }
-                ve.Effects.Add(new PlatformFocusRightEffect());
+                ve.Effects.Add(new FocusRightEffect());
             }
         }
 
@@ -182,27 +182,27 @@ namespace Tizen.TV.UIControls.Forms
         }
     }
 
-    class PlatformFocusUpEffect : RoutingEffect
+    public class FocusUpEffect : RoutingEffect
     {
-        public PlatformFocusUpEffect() : base("TizenTVUIControl.PlatformFocusUpEffect")
+        public FocusUpEffect() : base("TizenTVUIControl.PlatformFocusUpEffect")
         {
         }
     }
-    class PlatformFocusDownEffect : RoutingEffect
+    public class FocusDownEffect : RoutingEffect
     {
-        public PlatformFocusDownEffect() : base("TizenTVUIControl.PlatformFocusDownEffect")
+        public FocusDownEffect() : base("TizenTVUIControl.PlatformFocusDownEffect")
         {
         }
     }
-    class PlatformFocusLeftEffect : RoutingEffect
+    public class FocusLeftEffect : RoutingEffect
     {
-        public PlatformFocusLeftEffect() : base("TizenTVUIControl.PlatformFocusLeftEffect")
+        public FocusLeftEffect() : base("TizenTVUIControl.PlatformFocusLeftEffect")
         {
         }
     }
-    class PlatformFocusRightEffect : RoutingEffect
+    public class FocusRightEffect : RoutingEffect
     {
-        public PlatformFocusRightEffect() : base("TizenTVUIControl.PlatformFocusRightEffect")
+        public FocusRightEffect() : base("TizenTVUIControl.PlatformFocusRightEffect")
         {
         }
     }

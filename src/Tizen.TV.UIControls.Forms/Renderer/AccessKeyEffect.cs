@@ -23,10 +23,9 @@ using Tizen.TV.UIControls.Forms.Renderer;
 using Button = Microsoft.Maui.Controls.Button;
 using MApplication = Microsoft.Maui.Controls.Application;
 
-[assembly: ExportEffect(typeof(AccessKeyEffect), "AccessKeyEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    public class AccessKeyEffect : PlatformEffect
+    public class PlatformAccessKeyEffect : PlatformEffect
     {
         RemoteControlKeyNames _targetKeyName;
 

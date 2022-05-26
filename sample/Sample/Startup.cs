@@ -2,12 +2,8 @@
 using Microsoft.Maui.LifecycleEvents;
 using Tizen.Theme.Common.Renderer;
 using Tizen.TV.UIControls.Forms;
-using static Tizen.TV.UIControls.Forms.InputEvents;
-//using Tizen.TV.UIControls.Forms.Renderer;
-using TIPlatformMediaPlayer = Tizen.Theme.Common.IPlatformMediaPlayer;
-using TGridView = Tizen.Theme.Common.GridView;
-using TShadowFramme = Tizen.Theme.Common.ShadowFrame;
-using Tizen.Theme.Common;
+using Tizen.TV.UIControls.Forms.Renderer;
+using ShadowFramme = Tizen.Theme.Common.ShadowFrame;
 
 namespace Sample
 {
@@ -19,7 +15,6 @@ namespace Sample
 
             var services = builder.Services;
             //services.AddSingleton<TIPlatformMediaPlayer, MediaPlayerImpl>();
-            //services.AddTransient<IWindow, Window>();
 
             builder
                 .UseMauiApp<App>()
@@ -32,25 +27,24 @@ namespace Sample
                 .ConfigureLifecycleEvents(life =>
                 {
                     //DependencyService.Register<IPlatformMediaPlayer, MediaPlayerImpl>();
-
                 })
                 .ConfigureMauiHandlers(handlers =>
                 {
                     //handlers.AddCompatibilityRenderer(typeof(TGridView), typeof(GridViewRenderer));
-                    //handlers.AddCompatibilityRenderer(typeof(CustomButton), typeof(CustomButtonRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(CustomButton), typeof(Microsoft.Maui.Controls.Compatibility.Platform.Tizen.ButtonRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(TShadowFramme), typeof(ShadowFrameRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(Entry), typeof(TVEntryRenderer));
+                    handlers.AddCompatibilityRenderer(typeof(ShadowFramme), typeof(ShadowFrameRenderer));
+                    
                 })
                 .ConfigureEssentials()
                 .ConfigureEffects(builder =>
                 {
-                    builder.Add<PlatformFocusUpEffect, Tizen.TV.UIControls.Forms.Renderer.PlatformFocusUpEffect>();
-                    builder.Add<PlatformFocusDownEffect, Tizen.TV.UIControls.Forms.Renderer.PlatformFocusDownEffect>();
-                    builder.Add<PlatformFocusLeftEffect, Tizen.TV.UIControls.Forms.Renderer.PlatformFocusLeftEffect>();
-                    builder.Add<PlatformFocusRightEffect, Tizen.TV.UIControls.Forms.Renderer.PlatformFocusRightEffect>();
+                    builder.Add<FocusUpEffect, PlatformFocusUpEffect>();
+                    builder.Add<FocusDownEffect, PlatformFocusDownEffect>();
+                    builder.Add<FocusLeftEffect, PlatformFocusLeftEffect>();
+                    builder.Add<FocusRightEffect, PlatformFocusRightEffect>();
 
-                    builder.Add<RemoteKeyEventEffect, Tizen.TV.UIControls.Forms.Renderer.RemoteKeyEventEffect>();
-                    builder.Add<AccessKeyEffect, Tizen.TV.UIControls.Forms.Renderer.AccessKeyEffect>();
+                    builder.Add<InputEvents.RemoteKeyEventEffect, PlatformRemoteKeyEventEffect>();
+                    builder.Add<InputEvents.AccessKeyEffect, PlatformAccessKeyEffect>();
                 });
 
 

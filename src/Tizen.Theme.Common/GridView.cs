@@ -17,9 +17,14 @@ using Microsoft.Maui.Controls;
 using System;
 using System.Collections;
 using System.ComponentModel;
+using Tizen.UIExtensions.Common;
+using Specific = Microsoft.Maui.Controls.PlatformConfiguration.TizenSpecific.VisualElement;
+
 
 namespace Tizen.Theme.Common
 {
+    public class CustomButton : Microsoft.Maui.Controls.Button { }
+
     /// <summary>
     /// The GridView is a view to efficiently display a collections of data using DataTemplate
     /// </summary>
@@ -50,15 +55,15 @@ namespace Tizen.Theme.Common
         /// </summary>
         public static readonly BindableProperty OrientationProperty = BindableProperty.Create(nameof(Orientation), typeof(ItemsLayoutOrientation), typeof(GridView), ItemsLayoutOrientation.Horizontal);
 
-        ///// <summary>
-        ///// Identifies the HorizontalScrollBarVisible bindable property.
-        ///// </summary>
-        //public static readonly BindableProperty HorizontalScrollBarVisibleProperty = BindableProperty.Create(nameof(HorizontalScrollBarVisible), typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
+        /// <summary>
+        /// Identifies the HorizontalScrollBarVisible bindable property.
+        /// </summary>
+        public static readonly BindableProperty HorizontalScrollBarVisibleProperty = BindableProperty.Create(nameof(HorizontalScrollBarVisible), typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
 
-        ///// <summary>
-        ///// Identifies the VerticalScrollBarVisible bindable property.
-        ///// </summary>
-        //public static readonly BindableProperty VerticalScrollBarVisibleProperty = BindableProperty.Create(nameof(VerticalScrollBarVisible), typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
+        /// <summary>
+        /// Identifies the VerticalScrollBarVisible bindable property.
+        /// </summary>
+        public static readonly BindableProperty VerticalScrollBarVisibleProperty = BindableProperty.Create(nameof(VerticalScrollBarVisible), typeof(ScrollBarVisibility), typeof(GridView), ScrollBarVisibility.Never);
 
         /// <summary>
         /// Identifies the SelectedItem bindable property.
@@ -151,11 +156,11 @@ namespace Tizen.Theme.Common
         ///// <summary>
         ///// Gets or sets the style of GridView.
         ///// </summary>
-        //public string ThemeStyle
-        //{
-        //    get { return (string)GetValue(Specific.StyleProperty); }
-        //    set { SetValue(Specific.StyleProperty, value); }
-        //}
+        public string ThemeStyle
+        {
+            get { return (string)GetValue(Specific.StyleProperty); }
+            set { SetValue(Specific.StyleProperty, value); }
+        }
 
         /// <summary>
         /// Gets or sets the value which indicates the direction which items are positioned.
@@ -166,23 +171,23 @@ namespace Tizen.Theme.Common
             set { SetValue(OrientationProperty, value); }
         }
 
-        ///// <summary>
-        ///// Gets or sets the horizontal scroll bar visibility.
-        ///// </summary>
-        //public ScrollBarVisibility HorizontalScrollBarVisible
-        //{
-        //    get { return (ScrollBarVisibility)GetValue(HorizontalScrollBarVisibleProperty); }
-        //    set { SetValue(HorizontalScrollBarVisibleProperty, value); }
-        //}
+        /// <summary>
+        /// Gets or sets the horizontal scroll bar visibility.
+        /// </summary>
+        public ScrollBarVisibility HorizontalScrollBarVisible
+        {
+            get { return (ScrollBarVisibility)GetValue(HorizontalScrollBarVisibleProperty); }
+            set { SetValue(HorizontalScrollBarVisibleProperty, value); }
+        }
 
-        ///// <summary>
-        ///// Gets or sets the vertical scroll bar visibility.
-        ///// </summary>
-        //public ScrollBarVisibility VerticalScrollBarVisible
-        //{
-        //    get { return (ScrollBarVisibility)GetValue(VerticalScrollBarVisibleProperty); }
-        //    set { SetValue(VerticalScrollBarVisibleProperty, value); }
-        //}
+        /// <summary>
+        /// Gets or sets the vertical scroll bar visibility.
+        /// </summary>
+        public ScrollBarVisibility VerticalScrollBarVisible
+        {
+            get { return (ScrollBarVisibility)GetValue(VerticalScrollBarVisibleProperty); }
+            set { SetValue(VerticalScrollBarVisibleProperty, value); }
+        }
 
         /// <summary>
         /// For internal use.

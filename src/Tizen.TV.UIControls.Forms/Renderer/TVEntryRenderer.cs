@@ -21,7 +21,6 @@ using Microsoft.Maui.Controls.Platform;
 using System;
 using Tizen.TV.UIControls.Forms.Renderer;
 
-[assembly: ExportRenderer(typeof(Entry), typeof(TVEntryRenderer))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class TVEntryRenderer : EntryRenderer
