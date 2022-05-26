@@ -28,9 +28,9 @@ namespace Sample.ContentButton
         {
             string[] imgs =
             {
-                "albumarts/1984, Van Halen.jpg",
-                "albumarts/I'm in Love (I Wanna Do It), Alex Gaudino.jpg",
-                "albumarts/1989, Taylor Swift.jpg"
+                "album1.jpg",
+                "album2.jpg",
+                "album3.jpg"
             };
             _image.Source = imgs[++imgIndex % 3];
         }

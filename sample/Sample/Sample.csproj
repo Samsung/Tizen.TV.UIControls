@@ -38,8 +38,8 @@
   </ItemGroup>
 
   <ItemGroup>
-	  <!--<MauiImage Include="Resources\Images\*" />-->
-	  <MauiImage Include="Resources\Images\poster2\*" />
+	  <MauiImage Include="Resources\Images\**\*.jpg" />
+	  <!--<MauiImage Include="Resources\Images\albumarts\*.jpg" />-->
 	  <MauiIcon Include="Resources\appicon.svg">
 		  <Color>#512BD4</Color>
       <ForegroundFile>Resources\appiconfg.svg</ForegroundFile>

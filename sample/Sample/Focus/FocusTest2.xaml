@@ -2,18 +2,19 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:compat="clr-namespace:Microsoft.Maui.Controls.Compatibility;assembly=Microsoft.Maui.Controls"
              Title="Focus Test2"
              x:Class="Sample.Focus.FocusTest2">
     <ContentPage.Content>
-        <AbsoluteLayout>
+        <compat:AbsoluteLayout>
             <Button Text="Head→" x:Name="Head"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.25, 300, 100"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    compat:AbsoluteLayout.LayoutBounds="0.5, 0.25, 300, 100"
+                    compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                     tv:Focus.Right="{x:Reference Center}"/>
             <tv:RecycleItemsView
                 x:Name="Center"
-                AbsoluteLayout.LayoutBounds="0.5, 0.5, 600, 200"
-                AbsoluteLayout.LayoutFlags="PositionProportional"
+                compat:AbsoluteLayout.LayoutBounds="0.5, 0.5, 600, 200"
+                compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                 tv:Focus.Left="{x:Reference Head}"
                 tv:Focus.Right="{x:Reference Tail}"
                 ItemWidth="100"
@@ -33,9 +34,9 @@
                 </tv:RecycleItemsView.ItemsSource>
             </tv:RecycleItemsView>
             <Button Text="←Tail" x:Name="Tail"
-                    AbsoluteLayout.LayoutBounds="0.5, 0.75, 300, 100"
-                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    compat:AbsoluteLayout.LayoutBounds="0.5, 0.75, 300, 100"
+                    compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                     tv:Focus.Left="{x:Reference Center}"/>
-        </AbsoluteLayout>
+        </compat:AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

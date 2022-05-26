@@ -37,32 +37,32 @@ namespace Sample.DrawerLayout
                         new MenuModel
                         {
                             Text = "Item1",
-                            Path = "poster/01 Jaws.jpg"
+                            Path = "poster1.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item2",
-                            Path = "poster/02 Raiders of the Lost Ark.jpg"
+                            Path = "poster2.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item3",
-                            Path = "poster/03 star wars.jpg"
+                            Path = "poster.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item4",
-                            Path = "poster/04 E.T. 2.jpeg"
+                            Path = "04 E.T. 2.jpeg"
                         },
                         new MenuModel
                         {
                             Text = "Item5",
-                            Path = "poster/05 Vertigo.jpg"
+                            Path = "05 Vertigo.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item6",
-                            Path = "poster/06 Alien.jpg"
+                            Path = "06 Alien.jpg"
                         }
                     }
                 },
@@ -75,32 +75,32 @@ namespace Sample.DrawerLayout
                         new MenuModel
                         {
                             Text = "Item1",
-                            Path = "poster/01 Jaws.jpg"
+                            Path = "poster1.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item2",
-                            Path = "poster/02 Raiders of the Lost Ark.jpg"
+                            Path = "poster2.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item3",
-                            Path = "poster/03 star wars.jpg"
+                            Path = "poster3.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item4",
-                            Path = "poster/04 E.T. 2.jpeg"
+                            Path = "poster4.jpeg"
                         },
                         new MenuModel
                         {
                             Text = "Item5",
-                            Path = "poster/05 Vertigo.jpg"
+                            Path = "poster5.jpg"
                         },
                         new MenuModel
                         {
                             Text = "Item6",
-                            Path = "poster/06 Alien.jpg"
+                            Path = "poster6.jpg"
                         }
                     }
                 },

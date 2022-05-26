@@ -2,30 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
+             xmlns:compat="clr-namespace:Microsoft.Maui.Controls.Compatibility;assembly=Microsoft.Maui.Controls"
              Title="Basic Test"
              x:Class="Sample.Focus.FocusBasicTest">
     <ContentPage.Content>
-        <AbsoluteLayout>
-            <Button Text="Top" x:Name="Top" AbsoluteLayout.LayoutBounds="0.5, 0, 200, 100" AbsoluteLayout.LayoutFlags="PositionProportional"
+        <compat:AbsoluteLayout>
+            <Button Text="Top" x:Name="Top" compat:AbsoluteLayout.LayoutBounds="0.5, 0, 200, 100" compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                     tv:Focus.Up="{x:Reference Bottom}"
                     tv:Focus.Left="{x:Reference Left}"
                     tv:Focus.Right="{x:Reference Right}"
                     tv:Focus.Down="{x:Reference Bottom}"/>
-            <Button Text="Left" x:Name="Left" AbsoluteLayout.LayoutBounds="0, 0.5, 200, 100" AbsoluteLayout.LayoutFlags="PositionProportional"
+            <Button Text="Left" x:Name="Left" compat:AbsoluteLayout.LayoutBounds="0, 0.5, 200, 100" compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                     tv:Focus.Up="{x:Reference Top}"
                     tv:Focus.Left="{x:Reference Right}"
                     tv:Focus.Right="{x:Reference Right}"
                     tv:Focus.Down="{x:Reference Bottom}"/>
-            <Button Text="Right" x:Name="Right" AbsoluteLayout.LayoutBounds="1, 0.5, 200, 100" AbsoluteLayout.LayoutFlags="PositionProportional"
+            <Button Text="Right" x:Name="Right" compat:AbsoluteLayout.LayoutBounds="1, 0.5, 200, 100" compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                     tv:Focus.Up="{x:Reference Top}"
                     tv:Focus.Left="{x:Reference Left}"
                     tv:Focus.Right="{x:Reference Left}"
                     tv:Focus.Down="{x:Reference Bottom}"/>
-            <Button Text="Bottom" x:Name="Bottom" AbsoluteLayout.LayoutBounds="0.5, 1, 200, 100" AbsoluteLayout.LayoutFlags="PositionProportional"
+            <Button Text="Bottom" x:Name="Bottom" compat:AbsoluteLayout.LayoutBounds="0.5, 1, 200, 100" compat:AbsoluteLayout.LayoutFlags="PositionProportional"
                     tv:Focus.Up="{x:Reference Top}"
                     tv:Focus.Down="{x:Reference Top}"
                     tv:Focus.Left="{x:Reference Left}"
                     tv:Focus.Right="{x:Reference Right}"/>
-        </AbsoluteLayout>
+        </compat:AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

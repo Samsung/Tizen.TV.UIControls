@@ -141,7 +141,7 @@ namespace Sample
                     {
                         HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
                         WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
-                        Source = _depth % 2 == 0 ? "poster/01 Jaws.jpg" : "poster/02 Raiders of the Lost Ark.jpg"
+                        Source = _depth % 2 == 0 ? "poseter1.jpg" : "poster2.jpg"
                     },
                     new Label
                     {

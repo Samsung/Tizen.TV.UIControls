@@ -14,8 +14,8 @@ namespace Sample
         {
             var app = new Program();
 
-            UIControls.Init(new InitOptions());
-            Tizen.Theme.Common.CommonUI.Init(app);
+            //UIControls.Init(new InitOptions());
+            //Tizen.Theme.Common.CommonUI.Init();
 
             app.Run(args);
         }

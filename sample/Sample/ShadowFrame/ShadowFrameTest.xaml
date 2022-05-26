@@ -11,7 +11,7 @@
                       BackgroundColor="White"
                       BorderColor="#fcd071"
                       BorderWidth="8"
-                      CornerRadius="20,20,20,20"
+                      CornerRadius2="20,20,20,20"
                       ShadowOffsetX ="{Binding Value, Source={x:Reference offsetXSlider}}"
                       ShadowOffsetY ="{Binding Value, Source={x:Reference offsetYSlider}}"
                       ShadowBlurRadius="{Binding Value, Source={x:Reference blurSlider}}"

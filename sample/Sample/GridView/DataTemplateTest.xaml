@@ -8,27 +8,10 @@
              x:Class="Sample.GridView.DataTemplateTest"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+        <VerticalStackLayout>
             <Label  x:Name="myLabel" Text="Music" FontAttributes="Bold" 
                     HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start" FontSize="Large"/>
-            <tvcontrols:GridView HorizontalOptions="FillAndExpand" BackgroundColor="Beige"
-                    ItemWidth="1000"
-                    ItemHeight="1300"
-                    WidthRequest="1000"
-                    HeightRequest="1600"
-                    ItemVerticalAlignment="Center"
-                    ItemsSource="{Binding Items}"
-                    ItemSelected="GridView_ItemSelected">
-                <tvcontrols:GridView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout BackgroundColor="MediumPurple">
-                            <Image Source="{Binding Source}" WidthRequest="400" HeightRequest="400" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
-                            <Label Text="{Binding Text}" BackgroundColor="Purple"/>
-                            <Label Text="{Binding DetailText}" BackgroundColor="Purple"/>
-                        </StackLayout>
-                    </DataTemplate>
-                </tvcontrols:GridView.ItemTemplate>
-            </tvcontrols:GridView>
-        </StackLayout>
+            <tvcontrols:CustomButton />
+        </VerticalStackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -30,7 +30,7 @@
             </cui:ContentButton>
             <cui:FocusFrame>
                 <cui:ContentButton Clicked="ContentButton_Clicked_1" HeightRequest="300" WidthRequest="300">
-                    <Image x:Name="_image" Source="albumarts/1984, Van Halen.jpg"/>
+                    <Image x:Name="_image" Source="album1.jpg"/>
                 </cui:ContentButton>
             </cui:FocusFrame>
         </StackLayout>

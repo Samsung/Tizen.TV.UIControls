@@ -23,7 +23,7 @@ namespace Sample.ShadowFrame
 
         void radius_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            Frame1.CornerRadius = new CornerRadius(tlSlider.Value, trSlider.Value, blSlider.Value, brSlider.Value);
+            Frame1.CornerRadius2 = new CornerRadius(tlSlider.Value, trSlider.Value, blSlider.Value, brSlider.Value);
         }
 
         void borderColor_ValueChanged(object sender, ValueChangedEventArgs e)

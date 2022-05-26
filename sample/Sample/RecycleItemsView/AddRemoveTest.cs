@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System;
 using Microsoft.Maui.Graphics;
 
+
 namespace Sample
 {
     class MyRecycleItemsView : TV.RecycleItemsView

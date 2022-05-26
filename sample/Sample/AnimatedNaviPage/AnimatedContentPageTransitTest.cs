@@ -118,7 +118,7 @@ namespace Sample
                             {
                                 HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
                                 WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
-                                Source = "poster/01 Jaws.jpg"
+                                Source = "poster1.jpg"
                             },
                         }
                     }
@@ -141,7 +141,7 @@ namespace Sample
                     {
                         HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
                         WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
-                        Source = "poster/02 Raiders of the Lost Ark.jpg"
+                        Source = "poster2.jpg"
                     },
                     new Label
                     {
