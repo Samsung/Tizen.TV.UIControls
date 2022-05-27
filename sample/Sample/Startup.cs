@@ -33,6 +33,7 @@ namespace Sample
                     //handlers.AddCompatibilityRenderer(typeof(TGridView), typeof(GridViewRenderer));
                     //handlers.AddCompatibilityRenderer(typeof(Entry), typeof(TVEntryRenderer));
                     handlers.AddCompatibilityRenderer(typeof(ShadowFramme), typeof(ShadowFrameRenderer));
+                    handlers.AddHandler<Entry, TVEntryHandler>();
                     
                 })
                 .ConfigureEssentials()
