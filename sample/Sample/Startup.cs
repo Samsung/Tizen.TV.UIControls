@@ -34,7 +34,8 @@ namespace Sample
                     //handlers.AddCompatibilityRenderer(typeof(Entry), typeof(TVEntryRenderer));
                     handlers.AddCompatibilityRenderer(typeof(ShadowFramme), typeof(ShadowFrameRenderer));
                     handlers.AddHandler<Entry, TVEntryHandler>();
-                    
+                    handlers.AddHandler<Editor, TVEditorHandler>();
+
                 })
                 .ConfigureEssentials()
                 .ConfigureEffects(builder =>

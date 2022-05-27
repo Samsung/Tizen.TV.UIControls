@@ -28,27 +28,30 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             base.ConnectHandler(platformView);
 
-            InputEvents.GetEventHandlers(VirtualView as BindableObject).Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((args) =>
+            if (platformView != null)
             {
-                if (args.PlatformKeyName.Equals(_doneKeyName))
+                InputEvents.GetEventHandlers(VirtualView as BindableObject)?.Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((args) =>
                 {
-                    //FocusSearch(true)?.SetFocus(true);
-                    Device.BeginInvokeOnMainThread(() =>
+                    if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
-                        VirtualView.Text = platformView.Text;
-                        (VirtualView as IEntryController).SendCompleted();
-                    });
-                }
-                else if (args.PlatformKeyName.Equals(_cancelKeyName))
-                {
-                    platformView.HideInputPanel();
-                }
-            }), RemoteControlKeyTypes.KeyDown));
+                        //FocusSearch(true)?.SetFocus(true);
+                        Device.BeginInvokeOnMainThread(() =>
+                        {
+                            VirtualView.Text = platformView.Text;
+                            (VirtualView as IEntryController)?.SendCompleted();
+                        });
+                    }
+                    else if (args.PlatformKeyName.Equals(_cancelKeyName))
+                    {
+                        platformView.HideInputPanel();
+                    }
+                }), RemoteControlKeyTypes.KeyDown));
 
-            if (platformView is Tizen.UIExtensions.ElmSharp.Entry entry)
-            {
-                entry.EntryLayoutFocused += OnFocused;
-                entry.EntryLayoutUnfocused += OnUnfocused;
+                if (platformView is Tizen.UIExtensions.ElmSharp.Entry entry)
+                {
+                    entry.EntryLayoutFocused += OnFocused;
+                    entry.EntryLayoutUnfocused += OnUnfocused;
+                }
             }
         }
     }

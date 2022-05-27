@@ -18,44 +18,46 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Handlers;
 using System;
 using Tizen.TV.UIControls.Forms.Renderer;
+using TEntry = Tizen.UIExtensions.ElmSharp.Entry;
 
-[assembly: ExportRenderer(typeof(Editor), typeof(TVEditorRenderer))]
+[assembly: ExportRenderer(typeof(Editor), typeof(TVEditorHandler))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    public class TVEditorRenderer : EditorRenderer
+    public class TVEditorHandler : EditorHandler
     {
         const string _doneKeyName = "Select";
         const string _cancelKeyName = "Cancel";
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Editor> e)
+        protected override void ConnectHandler(UIExtensions.ElmSharp.Entry platformView)
         {
-            base.OnElementChanged(e);
+            base.ConnectHandler(platformView);
 
-            if (Control != null)
+            if (platformView != null)
             {
-                InputEvents.GetEventHandlers(Element).Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((args) =>
+                InputEvents.GetEventHandlers(VirtualView as BindableObject)?.Add(new RemoteKeyHandler(new Action<RemoteControlKeyEventArgs>((args) =>
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
                         //FocusSearch(true)?.SetFocus(true);
                         Device.BeginInvokeOnMainThread(() =>
                         {
-                            Element.Text = Control.Text;
-                            Element.SendCompleted();
+                            VirtualView.Text = platformView.Text;
+                            (VirtualView as IEditorController)?.SendCompleted();
                         });
                     }
                     else if (args.PlatformKeyName.Equals(_cancelKeyName))
                     {
-                        Control.HideInputPanel();
+                        platformView.HideInputPanel();
                     }
                 }), RemoteControlKeyTypes.KeyDown));
 
-                if (Control is Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.Entry nentry)
+                if (platformView is TEntry tentry)
                 {
-                    nentry.EntryLayoutFocused += OnFocused;
-                    nentry.EntryLayoutUnfocused += OnUnfocused;
+                    tentry.EntryLayoutFocused += OnFocused;
+                    tentry.EntryLayoutUnfocused += OnUnfocused;
                 }
             }
         }
