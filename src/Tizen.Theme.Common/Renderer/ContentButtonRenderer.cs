@@ -14,15 +14,11 @@
  * limitations under the License.
  */
 
+using System;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
-using System;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
 using EButton = ElmSharp.Button;
-
-[assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
 
 namespace Tizen.Theme.Common.Renderer
 {

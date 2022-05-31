@@ -19,7 +19,6 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Platform;
 using System;
 using System.Linq;
-using Tizen.TV.UIControls.Forms.Renderer;
 using Button = Microsoft.Maui.Controls.Button;
 using MApplication = Microsoft.Maui.Controls.Application;
 

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
@@ -21,7 +22,7 @@ using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
 using MMView = Tizen.Multimedia.MediaView;
 
-[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
+//[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class MediaViewRenderer : ViewRenderer<MediaView, LayoutCanvas>, IMediaViewProvider
@@ -30,6 +31,7 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementChanged(ElementChangedEventArgs<MediaView> e)
         {
+            Console.WriteLine($"#####################[MediaViewRenderer][OnElementChanged");
             if (Control == null)
             {
                 _mediaView = new MMView(Forms.NativeParent);

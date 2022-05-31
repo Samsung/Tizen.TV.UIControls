@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-using ElmSharp;
-using Microsoft.Maui;
 using System;
-using System.Linq;
-using Tizen.Applications;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui;
+using ElmSharp;
 
 namespace Tizen.Theme.Common
 {
@@ -28,9 +27,9 @@ namespace Tizen.Theme.Common
     public class InitOptions
     {
         /// <summary>
-        /// Gets or sets the context for CoreApplication
+        /// Gets or sets the context for MauiApplication
         /// </summary>
-        public CoreApplication Context { get; set; }
+        public MauiApplication Context { get; set; }
 
         /// <summary>
         /// Gets or sets the main window provider
@@ -41,19 +40,17 @@ namespace Tizen.Theme.Common
         ///// Default Constructor
         ///// </summary>
         ///// <param name="application"></param>
-        //public InitOptions() : this () { }
+        public InitOptions(MauiApplication application) : this(application, () => application.Services.GetService<Window>()) { }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="application"></param>
         /// <param name="mainWindowProvider"></param>
-        public InitOptions()
+        public InitOptions(MauiApplication application, Func<Window> func)
         {
-            Context = MauiApplication.Current;
-            MainWindowProvider = () => {
-                return (Context as MauiApplication).Application.Windows.FirstOrDefault<IWindow>().Handler.PlatformView as Window;
-            };
+            Context = application;
+            MainWindowProvider = func;
         }
     }
 
@@ -65,12 +62,12 @@ namespace Tizen.Theme.Common
 
         public static Func<Window> MainWindowProvider { get; set; }
 
-        public static CoreApplication Context { get; private set; }
+        public static MauiApplication Context { get; private set; }
 
         /// <summary>
         ///  Used for registration with dependency service
         /// </summary>
-        public static void Init(CoreApplication context)
+        public static void Init(MauiApplication context)
         {
             if (IsInitialized) return;
             if (context == null)
@@ -79,12 +76,10 @@ namespace Tizen.Theme.Common
             }
 
             Context = context;
-            if (context is MauiApplication mauiApplication)
+            MainWindowProvider = () =>
             {
-                MainWindowProvider = () => {
-                    return (Context as MauiApplication).Application.Windows.FirstOrDefault<IWindow>().Handler.PlatformView as Window;
-                };
-            }
+                return context.Services.GetService<Window>();
+            };
             IsInitialized = true;
         }
 

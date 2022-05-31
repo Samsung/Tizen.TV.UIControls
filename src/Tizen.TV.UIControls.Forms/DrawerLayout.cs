@@ -1,7 +1,7 @@
-﻿using Microsoft.Maui;
+﻿using System;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
-using System;
 using MRect = Microsoft.Maui.Graphics.Rect;
 using MSize = Microsoft.Maui.Graphics.Size;
 

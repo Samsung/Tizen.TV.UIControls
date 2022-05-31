@@ -16,12 +16,12 @@
 
 #nullable enable
 
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Internals;
-using Microsoft.Maui.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Internals;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {

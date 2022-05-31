@@ -1,7 +1,8 @@
-﻿using Microsoft.Maui.Controls;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -19,7 +20,7 @@ namespace Tizen.TV.UIControls.Forms
             if (popup == null)
                 return;
 
-            using (var renderer = DependencyService.Get<IContentPopupRenderer>(DependencyFetchTarget.NewInstance))
+            using (var renderer = UIControls.Context.Services.GetService<IContentPopupRenderer>())
             {
                 if (renderer == null)
                     return;

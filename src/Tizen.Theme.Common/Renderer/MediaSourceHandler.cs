@@ -14,15 +14,14 @@
  * limitations under the License.
  */
 
+using System;
+using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using System.Threading.Tasks;
 using Tizen.Multimedia;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
 
-[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
-[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
 namespace Tizen.Theme.Common.Renderer
 {
 
@@ -35,6 +34,7 @@ namespace Tizen.Theme.Common.Renderer
     {
         public Task<bool> SetSource(Player player, MediaSource source)
         {
+            Console.WriteLine($"#####################[UriMediaSourceHandler][SetSource");
             if (source is UriMediaSource uriSource)
             {
                 Log.Info(CommonUI.Tag, $"Set UriMediaSource");
@@ -49,6 +49,7 @@ namespace Tizen.Theme.Common.Renderer
     {
         public Task<bool> SetSource(Player player, MediaSource source)
         {
+            Console.WriteLine($"#####################[FileMediaSourceHandler][SetSource");
             if (source is FileMediaSource fileSource)
             {
                 Log.Info(CommonUI.Tag, $"Set FileMediaSource");

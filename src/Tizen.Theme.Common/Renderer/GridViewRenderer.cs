@@ -14,22 +14,17 @@
  * limitations under the License.
  */
 
-using ElmSharp;
-//using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Platform;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
+using ElmSharp;
 using Tizen.UIExtensions.Common;
-using EButton = ElmSharp.Button;
 
-//[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     class GengridItemContext
@@ -38,12 +33,7 @@ namespace Tizen.Theme.Common.Renderer
         public View RealizedView { get; set; }
     }
 
-    public class CustomButtonRenderer : Microsoft.Maui.Controls.Compatibility.Platform.Tizen.ButtonRenderer
-    {
-    }
-
-
-    public class GridViewRenderer2 : ViewRenderer<GridView, GenGrid>
+    public class GridViewRenderer : ViewRenderer<GridView, GenGrid>
     {
         Dictionary<object, GenGridItem> _gengridItemDic = new Dictionary<object, GenGridItem>();
         Dictionary<IntPtr, GenGridItem> _itemHandleDic = new Dictionary<IntPtr, GenGridItem>();

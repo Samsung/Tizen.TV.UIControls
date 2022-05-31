@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-using Microsoft.Maui.Controls;
 using System.ComponentModel;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.Theme.Common
 {

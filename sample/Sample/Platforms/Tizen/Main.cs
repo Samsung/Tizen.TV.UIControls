@@ -1,3 +1,5 @@
+using Tizen.Theme.Common;
+
 namespace Sample
 {
     internal class Program :MauiApplication

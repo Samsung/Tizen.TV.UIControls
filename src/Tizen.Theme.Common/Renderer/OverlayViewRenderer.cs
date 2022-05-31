@@ -14,17 +14,14 @@
  * limitations under the License.
  */
 
-using ElmSharp;
+using System;
+using System.Reflection;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
-using System;
-using System.Reflection;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
+using ElmSharp;
 using EColor = ElmSharp.Color;
 
-[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>

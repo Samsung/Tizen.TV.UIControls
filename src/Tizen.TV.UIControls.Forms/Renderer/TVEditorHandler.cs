@@ -14,16 +14,11 @@
  * limitations under the License.
  */
 
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Platform;
-using Microsoft.Maui.Handlers;
 using System;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Handlers;
 using TEntry = Tizen.UIExtensions.ElmSharp.Entry;
 
-[assembly: ExportRenderer(typeof(Editor), typeof(TVEditorHandler))]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class TVEditorHandler : EditorHandler
@@ -41,6 +36,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 {
                     if (args.PlatformKeyName.Equals(_doneKeyName))
                     {
+                        // TODO
                         //FocusSearch(true)?.SetFocus(true);
                         Device.BeginInvokeOnMainThread(() =>
                         {

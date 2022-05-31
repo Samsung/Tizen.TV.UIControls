@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Graphics;
 using System;
 using System.Globalization;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {

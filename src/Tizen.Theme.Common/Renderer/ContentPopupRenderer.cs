@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using ElmSharp;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using ElmSharp;
 using EColor = ElmSharp.Color;
 
-[assembly: Dependency(typeof(Tizen.Theme.Common.Renderer.ContentPopupRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class ContentPopupRenderer : IContentPopupRenderer

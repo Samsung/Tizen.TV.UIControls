@@ -15,10 +15,7 @@
  */
 
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
 
-[assembly: Microsoft.Maui.Controls.Compatibility.ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class OverlayPageRenderer : PageRenderer

@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+using System;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
@@ -22,7 +23,6 @@ using Microsoft.Maui.Controls.Platform;
 using Microsoft.Maui.Graphics;
 using SkiaSharp;
 using SkiaSharp.Views.Tizen;
-using System;
 using NLayoutEventArgs = Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.LayoutEventArgs;
 
 namespace Tizen.Theme.Common.Renderer

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-using ElmSharp;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native;
+using ElmSharp;
 using NBox = Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.Box;
 
 namespace Tizen.Theme.Common.Renderer

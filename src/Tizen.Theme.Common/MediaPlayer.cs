@@ -14,13 +14,14 @@
  * limitations under the License.
  */
 
-using Microsoft.Maui.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Controls;
 using Tizen.UIExtensions.Common;
 
 namespace Tizen.Theme.Common
@@ -457,7 +458,7 @@ namespace Tizen.Theme.Common
 
         protected virtual IPlatformMediaPlayer CreateMediaPlayerImpl()
         {
-            return DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
+            return CommonUI.Context.Services.GetService<IPlatformMediaPlayer>();
         }
 
         void UpdateAutoPlay()

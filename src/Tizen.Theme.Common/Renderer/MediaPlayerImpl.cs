@@ -14,20 +14,19 @@
  * limitations under the License.
  */
 
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Internals;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Internals;
 using Tizen.Multimedia;
-using Tizen.Theme.Common.Renderer;
 using ERect = ElmSharp.Rect;
 using MPlayer = Tizen.Multimedia.Player;
 using MRectangle = Tizen.Multimedia.Rectangle;
 
-[assembly: Dependency(typeof(MediaPlayerImpl))]
+//[assembly: Dependency(typeof(MediaPlayerImpl))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class MediaPlayerImpl : IPlatformMediaPlayer
