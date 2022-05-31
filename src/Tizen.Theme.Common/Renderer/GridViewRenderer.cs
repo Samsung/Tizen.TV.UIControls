@@ -43,7 +43,6 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementChanged(ElementChangedEventArgs<GridView> e)
         {
-            Console.WriteLine($"############# [GridViewRenderer][OnElementChanged]");
 
             if (Control == null)
             {

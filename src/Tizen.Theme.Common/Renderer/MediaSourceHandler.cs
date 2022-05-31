@@ -34,7 +34,6 @@ namespace Tizen.Theme.Common.Renderer
     {
         public Task<bool> SetSource(Player player, MediaSource source)
         {
-            Console.WriteLine($"#####################[UriMediaSourceHandler][SetSource");
             if (source is UriMediaSource uriSource)
             {
                 Log.Info(CommonUI.Tag, $"Set UriMediaSource");
@@ -49,7 +48,6 @@ namespace Tizen.Theme.Common.Renderer
     {
         public Task<bool> SetSource(Player player, MediaSource source)
         {
-            Console.WriteLine($"#####################[FileMediaSourceHandler][SetSource");
             if (source is FileMediaSource fileSource)
             {
                 Log.Info(CommonUI.Tag, $"Set FileMediaSource");

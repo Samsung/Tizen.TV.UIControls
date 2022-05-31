@@ -49,7 +49,6 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementChanged(ElementChangedEventArgs<AnimatedNavigationPage> e)
         {
-            Console.WriteLine($"####### [AnimatedNavigationPageRenderer][OnElementChanged]");
             if (_navigationStack == null)
             {
                 _navigationStack = new NavigationStack(Forms.NativeParent);
@@ -86,7 +85,6 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementReady()
         {
-            Console.WriteLine($"####### [AnimatedNavigationPageRenderer][OnElementReady]");
             base.OnElementReady();
             var pageController = Element as IPageController;
 
@@ -98,7 +96,6 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            Console.WriteLine($"####### [AnimatedNavigationPageRenderer][OnElementPropertyChanged]");
             base.OnElementPropertyChanged(sender, e);
 
             if (e.PropertyName == NavigationPage.CurrentPageProperty.PropertyName)
@@ -118,7 +115,6 @@ namespace Tizen.Theme.Common.Renderer
 
         void OnPushRequested(object sender, NavigationRequestedEventArgs nre)
         {
-            Console.WriteLine($"####### [AnimatedNavigationPageRenderer][OnPushRequested]");
             var renderer = Platform.GetOrCreateRenderer(nre.Page);
             var animation = CurrentPage.GetPushAnimation();
             var animated = nre.Animated && animation != null;
@@ -146,7 +142,6 @@ namespace Tizen.Theme.Common.Renderer
 
         void OnPopRequested(object sender, NavigationRequestedEventArgs nre)
         {
-            Console.WriteLine($"####### [AnimatedNavigationPageRenderer][OnPopRequested]");
             if ((Element as IPageController).InternalChildren.Count == _navigationStack.Stack.Count)
             {
                 nre.Page?.SendDisappearing();

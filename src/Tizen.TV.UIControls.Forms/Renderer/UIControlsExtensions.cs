@@ -24,9 +24,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
 using Tizen.TV.UIControls.Forms.Renderer;
-//using TAnimatedNavigationPage = Tizen.TV.UIControls.Forms.AnimatedNavigationPage;
 
-//[assembly: ExportRenderer(typeof(TAnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 namespace Tizen.TV.UIControls.Forms
 {
     public static class UIControlsExtensions

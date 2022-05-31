@@ -19,7 +19,6 @@ namespace Tizen.Theme.Common
 
             using (var renderer = CommonUI.Context.Services.GetService<IContentPopupRenderer>())
             {
-                Console.WriteLine($"################ renderer={renderer.GetType()}");
                 if (renderer == null)
                     return;
 
