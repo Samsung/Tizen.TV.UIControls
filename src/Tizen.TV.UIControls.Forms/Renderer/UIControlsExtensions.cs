@@ -25,6 +25,8 @@ using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
 using Tizen.TV.UIControls.Forms.Renderer;
 
+
+[assembly: ResolutionGroupName("TizenTVUIControl")]
 namespace Tizen.TV.UIControls.Forms
 {
     public static class UIControlsExtensions

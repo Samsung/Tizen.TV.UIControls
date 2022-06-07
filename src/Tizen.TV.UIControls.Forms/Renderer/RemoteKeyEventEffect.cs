@@ -21,7 +21,6 @@ using System;
 using System.Linq;
 using Tizen.TV.UIControls.Forms.Renderer;
 
-[assembly: ResolutionGroupName("TizenTVUIControl")]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
     public class PlatformRemoteKeyEventEffect : PlatformEffect
