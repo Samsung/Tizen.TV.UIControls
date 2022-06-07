@@ -34,8 +34,9 @@ namespace Tizen.Theme.Common
                 .UseMauiCompatibility()
                 .ConfigureMauiHandlers(handlers =>
                 {
+                    handlers.AddHandler<ContentButton, ContentButtonHandler>();
+
                     handlers.AddCompatibilityRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(ContentButton), typeof(ContentButtonRenderer));
 
                     handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));

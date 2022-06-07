@@ -15,22 +15,23 @@
  */
 
 using System;
-using Microsoft.Maui.Controls.Compatibility;
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
-using Microsoft.Maui.Controls.Platform;
-using EButton = ElmSharp.Button;
+using Microsoft.Maui.Handlers;
+using Microsoft.Maui.Platform;
+using Tizen.UIExtensions.Common;
+using Tizen.UIExtensions.ElmSharp;
+using TButton = Tizen.UIExtensions.ElmSharp.Button;
 
 namespace Tizen.Theme.Common.Renderer
 {
-    public class ContentButtonRenderer : LayoutRenderer
+    public class ContentButtonHandler : ContentViewHandler
     {
-        EButton _button;
+        TButton _button;
 
-        ContentButton Button => Element as ContentButton;
+        ContentButton Button => VirtualView as ContentButton;
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Microsoft.Maui.Controls.Compatibility.Layout> e)
+        protected override void ConnectHandler(ContentCanvas platformView)
         {
-            base.OnElementChanged(e);
+            base.ConnectHandler(platformView);
             Initialize();
         }
 
@@ -38,7 +39,7 @@ namespace Tizen.Theme.Common.Renderer
         {
             if (_button == null)
             {
-                _button = new EButton(Forms.NativeParent);
+                _button = new TButton(PlatformParent);
                 _button.SetTransparentStyle();
                 _button.Opacity = 0;
                 _button.Show();
@@ -48,8 +49,16 @@ namespace Tizen.Theme.Common.Renderer
                 _button.Clicked += OnClicked;
                 _button.Focused += OnButtonFocused;
                 _button.Unfocused += OnButtonFocused;
-                Control.PackEnd(_button);
+                PlatformView.PackEnd(_button);
             }
+
+            PlatformView.LayoutUpdated += OnLayoutUpdated;
+        }
+
+        private void OnLayoutUpdated(object sender, LayoutEventArgs e)
+        {
+            _button.Geometry = PlatformView.Geometry;
+            _button.RaiseTop();
         }
 
         void OnButtonFocused(object sender, EventArgs e)
@@ -58,14 +67,6 @@ namespace Tizen.Theme.Common.Renderer
                 OnFocused(this, e);
             else 
                 OnUnfocused(this, e);
-        }
-
-        protected override void UpdateLayout()
-        {
-            base.UpdateLayout();
-
-            _button.Geometry = Control.Geometry;
-            _button.RaiseTop();
         }
 
         void OnPressed(object sender, EventArgs args)

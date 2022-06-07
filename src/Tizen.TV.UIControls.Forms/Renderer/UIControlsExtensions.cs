@@ -37,9 +37,9 @@ namespace Tizen.TV.UIControls.Forms
                 {
                     handlers.AddHandler<Entry, TVEntryHandler>();
                     handlers.AddHandler<Editor, TVEditorHandler>();
+                    handlers.AddHandler<ContentButton, ContentButtonHandler>();
 
                     //TODO
-                    handlers.AddCompatibilityRenderer(typeof(ContentButton), typeof(ContentButtonRenderer));
                     handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(UriMediaSource), typeof(UriMediaSourceHandler));

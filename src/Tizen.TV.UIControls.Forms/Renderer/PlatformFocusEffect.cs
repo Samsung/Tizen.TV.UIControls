@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-using ElmSharp;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Microsoft.Maui.Controls.Platform;
+using ElmSharp;
 
 namespace Tizen.TV.UIControls.Forms.Renderer
 {

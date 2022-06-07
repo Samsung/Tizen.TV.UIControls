@@ -1,3 +1,5 @@
+using Microsoft.Maui;
+using Microsoft.Maui.Hosting;
 using Tizen.Theme.Common;
 
 namespace Sample

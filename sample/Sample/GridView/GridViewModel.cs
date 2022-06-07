@@ -110,58 +110,6 @@ namespace Sample.GridView
             {
                 posters.Add($"poster{i}.jpg");
             }
-            //{
-            //    "poster1.jpg",
-            //    "poster2.jpg",
-            //    "poster3.jpg",
-            //    "poster4.jpeg",
-            //    "poster5.jpg",
-            //    "06 Alien.jpg",
-            //    "07 Jurassic Park.jpg",
-            //    "08 The Silence of the Lambs.jpg",
-            //    "09 American Beauty.jpg",
-            //    "10 Back to the Future.jpg",
-            //    "11 Chinatown.jpg",
-            //    "12 The Godfather.jpg",
-            //    "13 Airplane.jpg",
-            //    "14 Pulp Fiction.jpg",
-            //    "15 Ghostbusters.jpg",
-            //    "16 The Usual Suspects.jpg",
-            //    "17 the people vs larry flynt.jpg",
-            //    "18 Trainspotting.jpg",
-            //    "19 Goodfellas.jpg",
-            //    "20 the truman show.jpg",
-            //    "21 Blade Runner.jpg",
-            //    "22 Full Metal Jacket.jpg",
-            //    "23 Attack of the 50ft Woman.jpg",
-            //    "24 Batman.jpg",
-            //    "25 nymph.jpg",
-            //    "26 the driver.jpeg",
-            //    "27 The Phantom Menace.jpg",
-            //    "28 Platoon.jpg",
-            //    "29 Gone with the Wind.jpg",
-            //    "30 Forbidden Planet.jpg",
-            //    "31 The Exorcist.jpg",
-            //    "32 Anatomy of a Murder.jpg",
-            //    "33 Metropolis.jpg",
-            //    "34 Clockwork Orange.jpg",
-            //    "35 Halloween.jpg",
-            //    "36 Apocalypse Now.jpg",
-            //    "37 Rocketeer.jpg",
-            //    "38 Rosemary's Baby.jpg",
-            //    "39 Moon.jpg",
-            //    "40 Scream.jpg",
-            //    "41 Breakfast at Tiffany's.jpg",
-            //    "42 The Social Network.jpg",
-            //    "43 The Thing.jpg",
-            //    "44 Fear and Loathing in Las Vegas.jpg",
-            //    "45 Love In The Afternoon.jpeg",
-            //    "46 Manhattan.jpeg",
-            //    "47 Lord of War.jpg",
-            //    "48 Mean Streets.jpg",
-            //    "49 The Graduate.jpg",
-            //    "50 little miss sunshine.jpg"
-            //};
             List<PosterModel> items = new List<PosterModel>();
             foreach (var i in posters)
             {
@@ -200,20 +148,6 @@ namespace Sample.GridView
                 "Nothing's Real, Shura.jpg",
                 "Runaway (U&I), Galantis.jpg",
                 "The Freewheelin' Bob Dylan, Bob Dylan.jpg",
-                //"1984, Van Halen.jpg",
-                //"1989, Taylor Swift.jpg",
-                //"Abbey Road, The Beatles.jpg",
-                //"American IV - The Man Comes Around, Johnny Cash.jpg",
-                //"Back in Black, ACDC.jpg",
-                //"Elvis Presley, Elvis Presley.jpg",
-                //"Feel So Close, Calvin Harris.jpg",
-                //"Feel, Third Party vs Cicada.jpg",
-                //"I'm in Love (I Wanna Do It), Alex Gaudino.jpg",
-                //"If I Lose Myself, OneRepublic vs Alesso.jpg",
-                //"Nevermind, Nirvana.jpg",
-                //"Nothing's Real, Shura.jpg",
-                //"Runaway (U&I), Galantis.jpg",
-                //"The Freewheelin' Bob Dylan, Bob Dylan.jpg",
             };
             List<PosterModel> items = new List<PosterModel>();
 
@@ -221,10 +155,6 @@ namespace Sample.GridView
 
             foreach (var i in albums)
             {
-                //var texts = i.Split('.');
-                //texts[texts.Length - 1] = "";
-                //var text = string.Join(" ", texts).Trim();
-                //texts = text.Split(',');
                 var texts = description[n].Split(',');
                 n++;
                 items.Add(new PosterModel

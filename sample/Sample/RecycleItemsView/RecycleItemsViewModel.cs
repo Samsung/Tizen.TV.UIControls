@@ -233,10 +233,6 @@ namespace Sample.RecycleItemsView
             int n = 0;
             foreach (var i in albums)
             {
-                //var texts = i.Split('.');
-                //texts[texts.Length - 1] = "";
-                //var text = string.Join(" ", texts).Trim();
-                //texts = text.Split(',');
                 var texts = description[n].Split(',');
                 n++;
                 items.Add(new PosterModel

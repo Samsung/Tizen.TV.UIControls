@@ -2,17 +2,16 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
-             xmlns:compat="clr-namespace:Microsoft.Maui.Controls.Compatibility;assembly=Microsoft.Maui.Controls"
              Title="Focus Test3"
              x:Class="Sample.Focus.FocusTest3">
     <ContentPage.Content>
-        <compat:AbsoluteLayout>
+        <AbsoluteLayout>
             <Button Text="←Outter" x:Name="Outter"
-                    compat:AbsoluteLayout.LayoutBounds="100, 100, 1200, 500" compat:AbsoluteLayout.LayoutFlags="None"
+                    AbsoluteLayout.LayoutBounds="100, 100, 1200, 500" AbsoluteLayout.LayoutFlags="None"
                     tv:Focus.Left="{x:Reference Inner}"/>
             <Button Text="Inner→" x:Name="Inner"
-                    compat:AbsoluteLayout.LayoutBounds="200, 250, 200, 200" compat:AbsoluteLayout.LayoutFlags="None"
+                    AbsoluteLayout.LayoutBounds="200, 250, 200, 200" AbsoluteLayout.LayoutFlags="None"
                     tv:Focus.Right="{x:Reference Outter}"/>
-        </compat:AbsoluteLayout>
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

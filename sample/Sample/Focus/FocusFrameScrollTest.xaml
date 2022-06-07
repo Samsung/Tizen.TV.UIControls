@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:tv="clr-namespace:Tizen.TV.UIControls.Forms;assembly=Tizen.TV.UIControls.Forms"
-             xmlns:compat="clr-namespace:Microsoft.Maui.Controls.Compatibility;assembly=Microsoft.Maui.Controls"
              xmlns:local="clr-namespace:Sample.Focus"
              NavigationPage.HasNavigationBar="False"
              x:Class="Sample.Focus.FocusFrameScrollTest">
@@ -15,13 +14,13 @@
                                          ItemWidth="900" ContentMargin="200" Spacing="200">
                         <tv:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
-                                <compat:AbsoluteLayout BackgroundColor="CadetBlue">
-                                    <Image Source="{Binding Source}" Aspect="Fill" compat:AbsoluteLayout.LayoutBounds="0, 0, 1, 1" compat:AbsoluteLayout.LayoutFlags="All"/>
-                                    <StackLayout Padding="40" compat:AbsoluteLayout.LayoutBounds="0, 1, 960, 200" compat:AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
                                         <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
                                         <Label Text="{Binding DetailText}" FontSize="40"/>
                                     </StackLayout>
-                                </compat:AbsoluteLayout>
+                                </AbsoluteLayout>
                             </DataTemplate>
                         </tv:RecycleItemsView.ItemTemplate>
                     </tv:RecycleItemsView>
@@ -32,13 +31,13 @@
                                          ItemWidth="900" ContentMargin="200" Spacing="200">
                         <tv:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
-                                <compat:AbsoluteLayout BackgroundColor="CadetBlue">
-                                    <Image Source="{Binding Source}" Aspect="Fill" compat:AbsoluteLayout.LayoutBounds="0, 0, 1, 1" compat:AbsoluteLayout.LayoutFlags="All"/>
-                                    <StackLayout Padding="40" compat:AbsoluteLayout.LayoutBounds="0, 1, 960, 200" compat:AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
                                         <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
                                         <Label Text="{Binding DetailText}" FontSize="40"/>
                                     </StackLayout>
-                                </compat:AbsoluteLayout>
+                                </AbsoluteLayout>
                             </DataTemplate>
                         </tv:RecycleItemsView.ItemTemplate>
                     </tv:RecycleItemsView>
@@ -49,13 +48,13 @@
                                          ItemWidth="900" ContentMargin="200" Spacing="200">
                         <tv:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
-                                <compat:AbsoluteLayout BackgroundColor="CadetBlue">
-                                    <Image Source="{Binding Source}" Aspect="Fill" compat:AbsoluteLayout.LayoutBounds="0, 0, 1, 1" compat:AbsoluteLayout.LayoutFlags="All"/>
-                                    <StackLayout Padding="40" compat:AbsoluteLayout.LayoutBounds="0, 1, 960, 200" compat:AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
                                         <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
                                         <Label Text="{Binding DetailText}" FontSize="40"/>
                                     </StackLayout>
-                                </compat:AbsoluteLayout>
+                                </AbsoluteLayout>
                             </DataTemplate>
                         </tv:RecycleItemsView.ItemTemplate>
                     </tv:RecycleItemsView>
@@ -66,13 +65,13 @@
                                          ItemWidth="900" ContentMargin="200" Spacing="200">
                         <tv:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
-                                <compat:AbsoluteLayout BackgroundColor="CadetBlue">
-                                    <Image Source="{Binding Source}" Aspect="Fill" compat:AbsoluteLayout.LayoutBounds="0, 0, 1, 1" compat:AbsoluteLayout.LayoutFlags="All"/>
-                                    <StackLayout Padding="40" compat:AbsoluteLayout.LayoutBounds="0, 1, 960, 200" compat:AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
                                         <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
                                         <Label Text="{Binding DetailText}" FontSize="40"/>
                                     </StackLayout>
-                                </compat:AbsoluteLayout>
+                                </AbsoluteLayout>
                             </DataTemplate>
                         </tv:RecycleItemsView.ItemTemplate>
                     </tv:RecycleItemsView>
@@ -83,13 +82,13 @@
                                          ItemWidth="900" ContentMargin="200" Spacing="200">
                         <tv:RecycleItemsView.ItemTemplate>
                             <DataTemplate>
-                                <compat:AbsoluteLayout BackgroundColor="CadetBlue">
-                                    <Image Source="{Binding Source}" Aspect="Fill" compat:AbsoluteLayout.LayoutBounds="0, 0, 1, 1" compat:AbsoluteLayout.LayoutFlags="All"/>
-                                    <StackLayout Padding="40" compat:AbsoluteLayout.LayoutBounds="0, 1, 960, 200" compat:AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
+                                <AbsoluteLayout BackgroundColor="CadetBlue">
+                                    <Image Source="{Binding Source}" Aspect="Fill" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All"/>
+                                    <StackLayout Padding="40" AbsoluteLayout.LayoutBounds="0, 1, 960, 200" AbsoluteLayout.LayoutFlags="PositionProportional" BackgroundColor="#aa000000">
                                         <Label Text="{Binding Text}" TextColor="AntiqueWhite" FontSize="70" FontAttributes="Bold" />
                                         <Label Text="{Binding DetailText}" FontSize="40"/>
                                     </StackLayout>
-                                </compat:AbsoluteLayout>
+                                </AbsoluteLayout>
                             </DataTemplate>
                         </tv:RecycleItemsView.ItemTemplate>
                     </tv:RecycleItemsView>
