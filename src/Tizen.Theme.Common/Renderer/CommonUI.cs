@@ -36,10 +36,10 @@ namespace Tizen.Theme.Common
         /// </summary>
         public Func<Window> MainWindowProvider { get; set; }
 
-        ///// <summary>
-        ///// Default Constructor
-        ///// </summary>
-        ///// <param name="application"></param>
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        /// <param name="application"></param>
         public InitOptions(MauiApplication application) : this(application, () => application.Services.GetService<Window>()) { }
 
         /// <summary>

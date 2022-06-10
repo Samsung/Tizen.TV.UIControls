@@ -181,32 +181,4 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
     }
-
-    public class FocusUpEffect : RoutingEffect
-    {
-        public FocusUpEffect() : base("TizenTVUIControl.FocusUpEffect")
-        {
-        }
-    }
-
-    public class FocusDownEffect : RoutingEffect
-    {
-        public FocusDownEffect() : base("TizenTVUIControl.FocusDownEffect")
-        {
-        }
-    }
-
-    public class FocusLeftEffect : RoutingEffect
-    {
-        public FocusLeftEffect() : base("TizenTVUIControl.FocusLeftEffect")
-        {
-        }
-    }
-
-    public class FocusRightEffect : RoutingEffect
-    {
-        public FocusRightEffect() : base("TizenTVUIControl.FocusRightEffect")
-        {
-        }
-    }
 }

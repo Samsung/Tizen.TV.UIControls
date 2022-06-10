@@ -153,9 +153,9 @@ namespace Tizen.Theme.Common
             set { SetValue(SelectedItemProperty, value); }
         }
 
-        ///// <summary>
-        ///// Gets or sets the style of GridView.
-        ///// </summary>
+        /// <summary>
+        /// Gets or sets the style of GridView.
+        /// </summary>
         public string ThemeStyle
         {
             get { return (string)GetValue(Specific.StyleProperty); }
