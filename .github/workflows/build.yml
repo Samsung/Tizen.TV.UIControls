@@ -18,9 +18,6 @@ jobs:
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
-      - name: Install .NET workload
-        run: |
-          dotnet workload install maui --source https://api.nuget.org/v3/index.json --skip-sign-check
       - name: Install Tizen workload
         run: |
           curl -sSL https://raw.githubusercontent.com/Samsung/Tizen.NET/main/workload/scripts/workload-install.sh | bash -s -- -d /home/runner/.dotnet
@@ -28,5 +25,5 @@ jobs:
         env:
           PULLREQUEST_ID: ${{ github.event.number }}
         run: |
-          dotnet build TV.UIControls.sln
+          dotnet build TV.UIControls.sln -f net6.0-tizen
         working-directory: .
