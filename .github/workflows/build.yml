@@ -18,7 +18,7 @@ jobs:
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
-      - name: Install .NET workload
+      - name: Install .NET MAUI workload
         run: |
           dotnet workload install maui-windows        
       - name: Install Tizen workload
@@ -28,5 +28,7 @@ jobs:
         env:
           PULLREQUEST_ID: ${{ github.event.number }}
         run: |
-          dotnet build TV.UIControls.sln -f net6.0-tizen
+          dotnet build src/Tizen.Theme.Common
+          dotnet build src/Tizen.TV.UIControls.Forms
+          dotnet build sample/Sample
         working-directory: .
