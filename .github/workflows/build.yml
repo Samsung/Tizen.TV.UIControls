@@ -18,13 +18,12 @@ jobs:
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
-      - name: Install .NET MAUI workload
-        run: |
-          dotnet workload restore
-          dotnet workload maui
       - name: Install Tizen workload
         run: |
           curl -sSL https://raw.githubusercontent.com/Samsung/Tizen.NET/main/workload/scripts/workload-install.sh | bash -s -- -d /home/runner/.dotnet
+      - name: Install .NET workload restore
+        run: |
+          dotnet workload restore
       - name: Build
         env:
           PULLREQUEST_ID: ${{ github.event.number }}
