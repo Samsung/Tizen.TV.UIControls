@@ -14,16 +14,13 @@
  * limitations under the License.
  */
 
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
 using ElmSharp;
-using Xamarin.Forms;
-using Tizen.TV.UIControls.Forms;
-using Xamarin.Forms.Platform.Tizen;
 using Tizen.Theme.Common.Renderer;
-using XButton = Xamarin.Forms.Button;
+using MButton = Microsoft.Maui.Controls.Button;
+using MForms = Microsoft.Maui.Controls.Compatibility.Forms;
 
-[assembly: ExportRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer))]
-[assembly: ExportRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer))]
-[assembly: ExportRenderer(typeof(XButton), typeof(PropagatableButtonRenderer))]
 namespace Tizen.TV.UIControls.Forms
 {
     class RecycleItemsViewContentRenderer : ViewRenderer<RecycleItemsView.ContentLayout, LayoutCanvas>
@@ -34,7 +31,7 @@ namespace Tizen.TV.UIControls.Forms
         {
             if (null == Control)
             {
-                SetNativeControl(new LayoutCanvas(Xamarin.Forms.Forms.NativeParent));
+                SetNativeControl(new LayoutCanvas(MForms.NativeParent));
                 Control.AllowFocus(true);
                 Control.KeyDown += OnKeyDown;
             }
@@ -62,7 +59,7 @@ namespace Tizen.TV.UIControls.Forms
             RegisterPropertyHandler("FocusedView", UpdateFocusedView);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Layout> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Microsoft.Maui.Controls.Compatibility.Layout> e)
         {
             base.OnElementChanged(e);
             Control.AllowFocus(true);
@@ -80,7 +77,7 @@ namespace Tizen.TV.UIControls.Forms
 
     class PropagatableButtonRenderer : ButtonRenderer
     {
-        protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.Button> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<MButton> e)
         {
             base.OnElementChanged(e);
             // It is temporary workaround code

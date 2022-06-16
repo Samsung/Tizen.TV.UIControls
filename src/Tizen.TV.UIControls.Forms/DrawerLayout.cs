@@ -1,5 +1,9 @@
 ﻿using System;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using MRect = Microsoft.Maui.Graphics.Rect;
+using MSize = Microsoft.Maui.Graphics.Size;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -239,12 +243,12 @@ namespace Tizen.TV.UIControls.Forms
             var contentMeasure = ContentHolder.Measure(widthConstraint, heightConstraint, MeasureFlags.IncludeMargins);
             var drawerMeasure = DrawerHolder.Measure(widthConstraint, heightConstraint, MeasureFlags.IncludeMargins);
 
-            return new SizeRequest(new Size
+            return new SizeRequest(new MSize
             {
                 Width = contentMeasure.Request.Width + DrawerClosedWidth,
                 Height = Math.Max(contentMeasure.Request.Height, drawerMeasure.Request.Height)
             },
-            new Size
+            new MSize
             {
                 Width = contentMeasure.Minimum.Width + DrawerClosedWidth,
                 Height = Math.Max(contentMeasure.Minimum.Height, drawerMeasure.Minimum.Height)
@@ -253,24 +257,27 @@ namespace Tizen.TV.UIControls.Forms
 
         protected override void LayoutChildren(double x, double y, double width, double height)
         {
-            var isRTL = (DrawerPosition == DrawerPosition.Right) || 
-                        (DrawerPosition == DrawerPosition.Default &&
-                            (this as IVisualElementController).EffectiveFlowDirection.IsRightToLeft());
+
+            //internal IsRightToLeft()
+            //var isRTL = (DrawerPosition == DrawerPosition.Right) || 
+            //            (DrawerPosition == DrawerPosition.Default &&
+            //                (this as IVisualElementController).EffectiveFlowDirection.IsRightToLeft());
+            var isRTL = false;
 
             var drawerMeasure = DrawerHolder.Measure(width, height);
 
-            double drawerWidth = DrawerWidth != 0 ? DrawerWidth : drawerMeasure.Request.Width;
+            double drawerWidth = DrawerWidth == 0 ? drawerMeasure.Request.Width : DrawerWidth;
             double drawerWidthOutBound = (drawerWidth - DrawerClosedWidth) * (1 - OpenRatio);
             double drawerWidthInBound = drawerWidth - drawerWidthOutBound;
 
             double startX = isRTL ? (x + width - (drawerWidthInBound)) : (x - drawerWidthOutBound);
 
-            LayoutChildIntoBoundingRegion(DrawerHolder, new Rectangle(startX, y, drawerWidth, height));
+            LayoutChildIntoBoundingRegion(DrawerHolder, new MRect(startX, y, drawerWidth, height));
 
             double contentWidth = DrawerMode == DrawerMode.Resize ? width - drawerWidthInBound : width;
             double contentStartX = isRTL || DrawerMode == DrawerMode.Overlap ? x : (x + drawerWidthInBound);
 
-            LayoutChildIntoBoundingRegion(ContentHolder, new Rectangle(contentStartX, y, contentWidth, height));
+            LayoutChildIntoBoundingRegion(ContentHolder, new MRect(contentStartX, y, contentWidth, height));
         }
 
         void UpdateDrawerState(bool isOpen)

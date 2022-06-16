@@ -15,13 +15,7 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 
 namespace Tizen.TV.UIControls.Forms
 {

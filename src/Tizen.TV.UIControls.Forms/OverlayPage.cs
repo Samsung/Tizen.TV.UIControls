@@ -16,8 +16,6 @@
 
 using System;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using Tizen.Theme.Common;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Sample
 {
@@ -13,7 +14,7 @@ namespace Sample
 
         public AnimatedNaviPageBasicTest(int depth)
         {
-            BackgroundColor = depth % 2 == 0 ? Color.Yellow : Color.Transparent;
+            BackgroundColor = depth % 2 == 0 ? Colors.Yellow : Colors.Transparent;
 
             // Left-Right
             var pushAnim = new Animation {
@@ -140,12 +141,12 @@ namespace Sample
                     {
                         HeightRequest = Device.Idiom == TargetIdiom.TV ? 1000 : 300,
                         WidthRequest = Device.Idiom == TargetIdiom.TV ? 700 : 200,
-                        Source = _depth % 2 == 0 ? "poster/01 Jaws.jpg" : "poster/02 Raiders of the Lost Ark.jpg"
+                        Source = _depth % 2 == 0 ? "poseter1.jpg" : "poster2.jpg"
                     },
                     new Label
                     {
                         Text = "Depth : " + _depth,
-                        TextColor = depth % 2 == 0 ? Color.Black : Device.Idiom == TargetIdiom.TV ? Color.White : Color.Black,
+                        TextColor = depth % 2 == 0 ? Colors.Black : Device.Idiom == TargetIdiom.TV ? Colors.White : Colors.Black,
                         HorizontalOptions = LayoutOptions.FillAndExpand,
                         VerticalOptions = LayoutOptions.FillAndExpand,
                     },

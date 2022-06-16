@@ -15,24 +15,10 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
-using ElmSharp;
-using Tizen.Applications;
-using Tizen.Theme.Common.Renderer;
-using Tizen.TV.UIControls.Forms;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui;
 using Tizen.TV.UIControls.Forms.Renderer;
-
-[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
-[assembly: ExportRenderer(typeof(ContentButton), typeof(ContentButtonRenderer))]
-[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
-[assembly: ExportRenderer(typeof(MediaView), typeof(MediaViewRenderer))]
-[assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
-[assembly: ExportRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer))]
-
-[assembly: ExportHandler(typeof(UriMediaSource), typeof(UriMediaSourceHandler))]
-[assembly: ExportHandler(typeof(FileMediaSource), typeof(FileMediaSourceHandler))]
-[assembly: Dependency(typeof(ContentPopupRenderer))]
+using Window = ElmSharp.Window;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -42,9 +28,9 @@ namespace Tizen.TV.UIControls.Forms
     public class InitOptions
     {
         /// <summary>
-        /// Gets or sets the context for CoreApplication
+        /// Gets or sets the context for MauiApplication
         /// </summary>
-        public CoreApplication Context { get; set; }
+        public MauiApplication Context { get; set; }
 
         /// <summary>
         /// Gets or sets the main window provider
@@ -55,18 +41,17 @@ namespace Tizen.TV.UIControls.Forms
         /// Default Constructor
         /// </summary>
         /// <param name="application"></param>
-        public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
-
+        public InitOptions(MauiApplication application) : this(application, () => application.Services.GetService<Window>()) { }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="application"></param>
         /// <param name="mainWindowProvider"></param>
-        public InitOptions(CoreApplication application, Func<Window> mainWindowProvider)
+        public InitOptions(MauiApplication application, Func<Window> func)
         {
             Context = application;
-            MainWindowProvider = mainWindowProvider;
+            MainWindowProvider = func;
         }
     }
 
@@ -77,6 +62,8 @@ namespace Tizen.TV.UIControls.Forms
         public static bool IsInitialized { get; private set; }
 
         public static Func<Window> MainWindowProvider { get; set; }
+
+        public static MauiApplication Context { get; private set; }
 
         /// <summary>
         ///  Used for registration with dependency service
@@ -93,7 +80,9 @@ namespace Tizen.TV.UIControls.Forms
         /// <param name="options"></param>
         public static void Init(InitOptions options)
         {
-            var resPath = options.Context?.DirectoryInfo?.Resource;
+            Context = options.Context;
+
+            var resPath = Context?.DirectoryInfo?.Resource;
             if (!string.IsNullOrEmpty(resPath))
             {
                 TVThemeLoader.Initialize(resPath);

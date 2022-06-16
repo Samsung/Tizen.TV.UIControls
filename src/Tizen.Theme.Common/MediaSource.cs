@@ -15,11 +15,8 @@
  */
 
 using System;
-using System.IO;
-using System.Reflection;
-using System.Threading;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+using System.ComponentModel;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.Theme.Common
 {

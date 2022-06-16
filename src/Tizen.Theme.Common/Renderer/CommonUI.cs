@@ -15,9 +15,9 @@
  */
 
 using System;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui;
 using ElmSharp;
-using Tizen.Applications;
-using Xamarin.Forms.Platform.Tizen;
 
 namespace Tizen.Theme.Common
 {
@@ -27,9 +27,9 @@ namespace Tizen.Theme.Common
     public class InitOptions
     {
         /// <summary>
-        /// Gets or sets the context for CoreApplication
+        /// Gets or sets the context for MauiApplication
         /// </summary>
-        public CoreApplication Context { get; set; }
+        public MauiApplication Context { get; set; }
 
         /// <summary>
         /// Gets or sets the main window provider
@@ -40,17 +40,17 @@ namespace Tizen.Theme.Common
         /// Default Constructor
         /// </summary>
         /// <param name="application"></param>
-        public InitOptions(FormsApplication application) : this (application, () => application.MainWindow) { }
+        public InitOptions(MauiApplication application) : this(application, () => application.Services.GetService<Window>()) { }
 
         /// <summary>
         /// Constructor
         /// </summary>
         /// <param name="application"></param>
         /// <param name="mainWindowProvider"></param>
-        public InitOptions(CoreApplication application, Func<Window> mainWindowProvider)
+        public InitOptions(MauiApplication application, Func<Window> func)
         {
             Context = application;
-            MainWindowProvider = mainWindowProvider;
+            MainWindowProvider = func;
         }
     }
 
@@ -62,12 +62,12 @@ namespace Tizen.Theme.Common
 
         public static Func<Window> MainWindowProvider { get; set; }
 
-        public static CoreApplication Context { get; private set; }
+        public static MauiApplication Context { get; private set; }
 
         /// <summary>
         ///  Used for registration with dependency service
         /// </summary>
-        public static void Init(CoreApplication context)
+        public static void Init(MauiApplication context)
         {
             if (IsInitialized) return;
             if (context == null)
@@ -76,10 +76,10 @@ namespace Tizen.Theme.Common
             }
 
             Context = context;
-            if (context is FormsApplication formsApplication)
+            MainWindowProvider = () =>
             {
-                MainWindowProvider = () => formsApplication.MainWindow;
-            }
+                return context.Services.GetService<Window>();
+            };
             IsInitialized = true;
         }
 

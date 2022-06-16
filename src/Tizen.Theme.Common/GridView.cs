@@ -13,14 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 using System;
-using System.ComponentModel;
 using System.Collections;
-using Xamarin.Forms;
-using Specific = Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement;
+using System.ComponentModel;
+using Microsoft.Maui.Controls;
+using Tizen.UIExtensions.Common;
+using Specific = Microsoft.Maui.Controls.PlatformConfiguration.TizenSpecific.VisualElement;
 
 namespace Tizen.Theme.Common
 {
+    public class CustomButton : Microsoft.Maui.Controls.Button { }
+
     /// <summary>
     /// The GridView is a view to efficiently display a collections of data using DataTemplate
     /// </summary>

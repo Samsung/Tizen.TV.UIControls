@@ -15,7 +15,8 @@
  */
 
 using System;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -49,7 +50,7 @@ namespace Tizen.Theme.Common
     /// </summary>
     public interface IOverlayOutput : IVideoOutput
     {
-        Rectangle OverlayArea { get; }
+        Rect OverlayArea { get; }
         event EventHandler AreaUpdated;
     }
 }

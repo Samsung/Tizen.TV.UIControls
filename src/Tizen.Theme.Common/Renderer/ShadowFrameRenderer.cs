@@ -15,17 +15,15 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
-using Xamarin.Forms.Platform.Tizen.SkiaSharp;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen.SkiaSharp;
+using Microsoft.Maui.Controls.Platform;
+using Microsoft.Maui.Graphics;
 using SkiaSharp;
 using SkiaSharp.Views.Tizen;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
-
-using NLayoutEventArgs = Xamarin.Forms.Platform.Tizen.Native.LayoutEventArgs;
-
-[assembly: ExportRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer))]
+using NLayoutEventArgs = Microsoft.Maui.Controls.Compatibility.Platform.Tizen.Native.LayoutEventArgs;
 
 namespace Tizen.Theme.Common.Renderer
 {
@@ -41,12 +39,12 @@ namespace Tizen.Theme.Common.Renderer
 
         public ShadowFrameRenderer()
         {
-            if (!Forms.UseSkiaSharp)
-                throw new InvalidOperationException("You must set Forms.UseSkiaSharp to true prior to using ShadowFrame.");
+            //if (!UseSkiaSharp)
+            //    throw new InvalidOperationException("You must set Forms.UseSkiaSharp to true prior to using ShadowFrame.");
 
             RegisterPropertyHandler(Frame.BorderColorProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.BorderWidthProperty, UpdateCanvas);
-            RegisterPropertyHandler(ShadowFrame.CornerRadiusProperty, UpdateCanvas);
+            RegisterPropertyHandler(ShadowFrame.CornerRadius2Property, UpdateCanvas);
             RegisterPropertyHandler(Frame.HasShadowProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.ShadowBlurRadiusProperty, UpdateCanvas);
             RegisterPropertyHandler(ShadowFrame.ShadowColorProperty, UpdateCanvas);
@@ -57,7 +55,7 @@ namespace Tizen.Theme.Common.Renderer
             RegisterPropertyHandler(ShadowFrame.ShadowClippingWidthProperty, UpdateCanvas);
         }
 
-        protected override void OnElementChanged(ElementChangedEventArgs<Layout> e)
+        protected override void OnElementChanged(ElementChangedEventArgs<Microsoft.Maui.Controls.Compatibility.Layout> e)
         {
             base.OnElementChanged(e);
             _clipper = new SKClipperView(Forms.NativeParent);
@@ -72,9 +70,10 @@ namespace Tizen.Theme.Common.Renderer
             }
         }
 
+
         protected override void UpdateBackgroundColor(bool initialize)
         {
-            if (initialize && Element.BackgroundColor.IsDefault)
+            if (initialize && Element.BackgroundColor == null)
                 return;
             else
                 BackgroundCanvas?.Invalidate();
@@ -105,8 +104,8 @@ namespace Tizen.Theme.Common.Renderer
             var canvas = e.Surface.Canvas;
             var bound = e.Info.Rect;
             canvas.Clear();
-            var bgColor = Element.BackgroundColor == Color.Default ? s_defaultColor : SKColor.Parse(Element.BackgroundColor.ToHex());
-            var borderColor = ShadowElement.BorderColor == Color.Default ? s_defaultColor : SKColor.Parse(ShadowElement.BorderColor.ToHex());
+            var bgColor = Element.BackgroundColor == null ? s_defaultColor : SKColor.Parse(Element.BackgroundColor.ToHex());
+            var borderColor = ShadowElement.BorderColor == null ? s_defaultColor : SKColor.Parse(ShadowElement.BorderColor.ToHex());
 
             using (var paint = new SKPaint
             {
@@ -132,7 +131,8 @@ namespace Tizen.Theme.Common.Renderer
                                 scaledOffsetY,
                                 scaledBlurRadius,
                                 scaledBlurRadius,
-                                ShadowElement.ShadowColor.MultiplyAlpha(ShadowElement.ShadowOpacity).ToSK());
+                                SKColor.Empty);
+                                //ShadowElement.ShadowColor.MultiplyAlpha(ShadowElement.ShadowOpacity).ToSK());
                             canvas.DrawPath(path2, paint);
                             canvas.Restore();
 
@@ -197,7 +197,7 @@ namespace Tizen.Theme.Common.Renderer
                             scaledOffsetY,
                             scaledBlurRadius,
                             scaledBlurRadius,
-                            ShadowElement.ShadowColor.MultiplyAlpha(ShadowElement.ShadowOpacity).ToSK());
+                            ShadowElement.ShadowColor.MultiplyAlpha((float)ShadowElement.ShadowOpacity).ToSK());
                         canvas.DrawPath(path, paint);
                         canvas.Restore();
 
@@ -240,7 +240,7 @@ namespace Tizen.Theme.Common.Renderer
             BackgroundCanvas?.Invalidate();
             _clipper?.Invalidate();
 
-            if (!UseShadowClipping &&ShadowElement.HasShadow)
+            if (!UseShadowClipping && ShadowElement.HasShadow)
             {
                 UpdateShadowCanvasGeometry();
             }
@@ -310,10 +310,10 @@ namespace Tizen.Theme.Common.Renderer
             var right = left + geometry.Width - (padding * 2);
             var bottom = top + geometry.Height - (padding * 2);
             var rect = new SKRect(left, top, right, bottom);
-            var scaledTLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopLeft) * 2;
-            var scaledTRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.TopRight) * 2;
-            var scaledBLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomLeft) * 2;
-            var scaledBRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius.BottomRight) * 2;
+            var scaledTLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.TopLeft) * 2;
+            var scaledTRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.TopRight) * 2;
+            var scaledBLRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.BottomLeft) * 2;
+            var scaledBRRadius = Forms.ConvertToScaledPixel(ShadowElement.CornerRadius2.BottomRight) * 2;
             var topLeft = new SKRect(rect.Left, rect.Top, rect.Left + scaledTLRadius, rect.Top + scaledTLRadius);
             var topRight = new SKRect(rect.Right - scaledTRRadius, rect.Top, rect.Right, rect.Top + scaledTRRadius);
             var bottomLeft = new SKRect(rect.Left, rect.Bottom - scaledBLRadius, rect.Left + scaledBLRadius, rect.Bottom);
@@ -371,7 +371,7 @@ namespace Tizen.Theme.Common.Renderer
     {
         internal static SKColor ToSK(this Color color)
         {
-            return new SKColor((byte)(color.R * 255), (byte)(color.G * 255), (byte)(color.B * 255), (byte)(color.A * 255));
+            return new SKColor((byte)(color.Red * 255), (byte)(color.Green * 255), (byte)(color.Blue * 255), (byte)(color.Alpha * 255));
         }
     }
 }

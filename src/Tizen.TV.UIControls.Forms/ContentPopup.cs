@@ -1,6 +1,5 @@
 ﻿using System;
 using System.ComponentModel;
-using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {

@@ -15,10 +15,9 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -34,12 +33,12 @@ namespace Tizen.Theme.Common
             {
                 progress = 0d;
             }
-            return new Rectangle(0, 0, progress, 1);
+            return new Rect(0, 0, progress, 1);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            Rectangle rect = (Rectangle)value;
+            Rect rect = (Rect)value;
             return rect.Width;
         }
     }

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.Specialized;
-using System.Linq;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -129,18 +129,12 @@ namespace Tizen.TV.UIControls.Forms
             }
         }
 
-        class RemoteKeyEventEffect : RoutingEffect
+        public class RemoteKeyEventEffect : RoutingEffect
         {
-            public RemoteKeyEventEffect() : base("TizenTVUIControl.RemoteKeyEventEffect")
-            {
-            }
         }
 
-        class AccessKeyEffect : RoutingEffect
+        public class AccessKeyEffect : RoutingEffect
         {
-            public AccessKeyEffect() : base("TizenTVUIControl.AccessKeyEffect")
-            {
-            }
         }
     }
 }

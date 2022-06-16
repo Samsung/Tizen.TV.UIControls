@@ -15,10 +15,7 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace Tizen.TV.UIControls.Forms
 {

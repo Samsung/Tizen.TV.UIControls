@@ -16,8 +16,8 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -29,7 +29,7 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Identifies the OverlayArea bindable property.
         /// </summary>
-        public static readonly BindableProperty OverlayAreaProperty = BindableProperty.Create("OverlayArea", typeof(Rectangle), typeof(OverlayPage), default(Rectangle));
+        public static readonly BindableProperty OverlayAreaProperty = BindableProperty.Create("OverlayArea", typeof(Rect), typeof(OverlayPage), default(Rect));
         /// <summary>
         /// Identifies the Player bindable property.
         /// </summary>
@@ -40,9 +40,9 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Gets or sets the overlay area.
         /// </summary>
-        public Rectangle OverlayArea
+        public Rect OverlayArea
         {
-            get { return (Rectangle)GetValue(OverlayAreaProperty); }
+            get { return (Rect)GetValue(OverlayAreaProperty); }
             set { SetValue(OverlayAreaProperty, value); }
         }
 
@@ -84,7 +84,7 @@ namespace Tizen.Theme.Common
         protected override void LayoutChildren(double x, double y, double width, double height)
         {
             base.LayoutChildren(x, y, width, height);
-            (this as IVideoOutput).Controller?.Layout(new Rectangle(x, y, width, height));
+            (this as IVideoOutput).Controller?.Layout(new Rect(x, y, width, height));
         }
 
         protected override void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -101,7 +101,7 @@ namespace Tizen.Theme.Common
                 {
                     var controller = _controller;
                     (this as IOverlayOutput).Controller = null;
-                    controller.Layout(new Rectangle(0, 0, -1, -1));
+                    controller.Layout(new Rect(0, 0, -1, -1));
                     Device.BeginInvokeOnMainThread(() => (this as IOverlayOutput).Controller = controller);
                 }
             }

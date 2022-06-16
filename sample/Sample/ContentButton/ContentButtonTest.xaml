@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cui="clr-namespace:Tizen.Theme.Common;assembly=Tizen.Theme.Common"
              Title="ContentButton Test"
@@ -30,7 +30,7 @@
             </cui:ContentButton>
             <cui:FocusFrame>
                 <cui:ContentButton Clicked="ContentButton_Clicked_1" HeightRequest="300" WidthRequest="300">
-                    <Image x:Name="_image" Source="albumarts/1984, Van Halen.jpg"/>
+                    <Image x:Name="_image" Source="album1.jpg"/>
                 </cui:ContentButton>
             </cui:FocusFrame>
         </StackLayout>

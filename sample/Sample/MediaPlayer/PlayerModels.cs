@@ -17,7 +17,7 @@
 using System;
 using System.Collections.Generic;
 using Tizen.Theme.Common;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 
 namespace Sample
 {

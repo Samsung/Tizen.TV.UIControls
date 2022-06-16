@@ -15,8 +15,10 @@
  */
 
 using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
 using Tizen.Theme.Common;
 using CPopup = Tizen.Theme.Common.ContentPopup;
 
@@ -78,8 +80,9 @@ namespace Sample.ContentPopup
             grid.RowDefinitions.Add(new RowDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
             grid.RowDefinitions.Add(new RowDefinition());
-            grid.Children.Add(label, 0, 1, 1, 3);
-            grid.Children.Add(dismiss, 0, 1, 3, 4);
+
+            grid.Children.Add(label);
+            grid.Children.Add(dismiss);
 
             popup.Content = grid;
 

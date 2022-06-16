@@ -20,7 +20,12 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Layouts;
+using AbsoluteLayout = Microsoft.Maui.Controls.Compatibility.AbsoluteLayout;
+using StackLayout = Microsoft.Maui.Controls.Compatibility.StackLayout;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -47,7 +52,7 @@ namespace Tizen.TV.UIControls.Forms
     {
         bool SendKeyDown(string keyname);
         View FocusedView { get; }
-        Rectangle ScrollBounds { get; }
+        Rect ScrollBounds { get; }
     }
 
     /// <summary>
@@ -143,7 +148,7 @@ namespace Tizen.TV.UIControls.Forms
         ContentLayout _contentLayout;
         LinkedList<View> _recycleViews = new LinkedList<View>();
         Dictionary<View, ItemContext> _viewToItemTable = new Dictionary<View, ItemContext>();
-        Rectangle _lastViewPort;
+        Rect _lastViewPort;
         int _lastStart = -1;
         int _lastEnd = -1;
         int _focusedItemIndex = InvalidIndex;
@@ -385,16 +390,16 @@ namespace Tizen.TV.UIControls.Forms
         }
 
         View IRecycleItemsViewController.FocusedView => (View)GetValue(FocusedViewProperty);
-        Rectangle IRecycleItemsViewController.ScrollBounds => ViewPort;
+        Rect IRecycleItemsViewController.ScrollBounds => ViewPort;
 
-        Rectangle ViewPort => new Rectangle(ScrollView.ScrollX, ScrollView.ScrollY, ScrollView.Width, ScrollView.Height);
+        Rect ViewPort => new Rect(ScrollView.ScrollX, ScrollView.ScrollY, ScrollView.Width, ScrollView.Height);
 
         double MaringForViewPort
         {
             get { return Math.Max(100, ItemSize * RedundantItemCount); }
         }
 
-        Rectangle ViewPortWithMargin
+        Rect ViewPortWithMargin
         {
             get
             {
@@ -469,8 +474,8 @@ namespace Tizen.TV.UIControls.Forms
 
         int RowsCount => (int)Math.Ceiling(ItemsCount / (double)ColumnCount);
 
-        bool FirstIsVisible => ViewPort.Contains(_itemContexts.FirstOrDefault()?.RealizedView?.Bounds ?? new Rectangle(-1, -1, -1, -1));
-        bool LastIsVisible => ViewPort.Contains(_itemContexts.LastOrDefault()?.RealizedView?.Bounds ?? new Rectangle(-1, -1, -1, -1));
+        bool FirstIsVisible => ViewPort.Contains(_itemContexts.FirstOrDefault()?.RealizedView?.Bounds ?? new Rect(-1, -1, -1, -1));
+        bool LastIsVisible => ViewPort.Contains(_itemContexts.LastOrDefault()?.RealizedView?.Bounds ?? new Rect(-1, -1, -1, -1));
 
         bool HasFooter => FooterElement != null;
         bool HasHeader => HeaderElement != null;
@@ -757,7 +762,7 @@ namespace Tizen.TV.UIControls.Forms
             RealizeItem(_itemContexts[index], bounds);
         }
 
-        void RealizeItem(ItemContext item, Rectangle bounds)
+        void RealizeItem(ItemContext item, Rect bounds)
         {
             if (item.IsRealized)
             {
@@ -793,7 +798,7 @@ namespace Tizen.TV.UIControls.Forms
                 view = CreateContent(item.Data);
 
                 view.Focused += OnViewFocused;
-                _contentLayout.Children.Add(view, bounds);
+                _contentLayout.Children.Add(view);
             }
             _viewToItemTable[view] = item;
 
@@ -904,7 +909,7 @@ namespace Tizen.TV.UIControls.Forms
             image.SetBinding(Image.SourceProperty, new Binding("ImageSource", source: cell));
 
             var view = new AbsoluteLayout();
-            view.Children.Add(image, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
+            view.Children.Add(image);
             view.Children.Add(new StackLayout
             {
                 VerticalOptions = LayoutOptions.EndAndExpand,
@@ -919,7 +924,7 @@ namespace Tizen.TV.UIControls.Forms
                         Children = { text, detailLabel }
                     }
                 }
-            }, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
+            });
 
             cell.SetBinding(BindingContextProperty, new Binding("BindingContext", source: view));
             return view;
@@ -965,30 +970,30 @@ namespace Tizen.TV.UIControls.Forms
                         Children = { text, detailLabel }
                     }
                 }
-            }, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
+            });
 
             cell.SetBinding(BindingContextProperty, new Binding("BindingContext", source: view));
             return view;
         }
 
-        Rectangle CalculateCellBounds(int index)
+        Rect CalculateCellBounds(int index)
         {
             int rowIndex = index / ColumnCount;
             int colIndex = index % ColumnCount;
 
             if (IsHorizontal)
             {
-                return new Rectangle(HeaderSizeWithSpacing + rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ColumnSize - Spacing);
+                return new Rect(HeaderSizeWithSpacing + rowIndex * ItemSize, colIndex * ColumnSize, ItemWidth, ColumnSize - Spacing);
             }
             else
             {
-                return new Rectangle(colIndex * ColumnSize, HeaderSizeWithSpacing + rowIndex * ItemSize, ColumnSize - Spacing, ItemHeight);
+                return new Rect(colIndex * ColumnSize, HeaderSizeWithSpacing + rowIndex * ItemSize, ColumnSize - Spacing, ItemHeight);
             }
         }
 
         void LayoutInvalidate()
         {
-            _lastViewPort = new Rectangle(0, 0, -1, -1);
+            _lastViewPort = new Rect(0, 0, -1, -1);
             _lastEnd = _lastStart = -1;
 
             foreach (var item in _itemContexts)
@@ -1083,7 +1088,7 @@ namespace Tizen.TV.UIControls.Forms
             }
 
             ScrollToPosition position = pos;
-            Rectangle bound = CalculateCellBounds(index);
+            Rect bound = CalculateCellBounds(index);
 
             double y = bound.Y;
             double x = bound.X;
@@ -1284,7 +1289,7 @@ namespace Tizen.TV.UIControls.Forms
                 Device.BeginInvokeOnMainThread(() =>
                 {
                     _requestLayoutItems = false;
-                    _lastViewPort = new Rectangle(0, 0, -1, -1);
+                    _lastViewPort = new Rect(0, 0, -1, -1);
                     LayoutItems();
                 });
             }
@@ -1415,7 +1420,7 @@ namespace Tizen.TV.UIControls.Forms
                 HeaderSize = IsHorizontal ? size.Request.Width : size.Request.Height;
 
                 AbsoluteLayoutFlags layoutFlags = AbsoluteLayoutFlags.YProportional | AbsoluteLayoutFlags.XProportional;
-                Rectangle bounds = new Rectangle(0, 0, 0, 0);
+                Rect bounds = new Rect(0, 0, 0, 0);
 
                 if (IsHorizontal)
                 {
@@ -1432,7 +1437,7 @@ namespace Tizen.TV.UIControls.Forms
                     layoutFlags |= AbsoluteLayoutFlags.WidthProportional;
                 }
 
-                _contentLayout.Children.Add(HeaderElement, bounds, layoutFlags);
+                _contentLayout.Children.Add(HeaderElement);
 
                 var item = new ItemContext
                 {
@@ -1469,7 +1474,7 @@ namespace Tizen.TV.UIControls.Forms
                 var size = FooterElement.Measure(widthConstraint, heightConstraint);
                 FooterSize = IsHorizontal ? size.Request.Width : size.Request.Height;
 
-                Rectangle bounds = new Rectangle(1, 1, ItemWidth, ItemHeight);
+                Rect bounds = new Rect(1, 1, ItemWidth, ItemHeight);
                 AbsoluteLayoutFlags layoutFlags = AbsoluteLayoutFlags.YProportional | AbsoluteLayoutFlags.XProportional;
 
                 if (IsHorizontal)
@@ -1486,7 +1491,7 @@ namespace Tizen.TV.UIControls.Forms
                     bounds.X = 0.5;
                     layoutFlags |= AbsoluteLayoutFlags.WidthProportional;
                 }
-                _contentLayout.Children.Add(FooterElement, bounds, layoutFlags);
+                _contentLayout.Children.Add(FooterElement);
                 var item = new ItemContext
                 {
                     Data = Footer,
@@ -1533,7 +1538,7 @@ namespace Tizen.TV.UIControls.Forms
 
             public View FocusedView => ((IRecycleItemsViewController)RecycleItemsView).FocusedView;
 
-            public Rectangle ScrollBounds => ((IRecycleItemsViewController)RecycleItemsView).ScrollBounds;
+            public Rect ScrollBounds => ((IRecycleItemsViewController)RecycleItemsView).ScrollBounds;
 
             public ContentLayout(RecycleItemsView itemsView)
             {

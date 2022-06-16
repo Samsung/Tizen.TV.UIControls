@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
-using Xamarin.Forms;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.Theme.Common
 {
@@ -15,7 +17,7 @@ namespace Tizen.Theme.Common
             if (popup == null)
                 return;
 
-            using (var renderer = DependencyService.Get<IContentPopupRenderer>(DependencyFetchTarget.NewInstance))
+            using (var renderer = CommonUI.Context.Services.GetService<IContentPopupRenderer>())
             {
                 if (renderer == null)
                     return;

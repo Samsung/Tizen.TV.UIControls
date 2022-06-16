@@ -14,7 +14,10 @@
  * limitations under the License.
  */
 
-using Xamarin.Forms;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -70,7 +73,7 @@ namespace Tizen.Theme.Common
 
         protected override void LayoutChildren(double x, double y, double width, double height)
         {
-            _controller?.Layout(new Rectangle(x, y, width, height));
+            _controller?.Layout(new Rect(x, y, width, height));
         }
 
         protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)

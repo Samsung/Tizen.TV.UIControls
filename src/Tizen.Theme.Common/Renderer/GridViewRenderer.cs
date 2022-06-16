@@ -18,13 +18,13 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using Microsoft.Maui.Controls.Platform;
 using ElmSharp;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
+using Tizen.UIExtensions.Common;
 
-[assembly: ExportRenderer(typeof(GridView), typeof(GridViewRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     class GengridItemContext
@@ -43,14 +43,15 @@ namespace Tizen.Theme.Common.Renderer
 
         protected override void OnElementChanged(ElementChangedEventArgs<GridView> e)
         {
+
             if (Control == null)
             {
-                SetNativeControl(new GenGrid(Xamarin.Forms.Forms.NativeParent));
+                SetNativeControl(new GenGrid(Forms.NativeParent));
                 Control.HorizontalScrollBarVisiblePolicy = Element.HorizontalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.VerticalScrollBarVisiblePolicy = Element.VerticalScrollBarVisible.ToScrollBarVisiblePolicy();
                 Control.IsHorizontal = Element.Orientation == ItemsLayoutOrientation.Horizontal ? true : false;
-                Control.ItemWidth = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemWidth);
-                Control.ItemHeight = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemHeight);
+                Control.ItemWidth = Forms.ConvertToScaledPixel(Element.ItemWidth);
+                Control.ItemHeight = Forms.ConvertToScaledPixel(Element.ItemHeight);
                 Control.ItemAlignmentX = Element.ItemHorizontalAlignment.LayoutAlignmentToDouble();
                 Control.ItemAlignmentY = Element.ItemVerticalAlignment.LayoutAlignmentToDouble();
                 Control.Style = Element.ThemeStyle;
@@ -75,11 +76,11 @@ namespace Tizen.Theme.Common.Renderer
         {
             if (e.PropertyName == GridView.ItemWidthProperty.PropertyName)
             {
-                Control.ItemWidth = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemWidth);
+                Control.ItemWidth = Forms.ConvertToScaledPixel(Element.ItemWidth);
             }
             else if (e.PropertyName == GridView.ItemHeightProperty.PropertyName)
             {
-                Control.ItemHeight = Xamarin.Forms.Forms.ConvertToScaledPixel(Element.ItemHeight);
+                Control.ItemHeight = Forms.ConvertToScaledPixel(Element.ItemHeight);
             }
             else if (e.PropertyName == GridView.ItemVerticalAlignmentProperty.PropertyName)
             {
@@ -137,7 +138,7 @@ namespace Tizen.Theme.Common.Renderer
             if (part == "elm.swallow.icon")
             {
                 var renderer = Platform.GetOrCreateRenderer(context.RealizedView);
-                (renderer as LayoutRenderer)?.RegisterOnLayoutUpdated();
+                (renderer as ILayoutRenderer)?.RegisterOnLayoutUpdated();
                 return renderer.NativeView;
             }
             return null;

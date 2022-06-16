@@ -14,10 +14,14 @@
  * limitations under the License.
  */
 
+#nullable enable
+
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Internals;
+using Microsoft.Maui.Graphics;
 
 namespace Tizen.Theme.Common
 {
@@ -26,7 +30,7 @@ namespace Tizen.Theme.Common
     /// </summary>
     public class OverlayMediaView : MediaView, IOverlayOutput
     {
-        internal static readonly BindablePropertyKey OverlayAreaPropertyKey = BindableProperty.CreateReadOnly(nameof(OverlayArea), typeof(Rectangle), typeof(OverlayMediaView), default(Rectangle));
+        internal static readonly BindablePropertyKey OverlayAreaPropertyKey = BindableProperty.CreateReadOnly(nameof(OverlayArea), typeof(Rect), typeof(OverlayMediaView), default(Rect));
         /// <summary>
         /// Identifies the OverlayArea bindable property.
         /// </summary>
@@ -48,9 +52,9 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Gets the overlay area.
         /// </summary>
-        public Rectangle OverlayArea
+        public Rect OverlayArea
         {
-            get { return (Rectangle)GetValue(OverlayAreaProperty); }
+            get { return (Rect)GetValue(OverlayAreaProperty); }
             private set { SetValue(OverlayAreaPropertyKey, value); }
         }
 
@@ -73,7 +77,7 @@ namespace Tizen.Theme.Common
             }
         }
 
-        void OnBatchCommitted(object sender, Xamarin.Forms.Internals.EventArg<VisualElement> e)
+        void OnBatchCommitted(object? sender, EventArg<VisualElement> e)
         {
             OverlayArea = Bounds;
         }

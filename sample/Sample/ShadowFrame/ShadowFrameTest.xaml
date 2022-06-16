@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:cui="clr-namespace:Tizen.Theme.Common;assembly=Tizen.Theme.Common"
              Title="ShadowFrame Test"
@@ -11,7 +11,7 @@
                       BackgroundColor="White"
                       BorderColor="#fcd071"
                       BorderWidth="8"
-                      CornerRadius="20,20,20,20"
+                      CornerRadius2="20,20,20,20"
                       ShadowOffsetX ="{Binding Value, Source={x:Reference offsetXSlider}}"
                       ShadowOffsetY ="{Binding Value, Source={x:Reference offsetYSlider}}"
                       ShadowBlurRadius="{Binding Value, Source={x:Reference blurSlider}}"

@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-using ElmSharp;
-using System.Collections.Generic;
 using System.Linq;
-using Xamarin.Forms;
+using System.Collections.Generic;
+using Microsoft.Maui.Controls;
+using ElmSharp;
 
 namespace Tizen.Theme.Common.Renderer
 {

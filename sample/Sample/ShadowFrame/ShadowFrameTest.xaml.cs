@@ -1,7 +1,8 @@
 ﻿using System;
-
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
 
 namespace Sample.ShadowFrame
 {
@@ -22,7 +23,7 @@ namespace Sample.ShadowFrame
 
         void radius_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            Frame1.CornerRadius = new CornerRadius(tlSlider.Value, trSlider.Value, blSlider.Value, brSlider.Value);
+            Frame1.CornerRadius2 = new CornerRadius(tlSlider.Value, trSlider.Value, blSlider.Value, brSlider.Value);
         }
 
         void borderColor_ValueChanged(object sender, ValueChangedEventArgs e)

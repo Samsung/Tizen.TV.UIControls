@@ -20,8 +20,9 @@ using System.ComponentModel;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Maui.Controls;
+using Tizen.UIExtensions.Common;
 
 namespace Tizen.Theme.Common
 {
@@ -123,10 +124,12 @@ namespace Tizen.Theme.Common
             _controlsAlwaysVisible = false;
             _controls = new Lazy<View>(() =>
             {
-                return new EmbeddingControls
-                {
-                    BindingContext = this
-                };
+                //return new EmbeddingControls
+                //{
+                //    BindingContext = this
+                //};
+
+                return new Label();
             });
         }
 
@@ -205,7 +208,7 @@ namespace Tizen.Theme.Common
         /// <remarks>
         /// The "http://developer.samsung.com/privilege/drmplay" privilege is required in case of DRMMediaSource.
         /// </remarks>
-        [Xamarin.Forms.TypeConverter(typeof(MediaSourceConverter))]
+        [TypeConverter(typeof(MediaSourceConverter))]
         public MediaSource Source
         {
             get { return (MediaSource)GetValue(SourceProperty); }
@@ -455,7 +458,7 @@ namespace Tizen.Theme.Common
 
         protected virtual IPlatformMediaPlayer CreateMediaPlayerImpl()
         {
-            return DependencyService.Get<IPlatformMediaPlayer>(fetchTarget: DependencyFetchTarget.NewInstance);
+            return CommonUI.Context.Services.GetService<IPlatformMediaPlayer>();
         }
 
         void UpdateAutoPlay()

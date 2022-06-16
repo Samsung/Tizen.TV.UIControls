@@ -1,7 +1,9 @@
 using TV = Tizen.TV.UIControls.Forms;
-using Xamarin.Forms;
+using Microsoft.Maui.Controls;
 using System.Collections.ObjectModel;
 using System;
+using Microsoft.Maui.Graphics;
+
 
 namespace Sample
 {
@@ -14,21 +16,21 @@ namespace Sample
                 if (isFocused)
                 {
                     var old = (targetView as StackLayout).BackgroundColor;
-                    (targetView as StackLayout).BackgroundColor = Color.FromRgb(Math.Min(1.0, old.R + 0.2), Math.Min(1.0, old.G + 0.2), Math.Min(1.0, old.B + 0.2));
+                    (targetView as StackLayout).BackgroundColor = Color.FromRgb(Math.Min(1.0, old.Red + 0.2), Math.Min(1.0, old.Green + 0.2), Math.Min(1.0, old.Blue + 0.2));
                 }
                 else
                 {
-                    (targetView as StackLayout).BackgroundColor = data == Header ? Color.Red : Color.Blue;
+                    (targetView as StackLayout).BackgroundColor = data == Header ? Colors.Red : Colors.Blue;
                 }
                 return;
             }
             if (isFocused)
             {
-                (targetView as StackLayout).BackgroundColor = Color.CadetBlue;
+                (targetView as StackLayout).BackgroundColor = Colors.CadetBlue;
             }
             else
             {
-                (targetView as StackLayout).BackgroundColor = Color.DarkCyan;
+                (targetView as StackLayout).BackgroundColor = Colors.DarkCyan;
             }
         }
     }
@@ -46,7 +48,7 @@ namespace Sample
             var itemsview = new MyRecycleItemsView()
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                BackgroundColor = Color.AliceBlue,
+                BackgroundColor = Colors.AliceBlue,
                 ItemWidth = 200,
             };
             var items = new ObservableCollection<MyData>();
@@ -55,7 +57,7 @@ namespace Sample
             {
                 var stack = new StackLayout()
                 {
-                    BackgroundColor = Color.DarkCyan
+                    BackgroundColor = Colors.DarkCyan
                 };
                 var label = new Label()
                 {
@@ -78,7 +80,7 @@ namespace Sample
                 var stack = new StackLayout()
                 {
                     WidthRequest = 300,
-                    BackgroundColor = Color.Red
+                    BackgroundColor = Colors.Red
                 };
                 var label = new Label()
                 {
@@ -95,7 +97,7 @@ namespace Sample
                 var stack = new StackLayout()
                 {
                     WidthRequest = 300,
-                    BackgroundColor = Color.Blue
+                    BackgroundColor = Colors.Blue
                 };
                 var label = new Label()
                 {

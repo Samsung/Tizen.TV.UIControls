@@ -1,5 +1,6 @@
-﻿using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
+using Microsoft.Maui.Graphics;
 
 namespace Sample
 {
@@ -16,7 +17,7 @@ namespace Sample
         {
             if (e.TotalY != 0 && e.TotalY != 0)
             {
-                AbsoluteLayout.SetLayoutBounds(VideoView, new Rectangle(_x + e.TotalX, _y + e.TotalY, 500, 300));
+                AbsoluteLayout.SetLayoutBounds(VideoView, new Rect(_x + e.TotalX, _y + e.TotalY, 500, 300));
             }
             else
             {

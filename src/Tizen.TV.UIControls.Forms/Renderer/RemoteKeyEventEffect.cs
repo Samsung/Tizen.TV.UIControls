@@ -14,18 +14,16 @@
  * limitations under the License.
  */
 
-using System;
 using ElmSharp;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Platform;
+using System;
 using System.Linq;
+using Tizen.TV.UIControls.Forms.Renderer;
 
-[assembly: ResolutionGroupName("TizenTVUIControl")]
-[assembly: ExportEffect(typeof(RemoteKeyEventEffect), "RemoteKeyEventEffect")]
 namespace Tizen.TV.UIControls.Forms.Renderer
 {
-    public class RemoteKeyEventEffect : PlatformEffect
+    public class PlatformRemoteKeyEventEffect : PlatformEffect
     {
         protected override void OnAttached()
         {
@@ -108,7 +106,7 @@ namespace Tizen.TV.UIControls.Forms.Renderer
 
         bool IsOnMainPage(Page targetPage)
         {
-            var mainPage = Xamarin.Forms.Application.Current.MainPage;
+            var mainPage = Microsoft.Maui.Controls.Application.Current.MainPage;
             var currentPage = mainPage.Navigation.ModalStack.Count > 0 ? mainPage.Navigation.ModalStack.LastOrDefault() : mainPage;
             return IsOnCurrentPage(currentPage, targetPage);
         }
@@ -140,21 +138,21 @@ namespace Tizen.TV.UIControls.Forms.Renderer
                 }
             }
 
-#pragma warning disable CS0618 // Type or member is obsolete
-            if (pageToCompare is MasterDetailPage masterDetailPage)
-#pragma warning restore CS0618 // Type or member is obsolete
-            {
-                if (masterDetailPage.IsPresented)
-                {
-                    if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
-                        return true;
-                }
-                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented))
-                {
-                    if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
-                        return true;
-                }
-            }
+//#pragma warning disable CS0618 // Type or member is obsolete
+//            if (pageToCompare is MasterDetailPage masterDetailPage)
+//#pragma warning restore CS0618 // Type or member is obsolete
+//            {
+//                if (masterDetailPage.IsPresented)
+//                {
+//                    if (IsOnCurrentPage(masterDetailPage.Master, targetPage))
+//                        return true;
+//                }
+//                if (!(masterDetailPage.MasterBehavior == MasterBehavior.Popover && masterDetailPage.IsPresented))
+//                {
+//                    if (IsOnCurrentPage(masterDetailPage.Detail, targetPage))
+//                        return true;
+//                }
+//            }
 
             return false;
         }

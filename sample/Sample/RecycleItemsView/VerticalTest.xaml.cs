@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
 
 namespace Sample.RecycleItemsView
 {

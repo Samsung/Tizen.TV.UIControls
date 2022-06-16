@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.Tizen;
+using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 
-[assembly: ExportRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer))]
 namespace Tizen.Theme.Common.Renderer
 {
     public class OverlayPageRenderer : PageRenderer

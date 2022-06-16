@@ -13,8 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using Xamarin.Forms;
-using Xamarin.Forms.Internals;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using Tizen.UIExtensions.Common;
 
 namespace Tizen.Theme.Common
 {
@@ -26,7 +28,7 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Identifies the CornerRadius bindable property.
         /// </summary>
-        public static new readonly BindableProperty CornerRadiusProperty = BindableProperty.Create(nameof(CornerRadius), typeof(CornerRadius), typeof(ShadowFrame), default(CornerRadius));
+        public static readonly BindableProperty CornerRadius2Property = BindableProperty.Create(nameof(CornerRadius2), typeof(CornerRadius), typeof(ShadowFrame), default(CornerRadius));
 
         /// <summary>
         /// Identifies the BorderWidth bindable property.
@@ -46,7 +48,7 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Identifies the ShadowColor bindable property.
         /// </summary>
-        public static readonly BindableProperty ShadowColorProperty = BindableProperty.Create(nameof(ShadowColor), typeof(Color), typeof(ShadowFrame), Color.FromHex("#3E000000"));
+        public static readonly BindableProperty ShadowColorProperty = BindableProperty.Create(nameof(ShadowColor), typeof(Microsoft.Maui.Graphics.Color), typeof(ShadowFrame), Microsoft.Maui.Graphics.Color.FromArgb("#3E000000"));
 
         /// <summary>
         /// Identifies the ShadowOpacity bindable property.
@@ -72,10 +74,10 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Gets or sets a value that represents CornerRadius.
         /// </summary>
-        public new CornerRadius CornerRadius
+        public CornerRadius CornerRadius2
         {
-            get => (CornerRadius)GetValue(CornerRadiusProperty);
-            set => SetValue(CornerRadiusProperty, value);
+            get => (CornerRadius)GetValue(CornerRadius2Property);
+            set => SetValue(CornerRadius2Property, value);
         }
 
         /// <summary>
@@ -108,9 +110,9 @@ namespace Tizen.Theme.Common
         /// <summary>
         /// Gets or sets a shadow color.
         /// </summary>
-        public Color ShadowColor
+        public Microsoft.Maui.Graphics.Color ShadowColor
         {
-            get => (Color)GetValue(ShadowColorProperty);
+            get => (Microsoft.Maui.Graphics.Color)GetValue(ShadowColorProperty);
             set => SetValue(ShadowColorProperty, value);
         }
 

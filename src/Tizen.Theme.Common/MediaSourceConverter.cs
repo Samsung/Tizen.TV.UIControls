@@ -15,7 +15,8 @@
  */
 
 using System;
-using Xamarin.Forms;
+using System.ComponentModel;
+using Microsoft.Maui.Controls;
 
 namespace Tizen.Theme.Common
 {
@@ -23,14 +24,14 @@ namespace Tizen.Theme.Common
     /// Class that takes a string representation of a media file location and returns a MeidaSource from the specified resource.
     /// </summary>
     [TypeConverter(typeof(MediaSource))]
-    public sealed class MediaSourceConverter : TypeConverter
+    public sealed class MediaSourceConverter : TypeConverter, IExtendedTypeConverter
     {
         /// <summary>
         /// Returns a media source created from a URI that is contained in value.
         /// </summary>
         /// <param name="value">The value to convert.</param>
         /// <returns>MediaSource</returns>
-        public override object ConvertFromInvariantString(string value)
+        public object ConvertFromInvariantString(string value, IServiceProvider serviceProvider)
         {
             if (value != null)
             {

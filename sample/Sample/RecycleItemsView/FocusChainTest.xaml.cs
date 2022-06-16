@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Xaml;
 namespace Sample.RecycleItemsView
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -28,15 +28,15 @@ namespace Sample.RecycleItemsView
 
         protected override void OnAppearing()
         {
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView1, ItemsView4);
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView2, ItemsView1);
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView3, ItemsView2);
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView4, ItemsView3);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView1, ItemsView4);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView2, ItemsView1);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView3, ItemsView2);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusLeftView(ItemsView4, ItemsView3);
 
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView1, ItemsView2);
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView2, ItemsView3);
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView3, ItemsView4);
-            Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView4, ItemsView1);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView1, ItemsView2);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView2, ItemsView3);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView3, ItemsView4);
+            //Xamarin.Forms.PlatformConfiguration.TizenSpecific.VisualElement.SetNextFocusRightView(ItemsView4, ItemsView1);
         }
     }
 }

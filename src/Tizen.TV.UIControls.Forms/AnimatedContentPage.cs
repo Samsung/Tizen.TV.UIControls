@@ -15,7 +15,6 @@
  */
 using System;
 using System.ComponentModel;
-using Xamarin.Forms;
 
 namespace Tizen.TV.UIControls.Forms
 {
@@ -24,5 +23,5 @@ namespace Tizen.TV.UIControls.Forms
     /// </summary>
     [EditorBrowsable(EditorBrowsableState.Never)]
     [Obsolete("This class is obsolete as of 1.1.0. Please use AnimatedContentPage from Tizen.Theme.Common instead.")]
-    public class AnimatedContentPage : Theme.Common.AnimatedContentPage {}
+    public class AnimatedContentPage : Tizen.Theme.Common.AnimatedContentPage {}
 }
