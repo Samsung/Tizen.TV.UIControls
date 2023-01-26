@@ -37,31 +37,31 @@ namespace Tizen.TV.UIControls.Forms
                 .UseTizenThemeCommonUI()
                 .ConfigureMauiHandlers(handlers =>
                 {
-                    handlers.AddHandler<Entry, TVEntryHandler>();
-                    handlers.AddHandler<Editor, TVEditorHandler>();
+                    //handlers.AddHandler<Entry, TVEntryHandler>();
+                    //handlers.AddHandler<Editor, TVEditorHandler>();
                     handlers.AddHandler<ContentButton, ContentButtonHandler>();
 
                     //TODO
-                    handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(UriMediaSource), typeof(UriMediaSourceHandler));
                     handlers.AddCompatibilityRenderer(typeof(FileMediaSource), typeof(FileMediaSourceHandler));
-                    handlers.AddCompatibilityRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewContentRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(Button), typeof(PropagatableButtonRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewContentRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(Button), typeof(PropagatableButtonRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer));
 
                     //TODO
                     //handlers.AddCompatibilityRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer));
                 })
                 .ConfigureEffects(builder =>
                 {
-                    builder.Add<FocusUpEffect, PlatformFocusUpEffect>();
-                    builder.Add<FocusDownEffect, PlatformFocusDownEffect>();
-                    builder.Add<FocusLeftEffect, PlatformFocusLeftEffect>();
-                    builder.Add<FocusRightEffect, PlatformFocusRightEffect>();
+                    //builder.Add<FocusUpEffect, PlatformFocusUpEffect>();
+                    //builder.Add<FocusDownEffect, PlatformFocusDownEffect>();
+                    //builder.Add<FocusLeftEffect, PlatformFocusLeftEffect>();
+                    //builder.Add<FocusRightEffect, PlatformFocusRightEffect>();
 
-                    builder.Add<InputEvents.RemoteKeyEventEffect, PlatformRemoteKeyEventEffect>();
+                    //builder.Add<InputEvents.RemoteKeyEventEffect, PlatformRemoteKeyEventEffect>();
                     builder.Add<InputEvents.AccessKeyEffect, PlatformAccessKeyEffect>();
                 })
                 .ConfigureLifecycleEvents(events =>
@@ -75,8 +75,8 @@ namespace Tizen.TV.UIControls.Forms
                 });
 
             var services = builder.Services;
-            services.AddTransient<ContentPopupRenderer, ContentPopupRenderer>();
-            services.AddTransient<Tizen.Theme.Common.IPlatformMediaPlayer, TVMediaPlayerImpl>();
+            //services.AddTransient<ContentPopupRenderer, ContentPopupRenderer>();
+            //services.AddTransient<Tizen.Theme.Common.IPlatformMediaPlayer, TVMediaPlayerImpl>();
 
             return builder;
         }
