@@ -17,7 +17,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
-using ElmSharp;
+using Tizen.NUI;
 
 namespace Tizen.Theme.Common
 {
@@ -94,20 +94,6 @@ namespace Tizen.Theme.Common
             {
                 MainWindowProvider = options.MainWindowProvider;
             }
-        }
-
-        /// <summary>
-        /// Adds the common theme overlay
-        /// </summary>
-        public static void AddCommonThemeOverlay()
-        {
-            if (!IsInitialized)
-            {
-                throw new InvalidOperationException($"{nameof(AddCommonThemeOverlay)} must be called after {nameof(Init)}");
-            };
-
-            var resPath = Context.DirectoryInfo?.Resource;
-            ThemeLoader.Initialize(resPath);
         }
     }
 }

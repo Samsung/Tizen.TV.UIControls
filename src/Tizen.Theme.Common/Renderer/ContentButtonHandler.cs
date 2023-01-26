@@ -17,56 +17,45 @@
 using System;
 using Microsoft.Maui.Handlers;
 using Microsoft.Maui.Platform;
-using Tizen.UIExtensions.Common;
-using Tizen.UIExtensions.ElmSharp;
-using TButton = Tizen.UIExtensions.ElmSharp.Button;
+using Tizen.NUI;
+using Tizen.UIExtensions.NUI;
+using NTouchEventArgs = Tizen.NUI.BaseComponents.View.TouchEventArgs;
 
 namespace Tizen.Theme.Common.Renderer
 {
     public class ContentButtonHandler : ContentViewHandler
     {
-        TButton _button;
+        bool _isPressed;
 
         ContentButton Button => VirtualView as ContentButton;
 
-        protected override void ConnectHandler(ContentCanvas platformView)
+        protected override void ConnectHandler(ContentViewGroup platformView)
         {
+            platformView.TouchEvent += OnTouched;
             base.ConnectHandler(platformView);
-            Initialize();
         }
 
-        void Initialize()
+        bool OnTouched(object source, NTouchEventArgs e)
         {
-            if (_button == null)
+            var state = e.Touch.GetState(0);
+
+            if (state == PointStateType.Down)
             {
-                _button = new TButton(PlatformParent);
-                _button.SetTransparentStyle();
-                _button.Opacity = 0;
-                _button.Show();
-
-                _button.Pressed += OnPressed;
-                _button.Released += OnReleased;
-                _button.Clicked += OnClicked;
-                _button.Focused += OnButtonFocused;
-                _button.Unfocused += OnButtonFocused;
-                PlatformView.PackEnd(_button);
+                _isPressed = true;
+                OnPressed(this, EventArgs.Empty);
+                return true;
             }
-
-            PlatformView.LayoutUpdated += OnLayoutUpdated;
-        }
-
-        private void OnLayoutUpdated(object sender, LayoutEventArgs e)
-        {
-            _button.Geometry = PlatformView.Geometry;
-            _button.RaiseTop();
-        }
-
-        void OnButtonFocused(object sender, EventArgs e)
-        {
-            if (_button.IsFocused)
-                OnFocused(this, e);
-            else 
-                OnUnfocused(this, e);
+            else if (state == PointStateType.Up)
+            {
+                OnReleased(this, EventArgs.Empty);
+                if (_isPressed && PlatformView.IsInside(e.Touch.GetLocalPosition(0)))
+                {
+                    OnClicked(this, EventArgs.Empty);
+                }
+                _isPressed = false;
+                return true;
+            }
+            return false;
         }
 
         void OnPressed(object sender, EventArgs args)

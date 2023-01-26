@@ -30,15 +30,8 @@
 
 	<ItemGroup Condition="$(TargetFramework.Contains('tizen'))">
 		<PackageReference Include="Tizen.NET" Version="9.0.0.16760" />
-		<PackageReference Include="Tizen.UIExtensions.ElmSharp" Version="0.8.1" />
+		<PackageReference Include="Tizen.UIExtensions.NUI" Version="0.9.0" />
 	</ItemGroup>
-
-
-
-	<ItemGroup>
-    <Content Include="Tizen.Theme.Common.targets" PackagePath="build\" />
-    <Content Include="elm-sharp-theme-common.edj" PackagePath="content\theme\" />
-  </ItemGroup>
 
 	<ItemGroup>
     <MauiXaml Update="EmbeddingControls.xaml">

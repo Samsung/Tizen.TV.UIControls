@@ -14,13 +14,10 @@
  * limitations under the License.
  */
 
-using System;
 using System.Threading.Tasks;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Tizen.Multimedia;
-using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
 
 namespace Tizen.Theme.Common.Renderer
 {

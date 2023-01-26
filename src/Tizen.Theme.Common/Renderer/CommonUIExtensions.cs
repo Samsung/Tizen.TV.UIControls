@@ -23,7 +23,7 @@ using Microsoft.Maui.LifecycleEvents;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Renderer;
 
-[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
+//[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 namespace Tizen.Theme.Common
 {
     public static class CommonUIExtensions
@@ -36,15 +36,15 @@ namespace Tizen.Theme.Common
                 {
                     handlers.AddHandler<ContentButton, ContentButtonHandler>();
 
-                    handlers.AddCompatibilityRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer));
 
-                    handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(UriMediaSource), typeof(UriMediaSourceHandler));
                     handlers.AddCompatibilityRenderer(typeof(FileMediaSource), typeof(FileMediaSourceHandler));
 
-                    handlers.AddCompatibilityRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer));
 
                     //TODO
                     //handlers.AddCompatibilityRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer));
@@ -61,8 +61,8 @@ namespace Tizen.Theme.Common
                 });
 
             var services = builder.Services;
-            services.AddTransient<IContentPopupRenderer, ContentPopupRenderer>();
-            services.AddTransient<IPlatformMediaPlayer, MediaPlayerImpl>();
+            //services.AddTransient<IContentPopupRenderer, ContentPopupRenderer>();
+            //services.AddTransient<IPlatformMediaPlayer, MediaPlayerImpl>();
 
             return builder;
         }
