@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using Microsoft.Maui.Controls;
 using ElmSharp;
 
-namespace Tizen.Theme.Common.Renderer
+namespace Tizen.Theme.Common.Handler
 {
     public class NavigationStack : Box
     {

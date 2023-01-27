@@ -21,7 +21,7 @@ using Tizen.NUI;
 using Tizen.UIExtensions.NUI;
 using NTouchEventArgs = Tizen.NUI.BaseComponents.View.TouchEventArgs;
 
-namespace Tizen.Theme.Common.Renderer
+namespace Tizen.Theme.Common.Handler
 {
     public class ContentButtonHandler : ContentViewHandler
     {

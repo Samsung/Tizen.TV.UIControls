@@ -19,7 +19,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
 using Tizen.Multimedia;
 
-namespace Tizen.Theme.Common.Renderer
+namespace Tizen.Theme.Common.Handler
 {
 
     public interface IMediaSourceHandler : IRegisterable

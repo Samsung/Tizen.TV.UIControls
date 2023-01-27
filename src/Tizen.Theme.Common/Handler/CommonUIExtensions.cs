@@ -21,7 +21,7 @@ using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.LifecycleEvents;
 using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
+using Tizen.Theme.Common.Handler;
 
 //[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 namespace Tizen.Theme.Common

@@ -14,11 +14,12 @@
  * limitations under the License.
  */
 
-using Microsoft.Maui.Controls.Compatibility.Platform.Tizen;
+using MMView = Tizen.Multimedia.MediaView;
 
-namespace Tizen.Theme.Common.Renderer
+namespace Tizen.Theme.Common.Handler
 {
-    public class OverlayPageRenderer : PageRenderer
+    public interface IMediaViewProvider
     {
+        MMView GetMediaView();
     }
 }

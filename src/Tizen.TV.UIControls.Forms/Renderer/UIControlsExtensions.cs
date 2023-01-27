@@ -22,7 +22,7 @@ using Microsoft.Maui.Hosting;
 using Microsoft.Maui.LifecycleEvents;
 using Microsoft.Extensions.DependencyInjection;
 using Tizen.Theme.Common;
-using Tizen.Theme.Common.Renderer;
+using Tizen.Theme.Common.Handler;
 using Tizen.TV.UIControls.Forms.Renderer;
 
 
