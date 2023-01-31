@@ -14,7 +14,6 @@ namespace Sample
 
             builder
                 .UseMauiApp<App>()
-                //.UseMauiCompatibility()
                 .UseTizenTVUIControls()
                 .ConfigureFonts(fonts =>
                 {
