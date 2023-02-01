@@ -14,55 +14,41 @@
  * limitations under the License.
  */
 
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
-using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
-using Microsoft.Maui.Controls.Hosting;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.LifecycleEvents;
-using Microsoft.Extensions.DependencyInjection;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Handler;
-using Tizen.TV.UIControls.Forms.Renderer;
 
-
-[assembly: ResolutionGroupName("TizenTVUIControl")]
-namespace Tizen.TV.UIControls.Forms
+//[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
+namespace Tizen.Theme.Common
 {
-    public static class UIControlsExtensions
+    public static class CommonUIExtensions
     {
-        public static MauiAppBuilder UseTizenTVUIControls(this MauiAppBuilder builder)
+        public static MauiAppBuilder UseTizenThemeCommonUI(this MauiAppBuilder builder)
         {
             builder
-                .UseTizenThemeCommonUI()
+                .UseMauiCompatibility()
                 .ConfigureMauiHandlers(handlers =>
                 {
-                    //handlers.AddHandler<Entry, TVEntryHandler>();
-                    //handlers.AddHandler<Editor, TVEditorHandler>();
                     handlers.AddHandler<ContentButton, ContentButtonHandler>();
 
-                    //TODO
+                    //handlers.AddCompatibilityRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer));
+
                     //handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
                     //handlers.AddCompatibilityRenderer(typeof(MediaView), typeof(MediaViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(UriMediaSource), typeof(UriMediaSourceHandler));
                     handlers.AddCompatibilityRenderer(typeof(FileMediaSource), typeof(FileMediaSourceHandler));
-                    //handlers.AddCompatibilityRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewContentRenderer));
-                    //handlers.AddCompatibilityRenderer(typeof(Button), typeof(PropagatableButtonRenderer));
-                    //handlers.AddCompatibilityRenderer(typeof(RecycleItemsView), typeof(RecycleItemsViewRenderer));
-                    //handlers.AddCompatibilityRenderer(typeof(RecycleItemsView.ContentLayout), typeof(RecycleItemsViewContentRenderer));
+
+                    //handlers.AddCompatibilityRenderer(typeof(OverlayPage), typeof(OverlayPageRenderer));
+                    //handlers.AddCompatibilityRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer));
 
                     //TODO
                     //handlers.AddCompatibilityRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer));
-                })
-                .ConfigureEffects(builder =>
-                {
-                    //builder.Add<FocusUpEffect, PlatformFocusUpEffect>();
-                    //builder.Add<FocusDownEffect, PlatformFocusDownEffect>();
-                    //builder.Add<FocusLeftEffect, PlatformFocusLeftEffect>();
-                    //builder.Add<FocusRightEffect, PlatformFocusRightEffect>();
 
-                    //builder.Add<InputEvents.RemoteKeyEventEffect, PlatformRemoteKeyEventEffect>();
-                    builder.Add<InputEvents.AccessKeyEffect, PlatformAccessKeyEffect>();
                 })
                 .ConfigureLifecycleEvents(events =>
                 {
@@ -70,13 +56,13 @@ namespace Tizen.TV.UIControls.Forms
                     .OnPreCreate((a) =>
                     {
                         var option = new InitOptions(MauiApplication.Current);
-                        UIControls.Init(option);
+                        CommonUI.Init(option);
                     }));
                 });
 
             var services = builder.Services;
-            //services.AddTransient<ContentPopupRenderer, ContentPopupRenderer>();
-            //services.AddTransient<Tizen.Theme.Common.IPlatformMediaPlayer, TVMediaPlayerImpl>();
+            //services.AddTransient<IContentPopupRenderer, ContentPopupRenderer>();
+            //services.AddTransient<IPlatformMediaPlayer, MediaPlayerImpl>();
 
             return builder;
         }
