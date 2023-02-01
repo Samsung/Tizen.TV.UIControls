@@ -4,7 +4,7 @@
              Title="AnimatedNaviPage Test"
              x:Class="Sample.AnimatedNaviMainPage">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding TestList}" ItemTapped="ItemSelected">
+        <ListView ItemsSource="{Binding TestList}" ItemTapped="ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" />

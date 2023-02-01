@@ -4,7 +4,7 @@
              Title="DrawerLayout Test"
              x:Class="Sample.DrawerLayout.DrawerMainPage">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding TestList}" ItemTapped="ItemSelected">
+        <ListView ItemsSource="{Binding TestList}" ItemTapped="ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" />

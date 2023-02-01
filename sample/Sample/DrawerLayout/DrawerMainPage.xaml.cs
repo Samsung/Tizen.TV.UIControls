@@ -13,7 +13,7 @@ namespace Sample.DrawerLayout
             BindingContext = new DrawerTestModel();
 
         }
-        async void ItemSelected(object sender, ItemTappedEventArgs args)
+        async void ItemTapped(object sender, ItemTappedEventArgs args)
         {
             TestModel model = (TestModel)args.Item;
             Page page = (Page)Activator.CreateInstance(model.PageType);

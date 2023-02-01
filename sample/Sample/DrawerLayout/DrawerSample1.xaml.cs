@@ -61,7 +61,7 @@ namespace Sample.DrawerLayout
             InitializeComponent();
         }
 
-        void MenuItemsView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        void MenuItemsView_ItemTapped(object sender, SelectedItemChangedEventArgs e)
         {
             ImageHolder.Source = (e.SelectedItem as MenuModel).Path;
         }

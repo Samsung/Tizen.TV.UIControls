@@ -14,7 +14,7 @@
                                      ItemWidth="1000"
                                      ItemHeight="200" Orientation="Vertical" ItemsSource="{Binding Items}"
                                      BackgroundColor="DarkSlateBlue"
-                                     ItemSelected="MenuItemsView_ItemSelected"/>
+                                     ItemSelected="MenuItemsView_ItemTapped"/>
             </tv:DrawerLayout.Drawer>
             <tv:DrawerLayout.Content>
                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="CornflowerBlue">
