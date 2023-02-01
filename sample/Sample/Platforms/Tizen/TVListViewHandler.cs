@@ -13,12 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Handlers.Compatibility;
 using Microsoft.Maui.Controls.Platform;
 using Tizen.UIExtensions.NUI;
 
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Sample.Platforms.Tizen
 {
     public class TVListViewRenderer : ListViewRenderer
     {
@@ -26,6 +25,11 @@ namespace Tizen.TV.UIControls.Forms.Renderer
         {
             base.OnElementChanged(e);
 
+            UpdateSelectionMode();
+        }
+
+        void UpdateSelectionMode()
+        {
             Control.SelectionMode = Element.SelectionMode == ListViewSelectionMode.Single ? CollectionViewSelectionMode.SingleAlways : CollectionViewSelectionMode.None;
         }
     }

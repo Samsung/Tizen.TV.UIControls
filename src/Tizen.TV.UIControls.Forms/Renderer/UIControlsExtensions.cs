@@ -52,9 +52,6 @@ namespace Tizen.TV.UIControls.Forms
 
                     //TODO
                     //handlers.AddCompatibilityRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer));
-
-                    // This is a workaround for wrong ListView behavior
-                    handlers.AddHandler<ListView, TVListViewRenderer>();
                 })
                 .ConfigureEffects(builder =>
                 {
