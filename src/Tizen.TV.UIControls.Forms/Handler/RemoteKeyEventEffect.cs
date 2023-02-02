@@ -19,9 +19,9 @@
 //using Microsoft.Maui.Controls.Platform;
 //using System;
 //using System.Linq;
-//using Tizen.TV.UIControls.Forms.Renderer;
+//using Tizen.TV.UIControls.Forms.Handler;
 
-//namespace Tizen.TV.UIControls.Forms.Renderer
+//namespace Tizen.TV.UIControls.Forms.Handler
 //{
 //    public class PlatformRemoteKeyEventEffect : PlatformEffect
 //    {

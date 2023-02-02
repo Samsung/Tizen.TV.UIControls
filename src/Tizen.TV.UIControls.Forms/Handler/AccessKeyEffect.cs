@@ -22,7 +22,7 @@ using System.Linq;
 using Button = Microsoft.Maui.Controls.Button;
 using MApplication = Microsoft.Maui.Controls.Application;
 
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.TV.UIControls.Forms.Handler
 {
     public class PlatformAccessKeyEffect : PlatformEffect
     {

@@ -22,7 +22,7 @@
 //using ElmSharp;
 //using EColor = ElmSharp.Color;
 
-//namespace Tizen.Theme.Common.Renderer
+//namespace Tizen.Theme.Common.Handler
 //{
 //    public class OverlayViewRenderer : ViewRenderer<OverlayMediaView, LayoutCanvas>
 //    {

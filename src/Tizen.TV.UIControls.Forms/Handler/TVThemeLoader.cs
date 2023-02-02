@@ -16,7 +16,7 @@
 using ElmSharp;
 using System.IO;
 
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.TV.UIControls.Forms.Handler
 {
     internal static class TVThemeLoader
     {

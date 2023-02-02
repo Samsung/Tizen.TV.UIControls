@@ -27,7 +27,7 @@
 //using Tizen.UIExtensions.NUI;
 //using SKCanvasView = Tizen.UIExtensions.NUI.SKCanvasView;
 
-//namespace Tizen.Theme.Common.Renderer
+//namespace Tizen.Theme.Common.Handler
 //{
 //    public class ShadowFrameRenderer : LayoutRenderer
 //    {

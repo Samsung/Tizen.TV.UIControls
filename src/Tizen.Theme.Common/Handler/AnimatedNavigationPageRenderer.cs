@@ -25,7 +25,7 @@
 //using Tizen.Theme.Common;
 //using Tizen.Theme.Common.Renderer;
 
-//namespace Tizen.Theme.Common.Renderer
+//namespace Tizen.Theme.Common.Handler
 //{
 //    public class AnimatedNavigationPageRenderer : VisualElementRenderer<AnimatedNavigationPage>
 //    {

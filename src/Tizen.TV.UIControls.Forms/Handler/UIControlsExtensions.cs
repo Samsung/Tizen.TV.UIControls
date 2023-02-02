@@ -23,7 +23,7 @@ using Microsoft.Maui.LifecycleEvents;
 using Microsoft.Extensions.DependencyInjection;
 using Tizen.Theme.Common;
 using Tizen.Theme.Common.Handler;
-using Tizen.TV.UIControls.Forms.Renderer;
+using Tizen.TV.UIControls.Forms.Handler;
 
 [assembly: ResolutionGroupName("TizenTVUIControl")]
 namespace Tizen.TV.UIControls.Forms
