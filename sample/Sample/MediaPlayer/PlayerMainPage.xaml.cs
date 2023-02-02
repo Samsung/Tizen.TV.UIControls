@@ -29,7 +29,7 @@ namespace Sample
             BindingContext = new PlayerMainPageModel();
         }
 
-        async void ItemSelected(object sender, ItemTappedEventArgs args)
+        async void ItemTapped(object sender, ItemTappedEventArgs args)
         {
             PlayerTestModel model = (PlayerTestModel)args.Item;
             Page page = (Page)Activator.CreateInstance(model.Page);

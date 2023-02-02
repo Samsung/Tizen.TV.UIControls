@@ -4,7 +4,7 @@
              Title="Focus Test"
              x:Class="Sample.ContentPopup.ContentPopupMainPage">
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding TestList}" ItemTapped="ItemSelected">
+        <ListView ItemsSource="{Binding TestList}" ItemTapped="ItemTapped">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}" />

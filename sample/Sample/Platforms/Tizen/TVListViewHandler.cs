@@ -13,28 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+using Microsoft.Maui.Controls.Handlers.Compatibility;
+using Microsoft.Maui.Controls.Platform;
+using Tizen.UIExtensions.NUI;
 
-using System;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Xaml;
-
-namespace Sample
+namespace Sample.Platforms.Tizen
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class RemoteControlMainPage : ContentPage
-	{
-		public RemoteControlMainPage ()
-		{
-			InitializeComponent ();
-            BindingContext = new RemoteControlMainPageModel();
+    public class TVListViewRenderer : ListViewRenderer
+    {
+        protected override void OnElementChanged(ElementChangedEventArgs<ListView> e)
+        {
+            base.OnElementChanged(e);
+
+            UpdateSelectionMode();
         }
 
-        async void ItemTapped(object sender, ItemTappedEventArgs args)
+        void UpdateSelectionMode()
         {
-            RemoteControlTestModel model = (RemoteControlTestModel)args.Item;
-            Page page = (Page)Activator.CreateInstance(model.Page);
-            page.BindingContext = model;
-            await Navigation.PushAsync(page);
+            Control.SelectionMode = Element.SelectionMode == ListViewSelectionMode.Single ? CollectionViewSelectionMode.SingleAlways : CollectionViewSelectionMode.None;
         }
     }
 }
