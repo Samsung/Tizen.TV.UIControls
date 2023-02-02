@@ -17,7 +17,7 @@
 using System;
 using ElmSharp;
 
-namespace Tizen.TV.UIControls.Forms.Renderer
+namespace Tizen.TV.UIControls.Forms.Handler
 {
     public class EcoreKeyEvents
     {

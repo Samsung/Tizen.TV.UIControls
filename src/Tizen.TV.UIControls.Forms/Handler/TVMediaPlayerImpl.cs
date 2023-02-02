@@ -17,13 +17,13 @@
 //using System.Collections.Generic;
 //using System.Threading.Tasks;
 //using Microsoft.Maui.Controls.Internals;
-//using Tizen.Theme.Common.Renderer;
+//using Tizen.Theme.Common.Handler;
 //using Tizen.TV.Multimedia;
 //using MPlayer = Tizen.Multimedia.Player;
 //using TApplication = Tizen.Applications.Application;
 //using TVPlayer = Tizen.TV.Multimedia.Player;
 
-//namespace Tizen.TV.UIControls.Forms.Renderer
+//namespace Tizen.TV.UIControls.Forms.Handler
 //{
 //    public class TVMediaPlayerImpl : MediaPlayerImpl
 //    {

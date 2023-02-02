@@ -25,7 +25,7 @@
 //using ElmSharp;
 //using Tizen.UIExtensions.Common;
 
-//namespace Tizen.Theme.Common.Renderer
+//namespace Tizen.Theme.Common.Handler
 //{
 //    class GengridItemContext
 //    {

@@ -19,7 +19,7 @@
 //using Microsoft.Maui.Controls.Platform;
 //using ElmSharp;
 
-//namespace Tizen.TV.UIControls.Forms.Renderer
+//namespace Tizen.TV.UIControls.Forms.Handler
 //{
 //    public class PlatformFocusEffect : PlatformEffect
 //    {
