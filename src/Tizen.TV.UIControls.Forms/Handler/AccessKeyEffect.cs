@@ -20,6 +20,7 @@ using Microsoft.Maui.Controls;
 using Microsoft.Maui.Controls.Platform;
 using MButton = Microsoft.Maui.Controls.Button;
 using MApplication = Microsoft.Maui.Controls.Application;
+using TWindow = Tizen.NUI.Window;
 
 namespace Tizen.TV.UIControls.Forms.Handler
 {
@@ -58,7 +59,7 @@ namespace Tizen.TV.UIControls.Forms.Handler
             return null;
         }
 
-        void OnKeyDown(object sender, Tizen.NUI.Window.KeyEventArgs e)
+        void OnKeyDown(object sender, TWindow.KeyEventArgs e)
         {
             var targetName = _targetKeyName.ToString();
             if (targetName == e.Key.KeyPressedName || targetName == "NUM" + e.Key.KeyPressedName)
