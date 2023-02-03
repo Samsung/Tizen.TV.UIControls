@@ -36,8 +36,8 @@ namespace Tizen.TV.UIControls.Forms
                 .UseTizenThemeCommonUI()
                 .ConfigureMauiHandlers(handlers =>
                 {
-                    //handlers.AddHandler<Entry, TVEntryHandler>();
-                    //handlers.AddHandler<Editor, TVEditorHandler>();
+                    handlers.AddHandler<Entry, TVEntryHandler>();
+                    handlers.AddHandler<Editor, TVEditorHandler>();
                     handlers.AddHandler<ContentButton, ContentButtonHandler>();
 
                     //TODO
@@ -60,7 +60,7 @@ namespace Tizen.TV.UIControls.Forms
                     //builder.Add<FocusLeftEffect, PlatformFocusLeftEffect>();
                     //builder.Add<FocusRightEffect, PlatformFocusRightEffect>();
 
-                    //builder.Add<InputEvents.RemoteKeyEventEffect, PlatformRemoteKeyEventEffect>();
+                    builder.Add<InputEvents.RemoteKeyEventEffect, PlatformRemoteKeyEventEffect>();
                     builder.Add<InputEvents.AccessKeyEffect, PlatformAccessKeyEffect>();
                 })
                 .ConfigureLifecycleEvents(events =>

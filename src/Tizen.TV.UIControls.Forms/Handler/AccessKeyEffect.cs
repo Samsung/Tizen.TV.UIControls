@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-using ElmSharp;
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Controls.Platform;
 using System;
 using System.Linq;
-using Button = Microsoft.Maui.Controls.Button;
+using Microsoft.Maui.Controls;
+using Microsoft.Maui.Controls.Platform;
+using MButton = Microsoft.Maui.Controls.Button;
 using MApplication = Microsoft.Maui.Controls.Application;
+using TWindow = Tizen.NUI.Window;
 
 namespace Tizen.TV.UIControls.Forms.Handler
 {
@@ -32,7 +32,7 @@ namespace Tizen.TV.UIControls.Forms.Handler
         {
             try
             {
-                EcoreKeyEvents.Instance.KeyDown += OnKeyDown;
+                WindowKeyEvents.Instance.KeyDown += OnKeyDown;
                 _targetKeyName = InputEvents.GetAccessKey(Element);
             }
             catch(Exception e)
@@ -43,7 +43,7 @@ namespace Tizen.TV.UIControls.Forms.Handler
 
         protected override void OnDetached()
         {
-            EcoreKeyEvents.Instance.KeyDown -= OnKeyDown;
+            WindowKeyEvents.Instance.KeyDown -= OnKeyDown;
         }
 
         Page GetParentPage()
@@ -59,10 +59,10 @@ namespace Tizen.TV.UIControls.Forms.Handler
             return null;
         }
 
-        void OnKeyDown(object sender, EcoreKeyEventArgs e)
+        void OnKeyDown(object sender, TWindow.KeyEventArgs e)
         {
             var targetName = _targetKeyName.ToString();
-            if (targetName == e.KeyName || targetName == "NUM" + e.KeyName)
+            if (targetName == e.Key.KeyPressedName || targetName == "NUM" + e.Key.KeyPressedName)
             {
                 var targetPage = GetParentPage();
                 if(IsOnMainPage(targetPage))
@@ -127,8 +127,8 @@ namespace Tizen.TV.UIControls.Forms.Handler
         void ActiveOrFocusElement()
         {
             (Element as VisualElement).Focus();
-            if (Element is Button)
-                (Element as Button).SendClicked();
+            if (Element is MButton)
+                (Element as MButton).SendClicked();
         }
     }
 }
