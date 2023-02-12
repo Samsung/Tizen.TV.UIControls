@@ -14,16 +14,12 @@
  * limitations under the License.
  */
 
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Maui;
-using Microsoft.Maui.Controls.Compatibility;
 using Microsoft.Maui.Controls.Compatibility.Hosting;
 using Microsoft.Maui.Hosting;
 using Microsoft.Maui.LifecycleEvents;
-using Tizen.Theme.Common;
 using Tizen.Theme.Common.Handler;
 
-//[assembly: ExportRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer))]
 namespace Tizen.Theme.Common
 {
     public static class CommonUIExtensions
@@ -35,6 +31,7 @@ namespace Tizen.Theme.Common
                 .ConfigureMauiHandlers(handlers =>
                 {
                     handlers.AddHandler<ContentButton, ContentButtonHandler>();
+                    handlers.AddHandler<ContentPopup, ContentPopupHandler>();
 
                     //handlers.AddCompatibilityRenderer(typeof(ShadowFrame), typeof(ShadowFrameRenderer));
 
@@ -47,7 +44,8 @@ namespace Tizen.Theme.Common
                     //handlers.AddCompatibilityRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer));
 
                     //TODO
-                    //handlers.AddCompatibilityRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer));
+                    //handlers.AddHandler<AnimatedNavigationPage, AnimatedNavigationPageHandler>();
+                    handlers.AddHandler<AnimatedNavigationPage, AnimatedNavigationPageHandler>();
 
                 })
                 .ConfigureLifecycleEvents(events =>
@@ -61,7 +59,6 @@ namespace Tizen.Theme.Common
                 });
 
             var services = builder.Services;
-            //services.AddTransient<IContentPopupRenderer, ContentPopupRenderer>();
             //services.AddTransient<IPlatformMediaPlayer, MediaPlayerImpl>();
 
             return builder;
