@@ -32,7 +32,7 @@ namespace Sample.ContentPopup
             InitializeComponent();
         }
 
-        void OnContentPopupTest1Clicked(object sender, EventArgs e)
+        void OnPopupButtonClicked(object sender, EventArgs e)
         {
             var popup = new CPopup
             {
@@ -53,7 +53,7 @@ namespace Sample.ContentPopup
             this.ShowPopup(popup);
         }
 
-        void OnContentPopupTest2Clicked(object sender, EventArgs e)
+        void OnFullscreenPopupButtonClicked(object sender, EventArgs e)
         {
             MyPopup popup = new MyPopup();
             popup.BackgroundColor = Colors.Black;

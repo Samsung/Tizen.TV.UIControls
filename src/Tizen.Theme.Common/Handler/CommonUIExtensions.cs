@@ -44,8 +44,7 @@ namespace Tizen.Theme.Common
                     //handlers.AddCompatibilityRenderer(typeof(OverlayMediaView), typeof(OverlayViewRenderer));
 
                     //TODO
-                    //handlers.AddHandler<AnimatedNavigationPage, AnimatedNavigationPageHandler>();
-                    handlers.AddHandler<AnimatedNavigationPage, AnimatedNavigationPageHandler>();
+                    //handlers.AddCompatibilityRenderer(typeof(AnimatedNavigationPage), typeof(AnimatedNavigationPageRenderer));
 
                 })
                 .ConfigureLifecycleEvents(events =>

@@ -13,8 +13,8 @@
                     VerticalOptions="Start" />
             <Button
                     AutomationId="dismisstest1"
-                    x:Name="button1"
-                    Clicked="OnContentPopupTest1Clicked"
+                    x:Name="popupButton"
+                    Clicked="OnPopupButtonClicked"
                     HeightRequest="200"
                     HorizontalOptions="Center"
                     Text="Show Popup"
@@ -22,8 +22,8 @@
                     VerticalOptions="CenterAndExpand"/>
             <Button
                     AutomationId="dismisstest2"
-                    x:Name="button2"
-                    Clicked="OnContentPopupTest2Clicked"
+                    x:Name="fullscreenPopupButton"
+                    Clicked="OnFullscreenPopupButtonClicked"
                     HeightRequest="100"
                     HorizontalOptions="Center"
                     Text="Show Popup (Full Screen)"
