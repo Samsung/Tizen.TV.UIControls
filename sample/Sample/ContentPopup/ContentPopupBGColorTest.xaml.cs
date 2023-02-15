@@ -32,7 +32,7 @@ namespace Sample.ContentPopup
             InitializeComponent();
         }
 
-        async void OnContentPopupTest1Clicked(object sender, EventArgs e)
+        void OnPopupButtonClicked(object sender, EventArgs e)
         {
             var popup = new CPopup
             {
@@ -49,26 +49,29 @@ namespace Sample.ContentPopup
                     }
                 }
             };
-            await Navigation.ShowPopup(popup);
+
+            this.ShowPopup(popup);
         }
 
-        async void OnContentPopupTest2Clicked(object sender, EventArgs e)
+        void OnFullscreenPopupButtonClicked(object sender, EventArgs e)
         {
             MyPopup popup = new MyPopup();
+            popup.BackgroundColor = Colors.Black;
 
             var defaultButton = new Button
             {
                 Text = "Set BackgroundColor to Default (Transparent)",
+                TextColor = Colors.White,
             };
             defaultButton.Clicked += (s, ee) =>
             {
-                popup.BackgroundColor = null;
-                
+                popup.BackgroundColor = Colors.Transparent;
             };
 
             var grayButton = new Button
             {
                 Text = "Set Background Color to Gray",
+                TextColor = Colors.White,
             };
             grayButton.Clicked += (s, ee) =>
             {
@@ -78,33 +81,43 @@ namespace Sample.ContentPopup
             var dismiss = new Button
             {
                 Text = "Dismiss",
+                TextColor = Colors.White,
             };
-
             dismiss.Clicked += (s, ee) =>
             {
                 popup?.Dismiss();
             };
+
             var label = new Label
             {
                 Text = "This ContentPopup is dismissed as a below dismiss button.",
+                TextColor = Colors.White,
                 HorizontalTextAlignment = TextAlignment.Center,
             };
 
-            var grid = new Grid();
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
-            grid.RowDefinitions.Add(new RowDefinition());
+            var stackLayout = new StackLayout();
 
-            grid.Children.Add(label);
-            grid.Children.Add(defaultButton);
-            grid.Children.Add(grayButton);
-            grid.Children.Add(dismiss);
+            stackLayout.Children.Add(label);
+            stackLayout.Children.Add(defaultButton);
+            stackLayout.Children.Add(grayButton);
+            stackLayout.Children.Add(dismiss);
 
-            popup.Content = grid;
+            //TODO : Need to fix the issue of Grid
+            //var grid = new Grid();
+            //grid.RowDefinitions.Add(new RowDefinition());
+            //grid.RowDefinitions.Add(new RowDefinition());
+            //grid.RowDefinitions.Add(new RowDefinition());
+            //grid.RowDefinitions.Add(new RowDefinition());
+            //grid.RowDefinitions.Add(new RowDefinition());
 
-            await Navigation.ShowPopup(popup);
+            //grid.Children.Add(label);
+            //grid.Children.Add(defaultButton);
+            //grid.Children.Add(grayButton);
+            //grid.Children.Add(dismiss);
+
+            popup.Content = stackLayout;
+
+            this.ShowPopup(popup);
         }
     }
 }

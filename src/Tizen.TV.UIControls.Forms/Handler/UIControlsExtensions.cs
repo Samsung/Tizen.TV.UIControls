@@ -38,7 +38,6 @@ namespace Tizen.TV.UIControls.Forms
                 {
                     handlers.AddHandler<Entry, TVEntryHandler>();
                     handlers.AddHandler<Editor, TVEditorHandler>();
-                    handlers.AddHandler<ContentButton, ContentButtonHandler>();
 
                     //TODO
                     //handlers.AddCompatibilityRenderer(typeof(GridView), typeof(GridViewRenderer));
@@ -74,7 +73,6 @@ namespace Tizen.TV.UIControls.Forms
                 });
 
             var services = builder.Services;
-            //services.AddTransient<ContentPopupRenderer, ContentPopupRenderer>();
             //services.AddTransient<Tizen.Theme.Common.IPlatformMediaPlayer, TVMediaPlayerImpl>();
 
             return builder;

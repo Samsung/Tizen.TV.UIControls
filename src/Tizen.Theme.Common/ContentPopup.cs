@@ -9,7 +9,7 @@ namespace Tizen.Theme.Common
     /// The ContentPopup is a Popup, which allows you to customize the Layout to be displayed.
     /// </summary>
     /// <since_tizen> 4 </since_tizen>
-    public class ContentPopup : Element
+    public class ContentPopup : Element, IContentPopup
     {
         /// <summary>
         /// BindableProperty. Identifies the Content bindable property.
